@@ -11,12 +11,18 @@ Read `.claude/skills/fither-voice/SKILL.md`. Its `references/forbidden.md`
 is a hard list, not a guideline. During the warm-up period the app, the
 waitlist and the launch are never mentioned in content.
 
-## The two commands
+## The three commands
 
 ```
-plan week N                  # content-planner agent → content/weeks/week-NN.md
-write the videos for week N  # video-writer agent → content/scripts/*.md
+plan week N                    # content-planner agent → content/weeks/week-NN.md
+write the videos for week N    # video-writer agent → content/scripts/*.md + *.json
+node pipeline/produce.mjs N    # renders the week → renders/week-NN/*.mp4 + posting sheet
 ```
+
+The machine produces finished videos itself; see `docs/media-pipeline.md`.
+Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
+`PEXELS_API_KEY` in the environment; without them it renders honest drafts
+(silent, gradient backgrounds) and says so.
 
 ## Hard rules
 
@@ -45,14 +51,17 @@ write the videos for week N  # video-writer agent → content/scripts/*.md
 - `content/log.md` — every topic ever used, with results
 - `content/weeks/week-NN.md` — planner output
 - `content/scripts/YYYY-MM-DD-slug.md` — writer output, one per video
+- `content/scripts/YYYY-MM-DD-slug.json` — render spec sidecar, one per video
+- `pipeline/` — the renderer (ElevenLabs + Pexels + Chromium overlays + ffmpeg)
+- `renders/` — finished MP4s and posting sheets (gitignored, delivered per week)
 - `data/performance.csv` — views, watch %, follows, saves, per video
 
 ## The weekly loop
 
-- **Sunday, 20 min**: `plan week N`, then `write the videos for week N`.
-- **Sunday, 2 h**: assemble all 7. Faceless means assembly, not filming:
-  environment b-roll + text + the ElevenLabs voiceover, cut in CapCut.
-- **Daily**: post one, at a fixed time.
+- **Sunday, automated**: the scheduled task plans the week, writes the
+  scripts and sidecars, renders all 7 videos, and delivers them with a
+  posting sheet.
+- **Daily, 2 min**: post one from the posting sheet, at a fixed time.
 - **Friday, 10 min**: paste the week's numbers into `data/performance.csv`.
 - **Every 20 videos**: append top-quartile hooks (by watch %) to
   `.claude/skills/fither-voice/references/hooks.md`.

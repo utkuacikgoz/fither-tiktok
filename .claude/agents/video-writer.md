@@ -82,5 +82,15 @@ One line: which app asset this script could become.
 
 ## Then
 
-Write each script to `content/scripts/YYYY-MM-DD-slug.md`, dated to its
-planned posting day.
+1. Write each script to `content/scripts/YYYY-MM-DD-slug.md`, dated to its
+   planned posting day.
+2. Write the render spec sidecar `content/scripts/YYYY-MM-DD-slug.json`
+   next to it — the machine renders from this file. Match the schema in
+   `pipeline/lib/spec.mjs` (see any existing sidecar for the shape):
+   voiceover lines with timestamps, contiguous scenes with per-scene
+   `broll_query` (an environment stock-search phrase, never a person) and
+   overlays with `t`, `text` and style hook/step/cta. Leave roughly 0.45
+   seconds per word between voiceover timestamps.
+3. Validate every sidecar:
+   `node -e "import('./pipeline/lib/spec.mjs').then(m=>m.loadSpec(process.argv[1]))" <file>`
+   must exit cleanly for each.
