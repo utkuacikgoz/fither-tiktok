@@ -4,51 +4,118 @@
   "post_date": "2026-09-04",
   "format": "text-on-screen",
   "caption": "Strength training for busy women starts with one reframe: stop training to get smaller, start training to carry your actual week. Five patterns, push, pull, squat, hinge, core. Save this if it lands.",
-  "hashtags": ["#strengthtraining", "#strengthforwomen", "#homestrengthtraining", "#traintocarry"],
+  "hashtags": [
+    "#strengthtraining",
+    "#strengthforwomen",
+    "#homestrengthtraining",
+    "#traintocarry"
+  ],
   "voiceover": [
-    { "t": 0, "text": "Fitness keeps telling you to get smaller. Your life disagrees." },
-    { "t": 5, "text": "Your week never asks you to shrink. It asks you to carry, lift, climb and hold." },
-    { "t": 11, "text": "Push strength opens heavy doors and gets you up off the floor." },
-    { "t": 18, "text": "Pull strength hauls the suitcase off the carousel and the shopping up the stairs." },
-    { "t": 25, "text": "Squat strength is every staircase with something in your arms." },
-    { "t": 31, "text": "Hinge strength picks things up off the floor without a second thought." },
-    { "t": 38, "text": "Core strength holds it all steady, including the child on your hip." },
-    { "t": 44, "text": "Train to carry, and the week gets lighter. What did you carry today? Tell me in the comments." }
+    {
+      "t": 0,
+      "text": "Fitness keeps telling you to get smaller. Your life disagrees."
+    },
+    {
+      "t": 5.9,
+      "text": "Your week never asks you to shrink. It asks you to carry, lift, climb and hold."
+    },
+    {
+      "t": 14.8,
+      "text": "Push strength opens heavy doors and gets you up off the floor."
+    },
+    {
+      "t": 22.3,
+      "text": "Pull strength hauls the suitcase off the carousel and the shopping up the stairs."
+    },
+    {
+      "t": 29.8,
+      "text": "Squat strength is every staircase with something in your arms."
+    },
+    {
+      "t": 36.3,
+      "text": "Hinge strength picks things up off the floor without a second thought."
+    },
+    {
+      "t": 43.8,
+      "text": "Core strength holds it all steady, including the child on your hip."
+    },
+    {
+      "t": 50.3,
+      "text": "Train to carry, and the week gets lighter. What did you carry today? Tell me in the comments."
+    }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 5,
+      "end": 5.9,
       "broll_query": "empty staircase morning window light",
-      "overlays": [{ "t": 0, "text": "Get smaller? Your life disagrees.", "style": "hook" }]
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Get smaller? Your life disagrees.",
+          "style": "hook"
+        }
+      ]
     },
     {
-      "start": 5,
-      "end": 25,
+      "start": 5.9,
+      "end": 29.8,
       "broll_query": "packed bag by front door hallway",
       "overlays": [
-        { "t": 5, "text": "Carry. Lift. Climb. Hold.", "style": "step" },
-        { "t": 11, "text": "PUSH · doors, up off the floor", "style": "step" },
-        { "t": 18, "text": "PULL · suitcases, shopping, stairs", "style": "step" }
+        {
+          "t": 5.9,
+          "text": "Carry. Lift. Climb. Hold.",
+          "style": "step"
+        },
+        {
+          "t": 14.8,
+          "text": "PUSH · doors, up off the floor",
+          "style": "step"
+        },
+        {
+          "t": 22.3,
+          "text": "PULL · suitcases, shopping, stairs",
+          "style": "step"
+        }
       ]
     },
     {
-      "start": 25,
-      "end": 38,
+      "start": 29.8,
+      "end": 43.8,
       "broll_query": "grocery bags kitchen counter evening",
       "overlays": [
-        { "t": 25, "text": "SQUAT · stairs with full arms", "style": "step" },
-        { "t": 31, "text": "HINGE · lifting without thinking", "style": "step" }
+        {
+          "t": 29.8,
+          "text": "SQUAT · stairs with full arms",
+          "style": "step"
+        },
+        {
+          "t": 36.3,
+          "text": "HINGE · lifting without thinking",
+          "style": "step"
+        }
       ]
     },
     {
-      "start": 38,
-      "end": 52,
+      "start": 43.8,
+      "end": 60,
       "broll_query": "hallway dusk light across floor",
       "overlays": [
-        { "t": 38, "text": "CORE · holds it all steady", "style": "step" },
-        { "t": 42, "text": "Train to carry.", "style": "step" },
-        { "t": 44, "text": "What did you carry today?", "style": "cta" }
+        {
+          "t": 43.8,
+          "text": "CORE · holds it all steady",
+          "style": "step"
+        },
+        {
+          "t": 48.1,
+          "text": "Train to carry.",
+          "style": "step"
+        },
+        {
+          "t": 50.3,
+          "text": "What did you carry today?",
+          "style": "cta"
+        }
       ]
     }
   ]

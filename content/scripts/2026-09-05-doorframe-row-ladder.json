@@ -4,50 +4,113 @@
   "post_date": "2026-09-05",
   "format": "environment-pov",
   "caption": "Back exercises at home no equipment required: every home already has a row station, it is called a doorframe. Four rungs, from a lean row to a single arm row. Save the ladder.",
-  "hashtags": ["#homeworkout", "#backworkout", "#noequipmentworkout", "#doorframerow"],
+  "hashtags": [
+    "#homeworkout",
+    "#backworkout",
+    "#noequipmentworkout",
+    "#doorframerow"
+  ],
   "voiceover": [
-    { "t": 0, "text": "Home workouts train half your body. Here is the missing half." },
-    { "t": 5, "text": "There is nothing to pull at home, except every room has a doorframe." },
-    { "t": 11, "text": "Rung one. Doorframe lean rows. Ten reps. Hold the frame, lean back, pull your chest to your hands." },
-    { "t": 19, "text": "Rung two. Doorframe rows. Eight reps. Feet closer to the frame, deeper lean, harder pull." },
-    { "t": 27, "text": "Rung three. Deep doorframe rows. Eight reps. Sit further back, full range, slow return." },
-    { "t": 34, "text": "Rung four. Single arm doorframe rows. Six reps each side. The top of the ladder." },
-    { "t": 41, "text": "Grip low, heels planted, and move slow in both directions." },
-    { "t": 46, "text": "Your back works harder for you than anything else you train. Which doorframe will you use? Comment the room." }
+    {
+      "t": 0,
+      "text": "Home workouts train half your body. Here is the missing half."
+    },
+    {
+      "t": 5.5,
+      "text": "There is nothing to pull at home, except every room has a doorframe."
+    },
+    {
+      "t": 12,
+      "text": "Rung one. Doorframe lean rows. Ten reps. Hold the frame, lean back, pull your chest to your hands."
+    },
+    {
+      "t": 24.2,
+      "text": "Rung two. Doorframe rows. Eight reps. Feet closer to the frame, deeper lean, harder pull."
+    },
+    {
+      "t": 36.4,
+      "text": "Rung three. Deep doorframe rows. Eight reps. Sit further back, full range, slow return."
+    },
+    {
+      "t": 48,
+      "text": "Rung four. Single arm doorframe rows. Six reps each side. The top of the ladder."
+    },
+    {
+      "t": 57.4,
+      "text": "Grip low, heels planted, and move slow in both directions."
+    },
+    {
+      "t": 63.8,
+      "text": "Your back works harder for you than anything else you train. Which doorframe will you use? Comment the room."
+    }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 5,
+      "end": 5.5,
       "broll_query": "bedroom doorframe hallway light evening",
-      "overlays": [{ "t": 0, "text": "The missing half of home strength.", "style": "hook" }]
+      "overlays": [
+        {
+          "t": 0,
+          "text": "The missing half of home strength.",
+          "style": "hook"
+        }
+      ]
     },
     {
-      "start": 5,
-      "end": 27,
+      "start": 5.5,
+      "end": 36.4,
       "broll_query": "doorframe edge close up interior",
       "overlays": [
-        { "t": 5, "text": "Every room has a row station.", "style": "step" },
-        { "t": 11, "text": "1. Doorframe Lean Row · 10", "style": "step" },
-        { "t": 19, "text": "2. Doorframe Row · 8", "style": "step" }
+        {
+          "t": 5.5,
+          "text": "Every room has a row station.",
+          "style": "step"
+        },
+        {
+          "t": 12,
+          "text": "1. Doorframe Lean Row · 10",
+          "style": "step"
+        },
+        {
+          "t": 24.2,
+          "text": "2. Doorframe Row · 8",
+          "style": "step"
+        }
       ]
     },
     {
-      "start": 27,
-      "end": 41,
+      "start": 36.4,
+      "end": 57.4,
       "broll_query": "wooden floor toward doorway low angle",
       "overlays": [
-        { "t": 27, "text": "3. Deep Doorframe Row · 8", "style": "step" },
-        { "t": 34, "text": "4. Single-Arm Row · 6 each side", "style": "step" }
+        {
+          "t": 36.4,
+          "text": "3. Deep Doorframe Row · 8",
+          "style": "step"
+        },
+        {
+          "t": 48,
+          "text": "4. Single-Arm Row · 6 each side",
+          "style": "step"
+        }
       ]
     },
     {
-      "start": 41,
-      "end": 54,
+      "start": 57.4,
+      "end": 73.6,
       "broll_query": "bedroom doorway wide interior evening",
       "overlays": [
-        { "t": 41, "text": "Grip low. Heels planted. Slow.", "style": "step" },
-        { "t": 46, "text": "Which doorframe is yours?", "style": "cta" }
+        {
+          "t": 57.4,
+          "text": "Grip low. Heels planted. Slow.",
+          "style": "step"
+        },
+        {
+          "t": 63.8,
+          "text": "Which doorframe is yours?",
+          "style": "cta"
+        }
       ]
     }
   ]
