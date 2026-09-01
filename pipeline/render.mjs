@@ -42,7 +42,7 @@ export async function renderOne(scriptPath) {
   for (const s of spec.scenes) {
     let f = null;
     try {
-      f = await fetchBroll(s.broll_query);
+      f = await fetchBroll(s.broll_query, s.demo ? "demo" : "environment");
     } catch (e) {
       notes.push(`b-roll "${s.broll_query}" failed (${e.message.slice(0, 80)}), using gradient`);
     }

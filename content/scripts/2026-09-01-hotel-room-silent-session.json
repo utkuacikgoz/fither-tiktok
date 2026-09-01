@@ -60,22 +60,31 @@
     },
     {
       "start": 5.4,
-      "end": 29.9,
-      "broll_query": "hotel room interior evening lamp",
+      "end": 20.3,
+      "demo": true,
+      "broll_query": "woman wall push up exercise workout",
       "overlays": [
         {
           "t": 5.4,
-          "text": "A complete session. No gear.",
+          "text": "This room is a complete gym.",
           "style": "step"
         },
         {
           "t": 10.9,
-          "text": "1. Wall Push-Up · 10",
+          "text": "1. Wall push-ups, 10 reps",
           "style": "step"
-        },
+        }
+      ]
+    },
+    {
+      "start": 20.3,
+      "end": 29.9,
+      "demo": true,
+      "broll_query": "woman doorway row pulling exercise home",
+      "overlays": [
         {
           "t": 20.3,
-          "text": "2. Doorframe Lean Row · 10",
+          "text": "2. Doorframe rows, 10 reps",
           "style": "step"
         }
       ]
@@ -83,16 +92,17 @@
     {
       "start": 29.9,
       "end": 45.8,
-      "broll_query": "hotel room floor carpet warm light",
+      "demo": true,
+      "broll_query": "woman wall sit exercise legs workout",
       "overlays": [
         {
           "t": 29.9,
-          "text": "3. Wall Sit · 30s",
+          "text": "3. Wall sit, 30 seconds",
           "style": "step"
         },
         {
           "t": 38.3,
-          "text": "4. Glute Bridge · 10",
+          "text": "4. Glute bridges, 10 reps",
           "style": "step"
         }
       ]
@@ -100,16 +110,17 @@
     {
       "start": 45.8,
       "end": 65.3,
-      "broll_query": "hotel room desk window city night",
+      "demo": true,
+      "broll_query": "woman plank exercise floor workout",
       "overlays": [
         {
           "t": 45.8,
-          "text": "5. Wall Plank · 20s. Repeat once.",
+          "text": "5. Wall plank, 20 seconds. Then repeat the round.",
           "style": "step"
         },
         {
           "t": 53.3,
-          "text": "Which city tonight?",
+          "text": "Which city are you in tonight?",
           "style": "cta"
         }
       ]
