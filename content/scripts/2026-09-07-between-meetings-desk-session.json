@@ -1,0 +1,54 @@
+{
+  "slug": "2026-09-07-between-meetings-desk-session",
+  "week": "01",
+  "post_date": "2026-09-07",
+  "format": "environment-pov",
+  "caption": "Office workout at your desk: five moves in the gap between meetings. No floor work, no changing, no sweat, standing and chair work only. Save it for tomorrow's calendar.",
+  "hashtags": ["#strengthtraining", "#officeworkout", "#deskworkout", "#deskexercises"],
+  "voiceover": [
+    { "t": 0, "text": "Your two o'clock ended early. The next starts at three." },
+    { "t": 5, "text": "That gap is a full session. Standing and chair work only, in the clothes you are wearing." },
+    { "t": 11, "text": "Wall push-ups. Ten reps. Any clear stretch of wall." },
+    { "t": 18, "text": "Wall slides. Ten reps. Back on the wall, arms slide up and down." },
+    { "t": 25, "text": "Sit-to-stands from your chair. Eight reps. No hands." },
+    { "t": 31, "text": "Standing hip hinges. Ten reps. Hips back, flat back, stand tall." },
+    { "t": 38, "text": "Seated knee lifts. Ten reps. Sit tall, lift slow." },
+    { "t": 44, "text": "Back at your desk before anyone notices. How long is your usual gap? Comment the minutes." }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 5,
+      "broll_query": "tidy desk closed laptop window light",
+      "overlays": [{ "t": 0, "text": "The gap between meetings.", "style": "hook" }]
+    },
+    {
+      "start": 5,
+      "end": 25,
+      "broll_query": "office wall plant window light",
+      "overlays": [
+        { "t": 5, "text": "A full session. Work clothes.", "style": "step" },
+        { "t": 11, "text": "1. Wall Push-Up · 10", "style": "step" },
+        { "t": 18, "text": "2. Wall Slide · 10", "style": "step" }
+      ]
+    },
+    {
+      "start": 25,
+      "end": 38,
+      "broll_query": "empty office chair by desk",
+      "overlays": [
+        { "t": 25, "text": "3. Sit-to-Stand · 8", "style": "step" },
+        { "t": 31, "text": "4. Standing Hip Hinge · 10", "style": "step" }
+      ]
+    },
+    {
+      "start": 38,
+      "end": 52,
+      "broll_query": "desk phone timer coffee cup",
+      "overlays": [
+        { "t": 38, "text": "5. Seated Knee Lift · 10", "style": "step" },
+        { "t": 44, "text": "How long is your gap?", "style": "cta" }
+      ]
+    }
+  ]
+}

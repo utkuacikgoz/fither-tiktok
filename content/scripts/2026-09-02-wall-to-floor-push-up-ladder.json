@@ -1,0 +1,53 @@
+{
+  "slug": "2026-09-02-wall-to-floor-push-up-ladder",
+  "week": "01",
+  "post_date": "2026-09-02",
+  "format": "text-on-screen",
+  "caption": "Push up progression for beginners: four honest steps from the wall to the floor. Own ten clean reps at one step, then climb. The wall is step one, not a shortcut. Save the ladder.",
+  "hashtags": ["#homeworkout", "#pushupprogression", "#strengthforwomen", "#firstpushup"],
+  "voiceover": [
+    { "t": 0, "text": "Nobody fails push-ups. They start on the wrong rung." },
+    { "t": 5, "text": "The push-up has a staircase, and the wall is step one, not a shortcut." },
+    { "t": 10, "text": "Step one. Wall push-ups. Ten reps. Stand at arm's length, lower slow, press back." },
+    { "t": 18, "text": "Step two. Incline push-ups on a chair. Eight reps. Lower angle, more load." },
+    { "t": 25, "text": "Step three. Kneeling push-ups. Eight reps. One straight line from knees to head." },
+    { "t": 33, "text": "Step four. The full push-up. Six reps. Same shape, full length." },
+    { "t": 39, "text": "Move up when ten clean reps feel steady. Not before." },
+    { "t": 45, "text": "Every step on this ladder counts as strength. Which step are you on? Comment the number." }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 10,
+      "broll_query": "bare living room wall morning light",
+      "overlays": [{ "t": 0, "text": "Nobody fails. Wrong rung.", "style": "hook" }]
+    },
+    {
+      "start": 10,
+      "end": 25,
+      "broll_query": "wooden chair against wall interior",
+      "overlays": [
+        { "t": 10, "text": "Step 1: Wall Push-Up · 10", "style": "step" },
+        { "t": 18, "text": "Step 2: Incline Push-Up · 8", "style": "step" }
+      ]
+    },
+    {
+      "start": 25,
+      "end": 39,
+      "broll_query": "yoga mat on living room floor",
+      "overlays": [
+        { "t": 25, "text": "Step 3: Kneeling Push-Up · 8", "style": "step" },
+        { "t": 33, "text": "Step 4: Full Push-Up · 6", "style": "step" }
+      ]
+    },
+    {
+      "start": 39,
+      "end": 50,
+      "broll_query": "living room wall chair mat daylight",
+      "overlays": [
+        { "t": 39, "text": "Own 10 clean reps. Then climb.", "style": "step" },
+        { "t": 45, "text": "Which step are you on?", "style": "cta" }
+      ]
+    }
+  ]
+}
