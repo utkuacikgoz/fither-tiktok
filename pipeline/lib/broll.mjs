@@ -45,15 +45,18 @@ async function thumbnailsClean(video) {
   return true;
 }
 
-// Second gate on the actual file: sample frames at 10/50/90 percent.
+// Second gate on the actual file: sample frames across the clip. Frames
+// are brightened before detection — a dark kitchen once hid a person from
+// the detector at native exposure.
 async function framesClean(file, duration) {
   const ffmpeg = await ffmpegPath();
   const dur = Math.max(1, duration || 10);
-  for (const frac of [0.1, 0.5, 0.9]) {
+  for (const frac of [0.08, 0.35, 0.65, 0.92]) {
     const frame = `${file}.probe.jpg`;
     try {
       await pexec(ffmpeg, [
         "-y", "-ss", String((dur * frac).toFixed(2)), "-i", file,
+        "-vf", "eq=brightness=0.12:contrast=1.15",
         "-frames:v", "1", "-q:v", "4", frame,
       ], { maxBuffer: 1 << 22 });
       if (existsSync(frame) && (await personInJpeg(readFileSync(frame)))) return false;
