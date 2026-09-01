@@ -7,6 +7,9 @@ on:
         description: "Week number to render (e.g. 01)"
         required: true
         default: "01"
+  push:
+    branches: [main]
+    paths: [".github/render-request"]
 
 jobs:
   render:
@@ -16,6 +19,15 @@ jobs:
       PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/pw-browsers
     steps:
       - uses: actions/checkout@v4
+
+      - name: Resolve week number
+        id: week
+        run: |
+          if [ -n "${{ inputs.week }}" ]; then
+            echo "week=${{ inputs.week }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "week=$(tr -cd '0-9' < .github/render-request)" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Check required secrets
         env:
@@ -40,19 +52,19 @@ jobs:
       - name: Install Chromium for overlay rendering
         run: npx playwright@1.49.0 install --with-deps chromium
 
-      - name: Render week ${{ inputs.week }}
+      - name: Render week
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-        run: node pipeline/produce.mjs "${{ inputs.week }}"
+        run: node pipeline/produce.mjs "${{ steps.week.outputs.week }}"
 
       - name: Show posting sheet
-        run: cat "renders/week-${{ inputs.week }}/posting-sheet.md"
+        run: cat "renders/week-${{ steps.week.outputs.week }}/posting-sheet.md"
 
       - uses: actions/upload-artifact@v4
         with:
-          name: renders-week-${{ inputs.week }}
-          path: renders/week-${{ inputs.week }}/
+          name: renders-week-${{ steps.week.outputs.week }}
+          path: renders/week-${{ steps.week.outputs.week }}/
           if-no-files-found: error
           retention-days: 14
