@@ -126,7 +126,7 @@ and business travel restarting after summer.
 
 ---
 
-## What week 01 tests
+## What week 01 tests (EXP-001, EXP-002, EXP-003 in content/experiments.md)
 
 Three constraint environments run head to head this week: hotel (1),
 kitchen (3) and office (7). Whichever earns the best watch percentage takes

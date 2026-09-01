@@ -49,6 +49,10 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `assets/animations.md` — which movement animations exist (the gate for
   the animated-demo format)
 - `content/log.md` — every topic ever used, with results
+- `content/experiments.md` — the experiment registry (hypothesis → decision)
+- `content/learnings.md` — validated findings, append-only
+- `data/insights.md` — generated analytics report (`node pipeline/analyze.mjs`)
+- `data/comments.md` — comment theme buckets
 - `content/weeks/week-NN.md` — planner output
 - `content/scripts/YYYY-MM-DD-slug.md` — writer output, one per video
 - `content/scripts/YYYY-MM-DD-slug.json` — render spec sidecar, one per video
@@ -65,6 +69,26 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - **Friday, 10 min**: paste the week's numbers into `data/performance.csv`.
 - **Every 20 videos**: append top-quartile hooks (by watch %) to
   `.claude/skills/fither-voice/references/hooks.md`.
+
+## The learning loop
+
+The learning engine is four files plus one script; sessions inherit all of it:
+
+- `node pipeline/analyze.mjs` → `data/insights.md` — derived metrics
+  (saves/1k, pillar/format/hook-mechanism aggregates), kill-criteria flags,
+  the launch signal. The planner reads insights.md, never the raw CSV.
+- `content/experiments.md` — the experiment registry. Every week registers
+  1–3 tests with a numeric decision rule; every Sunday the previous week's
+  running experiments are closed with a result and a decision first.
+- `content/learnings.md` — append-only validated findings with evidence.
+  The channel's accumulated judgment; constrains all future plans.
+- `data/comments.md` — comment buckets. Buckets become topics and product
+  decisions; product-shaped buckets get flagged toward the app repo.
+
+**Friday intake**: paste analytics in any form (text, screenshots) into any
+session. The session fills `data/performance.csv` (one row per posted
+video, hook_mechanism from the video's sidecar), buckets notable comments
+into `data/comments.md`, reruns analyze, and commits.
 
 ## What to measure, in order
 

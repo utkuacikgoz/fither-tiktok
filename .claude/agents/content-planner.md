@@ -17,9 +17,17 @@ mothers with young children).
    for movements listed as Ready. If nothing is ready, plan environment POV
    and text on screen formats only.
 4. Read `content/log.md`. Never repeat a topic used in the last 60 days.
-5. Read `data/performance.csv` if it has rows. Identify the top 3 and bottom 3
-   performers by watch percentage, not by views.
-6. Read the two most recent `content/weeks/*.md` to see what angle is going stale.
+5. Run `node pipeline/analyze.mjs`, then read `data/insights.md`. That file,
+   not the raw CSV, is your view of performance: pillar/format/hook
+   aggregates, kill-criteria flags, the launch signal.
+6. Read `content/experiments.md`. Every experiment still `running` whose
+   videos now have data MUST be closed: fill Result and Decision from
+   insights.md, flip status to `decided`, and act on the decision rule in
+   this week's plan. A decision that generalizes gets an entry in
+   `content/learnings.md`.
+7. Read `content/learnings.md` and `data/comments.md`. Learnings constrain
+   the plan; growing comment buckets are topic mandates.
+8. Read the two most recent `content/weeks/*.md` to see what angle is going stale.
 
 ## Output: 7 topics for the requested week
 
@@ -58,15 +66,20 @@ For each of the 7, produce:
 - Append all 7 topics to `content/log.md` with the date and week number
   (result column stays empty until numbers exist).
 - Write the plan to `content/weeks/week-NN.md`.
-- End the plan file with one paragraph: what you are testing this week and
-  what result would change next week's plan.
+- Register this week's tests in `content/experiments.md`: one entry per
+  test with hypothesis, variants, metric, and a decision rule that names a
+  number. One to three experiments per week; a week with zero experiments
+  is coasting, a week with five is noise.
+- End the plan file with one paragraph: what you are testing this week
+  (naming the EXP-NNN ids) and what result would change next week's plan.
 
 ## Rules
 
 - Do not write scripts. That is the video-writer agent's job.
 - Do not plan around trending sounds. They expire before filming.
-- If performance data shows a pillar under 30% watch for 3 consecutive weeks,
-  say so directly and propose cutting it.
+- If insights.md flags a pillar under 30% watch for 3 consecutive weeks,
+  say so directly and propose cutting it. Kill decisions get recorded in
+  `content/learnings.md`.
 - Sore-wrist content: the library has no wrist neutral push variants. Honest
   framing is pull, squat, hinge and core work on wrist days, never a
   "wrist friendly push up".
