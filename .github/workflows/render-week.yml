@@ -48,6 +48,13 @@ jobs:
         with:
           node-version: 22
 
+      - name: Restore TTS/b-roll cache
+        uses: actions/cache@v4
+        with:
+          path: pipeline/cache
+          key: pipeline-cache-${{ github.run_id }}
+          restore-keys: pipeline-cache-
+
       - name: Install pipeline dependencies
         working-directory: pipeline
         run: npm install --no-audit --no-fund

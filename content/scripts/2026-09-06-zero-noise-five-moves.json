@@ -4,51 +4,118 @@
   "post_date": "2026-09-06",
   "format": "text-on-screen",
   "caption": "Quiet workout for apartment nights: five silent strength moves for the hours when someone is asleep next door. No jumping, no impact, no equipment, nothing through the floor. Save it for tonight.",
-  "hashtags": ["#homeworkout", "#quietworkout", "#apartmentworkout", "#silentstrength"],
+  "hashtags": [
+    "#homeworkout",
+    "#quietworkout",
+    "#apartmentworkout",
+    "#silentstrength"
+  ],
   "voiceover": [
-    { "t": 0, "text": "A child asleep on the other side of this wall." },
-    { "t": 4, "text": "You can still train. Every move here is silent. No jumping, no impact, nothing through the floor." },
-    { "t": 10, "text": "Glute bridges. Ten reps. Slow up, pause, slow down." },
-    { "t": 17, "text": "Wall sit. Thirty seconds. Back against the wall, hold." },
-    { "t": 24, "text": "Wall push-ups. Ten reps. Press away, return with control." },
-    { "t": 31, "text": "Lying heel taps. Ten reps. Core braced, breath steady." },
-    { "t": 37, "text": "Knee plank. Twenty five seconds. Still, quiet, strong." },
-    { "t": 43, "text": "Two rounds and you are done, and nobody stirred. What time does your home go quiet? Comment it." }
+    {
+      "t": 0,
+      "text": "A child asleep on the other side of this wall."
+    },
+    {
+      "t": 4.5,
+      "text": "You can still train. Every move here is silent. No jumping, no impact, nothing through the floor."
+    },
+    {
+      "t": 15.3,
+      "text": "Glute bridges. Ten reps. Slow up, pause, slow down."
+    },
+    {
+      "t": 22.8,
+      "text": "Wall sit. Thirty seconds. Back against the wall, hold."
+    },
+    {
+      "t": 30.6,
+      "text": "Wall push-ups. Ten reps. Press away, return with control."
+    },
+    {
+      "t": 38.1,
+      "text": "Lying heel taps. Ten reps. Core braced, breath steady."
+    },
+    {
+      "t": 46,
+      "text": "Knee plank. Twenty five seconds. Still, quiet, strong."
+    },
+    {
+      "t": 53.9,
+      "text": "Two rounds and you are done, and nobody stirred. What time does your home go quiet? Comment it."
+    }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 4,
+      "end": 4.5,
       "broll_query": "dim living room lamp closed door",
-      "overlays": [{ "t": 0, "text": "A child asleep behind this wall.", "style": "hook" }]
+      "overlays": [
+        {
+          "t": 0,
+          "text": "A child asleep behind this wall.",
+          "style": "hook"
+        }
+      ]
     },
     {
-      "start": 4,
-      "end": 24,
+      "start": 4.5,
+      "end": 30.6,
       "broll_query": "dim living room lamp light night",
       "overlays": [
-        { "t": 4, "text": "Every move here is silent.", "style": "step" },
-        { "t": 10, "text": "1. Glute Bridge · 10", "style": "step" },
-        { "t": 17, "text": "2. Wall Sit · 30s", "style": "step" }
+        {
+          "t": 4.5,
+          "text": "Every move here is silent.",
+          "style": "step"
+        },
+        {
+          "t": 15.3,
+          "text": "1. Glute Bridge · 10",
+          "style": "step"
+        },
+        {
+          "t": 22.8,
+          "text": "2. Wall Sit · 30s",
+          "style": "step"
+        }
       ]
     },
     {
-      "start": 24,
-      "end": 43,
+      "start": 30.6,
+      "end": 53.9,
       "broll_query": "living room mat lamp light night",
       "overlays": [
-        { "t": 24, "text": "3. Wall Push-Up · 10", "style": "step" },
-        { "t": 31, "text": "4. Lying Heel Tap · 10", "style": "step" },
-        { "t": 37, "text": "5. Knee Plank · 25s", "style": "step" }
+        {
+          "t": 30.6,
+          "text": "3. Wall Push-Up · 10",
+          "style": "step"
+        },
+        {
+          "t": 38.1,
+          "text": "4. Lying Heel Tap · 10",
+          "style": "step"
+        },
+        {
+          "t": 46,
+          "text": "5. Knee Plank · 25s",
+          "style": "step"
+        }
       ]
     },
     {
-      "start": 43,
-      "end": 51,
+      "start": 53.9,
+      "end": 63.1,
       "broll_query": "yoga mat lamp light dim room",
       "overlays": [
-        { "t": 43, "text": "Two rounds. Zero noise.", "style": "step" },
-        { "t": 46, "text": "When does your home go quiet?", "style": "cta" }
+        {
+          "t": 53.9,
+          "text": "Two rounds. Zero noise.",
+          "style": "step"
+        },
+        {
+          "t": 57.4,
+          "text": "When does your home go quiet?",
+          "style": "cta"
+        }
       ]
     }
   ]

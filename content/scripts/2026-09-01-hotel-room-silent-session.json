@@ -4,50 +4,114 @@
   "post_date": "2026-09-01",
   "format": "environment-pov",
   "caption": "Quiet hotel room workout: five moves, ten minutes, one wall and a doorframe. A complete strength session between landing and dinner, and the room next door hears nothing. Save it for your next trip.",
-  "hashtags": ["#strengthtraining", "#hotelworkout", "#noequipmentworkout", "#quietworkout", "#travelstrength"],
+  "hashtags": [
+    "#strengthtraining",
+    "#hotelworkout",
+    "#noequipmentworkout",
+    "#quietworkout",
+    "#travelstrength"
+  ],
   "voiceover": [
-    { "t": 0, "text": "Five moves. Ten minutes. One hotel wall." },
-    { "t": 4, "text": "This room already has everything a complete strength session needs." },
-    { "t": 9, "text": "Wall push-ups. Ten reps. Hands flat, body in one line, press the wall away." },
-    { "t": 17, "text": "Doorframe lean rows. Ten reps. Hold the frame, lean back, pull yourself in." },
-    { "t": 25, "text": "Wall sit. Thirty seconds. Back on the wall, slide down, hold." },
-    { "t": 32, "text": "Glute bridges on the floor. Ten reps. Slow up, slow down." },
-    { "t": 39, "text": "Wall plank. Twenty seconds. Then repeat the whole round once." },
-    { "t": 46, "text": "That is the full session, in silence, before dinner. Which city are you in tonight? Tell me in the comments." }
+    {
+      "t": 0,
+      "text": "Five moves. Ten minutes. One hotel wall."
+    },
+    {
+      "t": 5.4,
+      "text": "This room already has everything a complete strength session needs."
+    },
+    {
+      "t": 10.9,
+      "text": "Wall push-ups. Ten reps. Hands flat, body in one line, press the wall away."
+    },
+    {
+      "t": 20.3,
+      "text": "Doorframe lean rows. Ten reps. Hold the frame, lean back, pull yourself in."
+    },
+    {
+      "t": 29.9,
+      "text": "Wall sit. Thirty seconds. Back on the wall, slide down, hold."
+    },
+    {
+      "t": 38.3,
+      "text": "Glute bridges on the floor. Ten reps. Slow up, slow down."
+    },
+    {
+      "t": 45.8,
+      "text": "Wall plank. Twenty seconds. Then repeat the whole round once."
+    },
+    {
+      "t": 53.3,
+      "text": "That is the full session, in silence, before dinner. Which city are you in tonight? Tell me in the comments."
+    }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 4,
+      "end": 5.4,
       "broll_query": "hotel room door opening interior",
-      "overlays": [{ "t": 0, "text": "Five moves. Ten minutes. One wall.", "style": "hook" }]
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Five moves. Ten minutes. One wall.",
+          "style": "hook"
+        }
+      ]
     },
     {
-      "start": 4,
-      "end": 25,
+      "start": 5.4,
+      "end": 29.9,
       "broll_query": "hotel room interior evening lamp",
       "overlays": [
-        { "t": 4, "text": "A complete session. No gear.", "style": "step" },
-        { "t": 9, "text": "1. Wall Push-Up · 10", "style": "step" },
-        { "t": 17, "text": "2. Doorframe Lean Row · 10", "style": "step" }
+        {
+          "t": 5.4,
+          "text": "A complete session. No gear.",
+          "style": "step"
+        },
+        {
+          "t": 10.9,
+          "text": "1. Wall Push-Up · 10",
+          "style": "step"
+        },
+        {
+          "t": 20.3,
+          "text": "2. Doorframe Lean Row · 10",
+          "style": "step"
+        }
       ]
     },
     {
-      "start": 25,
-      "end": 39,
+      "start": 29.9,
+      "end": 45.8,
       "broll_query": "hotel room floor carpet warm light",
       "overlays": [
-        { "t": 25, "text": "3. Wall Sit · 30s", "style": "step" },
-        { "t": 32, "text": "4. Glute Bridge · 10", "style": "step" }
+        {
+          "t": 29.9,
+          "text": "3. Wall Sit · 30s",
+          "style": "step"
+        },
+        {
+          "t": 38.3,
+          "text": "4. Glute Bridge · 10",
+          "style": "step"
+        }
       ]
     },
     {
-      "start": 39,
-      "end": 52,
+      "start": 45.8,
+      "end": 65.3,
       "broll_query": "hotel room desk window city night",
       "overlays": [
-        { "t": 39, "text": "5. Wall Plank · 20s. Repeat once.", "style": "step" },
-        { "t": 46, "text": "Which city tonight?", "style": "cta" }
+        {
+          "t": 45.8,
+          "text": "5. Wall Plank · 20s. Repeat once.",
+          "style": "step"
+        },
+        {
+          "t": 53.3,
+          "text": "Which city tonight?",
+          "style": "cta"
+        }
       ]
     }
   ]
