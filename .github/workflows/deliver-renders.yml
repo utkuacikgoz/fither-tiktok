@@ -1,0 +1,41 @@
+name: Deliver renders to branch
+
+# Publishes a completed render run's artifact to a git branch
+# (renders-week-NN), so environments that can only reach GitHub over
+# git can fetch the finished videos.
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/deliver-request"]
+
+permissions:
+  contents: write
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read request
+        id: req
+        run: cat .github/deliver-request >> "$GITHUB_OUTPUT"
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: renders-week-${{ steps.req.outputs.week }}
+          run-id: ${{ steps.req.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: renders/week-${{ steps.req.outputs.week }}
+
+      - name: Push renders branch
+        run: |
+          week="${{ steps.req.outputs.week }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch --orphan "renders-week-$week"
+          git add -f "renders/week-$week"
+          git commit -m "Renders for week $week (run ${{ steps.req.outputs.run_id }})"
+          git push -f origin "renders-week-$week"

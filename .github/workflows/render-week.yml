@@ -11,6 +11,9 @@ on:
     branches: [main]
     paths: [".github/render-request"]
 
+permissions:
+  contents: write
+
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -68,3 +71,13 @@ jobs:
           path: renders/week-${{ steps.week.outputs.week }}/
           if-no-files-found: error
           retention-days: 14
+
+      - name: Push renders branch
+        run: |
+          week="${{ steps.week.outputs.week }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch --orphan "renders-week-$week"
+          git add -f "renders/week-$week"
+          git commit -m "Renders for week $week (run ${{ github.run_id }})"
+          git push -f origin "renders-week-$week"
