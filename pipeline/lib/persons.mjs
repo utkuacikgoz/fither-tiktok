@@ -9,7 +9,9 @@ let facePromise = null;
 let tfPromise = null;
 
 async function getTf() {
-  tfPromise ??= import("@tensorflow/tfjs");
+  // Prefer the native binding when present (CI installs it --no-save);
+  // it runs detection an order of magnitude faster than the JS backend.
+  tfPromise ??= import("@tensorflow/tfjs-node").catch(() => import("@tensorflow/tfjs"));
   return tfPromise;
 }
 

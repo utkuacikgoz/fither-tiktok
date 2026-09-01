@@ -93,6 +93,9 @@ export async function renderOne(scriptPath) {
 
   const captionFile = join(outDir, `${spec.slug}.caption.txt`);
   writeFileSync(captionFile, `${spec.caption}\n\n${(spec.hashtags ?? []).join(" ")}\n`);
+  // Notes persist next to the render so sharded CI jobs can be collected
+  // into one posting sheet.
+  writeFileSync(join(outDir, `${spec.slug}.notes.txt`), notes.map((n) => `- ${n}`).join("\n") + "\n");
   return { spec, files: [out, captionFile, qaFile], notes };
 }
 

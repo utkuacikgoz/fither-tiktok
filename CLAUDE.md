@@ -24,6 +24,20 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 `PEXELS_API_KEY` in the environment; without them it renders honest drafts
 (silent, gradient backgrounds) and says so.
 
+## Guardrails (owner-set, 2026-09-01)
+
+- **Never sacrifice quality.** Output quality and brand rules are not a
+  trade dial: no skipping the faceless QA pass, no lowering render quality
+  below the current settings, no downscaled detection inputs, no shipping
+  a video with an unverified QA sheet, no weakening a gate to make a run
+  faster or cheaper. When speed and quality conflict, quality wins.
+- **Always optimize the process.** Within the line above, relentlessly cut
+  cost and time: reuse caches (TTS is cached per line — never re-bill
+  ElevenLabs for unchanged text), shard work across parallel jobs, prefer
+  native/faster backends, delegate bulk writing to subagents, keep token
+  usage lean, and question any step that spends money or minutes without
+  improving the output.
+
 ## Hard rules
 
 - **Warm-up rule**: no app mention, no waitlist, no "coming soon" in any

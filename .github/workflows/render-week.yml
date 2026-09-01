@@ -11,15 +11,12 @@ on:
     branches: [main]
     paths: [".github/render-request"]
 
-permissions:
-  contents: write
-
 jobs:
-  render:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
-    env:
-      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/pw-browsers
+    outputs:
+      week: ${{ steps.week.outputs.week }}
+      slugs: ${{ steps.slugs.outputs.slugs }}
     steps:
       - uses: actions/checkout@v4
 
@@ -44,6 +41,37 @@ jobs:
           done
           exit $missing
 
+      - name: List the week's videos
+        id: slugs
+        run: |
+          week="${{ steps.week.outputs.week }}"
+          slugs=$(node -e '
+            const { readdirSync, readFileSync } = require("fs");
+            const week = process.argv[1];
+            const slugs = readdirSync("content/scripts")
+              .filter((f) => f.endsWith(".json"))
+              .map((f) => JSON.parse(readFileSync("content/scripts/" + f, "utf8")))
+              .filter((s) => String(s.week).padStart(2, "0") === week)
+              .map((s) => s.slug)
+              .sort();
+            if (slugs.length === 0) { console.error("no sidecars for week " + week); process.exit(1); }
+            console.log(JSON.stringify(slugs));
+          ' "$week")
+          echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        slug: ${{ fromJson(needs.plan.outputs.slugs) }}
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/pw-browsers
+    steps:
+      - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -52,36 +80,73 @@ jobs:
         uses: actions/cache@v4
         with:
           path: pipeline/cache
-          key: pipeline-cache-${{ github.run_id }}
-          restore-keys: pipeline-cache-
+          key: pipeline-cache-${{ matrix.slug }}-${{ github.run_id }}
+          restore-keys: |
+            pipeline-cache-${{ matrix.slug }}-
+            pipeline-cache-
+
+      - name: Install pipeline dependencies
+        working-directory: pipeline
+        run: |
+          npm install --no-audit --no-fund
+          # Native TF backend: order-of-magnitude faster detection. Best
+          # effort — the pure-JS backend is the fallback either way.
+          npm install --no-save --no-audit --no-fund @tensorflow/tfjs-node || true
+
+      - name: Install Chromium for overlay rendering
+        run: npx playwright@1.49.0 install --with-deps chromium
+
+      - name: Render video
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: node pipeline/render.mjs "content/scripts/${{ matrix.slug }}.md"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ matrix.slug }}
+          path: renders/week-${{ needs.plan.outputs.week }}/
+          if-no-files-found: error
+          retention-days: 3
+
+  collect:
+    needs: [plan, render]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Gather shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: shard-*
+          path: renders/week-${{ needs.plan.outputs.week }}/
+          merge-multiple: true
 
       - name: Install pipeline dependencies
         working-directory: pipeline
         run: npm install --no-audit --no-fund
 
-      - name: Install Chromium for overlay rendering
-        run: npx playwright@1.49.0 install --with-deps chromium
-
-      - name: Render week
-        env:
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-        run: node pipeline/produce.mjs "${{ steps.week.outputs.week }}"
+      - name: Build posting sheet
+        run: node pipeline/sheet.mjs "${{ needs.plan.outputs.week }}"
 
       - name: Show posting sheet
-        run: cat "renders/week-${{ steps.week.outputs.week }}/posting-sheet.md"
+        run: cat "renders/week-${{ needs.plan.outputs.week }}/posting-sheet.md"
 
       - uses: actions/upload-artifact@v4
         with:
-          name: renders-week-${{ steps.week.outputs.week }}
-          path: renders/week-${{ steps.week.outputs.week }}/
+          name: renders-week-${{ needs.plan.outputs.week }}
+          path: renders/week-${{ needs.plan.outputs.week }}/
           if-no-files-found: error
           retention-days: 14
 
       - name: Push renders branch
         run: |
-          week="${{ steps.week.outputs.week }}"
+          week="${{ needs.plan.outputs.week }}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git switch --orphan "renders-week-$week"
