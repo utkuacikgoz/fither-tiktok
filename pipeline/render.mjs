@@ -74,9 +74,26 @@ export async function renderOne(scriptPath) {
   const out = join(outDir, `${spec.slug}.mp4`);
   await composeVideo({ spec, sceneFiles, overlays, voFiles, out });
 
+  // QA contact sheet: one frame every ~10s, tiled. The faceless rule is
+  // verified by looking at this before anything is posted.
+  const qaDir = ensureDir(join(outDir, "qa"));
+  const qaFile = join(qaDir, `${spec.slug}.png`);
+  try {
+    const { execFile } = await import("node:child_process");
+    const { promisify } = await import("node:util");
+    const ffmpeg = await (await import("./lib/env.mjs")).ffmpegPath();
+    await promisify(execFile)(ffmpeg, [
+      "-y", "-i", out,
+      "-vf", "select='isnan(prev_selected_t)+gte(t-prev_selected_t\\,10)',scale=270:480,tile=6x1",
+      "-frames:v", "1", qaFile,
+    ], { maxBuffer: 1 << 24 });
+  } catch (e) {
+    notes.push(`QA sheet failed: ${e.message.slice(0, 120)}`);
+  }
+
   const captionFile = join(outDir, `${spec.slug}.caption.txt`);
   writeFileSync(captionFile, `${spec.caption}\n\n${(spec.hashtags ?? []).join(" ")}\n`);
-  return { spec, files: [out, captionFile], notes };
+  return { spec, files: [out, captionFile, qaFile], notes };
 }
 
 const invokedDirectly = process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop());

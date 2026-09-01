@@ -17,7 +17,10 @@ node pipeline/render.mjs content/scripts/DATE-slug.md
         ├─ voiceover   ElevenLabs API, one clip per line, placed at its
         │              timestamp (ELEVENLABS_API_KEY + ELEVENLABS_VOICE_ID)
         ├─ b-roll      Pexels video API, portrait, per-scene search query,
-        │              cropped to 1080x1920 (PEXELS_API_KEY)
+        │              cropped to 1080x1920 (PEXELS_API_KEY). Every candidate
+        │              passes the FACELESS GATE: COCO-SSD person detection on
+        │              its thumbnails and sampled frames; any person in frame
+        │              rejects the clip. No person-free candidate → gradient.
         ├─ overlays    brand text cards rendered by headless Chromium
         │              (bone/sage/ink palette from the app's design tokens)
         └─ assembly    ffmpeg: scenes concatenated, overlays faded in and
@@ -81,9 +84,14 @@ and real b-roll:
 
 ## QA gates before posting
 
-`produce.mjs` output is a draft until:
-1. Watch each video once at full speed (52 seconds each, it is not a lot).
-2. Check the posting sheet's render notes for silent-draft or gradient
+Every render also writes `renders/week-NN/qa/<slug>.png` — a contact sheet
+with one frame every ~10 seconds. `produce.mjs` output is a draft until:
+1. Look at every QA sheet: any person or face anywhere means the video does
+   not ship — fix the scene's `broll_query` in the sidecar and re-render
+   (the automated person gate catches almost everything; the sheet is the
+   human backstop for what a detector can miss).
+2. Watch each video once at full speed (52 seconds each, it is not a lot).
+3. Check the posting sheet's render notes for silent-draft or gradient
    fallbacks you did not intend.
-3. Spot-check overlay text against `references/forbidden.md` if the sidecar
+4. Spot-check overlay text against `references/forbidden.md` if the sidecar
    was edited by hand.
