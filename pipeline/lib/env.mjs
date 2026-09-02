@@ -4,6 +4,7 @@ import { join, dirname } from "node:path";
 import { homedir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { setGlobalDispatcher, EnvHttpProxyAgent } from "undici";
+import { chromium } from "playwright-core";
 
 // Outbound HTTPS must go through the agent proxy; Node's fetch ignores
 // HTTPS_PROXY unless told. NODE_EXTRA_CA_CERTS covers TLS trust.
@@ -32,17 +33,39 @@ export const palette = {
   line: "#E8E2D8",
 };
 
-export function findChromium() {
-  const envPath = process.env.PLAYWRIGHT_BROWSERS_PATH;
-  const roots = [envPath, "/opt/pw-browsers", join(homedir(), "Library", "Caches", "ms-playwright")].filter(Boolean);
+export function findChromium({
+  preferredPath = chromium.executablePath(),
+  roots = [
+    process.env.PLAYWRIGHT_BROWSERS_PATH,
+    "/opt/pw-browsers",
+    join(homedir(), ".cache", "ms-playwright"),
+    join(homedir(), "Library", "Caches", "ms-playwright"),
+  ].filter(Boolean),
+  systemPaths = [
+    "/usr/bin/chromium",
+    "/usr/bin/chromium-browser",
+    "/usr/bin/google-chrome",
+    "/usr/bin/google-chrome-stable",
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+  ],
+} = {}) {
+  // Playwright knows the exact revision and platform-specific layout it
+  // installed. Prefer that answer before scanning compatibility fallbacks.
+  if (preferredPath && existsSync(preferredPath)) return preferredPath;
+
   for (const root of roots) {
     if (!existsSync(root)) continue;
-    const dirs = readdirSync(root).filter((d) => d.startsWith("chromium-"));
+    const dirs = readdirSync(root).filter((d) => d.startsWith("chromium"));
     dirs.sort().reverse();
     for (const d of dirs) {
       for (const rel of [
         "chrome-linux/chrome",
+        "chrome-linux64/chrome",
         "chrome-linux/headless_shell",
+        "chrome-headless-shell-linux64/headless_shell",
+        "chrome-headless-shell-linux/headless_shell",
         "chrome-mac/Chromium.app/Contents/MacOS/Chromium",
         "chrome-mac-arm64/Chromium.app/Contents/MacOS/Chromium",
         "chrome-headless-shell-mac-arm64/chrome-headless-shell",
@@ -52,11 +75,7 @@ export function findChromium() {
       }
     }
   }
-  for (const path of [
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    "/Applications/Chromium.app/Contents/MacOS/Chromium",
-    "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
-  ]) {
+  for (const path of systemPaths) {
     if (existsSync(path)) return path;
   }
   throw new Error("No Chromium found in PLAYWRIGHT_BROWSERS_PATH, Playwright caches or system applications");
