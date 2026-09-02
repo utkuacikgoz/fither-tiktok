@@ -2,6 +2,11 @@ name: Curate demo library
 
 on:
   workflow_dispatch:
+    inputs:
+      movements:
+        description: "Comma-separated movement names; defaults to the six current footage blockers"
+        required: false
+        default: "Wall Push-Up,Air Squat,Reverse Lunge,Glute Bridge,Full Plank,Seated Knee Lift"
   push:
     branches: [main]
     paths: [".github/curate-request"]
@@ -39,6 +44,7 @@ jobs:
       - name: Gather gated candidates
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          CURATION_MOVEMENTS: ${{ inputs.movements }}
         run: node pipeline/curate.mjs
 
       - name: Push curation branch

@@ -18,7 +18,8 @@ mothers with young children).
    and text on screen formats only.
 4. Run `node pipeline/assets.mjs`, then read `data/assets.md`. A movement marked
    Thin gets at most one demo scene in the week until its approved pool reaches
-   three clips; use environment beats for additional mentions.
+   three clips; a movement marked Blocked gets no demo scenes. Use environment
+   beats or a slideshow until full-motion review approves replacement footage.
 5. Read `content/log.md`. Never repeat a topic used in the last 60 days.
 6. Run `node pipeline/analyze.mjs`, then read `data/insights.md`. That file,
    not the raw CSV, is your view of performance: pillar/format/hook

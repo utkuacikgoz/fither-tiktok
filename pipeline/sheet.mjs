@@ -21,7 +21,7 @@ const specs = readdirSync(scriptsDir)
   .filter((s) => String(s.week).padStart(2, "0") === week)
   .sort((a, b) => a.post_date.localeCompare(b.post_date));
 
-let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nWhen posting, add a calm in-app sound at 10-20% volume under the voice —\nnative feel, zero licensing risk. Never pick a sound the video depends on.\n`;
+let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nFor video, add a calm in-app sound at 10-20% under the voice. For slideshows,\nchoose a calm in-app sound that does not carry meaning. Never make the post\ndepend on the sound.\n`;
 const allNotes = [];
 let missing = 0;
 

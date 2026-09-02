@@ -97,13 +97,26 @@ export async function fetchApprovedDemo(movement, seed = "") {
   if (!brollAvailable() || !movement) return null;
   const libPath = join(repoRoot, "assets", "demo-library.json");
   const lib = JSON.parse(readFileSync(libPath, "utf8"));
-  const entries = lib.movements?.[movement];
+  const entries = (lib.movements?.[movement] ?? []).filter(
+    (entry) => entry.movement_verified === true && entry.faceless_verified === true && /^\d{4}-\d{2}-\d{2}$/.test(entry.reviewed_at ?? ""),
+  );
   if (!entries || entries.length === 0) return null;
   // Rotate deterministically across approved clips so a movement that
   // appears in several videos doesn't always show the same footage.
   const idx = parseInt(createHash("sha1").update(`${movement}|${seed}`).digest("hex").slice(0, 6), 16) % entries.length;
   const entry = entries[idx];
   const dir = ensureDir(join(cacheDir, "broll"));
+  if (entry.source === "owned") {
+    const file = join(dir, `demo-owned-${entry.sha256.slice(0, 20)}.mp4`);
+    if (existsSync(file)) return file;
+    const dl = await fetch(entry.url);
+    if (!dl.ok) throw new Error(`owned demo download ${dl.status}`);
+    const body = Buffer.from(await dl.arrayBuffer());
+    const actual = createHash("sha256").update(body).digest("hex");
+    if (actual !== entry.sha256) throw new Error(`owned demo checksum mismatch for ${movement}`);
+    writeFileSync(file, body);
+    return file;
+  }
   const file = join(dir, `demo-${entry.pexels_id}.mp4`);
   if (existsSync(file)) return file;
   const res = await fetch(`https://api.pexels.com/videos/videos/${entry.pexels_id}`, {

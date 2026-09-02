@@ -34,8 +34,16 @@ export async function renderOne(scriptPath) {
     try {
       for (const [i, s] of spec.scenes.entries()) {
         const f = join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
+        const overlay = s.overlays[0];
         await renderSlide(
-          { kicker: s.kicker ?? "", text: s.overlays?.[0]?.text ?? "", footer: s.footer ?? "" },
+          {
+            kicker: s.kicker ?? "",
+            text: overlay.text,
+            footer: s.footer ?? "",
+            index: i + 1,
+            total: spec.scenes.length,
+            kind: overlay.style,
+          },
           f,
         );
         files.push(f);
@@ -90,9 +98,10 @@ export async function renderOne(scriptPath) {
     try {
       if (s.demo && s.movement) {
         f = await fetchApprovedDemo(s.movement, `${spec.slug}|${s.start}`);
-        if (!f && brollAvailable()) notes.push(`"${s.movement}" not in assets/demo-library.json — demo scene falls back`);
+        if (!f) notes.push(`verified "${s.movement}" demo unavailable — using gradient`);
+      } else {
+        f = await fetchBroll(s.broll_query, "environment");
       }
-      f ??= await fetchBroll(s.broll_query, s.demo ? "demo" : "environment");
     } catch (e) {
       notes.push(`b-roll "${s.broll_query}" failed (${e.message.slice(0, 80)}), using gradient`);
     }

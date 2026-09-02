@@ -1,47 +1,53 @@
 {
-  "_readme": "Approved body-only demo clips, one or more per movement. Only clips listed here may appear in demo scenes; the curation flow (pipeline/curate.mjs + owner approval) is the only way in. Reviewed frame-by-frame for the faceless rule on 2026-09-02.",
+  "_readme": "Approved body-only demo clips. Only movement-accurate, face-free clips listed under movements may render. Machine screening produces candidates, never approvals; approval requires full-motion editorial review. Legacy clips that failed the 2026-09-02 truth audit are preserved under quarantined and cannot render.",
   "movements": {
-    "Wall Push-Up": [
-      {
-        "pexels_id": 8402112,
-        "duration": 13,
-        "pexels_url": "https://www.pexels.com/video/a-woman-doing-push-ups-on-a-metal-fence-8402112/"
-      }
-    ],
-    "Air Squat": [
-      {
-        "pexels_id": 4487994,
-        "duration": 9,
-        "pexels_url": "https://www.pexels.com/video/woman-working-out-at-home-4487994/"
-      }
-    ],
-    "Reverse Lunge": [
-      {
-        "pexels_id": 8027968,
-        "duration": 14,
-        "pexels_url": "https://www.pexels.com/video/woman-doing-squats-using-yoga-ball-8027968/"
-      }
-    ],
-    "Glute Bridge": [
-      {
-        "pexels_id": 6525525,
-        "duration": 6,
-        "pexels_url": "https://www.pexels.com/video/woman-working-out-6525525/"
-      }
-    ],
     "Full Plank": [
       {
+        "source": "pexels",
         "pexels_id": 6525477,
         "duration": 8,
-        "pexels_url": "https://www.pexels.com/video/side-view-of-woman-exercising-legs-6525477/"
-      }
-    ],
-    "Seated Knee Lift": [
-      {
-        "pexels_id": 8116401,
-        "duration": 12,
-        "pexels_url": "https://www.pexels.com/video/swinging-a-feet-from-a-high-chair-8116401/"
+        "pexels_url": "https://www.pexels.com/video/side-view-of-woman-exercising-legs-6525477/",
+        "movement_verified": true,
+        "faceless_verified": true,
+        "reviewed_at": "2026-09-02"
       }
     ]
-  }
+  },
+  "quarantined": [
+    {
+      "movement": "Wall Push-Up",
+      "pexels_id": 8402112,
+      "duration": 13,
+      "pexels_url": "https://www.pexels.com/video/a-woman-doing-push-ups-on-a-metal-fence-8402112/",
+      "reason": "Recognizable profile remains visible throughout the movement."
+    },
+    {
+      "movement": "Air Squat",
+      "pexels_id": 4487994,
+      "duration": 9,
+      "pexels_url": "https://www.pexels.com/video/woman-working-out-at-home-4487994/",
+      "reason": "Recognizable profile remains visible throughout the movement."
+    },
+    {
+      "movement": "Reverse Lunge",
+      "pexels_id": 8027968,
+      "duration": 14,
+      "pexels_url": "https://www.pexels.com/video/woman-doing-squats-using-yoga-ball-8027968/",
+      "reason": "Recognizable profile remains visible throughout the movement."
+    },
+    {
+      "movement": "Glute Bridge",
+      "pexels_id": 6525525,
+      "duration": 6,
+      "pexels_url": "https://www.pexels.com/video/woman-working-out-6525525/",
+      "reason": "Recognizable face remains visible throughout the movement."
+    },
+    {
+      "movement": "Seated Knee Lift",
+      "pexels_id": 8116401,
+      "duration": 12,
+      "pexels_url": "https://www.pexels.com/video/swinging-a-feet-from-a-high-chair-8116401/",
+      "reason": "Feet swinging from a stool does not verify the named seated knee lift form."
+    }
+  ]
 }

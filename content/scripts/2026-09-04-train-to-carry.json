@@ -76,7 +76,7 @@
       "start": 0,
       "end": 9.3,
       "demo": true,
-      "movement": "Reverse Lunge",
+      "movement": "Full Plank",
       "overlays": [
         {
           "t": 0,
@@ -100,8 +100,7 @@
     {
       "start": 22,
       "end": 34.2,
-      "demo": true,
-      "movement": "Full Plank",
+      "broll_query": "grocery bags staircase landing",
       "overlays": [
         {
           "t": 22,
@@ -113,8 +112,7 @@
     {
       "start": 34.2,
       "end": 44,
-      "demo": true,
-      "movement": "Air Squat",
+      "broll_query": "stairs packed bag closeup",
       "overlays": [
         {
           "t": 34.2,

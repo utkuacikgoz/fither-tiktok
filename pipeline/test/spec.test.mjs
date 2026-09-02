@@ -73,6 +73,47 @@ test("rejects videos over the 60-second quality contract", () => {
   assert.ok(errors.some((message) => message.includes("exceeds the 45-60s brief")));
 });
 
+test("accepts a complete slideshow contract without video timing warnings", () => {
+  const spec = validSpec();
+  spec.slug = "2026-09-01-valid-slideshow";
+  spec.format = "slideshow";
+  delete spec.voiceover;
+  spec.scenes = Array.from({ length: 5 }, (_, index) => ({
+    start: index,
+    end: index + 1,
+    kicker: index === 0 ? "THE CONSTRAINT" : index === 4 ? "YOUR TURN" : `STEP ${index}`,
+    footer: index === 4 ? "Save the complete session." : "A workout that fits today.",
+    overlays: [{
+      t: index,
+      text: index === 0 ? "Five quiet moves for tonight." : index === 4 ? "Which one starts your session?" : `Movement ${index}`,
+      style: index === 0 ? "hook" : index === 4 ? "cta" : "step",
+    }],
+  }));
+  const result = validateSpec(spec, { ...options, jsonPath: "/tmp/2026-09-01-valid-slideshow.json" });
+  assert.deepEqual(result, { errors: [], warnings: [] });
+});
+
+test("rejects slideshows with hidden copy or weak pagination", () => {
+  const spec = validSpec();
+  spec.format = "slideshow";
+  delete spec.voiceover;
+  spec.scenes = [{
+    start: 0,
+    end: 1,
+    kicker: "",
+    footer: "",
+    overlays: [
+      { t: 0, text: "Visible", style: "hook" },
+      { t: 0, text: "This would never render", style: "cta" },
+    ],
+  }];
+  const { errors } = validateSpec(spec, options);
+  assert.ok(errors.some((message) => message.includes("requires 4-8 slides")));
+  assert.ok(errors.some((message) => message.includes("exactly one overlay")));
+  assert.ok(errors.some((message) => message.includes("requires a kicker")));
+  assert.ok(errors.some((message) => message.includes("requires a footer")));
+});
+
 test("policy catches channel-specific wrist and punctuation violations", () => {
   assert.equal(policyTextViolations("A wrist-friendly push-up.").length, 1);
   assert.equal(policyTextViolations("Strong — in ten minutes.").length, 1);

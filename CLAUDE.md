@@ -11,7 +11,7 @@ Read `.claude/skills/fither-voice/SKILL.md`. Its `references/forbidden.md`
 is a hard list, not a guideline. During the warm-up period the app, the
 waitlist and the launch are never mentioned in content.
 
-## The three commands
+## The four commands
 
 ```
 plan week N                    # content-planner agent → content/weeks/week-NN.md
@@ -55,6 +55,9 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
   hinge and core content, and say so honestly.
 - **Faceless**: no face ever appears. Voice is the persona — the same
   ElevenLabs voice as the app's in-session guidance.
+- **Demo truth**: machine screening never approves footage. A demo enters
+  `assets/demo-library.json` only after full-motion review confirms the exact
+  movement, usable form framing and no recognizable face in any frame.
 - Never plan around trending sounds. They expire before filming.
 - **No AI attribution anywhere in the repo** (owner rule, 2026-09-02; same
   as the app repo): no "Generated with", no Co-Authored-By AI trailers, no
@@ -75,6 +78,7 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `content/learnings.md` — validated findings, append-only
 - `data/insights.md` — generated analytics report (`node pipeline/analyze.mjs`)
 - `data/assets.md` — generated footage/animation readiness report (`node pipeline/assets.mjs`)
+- `docs/footage-capture.md` — the body-only filming and approval contract
 - `data/comments.md` — comment theme buckets
 - `content/weeks/week-NN.md` — planner output
 - `content/scripts/YYYY-MM-DD-slug.md` — writer output, one per video

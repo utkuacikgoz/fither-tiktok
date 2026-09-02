@@ -71,8 +71,7 @@
     {
       "start": 0,
       "end": 13.2,
-      "demo": true,
-      "movement": "Seated Knee Lift",
+      "broll_query": "kitchen chair oven background",
       "overlays": [
         {
           "t": 0,
@@ -106,8 +105,7 @@
     {
       "start": 26.9,
       "end": 31.3,
-      "demo": true,
-      "movement": "Seated Knee Lift",
+      "broll_query": "kitchen chair closeup warm light",
       "overlays": [
         {
           "t": 26.9,

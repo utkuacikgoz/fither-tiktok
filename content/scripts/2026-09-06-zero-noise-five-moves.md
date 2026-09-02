@@ -8,8 +8,8 @@
 
 ## 1. HOOK (first 3 seconds)
 
-First frame: a body mid glute bridge, hips rising in a dim room. Silent
-work is visible before it is explained.
+First frame: a close push across a mat in a dim room. The silent setting is
+visible before it is explained, without an unverified demo.
 
 1. "She fell asleep at eight. The floor creaks." (specific situation: the
    sleeping child and the creaking floor. CHOSEN)
@@ -54,15 +54,15 @@ tomorrow's desk session. Voiceover recorded low and calm to match.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:19). Demo: Glute Bridge, mid-movement from the first
-frame, body only in low light. Overlays: "These five moves make zero
+Scene 1 (0:00 to 0:19). Environment: a close moving shot across an exercise
+mat in a dim living room, no person. Overlays: "These five moves make zero
 noise." (hook), then "Start with ten slow glute bridges." (step).
 
 Scene 2 (0:19 to 0:23). Environment: a dim living room lit by one lamp,
 no person. Overlay: "Wall sit for thirty silent seconds." (step).
 
-Scene 3 (0:23 to 0:27). Demo: Wall Push-Up, body only. Overlay: "Ten wall
-push-ups, quiet as breathing." (step).
+Scene 3 (0:23 to 0:27). Environment: an empty wall in warm lamplight, no
+person. Overlay: "Ten wall push-ups, quiet as breathing." (step).
 
 Scene 4 (0:27 to 0:35). Environment: an exercise mat in a dim room.
 Overlay: "Heel taps, then a knee plank." (step).
@@ -71,9 +71,8 @@ Scene 5 (0:35 to end). Environment: a dark apartment window at night.
 Overlays: "Two rounds. The door never opens." (step), then "Who sleeps
 behind your wall?" (cta).
 
-Demo scenes use only approved movements (Glute Bridge, Wall Push-Up);
-wall sit, heel taps and knee plank stay person-free environment shots. No
-face appears anywhere.
+Every scene stays person-free while Glute Bridge and Wall Push-Up replacement
+footage awaits full-motion approval. No face appears anywhere.
 
 ## 4. CAPTION AND HASHTAGS
 

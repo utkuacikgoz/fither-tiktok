@@ -104,6 +104,11 @@ export function validateSpec(spec, options = {}) {
         error(`scene ${i}: broll_query must be a non-empty string`);
       }
       if (!Array.isArray(scene.overlays) || scene.overlays.length === 0) warn(`scene ${i}: no overlays`);
+      if (spec.format === "slideshow") {
+        if (scene.overlays?.length !== 1) error(`slide ${i + 1}: requires exactly one overlay`);
+        if (typeof scene.kicker !== "string" || !scene.kicker.trim()) error(`slide ${i + 1}: requires a kicker`);
+        if (typeof scene.footer !== "string" || !scene.footer.trim()) error(`slide ${i + 1}: requires a footer`);
+      }
       for (const [j, overlay] of (scene.overlays ?? []).entries()) {
         if (!isFiniteNumber(overlay.t) || typeof overlay.text !== "string" || !overlay.text.trim()) {
           error(`scene ${i} overlay ${j}: needs numeric t and text`);
@@ -116,8 +121,12 @@ export function validateSpec(spec, options = {}) {
       if (isFiniteNumber(scene.end)) prevEnd = scene.end;
     });
     spec.duration = prevEnd;
-    if (prevEnd < 45) warn(`duration ${prevEnd}s is below the 45-60s brief`);
-    if (prevEnd > 60) error(`duration ${prevEnd}s exceeds the 45-60s brief`);
+    if (spec.format === "slideshow") {
+      if (spec.scenes.length < 4 || spec.scenes.length > 8) error("slideshow requires 4-8 slides");
+    } else {
+      if (prevEnd < 45) warn(`duration ${prevEnd}s is below the 45-60s brief`);
+      if (prevEnd > 60) error(`duration ${prevEnd}s exceeds the 45-60s brief`);
+    }
 
     const firstOverlays = spec.scenes[0]?.overlays ?? [];
     if (!firstOverlays.some((overlay) => overlay.style === "hook" && Math.abs(overlay.t) < 0.001)) {

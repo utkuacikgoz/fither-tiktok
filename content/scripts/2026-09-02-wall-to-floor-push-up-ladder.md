@@ -8,8 +8,8 @@
 
 ## 1. HOOK (first 3 seconds)
 
-First frame: a body mid wall push-up, working. The staircase starts on
-screen before it is named.
+First frame: a tight upward move along the wall. The staircase metaphor
+starts on screen before it is named, without an unverified demo.
 
 1. "You have not failed at push-ups. Not once." (contradiction: reframes
    every failed attempt as a wrong starting rung. CHOSEN)
@@ -55,11 +55,11 @@ The close invites her to tomorrow's kitchen session.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:13). Demo: Wall Push-Up, mid-movement from the first
-frame, body only. Overlay: "Nobody fails push-ups. They skip steps." (hook).
+Scene 1 (0:00 to 0:13). Environment: tight upward move along a plain wall,
+no person. Overlay: "Nobody fails push-ups. They skip steps." (hook).
 
-Scene 2 (0:13 to 0:23). Demo: Wall Push-Up continues while step one is
-coached. Overlay: "Step one. Ten wall push-ups." (step).
+Scene 2 (0:13 to 0:23). Environment: a second wall angle in a bright room,
+no person. Overlay: "Step one. Ten wall push-ups." (step).
 
 Scene 3 (0:23 to 0:32). Environment: a wooden chair in a bright room, no
 person; no approved incline demo exists. Overlay: "Step two. Eight incline
@@ -73,9 +73,8 @@ Scene 5 (0:40 to end). Environment: a sunlit home staircase, the visual
 metaphor for the ladder. Overlays: "Earn each step for a full week."
 (step), then "Which step are you on today?" (cta).
 
-Only Wall Push-Up has an approved demo clip; the other rungs stay
-person-free environment shots until their demos are curated. No face
-appears anywhere.
+Every rung stays person-free until movement-accurate, body-only demos pass
+full-motion review. No face appears anywhere.
 
 ## 4. CAPTION AND HASHTAGS
 

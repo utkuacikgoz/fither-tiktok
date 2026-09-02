@@ -11,11 +11,22 @@ function fakeExecutable(path) {
   return path;
 }
 
-test("uses Playwright's resolved Chromium executable first", () => {
+test("uses Playwright's resolved Chromium executable when no system browser exists", () => {
   const dir = mkdtempSync(join(tmpdir(), "fither-chromium-"));
   try {
     const expected = fakeExecutable(join(dir, "resolved", "chrome"));
     assert.equal(findChromium({ preferredPath: expected, roots: [], systemPaths: [] }), expected);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("prefers a signed system browser over a blocked local cache", () => {
+  const dir = mkdtempSync(join(tmpdir(), "fither-chromium-"));
+  try {
+    const downloaded = fakeExecutable(join(dir, "cache", "chrome"));
+    const system = fakeExecutable(join(dir, "system", "chrome"));
+    assert.equal(findChromium({ preferredPath: downloaded, roots: [], systemPaths: [system] }), system);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }

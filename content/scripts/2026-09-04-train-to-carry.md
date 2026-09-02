@@ -8,8 +8,8 @@
 
 ## 1. HOOK (first 3 seconds)
 
-First frame: a body mid reverse lunge, driving up, working. The argument
-opens over proof of the argument.
+First frame: a body holding a full plank, face completely obscured. The
+argument opens over visible work that has passed full-motion review.
 
 1. "Every ad tells you to take up less space." (contradiction: the industry
    message set against what her life actually demands. CHOSEN)
@@ -53,26 +53,26 @@ CTA asks for her own carrying evidence. Two capability-ownership lines at
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:09). Demo: Reverse Lunge, mid-movement from the first
-frame, body only. Overlay: "You were told to take up less space." (hook).
+Scene 1 (0:00 to 0:09). Demo: Full Plank from the first frame, body only,
+face fully obscured. Overlay: "You were told to take up less space." (hook).
 
 Scene 2 (0:09 to 0:22). Environment: grocery bags waiting by a front
 door, slow push-in, no person. Overlay: "Life keeps asking you to carry
 more." (step).
 
-Scene 3 (0:22 to 0:34). Demo: Full Plank, body only, the brace pattern
-holding steady. Overlay: "Train to carry, not to shrink." (step).
+Scene 3 (0:22 to 0:34). Environment: grocery bags on a staircase landing,
+no person. Overlay: "Train to carry, not to shrink." (step).
 
-Scene 4 (0:34 to 0:44). Demo: Air Squat, body only, slow controlled reps.
-Overlay: "Ten minutes a day. Five patterns." (step).
+Scene 4 (0:34 to 0:44). Environment: a packed bag beside a staircase,
+framed close, no person. Overlay: "Ten minutes a day. Five patterns." (step).
 
 Scene 5 (0:44 to end). Environment: a packed suitcase by a door.
 Overlays: "Strong is a capacity, not a look." (step), then "What did you
 carry this week?" (cta).
 
-Kinetic text carries the argument; the demos (Reverse Lunge, Full Plank,
-Air Squat, all approved) show patterns without naming exercises, matching
-the plan's patterns-only rule. No face appears anywhere.
+Kinetic text carries the argument. Full Plank is the only approved demo;
+the other beats remain person-free until replacement footage passes review.
+No face appears anywhere.
 
 ## 4. CAPTION AND HASHTAGS
 
