@@ -79,11 +79,12 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `data/insights.md` — generated analytics report (`node pipeline/analyze.mjs`)
 - `data/assets.md` — generated footage/animation readiness report (`node pipeline/assets.mjs`)
 - `docs/footage-capture.md` — the body-only filming and approval contract
+- `docs/sound-system.md` — original bed, ducking, loudness and posting contract
 - `data/comments.md` — comment theme buckets
 - `content/weeks/week-NN.md` — planner output
 - `content/scripts/YYYY-MM-DD-slug.md` — writer output, one per video
 - `content/scripts/YYYY-MM-DD-slug.json` — render spec sidecar, one per video
-- `pipeline/` — the renderer (ElevenLabs + Pexels + Chromium overlays + ffmpeg)
+- `pipeline/` — the renderer (ElevenLabs + Pexels + original sound + Chromium overlays + ffmpeg)
 - `renders/` — finished MP4s and posting sheets (gitignored, delivered per week)
 - `data/performance.csv` — views, watch %, completion, first drop-off, follows and saves per video
 

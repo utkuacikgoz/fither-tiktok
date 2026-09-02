@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Renders one FITHER video from its spec sidecar.
-//   node pipeline/render.mjs content/scripts/2026-09-01-hotel-room-silent-session.md
+//   node pipeline/render.mjs content/scripts/2026-09-04-hotel-room-silent-session.md
 // Output: renders/week-NN/<slug>.mp4 (or <slug>/slide-N.png for slideshows).
 // Degrades honestly: no ELEVENLABS_* key → silent draft; no PEXELS_API_KEY →
 // brand-gradient backgrounds. Both states are printed, never hidden.
@@ -12,7 +12,8 @@ import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
 import { fetchBroll, fetchApprovedDemo, brollAvailable } from "./lib/broll.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
-import { assertNoFaces, assertVoiceAudible, createQaSheet } from "./lib/verify.mjs";
+import { assertAudioMaster, assertNoFaces, assertVoiceAudible, createQaSheet } from "./lib/verify.mjs";
+import { renderSoundBed } from "./lib/sound.mjs";
 
 function writeDeliveryText(outDir, spec, notes) {
   const captionFile = join(outDir, `${spec.slug}.caption.txt`);
@@ -147,7 +148,12 @@ export async function renderOne(scriptPath) {
   }
 
   const out = join(outDir, `${spec.slug}.mp4`);
-  await composeVideo({ spec, sceneFiles, overlays, voFiles, out });
+  const soundBedFile = await renderSoundBed(spec.sound.profile);
+  notes.push(`embedded original ${spec.sound.profile} sound bed at ${spec.sound.bed_gain_db} dB with voice ducking`);
+  await composeVideo({ spec, sceneFiles, overlays, voFiles, soundBedFile, out });
+
+  // GUARDRAIL: the complete mix must meet the delivery loudness contract.
+  await assertAudioMaster(out);
 
   // GUARDRAIL: every scripted line must be audible in the finished file.
   // The retimed schedule is ground truth; a silent line window means the

@@ -3,6 +3,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { policyViolations } from "./policy.mjs";
+import { SOUND_PROFILES } from "./sound.mjs";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FORMATS = new Set(["environment-pov", "text-on-screen", "slideshow"]);
@@ -71,6 +72,16 @@ export function validateSpec(spec, options = {}) {
   if (typeof spec.pillar === "string" && !PILLARS.has(spec.pillar)) error(`pillar "${spec.pillar}" is unknown`);
   if (typeof spec.hook_mechanism === "string" && !HOOKS.has(spec.hook_mechanism)) {
     error(`hook_mechanism "${spec.hook_mechanism}" is unknown`);
+  }
+  if (spec.format === "slideshow") {
+    if (spec.sound?.profile !== "platform") error('slideshow sound.profile must be "platform"');
+  } else if (!spec.sound || typeof spec.sound !== "object") {
+    error("video formats require a sound contract");
+  } else {
+    if (!SOUND_PROFILES.has(spec.sound.profile)) error(`sound profile "${spec.sound.profile}" is unknown`);
+    if (!isFiniteNumber(spec.sound.bed_gain_db) || spec.sound.bed_gain_db < -22 || spec.sound.bed_gain_db > -12) {
+      error("sound bed_gain_db must be between -22 and -12 dB");
+    }
   }
   if (!Array.isArray(spec.hashtags) || spec.hashtags.length === 0) {
     error("hashtags must be a non-empty array");

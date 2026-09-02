@@ -30,7 +30,7 @@ if (specs.length === 0) {
 }
 
 const outDir = ensureDir(join(rendersDir, `week-${week}`));
-let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nWhen posting, add a calm in-app sound at 10-20% volume under the voice —\nnative feel, zero licensing risk. Never pick a sound the video depends on.\n`;
+let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nVideo masters already contain the original FITHER bed with voice ducking; do not\nstack another sound unless the post is a named native-sound experiment (0-5%).\nFor slideshows, choose a calm in-app sound that carries no instructional meaning.\n`;
 const allNotes = [];
 
 for (const f of specs) {

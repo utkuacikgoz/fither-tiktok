@@ -28,6 +28,41 @@ export async function assertVoiceAudible(file, voFiles, measure = meanVolume) {
   }
 }
 
+export async function audioMasterMetrics(file) {
+  const ffmpeg = await ffmpegPath();
+  try {
+    const { stderr } = await pexec(ffmpeg, [
+      "-i", file, "-map", "a", "-af", "ebur128=peak=true", "-f", "null", "-",
+    ], { maxBuffer: 1 << 24 });
+    return parseAudioMasterMetrics(stderr ?? "");
+  } catch (cause) {
+    const parsed = parseAudioMasterMetrics(cause.stderr ?? "");
+    if (parsed) return parsed;
+    return null;
+  }
+}
+
+export function parseAudioMasterMetrics(output) {
+  const integrated = [...String(output).matchAll(/I:\s*(-?[\d.]+) LUFS/g)].at(-1);
+  const peak = [...String(output).matchAll(/Peak:\s*(-?[\d.]+) dBFS/g)].at(-1);
+  if (!integrated || !peak) return null;
+  return { integratedLufs: Number(integrated[1]), truePeakDbfs: Number(peak[1]) };
+}
+
+export async function assertAudioMaster(file, measure = audioMasterMetrics) {
+  const metrics = await measure(file);
+  if (!metrics || !Number.isFinite(metrics.integratedLufs) || !Number.isFinite(metrics.truePeakDbfs)) {
+    throw new Error("audio master verification could not measure loudness and true peak");
+  }
+  if (metrics.integratedLufs < -17 || metrics.integratedLufs > -11) {
+    throw new Error(`audio master loudness ${metrics.integratedLufs} LUFS is outside -17 to -11 LUFS`);
+  }
+  if (metrics.truePeakDbfs > -1) {
+    throw new Error(`audio master true peak ${metrics.truePeakDbfs} dBFS exceeds -1 dBFS`);
+  }
+  return metrics;
+}
+
 export function faceSampleTimes(duration, interval = 0.5) {
   const times = [];
   for (let time = 0.5; time < duration; time += interval) times.push(Math.min(time, duration - 0.05));

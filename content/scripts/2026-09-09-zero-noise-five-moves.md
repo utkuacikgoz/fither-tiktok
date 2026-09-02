@@ -3,7 +3,7 @@
 - Topic: Five strength moves that make zero noise, for training while a child sleeps on the other side of the wall.
 - Pillar: Fast tips
 - Format: text on screen over one static shot (a dim living room, a mat)
-- Posting date: 2026-09-06 (Sunday)
+- Posting date: 2026-09-09 (Wednesday)
 - Target search phrase: quiet workout apartment
 
 ## 1. HOOK (first 3 seconds)

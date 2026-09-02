@@ -3,7 +3,7 @@
 - Topic: A 10 minute chair and counter strength session that fits inside the time dinner is already in the oven.
 - Pillar: Constraint
 - Format: environment POV (kitchen b-roll: counter, chair, oven timer)
-- Posting date: 2026-09-03 (Thursday)
+- Posting date: 2026-09-06 (Sunday)
 - Target search phrase: kitchen counter workout no equipment
 
 ## 1. HOOK (first 3 seconds)

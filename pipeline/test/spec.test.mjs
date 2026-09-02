@@ -11,6 +11,7 @@ function validSpec() {
     format: "environment-pov",
     pillar: "Constraint",
     hook_mechanism: "situation",
+    sound: { profile: "quiet-drive", bed_gain_db: -16 },
     caption: "A quiet ten minute strength session.",
     hashtags: ["#strengthtraining"],
     scenes: [{
@@ -77,6 +78,7 @@ test("accepts a complete slideshow contract without video timing warnings", () =
   const spec = validSpec();
   spec.slug = "2026-09-01-valid-slideshow";
   spec.format = "slideshow";
+  spec.sound = { profile: "platform" };
   delete spec.voiceover;
   spec.scenes = Array.from({ length: 5 }, (_, index) => ({
     start: index,
@@ -96,6 +98,7 @@ test("accepts a complete slideshow contract without video timing warnings", () =
 test("rejects slideshows with hidden copy or weak pagination", () => {
   const spec = validSpec();
   spec.format = "slideshow";
+  spec.sound = { profile: "platform" };
   delete spec.voiceover;
   spec.scenes = [{
     start: 0,
@@ -112,6 +115,20 @@ test("rejects slideshows with hidden copy or weak pagination", () => {
   assert.ok(errors.some((message) => message.includes("exactly one overlay")));
   assert.ok(errors.some((message) => message.includes("requires a kicker")));
   assert.ok(errors.some((message) => message.includes("requires a footer")));
+});
+
+test("rejects missing, unknown and overpowering sound contracts", () => {
+  const missing = validSpec();
+  delete missing.sound;
+  assert.ok(validateSpec(missing, options).errors.some((message) => message.includes("require a sound contract")));
+
+  const unknown = validSpec();
+  unknown.sound.profile = "generic-stock";
+  assert.ok(validateSpec(unknown, options).errors.some((message) => message.includes("sound profile")));
+
+  const loud = validSpec();
+  loud.sound.bed_gain_db = -3;
+  assert.ok(validateSpec(loud, options).errors.some((message) => message.includes("bed_gain_db")));
 });
 
 test("policy catches channel-specific wrist and punctuation violations", () => {

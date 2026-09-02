@@ -3,7 +3,7 @@
 - Topic: A desk clothes friendly 10 minute session with no floor work, for the gap between two meetings.
 - Pillar: Constraint
 - Format: environment POV (desk, office chair, window light)
-- Posting date: 2026-09-07 (Monday)
+- Posting date: 2026-09-10 (Thursday)
 - Target search phrase: office workout at your desk
 
 ## 1. HOOK (first 3 seconds)

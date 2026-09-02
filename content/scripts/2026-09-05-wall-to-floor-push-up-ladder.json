@@ -1,10 +1,11 @@
 {
-  "slug": "2026-09-02-wall-to-floor-push-up-ladder",
+  "slug": "2026-09-05-wall-to-floor-push-up-ladder",
   "week": "01",
-  "post_date": "2026-09-02",
+  "post_date": "2026-09-05",
   "format": "text-on-screen",
   "pillar": "Skill ladder",
   "hook_mechanism": "contradiction",
+  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
   "caption": "Push up progression for beginners: the four step staircase from wall to floor. Nobody fails at push-ups, they start on the wrong rung. Save the ladder and climb it.",
   "hashtags": [
     "#strengthtraining",

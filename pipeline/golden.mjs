@@ -8,7 +8,8 @@ import { promisify } from "node:util";
 import { closeBrowser, renderOverlay, renderSlide } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration, meanVolume } from "./lib/compose.mjs";
 import { ensureDir, ffmpegPath, rendersDir } from "./lib/env.mjs";
-import { createQaSheet } from "./lib/verify.mjs";
+import { assertAudioMaster, createQaSheet } from "./lib/verify.mjs";
+import { renderSoundBed } from "./lib/sound.mjs";
 
 const pexec = promisify(execFile);
 const outDir = ensureDir(join(rendersDir, "golden"));
@@ -47,8 +48,10 @@ try {
 const spec = {
   slug: "golden",
   duration: 5,
+  sound: { profile: "quiet-drive", bed_gain_db: -16 },
   scenes: [{ start: 0, end: 5 }],
 };
+const soundBedFile = await renderSoundBed(spec.sound.profile);
 await composeVideo({
   spec,
   sceneFiles: [null],
@@ -57,9 +60,11 @@ await composeVideo({
     { start: 2.5, end: 4.8, file: caption },
   ],
   voFiles: [{ t: 0.5, dur: 2, file: audio }],
+  soundBedFile,
   out: output,
 });
 await createQaSheet(output, qa, { interval: 1 });
+await assertAudioMaster(output);
 
 const duration = await mediaDuration(output);
 if (duration == null || Math.abs(duration - 5) > 0.15) {
@@ -67,6 +72,8 @@ if (duration == null || Math.abs(duration - 5) > 0.15) {
 }
 const volume = await meanVolume(output, 0.5, 2);
 if (volume == null || volume < -45) throw new Error(`golden render audio is missing or silent (${volume})`);
+const bedVolume = await meanVolume(output, 3.2, 1);
+if (bedVolume == null || bedVolume < -50) throw new Error(`golden render sound bed is missing or silent (${bedVolume})`);
 
 let probe = "";
 try {
@@ -75,7 +82,9 @@ try {
   probe = cause.stderr ?? "";
 }
 if (!/Video:.*1080x1920/.test(probe)) throw new Error("golden render is not 1080x1920");
-if (!/Audio:\s*aac/.test(probe)) throw new Error("golden render has no AAC audio stream");
+if (!/Audio:\s*aac.*48000 Hz, stereo/.test(probe)) {
+  throw new Error("golden render audio is not 48 kHz stereo AAC");
+}
 for (const file of [output, qa, ...slideFiles]) {
   if (!existsSync(file) || statSync(file).size === 0) throw new Error(`golden artifact missing: ${file}`);
 }

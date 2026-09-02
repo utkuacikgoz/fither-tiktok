@@ -3,7 +3,7 @@
 - Topic: A silent 10 minute full strength session using only a hotel room wall and doorframe, between landing and dinner.
 - Pillar: Constraint
 - Format: environment POV (hotel b-roll: door, wall, window, desk)
-- Posting date: 2026-09-01 (Tuesday)
+- Posting date: 2026-09-04 (Friday)
 - Target search phrase: quiet hotel room workout
 
 ## 1. HOOK (first 3 seconds)

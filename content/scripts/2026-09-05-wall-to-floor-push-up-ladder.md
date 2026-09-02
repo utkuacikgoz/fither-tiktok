@@ -3,7 +3,7 @@
 - Topic: The four step ladder from wall push up to your first full push up, and why the wall is step one, not a cop out.
 - Pillar: Skill ladder
 - Format: text on screen over environment shots (wall, chair, mat)
-- Posting date: 2026-09-02 (Wednesday)
+- Posting date: 2026-09-05 (Saturday)
 - Target search phrase: push up progression for beginners
 
 ## 1. HOOK (first 3 seconds)

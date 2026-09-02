@@ -35,6 +35,7 @@ library is not deep until the replacement capture brief is completed.
 | P1 | Metrics | No retention drop-off field; rates were averaged per video; missing weeks counted as consecutive kill weeks | Fixed in Wave 3 |
 | P1 | Experiment loop | Experiments and learnings were prose, so closure/decision rules could not be verified automatically | Fixed in Wave 3 |
 | P1 | Slideshow quality | Photo posts had no safe-zone system, pagination or golden test and silently rendered only the first overlay | Fixed in Wave 2 |
+| P1 | Sound design | Voice shipped over silence with no loudness or peak contract | Fixed in Wave 4; original bed, ducking and master gate |
 | P1 | Operations | Profile kit, comment intake/replies, cross-post variants and handle verification are manual/unimplemented | Wave 4 |
 | P2 | Supply chain | GitHub Actions use moving major tags rather than immutable SHAs | Wave 4 |
 | P2 | Portability | Chromium discovery is cross-platform; there is still no supported local bootstrap command | Discovery fixed; bootstrap in Wave 4 |

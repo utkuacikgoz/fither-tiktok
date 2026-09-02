@@ -117,3 +117,7 @@ For `slideshow`, use 4-8 scenes. Each slide has exactly one overlay, a short
 uppercase `kicker` and a useful `footer`. The first overlay is `hook`; the last
 is a question `cta`. Slide start/end values remain contiguous indices (0-1,
 1-2, and so on); they are ordering metadata, not video duration.
+
+Every video sidecar includes `"sound": { "profile": "quiet-drive",
+"bed_gain_db": -16 }`. Slideshows use `"sound": { "profile": "platform" }`.
+Do not invent profile names or raise the bed to compete with the voice.

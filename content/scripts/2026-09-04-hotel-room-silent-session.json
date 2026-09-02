@@ -1,10 +1,11 @@
 {
-  "slug": "2026-09-01-hotel-room-silent-session",
+  "slug": "2026-09-04-hotel-room-silent-session",
   "week": "01",
-  "post_date": "2026-09-01",
+  "post_date": "2026-09-04",
   "format": "environment-pov",
   "pillar": "Constraint",
   "hook_mechanism": "contradiction",
+  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
   "caption": "Quiet hotel room workout: ten minutes, one wall, one doorframe, and a complete strength session before dinner. The room next door hears nothing. Save it for your next trip.",
   "hashtags": [
     "#strengthtraining",

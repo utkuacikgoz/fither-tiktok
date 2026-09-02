@@ -3,7 +3,7 @@
 - Topic: Stop training to shrink. Train to carry: the case for strength as the thing that makes your actual week lighter.
 - Pillar: Reframe
 - Format: text on screen (kinetic type over slow moving shots: stairs, a packed bag, groceries by a door)
-- Posting date: 2026-09-04 (Friday)
+- Posting date: 2026-09-07 (Monday)
 - Target search phrase: strength training for busy women
 
 ## 1. HOOK (first 3 seconds)

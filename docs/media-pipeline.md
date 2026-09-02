@@ -25,6 +25,8 @@ node pipeline/render.mjs content/scripts/DATE-slug.md
         │              any clip containing a person. No clean match → gradient.
         ├─ overlays    brand text cards rendered by headless Chromium
         │              (bone/sage/ink palette from the app's design tokens)
+        ├─ sound       original `quiet-drive` bed, ducked under the voice;
+        │              complete mix mastered and verified at delivery
         └─ assembly    ffmpeg: scenes concatenated, overlays faded in and
                        out at their windows, voiceover mixed at timestamps
         │
@@ -72,6 +74,9 @@ and real b-roll:
   provider may depict exercise form.
 - **Voiceover**: ElevenLabs, shared voice with the app. Non-negotiable
   brand asset.
+- **Sound bed**: original deterministic `quiet-drive` profile. It is mixed at
+  the sidecar's declared level, ducked beneath speech and mastered to -14 LUFS.
+  See `docs/sound-system.md`. Native TikTok sound is experiment-only for video.
 - **Posting**: manual daily upload from the posting sheet. TikTok's direct
   Content Posting API needs an audited app; revisit after warm-up. A
   scheduler SaaS (~$20-30/mo) fits the budget if daily uploads become a
@@ -103,7 +108,9 @@ with one frame every ~5 seconds. `produce.mjs` output is a draft until:
 2. Watch each video once at full speed (52 seconds each, it is not a lot).
 3. Check the posting sheet's render notes for silent-draft or gradient
    fallbacks you did not intend.
-4. Spot-check overlay text against `references/forbidden.md` if the sidecar
+4. Listen once on phone speakers and once on headphones: voice stays forward,
+   the bed is present but never competes, and no transition clicks.
+5. Spot-check overlay text against `references/forbidden.md` if the sidecar
    was edited by hand.
 
 For slideshows, review every PNG in filename order. Check that the hook works

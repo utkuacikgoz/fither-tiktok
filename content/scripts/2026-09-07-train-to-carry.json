@@ -1,10 +1,11 @@
 {
-  "slug": "2026-09-04-train-to-carry",
+  "slug": "2026-09-07-train-to-carry",
   "week": "01",
-  "post_date": "2026-09-04",
+  "post_date": "2026-09-07",
   "format": "text-on-screen",
   "pillar": "Reframe",
   "hook_mechanism": "contradiction",
+  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
   "caption": "Strength training for busy women means training to carry, not to shrink. Stairs, bags, car seats: life asks for strength. Five patterns, ten minutes a day.",
   "hashtags": [
     "#strengthtraining",

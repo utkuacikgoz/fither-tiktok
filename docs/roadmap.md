@@ -14,7 +14,7 @@ standing work orders.
 | Voice | B+ | Right voice, one delivery setting; no emphasis tuning |
 | Footage | D | Truth audit quarantined 5 legacy clips; only Full Plank remains approved |
 | Edit rhythm | B | Auto-cut rhythm works; distinct shot history is still missing |
-| Sound design | D | Voice over silence; native content carries a low music bed |
+| Sound design | B+ | Original ducked/mastered bed is CI-verified; phone/on-platform response is unproven |
 | Accessibility | A- | Burned captions, SRT and legible carousel design; word-level emphasis is untested |
 | Reliability | A- | Preflight, fail-closed QA and video/carousel golden fixtures are green in CI |
 | Learning engine | A- | Registry, insights, kill rules built; unexercised until first data |
@@ -28,10 +28,9 @@ standing work orders.
    pull movements still have zero demos.
 2. **Shot diversity.** Auto-cutting improves pace, but the engine has no
    cross-video shot identity/history to prevent visible reuse.
-3. **Sound.** No music bed. Silence under voice can read as automated.
-   Licensing-safe route: add a low-volume in-app sound at post time
-   (zero rights risk, native to the platform); note it on every posting
-   sheet. A rendered bed needs a cleared license first.
+3. **Sound validation.** The rights-safe `quiet-drive` bed, automatic ducking
+   and loudness/peak gates are built. Phone-speaker balance and audience
+   response remain unproven until the canary renders and first posted week.
 4. **Channel ops.** No avatar/bio/pinned plan, no comment-reply
    workflow (brand promise: answer every comment for 90 days), no
    Shorts/Reels cross-post from the same MP4s, handle reservations
@@ -59,7 +58,8 @@ standing work orders.
 - [x] Upgrade slideshows with a strict 4-8 slide contract, safe-zone design,
       progress/cues, CTA treatment and a visual golden fixture
 - [x] Workflow concurrency group (cancel superseded runs)
-- [x] Posting sheet: add the in-app low-volume sound instruction
+- [x] Original sound bed, voice ducking, -14 LUFS master, true-peak gate and
+      corrected posting instructions
 
 ### P1 — next two weeks (channel becomes an operation)
 
@@ -79,7 +79,8 @@ standing work orders.
 - [ ] App Rive animations land → assets/animations.md flow takes over
       demo scenes (already built and gated)
 - [ ] Voice delivery tuning: test stability/style variants on one video
-- [ ] Music bed decision: licensed calm bed vs in-app sounds, from data
+- [ ] Compare the original bed against a low-volume native sound only after
+      enough posts exist for a named experiment
 - [ ] Scheduler or TikTok API decision, from posting-friction data
 
 AAA definition for this channel: a cold viewer cannot tell it is

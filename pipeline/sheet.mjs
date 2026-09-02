@@ -21,7 +21,7 @@ const specs = readdirSync(scriptsDir)
   .filter((s) => String(s.week).padStart(2, "0") === week)
   .sort((a, b) => a.post_date.localeCompare(b.post_date));
 
-let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nFor video, add a calm in-app sound at 10-20% under the voice. For slideshows,\nchoose a calm in-app sound that does not carry meaning. Never make the post\ndepend on the sound.\n`;
+let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nVideo masters already contain the original FITHER bed with voice ducking; do not\nstack another sound unless the post is a named native-sound experiment (0-5%).\nFor slideshows, choose a calm in-app sound that carries no instructional meaning.\n`;
 const allNotes = [];
 let missing = 0;
 
