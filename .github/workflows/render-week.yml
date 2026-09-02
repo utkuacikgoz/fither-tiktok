@@ -34,6 +34,12 @@ jobs:
         with:
           node-version: 24
 
+      # The preflight imports pipeline libraries (undici via lib/env.mjs),
+      # so the plan job needs the pipeline dependencies installed too.
+      - name: Install pipeline dependencies
+        working-directory: pipeline
+        run: npm ci --no-audit --no-fund
+
       - name: Preflight content, experiments and assets
         run: |
           node pipeline/validate.mjs
