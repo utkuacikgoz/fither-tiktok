@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Renders FITHER TikTok scripts into finished 1080x1920 videos and slideshows.",
   "dependencies": {
+    "@fontsource/fraunces": "^5.1.0",
     "@fontsource/inter": "^5.1.0",
     "@tensorflow-models/blazeface": "^0.1.0",
     "@tensorflow-models/coco-ssd": "^2.2.3",

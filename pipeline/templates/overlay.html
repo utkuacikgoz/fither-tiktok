@@ -4,55 +4,70 @@
 <meta charset="utf-8">
 <style>
   @font-face {
+    font-family: "Fraunces";
+    src: url("__FONT_DISPLAY__") format("woff2");
+    font-weight: 600;
+  }
+  @font-face {
     font-family: "Inter";
     src: url("__FONT_400__") format("woff2");
     font-weight: 400;
   }
-  @font-face {
-    font-family: "Inter";
-    src: url("__FONT_600__") format("woff2");
-    font-weight: 600;
-  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 1080px; height: 1920px; background: transparent; }
   body {
-    font-family: "Inter", system-ui, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 72px 340px;
+    position: relative;
+    font-family: "Fraunces", Georgia, serif;
   }
-  body.center { justify-content: center; padding-bottom: 0; }
-  .panel {
-    background: rgba(250, 247, 242, 0.94); /* warm bone */
-    border-radius: 32px;
-    padding: 44px 52px;
-    max-width: 936px;
-    box-shadow: 0 12px 48px rgba(31, 29, 26, 0.18);
+  /* Cinematic legibility scrim: fades footage into warm dark at the
+     lower third, so bone type reads on any shot without a card. */
+  .scrim {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 46%;
+    background: linear-gradient(
+      to bottom,
+      rgba(23, 22, 20, 0) 0%,
+      rgba(23, 22, 20, 0.45) 40%,
+      rgba(23, 22, 20, 0.78) 100%
+    );
   }
-  .accent-bar {
-    width: 72px; height: 8px; border-radius: 4px;
-    background: #5C6F5E; /* deep sage */
-    margin-bottom: 28px;
+  .block {
+    position: absolute;
+    left: 84px;
+    right: 84px;
+    bottom: 300px;
+    color: #FAF7F2; /* warm bone */
+    text-shadow: 0 2px 30px rgba(23, 22, 20, 0.7);
+  }
+  .rule {
+    width: 76px;
+    height: 6px;
+    border-radius: 3px;
+    background: #8FA491; /* sage, light-on-dark variant */
+    margin-bottom: 34px;
   }
   .text {
-    color: #1F1D1A;
     font-weight: 600;
-    font-size: 58px;
-    line-height: 1.22;
-    letter-spacing: -0.01em;
+    font-size: 68px;
+    line-height: 1.16;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+    max-width: 860px;
   }
-  body.hook .text { font-size: 76px; line-height: 1.15; }
-  body.step .text { font-size: 58px; }
-  body.cta .panel { background: #5C6F5E; }
-  body.cta .text { color: #FAF7F2; }
-  body.cta .accent-bar { background: #B98A2F; } /* gold, the ask moment */
+  body.hook .text {
+    font-size: 88px;
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+  }
+  body.cta .rule { background: #C99B45; } /* gold: the ask moment */
+  body.cta .text { font-size: 80px; line-height: 1.12; }
 </style>
 </head>
 <body class="__STYLE__">
-  <div class="panel">
-    <div class="accent-bar"></div>
+  <div class="scrim"></div>
+  <div class="block">
+    <div class="rule"></div>
     <div class="text">__TEXT__</div>
   </div>
 </body>

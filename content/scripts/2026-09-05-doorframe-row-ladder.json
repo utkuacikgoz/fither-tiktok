@@ -74,7 +74,7 @@
     {
       "start": 0,
       "end": 14.7,
-      "broll_query": "white doorframe hallway interior",
+      "broll_query": "hand gripping door frame closeup",
       "overlays": [
         {
           "t": 0,
@@ -86,16 +86,16 @@
     {
       "start": 14.7,
       "end": 24.5,
-      "broll_query": "open door frame sunlight",
+      "broll_query": "hand on door handle opening",
       "overlays": [
         {
           "t": 14.7,
-          "text": "Rung one. Lean back and row in.",
+          "text": "Rung one. Grip the frame, lean back, row in.",
           "style": "step"
         },
         {
           "t": 20.1,
-          "text": "Rung two. Deeper lean, eight rows.",
+          "text": "Rung two. Feet closer, deeper lean. Eight.",
           "style": "step"
         }
       ]
@@ -103,16 +103,16 @@
     {
       "start": 24.5,
       "end": 33.8,
-      "broll_query": "doorway wooden floor shadow",
+      "broll_query": "doorway interior apartment daylight",
       "overlays": [
         {
           "t": 24.5,
-          "text": "Rung three. Full range rows, eight.",
+          "text": "Rung three. Arms long, pull to the frame.",
           "style": "step"
         },
         {
           "t": 29.4,
-          "text": "Rung four. One arm, six each side.",
+          "text": "Rung four. One arm. Six each side.",
           "style": "step"
         }
       ]
@@ -120,11 +120,11 @@
     {
       "start": 33.8,
       "end": 46.5,
-      "broll_query": "hallway door morning light",
+      "broll_query": "hand holding wooden door frame",
       "overlays": [
         {
           "t": 33.8,
-          "text": "When a rung feels easy, climb.",
+          "text": "Squeeze your shoulder blades on every rep.",
           "style": "step"
         }
       ]
@@ -132,7 +132,7 @@
     {
       "start": 46.5,
       "end": 64.4,
-      "broll_query": "front door evening lamp",
+      "broll_query": "apartment front door interior evening",
       "overlays": [
         {
           "t": 46.5,

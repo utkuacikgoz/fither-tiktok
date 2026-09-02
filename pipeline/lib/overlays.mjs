@@ -6,10 +6,14 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "playwright-core";
 import { cacheDir, ensureDir, findChromium } from "./env.mjs";
 
+// Bump when a template's look changes, so cached overlay PNGs regenerate.
+const TEMPLATE_VERSION = "v2-editorial";
+
 const templatesDir = join(dirname(fileURLToPath(import.meta.url)), "..", "templates");
-const fontDir = join(dirname(fileURLToPath(import.meta.url)), "..", "node_modules", "@fontsource", "inter", "files");
-const font400 = `file://${join(fontDir, "inter-latin-400-normal.woff2")}`;
-const font600 = `file://${join(fontDir, "inter-latin-600-normal.woff2")}`;
+const nm = join(dirname(fileURLToPath(import.meta.url)), "..", "node_modules");
+const font400 = `file://${join(nm, "@fontsource/inter/files/inter-latin-400-normal.woff2")}`;
+const font600 = `file://${join(nm, "@fontsource/inter/files/inter-latin-600-normal.woff2")}`;
+const fontDisplay = `file://${join(nm, "@fontsource/fraunces/files/fraunces-latin-600-normal.woff2")}`;
 
 const esc = (s) =>
   s.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
@@ -47,12 +51,12 @@ async function renderHtmlToPng(html, file, { transparent }) {
 
 export async function renderOverlay({ text, style = "step" }) {
   const dir = ensureDir(join(cacheDir, "overlays"));
-  const key = createHash("sha1").update(`${style}|${text}`).digest("hex");
+  const key = createHash("sha1").update(`${TEMPLATE_VERSION}|${style}|${text}`).digest("hex");
   const file = join(dir, `${key}.png`);
   if (!existsSync(file)) {
     const html = readFileSync(join(templatesDir, "overlay.html"), "utf8")
       .replace("__FONT_400__", font400)
-      .replace("__FONT_600__", font600)
+      .replace("__FONT_DISPLAY__", fontDisplay)
       .replace("__STYLE__", esc(style))
       .replace("__TEXT__", esc(text));
     await renderHtmlToPng(html, file, { transparent: true });
