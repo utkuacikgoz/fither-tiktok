@@ -21,7 +21,7 @@
     },
     {
       "t": 4.4,
-      "text": "Ten minutes until you leave for dinner. Enough."
+      "text": "Ten minutes before dinner. Enough."
     },
     {
       "t": 8.8,
@@ -29,7 +29,7 @@
     },
     {
       "t": 13.7,
-      "text": "Now the doorframe. Lean back. Pull yourself in. Ten rows."
+      "text": "Doorframe next. Lean back. Pull in. Ten rows."
     },
     {
       "t": 19.1,
@@ -37,7 +37,7 @@
     },
     {
       "t": 23.5,
-      "text": "Wall sit. Thirty seconds. Let your legs argue. Hold anyway."
+      "text": "Wall sit. Thirty seconds. Legs argue. Hold anyway."
     },
     {
       "t": 28.9,
@@ -45,30 +45,26 @@
     },
     {
       "t": 32.8,
-      "text": "Finish with a wall plank. Twenty seconds. Breathe."
+      "text": "Wall plank. Twenty seconds. Breathe."
     },
     {
       "t": 37.2,
-      "text": "Repeat the round once. That is the whole session."
+      "text": "Repeat the round once. That's the session."
     },
     {
       "t": 42.1,
-      "text": "Complete session. The corridor heard nothing."
-    },
-    {
-      "t": 45.3,
       "text": "Your strength travels to every city."
     },
     {
-      "t": 48.2,
+      "t": 46,
       "text": "You built it before dinner."
     },
     {
-      "t": 51.2,
+      "t": 49.5,
       "text": "Tomorrow: the push-up staircase."
     },
     {
-      "t": 54.2,
+      "t": 53,
       "text": "Which city are you training in tonight?"
     }
   ],
@@ -149,7 +145,7 @@
           "style": "step"
         },
         {
-          "t": 54.2,
+          "t": 53,
           "text": "Which city are you in tonight?",
           "style": "cta"
         }

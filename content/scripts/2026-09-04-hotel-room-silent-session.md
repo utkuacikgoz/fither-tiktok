@@ -21,35 +21,35 @@ starts close and active, without showing an unverified exercise demo.
 
 0:00 Hook: "You landed with no gym. This wall disagrees."
 
-0:04 "Ten minutes until you leave for dinner. Enough."
+0:04 "Ten minutes before dinner. Enough."
 
 0:09 "Wall push-ups first. Ten reps. Press the wall away."
 
-0:14 "Now the doorframe. Lean back. Pull yourself in. Ten rows."
+0:14 "Doorframe next. Lean back. Pull in. Ten rows."
 
 0:19 "Your back just trained without a single machine."
 
-0:24 "Wall sit. Thirty seconds. Let your legs argue. Hold anyway."
+0:24 "Wall sit. Thirty seconds. Legs argue. Hold anyway."
 
 0:29 "Floor now. Glute bridges. Ten slow ones."
 
-0:33 "Finish with a wall plank. Twenty seconds. Breathe."
+0:33 "Wall plank. Twenty seconds. Breathe."
 
-0:37 "Repeat the round once. That is the whole session."
+0:37 "Repeat the round once. That's the session."
 
-0:42 Payoff: "Complete session. The corridor heard nothing."
+0:42 Capability: "Your strength travels to every city."
 
-0:45 Capability: "Your strength travels to every city."
+0:46 Capability: "You built it before dinner."
 
-0:48 Capability: "You built it before dinner."
+0:50 Seed tomorrow: "Tomorrow: the push-up staircase."
 
-0:51 Seed tomorrow: "Tomorrow: the push-up staircase."
-
-0:54 CTA: "Which city are you training in tonight?"
+0:53 CTA: "Which city are you training in tonight?"
 
 The loop: a room with "no gym" in it delivers a complete session; the CTA
-returns to the city she landed in. Two capability-ownership lines at 0:45
-and 0:48. The close invites her back for the push-up ladder, no FOMO.
+returns to the city she landed in. Two capability-ownership lines at 0:42
+and 0:46; the payoff "A complete session. Zero noise." rides the overlay so
+measured speech fits the 60s contract. The close invites her back for the
+push-up ladder, no FOMO.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
