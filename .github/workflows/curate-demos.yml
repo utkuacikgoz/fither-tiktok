@@ -6,6 +6,9 @@ on:
     branches: [main]
     paths: [".github/curate-request"]
 
+permissions:
+  contents: write
+
 jobs:
   curate:
     runs-on: ubuntu-latest

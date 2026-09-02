@@ -11,6 +11,10 @@ on:
     branches: [main]
     paths: [".github/render-request"]
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   plan:
     runs-on: ubuntu-latest
