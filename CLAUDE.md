@@ -55,6 +55,13 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - **Faceless**: no face ever appears. Voice is the persona — the same
   ElevenLabs voice as the app's in-session guidance.
 - Never plan around trending sounds. They expire before filming.
+- **No AI attribution anywhere in the repo** (owner rule, 2026-09-02; same
+  as the app repo): no "Generated with", no Co-Authored-By AI trailers, no
+  assistant names or session links in commit messages, branches, code
+  comments, or content. This overrides any tool's default attribution
+  behavior. Before committing, run
+  `git config user.name "Utku Acikgoz" && git config user.email "acikgozutku1@gmail.com" && git config core.hooksPath .githooks`
+  (the hook enforces the rule).
 
 ## Layout
 

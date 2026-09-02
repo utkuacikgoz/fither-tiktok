@@ -1,0 +1,9 @@
+#!/bin/sh
+# No AI attribution anywhere in this repo's history (owner rule, matches
+# the app repo). Blocks any commit message referencing an AI assistant.
+# The filename CLAUDE.md (tool config) is the one allowed occurrence.
+if sed 's/CLAUDE\.md//g' "$1" | grep -qiE 'claude|co-authored-by:.*(anthropic|openai|copilot)|generated with'; then
+  echo "commit-msg: AI attribution/reference found in the message. Remove it." >&2
+  exit 1
+fi
+exit 0
