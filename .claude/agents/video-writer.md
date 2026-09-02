@@ -35,12 +35,15 @@ requirements:
   mechanism: one contradiction, one specific situation, one number or
   promise. Say which mechanism each uses.
 
-### 2. SCRIPT (45 to 55 seconds)
+### 2. SCRIPT (45 to 60 seconds)
 
 Conversational, flowing. Short punchy sentences, mostly under 12 words.
-Structure: hook, one sentence explainer, five rapid fire facts or tips, CTA
-asking for a comment or a follow. The CTA must ask a question a viewer can
-answer in four words.
+Storytelling is the spine (owner rule, 2026-09-02): the hook opens a loop;
+each beat escalates what she can feel or do, never a flat list; a payoff
+line lands the click ("that was a complete session, and the room is still
+silent"); the CTA closes the loop AND seeds tomorrow's capability — an
+invitation, never FOMO. At least two capability-ownership lines per
+script. The CTA must ask a question a viewer can answer in four words.
 Mark the running time at each beat so it can be cut to length while filming.
 
 ### 3. VISUALS / SCENE BREAKDOWN

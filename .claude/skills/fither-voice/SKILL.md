@@ -31,9 +31,16 @@ no-equipment constraints are real life, not a gimmick.
 
 Capability. Getting stronger. Feeling better. Never shrinking.
 
-## Tone
+## Tone (owner-retuned, 2026-09-02)
 
-Calm, competent, adult, warm. A good coach who respects your time.
+Magnetic, propulsive, quietly intense. Still adult, still competent, still
+a coach who respects your time — but every line pulls to the next line,
+and she should finish a video feeling "I could do that RIGHT NOW."
+Inspiring means cinematic specificity ("the wall by the window is your
+gym now"), not volume. The comeback urge is built with craft: open a loop
+in the hook, escalate through the beats, land a payoff line that clicks,
+seed tomorrow's capability in the close. Never with shame, streaks, FOMO
+or countdown pressure — the forbidden list stands.
 Not perky. Not a drill sergeant. Not a girlboss meme account.
 No "queen", "girlie", "slay", "you got this", "crush it", "beast mode",
 "no excuses". No unexplained acronyms (AMRAP, HIIT).
