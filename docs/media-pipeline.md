@@ -42,8 +42,10 @@ The pipeline never fakes what it doesn't have; it says so and keeps going:
   never paid for twice.
 - No Pexels key, or no match for a query → **brand gradient background**
   (which is the intended look for text-on-screen anyway).
-- A voiceover line that would run into the next one is reported with the
-  exact timestamps to fix in the sidecar.
+- Voiceover overlap is impossible by construction: every synthesized line
+  is measured, any line that would start before the previous one finishes
+  is pushed later (with a breath), and the final scene stretches so the
+  close is never cut off. Retimes are reported in the render notes.
 
 ## Environment keys
 

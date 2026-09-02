@@ -38,6 +38,30 @@ export async function renderOne(scriptPath) {
 
   const voFiles = await synthesizeLines(spec.voiceover ?? []);
 
+  // GUARDRAIL: two lines must never speak at once. Sidecar times are
+  // estimates; the synthesized audio is the truth. Measure every line and
+  // push any line that would start before the previous one finishes
+  // (plus a breath), extending the final scene if the close needs room.
+  if (voFiles) {
+    let prevEnd = 0;
+    let shifted = 0;
+    for (const v of voFiles) {
+      const d = (await mediaDuration(v.file)) ?? 3.5;
+      const t = Math.max(v.t, prevEnd > 0 ? prevEnd + 0.35 : 0);
+      if (t - v.t > 0.05) shifted++;
+      v.t = t;
+      prevEnd = t + d;
+    }
+    if (shifted > 0) notes.push(`retimed ${shifted} voiceover line(s) to prevent overlap`);
+    const lastScene = spec.scenes[spec.scenes.length - 1];
+    if (prevEnd + 0.6 > spec.duration) {
+      const ext = prevEnd + 0.8 - spec.duration;
+      lastScene.end = Math.round((lastScene.end + ext) * 10) / 10;
+      spec.duration = lastScene.end;
+      notes.push(`extended by ${ext.toFixed(1)}s so the final line finishes`);
+    }
+  }
+
   const sceneFiles = [];
   for (const s of spec.scenes) {
     let f = null;
@@ -61,19 +85,6 @@ export async function renderOne(scriptPath) {
     overlays.push({ ...w, file: await renderOverlay(w) });
   }
   await closeBrowser();
-
-  // Warn when a voiceover line would run into the next one.
-  if (voFiles) {
-    for (let i = 0; i < voFiles.length; i++) {
-      const d = await mediaDuration(voFiles[i].file);
-      const next = voFiles[i + 1]?.t ?? spec.duration;
-      if (d && voFiles[i].t + d > next + 0.2) {
-        notes.push(
-          `voiceover overlap: line at ${voFiles[i].t}s runs ${d.toFixed(1)}s into the line at ${next}s — shorten the line or widen the gap in ${specPath}`,
-        );
-      }
-    }
-  }
 
   const out = join(outDir, `${spec.slug}.mp4`);
   await composeVideo({ spec, sceneFiles, overlays, voFiles, out });
