@@ -68,7 +68,15 @@ function smallestMp4(video) {
 
 const ffmpeg = await ffmpegPath();
 const results = [];
-const seenIds = new Set();
+
+// Never re-download a clip a human has already judged: approved clips are
+// in the library, rejected ones are in its rejected list. Both are skipped.
+const library = JSON.parse(readFileSync(join(repoRoot, "assets", "demo-library.json"), "utf8"));
+const seenIds = new Set(library.rejected ?? []);
+for (const entries of Object.values(library.movements ?? {})) {
+  for (const entry of entries) seenIds.add(entry.pexels_id);
+}
+console.log(`Skipping ${seenIds.size} already-reviewed clip(s) from assets/demo-library.json`);
 
 for (const target of TARGETS) {
   const kept = [];

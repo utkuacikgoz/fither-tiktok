@@ -63,8 +63,11 @@ standing work orders.
       query/demo pool; cut on beat boundaries
 - [x] Branded end-card template for the CTA close
 - [x] Face check on rendered QA frames (post-render gate)
-- [~] Curation round 2 (running; review pending): target 3+ clips per movement; re-query the
-      misses (Incline Push-Up, Wall Sit, Sit-to-Stand, Knee/Side Plank)
+- [x] Curation round 2: reviewed all 36 new candidates frame by frame;
+      zero met the bar (faces visible, gym settings, or wrong movements),
+      so the library stays at 6 owner-approved movements. The Pexels pool
+      for these queries is thin — deepening now waits on the Week 6
+      body-double checkpoint rather than a third stock sweep.
 - [x] Workflow concurrency group (cancel superseded runs)
 - [x] Posting sheet: add the in-app low-volume sound instruction
 
