@@ -1,0 +1,44 @@
+name: Curate demo library
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/curate-request"]
+
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required secrets
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: |
+          if [ -z "$PEXELS_API_KEY" ]; then echo "::error::repository secret PEXELS_API_KEY is not set"; exit 1; fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install pipeline dependencies
+        working-directory: pipeline
+        run: |
+          npm install --no-audit --no-fund
+          npm install --no-save --no-audit --no-fund @tensorflow/tfjs-node || true
+
+      - name: Gather gated candidates
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: node pipeline/curate.mjs
+
+      - name: Push curation branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch --orphan curation-demos
+          git add -f curation
+          git commit -m "Demo-library candidates (run ${{ github.run_id }})"
+          git push -f origin curation-demos

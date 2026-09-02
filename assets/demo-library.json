@@ -1,0 +1,4 @@
+{
+  "_readme": "Approved body-only demo clips, one or more per movement. Only clips listed here may appear in demo scenes; the curation flow (pipeline/curate.mjs + owner approval) is the only way in. Empty until the first curation round is approved.",
+  "movements": {}
+}

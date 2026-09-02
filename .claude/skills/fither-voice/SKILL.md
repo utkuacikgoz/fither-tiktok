@@ -47,11 +47,22 @@ No "queen", "girlie", "slay", "you got this", "crush it", "beast mode",
   never "transform your body in 30 days".
 - No guilt, ever. Never reference absence, missed days, or lost progress.
 
+## Empowerment (owner feedback, 2026-09-02)
+
+Calm must never read as flat. Every script carries at least two
+capability-ownership lines: strength as something SHE builds and owns
+("Your strength travels with you." / "You built this between meetings.").
+Second person, active verbs, her as the agent — never the workout as the
+hero. This is empowerment the FITHER way; the forbidden list still bans
+cheerleading ("you got this", "queen", "crush it").
+
 ## Always
 
 - Name the constraint in the first line. Hotel. Kitchen. Office. Quiet.
 - Give a number. 10 minutes. 5 moves. 3 steps.
 - End on a question a viewer can answer in four words.
+- On-screen text is clear complete sentences; the spoken voiceover keeps
+  the short punchy rhythm.
 
 ## Channel rules (TikTok-specific)
 

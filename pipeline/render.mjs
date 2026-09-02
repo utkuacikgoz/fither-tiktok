@@ -9,7 +9,7 @@ import { writeFileSync } from "node:fs";
 import { ensureDir, rendersDir } from "./lib/env.mjs";
 import { loadSpec, overlayWindows } from "./lib/spec.mjs";
 import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
-import { fetchBroll, brollAvailable } from "./lib/broll.mjs";
+import { fetchBroll, fetchApprovedDemo, brollAvailable } from "./lib/broll.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
 
@@ -42,7 +42,11 @@ export async function renderOne(scriptPath) {
   for (const s of spec.scenes) {
     let f = null;
     try {
-      f = await fetchBroll(s.broll_query, s.demo ? "demo" : "environment");
+      if (s.demo && s.movement) {
+        f = await fetchApprovedDemo(s.movement);
+        if (!f) notes.push(`"${s.movement}" not in assets/demo-library.json — demo scene falls back`);
+      }
+      f ??= await fetchBroll(s.broll_query, s.demo ? "demo" : "environment");
     } catch (e) {
       notes.push(`b-roll "${s.broll_query}" failed (${e.message.slice(0, 80)}), using gradient`);
     }

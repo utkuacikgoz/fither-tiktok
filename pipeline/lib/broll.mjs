@@ -7,7 +7,7 @@ import { writeFileSync, readFileSync, renameSync, rmSync, existsSync } from "nod
 import { join } from "node:path";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import { cacheDir, ensureDir, ffmpegPath } from "./env.mjs";
+import { cacheDir, ensureDir, ffmpegPath, repoRoot } from "./env.mjs";
 import { personInJpeg, faceInJpeg } from "./persons.mjs";
 
 const pexec = promisify(execFile);
@@ -88,6 +88,31 @@ function pickFile(video) {
     return aFit - bFit || b.height - a.height;
   });
   return files[0] ?? null;
+}
+
+// Approved demo clips: fetched by exact Pexels ID from
+// assets/demo-library.json — no search lottery at render time. The
+// library is populated only through the curation flow plus owner approval.
+export async function fetchApprovedDemo(movement) {
+  if (!brollAvailable() || !movement) return null;
+  const libPath = join(repoRoot, "assets", "demo-library.json");
+  const lib = JSON.parse(readFileSync(libPath, "utf8"));
+  const entries = lib.movements?.[movement];
+  if (!entries || entries.length === 0) return null;
+  const entry = entries[0];
+  const dir = ensureDir(join(cacheDir, "broll"));
+  const file = join(dir, `demo-${entry.pexels_id}.mp4`);
+  if (existsSync(file)) return file;
+  const res = await fetch(`https://api.pexels.com/videos/videos/${entry.pexels_id}`, {
+    headers: { Authorization: process.env.PEXELS_API_KEY },
+  });
+  if (!res.ok) throw new Error(`Pexels video ${entry.pexels_id}: ${res.status}`);
+  const pick = pickFile(await res.json());
+  if (!pick) return null;
+  const dl = await fetch(pick.link);
+  if (!dl.ok) throw new Error(`Pexels download ${dl.status}`);
+  writeFileSync(file, Buffer.from(await dl.arrayBuffer()));
+  return file;
 }
 
 export async function fetchBroll(query, mode = "environment") {

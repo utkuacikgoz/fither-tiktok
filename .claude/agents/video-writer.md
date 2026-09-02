@@ -23,9 +23,17 @@ strength training for time poor women.
 
 ### 1. HOOK (first 3 seconds)
 
-Three distinct high curiosity options, under 12 words each, designed to stop
-the scroll. Each must use a different mechanism: one contradiction, one
-specific situation, one number or promise. Say which mechanism each uses.
+The first 3 seconds decide the video (owner rule, 2026-09-02). Hard
+requirements:
+
+- The first FRAME is the strongest demo visual, mid-movement. Never an
+  establishing shot: no doors, no empty rooms, no scenery openers.
+- The hook line opens a story tension the video resolves and the CTA
+  closes. A list of numbers is not a story; "Five moves, ten minutes" may
+  support the hook but cannot BE the hook.
+- Three distinct options, under 12 words each, each using a different
+  mechanism: one contradiction, one specific situation, one number or
+  promise. Say which mechanism each uses.
 
 ### 2. SCRIPT (45 to 55 seconds)
 
@@ -42,13 +50,15 @@ setting, and the text overlay.
 
 This is a FACELESS channel. No face ever appears. Every scene must be one of:
 
+- a body-only demo of a movement (`"demo": true` with a `"movement"` field
+  in the sidecar): allowed ONLY for movements listed in
+  `assets/demo-library.json` — real footage, face never in frame. Prefer
+  these for every movement beat; they are why viewers stay.
 - an animated movement illustration (name the exact movement; it must be
   Ready in `assets/animations.md`)
 - an environment shot with no person in frame (hotel room, kitchen counter,
   office desk, a mat on a floor)
 - kinetic text over a static or slow moving shot
-- a body filmed from the neck down, used sparingly and only once the week 6
-  checkpoint calls for it
 
 Assume no crew, no lighting kit, no actor. If a scene cannot be made without
 a person's face, rewrite it.
