@@ -24,9 +24,11 @@ jobs:
         id: req
         run: cat .github/deliver-request >> "$GITHUB_OUTPUT"
 
+      # The request may name a specific artifact (e.g. one shard); the
+      # default is the collected full-week artifact.
       - uses: actions/download-artifact@v8
         with:
-          name: renders-week-${{ steps.req.outputs.week }}
+          name: ${{ steps.req.outputs.artifact || format('renders-week-{0}', steps.req.outputs.week) }}
           run-id: ${{ steps.req.outputs.run_id }}
           github-token: ${{ github.token }}
           path: renders/week-${{ steps.req.outputs.week }}
