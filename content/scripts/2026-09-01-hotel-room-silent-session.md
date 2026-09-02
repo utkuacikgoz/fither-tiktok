@@ -17,7 +17,7 @@ establishing shot; the viewer sees work happening within the first second.
    the travel day gap)
 3. "Five moves, one wall, and nobody hears a thing." (number/promise)
 
-## 2. SCRIPT (about 66 seconds)
+## 2. SCRIPT (about 60 seconds)
 
 0:00 Hook: "You landed with no gym. This wall disagrees."
 
@@ -37,19 +37,19 @@ establishing shot; the viewer sees work happening within the first second.
 
 0:37 "Repeat the round once. That is the whole session."
 
-0:42 Payoff: "That was a complete session. The corridor heard nothing."
+0:42 Payoff: "Complete session. The corridor heard nothing."
 
-0:47 Capability: "You carry your strength into every city now."
+0:45 Capability: "Your strength travels to every city."
 
-0:51 Capability: "You built that in the gap before dinner."
+0:48 Capability: "You built it before dinner."
 
-0:56 Seed tomorrow: "Tomorrow I hand you the push-up staircase. Wall to floor."
+0:51 Seed tomorrow: "Tomorrow: the push-up staircase."
 
-1:01 CTA: "Which city are you training in tonight?"
+0:54 CTA: "Which city are you training in tonight?"
 
 The loop: a room with "no gym" in it delivers a complete session; the CTA
-returns to the city she landed in. Two capability-ownership lines at 0:47
-and 0:51. The close invites her back for the push-up ladder, no FOMO.
+returns to the city she landed in. Two capability-ownership lines at 0:45
+and 0:48. The close invites her back for the push-up ladder, no FOMO.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 

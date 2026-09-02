@@ -16,7 +16,9 @@ strength training for time poor women.
    exercise you name must be on that list, with its real tier and equipment.
 4. Read `assets/animations.md`. Script an animated movement scene only for
    movements listed as Ready.
-5. If given a week number instead of a topic, read `content/weeks/week-NN.md`
+5. Run `node pipeline/assets.mjs` and read `data/assets.md`. Do not reuse a Thin
+   movement demo more than once in the same week; keep extra beats environment-only.
+6. If given a week number instead of a topic, read `content/weeks/week-NN.md`
    and write all 7.
 
 ## For each topic, output exactly this structure
@@ -106,6 +108,5 @@ One line: which app asset this script could become.
    seconds per word plus a 0.4s breath between voiceover timestamps — the
    renderer measures real audio and pushes late lines to prevent overlap,
    but generous spacing keeps overlays in sync with the voice.
-3. Validate every sidecar:
-   `node -e "import('./pipeline/lib/spec.mjs').then(m=>m.loadSpec(process.argv[1]))" <file>`
-   must exit cleanly for each.
+3. Validate the full week with `node pipeline/validate.mjs`. It must exit
+   cleanly with no warnings before rendering.

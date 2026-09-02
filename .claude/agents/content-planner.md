@@ -16,18 +16,21 @@ mothers with young children).
 3. Read `assets/animations.md`. The animated demo format may only be planned
    for movements listed as Ready. If nothing is ready, plan environment POV
    and text on screen formats only.
-4. Read `content/log.md`. Never repeat a topic used in the last 60 days.
-5. Run `node pipeline/analyze.mjs`, then read `data/insights.md`. That file,
+4. Run `node pipeline/assets.mjs`, then read `data/assets.md`. A movement marked
+   Thin gets at most one demo scene in the week until its approved pool reaches
+   three clips; use environment beats for additional mentions.
+5. Read `content/log.md`. Never repeat a topic used in the last 60 days.
+6. Run `node pipeline/analyze.mjs`, then read `data/insights.md`. That file,
    not the raw CSV, is your view of performance: pillar/format/hook
    aggregates, kill-criteria flags, the launch signal.
-6. Read `content/experiments.md`. Every experiment still `running` whose
+7. Read `content/experiments.md`. Every experiment still `running` whose
    videos now have data MUST be closed: fill Result and Decision from
    insights.md, flip status to `decided`, and act on the decision rule in
    this week's plan. A decision that generalizes gets an entry in
    `content/learnings.md`.
-7. Read `content/learnings.md` and `data/comments.md`. Learnings constrain
+8. Read `content/learnings.md` and `data/comments.md`. Learnings constrain
    the plan; growing comment buckets are topic mandates.
-8. Read the two most recent `content/weeks/*.md` to see what angle is going stale.
+9. Read the two most recent `content/weeks/*.md` to see what angle is going stale.
 
 ## Output: 7 topics for the requested week
 

@@ -1,5 +1,156 @@
 // Loads and validates a video spec (the .json sidecar next to each script .md).
 import { readFileSync, existsSync } from "node:fs";
+import { basename, dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { policyViolations } from "./policy.mjs";
+
+const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
+const FORMATS = new Set(["environment-pov", "text-on-screen", "slideshow"]);
+const PILLARS = new Set(["Constraint", "Skill ladder", "Reframe", "Fast tips", "Behind the build"]);
+const HOOKS = new Set(["contradiction", "situation", "number", "promise"]);
+const OVERLAY_STYLES = new Set(["hook", "step", "cta"]);
+
+let movementNames;
+let approvedDemoMovements;
+
+function loadMovementNames() {
+  if (movementNames) return movementNames;
+  const file = join(repoRoot, ".claude", "skills", "fither-voice", "references", "movement-library.md");
+  movementNames = new Set();
+  for (const line of readFileSync(file, "utf8").split("\n")) {
+    const match = /^\|\s*[1-6]\s*\|\s*([^|]+?)\s*\|/.exec(line);
+    if (match) movementNames.add(match[1]);
+  }
+  return movementNames;
+}
+
+function loadApprovedDemoMovements() {
+  if (approvedDemoMovements) return approvedDemoMovements;
+  const file = join(repoRoot, "assets", "demo-library.json");
+  approvedDemoMovements = new Set(Object.keys(JSON.parse(readFileSync(file, "utf8")).movements ?? {}));
+  return approvedDemoMovements;
+}
+
+const isFiniteNumber = (value) => typeof value === "number" && Number.isFinite(value);
+const wordCount = (text) => String(text).trim().split(/\s+/).filter(Boolean).length;
+
+export function validateSpec(spec, options = {}) {
+  const errors = [];
+  const warnings = [];
+  const movements = options.movementNames ?? loadMovementNames();
+  const demos = options.approvedDemoMovements ?? loadApprovedDemoMovements();
+  const error = (message) => errors.push(message);
+  const warn = (message) => warnings.push(message);
+  const needString = (key) => {
+    if (typeof spec[key] !== "string" || !spec[key].trim()) error(`missing or empty "${key}"`);
+  };
+
+  ["slug", "week", "post_date", "format", "pillar", "hook_mechanism", "caption"].forEach(needString);
+
+  if (typeof spec.slug === "string") {
+    if (!/^\d{4}-\d{2}-\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(spec.slug)) {
+      error(`slug "${spec.slug}" must be a dated, lowercase kebab-case slug`);
+    }
+    if (options.jsonPath && basename(options.jsonPath, ".json") !== spec.slug) {
+      error(`slug "${spec.slug}" does not match sidecar filename "${basename(options.jsonPath, ".json")}"`);
+    }
+  }
+  if (typeof spec.week === "string" && !/^(0[1-9]|[1-4]\d|5[0-3])$/.test(spec.week)) {
+    error(`week "${spec.week}" must be 01-53`);
+  }
+  if (typeof spec.post_date === "string") {
+    const parsed = new Date(`${spec.post_date}T00:00:00Z`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(spec.post_date) || Number.isNaN(parsed.valueOf()) || parsed.toISOString().slice(0, 10) !== spec.post_date) {
+      error(`post_date "${spec.post_date}" is not a real YYYY-MM-DD date`);
+    }
+    if (typeof spec.slug === "string" && !spec.slug.startsWith(`${spec.post_date}-`)) {
+      error(`slug must begin with post_date "${spec.post_date}"`);
+    }
+  }
+  if (typeof spec.format === "string" && !FORMATS.has(spec.format)) error(`format "${spec.format}" is unknown`);
+  if (typeof spec.pillar === "string" && !PILLARS.has(spec.pillar)) error(`pillar "${spec.pillar}" is unknown`);
+  if (typeof spec.hook_mechanism === "string" && !HOOKS.has(spec.hook_mechanism)) {
+    error(`hook_mechanism "${spec.hook_mechanism}" is unknown`);
+  }
+  if (!Array.isArray(spec.hashtags) || spec.hashtags.length === 0) {
+    error("hashtags must be a non-empty array");
+  } else {
+    const seen = new Set();
+    spec.hashtags.forEach((tag, i) => {
+      if (typeof tag !== "string" || !/^#[A-Za-z0-9]+$/.test(tag)) error(`hashtags[${i}] is invalid`);
+      const normalized = String(tag).toLowerCase();
+      if (seen.has(normalized)) error(`hashtags[${i}] duplicates "${tag}"`);
+      seen.add(normalized);
+    });
+  }
+
+  if (!Array.isArray(spec.scenes) || spec.scenes.length === 0) {
+    error("scenes must be a non-empty array");
+  } else {
+    let prevEnd = 0;
+    spec.scenes.forEach((scene, i) => {
+      if (!isFiniteNumber(scene.start) || !isFiniteNumber(scene.end) || scene.end <= scene.start) {
+        error(`scene ${i}: bad start/end`);
+      } else if (Math.abs(scene.start - prevEnd) > 0.001) {
+        error(`scene ${i}: starts at ${scene.start}, previous ended at ${prevEnd} (scenes must be contiguous)`);
+      }
+      if (scene.demo === true && !scene.movement) error(`scene ${i}: demo scenes require a movement`);
+      if (scene.movement && scene.demo !== true) error(`scene ${i}: movement requires demo: true`);
+      if (scene.movement && !movements.has(scene.movement)) error(`scene ${i}: movement "${scene.movement}" is not in the movement library`);
+      if (scene.demo === true && scene.movement && !demos.has(scene.movement)) {
+        error(`scene ${i}: "${scene.movement}" has no owner-approved demo in assets/demo-library.json`);
+      }
+      if (scene.broll_query != null && (typeof scene.broll_query !== "string" || !scene.broll_query.trim())) {
+        error(`scene ${i}: broll_query must be a non-empty string`);
+      }
+      if (!Array.isArray(scene.overlays) || scene.overlays.length === 0) warn(`scene ${i}: no overlays`);
+      for (const [j, overlay] of (scene.overlays ?? []).entries()) {
+        if (!isFiniteNumber(overlay.t) || typeof overlay.text !== "string" || !overlay.text.trim()) {
+          error(`scene ${i} overlay ${j}: needs numeric t and text`);
+        } else if (isFiniteNumber(scene.start) && isFiniteNumber(scene.end) && (overlay.t < scene.start - 0.001 || overlay.t >= scene.end)) {
+          error(`scene ${i} overlay ${j}: t=${overlay.t} is outside the scene`);
+        }
+        if (!OVERLAY_STYLES.has(overlay.style)) error(`scene ${i} overlay ${j}: style "${overlay.style}" is unknown`);
+        if (typeof overlay.text === "string" && overlay.text.length > 90) warn(`scene ${i} overlay ${j}: text is over 90 characters`);
+      }
+      if (isFiniteNumber(scene.end)) prevEnd = scene.end;
+    });
+    spec.duration = prevEnd;
+    if (prevEnd < 45) warn(`duration ${prevEnd}s is below the 45-60s brief`);
+    if (prevEnd > 60) error(`duration ${prevEnd}s exceeds the 45-60s brief`);
+
+    const firstOverlays = spec.scenes[0]?.overlays ?? [];
+    if (!firstOverlays.some((overlay) => overlay.style === "hook" && Math.abs(overlay.t) < 0.001)) {
+      error("first scene needs a hook overlay at 0s");
+    }
+    const lastOverlays = spec.scenes.at(-1)?.overlays ?? [];
+    if (!lastOverlays.some((overlay) => overlay.style === "cta" && String(overlay.text).trim().endsWith("?"))) {
+      error("last scene needs a question CTA overlay");
+    }
+  }
+
+  if (spec.format !== "slideshow") {
+    if (!Array.isArray(spec.voiceover) || spec.voiceover.length === 0) {
+      error("video formats need a non-empty voiceover array");
+    } else {
+      let previous = -1;
+      spec.voiceover.forEach((line, i) => {
+        if (!isFiniteNumber(line.t) || typeof line.text !== "string" || !line.text.trim()) {
+          error(`voiceover ${i}: needs numeric t and text`);
+        } else {
+          if (line.t < previous) error(`voiceover ${i}: lines must be time-ordered`);
+          if (isFiniteNumber(spec.duration) && line.t >= spec.duration) error(`voiceover ${i}: starts after the video ends`);
+          if (wordCount(line.text) > 16) warn(`voiceover ${i}: exceeds 16 words`);
+          previous = line.t;
+        }
+      });
+      if (!String(spec.voiceover.at(-1)?.text ?? "").trim().endsWith("?")) error("final voiceover line must be a question CTA");
+    }
+  }
+
+  for (const violation of policyViolations(spec)) error(`forbidden copy: ${violation}`);
+  return { errors, warnings };
+}
 
 export function loadSpec(jsonPath) {
   if (!existsSync(jsonPath)) {
@@ -7,35 +158,13 @@ export function loadSpec(jsonPath) {
       `Missing spec ${jsonPath}. The video-writer emits a .json sidecar per script; write one for this video first.`,
     );
   }
-  const spec = JSON.parse(readFileSync(jsonPath, "utf8"));
-  const errors = [];
-  const need = (k) => spec[k] == null && errors.push(`missing "${k}"`);
-  ["slug", "format", "caption", "scenes"].forEach(need);
-  if (!["environment-pov", "text-on-screen", "slideshow"].includes(spec.format)) {
-    errors.push(`format "${spec.format}" unknown`);
+  let spec;
+  try {
+    spec = JSON.parse(readFileSync(jsonPath, "utf8"));
+  } catch (cause) {
+    throw new Error(`Invalid JSON in ${jsonPath}: ${cause.message}`);
   }
-  if (!Array.isArray(spec.scenes) || spec.scenes.length === 0) {
-    errors.push("scenes must be a non-empty array");
-  } else {
-    let prevEnd = 0;
-    spec.scenes.forEach((s, i) => {
-      if (typeof s.start !== "number" || typeof s.end !== "number" || s.end <= s.start) {
-        errors.push(`scene ${i}: bad start/end`);
-      } else if (Math.abs(s.start - prevEnd) > 0.001) {
-        errors.push(`scene ${i}: starts at ${s.start}, previous ended at ${prevEnd} (scenes must be contiguous)`);
-      }
-      prevEnd = s.end;
-      for (const o of s.overlays ?? []) {
-        if (o.t == null || !o.text) errors.push(`scene ${i}: overlay needs t and text`);
-        else if (o.t < s.start - 0.001 || o.t >= s.end) errors.push(`scene ${i}: overlay at ${o.t} outside scene`);
-      }
-    });
-    spec.duration = prevEnd;
-  }
-  for (const v of spec.voiceover ?? []) {
-    if (v.t == null || !v.text) errors.push("voiceover lines need t and text");
-    else if (v.t >= spec.duration) errors.push(`voiceover at ${v.t}s is past the end (${spec.duration}s)`);
-  }
+  const { errors } = validateSpec(spec, { jsonPath });
   if (errors.length) throw new Error(`Invalid spec ${jsonPath}:\n  - ${errors.join("\n  - ")}`);
   return spec;
 }

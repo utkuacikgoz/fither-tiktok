@@ -6,6 +6,7 @@ import { join } from "node:path";
 import { cacheDir, ensureDir } from "./env.mjs";
 
 const API = "https://api.elevenlabs.io/v1/text-to-speech";
+const VOICE_SETTINGS = { stability: 0.55, similarity_boost: 0.75, style: 0.15 };
 
 export function ttsAvailable() {
   return Boolean(process.env.ELEVENLABS_API_KEY && process.env.ELEVENLABS_VOICE_ID);
@@ -18,7 +19,7 @@ export async function synthesizeLines(lines) {
   const dir = ensureDir(join(cacheDir, "tts"));
   const files = [];
   for (const line of lines) {
-    const key = createHash("sha1").update(`${voice}|${model}|${line.text}`).digest("hex");
+    const key = createHash("sha1").update(`${voice}|${model}|${JSON.stringify(VOICE_SETTINGS)}|${line.text}`).digest("hex");
     const file = join(dir, `${key}.mp3`);
     if (!existsSync(file)) {
       // The subscription allows 3 concurrent requests; parallel render
@@ -34,7 +35,7 @@ export async function synthesizeLines(lines) {
           body: JSON.stringify({
             text: line.text,
             model_id: model,
-            voice_settings: { stability: 0.55, similarity_boost: 0.75, style: 0.15 },
+            voice_settings: VOICE_SETTINGS,
           }),
         });
         if (res.ok) break;

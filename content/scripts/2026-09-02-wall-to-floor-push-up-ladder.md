@@ -17,7 +17,7 @@ screen before it is named.
    situation: the familiar mid-set collapse)
 3. "Four steps from this wall to your first push-up." (number/promise)
 
-## 2. SCRIPT (about 67 seconds)
+## 2. SCRIPT (about 60 seconds)
 
 0:00 Hook: "You have not failed at push-ups. Not once."
 
@@ -37,20 +37,20 @@ screen before it is named.
 
 0:36 "Step four. Full push-ups. Even one counts."
 
-0:40 "Give each step a full week. Earn the next."
+0:40 "Own each step for one week."
 
-0:45 Payoff: "One day you press the floor away. Clean."
+0:44 Payoff: "Then you press the floor away. Clean."
 
-0:49 Capability: "You built that rep. Nobody gave it to you."
+0:47 Capability: "You built that rep. It is yours."
 
-0:54 Capability: "That staircase belongs to you now."
+0:50 Capability: "The staircase belongs to you."
 
-0:58 Seed tomorrow: "Tomorrow we train while dinner is in the oven."
+0:53 Seed tomorrow: "Tomorrow: strength inside the oven timer."
 
-1:03 CTA: "Which step are you on today?"
+0:56 CTA: "Which step are you on today?"
 
 The loop: "you have not failed" is resolved by the staircase and lands at
-the first clean floor rep. Two capability-ownership lines at 0:49 and 0:54.
+the first clean floor rep. Two capability-ownership lines at 0:47 and 0:50.
 The close invites her to tomorrow's kitchen session.
 
 ## 3. VISUALS / SCENE BREAKDOWN

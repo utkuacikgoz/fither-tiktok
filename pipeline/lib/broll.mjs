@@ -19,7 +19,7 @@ const MAX_CANDIDATES = 8;
 //               recognizable face must not.
 async function jpegAcceptable(buf, mode, seen) {
   if (mode === "demo") {
-    if (await faceInJpeg(buf)) return false;
+    if (await faceInJpeg(buf, 0.6)) return false;
     if (await personInJpeg(buf)) seen.person = true;
     return true;
   }

@@ -3,6 +3,7 @@
   "week": "01",
   "post_date": "2026-09-01",
   "format": "environment-pov",
+  "pillar": "Constraint",
   "hook_mechanism": "contradiction",
   "caption": "Quiet hotel room workout: ten minutes, one wall, one doorframe, and a complete strength session before dinner. The room next door hears nothing. Save it for your next trip.",
   "hashtags": [
@@ -51,22 +52,22 @@
     },
     {
       "t": 42.1,
-      "text": "That was a complete session. The corridor heard nothing."
+      "text": "Complete session. The corridor heard nothing."
     },
     {
-      "t": 47,
-      "text": "You carry your strength into every city now."
+      "t": 45.3,
+      "text": "Your strength travels to every city."
     },
     {
-      "t": 51.4,
-      "text": "You built that in the gap before dinner."
+      "t": 48.2,
+      "text": "You built it before dinner."
     },
     {
-      "t": 55.8,
-      "text": "Tomorrow I hand you the push-up staircase. Wall to floor."
+      "t": 51.2,
+      "text": "Tomorrow: the push-up staircase."
     },
     {
-      "t": 61.2,
+      "t": 54.2,
       "text": "Which city are you training in tonight?"
     }
   ],
@@ -140,7 +141,7 @@
     },
     {
       "start": 42.1,
-      "end": 65.9,
+      "end": 59.8,
       "broll_query": "city lights hotel window",
       "overlays": [
         {
@@ -149,7 +150,7 @@
           "style": "step"
         },
         {
-          "t": 61.2,
+          "t": 54.2,
           "text": "Which city are you in tonight?",
           "style": "cta"
         }

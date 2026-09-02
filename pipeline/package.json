@@ -3,6 +3,17 @@
   "private": true,
   "type": "module",
   "description": "Renders FITHER TikTok scripts into finished 1080x1920 videos and slideshows.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "validate": "node validate.mjs",
+    "test": "node --test test/*.test.mjs",
+    "assets": "node assets.mjs",
+    "assets:check": "node assets.mjs --check",
+    "check": "npm run validate && npm run assets:check && npm test",
+    "golden": "node golden.mjs"
+  },
   "dependencies": {
     "@fontsource/fraunces": "^5.3.0",
     "@fontsource/inter": "^5.3.0",

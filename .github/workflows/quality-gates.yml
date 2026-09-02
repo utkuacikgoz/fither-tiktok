@@ -1,0 +1,47 @@
+name: Quality gates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - "content/scripts/**"
+      - "assets/demo-library.json"
+      - ".claude/skills/fither-voice/references/**"
+      - "pipeline/**"
+      - ".github/workflows/**"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/pw-browsers
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: pipeline/package-lock.json
+      - name: Install locked dependencies
+        working-directory: pipeline
+        run: npm ci --no-audit --no-fund
+      - name: Validate sidecars and run tests
+        working-directory: pipeline
+        run: npm run check
+      - name: Install Chromium
+        run: npx playwright@1.62.1 install --with-deps chromium
+      - name: Run golden render
+        working-directory: pipeline
+        run: npm run golden
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: golden-render
+          path: renders/golden/
+          if-no-files-found: warn
+          retention-days: 3

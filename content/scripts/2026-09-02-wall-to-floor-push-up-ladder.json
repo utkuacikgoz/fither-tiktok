@@ -3,6 +3,7 @@
   "week": "01",
   "post_date": "2026-09-02",
   "format": "text-on-screen",
+  "pillar": "Skill ladder",
   "hook_mechanism": "contradiction",
   "caption": "Push up progression for beginners: the four step staircase from wall to floor. Nobody fails at push-ups, they start on the wrong rung. Save the ladder and climb it.",
   "hashtags": [
@@ -51,26 +52,26 @@
     },
     {
       "t": 40.1,
-      "text": "Give each step a full week. Earn the next."
+      "text": "Own each step for one week."
     },
     {
-      "t": 45,
-      "text": "One day you press the floor away. Clean."
+      "t": 43.5,
+      "text": "Then you press the floor away. Clean."
     },
     {
-      "t": 49.4,
-      "text": "You built that rep. Nobody gave it to you."
+      "t": 46.8,
+      "text": "You built that rep. It is yours."
     },
     {
-      "t": 54.3,
-      "text": "That staircase belongs to you now."
+      "t": 50,
+      "text": "The staircase belongs to you."
     },
     {
-      "t": 57.7,
-      "text": "Tomorrow we train while dinner is in the oven."
+      "t": 52.8,
+      "text": "Tomorrow: strength inside the oven timer."
     },
     {
-      "t": 62.6,
+      "t": 55.5,
       "text": "Which step are you on today?"
     }
   ],
@@ -132,7 +133,7 @@
     },
     {
       "start": 40.1,
-      "end": 66.8,
+      "end": 59.8,
       "broll_query": "sunlit staircase home interior",
       "overlays": [
         {
@@ -141,7 +142,7 @@
           "style": "step"
         },
         {
-          "t": 62.6,
+          "t": 55.5,
           "text": "Which step are you on today?",
           "style": "cta"
         }

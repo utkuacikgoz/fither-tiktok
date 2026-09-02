@@ -1,6 +1,7 @@
 // Shared environment plumbing: proxy-aware fetch, paths, palette.
 import { existsSync, mkdirSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
+import { homedir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { setGlobalDispatcher, EnvHttpProxyAgent } from "undici";
 
@@ -33,19 +34,32 @@ export const palette = {
 
 export function findChromium() {
   const envPath = process.env.PLAYWRIGHT_BROWSERS_PATH;
-  const roots = [envPath, "/opt/pw-browsers"].filter(Boolean);
+  const roots = [envPath, "/opt/pw-browsers", join(homedir(), "Library", "Caches", "ms-playwright")].filter(Boolean);
   for (const root of roots) {
     if (!existsSync(root)) continue;
     const dirs = readdirSync(root).filter((d) => d.startsWith("chromium-"));
     dirs.sort().reverse();
     for (const d of dirs) {
-      for (const rel of ["chrome-linux/chrome", "chrome-linux/headless_shell"]) {
+      for (const rel of [
+        "chrome-linux/chrome",
+        "chrome-linux/headless_shell",
+        "chrome-mac/Chromium.app/Contents/MacOS/Chromium",
+        "chrome-mac-arm64/Chromium.app/Contents/MacOS/Chromium",
+        "chrome-headless-shell-mac-arm64/chrome-headless-shell",
+      ]) {
         const p = join(root, d, rel);
         if (existsSync(p)) return p;
       }
     }
   }
-  throw new Error("No Chromium found under PLAYWRIGHT_BROWSERS_PATH or /opt/pw-browsers");
+  for (const path of [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+  ]) {
+    if (existsSync(path)) return path;
+  }
+  throw new Error("No Chromium found in PLAYWRIGHT_BROWSERS_PATH, Playwright caches or system applications");
 }
 
 export async function ffmpegPath() {

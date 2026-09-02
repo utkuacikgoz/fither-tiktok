@@ -17,7 +17,7 @@ opens over proof of the argument.
    situation: the real strength test she already passed)
 3. "Five patterns, ten minutes, a body built to carry." (number/promise)
 
-## 2. SCRIPT (about 61 seconds)
+## 2. SCRIPT (about 60 seconds)
 
 0:00 Hook: "Every ad tells you to take up less space."
 
@@ -39,13 +39,13 @@ opens over proof of the argument.
 
 0:39 Payoff, part two: "Strong is not a look. It is a capacity."
 
-0:44 Capability: "You are building shoulders that carry your actual week."
+0:44 Capability: "Your shoulders carry your actual week."
 
-0:49 Capability: "Your strength shows up everywhere you do."
+0:48 Capability: "Your strength goes everywhere you do."
 
-0:53 Seed tomorrow: "Tomorrow your doorframe becomes a back machine."
+0:51 Seed tomorrow: "Tomorrow your doorframe becomes a back machine."
 
-0:57 CTA: "What did you carry this week?"
+0:54 CTA: "What did you carry this week?"
 
 The loop: the shrink message opens, the carry thesis resolves it, and the
 CTA asks for her own carrying evidence. Two capability-ownership lines at

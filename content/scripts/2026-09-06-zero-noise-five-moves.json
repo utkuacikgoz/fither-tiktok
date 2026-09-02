@@ -3,6 +3,7 @@
   "week": "01",
   "post_date": "2026-09-06",
   "format": "text-on-screen",
+  "pillar": "Fast tips",
   "hook_mechanism": "situation",
   "caption": "Quiet workout apartment edition: five strength moves with zero noise, for training while a child sleeps on the other side of the wall. Two rounds, ten minutes, not one creak.",
   "hashtags": [
@@ -47,26 +48,26 @@
     },
     {
       "t": 34.7,
-      "text": "Two rounds. Ten minutes. The door never opens."
+      "text": "Two rounds. Ten minutes. The door stays closed."
     },
     {
       "t": 39.1,
-      "text": "That was a full session. She never stirred."
+      "text": "Full session. She never stirred."
     },
     {
-      "t": 43.5,
-      "text": "You trained hard in total silence. That is skill."
+      "t": 42.5,
+      "text": "You trained hard in total silence."
     },
     {
-      "t": 48.4,
-      "text": "Your strength does not need a loud room."
+      "t": 45.9,
+      "text": "Your quiet strength is yours."
     },
     {
-      "t": 52.8,
-      "text": "Tomorrow this fits between two meetings. Desk clothes on."
+      "t": 49.3,
+      "text": "Tomorrow: strength between meetings."
     },
     {
-      "t": 57.7,
+      "t": 52.5,
       "text": "Who is asleep on the other side of your wall?"
     }
   ],
@@ -128,7 +129,7 @@
     },
     {
       "start": 34.7,
-      "end": 63.9,
+      "end": 59.8,
       "broll_query": "dark apartment window night",
       "overlays": [
         {
@@ -137,7 +138,7 @@
           "style": "step"
         },
         {
-          "t": 57.7,
+          "t": 52.5,
           "text": "Who sleeps behind your wall?",
           "style": "cta"
         }

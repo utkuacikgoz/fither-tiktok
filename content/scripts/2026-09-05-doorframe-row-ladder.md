@@ -18,7 +18,7 @@ the tension alone.
    the imbalance she can feel)
 3. "Four rungs from a lean to a one arm row." (number/promise)
 
-## 2. SCRIPT (about 64 seconds)
+## 2. SCRIPT (about 60 seconds)
 
 0:00 Hook: "Home workouts train half your body. The front half."
 
@@ -40,17 +40,17 @@ the tension alone.
 
 0:42 Payoff: "Your front pushed for years. Your back just answered."
 
-0:47 Capability: "You just turned a doorway into a back machine."
+0:47 Capability: "You turned a doorway into a back machine."
 
-0:51 Capability: "Every door in your home is equipment now. Yours."
+0:50 Capability: "Every door is equipment now. Yours."
 
-0:56 Seed tomorrow: "Tomorrow, five moves that make zero noise."
+0:53 Seed tomorrow: "Tomorrow: five moves, zero noise."
 
-1:00 CTA: "Which rung will you start on?"
+0:55 CTA: "Which rung will you start on?"
 
 The loop: the missing half opens, the four rungs fill it, and the payoff
 answers the front-half hook. Two capability-ownership lines at 0:47 and
-0:51. The close invites her to tomorrow's silent session.
+0:50. The close invites her to tomorrow's silent session.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 

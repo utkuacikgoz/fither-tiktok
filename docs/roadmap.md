@@ -50,6 +50,9 @@ standing work orders.
    branch; the workflow needs a concurrency group.
 10. **Golden test.** Pipeline changes ship unexercised; a 5-second
     fixture render in CI would catch template and mix regressions.
+11. **Preflight and fail-closed QA.** The engine had no policy/schema gate,
+    and unreadable face/audio/QA probes could pass as success. Implemented in
+    Wave 1; see `docs/system-audit.md`.
 
 ## The plan
 
@@ -72,8 +75,9 @@ standing work orders.
 - [ ] Comment workflow: paste comments/screenshots into any session →
       buckets + on-voice reply drafts
 - [ ] Cross-post plan: same MP4s to Shorts and Reels, captions adapted
-- [ ] performance.csv: add retention drop-off column; analyze.mjs reads it
-- [ ] Golden-fixture render in CI for pipeline changes
+- [x] performance.csv: add retention drop-off and completion columns;
+      analyze.mjs reads them with view-weighted metrics
+- [x] Golden-fixture render in CI for pipeline changes
 
 ### P2 — this month (the moat)
 

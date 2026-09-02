@@ -27,10 +27,14 @@ let missing = 0;
 
 for (const spec of specs) {
   const mp4 = join(outDir, `${spec.slug}.mp4`);
-  const rendered = existsSync(mp4);
+  const slideDir = join(outDir, spec.slug);
+  const expectedSlides = spec.scenes.map((_, i) => join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`));
+  const rendered = spec.format === "slideshow" ? expectedSlides.every(existsSync) : existsSync(mp4);
   if (!rendered) missing++;
   sheet += `\n## ${spec.post_date} — ${spec.slug}${rendered ? "" : " (MISSING RENDER)"}\n\n`;
-  sheet += `File: \`renders/week-${week}/${spec.slug}.mp4\`\n\n`;
+  sheet += spec.format === "slideshow"
+    ? `Slides: \`renders/week-${week}/${spec.slug}/\` (upload in filename order)\n\n`
+    : `File: \`renders/week-${week}/${spec.slug}.mp4\`\n\n`;
   sheet += `Caption:\n\n> ${spec.caption}\n>\n> ${(spec.hashtags ?? []).join(" ")}\n`;
   const notesFile = join(outDir, `${spec.slug}.notes.txt`);
   if (existsSync(notesFile)) {

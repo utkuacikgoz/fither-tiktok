@@ -30,6 +30,15 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Preflight content, experiments and assets
+        run: |
+          node pipeline/validate.mjs
+          node pipeline/assets.mjs --check
+
       - name: Resolve week number
         id: week
         run: |
@@ -102,7 +111,7 @@ jobs:
       - name: Install pipeline dependencies
         working-directory: pipeline
         run: |
-          npm install --no-audit --no-fund
+          npm ci --no-audit --no-fund
           # Native TF backend: order-of-magnitude faster detection. Best
           # effort — the pure-JS backend is the fallback either way.
           npm install --no-save --no-audit --no-fund @tensorflow/tfjs-node || true
@@ -143,7 +152,7 @@ jobs:
 
       - name: Install pipeline dependencies
         working-directory: pipeline
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
 
       - name: Build posting sheet
         run: node pipeline/sheet.mjs "${{ needs.plan.outputs.week }}"

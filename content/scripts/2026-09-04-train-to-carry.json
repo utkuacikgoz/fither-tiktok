@@ -3,6 +3,7 @@
   "week": "01",
   "post_date": "2026-09-04",
   "format": "text-on-screen",
+  "pillar": "Reframe",
   "hook_mechanism": "contradiction",
   "caption": "Strength training for busy women means training to carry, not to shrink. Stairs, bags, car seats: life asks for strength. Five patterns, ten minutes a day.",
   "hashtags": [
@@ -55,18 +56,18 @@
     },
     {
       "t": 44,
-      "text": "You are building shoulders that carry your actual week."
+      "text": "Your shoulders carry your actual week."
     },
     {
-      "t": 48.9,
-      "text": "Your strength shows up everywhere you do."
+      "t": 47.5,
+      "text": "Your strength goes everywhere you do."
     },
     {
-      "t": 52.8,
+      "t": 50.8,
       "text": "Tomorrow your doorframe becomes a back machine."
     },
     {
-      "t": 56.7,
+      "t": 54.3,
       "text": "What did you carry this week?"
     }
   ],
@@ -124,7 +125,7 @@
     },
     {
       "start": 44,
-      "end": 60.9,
+      "end": 59.8,
       "broll_query": "packed suitcase by door",
       "overlays": [
         {
@@ -133,7 +134,7 @@
           "style": "step"
         },
         {
-          "t": 56.7,
+          "t": 54.3,
           "text": "What did you carry this week?",
           "style": "cta"
         }

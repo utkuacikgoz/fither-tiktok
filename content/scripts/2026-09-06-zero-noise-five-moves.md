@@ -17,7 +17,7 @@ work is visible before it is explained.
    the industry's blind spot versus her flat)
 3. "Five moves, two rounds, and not one creak." (number/promise)
 
-## 2. SCRIPT (about 64 seconds)
+## 2. SCRIPT (about 60 seconds)
 
 0:00 Hook: "She fell asleep at eight. The floor creaks."
 
@@ -35,21 +35,21 @@ work is visible before it is explained.
 
 0:31 "Knee plank. Twenty-five seconds. Not one creak."
 
-0:35 "Two rounds. Ten minutes. The door never opens."
+0:35 "Two rounds. Ten minutes. The door stays closed."
 
-0:39 Payoff: "That was a full session. She never stirred."
+0:39 Payoff: "Full session. She never stirred."
 
-0:44 Capability: "You trained hard in total silence. That is skill."
+0:43 Capability: "You trained hard in total silence."
 
-0:48 Capability: "Your strength does not need a loud room."
+0:46 Capability: "Your quiet strength is yours."
 
-0:53 Seed tomorrow: "Tomorrow this fits between two meetings. Desk clothes on."
+0:49 Seed tomorrow: "Tomorrow: strength between meetings."
 
-0:58 CTA: "Who is asleep on the other side of your wall?"
+0:53 CTA: "Who is asleep on the other side of your wall?"
 
 The loop: the creaking floor opens it, five silent moves resolve it, and
 the payoff returns to the child who never stirred. Two
-capability-ownership lines at 0:44 and 0:48. The close invites her to
+capability-ownership lines at 0:43 and 0:46. The close invites her to
 tomorrow's desk session. Voiceover recorded low and calm to match.
 
 ## 3. VISUALS / SCENE BREAKDOWN

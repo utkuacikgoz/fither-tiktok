@@ -11,7 +11,16 @@ import { loadSpec, overlayWindows } from "./lib/spec.mjs";
 import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
 import { fetchBroll, fetchApprovedDemo, brollAvailable } from "./lib/broll.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
-import { composeVideo, mediaDuration, meanVolume } from "./lib/compose.mjs";
+import { composeVideo, mediaDuration } from "./lib/compose.mjs";
+import { assertNoFaces, assertVoiceAudible, createQaSheet } from "./lib/verify.mjs";
+
+function writeDeliveryText(outDir, spec, notes) {
+  const captionFile = join(outDir, `${spec.slug}.caption.txt`);
+  const notesFile = join(outDir, `${spec.slug}.notes.txt`);
+  writeFileSync(captionFile, `${spec.caption}\n\n${(spec.hashtags ?? []).join(" ")}\n`);
+  writeFileSync(notesFile, notes.map((note) => `- ${note}`).join("\n") + "\n");
+  return captionFile;
+}
 
 export async function renderOne(scriptPath) {
   const specPath = scriptPath.replace(/\.md$/, ".json").replace(/\.json$/, ".json");
@@ -22,15 +31,21 @@ export async function renderOne(scriptPath) {
   if (spec.format === "slideshow") {
     const slideDir = ensureDir(join(outDir, spec.slug));
     const files = [];
-    for (const [i, s] of spec.scenes.entries()) {
-      const f = join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
-      await renderSlide(
-        { kicker: s.kicker ?? "", text: s.overlays?.[0]?.text ?? "", footer: s.footer ?? "" },
-        f,
-      );
-      files.push(f);
+    try {
+      for (const [i, s] of spec.scenes.entries()) {
+        const f = join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
+        await renderSlide(
+          { kicker: s.kicker ?? "", text: s.overlays?.[0]?.text ?? "", footer: s.footer ?? "" },
+          f,
+        );
+        files.push(f);
+      }
+    } finally {
+      await closeBrowser();
     }
-    return { spec, files, notes: ["slideshow: post as a TikTok photo post"] };
+    notes.push("slideshow: post as a TikTok photo post");
+    files.push(writeDeliveryText(outDir, spec, notes));
+    return { spec, files, notes };
   }
 
   if (!ttsAvailable()) notes.push("SILENT DRAFT: no ELEVENLABS_API_KEY/ELEVENLABS_VOICE_ID set");
@@ -55,8 +70,14 @@ export async function renderOne(scriptPath) {
     }
     if (shifted > 0) notes.push(`retimed ${shifted} voiceover line(s) to prevent overlap`);
     const lastScene = spec.scenes[spec.scenes.length - 1];
-    if (prevEnd + 0.6 > spec.duration) {
-      const ext = prevEnd + 0.8 - spec.duration;
+    const requiredEnd = prevEnd + 0.6;
+    if (requiredEnd > 60) {
+      throw new Error(
+        `voiceover needs ${requiredEnd.toFixed(1)}s after measured retiming; the 60s quality contract requires a tighter script`,
+      );
+    }
+    if (requiredEnd > spec.duration) {
+      const ext = requiredEnd - spec.duration;
       lastScene.end = Math.round((lastScene.end + ext) * 10) / 10;
       spec.duration = lastScene.end;
       notes.push(`extended by ${ext.toFixed(1)}s so the final line finishes`);
@@ -82,23 +103,26 @@ export async function renderOne(scriptPath) {
   }
 
   const overlays = [];
-  for (const w of overlayWindows(spec)) {
-    overlays.push({ ...w, file: await renderOverlay(w) });
-  }
-
-  // Burned captions for muted viewers: one per spoken line at its
-  // measured window. Lines under the end card are skipped — the card
-  // already carries the question at full size.
-  if (voFiles) {
-    const ctas = overlays.filter((o) => o.style === "cta");
-    for (const v of voFiles) {
-      const end = Math.min(v.t + (v.dur ?? 3.5) + 0.2, spec.duration - 0.05);
-      if (end <= v.t) continue;
-      if (ctas.some((c) => v.t < c.end && end > c.start)) continue;
-      overlays.push({ start: v.t, end, style: "caption", file: await renderOverlay({ text: v.text, style: "caption" }) });
+  try {
+    for (const w of overlayWindows(spec)) {
+      overlays.push({ ...w, file: await renderOverlay(w) });
     }
+
+    // Burned captions for muted viewers: one per spoken line at its
+    // measured window. Lines under the end card are skipped — the card
+    // already carries the question at full size.
+    if (voFiles) {
+      const ctas = overlays.filter((o) => o.style === "cta");
+      for (const v of voFiles) {
+        const end = Math.min(v.t + (v.dur ?? 3.5) + 0.2, spec.duration - 0.05);
+        if (end <= v.t) continue;
+        if (ctas.some((c) => v.t < c.end && end > c.start)) continue;
+        overlays.push({ start: v.t, end, style: "caption", file: await renderOverlay({ text: v.text, style: "caption" }) });
+      }
+    }
+  } finally {
+    await closeBrowser();
   }
-  await closeBrowser();
 
   // Accessibility sidecar: same lines and timing as the burned captions.
   if (voFiles) {
@@ -119,72 +143,22 @@ export async function renderOne(scriptPath) {
   // GUARDRAIL: every scripted line must be audible in the finished file.
   // The retimed schedule is ground truth; a silent line window means the
   // mix dropped audio, and the render fails loudly instead of shipping.
-  if (voFiles && voFiles.length > 0) {
-    const silent = [];
-    for (const v of voFiles) {
-      const lvl = await meanVolume(out, v.t + 0.15, 1.0);
-      if (lvl !== null && lvl < -45) silent.push(`${v.t.toFixed(1)}s`);
-    }
-    if (silent.length > 0) {
-      throw new Error(
-        `audio verification failed for ${spec.slug}: no voice at ${silent.join(", ")} — the mix lost lines; do not ship this render`,
-      );
-    }
-  }
+  if (voFiles && voFiles.length > 0) await assertVoiceAudible(out, voFiles);
 
   // GUARDRAIL: faceless, verified on the OUTPUT. Source clips are gated,
   // but the finished frames are what ships — scan them and fail loudly on
   // any detected face.
-  {
-    const { execFile } = await import("node:child_process");
-    const { promisify } = await import("node:util");
-    const { faceInJpeg } = await import("./lib/persons.mjs");
-    const { ffmpegPath, cacheDir, ensureDir } = await import("./lib/env.mjs");
-    const { rmSync, readFileSync: rf } = await import("node:fs");
-    const ffmpeg = await ffmpegPath();
-    const tmpDir = ensureDir(join(cacheDir, "tmp"));
-    const hits = [];
-    for (let t = 1; t < spec.duration - 1; t += 4) {
-      const frame = join(tmpDir, `${spec.slug}-facecheck-${t}.jpg`);
-      try {
-        await promisify(execFile)(ffmpeg, [
-          "-y", "-ss", String(t), "-i", out,
-          "-vf", "eq=brightness=0.1:contrast=1.1",
-          "-frames:v", "1", "-q:v", "4", frame,
-        ], { maxBuffer: 1 << 22 });
-        if (await faceInJpeg(rf(frame))) hits.push(`${t}s`);
-      } catch { /* unreadable frame: the QA sheet review still covers it */ }
-      rmSync(frame, { force: true });
-    }
-    if (hits.length > 0) {
-      throw new Error(
-        `faceless verification failed for ${spec.slug}: face detected at ${hits.join(", ")} in the rendered output — do not ship`,
-      );
-    }
-  }
+  await assertNoFaces(out, spec.duration);
 
-  // QA contact sheet: one frame every ~10s, tiled. The faceless rule is
+  // QA contact sheet: one frame every ~5s, tiled. The faceless rule is
   // verified by looking at this before anything is posted.
   const qaDir = ensureDir(join(outDir, "qa"));
   const qaFile = join(qaDir, `${spec.slug}.png`);
-  try {
-    const { execFile } = await import("node:child_process");
-    const { promisify } = await import("node:util");
-    const ffmpeg = await (await import("./lib/env.mjs")).ffmpegPath();
-    await promisify(execFile)(ffmpeg, [
-      "-y", "-i", out,
-      "-vf", "select='isnan(prev_selected_t)+gte(t-prev_selected_t\\,10)',scale=270:480,tile=6x1",
-      "-frames:v", "1", qaFile,
-    ], { maxBuffer: 1 << 24 });
-  } catch (e) {
-    notes.push(`QA sheet failed: ${e.message.slice(0, 120)}`);
-  }
+  await createQaSheet(out, qaFile);
 
-  const captionFile = join(outDir, `${spec.slug}.caption.txt`);
-  writeFileSync(captionFile, `${spec.caption}\n\n${(spec.hashtags ?? []).join(" ")}\n`);
   // Notes persist next to the render so sharded CI jobs can be collected
   // into one posting sheet.
-  writeFileSync(join(outDir, `${spec.slug}.notes.txt`), notes.map((n) => `- ${n}`).join("\n") + "\n");
+  const captionFile = writeDeliveryText(outDir, spec, notes);
   return { spec, files: [out, captionFile, qaFile], notes };
 }
 

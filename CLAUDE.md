@@ -17,6 +17,7 @@ waitlist and the launch are never mentioned in content.
 plan week N                    # content-planner agent → content/weeks/week-NN.md
 write the videos for week N    # video-writer agent → content/scripts/*.md + *.json
 node pipeline/produce.mjs N    # renders the week → renders/week-NN/*.mp4 + posting sheet
+node pipeline/validate.mjs     # free preflight: schema, brand, movement and delivery gates
 ```
 
 The machine produces finished videos itself; see `docs/media-pipeline.md`.
@@ -73,13 +74,14 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `content/experiments.md` — the experiment registry (hypothesis → decision)
 - `content/learnings.md` — validated findings, append-only
 - `data/insights.md` — generated analytics report (`node pipeline/analyze.mjs`)
+- `data/assets.md` — generated footage/animation readiness report (`node pipeline/assets.mjs`)
 - `data/comments.md` — comment theme buckets
 - `content/weeks/week-NN.md` — planner output
 - `content/scripts/YYYY-MM-DD-slug.md` — writer output, one per video
 - `content/scripts/YYYY-MM-DD-slug.json` — render spec sidecar, one per video
 - `pipeline/` — the renderer (ElevenLabs + Pexels + Chromium overlays + ffmpeg)
 - `renders/` — finished MP4s and posting sheets (gitignored, delivered per week)
-- `data/performance.csv` — views, watch %, follows, saves, per video
+- `data/performance.csv` — views, watch %, completion, first drop-off, follows and saves per video
 
 ## The weekly loop
 
@@ -105,20 +107,25 @@ The learning engine is four files plus one script; sessions inherit all of it:
   The channel's accumulated judgment; constrains all future plans.
 - `data/comments.md` — comment buckets. Buckets become topics and product
   decisions; product-shaped buckets get flagged toward the app repo.
+- `node pipeline/assets.mjs` → `data/assets.md` — the visual inventory and
+  curation queue. Thin movement pools are visible before planning repeats them.
 
 **Friday intake**: paste analytics in any form (text, screenshots) into any
 session. The session fills `data/performance.csv` (one row per posted
-video, hook_mechanism from the video's sidecar), buckets notable comments
+video, including completion % and first retention drop-off second;
+hook_mechanism comes from the video's sidecar), buckets notable comments
 into `data/comments.md`, reruns analyze, and commits.
 
 ## What to measure, in order
 
 1. **Average watch %** — the only number that matters early. >50% on 60s = good.
-2. **Saves per 1000 views** — primary faceless metric. >15 strong.
-3. **Follows per 1000 views** — >3 is good faceless. Never compare to face-led.
-4. **Comment themes** — bucket every comment; buckets become product
+2. **Completion % and first retention drop-off second** — show where the
+   promise loses viewers, not only how many it loses.
+3. **Saves per 1000 views** — primary faceless metric. >15 strong.
+4. **Follows per 1000 views** — >3 is good faceless. Never compare to face-led.
+5. **Comment themes** — bucket every comment; buckets become product
    decisions and future topics.
-5. Views last. Views are noise for the first 60 days.
+6. Views last. Views are noise for the first 60 days.
 
 - **Kill criteria**: a pillar under 30% watch for 3 straight weeks gets cut.
 - **Ready-to-launch signal**: 3+ videos with >60% watch and >20 saves/1000.

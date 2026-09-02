@@ -3,6 +3,7 @@
   "week": "01",
   "post_date": "2026-09-05",
   "format": "environment-pov",
+  "pillar": "Skill ladder",
   "hook_mechanism": "contradiction",
   "caption": "Back exercises at home no equipment: the doorframe row ladder, four rungs from a lean to a single arm row. The missing half of home strength. Save the ladder.",
   "hashtags": [
@@ -55,18 +56,18 @@
     },
     {
       "t": 46.5,
-      "text": "You just turned a doorway into a back machine."
+      "text": "You turned a doorway into a back machine."
     },
     {
-      "t": 51.4,
-      "text": "Every door in your home is equipment now. Yours."
+      "t": 49.6,
+      "text": "Every door is equipment now. Yours."
     },
     {
-      "t": 56.3,
-      "text": "Tomorrow, five moves that make zero noise."
+      "t": 52.5,
+      "text": "Tomorrow: five moves, zero noise."
     },
     {
-      "t": 60.2,
+      "t": 55.2,
       "text": "Which rung will you start on?"
     }
   ],
@@ -131,7 +132,7 @@
     },
     {
       "start": 46.5,
-      "end": 64.4,
+      "end": 59.8,
       "broll_query": "apartment front door interior evening",
       "overlays": [
         {
@@ -140,7 +141,7 @@
           "style": "step"
         },
         {
-          "t": 60.2,
+          "t": 55.2,
           "text": "Which rung will you start on?",
           "style": "cta"
         }

@@ -87,7 +87,7 @@ and real b-roll:
 ## QA gates before posting
 
 Every render also writes `renders/week-NN/qa/<slug>.png` — a contact sheet
-with one frame every ~10 seconds. `produce.mjs` output is a draft until:
+with one frame every ~5 seconds. `produce.mjs` output is a draft until:
 1. Look at every QA sheet: any person or face anywhere means the video does
    not ship — fix the scene's `broll_query` in the sidecar and re-render
    (the automated person gate catches almost everything; the sheet is the

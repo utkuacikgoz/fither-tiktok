@@ -3,6 +3,7 @@
   "week": "01",
   "post_date": "2026-09-07",
   "format": "environment-pov",
+  "pillar": "Constraint",
   "hook_mechanism": "situation",
   "caption": "Office workout at your desk: a ten minute session with no floor work, no changing, no sweat. Standing and chair moves only, between two meetings. Save it for Monday.",
   "hashtags": [
@@ -128,7 +129,7 @@
     },
     {
       "start": 33.2,
-      "end": 60.4,
+      "end": 59.8,
       "broll_query": "laptop desk window light",
       "overlays": [
         {
