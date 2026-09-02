@@ -16,30 +16,32 @@ import { personInJpeg, faceInJpeg } from "./lib/persons.mjs";
 
 const pexec = promisify(execFile);
 const FACE_THRESHOLD = 0.5; // stricter than render-time; curation can afford false rejections
-const MAX_KEEP = 4; // candidates per movement to hand to review
+const MAX_KEEP = 6; // candidates per movement to hand to review
 
 // Movements worth curating now: named in week plans or likely soon, and
 // plausibly findable as stock. Doorframe rows are included but expected to
 // come up empty; movements with zero candidates simply stay
 // environment-only until the app's animations land.
+// Round 2 (2026-09-02): deeper pools for approved movements and fresh
+// query angles for the round-1 misses.
 const TARGETS = [
-  { movement: "Wall Push-Up", queries: ["woman wall push up exercise", "wall push up workout"] },
-  { movement: "Incline Push-Up", queries: ["incline push up woman", "push up on bench woman"] },
-  { movement: "Kneeling Push-Up", queries: ["knee push up woman exercise", "kneeling push up"] },
-  { movement: "Full Push-Up", queries: ["woman push up exercise home", "push up floor workout woman"] },
-  { movement: "Doorframe Row", queries: ["doorway row exercise", "door frame row workout"] },
-  { movement: "Wall Sit", queries: ["wall sit exercise woman", "wall sit workout"] },
-  { movement: "Air Squat", queries: ["woman bodyweight squat home", "squat exercise woman living room"] },
-  { movement: "Sit-to-Stand", queries: ["chair squat exercise woman", "sit to stand exercise"] },
-  { movement: "Reverse Lunge", queries: ["woman lunge exercise home", "reverse lunge workout"] },
-  { movement: "Split Squat", queries: ["split squat exercise woman"] },
-  { movement: "Glute Bridge", queries: ["glute bridge exercise woman", "hip bridge floor exercise"] },
-  { movement: "Hip Thrust", queries: ["hip thrust exercise woman home"] },
-  { movement: "Standing Hip Hinge", queries: ["hip hinge exercise woman", "standing hinge stretch"] },
-  { movement: "Full Plank", queries: ["woman plank exercise home", "plank hold floor woman"] },
-  { movement: "Knee Plank", queries: ["knee plank exercise woman"] },
-  { movement: "Side Plank", queries: ["side plank exercise woman home"] },
-  { movement: "Seated Knee Lift", queries: ["seated knee lift exercise chair", "seated core exercise chair"] },
+  { movement: "Wall Push-Up", queries: ["woman wall push up exercise", "standing push up wall workout", "wall press exercise fitness"] },
+  { movement: "Incline Push-Up", queries: ["push up on sofa woman", "elevated push up home workout", "incline push up exercise fitness"] },
+  { movement: "Kneeling Push-Up", queries: ["modified push up woman home", "beginner push up knees workout"] },
+  { movement: "Full Push-Up", queries: ["woman doing push ups living room", "push up home workout fitness woman", "girl push ups mat home"] },
+  { movement: "Doorframe Row", queries: ["leaning back holding door", "doorway stretch pull exercise"] },
+  { movement: "Wall Sit", queries: ["wall sit hold exercise fitness", "woman squat against wall workout", "isometric wall exercise legs"] },
+  { movement: "Air Squat", queries: ["woman bodyweight squat home workout", "squats living room exercise", "deep squat exercise woman fitness"] },
+  { movement: "Sit-to-Stand", queries: ["woman standing up from chair exercise", "chair squat home workout fitness"] },
+  { movement: "Reverse Lunge", queries: ["woman lunge exercise home workout", "backward lunge fitness woman", "lunges living room exercise"] },
+  { movement: "Split Squat", queries: ["split squat exercise fitness woman", "stationary lunge home workout"] },
+  { movement: "Glute Bridge", queries: ["glute bridge exercise woman mat", "hip bridge floor workout home", "bridge pose fitness mat woman"] },
+  { movement: "Hip Thrust", queries: ["hip thrust couch exercise woman", "glute bridge shoulders elevated workout"] },
+  { movement: "Standing Hip Hinge", queries: ["good morning exercise bodyweight woman", "hip hinge form fitness workout"] },
+  { movement: "Full Plank", queries: ["woman plank hold home workout", "forearm plank exercise mat woman", "plank core workout home"] },
+  { movement: "Knee Plank", queries: ["modified plank knees woman", "beginner plank exercise home"] },
+  { movement: "Side Plank", queries: ["side plank hold woman mat", "side plank exercise home workout"] },
+  { movement: "Seated Knee Lift", queries: ["seated leg lift chair exercise", "chair workout legs woman home", "seated core exercise office"] },
 ];
 
 const outDir = join(repoRoot, "curation");

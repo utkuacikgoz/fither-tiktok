@@ -15,6 +15,12 @@ permissions:
   contents: write
   actions: read
 
+# A newer render supersedes a running one; never let two runs race the
+# renders branch.
+concurrency:
+  group: render-week
+  cancel-in-progress: true
+
 jobs:
   plan:
     runs-on: ubuntu-latest

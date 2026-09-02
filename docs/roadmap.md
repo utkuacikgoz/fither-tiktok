@@ -55,15 +55,15 @@ standing work orders.
 
 ### P0 — this week (raises what every video looks like)
 
-- [ ] Burned line-level captions from measured VO timing + .srt sidecar
-- [ ] Scene auto-cutting: split scenes >4s across 2-3 clips from the same
+- [x] Burned line-level captions from measured VO timing + .srt sidecar
+- [x] Scene auto-cutting: split scenes >4s across 2-3 clips from the same
       query/demo pool; cut on beat boundaries
-- [ ] Branded end-card template for the CTA close
-- [ ] Face check on rendered QA frames (post-render gate)
-- [ ] Curation round 2: target 3+ clips per movement; re-query the
+- [x] Branded end-card template for the CTA close
+- [x] Face check on rendered QA frames (post-render gate)
+- [~] Curation round 2 (running; review pending): target 3+ clips per movement; re-query the
       misses (Incline Push-Up, Wall Sit, Sit-to-Stand, Knee/Side Plank)
-- [ ] Workflow concurrency group (cancel superseded runs)
-- [ ] Posting sheet: add the in-app low-volume sound instruction
+- [x] Workflow concurrency group (cancel superseded runs)
+- [x] Posting sheet: add the in-app low-volume sound instruction
 
 ### P1 — next two weeks (channel becomes an operation)
 

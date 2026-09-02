@@ -49,7 +49,7 @@ export async function synthesizeLines(lines) {
       }
       writeFileSync(file, Buffer.from(await res.arrayBuffer()));
     }
-    files.push({ t: line.t, file });
+    files.push({ t: line.t, text: line.text, file });
   }
   return files;
 }

@@ -60,8 +60,36 @@
     line-height: 1.1;
     letter-spacing: -0.018em;
   }
-  body.cta .rule { background: #C99B45; } /* gold: the ask moment */
-  body.cta .text { font-size: 80px; line-height: 1.12; }
+  /* CTA becomes the branded end card: full sage ground, the question in
+     bone, gold rule, wordmark. A close viewers learn to recognize. */
+  body.cta { background: #5C6F5E; }
+  body.cta .scrim { display: none; }
+  body.cta .block {
+    left: 96px; right: 96px; bottom: auto; top: 46%;
+    transform: translateY(-50%); text-shadow: none;
+  }
+  body.cta .rule { background: #C99B45; width: 88px; margin-bottom: 44px; }
+  body.cta .text { font-size: 92px; line-height: 1.12; max-width: 880px; }
+  body.cta .mark {
+    position: absolute; left: 96px; bottom: 320px;
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 400; font-size: 34px; letter-spacing: 0.22em;
+    color: rgba(250, 247, 242, 0.72);
+  }
+  body:not(.cta) .mark { display: none; }
+  /* Spoken-line captions for muted viewers: small, centered, clear of the
+     statement block above. */
+  body.caption .scrim { display: none; }
+  body.caption .block {
+    left: 90px; right: 90px; bottom: 168px; text-align: center;
+  }
+  body.caption .rule { display: none; }
+  body.caption .text {
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 500; font-size: 40px; line-height: 1.25;
+    letter-spacing: 0; max-width: none;
+    text-shadow: 0 1px 4px rgba(23,22,20,0.85), 0 2px 18px rgba(23,22,20,0.6);
+  }
 </style>
 </head>
 <body class="__STYLE__">
@@ -70,5 +98,6 @@
     <div class="rule"></div>
     <div class="text">__TEXT__</div>
   </div>
+  <div class="mark">FITHER</div>
 </body>
 </html>

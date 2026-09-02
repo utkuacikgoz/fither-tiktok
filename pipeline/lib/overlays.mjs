@@ -7,7 +7,7 @@ import { chromium } from "playwright-core";
 import { cacheDir, ensureDir, findChromium } from "./env.mjs";
 
 // Bump when a template's look changes, so cached overlay PNGs regenerate.
-const TEMPLATE_VERSION = "v2-editorial";
+const TEMPLATE_VERSION = "v3-endcard-captions";
 
 const templatesDir = join(dirname(fileURLToPath(import.meta.url)), "..", "templates");
 const nm = join(dirname(fileURLToPath(import.meta.url)), "..", "node_modules");

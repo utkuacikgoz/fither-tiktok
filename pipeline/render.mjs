@@ -50,6 +50,7 @@ export async function renderOne(scriptPath) {
       const t = Math.max(v.t, prevEnd > 0 ? prevEnd + 0.35 : 0);
       if (t - v.t > 0.05) shifted++;
       v.t = t;
+      v.dur = d;
       prevEnd = t + d;
     }
     if (shifted > 0) notes.push(`retimed ${shifted} voiceover line(s) to prevent overlap`);
@@ -67,8 +68,8 @@ export async function renderOne(scriptPath) {
     let f = null;
     try {
       if (s.demo && s.movement) {
-        f = await fetchApprovedDemo(s.movement);
-        if (!f) notes.push(`"${s.movement}" not in assets/demo-library.json — demo scene falls back`);
+        f = await fetchApprovedDemo(s.movement, `${spec.slug}|${s.start}`);
+        if (!f && brollAvailable()) notes.push(`"${s.movement}" not in assets/demo-library.json — demo scene falls back`);
       }
       f ??= await fetchBroll(s.broll_query, s.demo ? "demo" : "environment");
     } catch (e) {
@@ -84,7 +85,33 @@ export async function renderOne(scriptPath) {
   for (const w of overlayWindows(spec)) {
     overlays.push({ ...w, file: await renderOverlay(w) });
   }
+
+  // Burned captions for muted viewers: one per spoken line at its
+  // measured window. Lines under the end card are skipped — the card
+  // already carries the question at full size.
+  if (voFiles) {
+    const ctas = overlays.filter((o) => o.style === "cta");
+    for (const v of voFiles) {
+      const end = Math.min(v.t + (v.dur ?? 3.5) + 0.2, spec.duration - 0.05);
+      if (end <= v.t) continue;
+      if (ctas.some((c) => v.t < c.end && end > c.start)) continue;
+      overlays.push({ start: v.t, end, style: "caption", file: await renderOverlay({ text: v.text, style: "caption" }) });
+    }
+  }
   await closeBrowser();
+
+  // Accessibility sidecar: same lines and timing as the burned captions.
+  if (voFiles) {
+    const stamp = (s) => {
+      const ms = Math.round(s * 1000);
+      const p = (n, w = 2) => String(n).padStart(w, "0");
+      return `${p(Math.floor(ms / 3600000))}:${p(Math.floor(ms / 60000) % 60)}:${p(Math.floor(ms / 1000) % 60)},${p(ms % 1000, 3)}`;
+    };
+    const srt = voFiles
+      .map((v, i) => `${i + 1}\n${stamp(v.t)} --> ${stamp(Math.min(v.t + (v.dur ?? 3.5), spec.duration))}\n${v.text}\n`)
+      .join("\n");
+    writeFileSync(join(outDir, `${spec.slug}.srt`), srt);
+  }
 
   const out = join(outDir, `${spec.slug}.mp4`);
   await composeVideo({ spec, sceneFiles, overlays, voFiles, out });
@@ -101,6 +128,37 @@ export async function renderOne(scriptPath) {
     if (silent.length > 0) {
       throw new Error(
         `audio verification failed for ${spec.slug}: no voice at ${silent.join(", ")} — the mix lost lines; do not ship this render`,
+      );
+    }
+  }
+
+  // GUARDRAIL: faceless, verified on the OUTPUT. Source clips are gated,
+  // but the finished frames are what ships — scan them and fail loudly on
+  // any detected face.
+  {
+    const { execFile } = await import("node:child_process");
+    const { promisify } = await import("node:util");
+    const { faceInJpeg } = await import("./lib/persons.mjs");
+    const { ffmpegPath, cacheDir, ensureDir } = await import("./lib/env.mjs");
+    const { rmSync, readFileSync: rf } = await import("node:fs");
+    const ffmpeg = await ffmpegPath();
+    const tmpDir = ensureDir(join(cacheDir, "tmp"));
+    const hits = [];
+    for (let t = 1; t < spec.duration - 1; t += 4) {
+      const frame = join(tmpDir, `${spec.slug}-facecheck-${t}.jpg`);
+      try {
+        await promisify(execFile)(ffmpeg, [
+          "-y", "-ss", String(t), "-i", out,
+          "-vf", "eq=brightness=0.1:contrast=1.1",
+          "-frames:v", "1", "-q:v", "4", frame,
+        ], { maxBuffer: 1 << 22 });
+        if (await faceInJpeg(rf(frame))) hits.push(`${t}s`);
+      } catch { /* unreadable frame: the QA sheet review still covers it */ }
+      rmSync(frame, { force: true });
+    }
+    if (hits.length > 0) {
+      throw new Error(
+        `faceless verification failed for ${spec.slug}: face detected at ${hits.join(", ")} in the rendered output — do not ship`,
       );
     }
   }

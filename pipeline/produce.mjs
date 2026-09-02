@@ -30,7 +30,7 @@ if (specs.length === 0) {
 }
 
 const outDir = ensureDir(join(rendersDir, `week-${week}`));
-let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\n`;
+let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nWhen posting, add a calm in-app sound at 10-20% volume under the voice —\nnative feel, zero licensing risk. Never pick a sound the video depends on.\n`;
 const allNotes = [];
 
 for (const f of specs) {

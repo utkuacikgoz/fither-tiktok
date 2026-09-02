@@ -43,15 +43,36 @@ export async function composeVideo({ spec, sceneFiles, overlays, voFiles, out })
   const args = ["-y"];
   const filters = [];
 
-  // Scene background inputs.
+  // Scene background inputs. Held single shots kill retention, so any
+  // clip-backed scene longer than ~4.2s is cut into ~3s segments taken
+  // from staggered offsets of the clip — jump-cut rhythm without extra
+  // downloads or gate passes.
   spec.scenes.forEach((s, i) => {
     const dur = s.end - s.start;
     if (sceneFiles[i]) {
-      args.push("-stream_loop", "-1", "-t", String(dur), "-i", sceneFiles[i]);
-      filters.push(
+      const nSeg = dur > 4.2 ? Math.min(4, Math.ceil(dur / 3)) : 1;
+      const segDur = dur / nSeg;
+      // Loop the source long enough that any offset+segment stays in range.
+      const loopLen = dur + segDur * nSeg + 2;
+      args.push("-stream_loop", "-1", "-t", String(loopLen.toFixed(2)), "-i", sceneFiles[i]);
+      const base =
         `[${i}:v]scale=1080:1920:force_original_aspect_ratio=increase,` +
-          `crop=1080:1920,fps=30,setsar=1,trim=duration=${dur},setpts=PTS-STARTPTS[s${i}]`,
-      );
+        `crop=1080:1920,fps=30,setsar=1`;
+      if (nSeg === 1) {
+        filters.push(`${base},trim=duration=${dur},setpts=PTS-STARTPTS[s${i}]`);
+      } else {
+        const parts = Array.from({ length: nSeg }, (_, k) => `[c${i}p${k}]`);
+        filters.push(`${base},split=${nSeg}${parts.join("")}`);
+        const segs = [];
+        for (let k = 0; k < nSeg; k++) {
+          const off = (k * (segDur + 1.7)).toFixed(2);
+          filters.push(
+            `[c${i}p${k}]trim=start=${off}:duration=${segDur.toFixed(3)},setpts=PTS-STARTPTS[c${i}s${k}]`,
+          );
+          segs.push(`[c${i}s${k}]`);
+        }
+        filters.push(`${segs.join("")}concat=n=${nSeg}:v=1:a=0[s${i}]`);
+      }
     } else {
       args.push("-f", "lavfi", "-t", String(dur), "-i", GRADIENT(dur));
       filters.push(`[${i}:v]fps=30,setsar=1,trim=duration=${dur},setpts=PTS-STARTPTS[s${i}]`);
