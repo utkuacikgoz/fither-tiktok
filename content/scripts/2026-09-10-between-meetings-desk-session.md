@@ -3,13 +3,13 @@
 - Topic: A desk clothes friendly 10 minute session with no floor work, for the gap between two meetings.
 - Pillar: Constraint
 - Format: environment POV (desk, office chair, window light)
-- Posting date: 2026-09-07 (Monday)
+- Posting date: 2026-09-10 (Thursday)
 - Target search phrase: office workout at your desk
 
 ## 1. HOOK (first 3 seconds)
 
-First frame: a body mid seated knee lift at a chair, sitting tall,
-already training in work clothes.
+First frame: an office chair pulled away from the desk, ready to use. The
+gap is visible immediately without relying on an unverified demo.
 
 1. "Your next meeting is in twelve minutes." (specific situation: the
    calendar gap. CHOSEN; the CTA asks how long her gap is)
@@ -54,15 +54,15 @@ for the next hidden gap.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:17). Demo: Seated Knee Lift, mid-movement from the
-first frame, body only in a chair. Overlays: "Twelve minutes is enough to
+Scene 1 (0:00 to 0:17). Environment: an office chair pulled away from the
+desk in window light, no person. Overlays: "Twelve minutes is enough to
 train." (hook), then "Seated knee lifts, ten each side." (step).
 
 Scene 2 (0:17 to 0:21). Environment: an office chair by a desk in window
 light, no person. Overlay: "Ten sit-to-stands. No hands." (step).
 
-Scene 3 (0:21 to 0:25). Demo: Wall Push-Up, body only. Overlay: "Ten wall
-push-ups. Press away." (step).
+Scene 3 (0:21 to 0:25). Environment: a bright office wall, framed close,
+no person. Overlay: "Ten wall push-ups. Press away." (step).
 
 Scene 4 (0:25 to 0:29). Environment: a bright office wall with a plant.
 Overlay: "Wall slides, then hip hinges." (step).
@@ -71,10 +71,9 @@ Scene 5 (0:29 to end). Environment: a laptop on a desk in window light.
 Overlays: "A complete session in work clothes." (step), then "How long is
 your gap?" (cta).
 
-Demo scenes use only approved movements (Seated Knee Lift, Wall Push-Up);
-the standing moves stay person-free environment shots. No face appears
-anywhere. Every move is standing or chair-based; no floor work, matching
-the office constraint.
+Every scene stays person-free while Seated Knee Lift and Wall Push-Up
+replacements await full-motion approval. No face appears anywhere. Every
+move is standing or chair-based; no floor work, matching the office constraint.
 
 ## 4. CAPTION AND HASHTAGS
 

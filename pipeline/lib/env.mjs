@@ -51,8 +51,13 @@ export function findChromium({
     "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
   ],
 } = {}) {
-  // Playwright knows the exact revision and platform-specific layout it
-  // installed. Prefer that answer before scanning compatibility fallbacks.
+  // Prefer an installed system browser when available. On managed macOS
+  // hosts a downloaded test browser can be blocked from launching even
+  // though the signed system Chrome works. CI has no system browser and
+  // falls through to Playwright's exact resolved executable.
+  for (const path of systemPaths) {
+    if (existsSync(path)) return path;
+  }
   if (preferredPath && existsSync(preferredPath)) return preferredPath;
 
   for (const root of roots) {
@@ -74,9 +79,6 @@ export function findChromium({
         if (existsSync(p)) return p;
       }
     }
-  }
-  for (const path of systemPaths) {
-    if (existsSync(path)) return path;
   }
   throw new Error("No Chromium found in PLAYWRIGHT_BROWSERS_PATH, Playwright caches or system applications");
 }

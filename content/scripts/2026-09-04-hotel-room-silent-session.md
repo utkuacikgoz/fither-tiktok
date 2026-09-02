@@ -3,13 +3,13 @@
 - Topic: A silent 10 minute full strength session using only a hotel room wall and doorframe, between landing and dinner.
 - Pillar: Constraint
 - Format: environment POV (hotel b-roll: door, wall, window, desk)
-- Posting date: 2026-09-01 (Tuesday)
+- Posting date: 2026-09-04 (Friday)
 - Target search phrase: quiet hotel room workout
 
 ## 1. HOOK (first 3 seconds)
 
-First frame: a body mid wall push-up, pressing away from the wall. Never an
-establishing shot; the viewer sees work happening within the first second.
+First frame: a tight push into the hotel wall and window light. The visual
+starts close and active, without showing an unverified exercise demo.
 
 1. "You landed with no gym. This wall disagrees." (contradiction: the bare
    room talks back. CHOSEN; it opens the loop the CTA closes)
@@ -53,9 +53,9 @@ and 0:48. The close invites her back for the push-up ladder, no FOMO.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:14). Demo: Wall Push-Up, mid-movement from the first
-frame, body only, face never in frame. Overlays: "This wall is your whole
-gym tonight." (hook), then "Ten wall push-ups. Press it away." (step).
+Scene 1 (0:00 to 0:14). Environment: tight moving shot along the hotel wall
+and window light, no person. Overlays: "This wall is your whole gym tonight."
+(hook), then "Ten wall push-ups. Press it away." (step).
 
 Scene 2 (0:14 to 0:24). Environment: a hotel room doorframe from inside
 the room, lamp light, no person. Overlay: "Doorframe rows. Lean back,
@@ -64,8 +64,8 @@ pull in." (step). No pull demo exists yet, so this beat stays environment.
 Scene 3 (0:24 to 0:29). Environment: the empty stretch of hotel wall.
 Overlay: "Hold a wall sit for thirty seconds." (step).
 
-Scene 4 (0:29 to 0:33). Demo: Glute Bridge, body only on the floor.
-Overlay: "Do ten slow glute bridges." (step).
+Scene 4 (0:29 to 0:33). Environment: an exercise mat on the hotel floor,
+framed close. Overlay: "Do ten slow glute bridges." (step).
 
 Scene 5 (0:33 to 0:42). Environment: hotel desk and window at dusk.
 Overlay: "Wall plank, twenty seconds. Repeat once." (step).
@@ -74,9 +74,8 @@ Scene 6 (0:42 to end). Environment: city lights through the hotel window.
 Overlays: "A complete session. Zero noise." (step), then "Which city are
 you in tonight?" (cta).
 
-Demo scenes use only approved movements from assets/demo-library.json
-(Wall Push-Up, Glute Bridge). All other scenes are person-free environment
-shots. No face appears anywhere.
+All scenes are person-free environment shots while the Wall Push-Up and
+Glute Bridge replacements await full-motion approval. No face appears.
 
 ## 4. CAPTION AND HASHTAGS
 

@@ -11,7 +11,7 @@ const specs = readdirSync(scriptsDir)
   .filter((file) => file.endsWith(".json"))
   .map((file) => JSON.parse(readFileSync(join(scriptsDir, file), "utf8")));
 const library = JSON.parse(readFileSync(join(repoRoot, "assets", "demo-library.json"), "utf8"));
-const animations = readFileSync(join(repoRoot, "assets", "animations.md"), "utf8");
+const animations = JSON.parse(readFileSync(join(repoRoot, "assets", "animation-library.json"), "utf8"));
 const outPath = join(repoRoot, "data", "assets.md");
 const { report, errors, warnings } = buildAssetReport(specs, library, animations);
 

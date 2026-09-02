@@ -9,9 +9,10 @@ let facePromise = null;
 let tfPromise = null;
 
 async function getTf() {
-  // Prefer the native binding when present (CI installs it --no-save);
-  // it runs detection an order of magnitude faster than the JS backend.
-  tfPromise ??= import("@tensorflow/tfjs-node").catch(() => import("@tensorflow/tfjs"));
+  // Keep detection on the lockfile-pinned pure-JS backend. tfjs-node can
+  // import successfully on unsupported Node releases and then crash on its
+  // first kernel invocation, which makes import-time fallback unreliable.
+  tfPromise ??= import("@tensorflow/tfjs");
   return tfPromise;
 }
 

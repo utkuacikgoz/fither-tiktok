@@ -1,10 +1,11 @@
 {
-  "slug": "2026-09-07-between-meetings-desk-session",
+  "slug": "2026-09-10-between-meetings-desk-session",
   "week": "01",
-  "post_date": "2026-09-07",
+  "post_date": "2026-09-10",
   "format": "environment-pov",
   "pillar": "Constraint",
   "hook_mechanism": "situation",
+  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
   "caption": "Office workout at your desk: a ten minute session with no floor work, no changing, no sweat. Standing and chair moves only, between two meetings. Save it for Monday.",
   "hashtags": [
     "#strengthtraining",
@@ -75,8 +76,7 @@
     {
       "start": 0,
       "end": 16.6,
-      "demo": true,
-      "movement": "Seated Knee Lift",
+      "broll_query": "office chair desk window light",
       "overlays": [
         {
           "t": 0,
@@ -105,8 +105,7 @@
     {
       "start": 21,
       "end": 24.9,
-      "demo": true,
-      "movement": "Wall Push-Up",
+      "broll_query": "bright office wall closeup",
       "overlays": [
         {
           "t": 21,

@@ -37,20 +37,20 @@ export async function mediaDuration(file) {
   return null;
 }
 
-export async function composeVideo({ spec, sceneFiles, overlays, voFiles, out }) {
+export async function composeVideo({ spec, sceneFiles, overlays, voFiles, soundBedFile, out }) {
   const ffmpeg = await ffmpegPath();
   const total = spec.duration;
   const args = ["-y"];
   const filters = [];
 
-  // Scene background inputs. Held single shots kill retention, so any
-  // clip-backed scene longer than ~4.2s is cut into ~3s segments taken
-  // from staggered offsets of the clip — jump-cut rhythm without extra
-  // downloads or gate passes.
+  // Scene background inputs. Held environment shots kill retention, so a
+  // long environment scene is cut into staggered segments. Never jump-cut a
+  // physical or animated movement demonstration: preserving the authored rep
+  // sequence matters more than artificial pace.
   spec.scenes.forEach((s, i) => {
     const dur = s.end - s.start;
     if (sceneFiles[i]) {
-      const nSeg = dur > 4.2 ? Math.min(4, Math.ceil(dur / 3)) : 1;
+      const nSeg = !s.demo && !s.animation && dur > 4.2 ? Math.min(4, Math.ceil(dur / 3)) : 1;
       const segDur = dur / nSeg;
       // Loop the source long enough that any offset+segment stays in range.
       const loopLen = dur + segDur * nSeg + 2;
@@ -100,32 +100,54 @@ export async function composeVideo({ spec, sceneFiles, overlays, voFiles, out })
   });
   const vOut = `v${overlays.length}`;
 
-  // Audio: voiceover lines at their timestamps, or silence for drafts.
+  // Audio: spoken lines are compressed into one stable dialogue stem. The
+  // original bed ducks under speech, rises gently in the breaths, and the
+  // final master lands at a platform-safe -14 LUFS / -1.5 dBTP.
   let aOut;
+  let nextInput = nScenes + overlays.length;
+  let voiceOut = null;
   if (voFiles && voFiles.length > 0) {
-    const base = nScenes + overlays.length;
     voFiles.forEach((v, k) => {
       args.push("-i", v.file);
-      filters.push(`[${base + k}:a]adelay=${Math.round(v.t * 1000)}:all=1[a${k}]`);
+      filters.push(`[${nextInput + k}:a]adelay=${Math.round(v.t * 1000)}:all=1[a${k}]`);
     });
     filters.push(
       voFiles.map((_, k) => `[a${k}]`).join("") +
-        `amix=inputs=${voFiles.length}:normalize=0:duration=longest,apad,atrim=duration=${total}[aout]`,
+        `amix=inputs=${voFiles.length}:normalize=0:duration=longest,apad,atrim=duration=${total},` +
+        "highpass=f=65,acompressor=threshold=-18dB:ratio=2.5:attack=8:release=120[voice]",
     );
+    voiceOut = "voice";
+    nextInput += voFiles.length;
+  }
+
+  if (soundBedFile) {
+    const gain = spec.sound?.bed_gain_db ?? -16;
+    args.push("-stream_loop", "-1", "-t", String(total), "-i", soundBedFile);
+    filters.push(`[${nextInput}:a]atrim=duration=${total},volume=${gain}dB[bed]`);
+    if (voiceOut) {
+      filters.push("[voice]asplit=2[voice-sc][voice-mix]");
+      filters.push("[bed][voice-sc]sidechaincompress=threshold=0.02:ratio=8:attack=15:release=350[ducked]");
+      filters.push("[voice-mix][ducked]amix=inputs=2:normalize=0:duration=longest,loudnorm=I=-14:LRA=7:TP=-1.5[aout]");
+    } else {
+      filters.push("[bed]loudnorm=I=-14:LRA=7:TP=-1.5[aout]");
+    }
+    aOut = "aout";
+  } else if (voiceOut) {
+    filters.push("[voice]loudnorm=I=-14:LRA=7:TP=-1.5[aout]");
     aOut = "aout";
   } else {
     args.push("-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=44100:cl=stereo");
-    aOut = `${nScenes + overlays.length}:a`;
+    aOut = `${nextInput}:a`;
   }
 
   args.push(
     "-filter_complex", filters.join(";"),
     "-map", `[${vOut}]`,
-    "-map", aOut.startsWith("v") || aOut === "aout" ? `[${aOut}]` : aOut,
+    "-map", aOut === "aout" ? `[${aOut}]` : aOut,
     "-c:v", "libx264", "-preset", "medium", "-crf", "22",
     "-maxrate", "3M", "-bufsize", "6M", "-r", "30",
     "-pix_fmt", "yuv420p",
-    "-c:a", "aac", "-b:a", "128k",
+    "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-ac", "2",
     "-movflags", "+faststart",
     "-t", String(total),
     out,

@@ -21,7 +21,7 @@ const specs = readdirSync(scriptsDir)
   .filter((s) => String(s.week).padStart(2, "0") === week)
   .sort((a, b) => a.post_date.localeCompare(b.post_date));
 
-let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nWhen posting, add a calm in-app sound at 10-20% volume under the voice —\nnative feel, zero licensing risk. Never pick a sound the video depends on.\n`;
+let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nVideo masters already contain the original FITHER bed with voice ducking; do not\nstack another sound unless the post is a named native-sound experiment (0-5%).\nFor slideshows, choose a calm in-app sound that carries no instructional meaning.\n`;
 const allNotes = [];
 let missing = 0;
 
@@ -36,6 +36,7 @@ for (const spec of specs) {
     ? `Slides: \`renders/week-${week}/${spec.slug}/\` (upload in filename order)\n\n`
     : `File: \`renders/week-${week}/${spec.slug}.mp4\`\n\n`;
   sheet += `Caption:\n\n> ${spec.caption}\n>\n> ${(spec.hashtags ?? []).join(" ")}\n`;
+  sheet += `\nAfter publishing: \`node pipeline/shots.mjs ${week} --record ${spec.slug}\`\n`;
   const notesFile = join(outDir, `${spec.slug}.notes.txt`);
   if (existsSync(notesFile)) {
     const notes = readFileSync(notesFile, "utf8").trim();
@@ -47,6 +48,7 @@ if (allNotes.length) {
   sheet += `\n## Render notes\n\n`;
   allNotes.forEach((n) => (sheet += `- ${n}\n`));
 }
+sheet += `\nShot identity report: \`renders/week-${week}/shot-report.md\`\n`;
 writeFileSync(join(outDir, "posting-sheet.md"), sheet);
 console.log(`Posting sheet for ${specs.length} videos (${missing} missing renders): ${join(outDir, "posting-sheet.md")}`);
 if (missing > 0) process.exit(1);

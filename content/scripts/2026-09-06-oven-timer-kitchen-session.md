@@ -3,13 +3,13 @@
 - Topic: A 10 minute chair and counter strength session that fits inside the time dinner is already in the oven.
 - Pillar: Constraint
 - Format: environment POV (kitchen b-roll: counter, chair, oven timer)
-- Posting date: 2026-09-03 (Thursday)
+- Posting date: 2026-09-06 (Sunday)
 - Target search phrase: kitchen counter workout no equipment
 
 ## 1. HOOK (first 3 seconds)
 
-First frame: a body mid seated knee lift, sitting tall, working. The
-kitchen session is already happening when the loop opens.
+First frame: a chair pulled into the kitchen beside the active oven timer.
+The session is already set when the loop opens.
 
 1. "Dinner is in the oven. Your session starts now." (specific situation:
    the oven gap. CHOSEN; the CTA returns to the oven)
@@ -51,17 +51,17 @@ invites her to tomorrow's reframe video.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:13). Demo: Seated Knee Lift, mid-movement from the
-first frame, body only in a chair. Overlay: "The oven timer is your coach
-tonight." (hook).
+Scene 1 (0:00 to 0:13). Environment: a kitchen chair beside the oven in
+warm light, no person. Overlay: "The oven timer is your coach tonight."
+(hook).
 
 Scene 2 (0:13 to 0:27). Environment: kitchen counter in warm evening
 light, no person. Overlays: "Ten sit-to-stands. No hands." (step), "Eight
 incline push-ups on the counter." (step), "Hinge and reach, ten reps."
 (step).
 
-Scene 3 (0:27 to 0:31). Demo: Seated Knee Lift again as the move is
-coached. Overlay: "Seated knee lifts, ten each side." (step).
+Scene 3 (0:27 to 0:31). Environment: tight chair detail in warm light,
+no person. Overlay: "Seated knee lifts, ten each side." (step).
 
 Scene 4 (0:31 to 0:40). Environment: close shot of a glowing oven timer
 dial. Overlay: "Quiet moves. Nothing wakes the house." (step).
@@ -70,8 +70,8 @@ Scene 5 (0:40 to end). Environment: steam rising from a pot, no person.
 Overlays: "You trained while dinner cooked." (step), then "What is in
 your oven tonight?" (cta).
 
-Seated Knee Lift is the only approved demo among these movements; the
-other beats stay person-free environment shots. No face appears anywhere.
+Every beat stays person-free while the Seated Knee Lift replacement awaits
+movement-accurate full-motion approval. No face appears anywhere.
 
 ## 4. CAPTION AND HASHTAGS
 

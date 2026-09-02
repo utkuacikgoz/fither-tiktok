@@ -3,15 +3,18 @@ import { readFileSync, existsSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { policyViolations } from "./policy.mjs";
+import { SOUND_PROFILES } from "./sound.mjs";
+import { loadAnimationLibrary } from "./animations.mjs";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FORMATS = new Set(["environment-pov", "text-on-screen", "slideshow"]);
+const FORMATS = new Set(["environment-pov", "text-on-screen", "animated-demo", "slideshow"]);
 const PILLARS = new Set(["Constraint", "Skill ladder", "Reframe", "Fast tips", "Behind the build"]);
 const HOOKS = new Set(["contradiction", "situation", "number", "promise"]);
 const OVERLAY_STYLES = new Set(["hook", "step", "cta"]);
 
 let movementNames;
 let approvedDemoMovements;
+let approvedAnimationMovements;
 
 function loadMovementNames() {
   if (movementNames) return movementNames;
@@ -31,6 +34,12 @@ function loadApprovedDemoMovements() {
   return approvedDemoMovements;
 }
 
+function loadApprovedAnimationMovements() {
+  if (approvedAnimationMovements) return approvedAnimationMovements;
+  approvedAnimationMovements = new Set(Object.keys(loadAnimationLibrary().movements ?? {}));
+  return approvedAnimationMovements;
+}
+
 const isFiniteNumber = (value) => typeof value === "number" && Number.isFinite(value);
 const wordCount = (text) => String(text).trim().split(/\s+/).filter(Boolean).length;
 
@@ -39,6 +48,7 @@ export function validateSpec(spec, options = {}) {
   const warnings = [];
   const movements = options.movementNames ?? loadMovementNames();
   const demos = options.approvedDemoMovements ?? loadApprovedDemoMovements();
+  const animations = options.approvedAnimationMovements ?? loadApprovedAnimationMovements();
   const error = (message) => errors.push(message);
   const warn = (message) => warnings.push(message);
   const needString = (key) => {
@@ -72,6 +82,16 @@ export function validateSpec(spec, options = {}) {
   if (typeof spec.hook_mechanism === "string" && !HOOKS.has(spec.hook_mechanism)) {
     error(`hook_mechanism "${spec.hook_mechanism}" is unknown`);
   }
+  if (spec.format === "slideshow") {
+    if (spec.sound?.profile !== "platform") error('slideshow sound.profile must be "platform"');
+  } else if (!spec.sound || typeof spec.sound !== "object") {
+    error("video formats require a sound contract");
+  } else {
+    if (!SOUND_PROFILES.has(spec.sound.profile)) error(`sound profile "${spec.sound.profile}" is unknown`);
+    if (!isFiniteNumber(spec.sound.bed_gain_db) || spec.sound.bed_gain_db < -22 || spec.sound.bed_gain_db > -12) {
+      error("sound bed_gain_db must be between -22 and -12 dB");
+    }
+  }
   if (!Array.isArray(spec.hashtags) || spec.hashtags.length === 0) {
     error("hashtags must be a non-empty array");
   } else {
@@ -88,6 +108,7 @@ export function validateSpec(spec, options = {}) {
     error("scenes must be a non-empty array");
   } else {
     let prevEnd = 0;
+    let animationScenes = 0;
     spec.scenes.forEach((scene, i) => {
       if (!isFiniteNumber(scene.start) || !isFiniteNumber(scene.end) || scene.end <= scene.start) {
         error(`scene ${i}: bad start/end`);
@@ -95,15 +116,34 @@ export function validateSpec(spec, options = {}) {
         error(`scene ${i}: starts at ${scene.start}, previous ended at ${prevEnd} (scenes must be contiguous)`);
       }
       if (scene.demo === true && !scene.movement) error(`scene ${i}: demo scenes require a movement`);
-      if (scene.movement && scene.demo !== true) error(`scene ${i}: movement requires demo: true`);
+      if (scene.animation === true && !scene.movement) error(`scene ${i}: animation scenes require a movement`);
+      if (scene.demo === true && scene.animation === true) error(`scene ${i}: demo and animation are mutually exclusive`);
+      if ((scene.demo === true || scene.animation === true) && scene.broll_query != null) {
+        error(`scene ${i}: movement visuals cannot also declare broll_query`);
+      }
+      if (scene.movement && scene.demo !== true && scene.animation !== true) {
+        error(`scene ${i}: movement requires demo: true or animation: true`);
+      }
       if (scene.movement && !movements.has(scene.movement)) error(`scene ${i}: movement "${scene.movement}" is not in the movement library`);
       if (scene.demo === true && scene.movement && !demos.has(scene.movement)) {
         error(`scene ${i}: "${scene.movement}" has no owner-approved demo in assets/demo-library.json`);
+      }
+      if (scene.animation === true) {
+        animationScenes++;
+        if (spec.format !== "animated-demo") error(`scene ${i}: animation requires format "animated-demo"`);
+        if (scene.movement && !animations.has(scene.movement)) {
+          error(`scene ${i}: "${scene.movement}" has no approved authored export in assets/animation-library.json`);
+        }
       }
       if (scene.broll_query != null && (typeof scene.broll_query !== "string" || !scene.broll_query.trim())) {
         error(`scene ${i}: broll_query must be a non-empty string`);
       }
       if (!Array.isArray(scene.overlays) || scene.overlays.length === 0) warn(`scene ${i}: no overlays`);
+      if (spec.format === "slideshow") {
+        if (scene.overlays?.length !== 1) error(`slide ${i + 1}: requires exactly one overlay`);
+        if (typeof scene.kicker !== "string" || !scene.kicker.trim()) error(`slide ${i + 1}: requires a kicker`);
+        if (typeof scene.footer !== "string" || !scene.footer.trim()) error(`slide ${i + 1}: requires a footer`);
+      }
       for (const [j, overlay] of (scene.overlays ?? []).entries()) {
         if (!isFiniteNumber(overlay.t) || typeof overlay.text !== "string" || !overlay.text.trim()) {
           error(`scene ${i} overlay ${j}: needs numeric t and text`);
@@ -116,8 +156,15 @@ export function validateSpec(spec, options = {}) {
       if (isFiniteNumber(scene.end)) prevEnd = scene.end;
     });
     spec.duration = prevEnd;
-    if (prevEnd < 45) warn(`duration ${prevEnd}s is below the 45-60s brief`);
-    if (prevEnd > 60) error(`duration ${prevEnd}s exceeds the 45-60s brief`);
+    if (spec.format === "animated-demo" && animationScenes === 0) {
+      error('format "animated-demo" requires at least one animation scene');
+    }
+    if (spec.format === "slideshow") {
+      if (spec.scenes.length < 4 || spec.scenes.length > 8) error("slideshow requires 4-8 slides");
+    } else {
+      if (prevEnd < 45) warn(`duration ${prevEnd}s is below the 45-60s brief`);
+      if (prevEnd > 60) error(`duration ${prevEnd}s exceeds the 45-60s brief`);
+    }
 
     const firstOverlays = spec.scenes[0]?.overlays ?? [];
     if (!firstOverlays.some((overlay) => overlay.style === "hook" && Math.abs(overlay.t) < 0.001)) {

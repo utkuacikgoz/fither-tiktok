@@ -1,10 +1,11 @@
 {
-  "slug": "2026-09-04-train-to-carry",
+  "slug": "2026-09-07-train-to-carry",
   "week": "01",
-  "post_date": "2026-09-04",
+  "post_date": "2026-09-07",
   "format": "text-on-screen",
   "pillar": "Reframe",
   "hook_mechanism": "contradiction",
+  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
   "caption": "Strength training for busy women means training to carry, not to shrink. Stairs, bags, car seats: life asks for strength. Five patterns, ten minutes a day.",
   "hashtags": [
     "#strengthtraining",
@@ -76,7 +77,7 @@
       "start": 0,
       "end": 9.3,
       "demo": true,
-      "movement": "Reverse Lunge",
+      "movement": "Full Plank",
       "overlays": [
         {
           "t": 0,
@@ -100,8 +101,7 @@
     {
       "start": 22,
       "end": 34.2,
-      "demo": true,
-      "movement": "Full Plank",
+      "broll_query": "grocery bags staircase landing",
       "overlays": [
         {
           "t": 22,
@@ -113,8 +113,7 @@
     {
       "start": 34.2,
       "end": 44,
-      "demo": true,
-      "movement": "Air Squat",
+      "broll_query": "stairs packed bag closeup",
       "overlays": [
         {
           "t": 34.2,

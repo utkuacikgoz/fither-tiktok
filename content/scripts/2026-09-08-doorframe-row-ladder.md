@@ -3,7 +3,7 @@
 - Topic: The doorframe row ladder: from a lean to a single arm row, the pull strength home workouts always skip.
 - Pillar: Skill ladder
 - Format: environment POV (a doorframe, shot from inside the room)
-- Posting date: 2026-09-05 (Saturday)
+- Posting date: 2026-09-08 (Tuesday)
 - Target search phrase: back exercises at home no equipment
 
 ## 1. HOOK (first 3 seconds)

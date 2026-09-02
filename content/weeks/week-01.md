@@ -1,14 +1,14 @@
-# Week 01 — 2026-09-01 to 2026-09-07
+# Week 01 — 2026-09-04 to 2026-09-10
 
 First week on the channel. No performance data exists, so the free slot goes
 to Constraint (3 Constraint, 2 Skill ladder, 1 Reframe, 1 Fast tips).
-`assets/animations.md` lists nothing Ready, so every video this week is
+`assets/animation-library.json` has no approved exports, so every video this week is
 environment POV or text on screen. Calendar context: back-to-school week,
 and business travel restarting after summer.
 
 ---
 
-## 1 — Tue 2026-09-01 — The hotel room that is enough
+## 1 — Fri 2026-09-04 — The hotel room that is enough
 
 - **Topic**: A silent 10 minute full strength session using only a hotel
   room wall and doorframe, between landing and dinner.
@@ -25,7 +25,7 @@ and business travel restarting after summer.
   animations required.
 - **Reuse**: App Store screenshot "Hotel room. Ten minutes. Done."
 
-## 2 — Wed 2026-09-02 — Wall to floor in four steps
+## 2 — Sat 2026-09-05 — Wall to floor in four steps
 
 - **Topic**: The four step ladder from wall push up to your first full push
   up, and why the wall is step one, not a cop out.
@@ -42,7 +42,7 @@ and business travel restarting after summer.
   four movements would upgrade this later; not required.
 - **Reuse**: share card "First Full Push-Up"; onboarding progression copy.
 
-## 3 — Thu 2026-09-03 — Strength while the oven does its job
+## 3 — Sun 2026-09-06 — Strength while the oven does its job
 
 - **Topic**: A 10 minute chair and counter strength session that fits inside
   the time dinner is already in the oven.
@@ -58,7 +58,7 @@ and business travel restarting after summer.
 - **Assets needed**: kitchen b-roll (4 to 5 clips), voiceover.
 - **Reuse**: App Store screenshot "Kitchen mode"; adaptation explainer copy.
 
-## 4 — Fri 2026-09-04 — Train to carry
+## 4 — Mon 2026-09-07 — Train to carry
 
 - **Topic**: Stop training to shrink. Train to carry: the case for strength
   as the thing that makes your actual week lighter.
@@ -75,7 +75,7 @@ and business travel restarting after summer.
 - **Assets needed**: 3 to 4 slow b-roll shots, voiceover.
 - **Reuse**: paywall headline candidate; App Store subtitle candidate.
 
-## 5 — Sat 2026-09-05 — The ladder no one does at home
+## 5 — Tue 2026-09-08 — The ladder no one does at home
 
 - **Topic**: The doorframe row ladder: from a lean to a single arm row,
   the pull strength home workouts always skip.
@@ -91,7 +91,7 @@ and business travel restarting after summer.
 - **Assets needed**: doorframe b-roll from two angles, voiceover.
 - **Reuse**: App Store screenshot "A complete back workout. Zero equipment."
 
-## 6 — Sun 2026-09-06 — Zero noise, full session
+## 6 — Wed 2026-09-09 — Zero noise, full session
 
 - **Topic**: Five strength moves that make zero noise, for training while a
   child sleeps on the other side of the wall.
@@ -108,7 +108,7 @@ and business travel restarting after summer.
   at low, calm level to match the theme.
 - **Reuse**: onboarding "Quiet mode" copy; adaptation explainer line.
 
-## 7 — Mon 2026-09-07 — Ten minutes between meetings
+## 7 — Thu 2026-09-10 — Ten minutes between meetings
 
 - **Topic**: A desk clothes friendly 10 minute session with no floor work,
   for the gap between two meetings.

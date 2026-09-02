@@ -64,13 +64,23 @@ export async function renderOverlay({ text, style = "step" }) {
   return file;
 }
 
-export async function renderSlide({ kicker = "", text, footer = "" }, file) {
+export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step" }, file) {
+  const textClass = text.length <= 42 ? "short" : text.length >= 82 ? "long" : "";
+  const progress = Array.from({ length: total }, () => "<span></span>").join("");
+  const cue = index < total ? "SWIPE →" : "SAVE THIS";
   const html = readFileSync(join(templatesDir, "slide.html"), "utf8")
     .replace("__FONT_400__", font400)
     .replace("__FONT_600__", font600)
+    .replace("__FONT_DISPLAY__", fontDisplay)
+    .replaceAll("__INDEX__", String(index))
+    .replaceAll("__TOTAL__", String(total))
+    .replace("__PROGRESS__", progress)
+    .replace("__KIND__", esc(kind))
+    .replace("__TEXT_CLASS__", textClass)
     .replace("__KICKER__", esc(kicker))
     .replace("__TEXT__", esc(text))
-    .replace("__FOOTER__", esc(footer));
+    .replace("__FOOTER__", esc(footer))
+    .replace("__CUE__", cue);
   await renderHtmlToPng(html, file, { transparent: false });
   return file;
 }

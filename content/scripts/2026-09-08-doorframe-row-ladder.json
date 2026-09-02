@@ -1,10 +1,11 @@
 {
-  "slug": "2026-09-05-doorframe-row-ladder",
+  "slug": "2026-09-08-doorframe-row-ladder",
   "week": "01",
-  "post_date": "2026-09-05",
+  "post_date": "2026-09-08",
   "format": "environment-pov",
   "pillar": "Skill ladder",
   "hook_mechanism": "contradiction",
+  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
   "caption": "Back exercises at home no equipment: the doorframe row ladder, four rungs from a lean to a single arm row. The missing half of home strength. Save the ladder.",
   "hashtags": [
     "#strengthtraining",

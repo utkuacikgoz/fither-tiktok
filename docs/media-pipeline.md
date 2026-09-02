@@ -2,8 +2,9 @@
 
 The machine produces the videos itself. Nothing is assembled by hand: a
 script's JSON sidecar goes in, a finished 1080x1920 MP4 (or a slideshow's
-PNGs) plus a ready-to-paste caption comes out. The only human step left in
-the loop is posting: one upload a day from a phone.
+PNGs) plus a ready-to-paste caption comes out. Human judgment remains at two
+quality boundaries: approving exercise footage and reviewing the finished
+posting pack before one daily phone upload.
 
 ## How a video is built
 
@@ -16,22 +17,29 @@ node pipeline/render.mjs content/scripts/DATE-slug.md
         │
         ├─ voiceover   ElevenLabs API, one clip per line, placed at its
         │              timestamp (ELEVENLABS_API_KEY + ELEVENLABS_VOICE_ID)
-        ├─ b-roll      Pexels video API, portrait, per-scene search query,
-        │              cropped to 1080x1920 (PEXELS_API_KEY). Every candidate
-        │              passes the FACELESS GATE: COCO-SSD person detection on
-        │              its thumbnails and sampled frames; any person in frame
-        │              rejects the clip. No person-free candidate → gradient.
+        ├─ demos       exact clips from assets/demo-library.json only. Machine
+        │              screening creates candidates; full-motion review verifies
+        │              movement truth, form framing and the faceless rule.
+        ├─ animations  exact authored exports from animation-library.json;
+        │              SHA-256, dimensions, frame rate and duration are verified
+        ├─ environment Pexels video API, portrait, per-scene search query,
+        │              cropped to 1080x1920 (PEXELS_API_KEY). COCO-SSD rejects
+        │              any clip containing a person. No clean match → gradient.
         ├─ overlays    brand text cards rendered by headless Chromium
         │              (bone/sage/ink palette from the app's design tokens)
+        ├─ sound       original `quiet-drive` bed, ducked under the voice;
+        │              complete mix mastered and verified at delivery
         └─ assembly    ffmpeg: scenes concatenated, overlays faded in and
                        out at their windows, voiceover mixed at timestamps
         │
         ▼
-renders/week-NN/DATE-slug.mp4  +  DATE-slug.caption.txt
+renders/week-NN/DATE-slug.mp4  +  caption, QA and asset-identity records
 ```
 
 Whole weeks: `node pipeline/produce.mjs 01` renders every video of the week
-and writes `renders/week-NN/posting-sheet.md` (file + caption per day).
+and writes `renders/week-NN/posting-sheet.md` (file + caption per day). The
+posting pack is blocked if `pipeline/shots.mjs` finds a repeated source within
+the week or in `data/shot-history.json`; see `docs/shot-history.md`.
 
 ## Honest degradation
 
@@ -62,24 +70,39 @@ and real b-roll:
 
 ## Service posture (decided 2026-09-01)
 
-- **B-roll**: Pexels stock, free tier. Within the ~$50/month budget there is
-  headroom to add AI-generated stills for reframe/slideshow posts later; AI
-  video generation stays off until stock demonstrably caps watch %.
+- **B-roll now**: Pexels stock, free tier, plus approved owned footage. The
+  current priority is the 18-clip capture brief in `docs/footage-capture.md`.
+- **Premium environment video later**: Runway is the planned budget-capped
+  source after a controlled Higgsfield comparison. This integration is
+  deliberately deferred until the rest of the engine is complete. Neither
+  provider may depict exercise form.
 - **Voiceover**: ElevenLabs, shared voice with the app. Non-negotiable
   brand asset.
+- **Sound bed**: original deterministic `quiet-drive` profile. It is mixed at
+  the sidecar's declared level, ducked beneath speech and mastered to -14 LUFS.
+  See `docs/sound-system.md`. Native TikTok sound is experiment-only for video.
 - **Posting**: manual daily upload from the posting sheet. TikTok's direct
   Content Posting API needs an audited app; revisit after warm-up. A
   scheduler SaaS (~$20-30/mo) fits the budget if daily uploads become a
   chore.
-- **Animated movement demos**: still gated by `assets/animations.md` —
-  generative video is not allowed to depict exercise form (form accuracy
-  is a coaching claim). Only the app's authored animations qualify.
+- **Animated movement demos**: gated by `assets/animation-library.json` —
+  generative video is not allowed to depict exercise form (form accuracy is a
+  coaching claim). Only checksum-pinned app-authored exports qualify; see
+  `docs/animation-ingestion.md`. The ingestion engine is ready, but the library
+  remains empty until the app delivers reviewed exports.
 
 ## Format notes
 
 - `environment-pov` and `text-on-screen` render as MP4. Text-on-screen
   scenes without a `broll_query` get the slow brand gradient.
-- `slideshow` renders scene-per-slide PNGs for TikTok photo posts.
+- `animated-demo` renders as MP4 and requires at least one `animation: true`
+  scene whose exact movement is approved in `animation-library.json`.
+  Environment shots may use staggered auto-cuts; physical and animated
+  demonstrations preserve the complete movement sequence.
+- `slideshow` renders 4-8 scene-per-slide PNGs for TikTok photo posts. Every
+  slide has one visible message, a kicker and footer. The template uses the
+  same Fraunces/Inter system as video overlays, conservative UI-safe margins,
+  progress bars, slide numbering, swipe cues and a distinct sage CTA card.
 - Fonts: Inter (bundled via npm, OFL). Palette mirrors
   `app/src/design/tokens.ts` in the app repo; if the app's tokens change,
   update `pipeline/lib/env.mjs` and the two templates.
@@ -95,5 +118,12 @@ with one frame every ~5 seconds. `produce.mjs` output is a draft until:
 2. Watch each video once at full speed (52 seconds each, it is not a lot).
 3. Check the posting sheet's render notes for silent-draft or gradient
    fallbacks you did not intend.
-4. Spot-check overlay text against `references/forbidden.md` if the sidecar
+4. Listen once on phone speakers and once on headphones: voice stays forward,
+   the bed is present but never competes, and no transition clicks.
+5. Spot-check overlay text against `references/forbidden.md` if the sidecar
    was edited by hand.
+
+For slideshows, review every PNG in filename order. Check that the hook works
+without a caption, no line is clipped, the progression makes sense, and the
+last slide asks the same short question as the caption. CI renders and probes a
+four-slide golden carousel alongside the five-second video fixture.

@@ -12,47 +12,37 @@ standing work orders.
 | Copy & storytelling | A- | Story-driven hooks, payoffs, day-chaining; needs data to prove it |
 | Overlay design | A- | Editorial serif over scrim; new, unproven on-platform |
 | Voice | B+ | Right voice, one delivery setting; no emphasis tuning |
-| Footage | C+ | THE weak layer: 6 demo clips total, 1 per movement, no pull demos |
-| Edit rhythm | C | Scenes hold 5-15s single-shot; AAA short-form cuts every 2-3s |
-| Sound design | D | Voice over silence; native content carries a low music bed |
-| Accessibility | C | No word-level captions; muted viewers (most of TikTok) get sparse overlays |
-| Reliability | B+ | Gates + guardrails after a day of hardening; QA still needs eyes |
+| Footage | D | Truth audit quarantined 6 legacy/candidate clips; only Full Plank remains approved |
+| Edit rhythm | A- | Auto-cut rhythm plus fail-closed cross-post identity history; creative variety is reviewed manually |
+| Sound design | B+ | Original ducked/mastered bed is CI-verified; phone/on-platform response is unproven |
+| Accessibility | A- | Burned captions, SRT and legible carousel design; word-level emphasis is untested |
+| Reliability | A- | Preflight, fail-closed QA and video/carousel golden fixtures are green in CI |
 | Learning engine | A- | Registry, insights, kill rules built; unexercised until first data |
 | Channel ops | D | No profile kit, no comment workflow, no cross-posting, handles unverified |
 
 ## What is missing, concretely
 
-1. **Footage depth.** One approved clip per movement means the channel
-   visibly repeats itself by week 2. Pull movements have zero demos, and
-   the differentiator video (doorframe rows) shows doors instead of rows.
-2. **Cut rhythm.** Single-clip scenes hold too long. Retention dies in
-   held shots, not in bad hooks.
-3. **Sound.** No music bed. Silence under voice reads as automated.
-   Licensing-safe route: add a low-volume in-app sound at post time
-   (zero rights risk, native to the platform); note it on every posting
-   sheet. A rendered bed needs a cleared license first.
-4. **Captions.** The pipeline knows every line and its measured timing —
-   word-level or line-level burned captions are nearly free and serve the
-   majority who watch muted. Also emit a .srt per video.
-5. **Final-output face check.** The gate screens source clips; the
-   rendered video should be screened too (belt and braces on the one
-   unforgivable failure).
-6. **End card.** No consistent branded close. The CTA deserves a
-   signature look (question + sage/gold card) viewers learn to recognize.
-7. **Channel ops.** No avatar/bio/pinned plan, no comment-reply
+1. **Footage truth and depth.** Full-motion review quarantined six legacy or candidate
+   clips with recognizable faces or the wrong movement. Only Full Plank has
+   one approved demo. The 18-clip capture brief is the immediate blocker;
+   pull movements still have zero demos.
+2. **Creative shot diversity.** Stable asset identities now block exact reuse
+   within a pack and across recorded posts. Human QA still judges whether two
+   technically different clips feel visually repetitive.
+3. **Sound validation.** The rights-safe `quiet-drive` bed, automatic ducking
+   and loudness/peak gates are built. Phone-speaker balance and audience
+   response remain unproven until the canary renders and first posted week.
+4. **Channel ops.** No avatar/bio/pinned plan, no comment-reply
    workflow (brand promise: answer every comment for 90 days), no
    Shorts/Reels cross-post from the same MP4s, handle reservations
    unconfirmed.
-8. **Retention diagnostics.** performance.csv lacks a drop-off timestamp
-   column; TikTok's retention graph says whether the hook or the body
-   loses people — capture it.
-9. **Render concurrency.** Two overlapping runs can race the renders
-   branch; the workflow needs a concurrency group.
-10. **Golden test.** Pipeline changes ship unexercised; a 5-second
-    fixture render in CI would catch template and mix regressions.
-11. **Preflight and fail-closed QA.** The engine had no policy/schema gate,
-    and unreadable face/audio/QA probes could pass as success. Implemented in
-    Wave 1; see `docs/system-audit.md`.
+5. **Animation supply.** The fail-closed ingestion path is implemented: exact
+   authored exports are checksum-pinned, media-probed, identity-tracked and
+   required by schema. The remaining blocker is delivery of reviewed exports.
+6. **Learning data.** The analytics and experiment engine is built but has
+   zero posted-video rows, so no editorial decision is evidence-backed yet.
+7. **Operations hardening.** Action versions still use moving major tags;
+   hook harvesting, a weekly decision report and local bootstrap remain.
 
 ## The plan
 
@@ -63,13 +53,24 @@ standing work orders.
       query/demo pool; cut on beat boundaries
 - [x] Branded end-card template for the CTA close
 - [x] Face check on rendered QA frames (post-render gate)
-- [x] Curation round 2: reviewed all 36 new candidates frame by frame;
-      zero met the bar (faces visible, gym settings, or wrong movements),
-      so the library stays at 6 owner-approved movements. The Pexels pool
-      for these queries is thin — deepening now waits on the Week 6
-      body-double checkpoint rather than a third stock sweep.
+- [x] Curation round 2: reviewed all 36 new stock candidates frame by
+      frame; zero met the bar (faces visible, gym settings, or wrong
+      movements). Every rejected ID now lives in demo-library.json's
+      rejected list and curate.mjs skips them; the stock pool is thin,
+      so footage depth rides on the capture brief and the Week 6
+      body-double checkpoint, not a third stock sweep.
+- [x] Audit the legacy demo library; quarantine clips that fail movement or
+      faceless truth instead of counting machine-screened stock as approved
+- [ ] Capture and approve the 18 clips in `docs/footage-capture.md`; target
+      3+ clips for each movement used in Week 01
+- [x] Upgrade slideshows with a strict 4-8 slide contract, safe-zone design,
+      progress/cues, CTA treatment and a visual golden fixture
 - [x] Workflow concurrency group (cancel superseded runs)
-- [x] Posting sheet: add the in-app low-volume sound instruction
+- [x] Per-render asset records and cross-video shot-history gate
+- [x] Original sound bed, voice ducking, -14 LUFS master, true-peak gate and
+      corrected posting instructions
+- [x] Authored-animation ingestion: approval manifest, checksum/media probes,
+      explicit sidecar schema and shot-history identity
 
 ### P1 — next two weeks (channel becomes an operation)
 
@@ -86,10 +87,11 @@ standing work orders.
 
 - [ ] Owner-shot b-roll bank (30 clips), including real hands-on-frame
       pull shots that fix the rows video permanently
-- [ ] App Rive animations land → assets/animations.md flow takes over
-      demo scenes (already built and gated)
+- [ ] App Rive animations land → approve their exports in
+      assets/animation-library.json and schedule animated-demo scenes
 - [ ] Voice delivery tuning: test stability/style variants on one video
-- [ ] Music bed decision: licensed calm bed vs in-app sounds, from data
+- [ ] Compare the original bed against a low-volume native sound only after
+      enough posts exist for a named experiment
 - [ ] Scheduler or TikTok API decision, from posting-friction data
 
 AAA definition for this channel: a cold viewer cannot tell it is

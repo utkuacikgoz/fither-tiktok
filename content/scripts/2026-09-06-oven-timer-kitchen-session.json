@@ -1,10 +1,11 @@
 {
-  "slug": "2026-09-03-oven-timer-kitchen-session",
+  "slug": "2026-09-06-oven-timer-kitchen-session",
   "week": "01",
-  "post_date": "2026-09-03",
+  "post_date": "2026-09-06",
   "format": "environment-pov",
   "pillar": "Constraint",
   "hook_mechanism": "situation",
+  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
   "caption": "Kitchen counter workout no equipment: a ten minute strength session that fits inside the oven timer. You do not find time, you use the gap already there. Save it for tonight.",
   "hashtags": [
     "#strengthtraining",
@@ -71,8 +72,7 @@
     {
       "start": 0,
       "end": 13.2,
-      "demo": true,
-      "movement": "Seated Knee Lift",
+      "broll_query": "kitchen chair oven background",
       "overlays": [
         {
           "t": 0,
@@ -106,8 +106,7 @@
     {
       "start": 26.9,
       "end": 31.3,
-      "demo": true,
-      "movement": "Seated Knee Lift",
+      "broll_query": "kitchen chair closeup warm light",
       "overlays": [
         {
           "t": 26.9,

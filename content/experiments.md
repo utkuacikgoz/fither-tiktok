@@ -16,7 +16,7 @@ Decisions feed `content/learnings.md` when they generalize.
 - **Status**: running
 - **Hypothesis**: hotel, kitchen and office constraint videos will not
   perform equally; one environment is the audience's real life.
-- **Variants**: 2026-09-01 hotel / 2026-09-03 kitchen / 2026-09-07 office
+- **Variants**: 2026-09-04 hotel / 2026-09-06 kitchen / 2026-09-10 office
 - **Metric**: watch %
 - **Decision rule**: highest watch % takes week 02's free slot and leads
   the App Store screenshot candidates. A gap under 5 points = no winner,
@@ -30,7 +30,7 @@ Decisions feed `content/learnings.md` when they generalize.
 - **Status**: running
 - **Hypothesis**: progression (skill-ladder) content earns more saves per
   1000 than situation (constraint) content, because a ladder is a plan.
-- **Variants**: the two ladders (09-02 push, 09-05 doorframe row) vs the
+- **Variants**: the two ladders (09-05 push, 09-08 doorframe row) vs the
   three constraint videos.
 - **Metric**: saves per 1000 views
 - **Decision rule**: if either ladder clears 15 saves/1k, week 02 gets a
@@ -43,7 +43,7 @@ Decisions feed `content/learnings.md` when they generalize.
 
 - **Week opened**: 01
 - **Status**: running
-- **Hypothesis**: text-on-screen (09-04, 09-06) will lag environment POV
+- **Hypothesis**: text-on-screen (09-07, 09-09) will lag environment POV
   on watch % while the animation library is empty.
 - **Metric**: watch % gap between the two formats
 - **Decision rule**: gap over 10 points → week 02 shifts the mix toward

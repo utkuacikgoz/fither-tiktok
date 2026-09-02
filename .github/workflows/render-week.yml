@@ -110,11 +110,7 @@ jobs:
 
       - name: Install pipeline dependencies
         working-directory: pipeline
-        run: |
-          npm ci --no-audit --no-fund
-          # Native TF backend: order-of-magnitude faster detection. Best
-          # effort — the pure-JS backend is the fallback either way.
-          npm install --no-save --no-audit --no-fund @tensorflow/tfjs-node || true
+        run: npm ci --no-audit --no-fund
 
       - name: Install Chromium for overlay rendering
         run: npx playwright@1.62.1 install --with-deps chromium
@@ -153,6 +149,9 @@ jobs:
       - name: Install pipeline dependencies
         working-directory: pipeline
         run: npm ci --no-audit --no-fund
+
+      - name: Block repeated footage
+        run: node pipeline/shots.mjs "${{ needs.plan.outputs.week }}"
 
       - name: Build posting sheet
         run: node pipeline/sheet.mjs "${{ needs.plan.outputs.week }}"

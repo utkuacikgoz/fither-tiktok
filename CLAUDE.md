@@ -11,7 +11,7 @@ Read `.claude/skills/fither-voice/SKILL.md`. Its `references/forbidden.md`
 is a hard list, not a guideline. During the warm-up period the app, the
 waitlist and the launch are never mentioned in content.
 
-## The three commands
+## The four commands
 
 ```
 plan week N                    # content-planner agent → content/weeks/week-NN.md
@@ -48,13 +48,17 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
   from the app repo's `data/movements.json`). Unsure → name the movement
   pattern, not a specific exercise.
 - **Animation truth**: the animated-demo format may only be planned for
-  movements listed in `assets/animations.md`. That manifest starts empty;
-  until animations land, plan environment POV and text-on-screen only.
+  movements with approved exports in `assets/animation-library.json`. That
+  manifest starts empty; the renderer checksum-pins and probes every authored
+  export. Until animations land, plan environment POV and text-on-screen only.
 - **Wrist caveat**: the app library has no wrist-neutral push variants yet.
   Never promise "wrist-friendly push-ups"; sore wrists mean pull, squat,
   hinge and core content, and say so honestly.
 - **Faceless**: no face ever appears. Voice is the persona — the same
   ElevenLabs voice as the app's in-session guidance.
+- **Demo truth**: machine screening never approves footage. A demo enters
+  `assets/demo-library.json` only after full-motion review confirms the exact
+  movement, usable form framing and no recognizable face in any frame.
 - Never plan around trending sounds. They expire before filming.
 - **No AI attribution anywhere in the repo** (owner rule, 2026-09-02; same
   as the app repo): no "Generated with", no Co-Authored-By AI trailers, no
@@ -68,18 +72,23 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 
 - `.claude/agents/` — content-planner, video-writer
 - `.claude/skills/fither-voice/` — brand voice; shared filter with the app repo
-- `assets/animations.md` — which movement animations exist (the gate for
-  the animated-demo format)
+- `assets/animation-library.json` — machine-readable animated-demo approval gate
+- `assets/animations.md` — human-readable animation production status
 - `content/log.md` — every topic ever used, with results
 - `content/experiments.md` — the experiment registry (hypothesis → decision)
 - `content/learnings.md` — validated findings, append-only
 - `data/insights.md` — generated analytics report (`node pipeline/analyze.mjs`)
 - `data/assets.md` — generated footage/animation readiness report (`node pipeline/assets.mjs`)
+- `data/shot-history.json` — identities used by published posts; future renders exclude them
+- `docs/footage-capture.md` — the body-only filming and approval contract
+- `docs/shot-history.md` — per-render asset records and cross-post reuse gate
+- `docs/animation-ingestion.md` — authored export and sidecar contract
+- `docs/sound-system.md` — original bed, ducking, loudness and posting contract
 - `data/comments.md` — comment theme buckets
 - `content/weeks/week-NN.md` — planner output
 - `content/scripts/YYYY-MM-DD-slug.md` — writer output, one per video
 - `content/scripts/YYYY-MM-DD-slug.json` — render spec sidecar, one per video
-- `pipeline/` — the renderer (ElevenLabs + Pexels + Chromium overlays + ffmpeg)
+- `pipeline/` — the renderer (ElevenLabs + Pexels + original sound + Chromium overlays + ffmpeg)
 - `renders/` — finished MP4s and posting sheets (gitignored, delivered per week)
 - `data/performance.csv` — views, watch %, completion, first drop-off, follows and saves per video
 

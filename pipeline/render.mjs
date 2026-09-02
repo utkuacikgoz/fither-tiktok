@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Renders one FITHER video from its spec sidecar.
-//   node pipeline/render.mjs content/scripts/2026-09-01-hotel-room-silent-session.md
+//   node pipeline/render.mjs content/scripts/2026-09-04-hotel-room-silent-session.md
 // Output: renders/week-NN/<slug>.mp4 (or <slug>/slide-N.png for slideshows).
 // Degrades honestly: no ELEVENLABS_* key → silent draft; no PEXELS_API_KEY →
 // brand-gradient backgrounds. Both states are printed, never hidden.
@@ -9,10 +9,12 @@ import { writeFileSync } from "node:fs";
 import { ensureDir, rendersDir } from "./lib/env.mjs";
 import { loadSpec, overlayWindows } from "./lib/spec.mjs";
 import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
-import { fetchBroll, fetchApprovedDemo, brollAvailable } from "./lib/broll.mjs";
+import { fetchBroll, fetchApprovedDemo, brollAvailable, readAssetMetadata } from "./lib/broll.mjs";
+import { fetchApprovedAnimation } from "./lib/animations.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
-import { assertNoFaces, assertVoiceAudible, createQaSheet } from "./lib/verify.mjs";
+import { assertAudioMaster, assertNoFaces, assertVoiceAudible, createQaSheet } from "./lib/verify.mjs";
+import { renderSoundBed } from "./lib/sound.mjs";
 
 function writeDeliveryText(outDir, spec, notes) {
   const captionFile = join(outDir, `${spec.slug}.caption.txt`);
@@ -20,6 +22,17 @@ function writeDeliveryText(outDir, spec, notes) {
   writeFileSync(captionFile, `${spec.caption}\n\n${(spec.hashtags ?? []).join(" ")}\n`);
   writeFileSync(notesFile, notes.map((note) => `- ${note}`).join("\n") + "\n");
   return captionFile;
+}
+
+function writeAssetRecord(outDir, spec, assets) {
+  const file = join(outDir, `${spec.slug}.assets.json`);
+  writeFileSync(file, `${JSON.stringify({
+    slug: spec.slug,
+    week: spec.week,
+    post_date: spec.post_date,
+    assets,
+  }, null, 2)}\n`);
+  return file;
 }
 
 export async function renderOne(scriptPath) {
@@ -34,8 +47,16 @@ export async function renderOne(scriptPath) {
     try {
       for (const [i, s] of spec.scenes.entries()) {
         const f = join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
+        const overlay = s.overlays[0];
         await renderSlide(
-          { kicker: s.kicker ?? "", text: s.overlays?.[0]?.text ?? "", footer: s.footer ?? "" },
+          {
+            kicker: s.kicker ?? "",
+            text: overlay.text,
+            footer: s.footer ?? "",
+            index: i + 1,
+            total: spec.scenes.length,
+            kind: overlay.style,
+          },
           f,
         );
         files.push(f);
@@ -44,12 +65,15 @@ export async function renderOne(scriptPath) {
       await closeBrowser();
     }
     notes.push("slideshow: post as a TikTok photo post");
+    files.push(writeAssetRecord(outDir, spec, []));
     files.push(writeDeliveryText(outDir, spec, notes));
     return { spec, files, notes };
   }
 
   if (!ttsAvailable()) notes.push("SILENT DRAFT: no ELEVENLABS_API_KEY/ELEVENLABS_VOICE_ID set");
-  if (!brollAvailable()) notes.push("GRADIENT BACKGROUNDS: no PEXELS_API_KEY set");
+  if (!brollAvailable() && spec.scenes.some((scene) => scene.broll_query)) {
+    notes.push("GRADIENT BACKGROUNDS: no PEXELS_API_KEY set");
+  }
 
   const voFiles = await synthesizeLines(spec.voiceover ?? []);
 
@@ -85,19 +109,37 @@ export async function renderOne(scriptPath) {
   }
 
   const sceneFiles = [];
+  const selectedAssets = [];
+  const usedAssetIds = new Set();
   for (const s of spec.scenes) {
     let f = null;
     try {
-      if (s.demo && s.movement) {
-        f = await fetchApprovedDemo(s.movement, `${spec.slug}|${s.start}`);
-        if (!f && brollAvailable()) notes.push(`"${s.movement}" not in assets/demo-library.json — demo scene falls back`);
+      if (s.animation && s.movement) {
+        f = await fetchApprovedAnimation(s.movement, `${spec.slug}|${s.start}`, usedAssetIds);
+      } else if (s.demo && s.movement) {
+        f = await fetchApprovedDemo(s.movement, `${spec.slug}|${s.start}`, usedAssetIds);
+        if (!f) notes.push(`verified "${s.movement}" demo unavailable — using gradient`);
+      } else {
+        f = await fetchBroll(s.broll_query, "environment", usedAssetIds);
       }
-      f ??= await fetchBroll(s.broll_query, s.demo ? "demo" : "environment");
     } catch (e) {
+      if (s.animation) throw new Error(`authored animation "${s.movement}" failed: ${e.message}`);
       notes.push(`b-roll "${s.broll_query}" failed (${e.message.slice(0, 80)}), using gradient`);
     }
     if (!f && brollAvailable() && s.broll_query) {
       notes.push(`no b-roll found for "${s.broll_query}", using gradient`);
+    }
+    if (f) {
+      const metadata = readAssetMetadata(f);
+      if (metadata?.asset_id) usedAssetIds.add(metadata.asset_id);
+      selectedAssets.push({
+        scene_start: s.start,
+        kind: s.animation ? "animation" : s.demo ? "demo" : "environment",
+        movement: s.movement,
+        query: s.broll_query,
+        asset_id: metadata?.asset_id ?? null,
+        source: metadata?.source ?? null,
+      });
     }
     sceneFiles.push(f);
   }
@@ -138,7 +180,12 @@ export async function renderOne(scriptPath) {
   }
 
   const out = join(outDir, `${spec.slug}.mp4`);
-  await composeVideo({ spec, sceneFiles, overlays, voFiles, out });
+  const soundBedFile = await renderSoundBed(spec.sound.profile);
+  notes.push(`embedded original ${spec.sound.profile} sound bed at ${spec.sound.bed_gain_db} dB with voice ducking`);
+  await composeVideo({ spec, sceneFiles, overlays, voFiles, soundBedFile, out });
+
+  // GUARDRAIL: the complete mix must meet the delivery loudness contract.
+  await assertAudioMaster(out);
 
   // GUARDRAIL: every scripted line must be audible in the finished file.
   // The retimed schedule is ground truth; a silent line window means the
@@ -155,11 +202,12 @@ export async function renderOne(scriptPath) {
   const qaDir = ensureDir(join(outDir, "qa"));
   const qaFile = join(qaDir, `${spec.slug}.png`);
   await createQaSheet(out, qaFile);
+  const assetFile = writeAssetRecord(outDir, spec, selectedAssets);
 
   // Notes persist next to the render so sharded CI jobs can be collected
   // into one posting sheet.
   const captionFile = writeDeliveryText(outDir, spec, notes);
-  return { spec, files: [out, captionFile, qaFile], notes };
+  return { spec, files: [out, captionFile, qaFile, assetFile], notes };
 }
 
 const invokedDirectly = process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop());

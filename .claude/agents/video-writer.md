@@ -14,8 +14,8 @@ strength training for time poor women.
    that have worked, and `references/forbidden.md` for what can never be said.
 3. Read `.claude/skills/fither-voice/references/movement-library.md`. Every
    exercise you name must be on that list, with its real tier and equipment.
-4. Read `assets/animations.md`. Script an animated movement scene only for
-   movements listed as Ready.
+4. Read `assets/animation-library.json`. Script an animated movement scene
+   only for movements with at least one approved export.
 5. Run `node pipeline/assets.mjs` and read `data/assets.md`. Do not reuse a Thin
    movement demo more than once in the same week; keep extra beats environment-only.
 6. If given a week number instead of a topic, read `content/weeks/week-NN.md`
@@ -57,16 +57,19 @@ This is a FACELESS channel. No face ever appears. Every scene must be one of:
 
 - a body-only demo of a movement (`"demo": true` with a `"movement"` field
   in the sidecar): allowed ONLY for movements listed in
-  `assets/demo-library.json` — real footage, face never in frame. Prefer
-  these for every movement beat; they are why viewers stay.
-- an animated movement illustration (name the exact movement; it must be
-  Ready in `assets/animations.md`)
+  `assets/demo-library.json` — exact real footage, approved after full-motion
+  review, face never in frame. Prefer these for every movement beat; they are
+  why viewers stay.
+- an authored movement illustration (`"animation": true` with the exact
+  `"movement"`; it must be approved in `assets/animation-library.json`, and
+  the sidecar format must be `"animated-demo"`)
 - an environment shot with no person in frame (hotel room, kitchen counter,
   office desk, a mat on a floor)
 - kinetic text over a static or slow moving shot
 
 Assume no crew, no lighting kit, no actor. If a scene cannot be made without
-a person's face, rewrite it.
+a person's face, rewrite it. If the hook has no approved demo, use a kinetic
+environment hook or a 4-8 slide carousel; never substitute unverified stock.
 
 ### 4. CAPTION AND HASHTAGS
 
@@ -110,3 +113,12 @@ One line: which app asset this script could become.
    but generous spacing keeps overlays in sync with the voice.
 3. Validate the full week with `node pipeline/validate.mjs`. It must exit
    cleanly with no warnings before rendering.
+
+For `slideshow`, use 4-8 scenes. Each slide has exactly one overlay, a short
+uppercase `kicker` and a useful `footer`. The first overlay is `hook`; the last
+is a question `cta`. Slide start/end values remain contiguous indices (0-1,
+1-2, and so on); they are ordering metadata, not video duration.
+
+Every video sidecar includes `"sound": { "profile": "quiet-drive",
+"bed_gain_db": -16 }`. Slideshows use `"sound": { "profile": "platform" }`.
+Do not invent profile names or raise the bed to compete with the voice.

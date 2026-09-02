@@ -5,6 +5,7 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { repoRoot, rendersDir, ensureDir } from "./lib/env.mjs";
 import { renderOne } from "./render.mjs";
+import { auditShotUsage, loadShotHistory } from "./lib/shots.mjs";
 
 const week = String(process.argv[2] ?? "").replace(/^week-/, "").padStart(2, "0");
 if (!/^\d{2}$/.test(week)) {
@@ -30,7 +31,7 @@ if (specs.length === 0) {
 }
 
 const outDir = ensureDir(join(rendersDir, `week-${week}`));
-let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nWhen posting, add a calm in-app sound at 10-20% volume under the voice —\nnative feel, zero licensing risk. Never pick a sound the video depends on.\n`;
+let sheet = `# Week ${week} — posting sheet\n\nOne per day, fixed time. Caption goes in as the first text.\nVideo masters already contain the original FITHER bed with voice ducking; do not\nstack another sound unless the post is a named native-sound experiment (0-5%).\nFor slideshows, choose a calm in-app sound that carries no instructional meaning.\n`;
 const allNotes = [];
 
 for (const f of specs) {
@@ -40,11 +41,21 @@ for (const f of specs) {
   sheet += `\n## ${spec.post_date} — ${spec.slug}\n\n`;
   sheet += `File: \`${files[0].replace(repoRoot + "/", "")}\`\n\n`;
   sheet += `Caption:\n\n> ${spec.caption}\n>\n> ${(spec.hashtags ?? []).join(" ")}\n`;
+  sheet += `\nAfter publishing: \`node pipeline/shots.mjs ${week} --record ${spec.slug}\`\n`;
 }
 
 if (allNotes.length) {
   sheet += `\n## Render notes\n\n`;
   allNotes.forEach((n) => (sheet += `- ${n}\n`));
 }
+const assetRecords = readdirSync(outDir)
+  .filter((name) => name.endsWith(".assets.json"))
+  .map((name) => JSON.parse(readFileSync(join(outDir, name), "utf8")));
+const shotAudit = auditShotUsage(assetRecords, loadShotHistory());
+writeFileSync(join(outDir, "shot-report.md"), shotAudit.report);
+if (shotAudit.errors.length) {
+  throw new Error(`shot identity gate failed:\n  - ${shotAudit.errors.join("\n  - ")}`);
+}
+sheet += `\nShot identity report: \`renders/week-${week}/shot-report.md\`\n`;
 writeFileSync(join(outDir, "posting-sheet.md"), sheet);
 console.log(`\nPosting sheet: ${join(outDir, "posting-sheet.md")}`);

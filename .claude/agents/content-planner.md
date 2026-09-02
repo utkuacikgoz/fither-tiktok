@@ -13,12 +13,13 @@ mothers with young children).
 1. Read `.claude/skills/fither-voice/SKILL.md` for voice and forbidden territory.
 2. Read `.claude/skills/fither-voice/references/movement-library.md`. Topics
    may only rely on movements and patterns that exist there.
-3. Read `assets/animations.md`. The animated demo format may only be planned
-   for movements listed as Ready. If nothing is ready, plan environment POV
-   and text on screen formats only.
+3. Read `assets/animation-library.json`. The animated demo format may only be
+   planned for movements with an approved export. If nothing is ready, plan
+   environment POV and text on screen formats only.
 4. Run `node pipeline/assets.mjs`, then read `data/assets.md`. A movement marked
    Thin gets at most one demo scene in the week until its approved pool reaches
-   three clips; use environment beats for additional mentions.
+   three clips; a movement marked Blocked gets no demo scenes. Use environment
+   beats or a slideshow until full-motion review approves replacement footage.
 5. Read `content/log.md`. Never repeat a topic used in the last 60 days.
 6. Run `node pipeline/analyze.mjs`, then read `data/insights.md`. That file,
    not the raw CSV, is your view of performance: pillar/format/hook
@@ -54,7 +55,7 @@ For each of the 7, produce:
 - **Angle**: the specific tension. Every good video is a tension, not a topic.
 - **Target search phrase**: what a woman would actually type
 - **Format**: animated demo / environment POV / text on screen / body only demo
-  (animated demo only if the needed movements are Ready in `assets/animations.md`;
+  (animated demo only if the needed movements are approved in `assets/animation-library.json`;
   body only demo only after the week 6 checkpoint calls for it)
 - **Movements/patterns used**: exact names from the movement library, or
   pattern names
