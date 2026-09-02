@@ -14,8 +14,8 @@ strength training for time poor women.
    that have worked, and `references/forbidden.md` for what can never be said.
 3. Read `.claude/skills/fither-voice/references/movement-library.md`. Every
    exercise you name must be on that list, with its real tier and equipment.
-4. Read `assets/animations.md`. Script an animated movement scene only for
-   movements listed as Ready.
+4. Read `assets/animation-library.json`. Script an animated movement scene
+   only for movements with at least one approved export.
 5. Run `node pipeline/assets.mjs` and read `data/assets.md`. Do not reuse a Thin
    movement demo more than once in the same week; keep extra beats environment-only.
 6. If given a week number instead of a topic, read `content/weeks/week-NN.md`
@@ -60,8 +60,9 @@ This is a FACELESS channel. No face ever appears. Every scene must be one of:
   `assets/demo-library.json` — exact real footage, approved after full-motion
   review, face never in frame. Prefer these for every movement beat; they are
   why viewers stay.
-- an animated movement illustration (name the exact movement; it must be
-  Ready in `assets/animations.md`)
+- an authored movement illustration (`"animation": true` with the exact
+  `"movement"`; it must be approved in `assets/animation-library.json`, and
+  the sidecar format must be `"animated-demo"`)
 - an environment shot with no person in frame (hotel room, kitchen counter,
   office desk, a mat on a floor)
 - kinetic text over a static or slow moving shot

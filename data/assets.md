@@ -4,7 +4,7 @@
 - Quarantined legacy clips: **6**
 - Demo scenes in current sidecars: **1**
 - Distinct environment searches: **35**
-- Ready authored animations: **0**
+- Ready authored animation exports: **0** across **0** movements
 - Priority movements below target (<3 approved clips): **6**
 
 ## Movement footage
@@ -17,6 +17,12 @@
 | Reverse Lunge | 0 | 0 | 0 | Blocked |
 | Seated Knee Lift | 0 | 0 | 0 | Blocked |
 | Wall Push-Up | 0 | 0 | 0 | Blocked |
+
+## Authored animations
+
+| Movement | Approved exports | Current scenes | Videos | Readiness |
+|---|---:|---:|---:|---|
+| — | 0 | 0 | 0 | Awaiting authored exports |
 
 ## Provider boundary
 

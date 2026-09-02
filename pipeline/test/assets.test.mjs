@@ -1,11 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildAssetReport, readyAnimations } from "../lib/assets.mjs";
+import { buildAssetReport } from "../lib/assets.mjs";
 
-test("parses only the Ready animation section", () => {
-  const markdown = "## Ready\n\n- wall-push-up (Wall Push-Up) — file.riv\n<!-- - template (Not Real) — example -->\n\n## In production\n\n- squat (Air Squat) — soon\n";
-  assert.deepEqual(readyAnimations(markdown), ["Wall Push-Up"]);
-});
+const animations = { version: 1, movements: {} };
 
 test("reports thin reused demo pools and malformed library entries", () => {
   const specs = [{ slug: "one", scenes: [{ demo: true, movement: "Wall Push-Up" }] }];
@@ -18,7 +15,7 @@ test("reports thin reused demo pools and malformed library entries", () => {
     faceless_verified: false,
     reviewed_at: "",
   }] } };
-  const result = buildAssetReport(specs, library, "## Ready\n\n(none yet)\n");
+  const result = buildAssetReport(specs, library, animations);
   assert.ok(result.errors.some((error) => error.includes("invalid Pexels URL")));
   assert.ok(result.errors.some((error) => error.includes("movement_verified must be true")));
   assert.ok(result.errors.some((error) => error.includes("faceless_verified must be true")));
@@ -36,7 +33,7 @@ test("accepts checksum-pinned owned footage", () => {
     faceless_verified: true,
     reviewed_at: "2026-09-02",
   }] } };
-  const result = buildAssetReport([], library, "## Ready\n\n(none yet)\n");
+  const result = buildAssetReport([], library, animations);
   assert.deepEqual(result.errors, []);
   assert.match(result.report, /Approved body-only clips: \*\*1\*\*/);
 });
@@ -53,7 +50,7 @@ test("tracks quarantined clips without counting them as approved depth", () => {
       reason: "Face visible.",
     }],
   };
-  const result = buildAssetReport(specs, library, "## Ready\n\n(none yet)\n");
+  const result = buildAssetReport(specs, library, animations);
   assert.equal(result.errors.length, 0);
   assert.ok(result.warnings.some((warning) => warning.includes("1 current demo scene(s)")));
   assert.match(result.report, /Approved body-only clips: \*\*0\*\*/);
@@ -80,6 +77,28 @@ test("rejects a Pexels clip listed as both approved and quarantined", () => {
       reason: "Duplicate truth state.",
     }],
   };
-  const result = buildAssetReport([], library, "## Ready\n\n(none yet)\n");
+  const result = buildAssetReport([], library, animations);
   assert.ok(result.errors.some((error) => error.includes("duplicates approved Full Plank")));
+});
+
+test("reports approved authored animation depth and current use", () => {
+  const animationLibrary = { version: 1, movements: { "Air Squat": [{
+    source: "authored",
+    rights: "FITHER-owned",
+    path: "assets/animation-exports/air-squat.mp4",
+    sha256: "b".repeat(64),
+    duration: 6,
+    width: 1080,
+    height: 1920,
+    fps: 30,
+    loop_safe: true,
+    movement_verified: true,
+    faceless_verified: true,
+    reviewed_at: "2026-09-02",
+  }] } };
+  const specs = [{ slug: "one", scenes: [{ animation: true, movement: "Air Squat" }] }];
+  const result = buildAssetReport(specs, { movements: {} }, animationLibrary);
+  assert.deepEqual(result.errors, []);
+  assert.match(result.report, /Ready authored animation exports: \*\*1\*\*/);
+  assert.match(result.report, /\| Air Squat \| 1 \| 1 \| 1 \| Ready \|/);
 });

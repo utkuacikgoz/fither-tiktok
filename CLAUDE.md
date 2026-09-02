@@ -48,8 +48,9 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
   from the app repo's `data/movements.json`). Unsure → name the movement
   pattern, not a specific exercise.
 - **Animation truth**: the animated-demo format may only be planned for
-  movements listed in `assets/animations.md`. That manifest starts empty;
-  until animations land, plan environment POV and text-on-screen only.
+  movements with approved exports in `assets/animation-library.json`. That
+  manifest starts empty; the renderer checksum-pins and probes every authored
+  export. Until animations land, plan environment POV and text-on-screen only.
 - **Wrist caveat**: the app library has no wrist-neutral push variants yet.
   Never promise "wrist-friendly push-ups"; sore wrists mean pull, squat,
   hinge and core content, and say so honestly.
@@ -71,8 +72,8 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 
 - `.claude/agents/` — content-planner, video-writer
 - `.claude/skills/fither-voice/` — brand voice; shared filter with the app repo
-- `assets/animations.md` — which movement animations exist (the gate for
-  the animated-demo format)
+- `assets/animation-library.json` — machine-readable animated-demo approval gate
+- `assets/animations.md` — human-readable animation production status
 - `content/log.md` — every topic ever used, with results
 - `content/experiments.md` — the experiment registry (hypothesis → decision)
 - `content/learnings.md` — validated findings, append-only
@@ -81,6 +82,7 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `data/shot-history.json` — identities used by published posts; future renders exclude them
 - `docs/footage-capture.md` — the body-only filming and approval contract
 - `docs/shot-history.md` — per-render asset records and cross-post reuse gate
+- `docs/animation-ingestion.md` — authored export and sidecar contract
 - `docs/sound-system.md` — original bed, ducking, loudness and posting contract
 - `data/comments.md` — comment theme buckets
 - `content/weeks/week-NN.md` — planner output

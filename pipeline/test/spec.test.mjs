@@ -35,6 +35,7 @@ const options = {
   jsonPath: "/tmp/2026-09-01-valid-video.json",
   movementNames: new Set(["Wall Push-Up"]),
   approvedDemoMovements: new Set(["Wall Push-Up"]),
+  approvedAnimationMovements: new Set(),
 };
 
 test("accepts a structurally valid, policy-clean sidecar", () => {
@@ -129,6 +130,47 @@ test("rejects missing, unknown and overpowering sound contracts", () => {
   const loud = validSpec();
   loud.sound.bed_gain_db = -3;
   assert.ok(validateSpec(loud, options).errors.some((message) => message.includes("bed_gain_db")));
+});
+
+test("accepts only approved animation scenes under the animated-demo format", () => {
+  const spec = validSpec();
+  spec.format = "animated-demo";
+  delete spec.scenes[0].demo;
+  spec.scenes[0].animation = true;
+  const approved = validateSpec(spec, {
+    ...options,
+    approvedAnimationMovements: new Set(["Wall Push-Up"]),
+  });
+  assert.deepEqual(approved, { errors: [], warnings: [] });
+
+  const blocked = validateSpec(spec, options);
+  assert.ok(blocked.errors.some((message) => message.includes("no approved authored export")));
+
+  spec.format = "environment-pov";
+  const wrongFormat = validateSpec(spec, {
+    ...options,
+    approvedAnimationMovements: new Set(["Wall Push-Up"]),
+  });
+  assert.ok(wrongFormat.errors.some((message) => message.includes('requires format "animated-demo"')));
+});
+
+test("rejects empty animated-demo format and ambiguous visual sources", () => {
+  const empty = validSpec();
+  empty.format = "animated-demo";
+  delete empty.scenes[0].demo;
+  delete empty.scenes[0].movement;
+  assert.ok(validateSpec(empty, options).errors.some((message) => message.includes("at least one animation scene")));
+
+  const ambiguous = validSpec();
+  ambiguous.format = "animated-demo";
+  ambiguous.scenes[0].animation = true;
+  ambiguous.scenes[0].broll_query = "quiet room";
+  const result = validateSpec(ambiguous, {
+    ...options,
+    approvedAnimationMovements: new Set(["Wall Push-Up"]),
+  });
+  assert.ok(result.errors.some((message) => message.includes("mutually exclusive")));
+  assert.ok(result.errors.some((message) => message.includes("cannot also declare broll_query")));
 });
 
 test("policy catches channel-specific wrist and punctuation violations", () => {

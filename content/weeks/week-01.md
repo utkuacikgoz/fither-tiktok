@@ -2,7 +2,7 @@
 
 First week on the channel. No performance data exists, so the free slot goes
 to Constraint (3 Constraint, 2 Skill ladder, 1 Reframe, 1 Fast tips).
-`assets/animations.md` lists nothing Ready, so every video this week is
+`assets/animation-library.json` has no approved exports, so every video this week is
 environment POV or text on screen. Calendar context: back-to-school week,
 and business travel restarting after summer.
 

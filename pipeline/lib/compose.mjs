@@ -43,14 +43,14 @@ export async function composeVideo({ spec, sceneFiles, overlays, voFiles, soundB
   const args = ["-y"];
   const filters = [];
 
-  // Scene background inputs. Held single shots kill retention, so any
-  // clip-backed scene longer than ~4.2s is cut into ~3s segments taken
-  // from staggered offsets of the clip — jump-cut rhythm without extra
-  // downloads or gate passes.
+  // Scene background inputs. Held environment shots kill retention, so a
+  // long environment scene is cut into staggered segments. Never jump-cut a
+  // physical or animated movement demonstration: preserving the authored rep
+  // sequence matters more than artificial pace.
   spec.scenes.forEach((s, i) => {
     const dur = s.end - s.start;
     if (sceneFiles[i]) {
-      const nSeg = dur > 4.2 ? Math.min(4, Math.ceil(dur / 3)) : 1;
+      const nSeg = !s.demo && !s.animation && dur > 4.2 ? Math.min(4, Math.ceil(dur / 3)) : 1;
       const segDur = dur / nSeg;
       // Loop the source long enough that any offset+segment stays in range.
       const loopLen = dur + segDur * nSeg + 2;

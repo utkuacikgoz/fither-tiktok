@@ -20,6 +20,8 @@ node pipeline/render.mjs content/scripts/DATE-slug.md
         ├─ demos       exact clips from assets/demo-library.json only. Machine
         │              screening creates candidates; full-motion review verifies
         │              movement truth, form framing and the faceless rule.
+        ├─ animations  exact authored exports from animation-library.json;
+        │              SHA-256, dimensions, frame rate and duration are verified
         ├─ environment Pexels video API, portrait, per-scene search query,
         │              cropped to 1080x1920 (PEXELS_API_KEY). COCO-SSD rejects
         │              any clip containing a person. No clean match → gradient.
@@ -83,14 +85,20 @@ and real b-roll:
   Content Posting API needs an audited app; revisit after warm-up. A
   scheduler SaaS (~$20-30/mo) fits the budget if daily uploads become a
   chore.
-- **Animated movement demos**: still gated by `assets/animations.md` —
-  generative video is not allowed to depict exercise form (form accuracy
-  is a coaching claim). Only the app's authored animations qualify.
+- **Animated movement demos**: gated by `assets/animation-library.json` —
+  generative video is not allowed to depict exercise form (form accuracy is a
+  coaching claim). Only checksum-pinned app-authored exports qualify; see
+  `docs/animation-ingestion.md`. The ingestion engine is ready, but the library
+  remains empty until the app delivers reviewed exports.
 
 ## Format notes
 
 - `environment-pov` and `text-on-screen` render as MP4. Text-on-screen
   scenes without a `broll_query` get the slow brand gradient.
+- `animated-demo` renders as MP4 and requires at least one `animation: true`
+  scene whose exact movement is approved in `animation-library.json`.
+  Environment shots may use staggered auto-cuts; physical and animated
+  demonstrations preserve the complete movement sequence.
 - `slideshow` renders 4-8 scene-per-slide PNGs for TikTok photo posts. Every
   slide has one visible message, a kicker and footer. The template uses the
   same Fraunces/Inter system as video overlays, conservative UI-safe margins,

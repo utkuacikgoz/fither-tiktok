@@ -28,9 +28,9 @@ library is not deep until the replacement capture brief is completed.
 | P0 | Human QA | Contact sheet held only six frames, omitting the final 10+ seconds on long videos; generation failure was a note | Fixed in Wave 1; 5s, 4x4, fail closed |
 | P0 | Delivery | Slideshow render returned before writing caption/notes and the posting-sheet collector required an MP4 | Fixed in Wave 1 |
 | P1 | Duration | Six of seven Week 01 sidecars exceeded the writer's 45–60 second brief | Fixed in Wave 2; all seven pass strict preflight |
-| P0 | Footage truth | Five legacy clips failed movement/faceless review; only Full Plank remains approved and pull has none | Wave 2; quarantined, 18-clip capture open |
+| P0 | Footage truth | Six legacy/candidate clips failed movement/faceless review; only Full Plank remains approved and pull has none | Wave 2; quarantined, 18-clip capture open |
 | P1 | Asset visibility | Planning had no generated inventory showing thin movement pools and reuse pressure | Fixed in Wave 2 via `data/assets.md` |
-| P1 | Animation contract | Planning understands authored animated scenes, but the renderer has no animation ingestion path yet | Wave 2, gated by the empty animation manifest |
+| P1 | Animation contract | Renderer now ingests only approved, checksum-pinned, media-probed authored exports and tracks their identities | Fixed in Wave 4; asset supply remains empty |
 | P1 | Regression safety | No five-second golden render exercises browser, fonts, ffmpeg, caption mix and output probes in CI | Fixed in Wave 2 |
 | P1 | Metrics | No retention drop-off field; rates were averaged per video; missing weeks counted as consecutive kill weeks | Fixed in Wave 3 |
 | P1 | Experiment loop | Experiments and learnings were prose, so closure/decision rules could not be verified automatically | Fixed in Wave 3 |
@@ -63,18 +63,18 @@ Acceptance criteria:
 1. Cut Week 01 to 45–60 seconds without losing the story loop or CTA.
 2. Add a golden five-second fixture render in CI, including output dimensions,
    duration, audio stream, captions and QA artifact assertions.
-3. Resolve the format contract: implement authored animation ingestion and a
-   body-only mode, or remove those choices from planning until they exist.
+3. [x] Resolve the format contract: authored animation ingestion and body-only
+   modes are explicit, separately approved and fail closed.
 4. Capture and approve the 18 clips in `docs/footage-capture.md` to reach three
    trustworthy clips per used movement; then create the owner-shot pull bank.
 5. Add shot identity/history so adjacent scenes and recent videos cannot reuse
    the same clip invisibly.
 6. Keep the upgraded 4-8 slide contract and carousel golden fixture green.
 
-The generated `data/assets.md` report now makes clip depth and movement reuse a
-planning input. Quarantined clips are excluded from approved counts. The
-remaining footage work is acquisition and full-motion approval, not an
-undetected engine condition.
+The generated `data/assets.md` report now makes clip depth, animation supply
+and movement reuse planning inputs. Quarantined clips are excluded from
+approved counts. The remaining visual work is acquisition and full-motion
+approval, not an undetected engine condition.
 
 Deferred provider decision: ElevenLabs remains the voice asset and Pexels the
 free fallback. Runway/Higgsfield implementation happens only after the engine
@@ -86,7 +86,8 @@ environment clip per video; every accepted asset is cached and approved.
 Exit metric: all seven videos pass strict preflight, both golden fixtures pass
 in CI, every named movement is visually demonstrated or explicitly designed as
 an environment-only beat, and no clip repeats inside a week unless editorially
-intentional. The software portion is met; footage depth and shot history remain.
+intentional. The software portion is met; approved footage and animation depth
+remain supply blockers.
 
 ### Wave 3 — Close the learning loop
 

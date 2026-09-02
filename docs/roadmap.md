@@ -12,7 +12,7 @@ standing work orders.
 | Copy & storytelling | A- | Story-driven hooks, payoffs, day-chaining; needs data to prove it |
 | Overlay design | A- | Editorial serif over scrim; new, unproven on-platform |
 | Voice | B+ | Right voice, one delivery setting; no emphasis tuning |
-| Footage | D | Truth audit quarantined 5 legacy clips; only Full Plank remains approved |
+| Footage | D | Truth audit quarantined 6 legacy/candidate clips; only Full Plank remains approved |
 | Edit rhythm | A- | Auto-cut rhythm plus fail-closed cross-post identity history; creative variety is reviewed manually |
 | Sound design | B+ | Original ducked/mastered bed is CI-verified; phone/on-platform response is unproven |
 | Accessibility | A- | Burned captions, SRT and legible carousel design; word-level emphasis is untested |
@@ -22,7 +22,7 @@ standing work orders.
 
 ## What is missing, concretely
 
-1. **Footage truth and depth.** Full-motion review quarantined five legacy
+1. **Footage truth and depth.** Full-motion review quarantined six legacy or candidate
    clips with recognizable faces or the wrong movement. Only Full Plank has
    one approved demo. The 18-clip capture brief is the immediate blocker;
    pull movements still have zero demos.
@@ -36,8 +36,9 @@ standing work orders.
    workflow (brand promise: answer every comment for 90 days), no
    Shorts/Reels cross-post from the same MP4s, handle reservations
    unconfirmed.
-5. **Animation ingestion.** The manifest correctly blocks animated demos,
-   but the renderer still needs an ingestion path when authored assets arrive.
+5. **Animation supply.** The fail-closed ingestion path is implemented: exact
+   authored exports are checksum-pinned, media-probed, identity-tracked and
+   required by schema. The remaining blocker is delivery of reviewed exports.
 6. **Learning data.** The analytics and experiment engine is built but has
    zero posted-video rows, so no editorial decision is evidence-backed yet.
 7. **Operations hardening.** Action versions still use moving major tags;
@@ -62,6 +63,8 @@ standing work orders.
 - [x] Per-render asset records and cross-video shot-history gate
 - [x] Original sound bed, voice ducking, -14 LUFS master, true-peak gate and
       corrected posting instructions
+- [x] Authored-animation ingestion: approval manifest, checksum/media probes,
+      explicit sidecar schema and shot-history identity
 
 ### P1 — next two weeks (channel becomes an operation)
 
@@ -78,8 +81,8 @@ standing work orders.
 
 - [ ] Owner-shot b-roll bank (30 clips), including real hands-on-frame
       pull shots that fix the rows video permanently
-- [ ] App Rive animations land → assets/animations.md flow takes over
-      demo scenes (already built and gated)
+- [ ] App Rive animations land → approve their exports in
+      assets/animation-library.json and schedule animated-demo scenes
 - [ ] Voice delivery tuning: test stability/style variants on one video
 - [ ] Compare the original bed against a low-volume native sound only after
       enough posts exist for a named experiment

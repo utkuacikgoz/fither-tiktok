@@ -10,6 +10,7 @@ import { ensureDir, rendersDir } from "./lib/env.mjs";
 import { loadSpec, overlayWindows } from "./lib/spec.mjs";
 import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
 import { fetchBroll, fetchApprovedDemo, brollAvailable, readAssetMetadata } from "./lib/broll.mjs";
+import { fetchApprovedAnimation } from "./lib/animations.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
 import { assertAudioMaster, assertNoFaces, assertVoiceAudible, createQaSheet } from "./lib/verify.mjs";
@@ -70,7 +71,9 @@ export async function renderOne(scriptPath) {
   }
 
   if (!ttsAvailable()) notes.push("SILENT DRAFT: no ELEVENLABS_API_KEY/ELEVENLABS_VOICE_ID set");
-  if (!brollAvailable()) notes.push("GRADIENT BACKGROUNDS: no PEXELS_API_KEY set");
+  if (!brollAvailable() && spec.scenes.some((scene) => scene.broll_query)) {
+    notes.push("GRADIENT BACKGROUNDS: no PEXELS_API_KEY set");
+  }
 
   const voFiles = await synthesizeLines(spec.voiceover ?? []);
 
@@ -111,13 +114,16 @@ export async function renderOne(scriptPath) {
   for (const s of spec.scenes) {
     let f = null;
     try {
-      if (s.demo && s.movement) {
+      if (s.animation && s.movement) {
+        f = await fetchApprovedAnimation(s.movement, `${spec.slug}|${s.start}`, usedAssetIds);
+      } else if (s.demo && s.movement) {
         f = await fetchApprovedDemo(s.movement, `${spec.slug}|${s.start}`, usedAssetIds);
         if (!f) notes.push(`verified "${s.movement}" demo unavailable — using gradient`);
       } else {
         f = await fetchBroll(s.broll_query, "environment", usedAssetIds);
       }
     } catch (e) {
+      if (s.animation) throw new Error(`authored animation "${s.movement}" failed: ${e.message}`);
       notes.push(`b-roll "${s.broll_query}" failed (${e.message.slice(0, 80)}), using gradient`);
     }
     if (!f && brollAvailable() && s.broll_query) {
@@ -128,7 +134,7 @@ export async function renderOne(scriptPath) {
       if (metadata?.asset_id) usedAssetIds.add(metadata.asset_id);
       selectedAssets.push({
         scene_start: s.start,
-        kind: s.demo ? "demo" : "environment",
+        kind: s.animation ? "animation" : s.demo ? "demo" : "environment",
         movement: s.movement,
         query: s.broll_query,
         asset_id: metadata?.asset_id ?? null,

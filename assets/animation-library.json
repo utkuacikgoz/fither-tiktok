@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "_readme": "Approved authored movement exports only. Add an MP4/WebM after movement, faceless, rights and loop review; the renderer verifies its checksum and media contract before use.",
+  "movements": {}
+}

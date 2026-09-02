@@ -1,13 +1,6 @@
-export function readyAnimations(markdown) {
-  const heading = /^## Ready\s*$/m.exec(markdown);
-  if (!heading) return [];
-  const tail = markdown.slice(heading.index + heading[0].length);
-  const nextHeading = /^##\s/m.exec(tail);
-  const section = (nextHeading ? tail.slice(0, nextHeading.index) : tail).replace(/<!--[\s\S]*?-->/g, "");
-  return [...section.matchAll(/^-\s+[^\s]+\s+\(([^)]+)\)/gm)].map((match) => match[1]);
-}
+import { validateAnimationLibrary } from "./animations.mjs";
 
-export function buildAssetReport(specs, library, animationsMarkdown) {
+export function buildAssetReport(specs, library, animationLibrary) {
   const errors = [];
   const warnings = [];
   const entries = library.movements ?? {};
@@ -15,6 +8,7 @@ export function buildAssetReport(specs, library, animationsMarkdown) {
   const ids = new Map();
   const usage = new Map();
   const environmentQueries = new Set();
+  const animationUsage = new Map();
 
   for (const [movement, clips] of Object.entries(entries)) {
     if (!Array.isArray(clips) || clips.length === 0) errors.push(`${movement}: approved clip list is empty`);
@@ -61,6 +55,12 @@ export function buildAssetReport(specs, library, animationsMarkdown) {
         item.scenes++;
         item.videos.add(spec.slug);
       }
+      if (scene.animation && scene.movement) {
+        if (!animationUsage.has(scene.movement)) animationUsage.set(scene.movement, { scenes: 0, videos: new Set() });
+        const item = animationUsage.get(scene.movement);
+        item.scenes++;
+        item.videos.add(spec.slug);
+      }
       if (scene.broll_query) environmentQueries.add(scene.broll_query.trim().toLowerCase());
     }
   }
@@ -79,14 +79,15 @@ export function buildAssetReport(specs, library, animationsMarkdown) {
     }
   }
 
-  const animations = readyAnimations(animationsMarkdown);
+  const animationState = validateAnimationLibrary(animationLibrary);
+  errors.push(...animationState.errors.map((message) => `animation: ${message}`));
   let report = `# Asset readiness (generated — run \`node pipeline/assets.mjs\`)\n\n`;
   const approvedMovementCount = Object.keys(entries).length;
   report += `- Approved body-only clips: **${ids.size}** across **${approvedMovementCount}** ${approvedMovementCount === 1 ? "movement" : "movements"}\n`;
   report += `- Quarantined legacy clips: **${Array.isArray(quarantined) ? quarantined.length : 0}**\n`;
   report += `- Demo scenes in current sidecars: **${[...usage.values()].reduce((sum, item) => sum + item.scenes, 0)}**\n`;
   report += `- Distinct environment searches: **${environmentQueries.size}**\n`;
-  report += `- Ready authored animations: **${animations.length}**\n`;
+  report += `- Ready authored animation exports: **${animationState.count}** across **${animationState.readyMovements.size}** movements\n`;
   report += `- Priority movements below target (<3 approved clips): **${movements.filter((movement) => priorityMovements.has(movement) && (entries[movement]?.length ?? 0) < 3).length}**\n`;
   report += `\n## Movement footage\n\n| Movement | Approved clips | Demo scenes | Videos | Readiness |\n|---|---:|---:|---:|---|\n`;
   for (const movement of movements) {
@@ -96,6 +97,20 @@ export function buildAssetReport(specs, library, animationsMarkdown) {
       ? clips >= 3 ? "AAA pool" : clips > 0 ? "Thin" : "Blocked"
       : "Library only";
     report += `| ${movement} | ${clips} | ${used?.scenes ?? 0} | ${used?.videos.size ?? 0} | ${state} |\n`;
+  }
+  report += `\n## Authored animations\n\n| Movement | Approved exports | Current scenes | Videos | Readiness |\n|---|---:|---:|---:|---|\n`;
+  const animationMovements = [...new Set([
+    ...Object.keys(animationLibrary?.movements ?? {}),
+    ...animationUsage.keys(),
+  ])].sort();
+  if (animationMovements.length === 0) {
+    report += `| — | 0 | 0 | 0 | Awaiting authored exports |\n`;
+  } else {
+    for (const movement of animationMovements) {
+      const exports = animationLibrary?.movements?.[movement]?.length ?? 0;
+      const used = animationUsage.get(movement);
+      report += `| ${movement} | ${exports} | ${used?.scenes ?? 0} | ${used?.videos.size ?? 0} | ${exports > 0 ? "Ready" : "Blocked"} |\n`;
+    }
   }
   report += `\n## Provider boundary\n\n`;
   report += `Generative providers may supply environment footage only. Exercise form stays owner-shot or authored animation. Runway/Higgsfield work is deferred to the final wave; later premium generations happen during curation, pass the same faceless review, and enter an approved cached library before weekly rendering.\n`;
