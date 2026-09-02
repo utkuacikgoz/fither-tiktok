@@ -150,6 +150,9 @@ jobs:
         working-directory: pipeline
         run: npm ci --no-audit --no-fund
 
+      - name: Block repeated footage
+        run: node pipeline/shots.mjs "${{ needs.plan.outputs.week }}"
+
       - name: Build posting sheet
         run: node pipeline/sheet.mjs "${{ needs.plan.outputs.week }}"
 

@@ -13,7 +13,7 @@ standing work orders.
 | Overlay design | A- | Editorial serif over scrim; new, unproven on-platform |
 | Voice | B+ | Right voice, one delivery setting; no emphasis tuning |
 | Footage | D | Truth audit quarantined 5 legacy clips; only Full Plank remains approved |
-| Edit rhythm | B | Auto-cut rhythm works; distinct shot history is still missing |
+| Edit rhythm | A- | Auto-cut rhythm plus fail-closed cross-post identity history; creative variety is reviewed manually |
 | Sound design | B+ | Original ducked/mastered bed is CI-verified; phone/on-platform response is unproven |
 | Accessibility | A- | Burned captions, SRT and legible carousel design; word-level emphasis is untested |
 | Reliability | A- | Preflight, fail-closed QA and video/carousel golden fixtures are green in CI |
@@ -26,8 +26,9 @@ standing work orders.
    clips with recognizable faces or the wrong movement. Only Full Plank has
    one approved demo. The 18-clip capture brief is the immediate blocker;
    pull movements still have zero demos.
-2. **Shot diversity.** Auto-cutting improves pace, but the engine has no
-   cross-video shot identity/history to prevent visible reuse.
+2. **Creative shot diversity.** Stable asset identities now block exact reuse
+   within a pack and across recorded posts. Human QA still judges whether two
+   technically different clips feel visually repetitive.
 3. **Sound validation.** The rights-safe `quiet-drive` bed, automatic ducking
    and loudness/peak gates are built. Phone-speaker balance and audience
    response remain unproven until the canary renders and first posted week.
@@ -58,6 +59,7 @@ standing work orders.
 - [x] Upgrade slideshows with a strict 4-8 slide contract, safe-zone design,
       progress/cues, CTA treatment and a visual golden fixture
 - [x] Workflow concurrency group (cancel superseded runs)
+- [x] Per-render asset records and cross-video shot-history gate
 - [x] Original sound bed, voice ducking, -14 LUFS master, true-peak gate and
       corrected posting instructions
 

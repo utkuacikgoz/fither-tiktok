@@ -48,6 +48,13 @@
       "duration": 12,
       "pexels_url": "https://www.pexels.com/video/swinging-a-feet-from-a-high-chair-8116401/",
       "reason": "Feet swinging from a stool does not verify the named seated knee lift form."
+    },
+    {
+      "movement": "Air Squat",
+      "pexels_id": 5025965,
+      "duration": 16,
+      "pexels_url": "https://www.pexels.com/video/woman-doing-a-squat-exercise-5025965/",
+      "reason": "Recognizable side profile remains visible during the squat."
     }
   ]
 }

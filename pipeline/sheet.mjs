@@ -36,6 +36,7 @@ for (const spec of specs) {
     ? `Slides: \`renders/week-${week}/${spec.slug}/\` (upload in filename order)\n\n`
     : `File: \`renders/week-${week}/${spec.slug}.mp4\`\n\n`;
   sheet += `Caption:\n\n> ${spec.caption}\n>\n> ${(spec.hashtags ?? []).join(" ")}\n`;
+  sheet += `\nAfter publishing: \`node pipeline/shots.mjs ${week} --record ${spec.slug}\`\n`;
   const notesFile = join(outDir, `${spec.slug}.notes.txt`);
   if (existsSync(notesFile)) {
     const notes = readFileSync(notesFile, "utf8").trim();
@@ -47,6 +48,7 @@ if (allNotes.length) {
   sheet += `\n## Render notes\n\n`;
   allNotes.forEach((n) => (sheet += `- ${n}\n`));
 }
+sheet += `\nShot identity report: \`renders/week-${week}/shot-report.md\`\n`;
 writeFileSync(join(outDir, "posting-sheet.md"), sheet);
 console.log(`Posting sheet for ${specs.length} videos (${missing} missing renders): ${join(outDir, "posting-sheet.md")}`);
 if (missing > 0) process.exit(1);

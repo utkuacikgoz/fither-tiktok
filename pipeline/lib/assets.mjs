@@ -48,7 +48,8 @@ export function buildAssetReport(specs, library, animationsMarkdown) {
       if (!(Number(clip.duration) > 0)) errors.push(`${label}: invalid duration`);
       if (!/^https:\/\/www\.pexels\.com\/video\//.test(clip.pexels_url ?? "")) errors.push(`${label}: invalid Pexels URL`);
       if (typeof clip.reason !== "string" || !clip.reason.trim()) errors.push(`${label}: missing reason`);
-      if (ids.has(clip.pexels_id)) errors.push(`${label}: Pexels ID duplicates approved ${ids.get(clip.pexels_id)}`);
+      const id = `pexels:${clip.pexels_id}`;
+      if (ids.has(id)) errors.push(`${label}: Pexels ID duplicates approved ${ids.get(id)}`);
     }
   }
 

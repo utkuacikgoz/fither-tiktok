@@ -78,7 +78,9 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `content/learnings.md` — validated findings, append-only
 - `data/insights.md` — generated analytics report (`node pipeline/analyze.mjs`)
 - `data/assets.md` — generated footage/animation readiness report (`node pipeline/assets.mjs`)
+- `data/shot-history.json` — identities used by published posts; future renders exclude them
 - `docs/footage-capture.md` — the body-only filming and approval contract
+- `docs/shot-history.md` — per-render asset records and cross-post reuse gate
 - `docs/sound-system.md` — original bed, ducking, loudness and posting contract
 - `data/comments.md` — comment theme buckets
 - `content/weeks/week-NN.md` — planner output

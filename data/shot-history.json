@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "_readme": "Append rendered asset usage only after a post is published. The renderer excludes these identities from future selection.",
+  "posted": []
+}

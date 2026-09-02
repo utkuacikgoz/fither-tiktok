@@ -1,7 +1,7 @@
 # Asset readiness (generated — run `node pipeline/assets.mjs`)
 
 - Approved body-only clips: **1** across **1** movement
-- Quarantined legacy clips: **5**
+- Quarantined legacy clips: **6**
 - Demo scenes in current sidecars: **1**
 - Distinct environment searches: **35**
 - Ready authored animations: **0**

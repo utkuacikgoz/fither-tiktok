@@ -9,6 +9,7 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { cacheDir, ensureDir, ffmpegPath, repoRoot } from "./env.mjs";
 import { personInJpeg, faceInJpeg } from "./persons.mjs";
+import { shotHistoryIds } from "./shots.mjs";
 
 const pexec = promisify(execFile);
 const MAX_CANDIDATES = 8;
@@ -90,35 +91,65 @@ function pickFile(video) {
   return files[0] ?? null;
 }
 
+function assetIdentity(entry) {
+  return entry.source === "owned" ? `owned:${entry.sha256}` : `pexels:${entry.pexels_id}`;
+}
+
+function metadataFile(file) {
+  return `${file}.meta.json`;
+}
+
+function writeAssetMetadata(file, metadata) {
+  writeFileSync(metadataFile(file), `${JSON.stringify(metadata, null, 2)}\n`);
+}
+
+export function readAssetMetadata(file) {
+  const path = file ? metadataFile(file) : "";
+  return path && existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : null;
+}
+
 // Approved demo clips: fetched by exact Pexels ID from
 // assets/demo-library.json — no search lottery at render time. The
 // library is populated only through the curation flow plus owner approval.
-export async function fetchApprovedDemo(movement, seed = "") {
-  if (!brollAvailable() || !movement) return null;
+export async function fetchApprovedDemo(movement, seed = "", excludedIds = new Set()) {
+  if (!movement) return null;
   const libPath = join(repoRoot, "assets", "demo-library.json");
   const lib = JSON.parse(readFileSync(libPath, "utf8"));
+  const blocked = new Set([...shotHistoryIds(), ...excludedIds]);
   const entries = (lib.movements?.[movement] ?? []).filter(
-    (entry) => entry.movement_verified === true && entry.faceless_verified === true && /^\d{4}-\d{2}-\d{2}$/.test(entry.reviewed_at ?? ""),
+    (entry) => entry.movement_verified === true && entry.faceless_verified === true &&
+      /^\d{4}-\d{2}-\d{2}$/.test(entry.reviewed_at ?? "") && !blocked.has(assetIdentity(entry)) &&
+      (entry.source === "owned" || brollAvailable()),
   );
   if (!entries || entries.length === 0) return null;
   // Rotate deterministically across approved clips so a movement that
   // appears in several videos doesn't always show the same footage.
   const idx = parseInt(createHash("sha1").update(`${movement}|${seed}`).digest("hex").slice(0, 6), 16) % entries.length;
   const entry = entries[idx];
+  const identity = assetIdentity(entry);
   const dir = ensureDir(join(cacheDir, "broll"));
   if (entry.source === "owned") {
     const file = join(dir, `demo-owned-${entry.sha256.slice(0, 20)}.mp4`);
-    if (existsSync(file)) return file;
+    const metadata = { asset_id: identity, source: "owned", kind: "demo", movement, duration: entry.duration };
+    if (existsSync(file)) {
+      writeAssetMetadata(file, metadata);
+      return file;
+    }
     const dl = await fetch(entry.url);
     if (!dl.ok) throw new Error(`owned demo download ${dl.status}`);
     const body = Buffer.from(await dl.arrayBuffer());
     const actual = createHash("sha256").update(body).digest("hex");
     if (actual !== entry.sha256) throw new Error(`owned demo checksum mismatch for ${movement}`);
     writeFileSync(file, body);
+    writeAssetMetadata(file, metadata);
     return file;
   }
   const file = join(dir, `demo-${entry.pexels_id}.mp4`);
-  if (existsSync(file)) return file;
+  const metadata = { asset_id: identity, source: "pexels", kind: "demo", movement, duration: entry.duration };
+  if (existsSync(file)) {
+    writeAssetMetadata(file, metadata);
+    return file;
+  }
   const res = await fetch(`https://api.pexels.com/videos/videos/${entry.pexels_id}`, {
     headers: { Authorization: process.env.PEXELS_API_KEY },
   });
@@ -128,18 +159,22 @@ export async function fetchApprovedDemo(movement, seed = "") {
   const dl = await fetch(pick.link);
   if (!dl.ok) throw new Error(`Pexels download ${dl.status}`);
   writeFileSync(file, Buffer.from(await dl.arrayBuffer()));
+  writeAssetMetadata(file, metadata);
   return file;
 }
 
-export async function fetchBroll(query, mode = "environment") {
+export async function fetchBroll(query, mode = "environment", excludedIds = new Set()) {
   if (!brollAvailable() || !query) return null;
   const dir = ensureDir(join(cacheDir, "broll"));
-  const key = createHash("sha1").update(`${mode}|${query}`).digest("hex");
-  const file = join(dir, `${key}.mp4`);
-  if (existsSync(file)) return file;
+  const blocked = new Set([...shotHistoryIds(), ...excludedIds]);
 
   const reason = mode === "demo" ? "face visible" : "person";
   for (const video of await search(query)) {
+    const identity = `pexels:${video.id}`;
+    if (blocked.has(identity)) {
+      console.log(`  broll "${query}" [${mode}]: candidate ${video.id} skipped (shot history)`);
+      continue;
+    }
     const seen = { person: false };
     if (!(await thumbnailsClean(video, mode, seen))) {
       console.log(`  broll "${query}" [${mode}]: candidate ${video.id} rejected (${reason} in thumbnail)`);
@@ -147,6 +182,19 @@ export async function fetchBroll(query, mode = "environment") {
     }
     const pick = pickFile(video);
     if (!pick) continue;
+    const file = join(dir, `${mode}-pexels-${video.id}.mp4`);
+    const metadata = {
+      asset_id: identity,
+      source: "pexels",
+      kind: mode,
+      query,
+      duration: video.duration,
+      pexels_url: video.url,
+    };
+    if (existsSync(file)) {
+      writeAssetMetadata(file, metadata);
+      return file;
+    }
     const dl = await fetch(pick.link);
     if (!dl.ok) continue;
     const tmp = `${file}.tmp`;
@@ -158,6 +206,7 @@ export async function fetchBroll(query, mode = "environment") {
         continue;
       }
       renameSync(tmp, file);
+      writeAssetMetadata(file, metadata);
       return file;
     }
     console.log(`  broll "${query}" [${mode}]: candidate ${video.id} rejected (${reason} in sampled frame)`);

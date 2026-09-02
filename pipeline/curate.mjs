@@ -61,6 +61,11 @@ const outDir = join(repoRoot, "curation");
 rmSync(outDir, { recursive: true, force: true });
 const framesDir = ensureDir(join(outDir, "frames"));
 const tmpDir = ensureDir(join(outDir, "tmp"));
+const library = JSON.parse(readFileSync(join(repoRoot, "assets", "demo-library.json"), "utf8"));
+const knownIds = new Set([
+  ...Object.values(library.movements ?? {}).flat().map((clip) => clip.pexels_id),
+  ...(library.quarantined ?? []).map((clip) => clip.pexels_id),
+].filter(Number.isInteger));
 
 async function search(query) {
   const url = new URL("https://api.pexels.com/videos/search");
@@ -94,6 +99,10 @@ for (const target of TARGETS) {
       if (kept.length >= MAX_KEEP) break;
       if (seenIds.has(video.id)) continue;
       seenIds.add(video.id);
+      if (knownIds.has(video.id)) {
+        console.log(`  ${target.movement}: candidate ${video.id} skipped (already approved or quarantined)`);
+        continue;
+      }
 
       const pick = smallestMp4(video);
       if (!pick || video.duration < 6) continue;
@@ -150,6 +159,20 @@ for (const target of TARGETS) {
   console.log(`${target.movement}: ${kept.length} candidate(s)`);
 }
 
+const candidateMovements = new Map();
+for (const result of results) {
+  for (const candidate of result.candidates) {
+    if (!candidateMovements.has(candidate.pexels_id)) candidateMovements.set(candidate.pexels_id, new Set());
+    candidateMovements.get(candidate.pexels_id).add(candidate.movement);
+  }
+}
+for (const result of results) {
+  for (const candidate of result.candidates) {
+    const movements = [...candidateMovements.get(candidate.pexels_id)];
+    if (movements.length > 1) candidate.possible_movement_conflict = movements;
+  }
+}
+
 rmSync(tmpDir, { recursive: true, force: true });
 writeFileSync(join(outDir, "candidates.json"), JSON.stringify(results, null, 2));
 
@@ -164,6 +187,9 @@ for (const result of results) {
     const frames = readdirSync(framesDir).filter((name) => name.startsWith(prefix)).sort();
     review += `<article class="candidate"><h3><a href="${esc(candidate.pexels_url)}">Pexels ${candidate.pexels_id}</a></h3>`;
     review += `<div class="meta"><span>${candidate.duration}s</span><span>${candidate.width}×${candidate.height}</span><span>query: ${esc(candidate.query)}</span></div>`;
+    if (candidate.possible_movement_conflict) {
+      review += `<p><strong>Movement conflict:</strong> this source surfaced for ${esc(candidate.possible_movement_conflict.join(", "))}. Reject unless the full clip contains only the movement being approved.</p>`;
+    }
     review += `<div class="frames">${frames.map((name) => `<img src="frames/${esc(name)}" alt="${esc(candidate.movement)} candidate ${candidate.pexels_id}">`).join("")}</div>`;
     review += `<div class="check">□ exact movement &nbsp; □ safe form &nbsp; □ no face in full clip &nbsp; □ useful 9:16 crop</div></article>`;
   }

@@ -31,11 +31,13 @@ node pipeline/render.mjs content/scripts/DATE-slug.md
                        out at their windows, voiceover mixed at timestamps
         │
         ▼
-renders/week-NN/DATE-slug.mp4  +  DATE-slug.caption.txt
+renders/week-NN/DATE-slug.mp4  +  caption, QA and asset-identity records
 ```
 
 Whole weeks: `node pipeline/produce.mjs 01` renders every video of the week
-and writes `renders/week-NN/posting-sheet.md` (file + caption per day).
+and writes `renders/week-NN/posting-sheet.md` (file + caption per day). The
+posting pack is blocked if `pipeline/shots.mjs` finds a repeated source within
+the week or in `data/shot-history.json`; see `docs/shot-history.md`.
 
 ## Honest degradation
 

@@ -60,3 +60,26 @@ test("tracks quarantined clips without counting them as approved depth", () => {
   assert.match(result.report, /Quarantined legacy clips: \*\*1\*\*/);
   assert.match(result.report, /\| Air Squat \| 0 \| 1 \| 1 \| Blocked \|/);
 });
+
+test("rejects a Pexels clip listed as both approved and quarantined", () => {
+  const library = {
+    movements: { "Full Plank": [{
+      source: "pexels",
+      pexels_id: 7,
+      duration: 8,
+      pexels_url: "https://www.pexels.com/video/example-7/",
+      movement_verified: true,
+      faceless_verified: true,
+      reviewed_at: "2026-09-02",
+    }] },
+    quarantined: [{
+      movement: "Full Plank",
+      pexels_id: 7,
+      duration: 8,
+      pexels_url: "https://www.pexels.com/video/example-7/",
+      reason: "Duplicate truth state.",
+    }],
+  };
+  const result = buildAssetReport([], library, "## Ready\n\n(none yet)\n");
+  assert.ok(result.errors.some((error) => error.includes("duplicates approved Full Plank")));
+});

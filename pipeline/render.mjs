@@ -9,7 +9,7 @@ import { writeFileSync } from "node:fs";
 import { ensureDir, rendersDir } from "./lib/env.mjs";
 import { loadSpec, overlayWindows } from "./lib/spec.mjs";
 import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
-import { fetchBroll, fetchApprovedDemo, brollAvailable } from "./lib/broll.mjs";
+import { fetchBroll, fetchApprovedDemo, brollAvailable, readAssetMetadata } from "./lib/broll.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
 import { assertAudioMaster, assertNoFaces, assertVoiceAudible, createQaSheet } from "./lib/verify.mjs";
@@ -21,6 +21,17 @@ function writeDeliveryText(outDir, spec, notes) {
   writeFileSync(captionFile, `${spec.caption}\n\n${(spec.hashtags ?? []).join(" ")}\n`);
   writeFileSync(notesFile, notes.map((note) => `- ${note}`).join("\n") + "\n");
   return captionFile;
+}
+
+function writeAssetRecord(outDir, spec, assets) {
+  const file = join(outDir, `${spec.slug}.assets.json`);
+  writeFileSync(file, `${JSON.stringify({
+    slug: spec.slug,
+    week: spec.week,
+    post_date: spec.post_date,
+    assets,
+  }, null, 2)}\n`);
+  return file;
 }
 
 export async function renderOne(scriptPath) {
@@ -53,6 +64,7 @@ export async function renderOne(scriptPath) {
       await closeBrowser();
     }
     notes.push("slideshow: post as a TikTok photo post");
+    files.push(writeAssetRecord(outDir, spec, []));
     files.push(writeDeliveryText(outDir, spec, notes));
     return { spec, files, notes };
   }
@@ -94,20 +106,34 @@ export async function renderOne(scriptPath) {
   }
 
   const sceneFiles = [];
+  const selectedAssets = [];
+  const usedAssetIds = new Set();
   for (const s of spec.scenes) {
     let f = null;
     try {
       if (s.demo && s.movement) {
-        f = await fetchApprovedDemo(s.movement, `${spec.slug}|${s.start}`);
+        f = await fetchApprovedDemo(s.movement, `${spec.slug}|${s.start}`, usedAssetIds);
         if (!f) notes.push(`verified "${s.movement}" demo unavailable — using gradient`);
       } else {
-        f = await fetchBroll(s.broll_query, "environment");
+        f = await fetchBroll(s.broll_query, "environment", usedAssetIds);
       }
     } catch (e) {
       notes.push(`b-roll "${s.broll_query}" failed (${e.message.slice(0, 80)}), using gradient`);
     }
     if (!f && brollAvailable() && s.broll_query) {
       notes.push(`no b-roll found for "${s.broll_query}", using gradient`);
+    }
+    if (f) {
+      const metadata = readAssetMetadata(f);
+      if (metadata?.asset_id) usedAssetIds.add(metadata.asset_id);
+      selectedAssets.push({
+        scene_start: s.start,
+        kind: s.demo ? "demo" : "environment",
+        movement: s.movement,
+        query: s.broll_query,
+        asset_id: metadata?.asset_id ?? null,
+        source: metadata?.source ?? null,
+      });
     }
     sceneFiles.push(f);
   }
@@ -170,11 +196,12 @@ export async function renderOne(scriptPath) {
   const qaDir = ensureDir(join(outDir, "qa"));
   const qaFile = join(qaDir, `${spec.slug}.png`);
   await createQaSheet(out, qaFile);
+  const assetFile = writeAssetRecord(outDir, spec, selectedAssets);
 
   // Notes persist next to the render so sharded CI jobs can be collected
   // into one posting sheet.
   const captionFile = writeDeliveryText(outDir, spec, notes);
-  return { spec, files: [out, captionFile, qaFile], notes };
+  return { spec, files: [out, captionFile, qaFile, assetFile], notes };
 }
 
 const invokedDirectly = process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop());
