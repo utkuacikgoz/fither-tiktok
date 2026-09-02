@@ -28,10 +28,14 @@ jobs:
         id: week
         run: |
           if [ -n "${{ inputs.week }}" ]; then
-            echo "week=${{ inputs.week }}" >> "$GITHUB_OUTPUT"
+            week="${{ inputs.week }}"
           else
-            echo "week=$(tr -cd '0-9' < .github/render-request)" >> "$GITHUB_OUTPUT"
+            # First number in the file is the week; trailing words/counters
+            # in the request line must not bleed into it.
+            week=$(grep -oE '[0-9]+' .github/render-request | head -n1)
           fi
+          week=$(printf '%02d' "$((10#$week))")
+          echo "week=$week" >> "$GITHUB_OUTPUT"
 
       - name: Check required secrets
         env:
