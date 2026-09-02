@@ -21,19 +21,32 @@ export async function synthesizeLines(lines) {
     const key = createHash("sha1").update(`${voice}|${model}|${line.text}`).digest("hex");
     const file = join(dir, `${key}.mp3`);
     if (!existsSync(file)) {
-      const res = await fetch(`${API}/${voice}?output_format=mp3_44100_128`, {
-        method: "POST",
-        headers: {
-          "xi-api-key": process.env.ELEVENLABS_API_KEY,
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          text: line.text,
-          model_id: model,
-          voice_settings: { stability: 0.55, similarity_boost: 0.75, style: 0.15 },
-        }),
-      });
-      if (!res.ok) throw new Error(`ElevenLabs ${res.status}: ${(await res.text()).slice(0, 300)}`);
+      // The subscription allows 3 concurrent requests; parallel render
+      // shards collide on that. Back off and retry instead of dying.
+      let res;
+      for (let attempt = 0; ; attempt++) {
+        res = await fetch(`${API}/${voice}?output_format=mp3_44100_128`, {
+          method: "POST",
+          headers: {
+            "xi-api-key": process.env.ELEVENLABS_API_KEY,
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            text: line.text,
+            model_id: model,
+            voice_settings: { stability: 0.55, similarity_boost: 0.75, style: 0.15 },
+          }),
+        });
+        if (res.ok) break;
+        const retryable = res.status === 429 || res.status >= 500;
+        if (!retryable || attempt >= 7) {
+          throw new Error(`ElevenLabs ${res.status}: ${(await res.text()).slice(0, 300)}`);
+        }
+        const wait = Math.min(30000, 1500 * 2 ** attempt) + Math.random() * 1000;
+        console.log(`  tts: ${res.status}, retrying in ${(wait / 1000).toFixed(1)}s (attempt ${attempt + 1}/7)`);
+        await res.text().catch(() => {});
+        await new Promise((r) => setTimeout(r, wait));
+      }
       writeFileSync(file, Buffer.from(await res.arrayBuffer()));
     }
     files.push({ t: line.t, file });
