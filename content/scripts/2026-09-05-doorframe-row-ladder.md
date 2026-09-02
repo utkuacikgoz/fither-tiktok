@@ -8,45 +8,84 @@
 
 ## 1. HOOK (first 3 seconds)
 
-1. "Home workouts train half your body. Here is the missing half." (contradiction: the complete home workout that is not complete)
-2. "No bar at home, and a back that carries everything." (specific situation: pulling with nothing to pull)
-3. "Four rows, one doorframe, a complete back session." (number/promise)
+No approved pull demo exists yet, so this video opens on its strongest
+environment shot (a doorframe filling the frame) and the hook line carries
+the tension alone.
 
-## 2. SCRIPT (about 52 seconds)
+1. "Home workouts train half your body. The front half." (contradiction:
+   the workout she already does is incomplete. CHOSEN)
+2. "Your push-ups are ahead of your rows. Way ahead." (specific situation:
+   the imbalance she can feel)
+3. "Four rungs from a lean to a one arm row." (number/promise)
 
-0:00 Hook: "Home workouts train half your body. Here is the missing half."
+## 2. SCRIPT (about 64 seconds)
 
-0:05 Explainer: "There is nothing to pull at home, except every room has a doorframe."
+0:00 Hook: "Home workouts train half your body. The front half."
 
-0:11 "Rung one. Doorframe lean rows. Ten reps. Hold the frame, lean back, pull your chest to your hands."
+0:05 "Nothing to pull, so nobody pulls. Except you have doorframes."
 
-0:19 "Rung two. Doorframe rows. Eight reps. Feet closer to the frame, deeper lean, harder pull."
+0:10 "Here is the ladder nobody does at home."
 
-0:27 "Rung three. Deep doorframe rows. Eight reps. Sit further back, full range, slow return."
+0:15 "Rung one. Hold the frame. Lean back. Row in. Ten."
 
-0:34 "Rung four. Single arm doorframe rows. Six reps each side. The top of the ladder."
+0:20 "Rung two. Feet closer, deeper lean. Eight rows."
 
-0:41 "Grip low, heels planted, and move slow in both directions."
+0:25 "Rung three. Sit right into it. Full range. Eight."
 
-0:46 CTA: "Your back works harder for you than anything else you train. Which doorframe will you use? Comment the room."
+0:29 "Rung four. One arm. Six rows a side."
+
+0:34 "When a rung feels easy, climb."
+
+0:37 "This is the missing half of your strength."
+
+0:42 Payoff: "Your front pushed for years. Your back just answered."
+
+0:47 Capability: "You just turned a doorway into a back machine."
+
+0:51 Capability: "Every door in your home is equipment now. Yours."
+
+0:56 Seed tomorrow: "Tomorrow, five moves that make zero noise."
+
+1:00 CTA: "Which rung will you start on?"
+
+The loop: the missing half opens, the four rungs fill it, and the payoff
+answers the front-half hook. Two capability-ownership lines at 0:47 and
+0:51. The close invites her to tomorrow's silent session.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:05). On screen: a doorframe shot from inside the room, hallway light glowing beyond it, nobody in frame. Setting: bedroom doorway, evening. Text overlay: "The missing half of home strength."
+Scene 1 (0:00 to 0:15). Environment: a white doorframe filling the frame,
+shot from inside the room, no person. Overlay: "Home training skips your
+back. Not today." (hook).
 
-Scene 2 (0:05 to 0:27). On screen: closer angle on the frame edge, a small text marker at hand height. Setting: same doorway. Text overlay: "1. Doorframe Lean Row, 10" then "2. Doorframe Row, 8".
+Scene 2 (0:15 to 0:25). Environment: an open door frame in sunlight,
+second angle. Overlays: "Rung one. Lean back and row in." (step), then
+"Rung two. Deeper lean, eight rows." (step).
 
-Scene 3 (0:27 to 0:41). On screen: second angle, low along the floor toward the doorway, light across the boards. Setting: same doorway from floor level. Text overlay: "3. Deep Doorframe Row, 8" then "4. Single-Arm Doorframe Row, 6 each side".
+Scene 3 (0:25 to 0:34). Environment: a doorway with shadow across a
+wooden floor. Overlays: "Rung three. Full range rows, eight." (step),
+then "Rung four. One arm, six each side." (step).
 
-Scene 4 (0:41 to end). On screen: wide static shot of the whole doorway. Setting: same room. Text overlay: the four rungs stack into a ladder list, then the CTA card: "Which doorframe is yours?"
+Scene 4 (0:34 to 0:47). Environment: a hallway door in morning light.
+Overlay: "When a rung feels easy, climb." (step).
 
-All scenes are environment shots with no person in frame. No animated demos; nothing is Ready in assets/animations.md.
+Scene 5 (0:47 to end). Environment: a front door and hallway lamp at
+evening. Overlays: "Every doorway is equipment now." (step), then "Which
+rung will you start on?" (cta).
+
+The rung reps match the library: Doorframe Lean Row 10, Doorframe Row 8,
+Deep Doorframe Row 8, Single-Arm Doorframe Row 6 a side. No pull movement
+has an approved demo clip, so every scene is a person-free environment
+shot. No face appears anywhere. First animation order should prioritise
+these four movements if this video clears the save threshold.
 
 ## 4. CAPTION AND HASHTAGS
 
-Back exercises at home no equipment required: every home already has a row station, it is called a doorframe. Four rungs, from a lean row to a single arm row. Save the ladder.
+Back exercises at home no equipment: the doorframe row ladder, four rungs
+from a lean to a single arm row. The missing half of home strength. Save
+the ladder.
 
-#homeworkout #backworkout #noequipmentworkout #doorframerow
+#strengthtraining #backworkout #noequipmentworkout #homeworkout #doorframerow
 
 ## 5. REUSE NOTE
 

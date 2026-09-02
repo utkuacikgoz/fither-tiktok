@@ -8,43 +8,81 @@
 
 ## 1. HOOK (first 3 seconds)
 
-1. "This hotel room has everything a strength session needs." (contradiction: a bare room framed as fully equipped)
-2. "You landed at five. Dinner is at seven. Train now." (specific situation: the travel day gap)
-3. "Five moves. Ten minutes. One hotel wall." (number/promise)
+First frame: a body mid wall push-up, pressing away from the wall. Never an
+establishing shot; the viewer sees work happening within the first second.
 
-## 2. SCRIPT (about 52 seconds)
+1. "You landed with no gym. This wall disagrees." (contradiction: the bare
+   room talks back. CHOSEN; it opens the loop the CTA closes)
+2. "Ten minutes between landing and dinner. Train now." (specific situation:
+   the travel day gap)
+3. "Five moves, one wall, and nobody hears a thing." (number/promise)
 
-0:00 Hook: "Five moves. Ten minutes. One hotel wall."
+## 2. SCRIPT (about 66 seconds)
 
-0:04 Explainer: "This room already has everything a complete strength session needs."
+0:00 Hook: "You landed with no gym. This wall disagrees."
 
-0:09 "Wall push-ups. Ten reps. Hands flat, body in one line, press the wall away."
+0:04 "Ten minutes until you leave for dinner. Enough."
 
-0:17 "Doorframe lean rows. Ten reps. Hold the frame, lean back, pull yourself in."
+0:09 "Wall push-ups first. Ten reps. Press the wall away."
 
-0:25 "Wall sit. Thirty seconds. Back on the wall, slide down, hold."
+0:14 "Now the doorframe. Lean back. Pull yourself in. Ten rows."
 
-0:32 "Glute bridges on the floor. Ten reps. Slow up, slow down."
+0:19 "Your back just trained without a single machine."
 
-0:39 "Wall plank. Twenty seconds. Then repeat the whole round once."
+0:24 "Wall sit. Thirty seconds. Let your legs argue. Hold anyway."
 
-0:46 CTA: "That is the full session, in silence, before dinner. Which city are you in tonight? Tell me in the comments."
+0:29 "Floor now. Glute bridges. Ten slow ones."
+
+0:33 "Finish with a wall plank. Twenty seconds. Breathe."
+
+0:37 "Repeat the round once. That is the whole session."
+
+0:42 Payoff: "That was a complete session. The corridor heard nothing."
+
+0:47 Capability: "You carry your strength into every city now."
+
+0:51 Capability: "You built that in the gap before dinner."
+
+0:56 Seed tomorrow: "Tomorrow I hand you the push-up staircase. Wall to floor."
+
+1:01 CTA: "Which city are you training in tonight?"
+
+The loop: a room with "no gym" in it delivers a complete session; the CTA
+returns to the city she landed in. Two capability-ownership lines at 0:47
+and 0:51. The close invites her back for the push-up ladder, no FOMO.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:04). On screen: a hotel room door swings open onto an empty room, suitcase resting by the wall, nobody in frame. Setting: standard business hotel room, early evening light. Text overlay: "Five moves. Ten minutes. One wall."
+Scene 1 (0:00 to 0:14). Demo: Wall Push-Up, mid-movement from the first
+frame, body only, face never in frame. Overlays: "This wall is your whole
+gym tonight." (hook), then "Ten wall push-ups. Press it away." (step).
 
-Scene 2 (0:04 to 0:25). On screen: slow pan from the bare wall to the doorframe, lamp on. Setting: same room, near the entrance. Text overlay, appearing in time with the voiceover: "1. Wall Push-Up, 10" then "2. Doorframe Lean Row, 10".
+Scene 2 (0:14 to 0:24). Environment: a hotel room doorframe from inside
+the room, lamp light, no person. Overlay: "Doorframe rows. Lean back,
+pull in." (step). No pull demo exists yet, so this beat stays environment.
 
-Scene 3 (0:25 to 0:39). On screen: static shot of the carpet strip between the bed and the wall, warm lamp light. Setting: same room, floor level. Text overlay: "3. Wall Sit, 30s" then "4. Glute Bridge, 10".
+Scene 3 (0:24 to 0:29). Environment: the empty stretch of hotel wall.
+Overlay: "Hold a wall sit for thirty seconds." (step).
 
-Scene 4 (0:39 to end). On screen: the desk with a phone propped up, timer reading 10:00, city lights in the window behind. Setting: hotel desk at dusk. Text overlay: "5. Wall Plank, 20s. Repeat once." then the CTA card: "Which city tonight?"
+Scene 4 (0:29 to 0:33). Demo: Glute Bridge, body only on the floor.
+Overlay: "Do ten slow glute bridges." (step).
 
-All scenes are environment shots with no person in frame. No animated demos are scripted; nothing is Ready in assets/animations.md.
+Scene 5 (0:33 to 0:42). Environment: hotel desk and window at dusk.
+Overlay: "Wall plank, twenty seconds. Repeat once." (step).
+
+Scene 6 (0:42 to end). Environment: city lights through the hotel window.
+Overlays: "A complete session. Zero noise." (step), then "Which city are
+you in tonight?" (cta).
+
+Demo scenes use only approved movements from assets/demo-library.json
+(Wall Push-Up, Glute Bridge). All other scenes are person-free environment
+shots. No face appears anywhere.
 
 ## 4. CAPTION AND HASHTAGS
 
-Quiet hotel room workout: five moves, ten minutes, one wall and a doorframe. A complete strength session between landing and dinner, and the room next door hears nothing. Save it for your next trip.
+Quiet hotel room workout: ten minutes, one wall, one doorframe, and a
+complete strength session before dinner. The room next door hears nothing.
+Save it for your next trip.
 
 #strengthtraining #hotelworkout #noequipmentworkout #quietworkout #travelstrength
 

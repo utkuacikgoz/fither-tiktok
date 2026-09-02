@@ -3,112 +3,143 @@
   "week": "01",
   "post_date": "2026-09-03",
   "format": "environment-pov",
-  "caption": "Kitchen counter workout no equipment needed: four moves and one chair while dinner cooks itself. Ten minutes you already had, in the room you were already in. Save it for tonight.",
+  "hook_mechanism": "situation",
+  "caption": "Kitchen counter workout no equipment: a ten minute strength session that fits inside the oven timer. You do not find time, you use the gap already there. Save it for tonight.",
   "hashtags": [
-    "#homeworkout",
+    "#strengthtraining",
     "#kitchenworkout",
     "#noequipmentworkout",
-    "#tenminutestrength"
+    "#busymum",
+    "#10minuteworkout"
   ],
   "voiceover": [
     {
       "t": 0,
-      "text": "Dinner is in the oven. The timer says 25 minutes."
+      "text": "Dinner is in the oven. Your session starts now."
     },
     {
-      "t": 5.5,
-      "text": "You only need ten of them, one chair, and the kitchen you are standing in."
+      "t": 4.9,
+      "text": "You do not need to find time tonight."
     },
     {
-      "t": 12.1,
-      "text": "Sit-to-stands. Eight reps. Off the chair, no hands, stand tall."
+      "t": 9.3,
+      "text": "The timer already found it for you."
     },
     {
-      "t": 21.5,
-      "text": "Incline push-ups, hands on the chair. Eight reps, slow and controlled."
+      "t": 13.2,
+      "text": "Sit-to-stands from a chair. Ten reps. No hands."
     },
     {
-      "t": 30.3,
-      "text": "Hinge and reach. Ten reps. Hips back, flat back, reach and return."
+      "t": 17.6,
+      "text": "Incline push-ups on the counter. Eight strong reps."
     },
     {
-      "t": 39.3,
-      "text": "Seated knee lifts. Ten reps. Sit tall, lift, lower with control."
+      "t": 22,
+      "text": "Hinge and reach. Ten reps. Hips back, reach long."
     },
     {
-      "t": 50.1,
-      "text": "Repeat the round until the oven calls time. Two rounds is a full session."
+      "t": 26.9,
+      "text": "Seated knee lifts. Ten each side. Sit tall."
     },
     {
-      "t": 57.6,
-      "text": "Strength that fits inside dinner. What is in your oven tonight? Tell me below."
+      "t": 31.3,
+      "text": "Every move is quiet. Nothing wakes the house."
+    },
+    {
+      "t": 35.7,
+      "text": "Go around again until the timer sings."
+    },
+    {
+      "t": 39.6,
+      "text": "You got stronger while dinner cooked itself."
+    },
+    {
+      "t": 43.5,
+      "text": "That gap was always there. Now you own it."
+    },
+    {
+      "t": 48.4,
+      "text": "Tomorrow I tell you what all this strength is for."
+    },
+    {
+      "t": 53.8,
+      "text": "What is in your oven tonight?"
     }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 5.5,
-      "broll_query": "oven timer display kitchen evening",
+      "end": 13.2,
+      "demo": true,
+      "movement": "Seated Knee Lift",
       "overlays": [
         {
           "t": 0,
-          "text": "The timer is your session clock.",
+          "text": "The oven timer is your coach tonight.",
           "style": "hook"
         }
       ]
     },
     {
-      "start": 5.5,
-      "end": 30.3,
-      "broll_query": "bright empty kitchen interior counter",
+      "start": 13.2,
+      "end": 26.9,
+      "broll_query": "kitchen counter warm light",
       "overlays": [
         {
-          "t": 5.5,
-          "text": "Ten minutes. One chair.",
+          "t": 13.2,
+          "text": "Ten sit-to-stands. No hands.",
           "style": "step"
         },
         {
-          "t": 12.1,
-          "text": "1. Sit-to-Stand · 8",
+          "t": 17.6,
+          "text": "Eight incline push-ups on the counter.",
           "style": "step"
         },
         {
-          "t": 21.5,
-          "text": "2. Incline Push-Up · 8",
+          "t": 22,
+          "text": "Hinge and reach, ten reps.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 30.3,
-      "end": 50.1,
-      "broll_query": "kitchen floor beside counter warm light",
+      "start": 26.9,
+      "end": 31.3,
+      "demo": true,
+      "movement": "Seated Knee Lift",
       "overlays": [
         {
-          "t": 30.3,
-          "text": "3. Hinge and Reach · 10",
-          "style": "step"
-        },
-        {
-          "t": 39.3,
-          "text": "4. Seated Knee Lift · 10",
+          "t": 26.9,
+          "text": "Seated knee lifts, ten each side.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 50.1,
-      "end": 66.7,
-      "broll_query": "oven timer set dinner table evening",
+      "start": 31.3,
+      "end": 39.6,
+      "broll_query": "oven timer glowing dial",
       "overlays": [
         {
-          "t": 50.1,
-          "text": "Repeat until the timer ends.",
+          "t": 31.3,
+          "text": "Quiet moves. Nothing wakes the house.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 39.6,
+      "end": 58,
+      "broll_query": "steam rising cooking pot",
+      "overlays": [
+        {
+          "t": 39.6,
+          "text": "You trained while dinner cooked.",
           "style": "step"
         },
         {
-          "t": 57.6,
-          "text": "What is in the oven?",
+          "t": 53.8,
+          "text": "What is in your oven tonight?",
           "style": "cta"
         }
       ]

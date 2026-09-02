@@ -8,46 +8,79 @@
 
 ## 1. HOOK (first 3 seconds)
 
-1. "Stop trying to find time. The oven just found it." (contradiction: the time problem solved by dinner itself)
-2. "Dinner is in the oven. The timer says 25 minutes." (specific situation: the oven timer gap)
-3. "Four moves, one chair, zero extra minutes from your evening." (number/promise)
+First frame: a body mid seated knee lift, sitting tall, working. The
+kitchen session is already happening when the loop opens.
 
-## 2. SCRIPT (about 51 seconds)
+1. "Dinner is in the oven. Your session starts now." (specific situation:
+   the oven gap. CHOSEN; the CTA returns to the oven)
+2. "You do not need more time. You need this timer." (contradiction: the
+   time problem dissolves into a timer she already set)
+3. "Four moves that fit inside one oven timer." (number/promise)
 
-0:00 Hook: "Dinner is in the oven. The timer says 25 minutes."
+## 2. SCRIPT (about 58 seconds)
 
-0:05 Explainer: "You only need ten of them, one chair, and the kitchen you are standing in."
+0:00 Hook: "Dinner is in the oven. Your session starts now."
 
-0:11 "Sit-to-stands. Eight reps. Off the chair, no hands, stand tall."
+0:05 "You do not need to find time tonight."
 
-0:18 "Incline push-ups, hands on the chair. Eight reps, slow and controlled."
+0:09 "The timer already found it for you."
 
-0:25 "Hinge and reach. Ten reps. Hips back, flat back, reach and return."
+0:13 "Sit-to-stands from a chair. Ten reps. No hands."
 
-0:32 "Seated knee lifts. Ten reps. Sit tall, lift, lower with control."
+0:18 "Incline push-ups on the counter. Eight strong reps."
 
-0:38 "Repeat the round until the oven calls time. Two rounds is a full session."
+0:22 "Hinge and reach. Ten reps. Hips back, reach long."
 
-0:45 CTA: "Strength that fits inside dinner. What is in your oven tonight? Tell me below."
+0:27 "Seated knee lifts. Ten each side. Sit tall."
+
+0:31 "Every move is quiet. Nothing wakes the house."
+
+0:36 "Go around again until the timer sings."
+
+0:40 Payoff and capability: "You got stronger while dinner cooked itself."
+
+0:44 Capability: "That gap was always there. Now you own it."
+
+0:48 Seed tomorrow: "Tomorrow I tell you what all this strength is for."
+
+0:54 CTA: "What is in your oven tonight?"
+
+The loop: the oven timer opens the session and the CTA asks what is
+cooking. Two capability-ownership lines at 0:40 and 0:44. The close
+invites her to tomorrow's reframe video.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:05). On screen: close shot of the oven display counting down from 25:00, warm light from inside the oven. Setting: home kitchen, evening. Text overlay: "The timer is your session clock."
+Scene 1 (0:00 to 0:13). Demo: Seated Knee Lift, mid-movement from the
+first frame, body only in a chair. Overlay: "The oven timer is your coach
+tonight." (hook).
 
-Scene 2 (0:05 to 0:25). On screen: an empty kitchen chair pulled out from the table, counter and hob in the background. Setting: same kitchen. Text overlay: "1. Sit-to-Stand, 8" then "2. Incline Push-Up, 8".
+Scene 2 (0:13 to 0:27). Environment: kitchen counter in warm evening
+light, no person. Overlays: "Ten sit-to-stands. No hands." (step), "Eight
+incline push-ups on the counter." (step), "Hinge and reach, ten reps."
+(step).
 
-Scene 3 (0:25 to 0:38). On screen: a clear stretch of kitchen floor beside the counter, tea towel on the rail, nobody in frame. Setting: same kitchen, lower angle. Text overlay: "3. Hinge and Reach, 10" then "4. Seated Knee Lift, 10".
+Scene 3 (0:27 to 0:31). Demo: Seated Knee Lift again as the move is
+coached. Overlay: "Seated knee lifts, ten each side." (step).
 
-Scene 4 (0:38 to end). On screen: the oven timer again, now under ten minutes, table half set behind it. Setting: same kitchen. Text overlay: "Repeat until the timer ends." then the CTA card: "What is in the oven?"
+Scene 4 (0:31 to 0:40). Environment: close shot of a glowing oven timer
+dial. Overlay: "Quiet moves. Nothing wakes the house." (step).
 
-All scenes are environment shots with no person in frame. No animated demos; nothing is Ready in assets/animations.md.
+Scene 5 (0:40 to end). Environment: steam rising from a pot, no person.
+Overlays: "You trained while dinner cooked." (step), then "What is in
+your oven tonight?" (cta).
+
+Seated Knee Lift is the only approved demo among these movements; the
+other beats stay person-free environment shots. No face appears anywhere.
 
 ## 4. CAPTION AND HASHTAGS
 
-Kitchen counter workout no equipment needed: four moves and one chair while dinner cooks itself. Ten minutes you already had, in the room you were already in. Save it for tonight.
+Kitchen counter workout no equipment: a ten minute strength session that
+fits inside the oven timer. You do not find time, you use the gap already
+there. Save it for tonight.
 
-#homeworkout #kitchenworkout #noequipmentworkout #tenminutestrength
+#strengthtraining #kitchenworkout #noequipmentworkout #busymum #10minuteworkout
 
 ## 5. REUSE NOTE
 
-App Store screenshot "Kitchen mode" and the adaptation explainer copy.
+App Store screenshot "Kitchen mode"; adaptation explainer copy.

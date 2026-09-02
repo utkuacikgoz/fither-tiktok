@@ -3,7 +3,8 @@
   "week": "01",
   "post_date": "2026-09-01",
   "format": "environment-pov",
-  "caption": "Quiet hotel room workout: five moves, ten minutes, one wall and a doorframe. A complete strength session between landing and dinner, and the room next door hears nothing. Save it for your next trip.",
+  "hook_mechanism": "contradiction",
+  "caption": "Quiet hotel room workout: ten minutes, one wall, one doorframe, and a complete strength session before dinner. The room next door hears nothing. Save it for your next trip.",
   "hashtags": [
     "#strengthtraining",
     "#hotelworkout",
@@ -14,112 +15,141 @@
   "voiceover": [
     {
       "t": 0,
-      "text": "Five moves. Ten minutes. One hotel wall."
+      "text": "You landed with no gym. This wall disagrees."
     },
     {
-      "t": 5.4,
-      "text": "This room already has everything a complete strength session needs."
+      "t": 4.4,
+      "text": "Ten minutes until you leave for dinner. Enough."
     },
     {
-      "t": 10.9,
-      "text": "Wall push-ups. Ten reps. Hands flat, body in one line, press the wall away."
+      "t": 8.8,
+      "text": "Wall push-ups first. Ten reps. Press the wall away."
     },
     {
-      "t": 20.3,
-      "text": "Doorframe lean rows. Ten reps. Hold the frame, lean back, pull yourself in."
+      "t": 13.7,
+      "text": "Now the doorframe. Lean back. Pull yourself in. Ten rows."
     },
     {
-      "t": 29.9,
-      "text": "Wall sit. Thirty seconds. Back on the wall, slide down, hold."
+      "t": 19.1,
+      "text": "Your back just trained without a single machine."
     },
     {
-      "t": 38.3,
-      "text": "Glute bridges on the floor. Ten reps. Slow up, slow down."
+      "t": 23.5,
+      "text": "Wall sit. Thirty seconds. Let your legs argue. Hold anyway."
     },
     {
-      "t": 45.8,
-      "text": "Wall plank. Twenty seconds. Then repeat the whole round once."
+      "t": 28.9,
+      "text": "Floor now. Glute bridges. Ten slow ones."
     },
     {
-      "t": 53.3,
-      "text": "That is the full session, in silence, before dinner. Which city are you in tonight? Tell me in the comments."
+      "t": 32.8,
+      "text": "Finish with a wall plank. Twenty seconds. Breathe."
+    },
+    {
+      "t": 37.2,
+      "text": "Repeat the round once. That is the whole session."
+    },
+    {
+      "t": 42.1,
+      "text": "That was a complete session. The corridor heard nothing."
+    },
+    {
+      "t": 47,
+      "text": "You carry your strength into every city now."
+    },
+    {
+      "t": 51.4,
+      "text": "You built that in the gap before dinner."
+    },
+    {
+      "t": 55.8,
+      "text": "Tomorrow I hand you the push-up staircase. Wall to floor."
+    },
+    {
+      "t": 61.2,
+      "text": "Which city are you training in tonight?"
     }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 5.4,
-      "broll_query": "hotel room door opening interior",
+      "end": 13.7,
+      "demo": true,
+      "movement": "Wall Push-Up",
       "overlays": [
         {
           "t": 0,
-          "text": "Five moves. Ten minutes. One wall.",
+          "text": "This wall is your whole gym tonight.",
           "style": "hook"
+        },
+        {
+          "t": 8.8,
+          "text": "Ten wall push-ups. Press it away.",
+          "style": "step"
         }
       ]
     },
     {
-      "start": 5.4,
-      "end": 20.3,
-      "demo": true,
-      "broll_query": "woman wall push up exercise workout",
+      "start": 13.7,
+      "end": 23.5,
+      "broll_query": "hotel room doorframe interior",
       "overlays": [
         {
-          "t": 5.4,
-          "text": "This room is a complete gym.",
+          "t": 13.7,
+          "text": "Doorframe rows. Lean back, pull in.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 23.5,
+      "end": 28.9,
+      "broll_query": "empty hotel room wall",
+      "overlays": [
+        {
+          "t": 23.5,
+          "text": "Hold a wall sit for thirty seconds.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 28.9,
+      "end": 32.8,
+      "demo": true,
+      "movement": "Glute Bridge",
+      "overlays": [
+        {
+          "t": 28.9,
+          "text": "Do ten slow glute bridges.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 32.8,
+      "end": 42.1,
+      "broll_query": "hotel desk window dusk",
+      "overlays": [
+        {
+          "t": 32.8,
+          "text": "Wall plank, twenty seconds. Repeat once.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 42.1,
+      "end": 65.9,
+      "broll_query": "city lights hotel window",
+      "overlays": [
+        {
+          "t": 42.1,
+          "text": "A complete session. Zero noise.",
           "style": "step"
         },
         {
-          "t": 10.9,
-          "text": "1. Wall push-ups, 10 reps",
-          "style": "step"
-        }
-      ]
-    },
-    {
-      "start": 20.3,
-      "end": 29.9,
-      "demo": true,
-      "broll_query": "woman doorway row pulling exercise home",
-      "overlays": [
-        {
-          "t": 20.3,
-          "text": "2. Doorframe rows, 10 reps",
-          "style": "step"
-        }
-      ]
-    },
-    {
-      "start": 29.9,
-      "end": 45.8,
-      "demo": true,
-      "broll_query": "woman wall sit exercise legs workout",
-      "overlays": [
-        {
-          "t": 29.9,
-          "text": "3. Wall sit, 30 seconds",
-          "style": "step"
-        },
-        {
-          "t": 38.3,
-          "text": "4. Glute bridges, 10 reps",
-          "style": "step"
-        }
-      ]
-    },
-    {
-      "start": 45.8,
-      "end": 65.3,
-      "demo": true,
-      "broll_query": "woman plank exercise floor workout",
-      "overlays": [
-        {
-          "t": 45.8,
-          "text": "5. Wall plank, 20 seconds. Then repeat the round.",
-          "style": "step"
-        },
-        {
-          "t": 53.3,
+          "t": 61.2,
           "text": "Which city are you in tonight?",
           "style": "cta"
         }

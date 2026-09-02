@@ -3,111 +3,141 @@
   "week": "01",
   "post_date": "2026-09-07",
   "format": "environment-pov",
-  "caption": "Office workout at your desk: five moves in the gap between meetings. No floor work, no changing, no sweat, standing and chair work only. Save it for tomorrow's calendar.",
+  "hook_mechanism": "situation",
+  "caption": "Office workout at your desk: a ten minute session with no floor work, no changing, no sweat. Standing and chair moves only, between two meetings. Save it for Monday.",
   "hashtags": [
     "#strengthtraining",
     "#officeworkout",
     "#deskworkout",
-    "#deskexercises"
+    "#noequipmentworkout",
+    "#workdaystrength"
   ],
   "voiceover": [
     {
       "t": 0,
-      "text": "Your two o'clock ended early. The next starts at three."
+      "text": "Your next meeting is in twelve minutes."
     },
     {
-      "t": 5.5,
-      "text": "That gap is a full session. Standing and chair work only, in the clothes you are wearing."
+      "t": 3.9,
+      "text": "You will not change clothes. You will not sweat."
     },
     {
-      "t": 13.4,
-      "text": "Wall push-ups. Ten reps. Any clear stretch of wall."
+      "t": 8.8,
+      "text": "You will still train. Watch."
     },
     {
-      "t": 20.9,
-      "text": "Wall slides. Ten reps. Back on the wall, arms slide up and down."
+      "t": 11.7,
+      "text": "Seated knee lifts at your desk. Ten each side."
     },
     {
-      "t": 29.7,
-      "text": "Sit-to-stands from your chair. Eight reps. No hands."
+      "t": 16.6,
+      "text": "Stand. Sit-to-stands from your chair. Ten, no hands."
     },
     {
-      "t": 36.2,
-      "text": "Standing hip hinges. Ten reps. Hips back, flat back, stand tall."
+      "t": 21,
+      "text": "Find a wall. Push-ups. Ten strong reps."
     },
     {
-      "t": 45.5,
-      "text": "Seated knee lifts. Ten reps. Sit tall, lift slow."
+      "t": 24.9,
+      "text": "Wall slides, ten. Shoulders back, arms tall."
     },
     {
-      "t": 53.6,
-      "text": "Back at your desk before anyone notices. How long is your usual gap? Comment the minutes."
+      "t": 28.8,
+      "text": "Standing hip hinges. Ten. Hips back, flat back."
+    },
+    {
+      "t": 33.2,
+      "text": "Nobody noticed. Nothing to change. No floor, no sweat."
+    },
+    {
+      "t": 38.1,
+      "text": "That was a complete session in work clothes."
+    },
+    {
+      "t": 42.5,
+      "text": "You fit strength into a gap everyone else wastes."
+    },
+    {
+      "t": 47.4,
+      "text": "Your office is part of your gym now."
+    },
+    {
+      "t": 51.8,
+      "text": "Tomorrow I find you another hidden gap."
+    },
+    {
+      "t": 55.7,
+      "text": "How long is your gap between meetings?"
     }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 5.5,
-      "broll_query": "tidy desk closed laptop window light",
+      "end": 16.6,
+      "demo": true,
+      "movement": "Seated Knee Lift",
       "overlays": [
         {
           "t": 0,
-          "text": "The gap between meetings.",
+          "text": "Twelve minutes is enough to train.",
           "style": "hook"
-        }
-      ]
-    },
-    {
-      "start": 5.5,
-      "end": 29.7,
-      "broll_query": "office wall plant window light",
-      "overlays": [
-        {
-          "t": 5.5,
-          "text": "A full session. Work clothes.",
-          "style": "step"
         },
         {
-          "t": 13.4,
-          "text": "1. Wall Push-Up · 10",
-          "style": "step"
-        },
-        {
-          "t": 20.9,
-          "text": "2. Wall Slide · 10",
+          "t": 11.7,
+          "text": "Seated knee lifts, ten each side.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 29.7,
-      "end": 45.5,
-      "broll_query": "empty office chair by desk",
+      "start": 16.6,
+      "end": 21,
+      "broll_query": "office chair by desk",
       "overlays": [
         {
-          "t": 29.7,
-          "text": "3. Sit-to-Stand · 8",
-          "style": "step"
-        },
-        {
-          "t": 36.2,
-          "text": "4. Standing Hip Hinge · 10",
+          "t": 16.6,
+          "text": "Ten sit-to-stands. No hands.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 45.5,
-      "end": 62.8,
-      "broll_query": "desk phone timer coffee cup",
+      "start": 21,
+      "end": 24.9,
+      "demo": true,
+      "movement": "Wall Push-Up",
       "overlays": [
         {
-          "t": 45.5,
-          "text": "5. Seated Knee Lift · 10",
+          "t": 21,
+          "text": "Ten wall push-ups. Press away.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 24.9,
+      "end": 33.2,
+      "broll_query": "bright office wall plant",
+      "overlays": [
+        {
+          "t": 24.9,
+          "text": "Wall slides, then hip hinges.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 33.2,
+      "end": 60.4,
+      "broll_query": "laptop desk window light",
+      "overlays": [
+        {
+          "t": 33.2,
+          "text": "A complete session in work clothes.",
           "style": "step"
         },
         {
-          "t": 53.6,
+          "t": 55.7,
           "text": "How long is your gap?",
           "style": "cta"
         }

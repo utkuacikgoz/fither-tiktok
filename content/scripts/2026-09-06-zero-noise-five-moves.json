@@ -3,117 +3,142 @@
   "week": "01",
   "post_date": "2026-09-06",
   "format": "text-on-screen",
-  "caption": "Quiet workout for apartment nights: five silent strength moves for the hours when someone is asleep next door. No jumping, no impact, no equipment, nothing through the floor. Save it for tonight.",
+  "hook_mechanism": "situation",
+  "caption": "Quiet workout apartment edition: five strength moves with zero noise, for training while a child sleeps on the other side of the wall. Two rounds, ten minutes, not one creak.",
   "hashtags": [
-    "#homeworkout",
+    "#strengthtraining",
     "#quietworkout",
     "#apartmentworkout",
-    "#silentstrength"
+    "#noequipmentworkout",
+    "#mumstrength"
   ],
   "voiceover": [
     {
       "t": 0,
-      "text": "A child asleep on the other side of this wall."
+      "text": "She fell asleep at eight. The floor creaks."
     },
     {
-      "t": 4.5,
-      "text": "You can still train. Every move here is silent. No jumping, no impact, nothing through the floor."
+      "t": 4.4,
+      "text": "The workout industry assumes you can jump. You cannot."
     },
     {
-      "t": 15.3,
-      "text": "Glute bridges. Ten reps. Slow up, pause, slow down."
+      "t": 9.3,
+      "text": "So here are five moves with zero sound."
     },
     {
-      "t": 22.8,
-      "text": "Wall sit. Thirty seconds. Back against the wall, hold."
+      "t": 13.7,
+      "text": "Glute bridges. Ten reps. Your hips do the work."
     },
     {
-      "t": 30.6,
-      "text": "Wall push-ups. Ten reps. Press away, return with control."
+      "t": 18.6,
+      "text": "Wall sit. Thirty seconds. Perfectly still, working hard."
     },
     {
-      "t": 38.1,
-      "text": "Lying heel taps. Ten reps. Core braced, breath steady."
+      "t": 23,
+      "text": "Wall push-ups. Ten reps. Quiet as breathing."
     },
     {
-      "t": 46,
-      "text": "Knee plank. Twenty five seconds. Still, quiet, strong."
+      "t": 26.9,
+      "text": "Lying heel taps. Ten each side. Slow."
     },
     {
-      "t": 53.9,
-      "text": "Two rounds and you are done, and nobody stirred. What time does your home go quiet? Comment it."
+      "t": 30.8,
+      "text": "Knee plank. Twenty-five seconds. Not one creak."
+    },
+    {
+      "t": 34.7,
+      "text": "Two rounds. Ten minutes. The door never opens."
+    },
+    {
+      "t": 39.1,
+      "text": "That was a full session. She never stirred."
+    },
+    {
+      "t": 43.5,
+      "text": "You trained hard in total silence. That is skill."
+    },
+    {
+      "t": 48.4,
+      "text": "Your strength does not need a loud room."
+    },
+    {
+      "t": 52.8,
+      "text": "Tomorrow this fits between two meetings. Desk clothes on."
+    },
+    {
+      "t": 57.7,
+      "text": "Who is asleep on the other side of your wall?"
     }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 4.5,
-      "broll_query": "dim living room lamp closed door",
+      "end": 18.6,
+      "demo": true,
+      "movement": "Glute Bridge",
       "overlays": [
         {
           "t": 0,
-          "text": "A child asleep behind this wall.",
+          "text": "These five moves make zero noise.",
           "style": "hook"
-        }
-      ]
-    },
-    {
-      "start": 4.5,
-      "end": 30.6,
-      "broll_query": "dim living room lamp light night",
-      "overlays": [
-        {
-          "t": 4.5,
-          "text": "Every move here is silent.",
-          "style": "step"
         },
         {
-          "t": 15.3,
-          "text": "1. Glute Bridge · 10",
-          "style": "step"
-        },
-        {
-          "t": 22.8,
-          "text": "2. Wall Sit · 30s",
+          "t": 13.7,
+          "text": "Start with ten slow glute bridges.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 30.6,
-      "end": 53.9,
-      "broll_query": "living room mat lamp light night",
+      "start": 18.6,
+      "end": 23,
+      "broll_query": "dim living room lamp",
       "overlays": [
         {
-          "t": 30.6,
-          "text": "3. Wall Push-Up · 10",
-          "style": "step"
-        },
-        {
-          "t": 38.1,
-          "text": "4. Lying Heel Tap · 10",
-          "style": "step"
-        },
-        {
-          "t": 46,
-          "text": "5. Knee Plank · 25s",
+          "t": 18.6,
+          "text": "Wall sit for thirty silent seconds.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 53.9,
-      "end": 63.1,
-      "broll_query": "yoga mat lamp light dim room",
+      "start": 23,
+      "end": 26.9,
+      "demo": true,
+      "movement": "Wall Push-Up",
       "overlays": [
         {
-          "t": 53.9,
-          "text": "Two rounds. Zero noise.",
+          "t": 23,
+          "text": "Ten wall push-ups, quiet as breathing.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 26.9,
+      "end": 34.7,
+      "broll_query": "exercise mat dim room",
+      "overlays": [
+        {
+          "t": 26.9,
+          "text": "Heel taps, then a knee plank.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 34.7,
+      "end": 63.9,
+      "broll_query": "dark apartment window night",
+      "overlays": [
+        {
+          "t": 34.7,
+          "text": "Two rounds. The door never opens.",
           "style": "step"
         },
         {
-          "t": 57.4,
-          "text": "When does your home go quiet?",
+          "t": 57.7,
+          "text": "Who sleeps behind your wall?",
           "style": "cta"
         }
       ]

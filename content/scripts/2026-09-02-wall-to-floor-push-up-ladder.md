@@ -8,46 +8,83 @@
 
 ## 1. HOOK (first 3 seconds)
 
-1. "Nobody fails push-ups. They start on the wrong rung." (contradiction: failure reframed as wrong starting point)
-2. "You tried one on the living room floor and got stuck." (specific situation: the failed first attempt)
-3. "Four steps from the wall to your first full push-up." (number/promise)
+First frame: a body mid wall push-up, working. The staircase starts on
+screen before it is named.
 
-## 2. SCRIPT (about 50 seconds)
+1. "You have not failed at push-ups. Not once." (contradiction: reframes
+   every failed attempt as a wrong starting rung. CHOSEN)
+2. "You dropped to your knees mid push-up again. Good." (specific
+   situation: the familiar mid-set collapse)
+3. "Four steps from this wall to your first push-up." (number/promise)
 
-0:00 Hook: "Nobody fails push-ups. They start on the wrong rung."
+## 2. SCRIPT (about 67 seconds)
 
-0:05 Explainer: "The push-up has a staircase, and the wall is step one, not a shortcut."
+0:00 Hook: "You have not failed at push-ups. Not once."
 
-0:10 "Step one. Wall push-ups. Ten reps. Stand at arm's length, lower slow, press back."
+0:04 "You just started on the wrong rung."
 
-0:18 "Step two. Incline push-ups on a chair. Eight reps. Lower angle, more load."
+0:08 "There is a staircase. Four steps. Wall to floor."
 
-0:25 "Step three. Kneeling push-ups. Eight reps. One straight line from knees to head."
+0:13 "Step one. Wall push-ups. Ten reps, hands flat."
 
-0:33 "Step four. The full push-up. Six reps. Same shape, full length."
+0:18 "Own ten before you move. That is the rule."
 
-0:39 "Move up when ten clean reps feel steady. Not before."
+0:23 "Step two. Hands on a chair. Eight reps."
 
-0:45 CTA: "Every step on this ladder counts as strength. Which step are you on? Comment the number."
+0:27 "Feel that? Your chest is doing real work now."
+
+0:32 "Step three. Kneeling push-ups on the floor. Eight."
+
+0:36 "Step four. Full push-ups. Even one counts."
+
+0:40 "Give each step a full week. Earn the next."
+
+0:45 Payoff: "One day you press the floor away. Clean."
+
+0:49 Capability: "You built that rep. Nobody gave it to you."
+
+0:54 Capability: "That staircase belongs to you now."
+
+0:58 Seed tomorrow: "Tomorrow we train while dinner is in the oven."
+
+1:03 CTA: "Which step are you on today?"
+
+The loop: "you have not failed" is resolved by the staircase and lands at
+the first clean floor rep. Two capability-ownership lines at 0:49 and 0:54.
+The close invites her to tomorrow's kitchen session.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:10). On screen: a bare wall in morning light, skirting board visible, nobody in frame. Setting: quiet living room. Text overlay: the hook line, then "Step 1: Wall Push-Up, 10 reps".
+Scene 1 (0:00 to 0:13). Demo: Wall Push-Up, mid-movement from the first
+frame, body only. Overlay: "Nobody fails push-ups. They skip steps." (hook).
 
-Scene 2 (0:10 to 0:25). On screen: a sturdy chair set against the wall, seat facing camera. Setting: same room. Text overlay: "Step 2: Incline Push-Up, 8 reps" with a small arrow stepping down from the wall to the chair.
+Scene 2 (0:13 to 0:23). Demo: Wall Push-Up continues while step one is
+coached. Overlay: "Step one. Ten wall push-ups." (step).
 
-Scene 3 (0:25 to 0:39). On screen: a mat unrolled on the floor, soft daylight. Setting: same room, floor level. Text overlay: "Step 3: Kneeling Push-Up, 8 reps" then "Step 4: Full Push-Up, 6 reps".
+Scene 3 (0:23 to 0:32). Environment: a wooden chair in a bright room, no
+person; no approved incline demo exists. Overlay: "Step two. Eight incline
+push-ups." (step).
 
-Scene 4 (0:39 to end). On screen: wide static shot of wall, chair and mat together in one frame, reading left to right like a staircase. Setting: same room. Text overlay: the four steps stack into a list, then the CTA card: "Which step are you on?"
+Scene 4 (0:32 to 0:40). Environment: an exercise mat on a wooden floor.
+Overlays: "Step three. Kneeling push-ups, eight." (step), then "Step four.
+The full push-up." (step).
 
-All scenes are environment shots with kinetic text and no person in frame. No animated demos; nothing is Ready in assets/animations.md.
+Scene 5 (0:40 to end). Environment: a sunlit home staircase, the visual
+metaphor for the ladder. Overlays: "Earn each step for a full week."
+(step), then "Which step are you on today?" (cta).
+
+Only Wall Push-Up has an approved demo clip; the other rungs stay
+person-free environment shots until their demos are curated. No face
+appears anywhere.
 
 ## 4. CAPTION AND HASHTAGS
 
-Push up progression for beginners: four honest steps from the wall to the floor. Own ten clean reps at one step, then climb. The wall is step one, not a shortcut. Save the ladder.
+Push up progression for beginners: the four step staircase from wall to
+floor. Nobody fails at push-ups, they start on the wrong rung. Save the
+ladder and climb it.
 
-#homeworkout #pushupprogression #strengthforwomen #firstpushup
+#strengthtraining #pushupprogression #beginnerworkout #homeworkout #wallpushup
 
 ## 5. REUSE NOTE
 
-Share card "First Full Push-Up" and the onboarding progression copy.
+Share card "First Full Push-Up"; onboarding progression copy.

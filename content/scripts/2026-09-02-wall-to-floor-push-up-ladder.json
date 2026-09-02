@@ -3,107 +3,146 @@
   "week": "01",
   "post_date": "2026-09-02",
   "format": "text-on-screen",
-  "caption": "Push up progression for beginners: four honest steps from the wall to the floor. Own ten clean reps at one step, then climb. The wall is step one, not a shortcut. Save the ladder.",
+  "hook_mechanism": "contradiction",
+  "caption": "Push up progression for beginners: the four step staircase from wall to floor. Nobody fails at push-ups, they start on the wrong rung. Save the ladder and climb it.",
   "hashtags": [
-    "#homeworkout",
+    "#strengthtraining",
     "#pushupprogression",
-    "#strengthforwomen",
-    "#firstpushup"
+    "#beginnerworkout",
+    "#homeworkout",
+    "#wallpushup"
   ],
   "voiceover": [
     {
       "t": 0,
-      "text": "Nobody fails push-ups. They start on the wrong rung."
+      "text": "You have not failed at push-ups. Not once."
     },
     {
-      "t": 5.5,
-      "text": "The push-up has a staircase, and the wall is step one, not a shortcut."
+      "t": 4.4,
+      "text": "You just started on the wrong rung."
     },
     {
-      "t": 12.3,
-      "text": "Step one. Wall push-ups. Ten reps. Stand at arm's length, lower slow, press back."
+      "t": 8.3,
+      "text": "There is a staircase. Four steps. Wall to floor."
     },
     {
-      "t": 23,
-      "text": "Step two. Incline push-ups on a chair. Eight reps. Lower angle, more load."
+      "t": 13.2,
+      "text": "Step one. Wall push-ups. Ten reps, hands flat."
+    },
+    {
+      "t": 17.6,
+      "text": "Own ten before you move. That is the rule."
+    },
+    {
+      "t": 22.5,
+      "text": "Step two. Hands on a chair. Eight reps."
+    },
+    {
+      "t": 26.9,
+      "text": "Feel that? Your chest is doing real work now."
     },
     {
       "t": 31.8,
-      "text": "Step three. Kneeling push-ups. Eight reps. One straight line from knees to head."
+      "text": "Step three. Kneeling push-ups on the floor. Eight."
     },
     {
-      "t": 40.3,
-      "text": "Step four. The full push-up. Six reps. Same shape, full length."
+      "t": 36.2,
+      "text": "Step four. Full push-ups. Even one counts."
     },
     {
-      "t": 48.7,
-      "text": "Move up when ten clean reps feel steady. Not before."
+      "t": 40.1,
+      "text": "Give each step a full week. Earn the next."
     },
     {
-      "t": 55.2,
-      "text": "Every step on this ladder counts as strength. Which step are you on? Comment the number."
+      "t": 45,
+      "text": "One day you press the floor away. Clean."
+    },
+    {
+      "t": 49.4,
+      "text": "You built that rep. Nobody gave it to you."
+    },
+    {
+      "t": 54.3,
+      "text": "That staircase belongs to you now."
+    },
+    {
+      "t": 57.7,
+      "text": "Tomorrow we train while dinner is in the oven."
+    },
+    {
+      "t": 62.6,
+      "text": "Which step are you on today?"
     }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 12.3,
-      "broll_query": "bare living room wall morning light",
+      "end": 13.2,
+      "demo": true,
+      "movement": "Wall Push-Up",
       "overlays": [
         {
           "t": 0,
-          "text": "Nobody fails. Wrong rung.",
+          "text": "Nobody fails push-ups. They skip steps.",
           "style": "hook"
         }
       ]
     },
     {
-      "start": 12.3,
-      "end": 31.8,
-      "broll_query": "wooden chair against wall interior",
+      "start": 13.2,
+      "end": 22.5,
+      "demo": true,
+      "movement": "Wall Push-Up",
       "overlays": [
         {
-          "t": 12.3,
-          "text": "Step 1: Wall Push-Up · 10",
+          "t": 13.2,
+          "text": "Step one. Ten wall push-ups.",
           "style": "step"
-        },
+        }
+      ]
+    },
+    {
+      "start": 22.5,
+      "end": 31.8,
+      "broll_query": "wooden chair bright room",
+      "overlays": [
         {
-          "t": 23,
-          "text": "Step 2: Incline Push-Up · 8",
+          "t": 22.5,
+          "text": "Step two. Eight incline push-ups.",
           "style": "step"
         }
       ]
     },
     {
       "start": 31.8,
-      "end": 48.7,
-      "broll_query": "yoga mat on living room floor",
+      "end": 40.1,
+      "broll_query": "exercise mat wooden floor",
       "overlays": [
         {
           "t": 31.8,
-          "text": "Step 3: Kneeling Push-Up · 8",
+          "text": "Step three. Kneeling push-ups, eight.",
           "style": "step"
         },
         {
-          "t": 40.3,
-          "text": "Step 4: Full Push-Up · 6",
+          "t": 36.2,
+          "text": "Step four. The full push-up.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 48.7,
-      "end": 64.7,
-      "broll_query": "living room wall chair mat daylight",
+      "start": 40.1,
+      "end": 66.8,
+      "broll_query": "sunlit staircase home interior",
       "overlays": [
         {
-          "t": 48.7,
-          "text": "Own 10 clean reps. Then climb.",
+          "t": 40.1,
+          "text": "Earn each step for a full week.",
           "style": "step"
         },
         {
-          "t": 55.2,
-          "text": "Which step are you on?",
+          "t": 62.6,
+          "text": "Which step are you on today?",
           "style": "cta"
         }
       ]

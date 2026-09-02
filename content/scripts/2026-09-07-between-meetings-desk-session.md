@@ -8,46 +8,82 @@
 
 ## 1. HOOK (first 3 seconds)
 
-1. "You do not need gym clothes. You need ten minutes." (contradiction: the kit you think is required is not)
-2. "Your two o'clock ended early. The next starts at three." (specific situation: the calendar gap)
-3. "Five moves at your desk. No floor, no sweat." (number/promise)
+First frame: a body mid seated knee lift at a chair, sitting tall,
+already training in work clothes.
 
-## 2. SCRIPT (about 52 seconds)
+1. "Your next meeting is in twelve minutes." (specific situation: the
+   calendar gap. CHOSEN; the CTA asks how long her gap is)
+2. "You can train at your desk without anyone noticing." (contradiction:
+   the office as a gym, invisibly)
+3. "Five moves, no floor, no changing, no sweat." (number/promise)
 
-0:00 Hook: "Your two o'clock ended early. The next starts at three."
+## 2. SCRIPT (about 60 seconds)
 
-0:05 Explainer: "That gap is a full session. Standing and chair work only, in the clothes you are wearing."
+0:00 Hook: "Your next meeting is in twelve minutes."
 
-0:11 "Wall push-ups. Ten reps. Any clear stretch of wall."
+0:04 "You will not change clothes. You will not sweat."
 
-0:18 "Wall slides. Ten reps. Back on the wall, arms slide up and down."
+0:09 "You will still train. Watch."
 
-0:25 "Sit-to-stands from your chair. Eight reps. No hands."
+0:12 "Seated knee lifts at your desk. Ten each side."
 
-0:31 "Standing hip hinges. Ten reps. Hips back, flat back, stand tall."
+0:17 "Stand. Sit-to-stands from your chair. Ten, no hands."
 
-0:38 "Seated knee lifts. Ten reps. Sit tall, lift slow."
+0:21 "Find a wall. Push-ups. Ten strong reps."
 
-0:44 CTA: "Back at your desk before anyone notices. How long is your usual gap? Comment the minutes."
+0:25 "Wall slides, ten. Shoulders back, arms tall."
+
+0:29 "Standing hip hinges. Ten. Hips back, flat back."
+
+0:33 "Nobody noticed. Nothing to change. No floor, no sweat."
+
+0:38 Payoff: "That was a complete session in work clothes."
+
+0:43 Capability: "You fit strength into a gap everyone else wastes."
+
+0:47 Capability: "Your office is part of your gym now."
+
+0:52 Seed tomorrow: "Tomorrow I find you another hidden gap."
+
+0:56 CTA: "How long is your gap between meetings?"
+
+The loop: twelve minutes on the clock opens it, five desk-safe moves fill
+it, the payoff lands with her still in work clothes. Two
+capability-ownership lines at 0:43 and 0:47. The close invites her back
+for the next hidden gap.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:05). On screen: a tidy desk, laptop closed, window light across the keyboard, nobody in frame. Setting: office or home office, early afternoon. Text overlay: "The gap between meetings."
+Scene 1 (0:00 to 0:17). Demo: Seated Knee Lift, mid-movement from the
+first frame, body only in a chair. Overlays: "Twelve minutes is enough to
+train." (hook), then "Seated knee lifts, ten each side." (step).
 
-Scene 2 (0:05 to 0:25). On screen: a clear stretch of wall beside the window, plant in the corner of frame. Setting: same office. Text overlay: "1. Wall Push-Up, 10" then "2. Wall Slide, 10".
+Scene 2 (0:17 to 0:21). Environment: an office chair by a desk in window
+light, no person. Overlay: "Ten sit-to-stands. No hands." (step).
 
-Scene 3 (0:25 to 0:38). On screen: the empty office chair, pulled slightly away from the desk. Setting: same office. Text overlay: "3. Sit-to-Stand, 8" then "4. Standing Hip Hinge, 10".
+Scene 3 (0:21 to 0:25). Demo: Wall Push-Up, body only. Overlay: "Ten wall
+push-ups. Press away." (step).
 
-Scene 4 (0:38 to end). On screen: the desk again, phone propped with a timer at 10:00, coffee cup beside it. Setting: same office. Text overlay: "5. Seated Knee Lift, 10" then the CTA card: "How long is your gap?"
+Scene 4 (0:25 to 0:29). Environment: a bright office wall with a plant.
+Overlay: "Wall slides, then hip hinges." (step).
 
-All scenes are environment shots with no person in frame. No animated demos; nothing is Ready in assets/animations.md.
+Scene 5 (0:29 to end). Environment: a laptop on a desk in window light.
+Overlays: "A complete session in work clothes." (step), then "How long is
+your gap?" (cta).
+
+Demo scenes use only approved movements (Seated Knee Lift, Wall Push-Up);
+the standing moves stay person-free environment shots. No face appears
+anywhere. Every move is standing or chair-based; no floor work, matching
+the office constraint.
 
 ## 4. CAPTION AND HASHTAGS
 
-Office workout at your desk: five moves in the gap between meetings. No floor work, no changing, no sweat, standing and chair work only. Save it for tomorrow's calendar.
+Office workout at your desk: a ten minute session with no floor work, no
+changing, no sweat. Standing and chair moves only, between two meetings.
+Save it for Monday.
 
-#strengthtraining #officeworkout #deskworkout #deskexercises
+#strengthtraining #officeworkout #deskworkout #noequipmentworkout #workdaystrength
 
 ## 5. REUSE NOTE
 
-App Store screenshot "Office mode" and the notification copy test.
+App Store screenshot "Office mode"; notification copy test.

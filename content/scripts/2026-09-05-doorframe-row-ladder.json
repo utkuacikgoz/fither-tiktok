@@ -3,112 +3,145 @@
   "week": "01",
   "post_date": "2026-09-05",
   "format": "environment-pov",
-  "caption": "Back exercises at home no equipment required: every home already has a row station, it is called a doorframe. Four rungs, from a lean row to a single arm row. Save the ladder.",
+  "hook_mechanism": "contradiction",
+  "caption": "Back exercises at home no equipment: the doorframe row ladder, four rungs from a lean to a single arm row. The missing half of home strength. Save the ladder.",
   "hashtags": [
-    "#homeworkout",
+    "#strengthtraining",
     "#backworkout",
     "#noequipmentworkout",
+    "#homeworkout",
     "#doorframerow"
   ],
   "voiceover": [
     {
       "t": 0,
-      "text": "Home workouts train half your body. Here is the missing half."
+      "text": "Home workouts train half your body. The front half."
     },
     {
-      "t": 5.5,
-      "text": "There is nothing to pull at home, except every room has a doorframe."
+      "t": 4.9,
+      "text": "Nothing to pull, so nobody pulls. Except you have doorframes."
     },
     {
-      "t": 12,
-      "text": "Rung one. Doorframe lean rows. Ten reps. Hold the frame, lean back, pull your chest to your hands."
+      "t": 10.3,
+      "text": "Here is the ladder nobody does at home."
     },
     {
-      "t": 24.2,
-      "text": "Rung two. Doorframe rows. Eight reps. Feet closer to the frame, deeper lean, harder pull."
+      "t": 14.7,
+      "text": "Rung one. Hold the frame. Lean back. Row in. Ten."
     },
     {
-      "t": 36.4,
-      "text": "Rung three. Deep doorframe rows. Eight reps. Sit further back, full range, slow return."
+      "t": 20.1,
+      "text": "Rung two. Feet closer, deeper lean. Eight rows."
     },
     {
-      "t": 48,
-      "text": "Rung four. Single arm doorframe rows. Six reps each side. The top of the ladder."
+      "t": 24.5,
+      "text": "Rung three. Sit right into it. Full range. Eight."
     },
     {
-      "t": 57.4,
-      "text": "Grip low, heels planted, and move slow in both directions."
+      "t": 29.4,
+      "text": "Rung four. One arm. Six rows a side."
     },
     {
-      "t": 63.8,
-      "text": "Your back works harder for you than anything else you train. Which doorframe will you use? Comment the room."
+      "t": 33.8,
+      "text": "When a rung feels easy, climb."
+    },
+    {
+      "t": 37.2,
+      "text": "This is the missing half of your strength."
+    },
+    {
+      "t": 41.6,
+      "text": "Your front pushed for years. Your back just answered."
+    },
+    {
+      "t": 46.5,
+      "text": "You just turned a doorway into a back machine."
+    },
+    {
+      "t": 51.4,
+      "text": "Every door in your home is equipment now. Yours."
+    },
+    {
+      "t": 56.3,
+      "text": "Tomorrow, five moves that make zero noise."
+    },
+    {
+      "t": 60.2,
+      "text": "Which rung will you start on?"
     }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 5.5,
-      "broll_query": "bedroom doorframe hallway light evening",
+      "end": 14.7,
+      "broll_query": "white doorframe hallway interior",
       "overlays": [
         {
           "t": 0,
-          "text": "The missing half of home strength.",
+          "text": "Home training skips your back. Not today.",
           "style": "hook"
         }
       ]
     },
     {
-      "start": 5.5,
-      "end": 36.4,
-      "broll_query": "doorframe edge close up interior",
+      "start": 14.7,
+      "end": 24.5,
+      "broll_query": "open door frame sunlight",
       "overlays": [
         {
-          "t": 5.5,
-          "text": "Every room has a row station.",
+          "t": 14.7,
+          "text": "Rung one. Lean back and row in.",
           "style": "step"
         },
         {
-          "t": 12,
-          "text": "1. Doorframe Lean Row · 10",
-          "style": "step"
-        },
-        {
-          "t": 24.2,
-          "text": "2. Doorframe Row · 8",
+          "t": 20.1,
+          "text": "Rung two. Deeper lean, eight rows.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 36.4,
-      "end": 57.4,
-      "broll_query": "wooden floor toward doorway low angle",
+      "start": 24.5,
+      "end": 33.8,
+      "broll_query": "doorway wooden floor shadow",
       "overlays": [
         {
-          "t": 36.4,
-          "text": "3. Deep Doorframe Row · 8",
+          "t": 24.5,
+          "text": "Rung three. Full range rows, eight.",
           "style": "step"
         },
         {
-          "t": 48,
-          "text": "4. Single-Arm Row · 6 each side",
+          "t": 29.4,
+          "text": "Rung four. One arm, six each side.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 57.4,
-      "end": 73.6,
-      "broll_query": "bedroom doorway wide interior evening",
+      "start": 33.8,
+      "end": 46.5,
+      "broll_query": "hallway door morning light",
       "overlays": [
         {
-          "t": 57.4,
-          "text": "Grip low. Heels planted. Slow.",
+          "t": 33.8,
+          "text": "When a rung feels easy, climb.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 46.5,
+      "end": 64.4,
+      "broll_query": "front door evening lamp",
+      "overlays": [
+        {
+          "t": 46.5,
+          "text": "Every doorway is equipment now.",
           "style": "step"
         },
         {
-          "t": 63.8,
-          "text": "Which doorframe is yours?",
+          "t": 60.2,
+          "text": "Which rung will you start on?",
           "style": "cta"
         }
       ]
