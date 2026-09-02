@@ -11,7 +11,7 @@ import { loadSpec, overlayWindows } from "./lib/spec.mjs";
 import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
 import { fetchBroll, fetchApprovedDemo, brollAvailable } from "./lib/broll.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
-import { composeVideo, mediaDuration } from "./lib/compose.mjs";
+import { composeVideo, mediaDuration, meanVolume } from "./lib/compose.mjs";
 
 export async function renderOne(scriptPath) {
   const specPath = scriptPath.replace(/\.md$/, ".json").replace(/\.json$/, ".json");
@@ -88,6 +88,22 @@ export async function renderOne(scriptPath) {
 
   const out = join(outDir, `${spec.slug}.mp4`);
   await composeVideo({ spec, sceneFiles, overlays, voFiles, out });
+
+  // GUARDRAIL: every scripted line must be audible in the finished file.
+  // The retimed schedule is ground truth; a silent line window means the
+  // mix dropped audio, and the render fails loudly instead of shipping.
+  if (voFiles && voFiles.length > 0) {
+    const silent = [];
+    for (const v of voFiles) {
+      const lvl = await meanVolume(out, v.t + 0.15, 1.0);
+      if (lvl !== null && lvl < -45) silent.push(`${v.t.toFixed(1)}s`);
+    }
+    if (silent.length > 0) {
+      throw new Error(
+        `audio verification failed for ${spec.slug}: no voice at ${silent.join(", ")} — the mix lost lines; do not ship this render`,
+      );
+    }
+  }
 
   // QA contact sheet: one frame every ~10s, tiled. The faceless rule is
   // verified by looking at this before anything is posted.

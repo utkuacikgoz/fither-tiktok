@@ -10,6 +10,22 @@ const pexec = promisify(execFile);
 const GRADIENT = (dur) =>
   `gradients=s=1080x1920:c0=${palette.bg.replace("#", "0x")}:c1=${palette.accentSoft.replace("#", "0x")}:speed=0.008:duration=${dur}`;
 
+// Mean audio level (dB) over a window of the file; null when unmeasurable.
+export async function meanVolume(file, start, dur) {
+  const ffmpeg = await ffmpegPath();
+  try {
+    const { stderr } = await pexec(
+      ffmpeg,
+      ["-ss", String(start), "-t", String(dur), "-i", file, "-map", "a", "-af", "volumedetect", "-f", "null", "-"],
+      { maxBuffer: 1 << 22 },
+    );
+    const m = /mean_volume:\s*(-?[\d.]+) dB/.exec(stderr ?? "");
+    return m ? Number(m[1]) : null;
+  } catch {
+    return null;
+  }
+}
+
 export async function mediaDuration(file) {
   const ffmpeg = await ffmpegPath();
   try {
