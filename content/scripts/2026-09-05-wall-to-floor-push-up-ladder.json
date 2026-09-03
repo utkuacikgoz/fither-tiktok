@@ -75,7 +75,7 @@
     {
       "start": 0,
       "end": 14.6,
-      "broll_query": "hands pressing wall home",
+      "broll_query": "palms flat on white wall",
       "overlays": [
         {
           "t": 0,
@@ -87,7 +87,7 @@
     {
       "start": 14.6,
       "end": 23.9,
-      "broll_query": "hands flat on wall closeup",
+      "broll_query": "forearm braced against wall",
       "overlays": [
         {
           "t": 14.6,

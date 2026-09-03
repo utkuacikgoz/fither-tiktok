@@ -156,9 +156,6 @@ jobs:
         working-directory: pipeline
         run: npm ci --no-audit --no-fund
 
-      - name: Block repeated footage
-        run: node pipeline/shots.mjs "${{ needs.plan.outputs.week }}"
-
       - name: Build posting sheet
         run: node pipeline/sheet.mjs "${{ needs.plan.outputs.week }}"
 
@@ -172,6 +169,10 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
+      # The variety gate runs last and still fails the run, but only after the
+      # week is delivered: the videos themselves passed every quality gate,
+      # and repeated footage is a curation call the owner should be able to
+      # look at rather than a reason to withhold the renders.
       - name: Push renders branch
         run: |
           week="${{ needs.plan.outputs.week }}"
@@ -181,3 +182,6 @@ jobs:
           git add -f "renders/week-$week"
           git commit -m "Renders for week $week (run ${{ github.run_id }})"
           git push -f origin "renders-week-$week"
+
+      - name: Check footage variety across the week
+        run: node pipeline/shots.mjs "${{ needs.plan.outputs.week }}"

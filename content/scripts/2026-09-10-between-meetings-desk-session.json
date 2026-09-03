@@ -108,7 +108,7 @@
     {
       "start": 18.8,
       "end": 22.1,
-      "broll_query": "hands pressing office wall",
+      "broll_query": "palm on glass partition",
       "overlays": [
         {
           "t": 18.8,
@@ -120,7 +120,7 @@
     {
       "start": 22.1,
       "end": 30.5,
-      "broll_query": "arms raised against wall",
+      "broll_query": "stretching arms office corner",
       "overlays": [
         {
           "t": 22.1,
