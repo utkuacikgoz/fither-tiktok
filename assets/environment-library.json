@@ -1,0 +1,4 @@
+{
+  "_readme": "Approved environment clips, keyed by the sidecar broll_query they satisfy. Nothing enters this file by machine: a clip is added only after full-motion review confirms it shows what the query describes, in the right room, with no third-party branding, no equipment and no borrowed-footage tells. Generated clips may show the recurring character's face (owner override, 2026-09-03); owned clips may not. Generate candidates with the 'Generate demo candidates' workflow and target=environments. Empty means every environment scene still falls back to Pexels, which is what failed week 01.",
+  "queries": {}
+}

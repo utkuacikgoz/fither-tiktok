@@ -83,5 +83,76 @@
       "prompt": "Side-on medium shot of a woman sitting tall on the front edge of an oak dining chair, hands resting on the seat beside her hips, spine long, feet flat.",
       "motion": "She lifts one knee toward her chest, lowers it under control, then lifts the other. Two slow repetitions, camera locked off."
     }
+  },
+  "environments": {
+    "_readme": "Environment scenes outnumber demo scenes 35 to 1 in a week, and they are what failed week 01's review. The query in a sidecar is already a shot description, so a prompt is composed from it rather than written per query: the query, the framing, the setting its keywords select, then the shared wardrobe, light, camera and look. She is in every one of them, because CLAUDE.md is right that a room with nobody in it reads as stock footage.",
+    "framing": "Close handheld shot of her hands, feet or back filling the frame, shallow focus, the rest of her body soft behind.",
+    "settings": {
+      "apartment": "Her own plain apartment: bone-white walls, warm oak floor, a low sofa and a charcoal mat, minimal furniture, empty of equipment.",
+      "hotel_room": "A plain business hotel room: neutral walls, a made bed, blackout curtains half drawn, a city window.",
+      "kitchen": "A small home kitchen: pale counter, oak cabinets, a kettle, an oven, daylight from one window.",
+      "stairwell": "A residential stairwell: painted handrail, worn stone steps, daylight from a landing window.",
+      "office": "A quiet corner of an open-plan office: a plain desk, a laptop, a mesh chair, a glass partition.",
+      "bedroom": "Her bedroom in the evening: a lamp on low, curtains drawn, a charcoal mat on the floor, deep shadow."
+    },
+    "setting_keywords": [
+      [
+        "hotel",
+        "hotel_room"
+      ],
+      [
+        "stair",
+        "stairwell"
+      ],
+      [
+        "oven",
+        "kitchen"
+      ],
+      [
+        "kitchen",
+        "kitchen"
+      ],
+      [
+        "pot",
+        "kitchen"
+      ],
+      [
+        "grocery",
+        "kitchen"
+      ],
+      [
+        "desk",
+        "office"
+      ],
+      [
+        "office",
+        "office"
+      ],
+      [
+        "laptop",
+        "office"
+      ],
+      [
+        "partition",
+        "office"
+      ],
+      [
+        "yoga mat",
+        "bedroom"
+      ],
+      [
+        "lamp",
+        "bedroom"
+      ],
+      [
+        "curtain",
+        "bedroom"
+      ],
+      [
+        "dark",
+        "bedroom"
+      ]
+    ],
+    "default_setting": "apartment"
   }
 }

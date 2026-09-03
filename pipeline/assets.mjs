@@ -12,8 +12,10 @@ const specs = readdirSync(scriptsDir)
   .map((file) => JSON.parse(readFileSync(join(scriptsDir, file), "utf8")));
 const library = JSON.parse(readFileSync(join(repoRoot, "assets", "demo-library.json"), "utf8"));
 const animations = JSON.parse(readFileSync(join(repoRoot, "assets", "animation-library.json"), "utf8"));
+const environments = JSON.parse(readFileSync(join(repoRoot, "assets", "environment-library.json"), "utf8"));
+const book = JSON.parse(readFileSync(join(repoRoot, "assets", "generation-prompts.json"), "utf8"));
 const outPath = join(repoRoot, "data", "assets.md");
-const { report, errors, warnings } = buildAssetReport(specs, library, animations);
+const { report, errors, warnings } = buildAssetReport(specs, library, animations, environments, book);
 
 for (const error of errors) console.error(`ERROR ${error}`);
 for (const warning of warnings) console.warn(`WARN  ${warning}`);

@@ -1,6 +1,7 @@
 import { validateAnimationLibrary } from "./animations.mjs";
+import { resolveSetting, validateEnvironmentLibrary } from "./environments.mjs";
 
-export function buildAssetReport(specs, library, animationLibrary) {
+export function buildAssetReport(specs, library, animationLibrary, environmentLibrary = { queries: {} }, book = null) {
   const errors = [];
   const warnings = [];
   const entries = library.movements ?? {};
@@ -94,12 +95,32 @@ export function buildAssetReport(specs, library, animationLibrary) {
 
   const animationState = validateAnimationLibrary(animationLibrary);
   errors.push(...animationState.errors.map((message) => `animation: ${message}`));
+  const environmentState = validateEnvironmentLibrary(environmentLibrary);
+  errors.push(...environmentState.errors.map((message) => `environment: ${message}`));
+
+  // Environment scenes outnumber demo scenes by roughly thirty-five to one
+  // and are what failed week 01's review, so their coverage is the headline
+  // number rather than a footnote.
+  const approvedQueries = new Set(
+    Object.entries(environmentLibrary?.queries ?? {})
+      .filter(([, clips]) => (clips ?? []).length > 0)
+      .map(([query]) => query),
+  );
+  const uncovered = [...environmentQueries].filter(
+    (query) => ![...approvedQueries].some((approved) => approved.trim().toLowerCase() === query),
+  );
+  if (uncovered.length) {
+    warnings.push(
+      `${uncovered.length} of ${environmentQueries.size} environment queries have no approved clip and fall back to Pexels search`,
+    );
+  }
   let report = `# Asset readiness (generated — run \`node pipeline/assets.mjs\`)\n\n`;
   const approvedMovementCount = Object.keys(entries).length;
   report += `- Approved body-only clips: **${ids.size}** across **${approvedMovementCount}** ${approvedMovementCount === 1 ? "movement" : "movements"}\n`;
   report += `- Quarantined legacy clips: **${Array.isArray(quarantined) ? quarantined.length : 0}**\n`;
   report += `- Demo scenes in current sidecars: **${[...usage.values()].reduce((sum, item) => sum + item.scenes, 0)}**\n`;
-  report += `- Distinct environment searches: **${environmentQueries.size}**\n`;
+  report += `- Distinct environment queries: **${environmentQueries.size}**, of which **${environmentQueries.size - uncovered.length}** have an approved clip\n`;
+  report += `- Approved environment clips: **${environmentState.count}** across **${environmentState.queries}** ${environmentState.queries === 1 ? "query" : "queries"}\n`;
   report += `- Ready authored animation exports: **${animationState.count}** across **${animationState.readyMovements.size}** movements\n`;
   report += `- Priority movements below target (<3 approved clips): **${movements.filter((movement) => priorityMovements.has(movement) && (entries[movement]?.length ?? 0) < 3).length}**\n`;
   report += `\n## Movement footage\n\n| Movement | Approved clips | Demo scenes | Videos | Readiness |\n|---|---:|---:|---:|---|\n`;
@@ -123,6 +144,26 @@ export function buildAssetReport(specs, library, animationLibrary) {
       const exports = animationLibrary?.movements?.[movement]?.length ?? 0;
       const used = animationUsage.get(movement);
       report += `| ${movement} | ${exports} | ${used?.scenes ?? 0} | ${used?.videos.size ?? 0} | ${exports > 0 ? "Ready" : "Blocked"} |\n`;
+    }
+  }
+  report += `\n## Environment coverage\n\n`;
+  if (environmentQueries.size === 0) {
+    report += `No environment scenes in the current sidecars.\n`;
+  } else {
+    report += `| Query | Setting | Approved clips |\n|---|---|---:|\n`;
+    for (const query of [...environmentQueries].sort()) {
+      const clips = Object.entries(environmentLibrary?.queries ?? {})
+        .find(([key]) => key.trim().toLowerCase() === query)?.[1]?.length ?? 0;
+      let setting = "—";
+      if (book?.environments) {
+        try {
+          const resolved = resolveSetting(query, book);
+          setting = resolved.matched ? resolved.setting : `${resolved.setting} (default)`;
+        } catch {
+          setting = "unresolved";
+        }
+      }
+      report += `| ${query} | ${setting} | ${clips} |\n`;
     }
   }
   report += `\n## Provider boundary\n\n`;

@@ -200,6 +200,49 @@ export async function fetchApprovedDemo(movement, seed = "", excludedIds = new S
   return file;
 }
 
+// Approved environment clips, keyed by the sidecar query. Every entry is
+// checksum-pinned (generated or owned), so unlike the demo path there is no
+// Pexels branch here: an approved environment clip is never a search result.
+// A miss returns null and the caller falls back to fetchBroll, which is the
+// behaviour week 01 shipped with and the reason its footage failed review.
+export async function fetchApprovedEnvironment(query, seed = "", excludedIds = new Set()) {
+  if (!query) return null;
+  const libPath = join(repoRoot, "assets", "environment-library.json");
+  if (!existsSync(libPath)) return null;
+  const lib = JSON.parse(readFileSync(libPath, "utf8"));
+  const blocked = new Set([...shotHistoryIds(), ...excludedIds]);
+  const entries = (lib.queries?.[query.trim()] ?? []).filter(
+    (entry) => entry.scene_verified === true && isPinned(entry) &&
+      /^\d{4}-\d{2}-\d{2}$/.test(entry.reviewed_at ?? "") && !blocked.has(assetIdentity(entry)),
+  );
+  if (entries.length === 0) return null;
+  // Rotate deterministically, same as demos: a query used in several videos
+  // should not always resolve to the same clip.
+  const idx = parseInt(createHash("sha1").update(`${query}|${seed}`).digest("hex").slice(0, 6), 16) % entries.length;
+  const entry = entries[idx];
+  const dir = ensureDir(join(cacheDir, "broll"));
+  const file = join(dir, `env-${entry.source}-${entry.sha256.slice(0, 20)}.mp4`);
+  const metadata = {
+    asset_id: assetIdentity(entry),
+    source: entry.source,
+    kind: "environment",
+    query: query.trim(),
+    duration: entry.duration,
+  };
+  if (existsSync(file)) {
+    writeAssetMetadata(file, metadata);
+    return file;
+  }
+  const dl = await fetch(entry.url);
+  if (!dl.ok) throw new Error(`${entry.source} environment download ${dl.status}`);
+  const body = Buffer.from(await dl.arrayBuffer());
+  const actual = createHash("sha256").update(body).digest("hex");
+  if (actual !== entry.sha256) throw new Error(`${entry.source} environment checksum mismatch for "${query}"`);
+  writeFileSync(file, body);
+  writeAssetMetadata(file, metadata);
+  return file;
+}
+
 export async function fetchBroll(query, mode = "environment", excludedIds = new Set(), seed = "") {
   if (!brollAvailable() || !query) return null;
   const dir = ensureDir(join(cacheDir, "broll"));

@@ -9,7 +9,7 @@ import { writeFileSync } from "node:fs";
 import { ensureDir, rendersDir } from "./lib/env.mjs";
 import { loadSpec, overlayWindows } from "./lib/spec.mjs";
 import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
-import { fetchBroll, fetchApprovedDemo, brollAvailable, readAssetMetadata } from "./lib/broll.mjs";
+import { fetchApprovedEnvironment, fetchBroll, fetchApprovedDemo, brollAvailable, readAssetMetadata } from "./lib/broll.mjs";
 import { fetchApprovedAnimation } from "./lib/animations.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
@@ -126,7 +126,11 @@ export async function renderOne(scriptPath) {
         f = await fetchApprovedDemo(s.movement, `${spec.slug}|${s.start}`, usedAssetIds);
         if (!f) notes.push(`verified "${s.movement}" demo unavailable — using gradient`);
       } else {
-        f = await fetchBroll(s.broll_query, "environment", usedAssetIds, spec.slug);
+        // Approved generated footage first, Pexels second. Week 01's
+        // environment scenes came entirely from search and failed review,
+        // so search is now the fallback rather than the default.
+        f = await fetchApprovedEnvironment(s.broll_query, `${spec.slug}|${s.start}`, usedAssetIds);
+        if (!f) f = await fetchBroll(s.broll_query, "environment", usedAssetIds, spec.slug);
       }
     } catch (e) {
       if (s.animation) throw new Error(`authored animation "${s.movement}" failed: ${e.message}`);

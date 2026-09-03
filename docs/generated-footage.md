@@ -122,6 +122,34 @@ sent inline as a data URI on each generation, and Runway pins her from it, so
 the same woman performs every movement. `approved_url` still works if you
 would rather host the portrait somewhere durable yourself.
 
+## Environment scenes
+
+A week's sidecars carry roughly one demo scene and thirty-five environment
+scenes, and it was the environment footage that failed week 01: a stock
+watermark, third-party gym branding, a kettlebell, a car steering wheel
+standing in for an incline push-up. Query-based stock sourcing is retired for
+these (owner decision, 2026-09-03).
+
+Run it with `GENERATION_TARGET=environments`. Prompts are composed rather than
+authored per query, because the sidecar query is already a shot description:
+
+```
+"hands opening oven door"
+  + environments.framing        close on hands/feet/back, shallow focus
+  + environments.settings.kitchen   selected by keyword from the query
+  + wardrobe + light + camera + look
+```
+
+Only queries that appear in the current sidecars are generated: footage no
+script asks for is money spent on nothing. A query matching no setting keyword
+falls back to `default_setting` and the run **prints which queries fell back**,
+so a wrong room is caught before review rather than during it.
+
+Approved clips live in `assets/environment-library.json`, keyed by query, and
+`node pipeline/assets.mjs` reports coverage per query. At render time an
+approved clip wins; Pexels search is the fallback, which is the inverse of
+week 01.
+
 ## The machine gate (before you review)
 
 Each clip is sampled at nine points across its length and checked for a

@@ -1,6 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { buildAssetReport } from "../lib/assets.mjs";
+import { repoRoot } from "../lib/env.mjs";
 
 const animations = { version: 1, movements: {} };
 
@@ -133,4 +136,32 @@ test("rejects generated footage without provider or prompt provenance", () => {
   const result = buildAssetReport([], library, animations);
   assert.ok(result.errors.some((error) => error.includes("known provider")));
   assert.ok(result.errors.some((error) => error.includes("needs its prompt")));
+});
+
+test("environment coverage is reported and an invalid clip is an error", () => {
+  const book = JSON.parse(readFileSync(join(repoRoot, "assets/generation-prompts.json"), "utf8"));
+  const specs = [{ slug: "a", scenes: [{ start: 0, broll_query: "hands opening oven door" }] }];
+  const empty = buildAssetReport(specs, { movements: {} }, animations, { queries: {} }, book);
+  assert.deepEqual(empty.errors, []);
+  assert.match(empty.report, /Approved environment clips: \*\*0\*\*/);
+  assert.match(empty.report, /hands opening oven door \| kitchen \| 0/);
+  assert.ok(empty.warnings.some((w) => /fall back to Pexels search/.test(w)));
+
+  const approved = {
+    queries: {
+      "hands opening oven door": [{
+        source: "generated", provider: "runway", prompt: "p",
+        url: "https://example.com/a.mp4", sha256: "a".repeat(64),
+        duration: 5, scene_verified: true, reviewed_at: "2026-09-03",
+      }],
+    },
+  };
+  const covered = buildAssetReport(specs, { movements: {} }, animations, approved, book);
+  assert.deepEqual(covered.errors, []);
+  assert.ok(!covered.warnings.some((w) => /fall back to Pexels search/.test(w)));
+
+  const unreviewed = JSON.parse(JSON.stringify(approved));
+  unreviewed.queries["hands opening oven door"][0].scene_verified = false;
+  const bad = buildAssetReport(specs, { movements: {} }, animations, unreviewed, book);
+  assert.ok(bad.errors.some((e) => /scene_verified must be true/.test(e)));
 });
