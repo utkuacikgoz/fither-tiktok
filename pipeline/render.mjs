@@ -13,6 +13,7 @@ import { fetchBroll, fetchApprovedDemo, brollAvailable, readAssetMetadata } from
 import { fetchApprovedAnimation } from "./lib/animations.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
+import { rebuildSchedule } from "./lib/schedule.mjs";
 import { assertAudioMaster, assertNoFaces, assertVoiceAudible, createQaSheet } from "./lib/verify.mjs";
 import { renderSoundBed } from "./lib/sound.mjs";
 
@@ -77,34 +78,34 @@ export async function renderOne(scriptPath) {
 
   const voFiles = await synthesizeLines(spec.voiceover ?? []);
 
-  // GUARDRAIL: two lines must never speak at once. Sidecar times are
-  // estimates; the synthesized audio is the truth. Measure every line and
-  // push any line that would start before the previous one finishes
-  // (plus a breath), extending the final scene if the close needs room.
+  // GUARDRAIL: two lines must never speak at once, and the schedule must be
+  // the shortest one the real audio allows. Sidecar times are word-count
+  // estimates; the synthesized audio is the truth, so the whole schedule is
+  // rebuilt from measured durations rather than nudged. A schedule that only
+  // ever pushed lines later let a generous estimate, not the speech, decide
+  // the running time and pushed scripts past the 60s contract.
   if (voFiles) {
-    let prevEnd = 0;
-    let shifted = 0;
-    for (const v of voFiles) {
-      const d = (await mediaDuration(v.file)) ?? 3.5;
-      const t = Math.max(v.t, prevEnd > 0 ? prevEnd + 0.35 : 0);
-      if (t - v.t > 0.05) shifted++;
-      v.t = t;
-      v.dur = d;
-      prevEnd = t + d;
-    }
-    if (shifted > 0) notes.push(`retimed ${shifted} voiceover line(s) to prevent overlap`);
-    const lastScene = spec.scenes[spec.scenes.length - 1];
-    const requiredEnd = prevEnd + 0.6;
-    if (requiredEnd > 60) {
+    const durations = [];
+    for (const v of voFiles) durations.push((await mediaDuration(v.file)) ?? 3.5);
+    const schedule = rebuildSchedule({
+      authored: (spec.voiceover ?? []).map((line) => line.t),
+      durations,
+      scenes: spec.scenes,
+      duration: spec.duration,
+    });
+    if (schedule.overLimit) {
       throw new Error(
-        `voiceover needs ${requiredEnd.toFixed(1)}s after measured retiming; the 60s quality contract requires a tighter script`,
+        `voiceover needs ${schedule.requiredEnd.toFixed(1)}s of measured speech; the 60s quality contract requires a tighter script`,
       );
     }
-    if (requiredEnd > spec.duration) {
-      const ext = requiredEnd - spec.duration;
-      lastScene.end = Math.round((lastScene.end + ext) * 10) / 10;
-      spec.duration = lastScene.end;
-      notes.push(`extended by ${ext.toFixed(1)}s so the final line finishes`);
+    voFiles.forEach((v, i) => {
+      v.t = schedule.times[i];
+      v.dur = durations[i];
+    });
+    spec.scenes = schedule.scenes;
+    spec.duration = schedule.duration;
+    if (schedule.drift > 0.05) {
+      notes.push(`rebuilt the schedule from measured audio (largest move ${schedule.drift.toFixed(1)}s)`);
     }
   }
 
