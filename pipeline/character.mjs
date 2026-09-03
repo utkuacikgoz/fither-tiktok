@@ -28,11 +28,17 @@ const book = JSON.parse(readFileSync(join(repoRoot, "assets", "generation-prompt
 // toward a sportswear lookbook (portrait, posed, fitness) are simply absent.
 // Age is described by its markers rather than asserted as a number, for the
 // same reason: "thirty-eight" is a token, laugh lines are an instruction.
+//
+// Round three then landed everything except the clothes: six of six came
+// back in a cropped top, because "vest top" beside "leggings" is an
+// overwhelming attractor for the cropped athletic one and no amount of
+// "tucked into the waistband" outvotes the noun. The garment is a t-shirt
+// now, which has no cropped variant to fall back on.
 const BRIEF = [
   "Candid full-length phone snapshot of a forty-year-old woman standing in her own living room.",
   "Laugh lines at her eyes, a few grey strands through mid-brown hair tied back untidily, a bare face.",
   "Her build is soft and average: a rounded stomach, fuller upper arms, wider hips, the body of someone who sits at a desk.",
-  "She wears a plain oatmeal cotton vest top tucked into the waistband of charcoal leggings, covering her stomach and lower back, and she is barefoot.",
+  "She wears a loose plain oatmeal cotton t-shirt with short sleeves that hangs to her hips, charcoal leggings, and she is barefoot.",
   "She stands relaxed and a little awkward, arms hanging at her sides, her whole body from head to feet inside the frame.",
   "Plain bone-white wall and warm oak floor behind her.",
   book.light,
