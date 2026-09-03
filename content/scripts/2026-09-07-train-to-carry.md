@@ -68,8 +68,8 @@ Overlays: "Strong is a capacity, not a look." (step), then "What did you
 carry this week?" (cta).
 
 Kinetic text carries the argument. Full Plank is the only approved demo;
-Scenes carry human presence framed away from the face — hands, feet,
-backs, silhouettes — because an empty room reads as stock. A recognizable
+Scenes carry human presence framed away from the face (hands, feet,
+backs, silhouettes) because an empty room reads as stock. A recognizable
 face is still a hard fail, checked on the rendered output.
 
 ## 4. CAPTION AND HASHTAGS

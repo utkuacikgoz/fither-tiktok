@@ -13,20 +13,29 @@ export function buildAssetReport(specs, library, animationLibrary) {
   for (const [movement, clips] of Object.entries(entries)) {
     if (!Array.isArray(clips) || clips.length === 0) errors.push(`${movement}: approved clip list is empty`);
     for (const [index, clip] of (clips ?? []).entries()) {
-      if (!new Set(["pexels", "owned"]).has(clip.source)) errors.push(`${movement}[${index}]: source must be pexels or owned`);
+      if (!new Set(["pexels", "owned", "generated"]).has(clip.source)) {
+        errors.push(`${movement}[${index}]: source must be pexels, owned or generated`);
+      }
       if (!(Number(clip.duration) > 0)) errors.push(`${movement}[${index}]: invalid duration`);
       if (clip.source === "pexels") {
         if (!Number.isInteger(clip.pexels_id) || clip.pexels_id <= 0) errors.push(`${movement}[${index}]: invalid pexels_id`);
         if (!/^https:\/\/www\.pexels\.com\/video\//.test(clip.pexels_url ?? "")) errors.push(`${movement}[${index}]: invalid Pexels URL`);
       }
-      if (clip.source === "owned") {
-        if (!/^https:\/\//.test(clip.url ?? "")) errors.push(`${movement}[${index}]: owned clip needs an HTTPS url`);
-        if (!/^[a-f0-9]{64}$/.test(clip.sha256 ?? "")) errors.push(`${movement}[${index}]: owned clip needs a lowercase SHA-256`);
+      // Owned and generated clips are both checksum-pinned files fetched
+      // from a URL; generated ones additionally carry their provenance so
+      // a reviewer can see which model and prompt produced the footage.
+      if (clip.source === "owned" || clip.source === "generated") {
+        if (!/^https:\/\//.test(clip.url ?? "")) errors.push(`${movement}[${index}]: ${clip.source} clip needs an HTTPS url`);
+        if (!/^[a-f0-9]{64}$/.test(clip.sha256 ?? "")) errors.push(`${movement}[${index}]: ${clip.source} clip needs a lowercase SHA-256`);
+      }
+      if (clip.source === "generated") {
+        if (!["runway", "higgsfield"].includes(clip.provider)) errors.push(`${movement}[${index}]: generated clip needs a known provider`);
+        if (typeof clip.prompt !== "string" || !clip.prompt.trim()) errors.push(`${movement}[${index}]: generated clip needs its prompt`);
       }
       if (clip.movement_verified !== true) errors.push(`${movement}[${index}]: movement_verified must be true`);
       if (clip.faceless_verified !== true) errors.push(`${movement}[${index}]: faceless_verified must be true`);
       if (!/^\d{4}-\d{2}-\d{2}$/.test(clip.reviewed_at ?? "")) errors.push(`${movement}[${index}]: invalid reviewed_at`);
-      const id = clip.source === "pexels" ? `pexels:${clip.pexels_id}` : `owned:${clip.sha256}`;
+      const id = clip.source === "pexels" ? `pexels:${clip.pexels_id}` : `${clip.source}:${clip.sha256}`;
       if (ids.has(id)) errors.push(`${movement}[${index}]: source duplicates ${ids.get(id)}`);
       ids.set(id, movement);
     }

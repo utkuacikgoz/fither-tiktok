@@ -67,8 +67,8 @@ Scene 5 (0:40 to end). Environment: steam rising from a pot, body in frame, face
 Overlays: "You trained while dinner cooked." (step), then "What is in
 your oven tonight?" (cta).
 
-Scenes carry human presence framed away from the face — hands, feet,
-backs, silhouettes — because an empty room reads as stock. A recognizable
+Scenes carry human presence framed away from the face (hands, feet,
+backs, silhouettes) because an empty room reads as stock. A recognizable
 face is still a hard fail, checked on the rendered output.
 
 ## 4. CAPTION AND HASHTAGS

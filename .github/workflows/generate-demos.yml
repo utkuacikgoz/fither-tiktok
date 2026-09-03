@@ -1,0 +1,70 @@
+name: Generate demo candidates
+
+on:
+  workflow_dispatch:
+    inputs:
+      movements:
+        description: "Comma-separated movement names; defaults to every prompt-book movement with no approved clip"
+        required: false
+      providers:
+        description: "runway, higgsfield, or both (default: whichever keys are set)"
+        required: false
+      takes:
+        description: "Clips per movement per provider"
+        required: false
+        default: "2"
+  push:
+    branches: [main]
+    paths: [".github/generate-request"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-demos
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check generation secrets
+        env:
+          RUNWAY_API_SECRET: ${{ secrets.RUNWAY_API_SECRET }}
+          HIGGSFIELD_API_KEY_ID: ${{ secrets.HIGGSFIELD_API_KEY_ID }}
+          HIGGSFIELD_API_KEY_SECRET: ${{ secrets.HIGGSFIELD_API_KEY_SECRET }}
+        run: |
+          if [ -z "$RUNWAY_API_SECRET" ] && [ -z "$HIGGSFIELD_API_KEY_ID" ]; then
+            echo "::error::set RUNWAY_API_SECRET and/or HIGGSFIELD_API_KEY_ID + HIGGSFIELD_API_KEY_SECRET"
+            exit 1
+          fi
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Install pipeline dependencies
+        working-directory: pipeline
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate and gate candidates
+        env:
+          RUNWAY_API_SECRET: ${{ secrets.RUNWAY_API_SECRET }}
+          HIGGSFIELD_API_KEY_ID: ${{ secrets.HIGGSFIELD_API_KEY_ID }}
+          HIGGSFIELD_API_KEY_SECRET: ${{ secrets.HIGGSFIELD_API_KEY_SECRET }}
+          GENERATION_MOVEMENTS: ${{ inputs.movements }}
+          GENERATION_PROVIDERS: ${{ inputs.providers }}
+          GENERATION_TAKES: ${{ inputs.takes }}
+        run: node pipeline/generate.mjs
+
+      - name: Push generated-demos branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch --orphan generated-demos
+          git add -f generation
+          git commit -m "Generated demo candidates (run ${{ github.run_id }})"
+          git push -f origin generated-demos

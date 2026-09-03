@@ -74,8 +74,8 @@ Scene 6 (0:42 to end). Environment: city lights through the hotel window.
 Overlays: "A complete session. Zero noise." (step), then "Which city are
 you in tonight?" (cta).
 
-Scenes carry human presence framed away from the face — hands, feet,
-backs, silhouettes — because an empty room reads as stock. A recognizable
+Scenes carry human presence framed away from the face (hands, feet,
+backs, silhouettes) because an empty room reads as stock. A recognizable
 face is still a hard fail, checked on the rendered output.
 
 ## 4. CAPTION AND HASHTAGS

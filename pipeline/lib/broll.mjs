@@ -91,8 +91,12 @@ function pickFile(video) {
   return files[0] ?? null;
 }
 
+// Checksum-pinned sources (owned footage, generated footage) are identified
+// by their content hash; Pexels clips by their id.
+const isPinned = (entry) => entry.source === "owned" || entry.source === "generated";
+
 function assetIdentity(entry) {
-  return entry.source === "owned" ? `owned:${entry.sha256}` : `pexels:${entry.pexels_id}`;
+  return isPinned(entry) ? `${entry.source}:${entry.sha256}` : `pexels:${entry.pexels_id}`;
 }
 
 function metadataFile(file) {
@@ -119,7 +123,7 @@ export async function fetchApprovedDemo(movement, seed = "", excludedIds = new S
   const entries = (lib.movements?.[movement] ?? []).filter(
     (entry) => entry.movement_verified === true && entry.faceless_verified === true &&
       /^\d{4}-\d{2}-\d{2}$/.test(entry.reviewed_at ?? "") && !blocked.has(assetIdentity(entry)) &&
-      (entry.source === "owned" || brollAvailable()),
+      (isPinned(entry) || brollAvailable()),
   );
   if (!entries || entries.length === 0) return null;
   // Rotate deterministically across approved clips so a movement that
@@ -128,18 +132,18 @@ export async function fetchApprovedDemo(movement, seed = "", excludedIds = new S
   const entry = entries[idx];
   const identity = assetIdentity(entry);
   const dir = ensureDir(join(cacheDir, "broll"));
-  if (entry.source === "owned") {
-    const file = join(dir, `demo-owned-${entry.sha256.slice(0, 20)}.mp4`);
-    const metadata = { asset_id: identity, source: "owned", kind: "demo", movement, duration: entry.duration };
+  if (isPinned(entry)) {
+    const file = join(dir, `demo-${entry.source}-${entry.sha256.slice(0, 20)}.mp4`);
+    const metadata = { asset_id: identity, source: entry.source, kind: "demo", movement, duration: entry.duration };
     if (existsSync(file)) {
       writeAssetMetadata(file, metadata);
       return file;
     }
     const dl = await fetch(entry.url);
-    if (!dl.ok) throw new Error(`owned demo download ${dl.status}`);
+    if (!dl.ok) throw new Error(`${entry.source} demo download ${dl.status}`);
     const body = Buffer.from(await dl.arrayBuffer());
     const actual = createHash("sha256").update(body).digest("hex");
-    if (actual !== entry.sha256) throw new Error(`owned demo checksum mismatch for ${movement}`);
+    if (actual !== entry.sha256) throw new Error(`${entry.source} demo checksum mismatch for ${movement}`);
     writeFileSync(file, body);
     writeAssetMetadata(file, metadata);
     return file;

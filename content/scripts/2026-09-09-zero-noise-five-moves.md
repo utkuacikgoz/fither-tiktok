@@ -67,8 +67,8 @@ Scene 5 (0:35 to end). Environment: a dark apartment window at night.
 Overlays: "Two rounds. The door never opens." (step), then "Who sleeps
 behind your wall?" (cta).
 
-Scenes carry human presence framed away from the face — hands, feet,
-backs, silhouettes — because an empty room reads as stock. A recognizable
+Scenes carry human presence framed away from the face (hands, feet,
+backs, silhouettes) because an empty room reads as stock. A recognizable
 face is still a hard fail, checked on the rendered output.
 
 ## 4. CAPTION AND HASHTAGS

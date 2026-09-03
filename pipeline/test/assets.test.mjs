@@ -102,3 +102,35 @@ test("reports approved authored animation depth and current use", () => {
   assert.match(result.report, /Ready authored animation exports: \*\*1\*\*/);
   assert.match(result.report, /\| Air Squat \| 1 \| 1 \| 1 \| Ready \|/);
 });
+
+test("accepts generated footage carrying its provenance", () => {
+  const library = { movements: { "Doorframe Row": [{
+    source: "generated",
+    provider: "runway",
+    model: "gen4_turbo",
+    prompt: "A woman doing doorframe rows, framed from the shoulders down",
+    url: "https://raw.githubusercontent.test/generated/doorframe-row.mp4",
+    sha256: "b".repeat(64),
+    duration: 5,
+    movement_verified: true,
+    faceless_verified: true,
+    reviewed_at: "2026-09-02",
+  }] } };
+  const result = buildAssetReport([], library, animations);
+  assert.deepEqual(result.errors, []);
+});
+
+test("rejects generated footage without provider or prompt provenance", () => {
+  const library = { movements: { "Doorframe Row": [{
+    source: "generated",
+    url: "https://raw.githubusercontent.test/generated/doorframe-row.mp4",
+    sha256: "c".repeat(64),
+    duration: 5,
+    movement_verified: true,
+    faceless_verified: true,
+    reviewed_at: "2026-09-02",
+  }] } };
+  const result = buildAssetReport([], library, animations);
+  assert.ok(result.errors.some((error) => error.includes("known provider")));
+  assert.ok(result.errors.some((error) => error.includes("needs its prompt")));
+});

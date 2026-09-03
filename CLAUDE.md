@@ -55,10 +55,14 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
   Never promise "wrist-friendly push-ups"; sore wrists mean pull, squat,
   hinge and core content, and say so honestly.
 - **Faceless**: no face ever appears. Voice is the persona — the same
-  ElevenLabs voice as the app's in-session guidance.
+  ElevenLabs voice as the app's in-session guidance. Faceless is about
+  faces, not about empty rooms: people belong in frame (hands, feet, backs,
+  silhouettes) because a room with nobody in it reads as stock footage.
 - **Demo truth**: machine screening never approves footage. A demo enters
   `assets/demo-library.json` only after full-motion review confirms the exact
-  movement, usable form framing and no recognizable face in any frame.
+  movement, usable form framing and no recognizable face in any frame. This
+  applies to generated footage exactly as it does to stock; see
+  `docs/generated-footage.md`.
 - Never plan around trending sounds. They expire before filming.
 - **No AI attribution anywhere in the repo** (owner rule, 2026-09-02; same
   as the app repo): no "Generated with", no Co-Authored-By AI trailers, no
@@ -80,7 +84,9 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `data/insights.md` — generated analytics report (`node pipeline/analyze.mjs`)
 - `data/assets.md` — generated footage/animation readiness report (`node pipeline/assets.mjs`)
 - `data/shot-history.json` — identities used by published posts; future renders exclude them
+- `assets/generation-prompts.json` — shot prompts for generated demo footage
 - `docs/footage-capture.md` — the body-only filming and approval contract
+- `docs/generated-footage.md` — Runway/Higgsfield generation and its gate
 - `docs/shot-history.md` — per-render asset records and cross-post reuse gate
 - `docs/animation-ingestion.md` — authored export and sidecar contract
 - `docs/sound-system.md` — original bed, ducking, loudness and posting contract

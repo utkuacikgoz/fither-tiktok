@@ -69,8 +69,8 @@ Scene 5 (0:29 to end). Environment: a laptop on a desk in window light.
 Overlays: "A complete session in work clothes." (step), then "How long is
 your gap?" (cta).
 
-Scenes carry human presence framed away from the face — hands, feet,
-backs, silhouettes — because an empty room reads as stock. A recognizable
+Scenes carry human presence framed away from the face (hands, feet,
+backs, silhouettes) because an empty room reads as stock. A recognizable
 face is still a hard fail, checked on the rendered output. Every
 move is standing or chair-based; no floor work, matching the office constraint.
 

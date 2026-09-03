@@ -1,0 +1,71 @@
+{
+  "_readme": "Shot prompts for generated demo footage (pipeline/generate.mjs). Every prompt must frame the body without a recognizable face — head cropped above the shoulders, turned away, or out of frame — because the faceless rule applies to generated footage exactly as it does to stock. Generation produces candidates only; full-motion editorial review is still the only way into assets/demo-library.json.",
+  "style": "Vertical 9:16 video, one woman training at home in ordinary clothes, warm natural window light, plain modern apartment, realistic documentary footage, no gym equipment, no text, no logos, calm steady camera.",
+  "framing": "Framed from the shoulders down or from behind so no face is visible at any point. Head cropped out of frame. No mirrors, no reflections showing a face.",
+  "movements": {
+    "Wall Push-Up": {
+      "prompt": "A woman doing wall push-ups facing a plain wall, seen from the side, framed from the shoulders down, hands flat on the wall at chest height, elbows bending",
+      "motion": "She lowers her chest toward the wall and presses back out, one slow controlled repetition, camera holds still"
+    },
+    "Incline Push-Up": {
+      "prompt": "A woman doing incline push-ups with both hands on the edge of a sturdy sofa, side view, framed from the shoulders down, body in a straight line",
+      "motion": "She lowers her chest toward the sofa edge and presses back up, one controlled repetition, camera holds still"
+    },
+    "Kneeling Push-Up": {
+      "prompt": "A woman doing push-ups from her knees on an exercise mat, side view from floor level, framed from the shoulders down, hips in line with her spine",
+      "motion": "She lowers her chest toward the mat and presses back up, one slow repetition, camera stays low and still"
+    },
+    "Air Squat": {
+      "prompt": "A woman doing bodyweight squats on a wooden floor, side view, framed from the shoulders down, arms reaching forward for balance, heels flat",
+      "motion": "She sits her hips back and down, then stands tall again, one smooth repetition, camera holds still"
+    },
+    "Wall Sit": {
+      "prompt": "A woman holding a wall sit against a plain wall, side view, framed from the shoulders down, knees bent to ninety degrees, back flat against the wall",
+      "motion": "She holds the position, small steady breathing movement, camera holds still"
+    },
+    "Sit-to-Stand": {
+      "prompt": "A woman standing up from a dining chair without using her hands, side view, framed from the shoulders down, arms crossed at her chest",
+      "motion": "She rises from the chair to standing and lowers back down under control, camera holds still"
+    },
+    "Reverse Lunge": {
+      "prompt": "A woman doing reverse lunges on a wooden floor, side view, framed from the shoulders down, one leg stepping back into a bent-knee lunge",
+      "motion": "She steps one foot back, lowers her back knee toward the floor, and drives back to standing, camera holds still"
+    },
+    "Split Squat": {
+      "prompt": "A woman in a split stance doing split squats, side view, framed from the shoulders down, front foot flat, back heel lifted",
+      "motion": "She lowers straight down until her back knee nears the floor and presses back up, camera holds still"
+    },
+    "Glute Bridge": {
+      "prompt": "A woman doing glute bridges lying on an exercise mat, side view from floor level, framed from the shoulders down, knees bent, feet flat on the mat",
+      "motion": "She drives her hips up until her body forms a straight line and lowers back down, one slow repetition, camera stays low and still"
+    },
+    "Hip Thrust": {
+      "prompt": "A woman doing hip thrusts with her upper back resting on a sofa edge, side view, framed from the shoulders down, feet flat on the floor",
+      "motion": "She drives her hips up to level and lowers under control, one repetition, camera holds still"
+    },
+    "Standing Hip Hinge": {
+      "prompt": "A woman practising a standing hip hinge, side view, framed from the shoulders down, hands sliding down the front of her thighs, flat back",
+      "motion": "She pushes her hips back with a flat back and returns to standing, one slow repetition, camera holds still"
+    },
+    "Full Plank": {
+      "prompt": "A woman holding a forearm plank on an exercise mat, side view from floor level, framed from the shoulders down, body in one straight line",
+      "motion": "She holds the plank, small steady breathing movement, camera stays low and still"
+    },
+    "Knee Plank": {
+      "prompt": "A woman holding a forearm plank from her knees on an exercise mat, side view from floor level, framed from the shoulders down",
+      "motion": "She holds the position steadily, small breathing movement, camera stays low and still"
+    },
+    "Side Plank": {
+      "prompt": "A woman holding a side plank on one forearm on an exercise mat, framed from the shoulders down, hips lifted and stacked",
+      "motion": "She holds the side plank steadily, small breathing movement, camera holds still"
+    },
+    "Doorframe Row": {
+      "prompt": "A woman doing doorframe rows, both hands gripping the sides of an open doorframe, leaning back with straight arms, seen from behind and to the side, framed from the shoulders down",
+      "motion": "She pulls her chest toward the doorframe and lowers back out under control, one repetition, camera holds still"
+    },
+    "Seated Knee Lift": {
+      "prompt": "A woman sitting tall on a dining chair lifting one knee toward her chest, side view, framed from the shoulders down, hands resting on the chair seat",
+      "motion": "She lifts one knee, lowers it, then lifts the other, camera holds still"
+    }
+  }
+}

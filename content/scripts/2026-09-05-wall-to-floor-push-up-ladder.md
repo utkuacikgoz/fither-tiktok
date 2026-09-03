@@ -67,8 +67,8 @@ Scene 5 (0:40 to end). Environment: a sunlit home staircase, the visual
 metaphor for the ladder. Overlays: "Earn each step for a full week."
 (step), then "Which step are you on today?" (cta).
 
-Scenes carry human presence framed away from the face — hands, feet,
-backs, silhouettes — because an empty room reads as stock. A recognizable
+Scenes carry human presence framed away from the face (hands, feet,
+backs, silhouettes) because an empty room reads as stock. A recognizable
 face is still a hard fail, checked on the rendered output.
 
 ## 4. CAPTION AND HASHTAGS
