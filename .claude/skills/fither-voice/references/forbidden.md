@@ -39,4 +39,9 @@ scripts, hooks, captions, hashtags, comment replies, and any store copy.
 
 - exercises not in `movement-library.md`
 - the app, the waitlist, the launch — during the entire warm-up period
-- a human face, in any scene
+- a human face in stock or owned footage, in any scene (generated footage is
+  the one exception, owner override 2026-09-03: the person is synthetic)
+- a fitness model. The recurring generated character is an ordinary woman in
+  her late thirties with an everyday build, bare-faced, in clothes that cover
+  her. A lean twenty-something in a crop top is comparison imagery, which is
+  forbidden above, and it is not who the channel is for.

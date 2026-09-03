@@ -1,11 +1,11 @@
 {
-  "_readme": "Shot prompts for generated demo footage (pipeline/generate.mjs, Runway). Runway animates a generated still, so the prompt field composes the frame and the motion field describes what moves: framing is won or lost in the still. Runway caps promptText at 1000 characters, so every line here is written tight and the builder verifies the composed length before spending a call. Every prompt keeps the face out of frame, because the faceless rule applies to generated footage exactly as it does to stock. Generation produces candidates only; full-motion editorial review is the only way into assets/demo-library.json.",
+  "_readme": "Shot prompts for generated demo footage (pipeline/generate.mjs, Runway). Runway animates a generated still, so the prompt field composes the frame and the motion field describes what moves: framing is won or lost in the still. Framing now asks for the whole body head to feet; the earlier head-cropping instructions existed only to satisfy the faceless rule and cost every shot its natural composition. Runway caps promptText at 1000 characters, so every line here is written tight and the builder verifies the composed length before spending a call. Faces are allowed here (owner override, 2026-09-03) because the person is synthetic, and she is one recurring character pinned by assets/character.json. The wardrobe line is written defensively: the first casting round returned lean twenty-somethings in crop tops, which is comparison imagery the brand forbids. Generation produces candidates only; full-motion editorial review is the only way into assets/demo-library.json.",
   "look": "Cinematic 35mm film look, fine grain, warm neutral grade, true skin texture, no beauty filter, no text, no logos, no watermark.",
-  "camera": "Locked-off tripod, 50mm, shallow depth of field, background softly defocused.",
+  "camera": "Locked-off tripod, 50mm, shallow depth of field, defocused background.",
   "light": "Soft daylight from one large window at frame left, deep natural shadow falloff.",
-  "room": "Plain modern apartment, bone-white walls, warm oak floor, charcoal mat, minimal furniture. No gym, mirrors, weights, bands or machines.",
-  "wardrobe": "An unstyled woman in her thirties, charcoal leggings and an oatmeal tank, bare feet. No logos on clothing.",
-  "framing": "Camera at chest height, framed collarbone-down so her head is cropped out of frame. No face, no reflection of a face.",
+  "room": "Plain modern apartment, bone-white walls, warm oak floor, charcoal mat, minimal furniture. No gym, mirrors, weights or machines.",
+  "wardrobe": "An ordinary woman in her late thirties, everyday build, bare-faced, barefoot, in charcoal leggings and a loose oatmeal tank covering her waist. No crop top, no midriff, not a fitness model.",
+  "framing": "Full body in frame from head to feet, camera at chest height, generous margin so no limb is cropped.",
   "movements": {
     "Wall Push-Up": {
       "prompt": "Side-on medium shot of a woman standing at arm's length from a bone-white wall, palms planted flat at chest height, elbows softly bent, weight forward onto the balls of her feet, body in one straight line from heel to shoulder.",
@@ -17,12 +17,12 @@
     },
     "Kneeling Push-Up": {
       "prompt": "Low side-on shot from floor level of a woman on a charcoal mat, knees down and ankles crossed, palms under her shoulders, hips in line with her spine.",
-      "framing": "Camera on the floor beside the mat, her head out of frame past the top edge. No face at any point.",
+      "framing": "Camera low beside the mat at floor level, her whole body in frame from head to feet.",
       "motion": "She lowers her chest toward the mat and presses back up. One slow repetition, camera stays low and static."
     },
     "Full Push-Up": {
       "prompt": "Low side-on shot from floor level of a woman holding a full push-up position on a charcoal mat, hands under her shoulders, body in one straight line from heel to shoulder.",
-      "framing": "Camera on the floor beside the mat, her head out of frame past the top edge. No face at any point.",
+      "framing": "Camera low beside the mat at floor level, her whole body in frame from head to feet.",
       "motion": "She lowers her chest to a hand's width above the mat and presses back to straight arms. One controlled repetition, camera stays low and static."
     },
     "Air Squat": {
@@ -47,12 +47,12 @@
     },
     "Glute Bridge": {
       "prompt": "Low side-on shot from floor level of a woman lying on a charcoal mat, knees bent, feet flat and hip-width, arms resting palms-down by her sides.",
-      "framing": "Camera on the floor level with her hips, her head past the top edge of frame. No face at any point.",
+      "framing": "Camera low at hip level, her whole body in frame from head to feet.",
       "motion": "She drives her hips upward until knees, hips and shoulders form one line, holds a beat, then lowers with control. One slow repetition."
     },
     "Hip Thrust": {
       "prompt": "Low side-on shot of a woman with her upper back resting against the front edge of a low oak sofa, knees bent, feet flat on the floor, hips lowered toward the ground.",
-      "framing": "Camera on the floor level with her hips, her head past the top edge of frame. No face at any point.",
+      "framing": "Camera low at hip level, her whole body in frame from head to feet.",
       "motion": "She drives her hips up until they are level with her knees and shoulders, pauses, then lowers under control. One repetition."
     },
     "Standing Hip Hinge": {
@@ -61,22 +61,22 @@
     },
     "Full Plank": {
       "prompt": "Low side-on shot from floor level of a woman on a charcoal mat in a forearm plank, elbows stacked under her shoulders, body in one straight line from heel to shoulder.",
-      "framing": "Camera on the floor beside the mat, her head out of frame past the top edge. No face at any point.",
+      "framing": "Camera low beside the mat at floor level, her whole body in frame from head to feet.",
       "motion": "She holds the plank. Only breathing moves. Camera stays low and static."
     },
     "Knee Plank": {
       "prompt": "Low side-on shot from floor level of a woman in a forearm plank from her knees on a charcoal mat, elbows under her shoulders, hips level with her spine.",
-      "framing": "Camera on the floor beside the mat, her head out of frame past the top edge. No face at any point.",
+      "framing": "Camera low beside the mat at floor level, her whole body in frame from head to feet.",
       "motion": "She holds the position steadily. Only breathing moves. Camera stays low and static."
     },
     "Side Plank": {
       "prompt": "Low shot of a woman on a charcoal mat in a side plank on one forearm, hips lifted and stacked, top arm resting along her side, feet stacked.",
-      "framing": "Camera on the floor level with her hips, her head past the top edge of frame. No face at any point.",
+      "framing": "Camera low at hip level, her whole body in frame from head to feet.",
       "motion": "She holds the side plank, hips steady and lifted. Only breathing moves."
     },
     "Doorframe Row": {
       "prompt": "Medium shot from behind and slightly to one side of a woman gripping both edges of an open white doorframe, arms straight, leaning her weight back with heels planted.",
-      "framing": "Shot from behind at shoulder height, her back filling the frame, head cropped at the top edge. No face.",
+      "framing": "Shot from behind at shoulder height, her whole body in frame from head to feet.",
       "motion": "She pulls her chest toward the doorframe, drawing her shoulder blades together, then lowers back out under control. One repetition, camera locked off."
     },
     "Seated Knee Lift": {

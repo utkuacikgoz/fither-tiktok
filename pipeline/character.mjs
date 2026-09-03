@@ -18,14 +18,24 @@ const COUNT = Number(process.env.CHARACTER_TAKES || 4);
 const book = JSON.parse(readFileSync(join(repoRoot, "assets", "generation-prompts.json"), "utf8"));
 
 // The character brief is the brand in one sentence: the woman the channel is
-// for, not a fitness model. Ordinary, capable, mid-thirties, unstyled.
+// for, not a fitness model. The first casting round returned six lean
+// twenty-somethings in crop tops, because "ordinary woman in her mid-thirties"
+// is a hint and image models default to stock-photography glamour. Everything
+// that matters is now stated as a hard constraint with its negative, and the
+// reference is full-body, because a head-and-shoulders brief fought the
+// full-body wardrobe line and the wardrobe won.
 const BRIEF = [
-  "Head and shoulders portrait of an ordinary woman in her mid-thirties, calm and capable, warm natural expression, no makeup styling, hair loosely tied back.",
-  book.wardrobe,
+  "Full-body reference photograph of an ordinary woman aged thirty-eight, standing squarely facing the camera, arms relaxed at her sides, feet hip-width apart, bare feet.",
+  "Everyday average build with a soft midsection. She is not lean, not muscular, not a fitness model.",
+  "Bare face, no makeup, no jewellery, fine lines around the eyes, real unretouched skin.",
+  "Mid-brown hair loosely tied back with strands come loose. Calm, ordinary, unposed expression.",
+  "She wears a loose oatmeal cotton tank that fully covers her waist and charcoal leggings. No crop top, no bare midriff, no sportswear branding.",
+  "Plain bone-white wall behind her, softly defocused. No gym, no equipment, no mirror.",
+  "No fashion posing, no hand on hip, no arched back, no studio glamour lighting.",
   book.light,
-  "Plain bone-white wall behind her, softly defocused.",
   book.look,
 ].join(" ");
+if (BRIEF.length > 1000) throw new Error(`character brief is ${BRIEF.length} chars, over Runway's 1000 limit`);
 
 const outDir = ensureDir(join(repoRoot, "character"));
 const results = [];
