@@ -48,6 +48,11 @@ standing work orders.
 
 ### P0 — this week (raises what every video looks like)
 
+**Ship/hold decision, 2026-09-03: hold.** Nothing goes out under the bar,
+which means the kill criteria, the experiment registry and the launch signal
+all stay unexercised and footage decisions keep being made on taste rather
+than watch %. That cost is accepted deliberately.
+
 **Owner QA verdict, 2026-09-03: week 01 renders are NOT postable.** Every
 machine gate passed (faceless, loudness, audible voice, 60s contract) and
 the footage still fails the brand bar on human review. Found across the
@@ -83,6 +88,17 @@ the owner capture brief, not further query tuning.
       faceless truth instead of counting machine-screened stock as approved
 - [ ] Capture and approve the 18 clips in `docs/footage-capture.md`; target
       3+ clips for each movement used in Week 01
+- [ ] **Environment footage, generated** (owner decision, 2026-09-03). Week
+      01's sidecars carry 1 demo scene and 35 environment scenes, and the
+      environment footage is what failed review. Query-based stock sourcing
+      is retired for these: the shot book gains an environment section and
+      the recurring character appears in them, rather than a room standing
+      empty. Approval is unchanged, full-motion review per clip.
+- [ ] **Emit the AI-disclosure line in the posting sheet, per video.** A
+      blocker on the first post, not a nicety. Runway's C2PA credentials do
+      not survive the ffmpeg re-encode, so TikTok will not auto-label and the
+      manual toggle is the only thing that applies it. Until this ships, the
+      instruction lives only in CLAUDE.md, where nobody reads it at 7am.
 - [x] Upgrade slideshows with a strict 4-8 slide contract, safe-zone design,
       progress/cues, CTA treatment and a visual golden fixture
 - [x] Workflow concurrency group (cancel superseded runs)

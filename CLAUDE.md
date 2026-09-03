@@ -65,7 +65,11 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
   approved reference portrait so the same woman appears across every video.
   A different synthetic face each time reads as uncanny and cheap.
 - **AI disclosure**: any video carrying a generated person is posted with
-  TikTok's AI-generated-content label. The posting sheet says so per video.
+  TikTok's AI-generated-content label. Runway attaches C2PA credentials but
+  the render re-encodes through ffmpeg and strips them, so TikTok will not
+  auto-label: the manual toggle is the only thing that applies it. The
+  posting sheet does not yet say so per video; that is a blocker on the
+  first post, not a solved problem.
 - **Demo truth**: machine screening never approves footage. A demo enters
   `assets/demo-library.json` only after full-motion review confirms the exact
   movement and usable form framing, that stock and owned clips show no
@@ -93,7 +97,9 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `data/insights.md` — generated analytics report (`node pipeline/analyze.mjs`)
 - `data/assets.md` — generated footage/animation readiness report (`node pipeline/assets.mjs`)
 - `data/shot-history.json` — identities used by published posts; future renders exclude them
-- `assets/generation-prompts.json` — shot prompts for generated demo footage
+- `assets/generation-prompts.json` — shot prompts for generated footage
+- `assets/character.json` — the approved recurring character, pinned by a
+  committed portrait
 - `docs/footage-capture.md` — the body-only filming and approval contract
 - `docs/generated-footage.md` — Runway generation and its gate
 - `docs/shot-history.md` — per-render asset records and cross-post reuse gate
@@ -109,9 +115,20 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 
 ## The weekly loop
 
-- **Sunday, automated**: the scheduled task plans the week, writes the
-  scripts and sidecars, renders all 7 videos, and delivers them with a
-  posting sheet.
+The loop is **manual today, by decision** (2026-09-03). No workflow carries a
+`schedule:` trigger, because the renderer's output does not yet clear human
+review: week 01 passed every machine gate and failed the brand bar seven
+times out of seven. Scheduling it would spend API budget producing
+unpostable video faster. Restore the schedule once environment footage is
+solved and a week ships.
+
+- **Sunday, run by hand**: dispatch `Render week` in Actions. It plans the
+  week, writes the scripts and sidecars, renders all 7 videos and delivers
+  them with a posting sheet.
+- **Before posting anything with the generated character**: switch on
+  TikTok's AI-generated-content label in the posting flow. The posting sheet
+  does **not** carry this instruction yet; emitting it per video is a
+  blocker on the first post, tracked in `docs/roadmap.md`.
 - **Daily, 2 min**: post one from the posting sheet, at a fixed time.
 - **Friday, 10 min**: paste the week's numbers into `data/performance.csv`.
 - **Every 20 videos**: append top-quartile hooks (by watch %) to
