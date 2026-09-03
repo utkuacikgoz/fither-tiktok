@@ -35,8 +35,8 @@ const book = JSON.parse(readFileSync(join(repoRoot, "assets", "generation-prompt
 // "tucked into the waistband" outvotes the noun. The garment is a t-shirt
 // now, which has no cropped variant to fall back on.
 const BRIEF = [
-  "Candid full-length phone snapshot of a forty-year-old woman standing in her own living room.",
-  "Laugh lines at her eyes, a few grey strands through mid-brown hair tied back untidily, a bare face.",
+  "Candid full-length phone snapshot of a forty-year-old white European woman standing in her own living room.",
+  "Fair freckled skin, laugh lines at her eyes, a softer jaw, shoulder-length blonde hair tied back untidily, a bare face.",
   "Her build is soft and average: a rounded stomach, fuller upper arms, wider hips, the body of someone who sits at a desk.",
   "She wears a loose plain oatmeal cotton t-shirt with short sleeves that hangs to her hips, charcoal leggings, and she is barefoot.",
   "She stands relaxed and a little awkward, arms hanging at her sides, her whole body from head to feet inside the frame.",
