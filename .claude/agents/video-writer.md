@@ -63,8 +63,10 @@ This is a FACELESS channel. No face ever appears. Every scene must be one of:
 - an authored movement illustration (`"animation": true` with the exact
   `"movement"`; it must be approved in `assets/animation-library.json`, and
   the sidecar format must be `"animated-demo"`)
-- an environment shot with no person in frame (hotel room, kitchen counter,
-  office desk, a mat on a floor)
+- an environment shot with human presence but no recognizable face (hands
+  on a counter, feet on a mat, a back at a window, an over-the-shoulder
+  framing). People make scenes feel lived-in; sterile empty rooms read as
+  stock. Faceless is about faces, not about erasing bodies.
 - kinetic text over a static or slow moving shot
 
 Assume no crew, no lighting kit, no actor. If a scene cannot be made without
@@ -106,7 +108,8 @@ One line: which app asset this script could become.
    next to it — the machine renders from this file. Match the schema in
    `pipeline/lib/spec.mjs` (see any existing sidecar for the shape):
    voiceover lines with timestamps, contiguous scenes with per-scene
-   `broll_query` (an environment stock-search phrase, never a person) and
+   `broll_query` (a stock-search phrase; prefer human presence framed away
+   from faces — hands, feet, backs, silhouettes) and
    overlays with `t`, `text` and style hook/step/cta. Leave roughly 0.55
    seconds per word plus a 0.4s breath between voiceover timestamps — the
    renderer measures real audio and pushes late lines to prevent overlap,

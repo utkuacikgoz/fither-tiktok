@@ -21,45 +21,39 @@ starts on screen before it is named, without an unverified demo.
 
 0:00 Hook: "You have not failed at push-ups. Not once."
 
-0:04 "You just started on the wrong rung."
+0:05 "You just started on the wrong rung."
 
-0:08 "There is a staircase. Four steps. Wall to floor."
+0:09 "A staircase. Four steps. Wall to floor."
 
-0:13 "Step one. Wall push-ups. Ten reps, hands flat."
+0:14 "Step one. Wall push-ups. Ten reps, hands flat."
 
-0:18 "Own ten before you move. That is the rule."
+0:19 "Own ten before you move up."
 
 0:23 "Step two. Hands on a chair. Eight reps."
 
-0:27 "Feel that? Your chest is doing real work now."
+0:29 "Step three. Kneeling push-ups. Eight."
 
-0:32 "Step three. Kneeling push-ups on the floor. Eight."
+0:32 "Step four. Full push-ups. Even one counts."
 
-0:36 "Step four. Full push-ups. Even one counts."
+0:37 "Then you press the floor away."
 
-0:40 "Own each step for one week."
+0:41 Capability: "You built that rep. It is yours."
 
-0:44 Payoff: "Then you press the floor away. Clean."
+0:45 Capability: "The staircase belongs to you."
 
-0:47 Capability: "You built that rep. It is yours."
+0:49 Seed tomorrow: "Tomorrow: strength inside the oven timer."
 
-0:50 Capability: "The staircase belongs to you."
+0:53 CTA: "Which step are you on today?"
 
-0:53 Seed tomorrow: "Tomorrow: strength inside the oven timer."
-
-0:56 CTA: "Which step are you on today?"
-
-The loop: "you have not failed" is resolved by the staircase and lands at
-the first clean floor rep. Two capability-ownership lines at 0:47 and 0:50.
-The close invites her to tomorrow's kitchen session.
+The loop: she was never failing, only starting on the wrong rung;
+the CTA asks which rung she is on. Two capability-ownership lines close
+the ladder before tomorrow's kitchen session is seeded.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
-Scene 1 (0:00 to 0:13). Environment: tight upward move along a plain wall,
-no person. Overlay: "Nobody fails push-ups. They skip steps." (hook).
+Scene 1 (0:00 to 0:13). Environment: tight upward move along a plain wall, body in frame, face out of it. Overlay: "Nobody fails push-ups. They skip steps." (hook).
 
-Scene 2 (0:13 to 0:23). Environment: a second wall angle in a bright room,
-no person. Overlay: "Step one. Ten wall push-ups." (step).
+Scene 2 (0:13 to 0:23). Environment: a second wall angle in a bright room, body in frame, face out of it. Overlay: "Step one. Ten wall push-ups." (step).
 
 Scene 3 (0:23 to 0:32). Environment: a wooden chair in a bright room, no
 person; no approved incline demo exists. Overlay: "Step two. Eight incline
@@ -73,8 +67,9 @@ Scene 5 (0:40 to end). Environment: a sunlit home staircase, the visual
 metaphor for the ladder. Overlays: "Earn each step for a full week."
 (step), then "Which step are you on today?" (cta).
 
-Every rung stays person-free until movement-accurate, body-only demos pass
-full-motion review. No face appears anywhere.
+Scenes carry human presence framed away from the face — hands, feet,
+backs, silhouettes — because an empty room reads as stock. A recognizable
+face is still a hard fail, checked on the rendered output.
 
 ## 4. CAPTION AND HASHTAGS
 

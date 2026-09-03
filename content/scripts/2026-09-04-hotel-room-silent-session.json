@@ -5,7 +5,10 @@
   "format": "environment-pov",
   "pillar": "Constraint",
   "hook_mechanism": "contradiction",
-  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
   "caption": "Quiet hotel room workout: ten minutes, one wall, one doorframe, and a complete strength session before dinner. The room next door hears nothing. Save it for your next trip.",
   "hashtags": [
     "#strengthtraining",
@@ -72,7 +75,7 @@
     {
       "start": 0,
       "end": 13.7,
-      "broll_query": "hotel room wall closeup window light",
+      "broll_query": "hands pressing hotel wall",
       "overlays": [
         {
           "t": 0,
@@ -89,7 +92,7 @@
     {
       "start": 13.7,
       "end": 23.5,
-      "broll_query": "hotel room doorframe interior",
+      "broll_query": "hands gripping door frame",
       "overlays": [
         {
           "t": 13.7,
@@ -101,7 +104,7 @@
     {
       "start": 23.5,
       "end": 28.9,
-      "broll_query": "empty hotel room wall",
+      "broll_query": "back against hotel wall",
       "overlays": [
         {
           "t": 23.5,
@@ -113,7 +116,7 @@
     {
       "start": 28.9,
       "end": 32.8,
-      "broll_query": "exercise mat hotel floor closeup",
+      "broll_query": "feet on hotel room floor",
       "overlays": [
         {
           "t": 28.9,
@@ -125,7 +128,7 @@
     {
       "start": 32.8,
       "end": 42.1,
-      "broll_query": "hotel desk window dusk",
+      "broll_query": "hand on hotel window",
       "overlays": [
         {
           "t": 32.8,
@@ -137,7 +140,7 @@
     {
       "start": 42.1,
       "end": 59.8,
-      "broll_query": "city lights hotel window",
+      "broll_query": "silhouette hotel window city",
       "overlays": [
         {
           "t": 42.1,

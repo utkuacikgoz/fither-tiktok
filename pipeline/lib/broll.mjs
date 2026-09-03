@@ -1,7 +1,9 @@
 // Portrait b-roll from the Pexels video API with a faceless gate: any
-// candidate whose thumbnails or sampled frames contain a person is
-// rejected. Only person-free clips are cached. Without PEXELS_API_KEY
-// every scene falls back to a slow brand gradient.
+// candidate whose thumbnails or sampled frames contain a recognizable
+// face is rejected. People are welcome — hands, backs, bodies mid-motion
+// make scenes feel human (owner note, 2026-09-02: "no face is fine, but
+// no person looks weird"). Without PEXELS_API_KEY every scene falls back
+// to a slow brand gradient.
 import { createHash } from "node:crypto";
 import { writeFileSync, readFileSync, renameSync, rmSync, existsSync } from "node:fs";
 import { join } from "node:path";
@@ -15,16 +17,14 @@ const pexec = promisify(execFile);
 const MAX_CANDIDATES = 8;
 
 // Two scene modes share one gate shape:
-// environment — no person may appear anywhere in the clip;
-// demo        — a person SHOULD appear (body-only exercise footage) but a
+// environment — people may appear (they make scenes feel human) but a
+//               recognizable face must not;
+// demo        — a person MUST appear (body-only exercise footage) and a
 //               recognizable face must not.
 async function jpegAcceptable(buf, mode, seen) {
-  if (mode === "demo") {
-    if (await faceInJpeg(buf, 0.6)) return false;
-    if (await personInJpeg(buf)) seen.person = true;
-    return true;
-  }
-  return !(await personInJpeg(buf));
+  if (await faceInJpeg(buf, 0.6)) return false;
+  if (mode === "demo" && (await personInJpeg(buf))) seen.person = true;
+  return true;
 }
 
 export function brollAvailable() {
@@ -168,7 +168,7 @@ export async function fetchBroll(query, mode = "environment", excludedIds = new 
   const dir = ensureDir(join(cacheDir, "broll"));
   const blocked = new Set([...shotHistoryIds(), ...excludedIds]);
 
-  const reason = mode === "demo" ? "face visible" : "person";
+  const reason = "face visible";
   for (const video of await search(query)) {
     const identity = `pexels:${video.id}`;
     if (blocked.has(identity)) {

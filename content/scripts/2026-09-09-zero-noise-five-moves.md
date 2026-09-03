@@ -21,45 +21,41 @@ visible before it is explained, without an unverified demo.
 
 0:00 Hook: "She fell asleep at eight. The floor creaks."
 
-0:04 "The workout industry assumes you can jump. You cannot."
+0:05 "Every workout video assumes you can jump."
 
-0:09 "So here are five moves with zero sound."
+0:09 "Five moves with zero sound."
 
-0:14 "Glute bridges. Ten reps. Your hips do the work."
+0:13 "Glute bridges. Ten reps. Hips do the work."
 
-0:19 "Wall sit. Thirty seconds. Perfectly still, working hard."
+0:18 "Wall sit. Thirty seconds. Still and working."
 
 0:23 "Wall push-ups. Ten reps. Quiet as breathing."
 
 0:27 "Lying heel taps. Ten each side. Slow."
 
-0:31 "Knee plank. Twenty-five seconds. Not one creak."
+0:32 "Knee plank. Twenty-five seconds. Not one creak."
 
-0:35 "Two rounds. Ten minutes. The door stays closed."
+0:37 "Two rounds, ten minutes. She never stirred."
 
-0:39 Payoff: "Full session. She never stirred."
+0:41 Capability: "You trained hard in total silence."
 
-0:43 Capability: "You trained hard in total silence."
-
-0:46 Capability: "Your quiet strength is yours."
+0:45 Capability: "Your quiet strength is yours."
 
 0:49 Seed tomorrow: "Tomorrow: strength between meetings."
 
-0:53 CTA: "Who is asleep on the other side of your wall?"
+0:52 CTA: "Who's asleep on the other side of your wall?"
 
-The loop: the creaking floor opens it, five silent moves resolve it, and
-the payoff returns to the child who never stirred. Two
-capability-ownership lines at 0:43 and 0:46. The close invites her to
-tomorrow's desk session. Voiceover recorded low and calm to match.
+The loop: the creaking floor opens it, five silent moves answer it,
+and the CTA asks who sleeps on her other side. Two capability-ownership
+lines close before tomorrow's desk session is seeded.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
 Scene 1 (0:00 to 0:19). Environment: a close moving shot across an exercise
-mat in a dim living room, no person. Overlays: "These five moves make zero
+mat in a dim living room, body in frame, face out of it. Overlays: "These five moves make zero
 noise." (hook), then "Start with ten slow glute bridges." (step).
 
-Scene 2 (0:19 to 0:23). Environment: a dim living room lit by one lamp,
-no person. Overlay: "Wall sit for thirty silent seconds." (step).
+Scene 2 (0:19 to 0:23). Environment: a dim living room lit by one lamp, body in frame, face out of it. Overlay: "Wall sit for thirty silent seconds." (step).
 
 Scene 3 (0:23 to 0:27). Environment: an empty wall in warm lamplight, no
 person. Overlay: "Ten wall push-ups, quiet as breathing." (step).
@@ -71,8 +67,9 @@ Scene 5 (0:35 to end). Environment: a dark apartment window at night.
 Overlays: "Two rounds. The door never opens." (step), then "Who sleeps
 behind your wall?" (cta).
 
-Every scene stays person-free while Glute Bridge and Wall Push-Up replacement
-footage awaits full-motion approval. No face appears anywhere.
+Scenes carry human presence framed away from the face — hands, feet,
+backs, silhouettes — because an empty room reads as stock. A recognizable
+face is still a hard fail, checked on the rendered output.
 
 ## 4. CAPTION AND HASHTAGS
 

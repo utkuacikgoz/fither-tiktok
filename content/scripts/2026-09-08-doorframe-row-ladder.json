@@ -5,7 +5,10 @@
   "format": "environment-pov",
   "pillar": "Skill ladder",
   "hook_mechanism": "contradiction",
-  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
   "caption": "Back exercises at home no equipment: the doorframe row ladder, four rungs from a lean to a single arm row. The missing half of home strength. Save the ladder.",
   "hashtags": [
     "#strengthtraining",
@@ -20,62 +23,54 @@
       "text": "Home workouts train half your body. The front half."
     },
     {
-      "t": 4.9,
-      "text": "Nothing to pull, so nobody pulls. Except you have doorframes."
+      "t": 5.9,
+      "text": "Nothing to pull. Except you have doorframes."
     },
     {
-      "t": 10.3,
-      "text": "Here is the ladder nobody does at home."
+      "t": 10.5,
+      "text": "Here's the ladder nobody does at home."
     },
     {
-      "t": 14.7,
-      "text": "Rung one. Hold the frame. Lean back. Row in. Ten."
+      "t": 15.2,
+      "text": "Rung one. Hold the frame. Lean back. Ten."
     },
     {
-      "t": 20.1,
+      "t": 20.4,
       "text": "Rung two. Feet closer, deeper lean. Eight rows."
     },
     {
-      "t": 24.5,
-      "text": "Rung three. Sit right into it. Full range. Eight."
+      "t": 25.7,
+      "text": "Rung three. Sit into it. Full range. Eight."
     },
     {
-      "t": 29.4,
+      "t": 30.9,
       "text": "Rung four. One arm. Six rows a side."
     },
     {
-      "t": 33.8,
+      "t": 36.2,
       "text": "When a rung feels easy, climb."
     },
     {
-      "t": 37.2,
-      "text": "This is the missing half of your strength."
-    },
-    {
-      "t": 41.6,
-      "text": "Your front pushed for years. Your back just answered."
-    },
-    {
-      "t": 46.5,
+      "t": 40.2,
       "text": "You turned a doorway into a back machine."
     },
     {
-      "t": 49.6,
+      "t": 45.4,
       "text": "Every door is equipment now. Yours."
     },
     {
-      "t": 52.5,
+      "t": 49.5,
       "text": "Tomorrow: five moves, zero noise."
     },
     {
-      "t": 55.2,
+      "t": 53,
       "text": "Which rung will you start on?"
     }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 14.7,
+      "end": 15.2,
       "broll_query": "hand gripping door frame closeup",
       "overlays": [
         {
@@ -86,63 +81,63 @@
       ]
     },
     {
-      "start": 14.7,
-      "end": 24.5,
+      "start": 15.2,
+      "end": 25.7,
       "broll_query": "hand on door handle opening",
       "overlays": [
         {
-          "t": 14.7,
+          "t": 15.2,
           "text": "Rung one. Grip the frame, lean back, row in.",
           "style": "step"
         },
         {
-          "t": 20.1,
+          "t": 20.4,
           "text": "Rung two. Feet closer, deeper lean. Eight.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 24.5,
-      "end": 33.8,
-      "broll_query": "doorway interior apartment daylight",
+      "start": 25.7,
+      "end": 36.2,
+      "broll_query": "back leaning in doorway",
       "overlays": [
         {
-          "t": 24.5,
+          "t": 25.7,
           "text": "Rung three. Arms long, pull to the frame.",
           "style": "step"
         },
         {
-          "t": 29.4,
+          "t": 30.9,
           "text": "Rung four. One arm. Six each side.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 33.8,
-      "end": 46.5,
+      "start": 36.2,
+      "end": 40.2,
       "broll_query": "hand holding wooden door frame",
       "overlays": [
         {
-          "t": 33.8,
+          "t": 36.2,
           "text": "Squeeze your shoulder blades on every rep.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 46.5,
+      "start": 40.2,
       "end": 59.8,
-      "broll_query": "apartment front door interior evening",
+      "broll_query": "hand closing apartment door",
       "overlays": [
         {
-          "t": 46.5,
+          "t": 40.2,
           "text": "Every doorway is equipment now.",
           "style": "step"
         },
         {
-          "t": 55.2,
+          "t": 53,
           "text": "Which rung will you start on?",
           "style": "cta"
         }

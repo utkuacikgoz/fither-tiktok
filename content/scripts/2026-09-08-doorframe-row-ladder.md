@@ -22,40 +22,36 @@ the tension alone.
 
 0:00 Hook: "Home workouts train half your body. The front half."
 
-0:05 "Nothing to pull, so nobody pulls. Except you have doorframes."
+0:05 "Nothing to pull. Except you have doorframes."
 
-0:10 "Here is the ladder nobody does at home."
+0:10 "Here's the ladder nobody does at home."
 
-0:15 "Rung one. Hold the frame. Lean back. Row in. Ten."
+0:15 "Rung one. Hold the frame. Lean back. Ten."
 
 0:20 "Rung two. Feet closer, deeper lean. Eight rows."
 
-0:25 "Rung three. Sit right into it. Full range. Eight."
+0:25 "Rung three. Sit into it. Full range. Eight."
 
-0:29 "Rung four. One arm. Six rows a side."
+0:30 "Rung four. One arm. Six rows a side."
 
-0:34 "When a rung feels easy, climb."
+0:36 "When a rung feels easy, climb."
 
-0:37 "This is the missing half of your strength."
+0:40 Capability: "You turned a doorway into a back machine."
 
-0:42 Payoff: "Your front pushed for years. Your back just answered."
+0:45 Capability: "Every door is equipment now. Yours."
 
-0:47 Capability: "You turned a doorway into a back machine."
+0:49 Seed tomorrow: "Tomorrow: five moves, zero noise."
 
-0:50 Capability: "Every door is equipment now. Yours."
+0:53 CTA: "Which rung will you start on?"
 
-0:53 Seed tomorrow: "Tomorrow: five moves, zero noise."
-
-0:55 CTA: "Which rung will you start on?"
-
-The loop: the missing half opens, the four rungs fill it, and the payoff
-answers the front-half hook. Two capability-ownership lines at 0:47 and
-0:50. The close invites her to tomorrow's silent session.
+The loop: the missing back half opens it, the four rungs answer it,
+and the CTA asks which rung she starts on. Two capability-ownership lines
+land before tomorrow's silent session is seeded.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
 Scene 1 (0:00 to 0:15). Environment: a white doorframe filling the frame,
-shot from inside the room, no person. Overlay: "Home training skips your
+shot from inside the room, body in frame, face out of it. Overlay: "Home training skips your
 back. Not today." (hook).
 
 Scene 2 (0:15 to 0:25). Environment: an open door frame in sunlight,
@@ -75,9 +71,10 @@ rung will you start on?" (cta).
 
 The rung reps match the library: Doorframe Lean Row 10, Doorframe Row 8,
 Deep Doorframe Row 8, Single-Arm Doorframe Row 6 a side. No pull movement
-has an approved demo clip, so every scene is a person-free environment
-shot. No face appears anywhere. First animation order should prioritise
-these four movements if this video clears the save threshold.
+has an approved demo clip, so every scene is an environment shot carrying
+hands and backs on the frame rather than an empty doorway; a recognizable
+face is still a hard fail. First animation order should prioritise these
+four movements if this video clears the save threshold.
 
 ## 4. CAPTION AND HASHTAGS
 

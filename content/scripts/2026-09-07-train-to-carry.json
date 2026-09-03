@@ -5,7 +5,10 @@
   "format": "text-on-screen",
   "pillar": "Reframe",
   "hook_mechanism": "contradiction",
-  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
   "caption": "Strength training for busy women means training to carry, not to shrink. Stairs, bags, car seats: life asks for strength. Five patterns, ten minutes a day.",
   "hashtags": [
     "#strengthtraining",
@@ -20,62 +23,58 @@
       "text": "Every ad tells you to take up less space."
     },
     {
-      "t": 4.9,
-      "text": "Meanwhile your life keeps asking for more strength."
+      "t": 5.6,
+      "text": "Your life keeps asking for more strength."
     },
     {
-      "t": 9.3,
-      "text": "The stairs with a sleeping child. The airport bag."
+      "t": 10.1,
+      "text": "Stairs with a sleeping child. The airport bag."
     },
     {
-      "t": 14.2,
-      "text": "The groceries, the car seat, the fourth floor."
+      "t": 15.1,
+      "text": "Groceries, the car seat, the fourth floor."
     },
     {
-      "t": 18.6,
+      "t": 19.6,
       "text": "Nobody carries that by being smaller."
     },
     {
-      "t": 22,
-      "text": "So stop training to shrink. Train to carry."
+      "t": 23.5,
+      "text": "Stop training to shrink. Train to carry."
     },
     {
-      "t": 26.4,
-      "text": "Push something. Pull something. Squat, hinge, brace."
+      "t": 27.9,
+      "text": "Push, pull, squat, hinge, brace. Five patterns."
     },
     {
-      "t": 30.3,
-      "text": "Five patterns. That is the whole secret."
-    },
-    {
-      "t": 34.2,
+      "t": 32.4,
       "text": "Ten minutes a day builds a body that lifts."
     },
     {
-      "t": 39.1,
-      "text": "Strong is not a look. It is a capacity."
+      "t": 38,
+      "text": "Strong is not a look. It's a capacity."
     },
     {
-      "t": 44,
+      "t": 43,
       "text": "Your shoulders carry your actual week."
     },
     {
-      "t": 47.5,
+      "t": 46.9,
       "text": "Your strength goes everywhere you do."
     },
     {
       "t": 50.8,
-      "text": "Tomorrow your doorframe becomes a back machine."
+      "text": "Tomorrow: your doorframe becomes a back machine."
     },
     {
-      "t": 54.3,
+      "t": 55.3,
       "text": "What did you carry this week?"
     }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 9.3,
+      "end": 10.1,
       "demo": true,
       "movement": "Full Plank",
       "overlays": [
@@ -87,53 +86,53 @@
       ]
     },
     {
-      "start": 9.3,
-      "end": 22,
-      "broll_query": "grocery bags front door",
+      "start": 10.1,
+      "end": 23.5,
+      "broll_query": "hands carrying grocery bags",
       "overlays": [
         {
-          "t": 9.3,
+          "t": 10.1,
           "text": "Life keeps asking you to carry more.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 22,
-      "end": 34.2,
-      "broll_query": "grocery bags staircase landing",
+      "start": 23.5,
+      "end": 32.4,
+      "broll_query": "carrying bags up stairs",
       "overlays": [
         {
-          "t": 22,
+          "t": 23.5,
           "text": "Train to carry, not to shrink.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 34.2,
-      "end": 44,
-      "broll_query": "stairs packed bag closeup",
+      "start": 32.4,
+      "end": 43,
+      "broll_query": "hands lifting heavy bag",
       "overlays": [
         {
-          "t": 34.2,
+          "t": 32.4,
           "text": "Ten minutes a day. Five patterns.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 44,
+      "start": 43,
       "end": 59.8,
-      "broll_query": "packed suitcase by door",
+      "broll_query": "hand pulling suitcase handle",
       "overlays": [
         {
-          "t": 44,
+          "t": 43,
           "text": "Strong is a capacity, not a look.",
           "style": "step"
         },
         {
-          "t": 54.3,
+          "t": 55.3,
           "text": "What did you carry this week?",
           "style": "cta"
         }

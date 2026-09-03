@@ -21,57 +21,55 @@ The session is already set when the loop opens.
 
 0:00 Hook: "Dinner is in the oven. Your session starts now."
 
-0:05 "You do not need to find time tonight."
+0:05 "You don't need to find time tonight."
 
-0:09 "The timer already found it for you."
+0:10 "The timer already found it for you."
 
-0:13 "Sit-to-stands from a chair. Ten reps. No hands."
+0:14 "Sit-to-stands from a chair. Ten reps. No hands."
 
-0:18 "Incline push-ups on the counter. Eight strong reps."
+0:19 "Incline push-ups on the counter. Eight reps."
 
-0:22 "Hinge and reach. Ten reps. Hips back, reach long."
+0:24 "Hinge and reach. Ten. Hips back, reach long."
 
-0:27 "Seated knee lifts. Ten each side. Sit tall."
+0:29 "Seated knee lifts. Ten each side. Sit tall."
 
-0:31 "Every move is quiet. Nothing wakes the house."
+0:34 "Every move is quiet. Go again until the timer sings."
 
-0:36 "Go around again until the timer sings."
+0:40 Capability: "You got stronger while dinner cooked itself."
 
-0:40 Payoff and capability: "You got stronger while dinner cooked itself."
+0:44 Capability: "That gap was always there. Now it's yours."
 
-0:44 Capability: "That gap was always there. Now you own it."
-
-0:48 Seed tomorrow: "Tomorrow I tell you what all this strength is for."
+0:49 Seed tomorrow: "Tomorrow: what all this strength is for."
 
 0:54 CTA: "What is in your oven tonight?"
 
-The loop: the oven timer opens the session and the CTA asks what is
-cooking. Two capability-ownership lines at 0:40 and 0:44. The close
-invites her to tomorrow's reframe video.
+The loop: the oven timer she was already waiting on becomes the
+session clock; the CTA asks what is in her oven. Two capability-ownership
+lines land before tomorrow's why-you-train video is seeded.
 
 ## 3. VISUALS / SCENE BREAKDOWN
 
 Scene 1 (0:00 to 0:13). Environment: a kitchen chair beside the oven in
-warm light, no person. Overlay: "The oven timer is your coach tonight."
+warm light, body in frame, face out of it. Overlay: "The oven timer is your coach tonight."
 (hook).
 
 Scene 2 (0:13 to 0:27). Environment: kitchen counter in warm evening
-light, no person. Overlays: "Ten sit-to-stands. No hands." (step), "Eight
+light, body in frame, face out of it. Overlays: "Ten sit-to-stands. No hands." (step), "Eight
 incline push-ups on the counter." (step), "Hinge and reach, ten reps."
 (step).
 
-Scene 3 (0:27 to 0:31). Environment: tight chair detail in warm light,
-no person. Overlay: "Seated knee lifts, ten each side." (step).
+Scene 3 (0:27 to 0:31). Environment: tight chair detail in warm light, body in frame, face out of it. Overlay: "Seated knee lifts, ten each side." (step).
 
 Scene 4 (0:31 to 0:40). Environment: close shot of a glowing oven timer
 dial. Overlay: "Quiet moves. Nothing wakes the house." (step).
 
-Scene 5 (0:40 to end). Environment: steam rising from a pot, no person.
+Scene 5 (0:40 to end). Environment: steam rising from a pot, body in frame, face out of it.
 Overlays: "You trained while dinner cooked." (step), then "What is in
 your oven tonight?" (cta).
 
-Every beat stays person-free while the Seated Knee Lift replacement awaits
-movement-accurate full-motion approval. No face appears anywhere.
+Scenes carry human presence framed away from the face — hands, feet,
+backs, silhouettes — because an empty room reads as stock. A recognizable
+face is still a hard fail, checked on the rendered output.
 
 ## 4. CAPTION AND HASHTAGS
 

@@ -5,7 +5,10 @@
   "format": "text-on-screen",
   "pillar": "Fast tips",
   "hook_mechanism": "situation",
-  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
   "caption": "Quiet workout apartment edition: five strength moves with zero noise, for training while a child sleeps on the other side of the wall. Two rounds, ten minutes, not one creak.",
   "hashtags": [
     "#strengthtraining",
@@ -20,43 +23,39 @@
       "text": "She fell asleep at eight. The floor creaks."
     },
     {
-      "t": 4.4,
-      "text": "The workout industry assumes you can jump. You cannot."
+      "t": 5.3,
+      "text": "Every workout video assumes you can jump."
     },
     {
-      "t": 9.3,
-      "text": "So here are five moves with zero sound."
+      "t": 9.9,
+      "text": "Five moves with zero sound."
     },
     {
-      "t": 13.7,
-      "text": "Glute bridges. Ten reps. Your hips do the work."
+      "t": 13.4,
+      "text": "Glute bridges. Ten reps. Hips do the work."
     },
     {
       "t": 18.6,
-      "text": "Wall sit. Thirty seconds. Perfectly still, working hard."
+      "text": "Wall sit. Thirty seconds. Still and working."
     },
     {
-      "t": 23,
+      "t": 23.3,
       "text": "Wall push-ups. Ten reps. Quiet as breathing."
     },
     {
-      "t": 26.9,
+      "t": 27.9,
       "text": "Lying heel taps. Ten each side. Slow."
     },
     {
-      "t": 30.8,
+      "t": 32.6,
       "text": "Knee plank. Twenty-five seconds. Not one creak."
     },
     {
-      "t": 34.7,
-      "text": "Two rounds. Ten minutes. The door stays closed."
+      "t": 37.2,
+      "text": "Two rounds, ten minutes. She never stirred."
     },
     {
-      "t": 39.1,
-      "text": "Full session. She never stirred."
-    },
-    {
-      "t": 42.5,
+      "t": 41.8,
       "text": "You trained hard in total silence."
     },
     {
@@ -68,15 +67,15 @@
       "text": "Tomorrow: strength between meetings."
     },
     {
-      "t": 52.5,
-      "text": "Who is asleep on the other side of your wall?"
+      "t": 52.2,
+      "text": "Who's asleep on the other side of your wall?"
     }
   ],
   "scenes": [
     {
       "start": 0,
       "end": 18.6,
-      "broll_query": "exercise mat dim living room floor",
+      "broll_query": "hands on mat dim room",
       "overlays": [
         {
           "t": 0,
@@ -84,7 +83,7 @@
           "style": "hook"
         },
         {
-          "t": 13.7,
+          "t": 13.4,
           "text": "Start with ten slow glute bridges.",
           "style": "step"
         }
@@ -92,8 +91,8 @@
     },
     {
       "start": 18.6,
-      "end": 23,
-      "broll_query": "dim living room lamp",
+      "end": 23.3,
+      "broll_query": "back against wall lamplight",
       "overlays": [
         {
           "t": 18.6,
@@ -103,41 +102,41 @@
       ]
     },
     {
-      "start": 23,
-      "end": 26.9,
-      "broll_query": "empty wall warm lamplight",
+      "start": 23.3,
+      "end": 27.9,
+      "broll_query": "hands pressing wall lamplight",
       "overlays": [
         {
-          "t": 23,
+          "t": 23.3,
           "text": "Ten wall push-ups, quiet as breathing.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 26.9,
-      "end": 34.7,
-      "broll_query": "exercise mat dim room",
+      "start": 27.9,
+      "end": 37.2,
+      "broll_query": "feet on mat dim room",
       "overlays": [
         {
-          "t": 26.9,
+          "t": 27.9,
           "text": "Heel taps, then a knee plank.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 34.7,
+      "start": 37.2,
       "end": 59.8,
-      "broll_query": "dark apartment window night",
+      "broll_query": "silhouette at window night",
       "overlays": [
         {
-          "t": 34.7,
+          "t": 37.2,
           "text": "Two rounds. The door never opens.",
           "style": "step"
         },
         {
-          "t": 52.5,
+          "t": 52.2,
           "text": "Who sleeps behind your wall?",
           "style": "cta"
         }

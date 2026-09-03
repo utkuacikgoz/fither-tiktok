@@ -5,7 +5,10 @@
   "format": "text-on-screen",
   "pillar": "Skill ladder",
   "hook_mechanism": "contradiction",
-  "sound": { "profile": "quiet-drive", "bed_gain_db": -16 },
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
   "caption": "Push up progression for beginners: the four step staircase from wall to floor. Nobody fails at push-ups, they start on the wrong rung. Save the ladder and climb it.",
   "hashtags": [
     "#strengthtraining",
@@ -20,67 +23,59 @@
       "text": "You have not failed at push-ups. Not once."
     },
     {
-      "t": 4.4,
+      "t": 5.3,
       "text": "You just started on the wrong rung."
     },
     {
-      "t": 8.3,
-      "text": "There is a staircase. Four steps. Wall to floor."
+      "t": 9.9,
+      "text": "A staircase. Four steps. Wall to floor."
     },
     {
-      "t": 13.2,
+      "t": 14.6,
       "text": "Step one. Wall push-ups. Ten reps, hands flat."
     },
     {
-      "t": 17.6,
-      "text": "Own ten before you move. That is the rule."
+      "t": 19.8,
+      "text": "Own ten before you move up."
     },
     {
-      "t": 22.5,
+      "t": 23.9,
       "text": "Step two. Hands on a chair. Eight reps."
     },
     {
-      "t": 26.9,
-      "text": "Feel that? Your chest is doing real work now."
+      "t": 29.1,
+      "text": "Step three. Kneeling push-ups. Eight."
     },
     {
-      "t": 31.8,
-      "text": "Step three. Kneeling push-ups on the floor. Eight."
-    },
-    {
-      "t": 36.2,
+      "t": 32.6,
       "text": "Step four. Full push-ups. Even one counts."
     },
     {
-      "t": 40.1,
-      "text": "Own each step for one week."
+      "t": 37.2,
+      "text": "Then you press the floor away."
     },
     {
-      "t": 43.5,
-      "text": "Then you press the floor away. Clean."
-    },
-    {
-      "t": 46.8,
+      "t": 41.3,
       "text": "You built that rep. It is yours."
     },
     {
-      "t": 50,
+      "t": 45.9,
       "text": "The staircase belongs to you."
     },
     {
-      "t": 52.8,
+      "t": 49.4,
       "text": "Tomorrow: strength inside the oven timer."
     },
     {
-      "t": 55.5,
+      "t": 53.4,
       "text": "Which step are you on today?"
     }
   ],
   "scenes": [
     {
       "start": 0,
-      "end": 13.2,
-      "broll_query": "plain wall home exercise space",
+      "end": 14.6,
+      "broll_query": "hands pressing wall home",
       "overlays": [
         {
           "t": 0,
@@ -90,58 +85,58 @@
       ]
     },
     {
-      "start": 13.2,
-      "end": 22.5,
-      "broll_query": "wall corner bright home interior",
+      "start": 14.6,
+      "end": 23.9,
+      "broll_query": "hands flat on wall closeup",
       "overlays": [
         {
-          "t": 13.2,
+          "t": 14.6,
           "text": "Step one. Ten wall push-ups.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 22.5,
-      "end": 31.8,
-      "broll_query": "wooden chair bright room",
+      "start": 23.9,
+      "end": 29.1,
+      "broll_query": "hands gripping chair seat",
       "overlays": [
         {
-          "t": 22.5,
+          "t": 23.9,
           "text": "Step two. Eight incline push-ups.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 31.8,
-      "end": 40.1,
-      "broll_query": "exercise mat wooden floor",
+      "start": 29.1,
+      "end": 37.2,
+      "broll_query": "knees on exercise mat closeup",
       "overlays": [
         {
-          "t": 31.8,
+          "t": 29.1,
           "text": "Step three. Kneeling push-ups, eight.",
           "style": "step"
         },
         {
-          "t": 36.2,
+          "t": 32.6,
           "text": "Step four. The full push-up.",
           "style": "step"
         }
       ]
     },
     {
-      "start": 40.1,
+      "start": 37.2,
       "end": 59.8,
-      "broll_query": "sunlit staircase home interior",
+      "broll_query": "feet climbing home staircase",
       "overlays": [
         {
-          "t": 40.1,
+          "t": 37.2,
           "text": "Earn each step for a full week.",
           "style": "step"
         },
         {
-          "t": 55.5,
+          "t": 53.4,
           "text": "Which step are you on today?",
           "style": "cta"
         }
