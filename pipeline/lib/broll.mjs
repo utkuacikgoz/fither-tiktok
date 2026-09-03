@@ -200,13 +200,23 @@ export async function fetchApprovedDemo(movement, seed = "", excludedIds = new S
   return file;
 }
 
-export async function fetchBroll(query, mode = "environment", excludedIds = new Set()) {
+export async function fetchBroll(query, mode = "environment", excludedIds = new Set(), seed = "") {
   if (!brollAvailable() || !query) return null;
   const dir = ensureDir(join(cacheDir, "broll"));
   const blocked = new Set([...shotHistoryIds(), ...excludedIds]);
 
+  // Render shards run in parallel and cannot see each other's picks, so
+  // always taking the first acceptable candidate made different videos
+  // converge on the same clip once strict screening shrank the pool. Each
+  // video starts at its own offset in the result list instead.
+  const found = await search(query);
+  const start = found.length
+    ? parseInt(createHash("sha1").update(`${seed}|${query}`).digest("hex").slice(0, 6), 16) % found.length
+    : 0;
+  const candidates = [...found.slice(start), ...found.slice(0, start)];
+
   const reason = "face visible";
-  for (const video of await search(query)) {
+  for (const video of candidates) {
     const identity = `pexels:${video.id}`;
     if (blocked.has(identity)) {
       console.log(`  broll "${query}" [${mode}]: candidate ${video.id} skipped (shot history)`);

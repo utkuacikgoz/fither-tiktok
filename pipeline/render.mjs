@@ -126,7 +126,7 @@ export async function renderOne(scriptPath) {
         f = await fetchApprovedDemo(s.movement, `${spec.slug}|${s.start}`, usedAssetIds);
         if (!f) notes.push(`verified "${s.movement}" demo unavailable — using gradient`);
       } else {
-        f = await fetchBroll(s.broll_query, "environment", usedAssetIds);
+        f = await fetchBroll(s.broll_query, "environment", usedAssetIds, spec.slug);
       }
     } catch (e) {
       if (s.animation) throw new Error(`authored animation "${s.movement}" failed: ${e.message}`);
