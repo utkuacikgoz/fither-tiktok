@@ -1,4 +1,4 @@
-# Generated footage: Runway and Higgsfield
+# Generated footage: Runway
 
 Stock libraries ran out. Two curation rounds screened 88 candidate clips and
 approved six, of which the truth audit later quarantined five — the Pexels
@@ -25,29 +25,28 @@ renders/week-NN/*.mp4              checksum-pinned at fetch time
 
 Nothing is auto-approved and nothing is committed to `main` by the workflow.
 
-## Providers
+## Provider
 
-| | Runway | Higgsfield |
-|---|---|---|
-| Secrets | `RUNWAY_API_SECRET` | `HIGGSFIELD_API_KEY_ID`, `HIGGSFIELD_API_KEY_SECRET` |
-| Path | `text_to_image` (Gen-4 Image) → `image_to_video` (Gen-4 Turbo) | text-to-video (DoP) |
-| Auth | `Authorization: Bearer <secret>` + dated `X-Runway-Version` | `Authorization: Key <id>:<secret>` |
-| Async | task id → `GET /v1/tasks/{id}`, poll at most every 5s | request id → status url |
+Runway only (owner decision, 2026-09-03). Gen-4 Turbo animates a starting
+frame, so generation runs in two steps: `text_to_image` produces the still,
+then `image_to_video` animates it. **The still is where framing is won or
+lost**, which is why the prompt book composes the whole frame — subject,
+crop, wardrobe, room, light, lens and grade — and leaves the motion prompt
+to describe only what moves.
 
-Runway generates a still first because Gen-4 Turbo animates a starting
-frame; that still is where body-only framing is won or lost, which is why
-the prompt book describes the crop and not just the movement.
-
-Both providers are optional. The generator runs with whichever keys are
-present and says which ones it used.
+| | Runway |
+|---|---|
+| Secret | `RUNWAY_API_SECRET` |
+| Path | `text_to_image` (Gen-4 Image) then `image_to_video` (Gen-4 Turbo) |
+| Auth | `Authorization: Bearer <secret>` plus a dated `X-Runway-Version` |
+| Async | task id then `GET /v1/tasks/{id}`, polled at most every 5s |
 
 ### Configuration
 
-Defaults are set for the shapes above and every one is env-overridable, so a
-provider moving its surface is a config change and not a code change:
-`RUNWAY_BASE_URL`, `RUNWAY_API_VERSION`, `RUNWAY_VIDEO_MODEL`,
-`RUNWAY_IMAGE_MODEL`, `RUNWAY_VIDEO_RATIO`, `RUNWAY_IMAGE_RATIO`,
-`HIGGSFIELD_BASE_URL`, `HIGGSFIELD_T2V_PATH`, `HIGGSFIELD_MODEL`.
+Every default is env-overridable, so Runway moving its surface is a config
+change and not a code change: `RUNWAY_BASE_URL`, `RUNWAY_API_VERSION`,
+`RUNWAY_VIDEO_MODEL`, `RUNWAY_IMAGE_MODEL`, `RUNWAY_VIDEO_RATIO`,
+`RUNWAY_IMAGE_RATIO`.
 
 A shape mismatch fails loudly with the provider's own response body rather
 than silently producing nothing — the first run against a changed API tells
@@ -60,8 +59,7 @@ runs in CI:
 
 - **Actions → Generate demo candidates → Run workflow.** Optional inputs:
   `movements` (comma-separated; default is every prompt-book movement with no
-  approved clip), `providers` (`runway`, `higgsfield`, or both), `takes`
-  (clips per movement per provider, default 2).
+  approved clip) and `takes` (clips per movement, default 2).
 - Or push a `.github/generate-request` change to trigger the same run.
 
 Results land on the force-pushed `generated-demos` branch:
@@ -75,6 +73,22 @@ Cost control: seeds are derived from movement, provider and take number, so
 a rerun reproduces the same shot rather than re-rolling and re-billing. Clips
 default to 5 seconds — long enough for one full repetition, which is all a
 demo scene uses.
+
+## The prompt book
+
+`assets/generation-prompts.json` is a shot book, not a list of search terms.
+It carries a house look (`look`, `camera`, `light`, `room`, `wardrobe`) that
+every prompt inherits, so generated footage is consistent enough to sit in
+one feed, plus per-movement `prompt` and `motion`. A movement may override
+`framing` where the default reads wrong: every floor movement does, because
+"collarbone down at chest height" is the wrong instruction for a camera
+resting on the floor beside a mat.
+
+The house look also encodes the brand defensively. It forbids gyms, mirrors,
+dumbbells, kettlebells, bands and machines; it forbids text, logos and
+watermarks; and it asks for true skin texture rather than a beauty-filter
+finish. Those lines exist because the week 01 stock QA failed on exactly
+those things.
 
 ## The machine gate (before you review)
 

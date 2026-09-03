@@ -18,27 +18,16 @@ const withEnv = async (vars, fn) => {
   }
 };
 
-test("providers are listed only when their credentials are present", async () => {
-  await withEnv(
-    { RUNWAY_API_SECRET: "", HIGGSFIELD_API_KEY_ID: "", HIGGSFIELD_API_KEY_SECRET: "" },
-    () => assert.deepEqual(providersAvailable(), []),
-  );
-  await withEnv({ RUNWAY_API_SECRET: "secret", HIGGSFIELD_API_KEY_ID: "", HIGGSFIELD_API_KEY_SECRET: "" }, () =>
-    assert.deepEqual(providersAvailable(), ["runway"]),
-  );
-  await withEnv({ RUNWAY_API_SECRET: "", HIGGSFIELD_API_KEY_ID: "id", HIGGSFIELD_API_KEY_SECRET: "sec" }, () =>
-    assert.deepEqual(providersAvailable(), ["higgsfield"]),
-  );
+test("Runway is listed only when its secret is present", async () => {
+  await withEnv({ RUNWAY_API_SECRET: "" }, () => assert.deepEqual(providersAvailable(), []));
+  await withEnv({ RUNWAY_API_SECRET: "secret" }, () => assert.deepEqual(providersAvailable(), ["runway"]));
 });
 
-test("generation refuses unknown providers, empty prompts and missing keys", async () => {
+test("generation refuses unknown providers, empty prompts and a missing secret", async () => {
   await assert.rejects(() => generateClip("runway", { prompt: "" }), /needs a prompt/);
-  await assert.rejects(() => generateClip("midjourney", { prompt: "a wall push-up" }), /unknown provider/);
+  await assert.rejects(() => generateClip("sora", { prompt: "a wall push-up" }), /unknown provider/);
   await withEnv({ RUNWAY_API_SECRET: "" }, async () => {
     await assert.rejects(() => generateClip("runway", { prompt: "a wall push-up" }), /RUNWAY_API_SECRET/);
-  });
-  await withEnv({ HIGGSFIELD_API_KEY_ID: "", HIGGSFIELD_API_KEY_SECRET: "" }, async () => {
-    await assert.rejects(() => generateClip("higgsfield", { prompt: "a wall push-up" }), /HIGGSFIELD_API_KEY_ID/);
   });
 });
 

@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-// Generates demo-clip CANDIDATES with Runway and Higgsfield, gates them on
-// the faceless rule, and writes a review set. Nothing here approves
-// footage: a clip enters assets/demo-library.json only after a human
-// watches it end to end (CLAUDE.md, demo truth).
+// Generates demo-clip CANDIDATES with Runway, gates them on the faceless
+// rule, and writes a review set. Nothing here approves footage: a clip
+// enters assets/demo-library.json only after a human watches it end to end
+// (CLAUDE.md, demo truth).
 //
-// Run in CI (needs RUNWAY_API_SECRET and/or HIGGSFIELD_API_KEY_ID +
-// HIGGSFIELD_API_KEY_SECRET): node pipeline/generate.mjs
+// Run in CI (needs RUNWAY_API_SECRET): node pipeline/generate.mjs
 // Output: generation/candidates.json, generation/clips/*.mp4,
 //         generation/frames/*.jpg, generation/review.html
 import { createHash } from "node:crypto";
@@ -24,11 +23,9 @@ const CLIP_SECONDS = Number(process.env.GENERATION_SECONDS || 5);
 const PER_MOVEMENT = Number(process.env.GENERATION_TAKES || 2);
 const RAW_BASE = "https://raw.githubusercontent.com/utkuacikgoz/fither-tiktok/generated-demos";
 
-const providers = process.env.GENERATION_PROVIDERS
-  ? process.env.GENERATION_PROVIDERS.split(",").map((p) => p.trim()).filter(Boolean)
-  : providersAvailable();
+const providers = providersAvailable();
 if (providers.length === 0) {
-  console.error("No generation providers configured. Set RUNWAY_API_SECRET and/or HIGGSFIELD_API_KEY_ID + HIGGSFIELD_API_KEY_SECRET.");
+  console.error("No generation provider configured. Set RUNWAY_API_SECRET.");
   process.exit(1);
 }
 
@@ -58,11 +55,18 @@ const clipsDir = ensureDir(join(outDir, "clips"));
 const framesDir = ensureDir(join(outDir, "frames"));
 const ffmpeg = await ffmpegPath();
 
+// Runway animates a generated still, so the still prompt carries the whole
+// look: composition, framing, wardrobe, room, light and grade. The motion
+// prompt stays short and describes only what moves, plus the framing rule
+// again so the animation cannot drift the head back into shot. A movement
+// may override the default framing where the default reads wrong, which is
+// the case for every floor movement.
 function buildPrompt(movement) {
   const entry = book.movements[movement];
+  const framing = entry.framing ?? book.framing;
   return {
-    prompt: [entry.prompt, book.framing, book.style].join(". "),
-    motion: [entry.motion, book.framing].join(". "),
+    prompt: [entry.prompt, framing, book.wardrobe, book.room, book.light, book.camera, book.look].join(" "),
+    motion: [entry.motion, framing].join(" "),
   };
 }
 

@@ -72,10 +72,9 @@ and real b-roll:
 
 - **B-roll now**: Pexels stock, free tier, plus approved owned footage. The
   current priority is the 18-clip capture brief in `docs/footage-capture.md`.
-- **Premium environment video later**: Runway is the planned budget-capped
-  source after a controlled Higgsfield comparison. This integration is
-  deliberately deferred until the rest of the engine is complete. Neither
-  provider may depict exercise form.
+- **Generated footage**: Runway (Gen-4 Image still, then Gen-4 Turbo
+  image-to-video), wired and budget-capped by take count. It produces
+  candidates only; see `docs/generated-footage.md`.
 - **Voiceover**: ElevenLabs, shared voice with the app. Non-negotiable
   brand asset.
 - **Sound bed**: original deterministic `quiet-drive` profile. It is mixed at

@@ -3,7 +3,7 @@
 The renderer accepts movement animation only from
 `assets/animation-library.json`. The library starts empty and fails closed:
 an `animated-demo` sidecar cannot validate until its exact movement has an
-approved export. Runway, Higgsfield and stock sources are never eligible to
+approved export. Runway and stock sources are never eligible to
 demonstrate exercise form.
 
 ## Export contract

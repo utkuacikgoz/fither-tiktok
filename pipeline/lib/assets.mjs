@@ -29,7 +29,7 @@ export function buildAssetReport(specs, library, animationLibrary) {
         if (!/^[a-f0-9]{64}$/.test(clip.sha256 ?? "")) errors.push(`${movement}[${index}]: ${clip.source} clip needs a lowercase SHA-256`);
       }
       if (clip.source === "generated") {
-        if (!["runway", "higgsfield"].includes(clip.provider)) errors.push(`${movement}[${index}]: generated clip needs a known provider`);
+        if (clip.provider !== "runway") errors.push(`${movement}[${index}]: generated clip needs a known provider`);
         if (typeof clip.prompt !== "string" || !clip.prompt.trim()) errors.push(`${movement}[${index}]: generated clip needs its prompt`);
       }
       if (clip.movement_verified !== true) errors.push(`${movement}[${index}]: movement_verified must be true`);
@@ -122,7 +122,7 @@ export function buildAssetReport(specs, library, animationLibrary) {
     }
   }
   report += `\n## Provider boundary\n\n`;
-  report += `Generative providers may supply environment footage only. Exercise form stays owner-shot or authored animation. Runway/Higgsfield work is deferred to the final wave; later premium generations happen during curation, pass the same faceless review, and enter an approved cached library before weekly rendering.\n`;
+  report += `Runway may generate candidate footage. Nothing it produces is approved by the machine: every generated clip passes the faceless gate and then full-motion editorial review before entering the approved library used by weekly rendering.\n`;
   if (warnings.length) {
     report += `\n## Curation queue\n\n`;
     for (const warning of warnings) report += `- ${warning}\n`;

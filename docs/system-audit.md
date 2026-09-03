@@ -77,7 +77,7 @@ approved counts. The remaining visual work is acquisition and full-motion
 approval, not an undetected engine condition.
 
 Deferred provider decision: ElevenLabs remains the voice asset and Pexels the
-free fallback. Runway/Higgsfield implementation happens only after the engine
+free fallback. Runway implementation happens only after the engine
 and owned footage bank are complete. Generative providers never depict exercise
 form or run nondeterministically inside the weekly render. When enabled, the
 ceiling remains $30/month, three attempts per shot and one five-second premium

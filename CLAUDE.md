@@ -86,7 +86,7 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `data/shot-history.json` — identities used by published posts; future renders exclude them
 - `assets/generation-prompts.json` — shot prompts for generated demo footage
 - `docs/footage-capture.md` — the body-only filming and approval contract
-- `docs/generated-footage.md` — Runway/Higgsfield generation and its gate
+- `docs/generated-footage.md` — Runway generation and its gate
 - `docs/shot-history.md` — per-render asset records and cross-post reuse gate
 - `docs/animation-ingestion.md` — authored export and sidecar contract
 - `docs/sound-system.md` — original bed, ducking, loudness and posting contract

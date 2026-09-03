@@ -6,9 +6,6 @@ on:
       movements:
         description: "Comma-separated movement names; defaults to every prompt-book movement with no approved clip"
         required: false
-      providers:
-        description: "runway, higgsfield, or both (default: whichever keys are set)"
-        required: false
       takes:
         description: "Clips per movement per provider"
         required: false
@@ -31,14 +28,12 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Check generation secrets
+      - name: Check generation secret
         env:
           RUNWAY_API_SECRET: ${{ secrets.RUNWAY_API_SECRET }}
-          HIGGSFIELD_API_KEY_ID: ${{ secrets.HIGGSFIELD_API_KEY_ID }}
-          HIGGSFIELD_API_KEY_SECRET: ${{ secrets.HIGGSFIELD_API_KEY_SECRET }}
         run: |
-          if [ -z "$RUNWAY_API_SECRET" ] && [ -z "$HIGGSFIELD_API_KEY_ID" ]; then
-            echo "::error::set RUNWAY_API_SECRET and/or HIGGSFIELD_API_KEY_ID + HIGGSFIELD_API_KEY_SECRET"
+          if [ -z "$RUNWAY_API_SECRET" ]; then
+            echo "::error::repository secret RUNWAY_API_SECRET is not set"
             exit 1
           fi
 
@@ -53,10 +48,7 @@ jobs:
       - name: Generate and gate candidates
         env:
           RUNWAY_API_SECRET: ${{ secrets.RUNWAY_API_SECRET }}
-          HIGGSFIELD_API_KEY_ID: ${{ secrets.HIGGSFIELD_API_KEY_ID }}
-          HIGGSFIELD_API_KEY_SECRET: ${{ secrets.HIGGSFIELD_API_KEY_SECRET }}
           GENERATION_MOVEMENTS: ${{ inputs.movements }}
-          GENERATION_PROVIDERS: ${{ inputs.providers }}
           GENERATION_TAKES: ${{ inputs.takes }}
         run: node pipeline/generate.mjs
 

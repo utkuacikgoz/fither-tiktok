@@ -26,7 +26,7 @@
 
 ## Provider boundary
 
-Generative providers may supply environment footage only. Exercise form stays owner-shot or authored animation. Runway/Higgsfield work is deferred to the final wave; later premium generations happen during curation, pass the same faceless review, and enter an approved cached library before weekly rendering.
+Runway may generate candidate footage. Nothing it produces is approved by the machine: every generated clip passes the faceless gate and then full-motion editorial review before entering the approved library used by weekly rendering.
 
 ## Curation queue
 
