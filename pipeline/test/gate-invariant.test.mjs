@@ -37,3 +37,22 @@ test("the screening policy is part of the cache identity", async () => {
   const { SCREEN_POLICY } = await import("../lib/broll.mjs");
   assert.match(SCREEN_POLICY, /^[a-f0-9]{8}$/);
 });
+
+// Faces are judged at the size viewers see them. Screening a clip at source
+// framing missed faces that the render magnified when it upscaled to
+// portrait, so screening runs the same geometry the composer does.
+test("screening judges clips through the render's own geometry", async () => {
+  const { SCREEN_POLICY } = await import("../lib/broll.mjs");
+  const { PORTRAIT_GEOMETRY } = await import("../lib/compose.mjs");
+  assert.match(PORTRAIT_GEOMETRY, /scale=1080:1920/);
+  assert.match(PORTRAIT_GEOMETRY, /crop=1080:1920/);
+  // The policy hash covers the geometry, so changing the crop retires every
+  // acceptance judged under the old framing.
+  const { createHash } = await import("node:crypto");
+  const { SOURCE_FACE_THRESHOLD, SOURCE_SAMPLE_FPS } = await import("../lib/broll.mjs");
+  const expected = createHash("sha1")
+    .update(`face:${SOURCE_FACE_THRESHOLD}|fps:${SOURCE_SAMPLE_FPS}|geom:${PORTRAIT_GEOMETRY}`)
+    .digest("hex")
+    .slice(0, 8);
+  assert.equal(SCREEN_POLICY, expected);
+});

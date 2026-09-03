@@ -7,6 +7,12 @@ import { ffmpegPath, palette } from "./env.mjs";
 
 const pexec = promisify(execFile);
 
+// The geometry every source clip is rendered through. Screening in
+// broll.mjs reuses it so clips are judged at the size and crop viewers
+// actually see: upscaling to portrait magnifies a face that was too small
+// to detect at source resolution.
+export const PORTRAIT_GEOMETRY = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920";
+
 const GRADIENT = (dur) =>
   `gradients=s=1080x1920:c0=${palette.bg.replace("#", "0x")}:c1=${palette.accentSoft.replace("#", "0x")}:speed=0.008:duration=${dur}`;
 
@@ -55,9 +61,7 @@ export async function composeVideo({ spec, sceneFiles, overlays, voFiles, soundB
       // Loop the source long enough that any offset+segment stays in range.
       const loopLen = dur + segDur * nSeg + 2;
       args.push("-stream_loop", "-1", "-t", String(loopLen.toFixed(2)), "-i", sceneFiles[i]);
-      const base =
-        `[${i}:v]scale=1080:1920:force_original_aspect_ratio=increase,` +
-        `crop=1080:1920,fps=30,setsar=1`;
+      const base = `[${i}:v]${PORTRAIT_GEOMETRY},fps=30,setsar=1`;
       if (nSeg === 1) {
         filters.push(`${base},trim=duration=${dur},setpts=PTS-STARTPTS[s${i}]`);
       } else {

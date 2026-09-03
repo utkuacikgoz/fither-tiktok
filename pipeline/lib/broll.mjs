@@ -12,6 +12,7 @@ import { promisify } from "node:util";
 import { cacheDir, ensureDir, ffmpegPath, repoRoot } from "./env.mjs";
 import { personInJpeg, faceInJpeg } from "./persons.mjs";
 import { OUTPUT_FACE_THRESHOLD, OUTPUT_SAMPLE_INTERVAL } from "./verify.mjs";
+import { PORTRAIT_GEOMETRY } from "./compose.mjs";
 import { shotHistoryIds } from "./shots.mjs";
 
 const pexec = promisify(execFile);
@@ -28,7 +29,7 @@ export const SOURCE_SAMPLE_FPS = Math.max(2, 1 / OUTPUT_SAMPLE_INTERVAL);
 // under an older, looser policy keep rendering long after the policy tightened.
 // Keying by the policy retires those acceptances automatically.
 export const SCREEN_POLICY = createHash("sha1")
-  .update(`face:${SOURCE_FACE_THRESHOLD}|fps:${SOURCE_SAMPLE_FPS}`)
+  .update(`face:${SOURCE_FACE_THRESHOLD}|fps:${SOURCE_SAMPLE_FPS}|geom:${PORTRAIT_GEOMETRY}`)
   .digest("hex")
   .slice(0, 8);
 
@@ -75,19 +76,20 @@ async function thumbnailsClean(video, mode, seen) {
   return true;
 }
 
-// Second gate on the actual file. This must be at least as dense and at
-// least as strict as the post-render check in verify.mjs, or a face slips
-// into a clip here and is only caught after a six minute render. Frames are
-// brightened before detection — a dark kitchen once hid a person from the
-// detector at native exposure — and extracted in a single ffmpeg pass, so
-// sampling the whole clip costs one process rather than one per frame.
+// Second gate on the actual file. This must judge the clip exactly as the
+// finished video presents it: same portrait crop, at least as dense, at
+// least as strict. Screening at source framing missed faces that the render
+// magnified when it upscaled a clip to 1080x1920. Frames are brightened
+// before detection — a dark kitchen once hid a person from the detector at
+// native exposure — and extracted in a single ffmpeg pass, so sampling the
+// whole clip costs one process rather than one per frame.
 async function framesClean(file, mode, seen) {
   const ffmpeg = await ffmpegPath();
   const dir = mkdtempSync(join(ensureDir(cacheDir), "probe-"));
   try {
     await pexec(ffmpeg, [
       "-y", "-i", file,
-      "-vf", `fps=${SOURCE_SAMPLE_FPS},eq=brightness=0.12:contrast=1.15`,
+      "-vf", `fps=${SOURCE_SAMPLE_FPS},${PORTRAIT_GEOMETRY},eq=brightness=0.12:contrast=1.15`,
       "-q:v", "4", join(dir, "f-%04d.jpg"),
     ], { maxBuffer: 1 << 24 });
     const frames = readdirSync(dir).sort();
