@@ -64,10 +64,13 @@ export async function renderOverlay({ text, style = "step" }) {
   return file;
 }
 
-export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step" }, file) {
+// solo: a single-image post rather than a carousel slide. The page counter
+// and the progress bar both describe a sequence, so they are hidden, and the
+// footer cue asks for a save instead of a swipe.
+export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false }, file) {
   const textClass = text.length <= 42 ? "short" : text.length >= 82 ? "long" : "";
   const progress = Array.from({ length: total }, () => "<span></span>").join("");
-  const cue = index < total ? "SWIPE →" : "SAVE THIS";
+  const cue = !solo && index < total ? "SWIPE →" : "SAVE THIS";
   const html = readFileSync(join(templatesDir, "slide.html"), "utf8")
     .replace("__FONT_400__", font400)
     .replace("__FONT_600__", font600)
@@ -76,6 +79,7 @@ export async function renderSlide({ kicker = "", text, footer = "", index = 1, t
     .replaceAll("__TOTAL__", String(total))
     .replace("__PROGRESS__", progress)
     .replace("__KIND__", esc(kind))
+    .replace("__SOLO__", solo ? "solo" : "")
     .replace("__TEXT_CLASS__", textClass)
     .replace("__KICKER__", esc(kicker))
     .replace("__TEXT__", esc(text))

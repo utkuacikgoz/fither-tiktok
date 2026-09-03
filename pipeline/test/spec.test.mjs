@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { validateSpec } from "../lib/spec.mjs";
+import { POST_SLOTS, postSlot, validateSpec } from "../lib/spec.mjs";
 import { policyTextViolations } from "../lib/policy.mjs";
 
 function validSpec() {
@@ -176,4 +176,46 @@ test("rejects empty animated-demo format and ambiguous visual sources", () => {
 test("policy catches channel-specific wrist and punctuation violations", () => {
   assert.equal(policyTextViolations("A wrist-friendly push-up.").length, 1);
   assert.equal(policyTextViolations("Strong — in ten minutes.").length, 1);
+});
+
+// The week ships each topic three ways, so the still formats need the same
+// rigour the video formats have always had.
+test("a single post is one slide whose CTA lives in the caption", () => {
+  const base = {
+    slug: "2026-09-04-x-single", week: "01", post_date: "2026-09-04",
+    format: "single", pillar: "Constraint", hook_mechanism: "situation",
+    sound: { profile: "platform" },
+    caption: "One wall, ten minutes. Which wall is yours?",
+    hashtags: ["#strengthtraining"],
+    scenes: [{
+      start: 0, end: 1, kicker: "TONIGHT", footer: "Strength that fits your life.",
+      overlays: [{ t: 0, text: "This wall is your whole gym tonight.", style: "hook" }],
+    }],
+  };
+  assert.deepEqual(validateSpec(base).errors, []);
+
+  // A question in the caption is the single's only CTA surface.
+  const noQuestion = { ...base, caption: "One wall, ten minutes." };
+  assert.ok(validateSpec(noQuestion).errors.some((e) => /question in its caption/.test(e)));
+
+  // One frame, not several.
+  const twoSlides = { ...base, scenes: [base.scenes[0], { ...base.scenes[0], start: 1, end: 2 }] };
+  assert.ok(validateSpec(twoSlides).errors.some((e) => /exactly 1 slide/.test(e)));
+
+  // Still formats carry no voiceover and no sound bed.
+  const withBed = { ...base, sound: { profile: "quiet-drive", bed_gain_db: -16 } };
+  assert.ok(validateSpec(withBed).errors.some((e) => /sound\.profile must be "platform"/.test(e)));
+
+  const noKicker = { ...base, scenes: [{ ...base.scenes[0], kicker: "" }] };
+  assert.ok(validateSpec(noKicker).errors.some((e) => /requires a kicker/.test(e)));
+});
+
+test("each post date owes a video, a carousel and a single", () => {
+  assert.equal(postSlot("environment-pov"), "video");
+  assert.equal(postSlot("text-on-screen"), "video");
+  assert.equal(postSlot("animated-demo"), "video");
+  assert.equal(postSlot("slideshow"), "carousel");
+  assert.equal(postSlot("single"), "single");
+  assert.equal(postSlot("tweet"), null);
+  assert.deepEqual(POST_SLOTS, ["video", "carousel", "single"]);
 });

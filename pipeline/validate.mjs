@@ -4,7 +4,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { validateSpec } from "./lib/spec.mjs";
+import { POST_SLOTS, postSlot, validateSpec } from "./lib/spec.mjs";
 import { policyTextViolations } from "./lib/policy.mjs";
 import { normalizeRows } from "./lib/analytics.mjs";
 import { validateExperiments } from "./lib/experiments.mjs";
@@ -54,9 +54,13 @@ for (const file of files) {
     }
   }
   if (slugs.has(spec.slug)) errors.push(`slug duplicates ${slugs.get(spec.slug)}`);
-  if (dates.has(spec.post_date)) errors.push(`post_date duplicates ${dates.get(spec.post_date)}`);
+  // Three posts share a date now, one per slot, so a date collides only
+  // when two sidecars claim the same slot on the same day.
+  const slot = postSlot(spec.format);
+  const dateKey = `${spec.post_date}|${slot}`;
+  if (dates.has(dateKey)) errors.push(`post_date duplicates ${dates.get(dateKey)} in the ${slot} slot`);
   slugs.set(spec.slug, label);
-  dates.set(spec.post_date, label);
+  dates.set(dateKey, label);
   if (!weeks.has(spec.week)) weeks.set(spec.week, []);
   weeks.get(spec.week).push(spec);
 
@@ -68,9 +72,23 @@ for (const file of files) {
 
 if (!requested.length) {
   for (const [week, specs] of weeks) {
-    if (specs.length !== 7) {
-      console.warn(`WARN  week ${week}: expected 7 sidecars, found ${specs.length}`);
+    const byDate = new Map();
+    for (const spec of specs) {
+      if (!byDate.has(spec.post_date)) byDate.set(spec.post_date, new Map());
+      byDate.get(spec.post_date).set(postSlot(spec.format), spec.slug);
+    }
+    if (byDate.size !== 7) {
+      console.warn(`WARN  week ${week}: expected 7 post dates, found ${byDate.size}`);
       warningCount++;
+    }
+    // Every date owes a video, a carousel and a single. Reporting the gap
+    // per date says what to write next, which a bare count never did.
+    for (const [date, slots] of [...byDate].sort()) {
+      const missing = POST_SLOTS.filter((slot) => !slots.has(slot));
+      if (missing.length) {
+        console.warn(`WARN  week ${week} ${date}: missing ${missing.join(", ")}`);
+        warningCount++;
+      }
     }
   }
   const experimentsPath = join(repoRoot, "content", "experiments.md");

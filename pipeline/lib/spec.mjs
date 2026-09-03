@@ -7,7 +7,21 @@ import { SOUND_PROFILES } from "./sound.mjs";
 import { loadAnimationLibrary } from "./animations.mjs";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FORMATS = new Set(["environment-pov", "text-on-screen", "animated-demo", "slideshow"]);
+const FORMATS = new Set(["environment-pov", "text-on-screen", "animated-demo", "slideshow", "single"]);
+// Formats rendered as still images rather than video: no voiceover, no sound
+// bed, no 45-60s contract. A carousel is many slides, a single is one.
+const STILL_FORMATS = new Set(["slideshow", "single"]);
+export const SLIDE_COUNTS = { slideshow: [4, 8], single: [1, 1] };
+
+// The week ships each topic three ways (owner decision, 2026-09-03): the
+// video, a carousel of the same idea, and a single-image hook from it. These
+// are the three slots a post date must fill.
+export const POST_SLOTS = ["video", "carousel", "single"];
+export function postSlot(format) {
+  if (format === "slideshow") return "carousel";
+  if (format === "single") return "single";
+  return FORMATS.has(format) ? "video" : null;
+}
 const PILLARS = new Set(["Constraint", "Skill ladder", "Reframe", "Fast tips", "Behind the build"]);
 const HOOKS = new Set(["contradiction", "situation", "number", "promise"]);
 const OVERLAY_STYLES = new Set(["hook", "step", "cta"]);
@@ -82,8 +96,8 @@ export function validateSpec(spec, options = {}) {
   if (typeof spec.hook_mechanism === "string" && !HOOKS.has(spec.hook_mechanism)) {
     error(`hook_mechanism "${spec.hook_mechanism}" is unknown`);
   }
-  if (spec.format === "slideshow") {
-    if (spec.sound?.profile !== "platform") error('slideshow sound.profile must be "platform"');
+  if (STILL_FORMATS.has(spec.format)) {
+    if (spec.sound?.profile !== "platform") error(`${spec.format} sound.profile must be "platform"`);
   } else if (!spec.sound || typeof spec.sound !== "object") {
     error("video formats require a sound contract");
   } else {
@@ -139,7 +153,7 @@ export function validateSpec(spec, options = {}) {
         error(`scene ${i}: broll_query must be a non-empty string`);
       }
       if (!Array.isArray(scene.overlays) || scene.overlays.length === 0) warn(`scene ${i}: no overlays`);
-      if (spec.format === "slideshow") {
+      if (STILL_FORMATS.has(spec.format)) {
         if (scene.overlays?.length !== 1) error(`slide ${i + 1}: requires exactly one overlay`);
         if (typeof scene.kicker !== "string" || !scene.kicker.trim()) error(`slide ${i + 1}: requires a kicker`);
         if (typeof scene.footer !== "string" || !scene.footer.trim()) error(`slide ${i + 1}: requires a footer`);
@@ -159,8 +173,11 @@ export function validateSpec(spec, options = {}) {
     if (spec.format === "animated-demo" && animationScenes === 0) {
       error('format "animated-demo" requires at least one animation scene');
     }
-    if (spec.format === "slideshow") {
-      if (spec.scenes.length < 4 || spec.scenes.length > 8) error("slideshow requires 4-8 slides");
+    if (STILL_FORMATS.has(spec.format)) {
+      const [min, max] = SLIDE_COUNTS[spec.format];
+      if (spec.scenes.length < min || spec.scenes.length > max) {
+        error(min === max ? `${spec.format} requires exactly ${min} slide` : `${spec.format} requires ${min}-${max} slides`);
+      }
     } else {
       if (prevEnd < 45) warn(`duration ${prevEnd}s is below the 45-60s brief`);
       if (prevEnd > 60) error(`duration ${prevEnd}s exceeds the 45-60s brief`);
@@ -170,13 +187,22 @@ export function validateSpec(spec, options = {}) {
     if (!firstOverlays.some((overlay) => overlay.style === "hook" && Math.abs(overlay.t) < 0.001)) {
       error("first scene needs a hook overlay at 0s");
     }
-    const lastOverlays = spec.scenes.at(-1)?.overlays ?? [];
-    if (!lastOverlays.some((overlay) => overlay.style === "cta" && String(overlay.text).trim().endsWith("?"))) {
-      error("last scene needs a question CTA overlay");
+    // A single post has one frame, and that frame is the hook. The voice
+    // rule that a piece ends on an answerable question still holds, so the
+    // question moves to the caption, which is the only other surface it has.
+    if (spec.format === "single") {
+      if (!String(spec.caption ?? "").trim().includes("?")) {
+        error("single needs a question in its caption, which is where its CTA lives");
+      }
+    } else {
+      const lastOverlays = spec.scenes.at(-1)?.overlays ?? [];
+      if (!lastOverlays.some((overlay) => overlay.style === "cta" && String(overlay.text).trim().endsWith("?"))) {
+        error("last scene needs a question CTA overlay");
+      }
     }
   }
 
-  if (spec.format !== "slideshow") {
+  if (!STILL_FORMATS.has(spec.format)) {
     if (!Array.isArray(spec.voiceover) || spec.voiceover.length === 0) {
       error("video formats need a non-empty voiceover array");
     } else {

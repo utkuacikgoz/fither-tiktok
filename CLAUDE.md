@@ -107,7 +107,8 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `docs/sound-system.md` — original bed, ducking, loudness and posting contract
 - `data/comments.md` — comment theme buckets
 - `content/weeks/week-NN.md` — planner output
-- `content/scripts/YYYY-MM-DD-slug.md` — writer output, one per video
+- `content/scripts/YYYY-MM-DD-slug.md` — writer output; the video is the
+  bare slug, its siblings are `-carousel` and `-single`
 - `content/scripts/YYYY-MM-DD-slug.json` — render spec sidecar, one per video
 - `pipeline/` — the renderer (ElevenLabs + Pexels + original sound + Chromium overlays + ffmpeg)
 - `renders/` — finished MP4s and posting sheets (gitignored, delivered per week)
@@ -122,6 +123,15 @@ times out of seven. Scheduling it would spend API budget producing
 unpostable video faster. Restore the schedule once environment footage is
 solved and a week ships.
 
+A week is **7 topics shipped three ways** (owner decision, 2026-09-03): the
+video, a carousel of the same idea, and a single-image hook from it. Twenty
+one posts, three a day. The carousel spells out what the voiceover had to
+compress, which makes it the saveable version; the single spends its one
+frame on the hook and keeps its CTA question in the caption.
+
+Carousels and singles are typography only, so they ship while video renders
+are held on footage. That is the point of the split, not a side effect.
+
 - **Sunday, run by hand**: dispatch `Render week` in Actions. It plans the
   week, writes the scripts and sidecars, renders all 7 videos and delivers
   them with a posting sheet.
@@ -129,7 +139,8 @@ solved and a week ships.
   TikTok's AI-generated-content label in the posting flow. The posting sheet
   does **not** carry this instruction yet; emitting it per video is a
   blocker on the first post, tracked in `docs/roadmap.md`.
-- **Daily, 2 min**: post one from the posting sheet, at a fixed time.
+- **Daily, 5 min**: post the day's three from the posting sheet, spaced
+  across the day rather than back to back.
 - **Friday, 10 min**: paste the week's numbers into `data/performance.csv`.
 - **Every 20 videos**: append top-quartile hooks (by watch %) to
   `.claude/skills/fither-voice/references/hooks.md`.

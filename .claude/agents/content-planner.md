@@ -57,6 +57,10 @@ For each of the 7, produce:
 - **Format**: animated demo / environment POV / text on screen / body only demo
   (animated demo only if the needed movements are approved in `assets/animation-library.json`;
   body only demo only after the week 6 checkpoint calls for it)
+- **Carousel angle**: what the same topic looks like as a saveable list. The
+  carousel names every movement in full where the voiceover compressed them.
+- **Single line**: the one sentence that carries the topic on its own. It is
+  usually the video's hook, and its CTA question lives in the caption.
 - **Movements/patterns used**: exact names from the movement library, or
   pattern names
 - **Assets needed**: b roll, animations, voiceover. If an animation does not
@@ -65,10 +69,18 @@ For each of the 7, produce:
 - **Reuse**: which app asset this doubles as (App Store screenshot,
   onboarding copy, paywall headline)
 
+## The week ships three ways
+
+Every topic becomes three posts on its date: the video, a carousel
+(`format: "slideshow"`, 4 to 8 slides) and a single (`format: "single"`, one
+image). Plan the topic once and note the carousel angle and the single line
+alongside it. `node pipeline/validate.mjs` reports any date missing a slot.
+
 ## Then
 
 - Append all 7 topics to `content/log.md` with the date and week number
-  (result column stays empty until numbers exist).
+  (result column stays empty until numbers exist). One row per topic, not
+  per post: the three formats share a topic.
 - Write the plan to `content/weeks/week-NN.md`.
 - Register this week's tests in `content/experiments.md`: one entry per
   test with hypothesis, variants, metric, and a decision rule that names a

@@ -1,0 +1,99 @@
+{
+  "slug": "2026-09-04-hotel-room-silent-session-carousel",
+  "week": "01",
+  "post_date": "2026-09-04",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "One wall, one doorframe, ten minutes. Wall Push-Up, Doorframe Row, Wall Sit, Glute Bridge, Wall Plank. A complete session before dinner and the room next door hears nothing. Save this for the next trip.",
+  "hashtags": [
+    "#hotelworkout",
+    "#quietworkout",
+    "#travelstrength",
+    "#noequipmentworkout",
+    "#strengthtraining"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "ONE WALL",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "This wall is your whole gym tonight.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "PRESS",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Wall Push-Up, ten reps. Press the wall away.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "PULL",
+      "footer": "Six minutes in.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row, eight reps. Lean back and pull in.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "LEGS AND HIPS",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Sit, thirty seconds. Then Glute Bridge, ten reps.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "CORE",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Wall Plank, twenty seconds. Then repeat the round once.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next trip.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Which city are you in tonight?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

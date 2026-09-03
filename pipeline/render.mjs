@@ -42,12 +42,15 @@ export async function renderOne(scriptPath) {
   const outDir = ensureDir(join(rendersDir, `week-${spec.week}`));
   const notes = [];
 
-  if (spec.format === "slideshow") {
-    const slideDir = ensureDir(join(outDir, spec.slug));
+  if (spec.format === "slideshow" || spec.format === "single") {
+    // A carousel gets a directory of numbered slides; a single post is one
+    // image and gets one file, so the thing you upload is the thing you see.
+    const solo = spec.format === "single";
+    const slideDir = solo ? outDir : ensureDir(join(outDir, spec.slug));
     const files = [];
     try {
       for (const [i, s] of spec.scenes.entries()) {
-        const f = join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
+        const f = solo ? join(slideDir, `${spec.slug}.png`) : join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
         const overlay = s.overlays[0];
         await renderSlide(
           {
@@ -57,6 +60,7 @@ export async function renderOne(scriptPath) {
             index: i + 1,
             total: spec.scenes.length,
             kind: overlay.style,
+            solo,
           },
           f,
         );
@@ -65,7 +69,9 @@ export async function renderOne(scriptPath) {
     } finally {
       await closeBrowser();
     }
-    notes.push("slideshow: post as a TikTok photo post");
+    notes.push(solo
+      ? "single: post as a TikTok photo post, one image; the CTA question is in the caption"
+      : "slideshow: post as a TikTok photo post");
     files.push(writeAssetRecord(outDir, spec, []));
     files.push(writeDeliveryText(outDir, spec, notes));
     return { spec, files, notes };
