@@ -1,22 +1,25 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { SOURCE_FACE_THRESHOLD, SOURCE_SAMPLE_FPS } from "../lib/broll.mjs";
-import { OUTPUT_FACE_THRESHOLD, OUTPUT_SAMPLE_INTERVAL, faceSampleTimes } from "../lib/verify.mjs";
+import { OUTPUT_FACE_THRESHOLD, OUTPUT_SAMPLE_INTERVAL, PROBE_EQ, faceSampleTimes } from "../lib/verify.mjs";
 
 // A face that reaches the finished video costs a six minute render and a
 // failed shard. Screening a source clip must therefore never be looser than
 // verifying the output, in either sensitivity or sampling density.
-test("source screening is at least as strict as output verification", () => {
+test("source screening is strictly harder to pass than output verification", () => {
+  // Matching exactly is not enough: the composer offsets scene segments, so
+  // the two sample grids sit at an arbitrary phase and a brief face can fall
+  // between both. Screening needs margin, not parity.
   assert.ok(
-    SOURCE_FACE_THRESHOLD <= OUTPUT_FACE_THRESHOLD,
-    `source threshold ${SOURCE_FACE_THRESHOLD} is looser than output ${OUTPUT_FACE_THRESHOLD}`,
+    SOURCE_FACE_THRESHOLD < OUTPUT_FACE_THRESHOLD,
+    `source threshold ${SOURCE_FACE_THRESHOLD} needs margin below output ${OUTPUT_FACE_THRESHOLD}`,
   );
 });
 
-test("source screening samples at least as densely as output verification", () => {
+test("source screening samples at least twice as densely as output verification", () => {
   const sourceInterval = 1 / SOURCE_SAMPLE_FPS;
   assert.ok(
-    sourceInterval <= OUTPUT_SAMPLE_INTERVAL,
+    sourceInterval <= OUTPUT_SAMPLE_INTERVAL / 2,
     `source samples every ${sourceInterval}s, output every ${OUTPUT_SAMPLE_INTERVAL}s`,
   );
 });
@@ -51,7 +54,7 @@ test("screening judges clips through the render's own geometry", async () => {
   const { createHash } = await import("node:crypto");
   const { SOURCE_FACE_THRESHOLD, SOURCE_SAMPLE_FPS } = await import("../lib/broll.mjs");
   const expected = createHash("sha1")
-    .update(`face:${SOURCE_FACE_THRESHOLD}|fps:${SOURCE_SAMPLE_FPS}|geom:${PORTRAIT_GEOMETRY}`)
+    .update(`face:${SOURCE_FACE_THRESHOLD}|fps:${SOURCE_SAMPLE_FPS}|geom:${PORTRAIT_GEOMETRY}|eq:${PROBE_EQ}`)
     .digest("hex")
     .slice(0, 8);
   assert.equal(SCREEN_POLICY, expected);

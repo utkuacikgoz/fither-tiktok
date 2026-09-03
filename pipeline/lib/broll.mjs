@@ -11,25 +11,32 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { cacheDir, ensureDir, ffmpegPath, repoRoot } from "./env.mjs";
 import { personInJpeg, faceInJpeg } from "./persons.mjs";
-import { OUTPUT_FACE_THRESHOLD, OUTPUT_SAMPLE_INTERVAL } from "./verify.mjs";
+import { OUTPUT_FACE_THRESHOLD, OUTPUT_SAMPLE_INTERVAL, PROBE_EQ } from "./verify.mjs";
 import { PORTRAIT_GEOMETRY } from "./compose.mjs";
 import { shotHistoryIds } from "./shots.mjs";
 
 const pexec = promisify(execFile);
 const MAX_CANDIDATES = 8;
 
-// INVARIANT: screening a source clip must be at least as strict and at least
-// as dense as verifying the finished video, so the render never gets as far
-// as burning six minutes on footage the output gate will reject.
-export const SOURCE_FACE_THRESHOLD = Math.min(0.5, OUTPUT_FACE_THRESHOLD);
-export const SOURCE_SAMPLE_FPS = Math.max(2, 1 / OUTPUT_SAMPLE_INTERVAL);
+// INVARIANT: screening a source clip must be strictly harder to pass than
+// verifying the finished video, so the render never gets as far as burning
+// six minutes on footage the output gate will reject.
+//
+// Matching the output gate exactly is not enough. The composer takes scene
+// segments from staggered offsets in the clip, so the source's sample grid
+// and the finished video's sample grid sit at an arbitrary phase to each
+// other and a brief face can fall between both. Screening therefore samples
+// at twice the output rate and at a markedly lower confidence threshold: the
+// margin, not the match, is what closes the gap.
+export const SOURCE_FACE_THRESHOLD = Math.min(0.35, OUTPUT_FACE_THRESHOLD);
+export const SOURCE_SAMPLE_FPS = Math.max(4, 2 / OUTPUT_SAMPLE_INTERVAL);
 
 // A cached clip is a cached VERDICT: "this passed screening". The cache is
 // restored across CI runs, so keying it by clip id alone let footage accepted
 // under an older, looser policy keep rendering long after the policy tightened.
 // Keying by the policy retires those acceptances automatically.
 export const SCREEN_POLICY = createHash("sha1")
-  .update(`face:${SOURCE_FACE_THRESHOLD}|fps:${SOURCE_SAMPLE_FPS}|geom:${PORTRAIT_GEOMETRY}`)
+  .update(`face:${SOURCE_FACE_THRESHOLD}|fps:${SOURCE_SAMPLE_FPS}|geom:${PORTRAIT_GEOMETRY}|eq:${PROBE_EQ}`)
   .digest("hex")
   .slice(0, 8);
 
@@ -89,7 +96,7 @@ async function framesClean(file, mode, seen) {
   try {
     await pexec(ffmpeg, [
       "-y", "-i", file,
-      "-vf", `fps=${SOURCE_SAMPLE_FPS},${PORTRAIT_GEOMETRY},eq=brightness=0.12:contrast=1.15`,
+      "-vf", `fps=${SOURCE_SAMPLE_FPS},${PORTRAIT_GEOMETRY},${PROBE_EQ}`,
       "-q:v", "4", join(dir, "f-%04d.jpg"),
     ], { maxBuffer: 1 << 24 });
     const frames = readdirSync(dir).sort();

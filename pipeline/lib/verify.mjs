@@ -67,6 +67,9 @@ export async function assertAudioMaster(file, measure = audioMasterMetrics) {
 // these so the two can never drift apart.
 export const OUTPUT_FACE_THRESHOLD = 0.6;
 export const OUTPUT_SAMPLE_INTERVAL = 0.5;
+// Detection is exposure sensitive, so screening and verification must
+// preprocess frames identically.
+export const PROBE_EQ = "eq=brightness=0.1:contrast=1.1";
 
 export function faceSampleTimes(duration, interval = OUTPUT_SAMPLE_INTERVAL) {
   const times = [];
@@ -87,7 +90,7 @@ export async function assertNoFaces(file, duration, options = {}) {
     try {
       await exec(ffmpeg, [
         "-y", "-ss", String(time), "-i", file,
-        "-vf", "eq=brightness=0.1:contrast=1.1",
+        "-vf", PROBE_EQ,
         "-frames:v", "1", "-q:v", "4", frame,
       ], { maxBuffer: 1 << 22 });
       if (!existsSync(frame) || statSync(frame).size === 0) throw new Error("ffmpeg produced no frame");
