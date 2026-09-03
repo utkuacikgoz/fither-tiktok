@@ -23,6 +23,15 @@ const MAX_CANDIDATES = 8;
 export const SOURCE_FACE_THRESHOLD = Math.min(0.5, OUTPUT_FACE_THRESHOLD);
 export const SOURCE_SAMPLE_FPS = Math.max(2, 1 / OUTPUT_SAMPLE_INTERVAL);
 
+// A cached clip is a cached VERDICT: "this passed screening". The cache is
+// restored across CI runs, so keying it by clip id alone let footage accepted
+// under an older, looser policy keep rendering long after the policy tightened.
+// Keying by the policy retires those acceptances automatically.
+export const SCREEN_POLICY = createHash("sha1")
+  .update(`face:${SOURCE_FACE_THRESHOLD}|fps:${SOURCE_SAMPLE_FPS}`)
+  .digest("hex")
+  .slice(0, 8);
+
 // Two scene modes share one gate shape:
 // environment — people may appear (they make scenes feel human) but a
 //               recognizable face must not;
@@ -201,7 +210,7 @@ export async function fetchBroll(query, mode = "environment", excludedIds = new 
     }
     const pick = pickFile(video);
     if (!pick) continue;
-    const file = join(dir, `${mode}-pexels-${video.id}.mp4`);
+    const file = join(dir, `${mode}-${SCREEN_POLICY}-pexels-${video.id}.mp4`);
     const metadata = {
       asset_id: identity,
       source: "pexels",

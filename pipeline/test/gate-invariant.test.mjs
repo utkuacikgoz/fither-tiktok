@@ -29,3 +29,11 @@ test("output verification covers the whole video", () => {
     assert.ok(times[i] - times[i - 1] <= OUTPUT_SAMPLE_INTERVAL + 0.001, "sampling gap too wide");
   }
 });
+
+// A cached clip stands in for a screening verdict. If the cache key ignored
+// the policy, footage accepted under a looser rule would keep rendering after
+// the rule tightened, which is exactly how a face survived three fix attempts.
+test("the screening policy is part of the cache identity", async () => {
+  const { SCREEN_POLICY } = await import("../lib/broll.mjs");
+  assert.match(SCREEN_POLICY, /^[a-f0-9]{8}$/);
+});
