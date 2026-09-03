@@ -1,8 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { generateClip, providersAvailable } from "../lib/generate.mjs";
+import { tmpdir } from "node:os";
+import { characterUri, generateClip, providersAvailable } from "../lib/generate.mjs";
 import { repoRoot } from "../lib/env.mjs";
 
 const withEnv = async (vars, fn) => {
@@ -59,4 +60,21 @@ test("every composed prompt fits Runway's promptText limit", () => {
     assert.ok(prompt.length <= 1000, `${movement}: still prompt is ${prompt.length} chars`);
     assert.ok(motion.length <= 1000, `${movement}: motion prompt is ${motion.length} chars`);
   }
+});
+
+// Runway asset URLs expire within a day or two and the candidates branch is
+// force-pushed by the next casting run, so the approved portrait is kept as
+// bytes in the repo and sent inline. A pinned character that silently
+// unpins is worse than no character at all.
+test("the character reference is sent inline when it is a repo file", () => {
+  assert.equal(characterUri(null), null);
+  assert.equal(characterUri("https://example.com/her.jpg"), "https://example.com/her.jpg");
+  const png = join(tmpdir(), `fither-character-${process.pid}.png`);
+  writeFileSync(png, Buffer.from("89504e470d0a1a0a", "hex"));
+  try {
+    assert.equal(characterUri(png), `data:image/png;base64,${readFileSync(png).toString("base64")}`);
+  } finally {
+    rmSync(png, { force: true });
+  }
+  assert.throws(() => characterUri("/tmp/her.gif"), /expected a \.jpg, \.png or \.webp/);
 });

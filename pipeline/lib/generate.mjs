@@ -8,12 +8,35 @@
 //
 // Implemented against Runway's published API: api.dev.runwayml.com v1, a
 // dated X-Runway-Version header, and task polling.
+import { readFileSync } from "node:fs";
+import { extname } from "node:path";
+
 const RUNWAY_BASE = process.env.RUNWAY_BASE_URL || "https://api.dev.runwayml.com/v1";
 const RUNWAY_VERSION = process.env.RUNWAY_API_VERSION || "2024-11-06";
 const VIDEO_MODEL = process.env.RUNWAY_VIDEO_MODEL || "gen4_turbo";
 const IMAGE_MODEL = process.env.RUNWAY_IMAGE_MODEL || "gen4_image";
 const VIDEO_RATIO = process.env.RUNWAY_VIDEO_RATIO || "720:1280";
 const IMAGE_RATIO = process.env.RUNWAY_IMAGE_RATIO || "1080:1920";
+
+// Runway's own asset URLs expire within a day or two, so pinning the
+// recurring character to one would quietly unpin her: the reference would
+// 404 and every later clip would invent a new stranger. The approved
+// portrait therefore lives in the repo as a file, and is sent inline as a
+// data URI. Runway caps a data URI at 5MB.
+const CHARACTER_URI_LIMIT = 5 * 1024 * 1024;
+const IMAGE_MIME = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
+
+export function characterUri(reference) {
+  if (!reference) return null;
+  if (/^(https:\/\/|data:)/.test(reference)) return reference;
+  const mime = IMAGE_MIME[extname(reference).toLowerCase()];
+  if (!mime) throw new Error(`character reference ${reference}: expected a .jpg, .png or .webp file`);
+  const uri = `data:${mime};base64,${readFileSync(reference).toString("base64")}`;
+  if (uri.length > CHARACTER_URI_LIMIT) {
+    throw new Error(`character reference ${reference}: ${uri.length} bytes encoded, over Runway's ${CHARACTER_URI_LIMIT} limit`);
+  }
+  return uri;
+}
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -94,11 +117,12 @@ export async function generateClip(provider, { prompt, motion, duration = 5, see
 
   // A reference image pins the recurring character, so the same woman
   // appears in every movement instead of a new stranger per clip.
+  const reference = characterUri(character);
   const imageTask = await post("/text_to_image", {
     model: IMAGE_MODEL,
     promptText: prompt,
     ratio: IMAGE_RATIO,
-    ...(character ? { referenceImages: [{ uri: character, tag: "character" }] } : {}),
+    ...(reference ? { referenceImages: [{ uri: reference, tag: "character" }] } : {}),
     ...(seed === undefined ? {} : { seed }),
   });
   const promptImage = await awaitTask(imageTask);

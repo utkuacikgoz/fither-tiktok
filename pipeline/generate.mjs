@@ -35,7 +35,17 @@ const book = JSON.parse(readFileSync(join(repoRoot, "assets", "generation-prompt
 // is explicitly generating the portraits themselves.
 const characterPath = join(repoRoot, "assets", "character.json");
 const character = existsSync(characterPath) ? JSON.parse(readFileSync(characterPath, "utf8")) : null;
-if (!character?.approved_url && process.env.GENERATION_ALLOW_NO_CHARACTER !== "1") {
+// The portrait is a file committed to this repo, not a provider URL: Runway's
+// own asset URLs expire within a day or two, which would silently unpin the
+// character. approved_url stays supported for a durable URL you host.
+const characterReference = character?.approved_file
+  ? join(repoRoot, character.approved_file)
+  : character?.approved_url ?? null;
+if (characterReference && character.approved_file && !existsSync(characterReference)) {
+  console.error(`assets/character.json points at ${character.approved_file}, which is not in the repo.`);
+  process.exit(1);
+}
+if (!characterReference && process.env.GENERATION_ALLOW_NO_CHARACTER !== "1") {
   console.error("No approved character in assets/character.json. Approve a reference portrait first, or set GENERATION_ALLOW_NO_CHARACTER=1 to generate without one.");
   process.exit(1);
 }
@@ -131,7 +141,7 @@ for (const movement of requested) {
       const seed = parseInt(createHash("sha1").update(label).digest("hex").slice(0, 8), 16) % 4294967295;
       let clip;
       try {
-        clip = await generateClip(provider, { prompt, motion, duration: CLIP_SECONDS, seed, character: character?.approved_url });
+        clip = await generateClip(provider, { prompt, motion, duration: CLIP_SECONDS, seed, character: characterReference });
       } catch (e) {
         console.log(`  ${label}: generation failed (${e.message.slice(0, 200)})`);
         continue;
@@ -155,7 +165,7 @@ for (const movement of requested) {
       results.push({
         movement,
         source: "generated",
-        character: clip.character,
+        character: character?.approved_file ?? character?.approved_url ?? null,
         provider: clip.provider,
         model: clip.model,
         prompt,

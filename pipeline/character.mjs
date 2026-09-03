@@ -6,8 +6,9 @@
 // Run in CI (needs RUNWAY_API_SECRET): node pipeline/character.mjs
 // Output: character/portrait-N.jpg + character/review.html
 //
-// Nothing here approves anything. The owner picks one portrait, and its URL
-// goes into assets/character.json as approved_url.
+// Nothing here approves anything. The owner picks one portrait; it is
+// committed into the repo and named in assets/character.json as
+// approved_file, because Runway's own asset URLs expire within a day or two.
 import { writeFileSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { repoRoot, ensureDir } from "./lib/env.mjs";
@@ -48,8 +49,11 @@ writeFileSync(
   `<!doctype html><meta charset="utf-8"><title>Character candidates</title>
 <style>body{font:14px system-ui;margin:24px}figure{display:inline-block;margin:8px;width:300px}img{width:100%}</style>
 <h1>Recurring character candidates</h1>
-<p>Pick one. Its URL goes into <code>assets/character.json</code> as
-<code>approved_url</code>, and every generated clip from then on shows her.</p>
+<p>Pick one. Its file is committed into the repo at
+<code>assets/character/portrait.jpg</code> and named in
+<code>assets/character.json</code> as <code>approved_file</code>, and every
+generated clip from then on shows her. The Runway URLs below expire within a
+day or two, which is why the bytes are kept rather than the link.</p>
 ${results.map((r) => `<figure><img src="${r.file}"><figcaption>portrait-${r.index}</figcaption></figure>`).join("")}\n`,
 );
 

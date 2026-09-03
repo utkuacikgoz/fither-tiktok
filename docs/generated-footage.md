@@ -103,18 +103,24 @@ those things.
 
 ## Casting the character
 
-Generation refuses to run until `assets/character.json` carries an
-`approved_url`, because without one every clip invents a new stranger.
+Generation refuses to run until `assets/character.json` names an approved
+portrait, because without one every clip invents a new stranger.
 
 1. **Actions → Cast recurring character → Run workflow** (input: how many
    candidate portraits, default 4).
 2. Results land on the `character-candidates` branch; open
    `character/review.html`.
-3. Paste the chosen portrait's Runway URL into `assets/character.json` as
-   `approved_url`, set `approved_at`, and commit.
+3. Commit the chosen portrait into this repo as
+   `assets/character/portrait.jpg`, set `approved_file` to that path and
+   `approved_at` to the date.
 
-Every later generation passes that portrait as a Runway reference image, so
-the same woman performs every movement.
+The portrait is kept as **bytes, not a link**. Runway's own asset URLs expire
+within a day or two, and the `character-candidates` branch is force-pushed by
+the next casting run, so either would quietly unpin the character: the
+reference would 404 and every later clip would invent a new woman. The file is
+sent inline as a data URI on each generation, and Runway pins her from it, so
+the same woman performs every movement. `approved_url` still works if you
+would rather host the portrait somewhere durable yourself.
 
 ## The machine gate (before you review)
 
