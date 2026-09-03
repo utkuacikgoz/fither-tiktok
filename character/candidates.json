@@ -1,0 +1,35 @@
+{
+  "brief": "Candid full-length phone snapshot of a forty-year-old white European woman standing in her own living room. Fair freckled skin, laugh lines at her eyes, a softer jaw, shoulder-length blonde hair tied back untidily, a bare face. Her build is soft and average: a rounded stomach, fuller upper arms, wider hips, the body of someone who sits at a desk. She wears a loose plain oatmeal cotton t-shirt with short sleeves that hangs to her hips, charcoal leggings, and she is barefoot. She stands relaxed and a little awkward, arms hanging at her sides, her whole body from head to feet inside the frame. Plain bone-white wall and warm oak floor behind her. Soft daylight from one large window at frame left, deep natural shadow falloff. Honest unretouched photograph, real skin texture with visible pores and blemishes, flat everyday colour.",
+  "portraits": [
+    {
+      "index": 0,
+      "url": "https://dnznrvs05pmza.cloudfront.net/fd0dc381-5cbb-4b77-9cdd-af20ac65e2a0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNDkxZmMxNTlkZTg2MDE2YyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4ODU5MDY4MX0.w8lgXkczueoHKn6OPvi7p291VwJpgqIQCGmu63iEz_4",
+      "file": "portrait-0.jpg"
+    },
+    {
+      "index": 1,
+      "url": "https://dnznrvs05pmza.cloudfront.net/65a29621-17c5-4b2c-a3ea-62b79fe0b708.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTkxNWIxY2JiMTA4NzFkNCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4ODU3NTgxOX0.aMkC2L5zDn8Ayfepxl48Rm6U-DztXnTrfcom6pndg0Q",
+      "file": "portrait-1.jpg"
+    },
+    {
+      "index": 2,
+      "url": "https://dnznrvs05pmza.cloudfront.net/d03b347e-7212-4818-bfbd-b2441053bc23.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYmMyN2MwZGU4NmVjMDAwNyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4ODU3Nzg4Nn0.Sf48KdLFvaVFl6gXMzlUQtr8w2hyOg9xWZHllIb2Yl0",
+      "file": "portrait-2.jpg"
+    },
+    {
+      "index": 3,
+      "url": "https://dnznrvs05pmza.cloudfront.net/99b59c5e-2f9b-483a-9f6a-ec4a3d40cf86.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNmRlNDc2NzE0MWFkMWNmYSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4ODU2NTg3M30.txYPuI83-vnmqn49RNx_a4qYRj8jP3oVtN3WVtSIcfk",
+      "file": "portrait-3.jpg"
+    },
+    {
+      "index": 4,
+      "url": "https://dnznrvs05pmza.cloudfront.net/bc6d7c1d-e59c-424e-a191-fbfbd106fd00.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOWRlNzhmY2FkNDYzMjFkZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4ODU2ODEzOH0.0ww3QBXH91Z0dJrNesy-av8--qX8CDp8P8R46DRVfu8",
+      "file": "portrait-4.jpg"
+    },
+    {
+      "index": 5,
+      "url": "https://dnznrvs05pmza.cloudfront.net/17834d8d-9bfe-4d7d-9844-47d19e003c02.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjhhZGNhZWE3MjIzNTc5ZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4ODU3MzQxOH0.W9lr5JAklfgG0cxzXzQ2F047eh-HeFGhR0eMiVVnlh4",
+      "file": "portrait-5.jpg"
+    }
+  ]
+}
