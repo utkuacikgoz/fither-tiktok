@@ -8,8 +8,19 @@ Generation widens the pool without waiting on a shoot.
 Generated clips are footage like any other, so the demo-truth rule holds
 without exception: **machine screening never approves footage.** A generated
 clip enters `assets/demo-library.json` only after a human watches it end to
-end and confirms the exact movement, usable form and no recognizable face in
-any frame.
+end and confirms the exact movement, usable form, and that the person is the
+approved character.
+
+**Faces are allowed here** (owner override, 2026-09-03). The person is
+synthetic, so no real person is depicted and the faceless rule does not
+apply. Stock and owned footage is unchanged: it never shows a face, and the
+render still scans every second of the finished video that is not covered by
+a generated clip.
+
+Two conditions come with that. The character is **one recurring woman**,
+pinned by a reference portrait, because a different synthetic face per clip
+reads as uncanny. And any video carrying her is posted with **TikTok's
+AI-generated-content label** — the posting sheet carries the instruction.
 
 ## The flow
 
@@ -90,13 +101,33 @@ watermarks; and it asks for true skin texture rather than a beauty-filter
 finish. Those lines exist because the week 01 stock QA failed on exactly
 those things.
 
+## Casting the character
+
+Generation refuses to run until `assets/character.json` carries an
+`approved_url`, because without one every clip invents a new stranger.
+
+1. **Actions → Cast recurring character → Run workflow** (input: how many
+   candidate portraits, default 4).
+2. Results land on the `character-candidates` branch; open
+   `character/review.html`.
+3. Paste the chosen portrait's Runway URL into `assets/character.json` as
+   `approved_url`, set `approved_at`, and commit.
+
+Every later generation passes that portrait as a Runway reference image, so
+the same woman performs every movement.
+
 ## The machine gate (before you review)
 
-Each clip is sampled at nine points across its length, brightened, and
-checked. Any frame with a detected face at a strict 0.35 threshold rejects
-the clip; a clip with no person detected anywhere is also rejected. Survivors
-go into `candidates.json` with `movement_verified: false` and
-`faceless_verified: false` — the honest starting state.
+Each clip is sampled at nine points across its length and checked for a
+person. A clip with nobody in frame is rejected: the model produced a room
+instead of a demo. Faces are no longer a rejection here, since the person is
+synthetic. Survivors go into `candidates.json` with
+`movement_verified: false` — the honest starting state.
+
+What the machine cannot judge is what actually matters now: whether the
+movement is the named movement, whether the form is usable, and whether the
+limbs are anatomically right. Generated exercise video fails on all three
+regularly. That is what your review is for.
 
 ## Approving a clip
 
@@ -113,8 +144,7 @@ into `assets/demo-library.json` under its movement, adding the review fields:
   "sha256": "…",
   "duration": 5,
   "movement_verified": true,
-  "faceless_verified": true,
-  "reviewed_at": "2026-09-02"
+  "reviewed_at": "2026-09-03"
 }
 ```
 

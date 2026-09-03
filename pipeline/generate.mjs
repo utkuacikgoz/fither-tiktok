@@ -13,11 +13,10 @@ import { join } from "node:path";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { repoRoot, ensureDir, ffmpegPath } from "./lib/env.mjs";
-import { personInJpeg, faceInJpeg } from "./lib/persons.mjs";
+import { personInJpeg } from "./lib/persons.mjs";
 import { generateClip, providersAvailable } from "./lib/generate.mjs";
 
 const pexec = promisify(execFile);
-const FACE_THRESHOLD = 0.35; // strict: generation is cheap, a leaked face is not
 const REVIEW_SAMPLES = 9;
 const CLIP_SECONDS = Number(process.env.GENERATION_SECONDS || 5);
 const PER_MOVEMENT = Number(process.env.GENERATION_TAKES || 2);
@@ -31,6 +30,15 @@ if (providers.length === 0) {
 }
 
 const book = JSON.parse(readFileSync(join(repoRoot, "assets", "generation-prompts.json"), "utf8"));
+// The recurring character. Until a portrait is approved every clip would
+// invent a new stranger, so generation refuses to run without one unless it
+// is explicitly generating the portraits themselves.
+const characterPath = join(repoRoot, "assets", "character.json");
+const character = existsSync(characterPath) ? JSON.parse(readFileSync(characterPath, "utf8")) : null;
+if (!character?.approved_url && process.env.GENERATION_ALLOW_NO_CHARACTER !== "1") {
+  console.error("No approved character in assets/character.json. Approve a reference portrait first, or set GENERATION_ALLOW_NO_CHARACTER=1 to generate without one.");
+  process.exit(1);
+}
 const library = JSON.parse(readFileSync(join(repoRoot, "assets", "demo-library.json"), "utf8"));
 
 // Default target: every movement in the prompt book that has no approved
@@ -84,8 +92,10 @@ async function mediaDuration(file) {
   return Number(match[1]) * 3600 + Number(match[2]) * 60 + Number(match[3]);
 }
 
-// Same gate the curation flow uses: every sampled frame must be face-free
-// and at least one must actually contain a person doing the movement.
+// Generated footage may show a face (owner override, 2026-09-03): the
+// person is synthetic, so the only machine requirement is that somebody is
+// actually in frame doing the movement. Whether the movement is right, the
+// form usable and the character on-brand is decided by full-motion review.
 async function gate(file, duration, label) {
   const dur = Math.max(1, duration || CLIP_SECONDS);
   let personSeen = false;
@@ -100,10 +110,6 @@ async function gate(file, duration, label) {
     ], { maxBuffer: 1 << 22 }).catch(() => {});
     if (!existsSync(frame)) continue;
     const buf = readFileSync(frame);
-    if (await faceInJpeg(buf, FACE_THRESHOLD)) {
-      for (const f of [...kept, frame]) rmSync(f, { force: true });
-      return { ok: false, reason: "face detected" };
-    }
     if (await personInJpeg(buf)) personSeen = true;
     kept.push(frame);
   }
@@ -125,7 +131,7 @@ for (const movement of requested) {
       const seed = parseInt(createHash("sha1").update(label).digest("hex").slice(0, 8), 16) % 4294967295;
       let clip;
       try {
-        clip = await generateClip(provider, { prompt, motion, duration: CLIP_SECONDS, seed });
+        clip = await generateClip(provider, { prompt, motion, duration: CLIP_SECONDS, seed, character: character?.approved_url });
       } catch (e) {
         console.log(`  ${label}: generation failed (${e.message.slice(0, 200)})`);
         continue;
@@ -149,6 +155,7 @@ for (const movement of requested) {
       results.push({
         movement,
         source: "generated",
+        character: clip.character,
         provider: clip.provider,
         model: clip.model,
         prompt,
@@ -160,7 +167,6 @@ for (const movement of requested) {
         url: `${RAW_BASE}/generation/clips/${label}.mp4`,
         frames: verdict.frames,
         movement_verified: false,
-        faceless_verified: false,
       });
       console.log(`  ${label}: KEPT (${duration.toFixed(1)}s, ${clip.provider})`);
     }
@@ -182,7 +188,7 @@ writeFileSync(
 <h1>Generated demo candidates</h1>
 <p>Machine screening only. Watch every clip end to end before approving any of
 them into <code>assets/demo-library.json</code>: the movement must be the named
-movement, the form usable, and no recognizable face in any frame.</p>
+movement, the form usable, and the person must match the approved character.</p>
 ${rows}\n`,
 );
 

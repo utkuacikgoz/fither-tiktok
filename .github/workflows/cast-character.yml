@@ -1,0 +1,55 @@
+name: Cast recurring character
+
+on:
+  workflow_dispatch:
+    inputs:
+      takes:
+        description: "Candidate portraits to generate"
+        required: false
+        default: "4"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cast-character
+  cancel-in-progress: true
+
+jobs:
+  cast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check generation secret
+        env:
+          RUNWAY_API_SECRET: ${{ secrets.RUNWAY_API_SECRET }}
+        run: |
+          if [ -z "$RUNWAY_API_SECRET" ]; then
+            echo "::error::repository secret RUNWAY_API_SECRET is not set"
+            exit 1
+          fi
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Install pipeline dependencies
+        working-directory: pipeline
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate candidate portraits
+        env:
+          RUNWAY_API_SECRET: ${{ secrets.RUNWAY_API_SECRET }}
+          CHARACTER_TAKES: ${{ inputs.takes }}
+        run: node pipeline/character.mjs
+
+      - name: Push character branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch --orphan character-candidates
+          git add -f character
+          git commit -m "Character candidates (run ${{ github.run_id }})"
+          git push -f origin character-candidates

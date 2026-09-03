@@ -1,0 +1,6 @@
+{
+  "_readme": "The channel's recurring generated character. Runway pins a person across shots from a reference image, so every generated clip shows the same woman rather than a new stranger. Cast candidates with the 'Cast recurring character' workflow, then paste the chosen portrait's Runway URL into approved_url. Generation refuses to run until this is set.",
+  "approved_url": null,
+  "approved_at": null,
+  "notes": "An ordinary woman in her mid-thirties, calm and capable, unstyled. She is synthetic: no real person is depicted, and no claim is ever made that she is a real customer or trainer."
+}

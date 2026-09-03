@@ -33,7 +33,11 @@ export function buildAssetReport(specs, library, animationLibrary) {
         if (typeof clip.prompt !== "string" || !clip.prompt.trim()) errors.push(`${movement}[${index}]: generated clip needs its prompt`);
       }
       if (clip.movement_verified !== true) errors.push(`${movement}[${index}]: movement_verified must be true`);
-      if (clip.faceless_verified !== true) errors.push(`${movement}[${index}]: faceless_verified must be true`);
+      // Generated footage is exempt from the faceless rule (owner override,
+      // 2026-09-03): the person is synthetic. Stock and owned footage is not.
+      if (clip.source !== "generated" && clip.faceless_verified !== true) {
+        errors.push(`${movement}[${index}]: faceless_verified must be true`);
+      }
       if (!/^\d{4}-\d{2}-\d{2}$/.test(clip.reviewed_at ?? "")) errors.push(`${movement}[${index}]: invalid reviewed_at`);
       const id = clip.source === "pexels" ? `pexels:${clip.pexels_id}` : `${clip.source}:${clip.sha256}`;
       if (ids.has(id)) errors.push(`${movement}[${index}]: source duplicates ${ids.get(id)}`);

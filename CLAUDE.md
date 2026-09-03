@@ -54,14 +54,23 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - **Wrist caveat**: the app library has no wrist-neutral push variants yet.
   Never promise "wrist-friendly push-ups"; sore wrists mean pull, squat,
   hinge and core content, and say so honestly.
-- **Faceless**: no face ever appears. Voice is the persona — the same
-  ElevenLabs voice as the app's in-session guidance. Faceless is about
-  faces, not about empty rooms: people belong in frame (hands, feet, backs,
-  silhouettes) because a room with nobody in it reads as stock footage.
+- **Faceless, with one exception** (owner override, 2026-09-03): stock and
+  owned footage never shows a face. Generated footage may, because the
+  person is synthetic and no real person is depicted. Voice is still the
+  persona — the same ElevenLabs voice as the app's in-session guidance.
+  Faceless is about faces, not about empty rooms: people belong in frame
+  (hands, feet, backs, silhouettes) because a room with nobody in it reads
+  as stock footage.
+- **One recurring character**: generated people are pinned to a single
+  approved reference portrait so the same woman appears across every video.
+  A different synthetic face each time reads as uncanny and cheap.
+- **AI disclosure**: any video carrying a generated person is posted with
+  TikTok's AI-generated-content label. The posting sheet says so per video.
 - **Demo truth**: machine screening never approves footage. A demo enters
   `assets/demo-library.json` only after full-motion review confirms the exact
-  movement, usable form framing and no recognizable face in any frame. This
-  applies to generated footage exactly as it does to stock; see
+  movement and usable form framing, that stock and owned clips show no
+  recognizable face, and that a generated clip shows the approved character.
+  This applies to generated footage exactly as it does to stock; see
   `docs/generated-footage.md`.
 - Never plan around trending sounds. They expire before filming.
 - **No AI attribution anywhere in the repo** (owner rule, 2026-09-02; same

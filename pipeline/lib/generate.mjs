@@ -70,18 +70,35 @@ async function post(path, body) {
   return id;
 }
 
+// A single still, used to cast the channel's recurring character. The URL it
+// returns becomes the reference every later generation is pinned to.
+export async function runwayPortrait({ prompt, seed } = {}) {
+  if (!prompt?.trim()) throw new Error("runwayPortrait needs a prompt");
+  if (!runwayAvailable()) throw new Error("RUNWAY_API_SECRET is not set");
+  const task = await post("/text_to_image", {
+    model: IMAGE_MODEL,
+    promptText: prompt,
+    ratio: IMAGE_RATIO,
+    ...(seed === undefined ? {} : { seed }),
+  });
+  return awaitTask(task);
+}
+
 // Gen-4 Turbo animates a starting frame, so a still is generated first.
 // The still is where body-only framing is won or lost, which is why the
 // prompt book describes the crop and not just the movement.
-export async function generateClip(provider, { prompt, motion, duration = 5, seed } = {}) {
+export async function generateClip(provider, { prompt, motion, duration = 5, seed, character } = {}) {
   if (provider !== "runway") throw new Error(`unknown provider "${provider}"`);
   if (!prompt || !prompt.trim()) throw new Error("generateClip needs a prompt");
   if (!runwayAvailable()) throw new Error("RUNWAY_API_SECRET is not set");
 
+  // A reference image pins the recurring character, so the same woman
+  // appears in every movement instead of a new stranger per clip.
   const imageTask = await post("/text_to_image", {
     model: IMAGE_MODEL,
     promptText: prompt,
     ratio: IMAGE_RATIO,
+    ...(character ? { referenceImages: [{ uri: character, tag: "character" }] } : {}),
     ...(seed === undefined ? {} : { seed }),
   });
   const promptImage = await awaitTask(imageTask);
@@ -95,5 +112,5 @@ export async function generateClip(provider, { prompt, motion, duration = 5, see
     ...(seed === undefined ? {} : { seed }),
   });
   const url = await awaitTask(videoTask);
-  return { url, provider: "runway", model: VIDEO_MODEL, still: promptImage };
+  return { url, provider: "runway", model: VIDEO_MODEL, still: promptImage, character: character ?? null };
 }

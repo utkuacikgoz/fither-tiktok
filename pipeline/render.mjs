@@ -14,7 +14,7 @@ import { fetchApprovedAnimation } from "./lib/animations.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
 import { rebuildSchedule } from "./lib/schedule.mjs";
-import { assertAudioMaster, assertVoiceAudible, createQaSheet, findFaces } from "./lib/verify.mjs";
+import { assertAudioMaster, assertVoiceAudible, createQaSheet, faceSampleTimes, findFaces } from "./lib/verify.mjs";
 import { renderSoundBed } from "./lib/sound.mjs";
 
 function writeDeliveryText(outDir, spec, notes) {
@@ -198,10 +198,20 @@ export async function renderOne(scriptPath) {
   // the clip that produced the offending frame is blocked and its scene
   // re-sourced, so a miss costs one recomposition instead of the whole
   // render. Fails closed if re-sourcing cannot clear it.
+  //
+  // Scenes carrying generated footage are exempt (owner override,
+  // 2026-09-03): that person is synthetic and may show a face. Every other
+  // second of the video is still scanned, so a real face from stock is
+  // caught exactly as before.
   const MAX_RESOURCE_ATTEMPTS = 3;
   for (let attempt = 1; ; attempt++) {
     await composeVideo({ spec, sceneFiles, overlays, voFiles, soundBedFile, out });
-    const hits = await findFaces(out, spec.duration);
+    const generatedWindows = spec.scenes
+      .filter((scene) => selectedAssets.some((a) => a.scene_start === scene.start && a.source === "generated"))
+      .map((scene) => [scene.start, scene.end]);
+    const times = faceSampleTimes(spec.duration)
+      .filter((t) => !generatedWindows.some(([from, to]) => t >= from && t < to));
+    const hits = await findFaces(out, spec.duration, { times });
     if (hits.length === 0) break;
 
     const offenders = new Set();
