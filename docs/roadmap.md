@@ -94,11 +94,10 @@ the owner capture brief, not further query tuning.
       is retired for these: the shot book gains an environment section and
       the recurring character appears in them, rather than a room standing
       empty. Approval is unchanged, full-motion review per clip.
-- [ ] **Emit the AI-disclosure line in the posting sheet, per video.** A
-      blocker on the first post, not a nicety. Runway's C2PA credentials do
-      not survive the ffmpeg re-encode, so TikTok will not auto-label and the
-      manual toggle is the only thing that applies it. Until this ships, the
-      instruction lives only in CLAUDE.md, where nobody reads it at 7am.
+- [x] Emit the AI-disclosure line in the posting sheet, per video, driven by
+      the render's asset record. A video with no record reads "unknown"
+      rather than silently reading as safe, because Runway's C2PA credentials
+      do not survive the ffmpeg re-encode and nothing auto-labels the upload.
 - [x] Upgrade slideshows with a strict 4-8 slide contract, safe-zone design,
       progress/cues, CTA treatment and a visual golden fixture
 - [x] Workflow concurrency group (cancel superseded runs)

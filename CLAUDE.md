@@ -137,8 +137,7 @@ are held on footage. That is the point of the split, not a side effect.
   them with a posting sheet.
 - **Before posting anything with the generated character**: switch on
   TikTok's AI-generated-content label in the posting flow. The posting sheet
-  does **not** carry this instruction yet; emitting it per video is a
-  blocker on the first post, tracked in `docs/roadmap.md`.
+  names which videos need it.
 - **Daily, 5 min**: post the day's three from the posting sheet, spaced
   across the day rather than back to back.
 - **Friday, 10 min**: paste the week's numbers into `data/performance.csv`.
