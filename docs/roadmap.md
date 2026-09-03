@@ -48,6 +48,26 @@ standing work orders.
 
 ### P0 — this week (raises what every video looks like)
 
+**Owner QA verdict, 2026-09-03: week 01 renders are NOT postable.** Every
+machine gate passed (faceless, loudness, audible voice, 60s contract) and
+the footage still fails the brand bar on human review. Found across the
+seven QA sheets: a visible stock watermark over the closing scene of the
+push-up ladder; a body-focused underwear shot opening train-to-carry, which
+is forbidden territory; third-party gym branding (a fighting academy) in the
+same video; a kettlebell in the zero-noise session, which breaks the
+equipment-free promise; irrelevant visuals standing in for movements (a car
+steering wheel for incline push-ups, eggs in a bowl for sit-to-stands, an
+office computer for doorframe rows); and several scenes falling back to the
+brand gradient because nothing acceptable was found.
+
+This is the demo-truth rule applied to environment footage: machine
+screening never approves footage. Query-based stock sourcing cannot reach
+this bar, because the queries describe a subject while the brand cares about
+framing, context and props the search cannot express. The route forward is
+generated footage (docs/generated-footage.md, awaiting provider keys) and
+the owner capture brief, not further query tuning.
+
+
 - [x] Burned line-level captions from measured VO timing + .srt sidecar
 - [x] Scene auto-cutting: split scenes >4s across 2-3 clips from the same
       query/demo pool; cut on beat boundaries
