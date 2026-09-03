@@ -21,6 +21,7 @@ const FACE_THRESHOLD = 0.35; // strict: generation is cheap, a leaked face is no
 const REVIEW_SAMPLES = 9;
 const CLIP_SECONDS = Number(process.env.GENERATION_SECONDS || 5);
 const PER_MOVEMENT = Number(process.env.GENERATION_TAKES || 2);
+const PROMPT_LIMIT = 1000; // Runway promptText hard cap
 const RAW_BASE = "https://raw.githubusercontent.com/utkuacikgoz/fither-tiktok/generated-demos";
 
 const providers = providersAvailable();
@@ -64,10 +65,16 @@ const ffmpeg = await ffmpegPath();
 function buildPrompt(movement) {
   const entry = book.movements[movement];
   const framing = entry.framing ?? book.framing;
-  return {
-    prompt: [entry.prompt, framing, book.wardrobe, book.room, book.light, book.camera, book.look].join(" "),
-    motion: [entry.motion, framing].join(" "),
-  };
+  const prompt = [entry.prompt, framing, book.wardrobe, book.room, book.light, book.camera, book.look].join(" ");
+  const motion = [entry.motion, framing].join(" ");
+  // Runway rejects a promptText over 1000 characters with a 400, which cost
+  // a whole run to discover. Fail here, before spending any call.
+  for (const [field, text] of [["prompt", prompt], ["motion", motion]]) {
+    if (text.length > PROMPT_LIMIT) {
+      throw new Error(`${movement}: ${field} is ${text.length} chars, over Runway's ${PROMPT_LIMIT} limit`);
+    }
+  }
+  return { prompt, motion };
 }
 
 async function mediaDuration(file) {
@@ -180,3 +187,7 @@ ${rows}\n`,
 );
 
 console.log(`\nWrote generation/candidates.json (${results.length} candidate(s) from ${providers.join(", ")})`);
+if (results.length === 0) {
+  console.error("No candidate survived generation and gating; see the failures above.");
+  process.exit(1);
+}

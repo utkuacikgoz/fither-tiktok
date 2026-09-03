@@ -47,3 +47,16 @@ test("every prompt-book movement is a real library movement", () => {
     assert.ok(entry.motion?.trim(), `${movement} needs a motion prompt`);
   }
 });
+
+// Runway rejects a promptText over 1000 characters with a 400. A whole run
+// was spent discovering that, so the limit is pinned here.
+test("every composed prompt fits Runway's promptText limit", () => {
+  const book = JSON.parse(readFileSync(join(repoRoot, "assets/generation-prompts.json"), "utf8"));
+  for (const [movement, entry] of Object.entries(book.movements)) {
+    const framing = entry.framing ?? book.framing;
+    const prompt = [entry.prompt, framing, book.wardrobe, book.room, book.light, book.camera, book.look].join(" ");
+    const motion = [entry.motion, framing].join(" ");
+    assert.ok(prompt.length <= 1000, `${movement}: still prompt is ${prompt.length} chars`);
+    assert.ok(motion.length <= 1000, `${movement}: motion prompt is ${motion.length} chars`);
+  }
+});
