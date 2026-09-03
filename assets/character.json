@@ -1,7 +1,8 @@
 {
   "_readme": "The channel's recurring generated character. Runway pins a person across shots from a reference image, so every generated clip shows the same woman rather than a new stranger. Cast candidates with the 'Cast recurring character' workflow, then commit the chosen portrait into this repo and name it in approved_file. Runway's own asset URLs expire within a day or two, so the portrait is a committed file sent inline at generation time; approved_url stays available for a durable URL you host yourself. Generation refuses to run until one of them is set.",
-  "approved_file": null,
+  "approved_file": "assets/character/portrait.jpg",
   "approved_url": null,
-  "approved_at": null,
-  "notes": "An ordinary woman in her mid-thirties, calm and capable, unstyled. She is synthetic: no real person is depicted, and no claim is ever made that she is a real customer or trainer."
+  "approved_at": "2026-09-03",
+  "casting_run": "https://github.com/utkuacikgoz/fither-tiktok/actions/runs/33757469639",
+  "notes": "A white European woman around forty, blonde, ordinary build, bare-faced, in a plain oatmeal t-shirt and charcoal leggings. She is synthetic: no real person is depicted, and no claim is ever made that she is a real customer or trainer. Any video carrying her is posted with TikTok's AI-generated-content label."
 }
