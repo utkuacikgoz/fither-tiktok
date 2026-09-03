@@ -18,22 +18,25 @@ const COUNT = Number(process.env.CHARACTER_TAKES || 4);
 const book = JSON.parse(readFileSync(join(repoRoot, "assets", "generation-prompts.json"), "utf8"));
 
 // The character brief is the brand in one sentence: the woman the channel is
-// for, not a fitness model. The first casting round returned six lean
-// twenty-somethings in crop tops, because "ordinary woman in her mid-thirties"
-// is a hint and image models default to stock-photography glamour. Everything
-// that matters is now stated as a hard constraint with its negative, and the
-// reference is full-body, because a head-and-shoulders brief fought the
-// full-body wardrobe line and the wardrobe won.
+// for, not a fitness model.
+//
+// Two casting rounds were spent learning that Runway drops negations. "No
+// crop top", "no bare midriff" and "not a fitness model" each produced
+// exactly the thing they forbade: the nouns land and the "no" does not. The
+// brief is therefore written with no negations at all. Every constraint is
+// stated as something present in the frame, and the words that pull hardest
+// toward a sportswear lookbook (portrait, posed, fitness) are simply absent.
+// Age is described by its markers rather than asserted as a number, for the
+// same reason: "thirty-eight" is a token, laugh lines are an instruction.
 const BRIEF = [
-  "Full-body reference photograph of an ordinary woman aged thirty-eight, standing squarely facing the camera, arms relaxed at her sides, feet hip-width apart, bare feet.",
-  "Everyday average build with a soft midsection. She is not lean, not muscular, not a fitness model.",
-  "Bare face, no makeup, no jewellery, fine lines around the eyes, real unretouched skin.",
-  "Mid-brown hair loosely tied back with strands come loose. Calm, ordinary, unposed expression.",
-  "She wears a loose oatmeal cotton tank that fully covers her waist and charcoal leggings. No crop top, no bare midriff, no sportswear branding.",
-  "Plain bone-white wall behind her, softly defocused. No gym, no equipment, no mirror.",
-  "No fashion posing, no hand on hip, no arched back, no studio glamour lighting.",
+  "Candid full-length phone snapshot of a forty-year-old woman standing in her own living room.",
+  "Laugh lines at her eyes, a few grey strands through mid-brown hair tied back untidily, a bare face.",
+  "Her build is soft and average: a rounded stomach, fuller upper arms, wider hips, the body of someone who sits at a desk.",
+  "She wears a plain oatmeal cotton vest top tucked into the waistband of charcoal leggings, covering her stomach and lower back, and she is barefoot.",
+  "She stands relaxed and a little awkward, arms hanging at her sides, her whole body from head to feet inside the frame.",
+  "Plain bone-white wall and warm oak floor behind her.",
   book.light,
-  book.look,
+  "Honest unretouched photograph, real skin texture with visible pores and blemishes, flat everyday colour.",
 ].join(" ");
 if (BRIEF.length > 1000) throw new Error(`character brief is ${BRIEF.length} chars, over Runway's 1000 limit`);
 
