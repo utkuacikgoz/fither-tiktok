@@ -63,7 +63,12 @@ export async function assertAudioMaster(file, measure = audioMasterMetrics) {
   return metrics;
 }
 
-export function faceSampleTimes(duration, interval = 0.5) {
+// The finished-video face check. Source screening in broll.mjs keys off
+// these so the two can never drift apart.
+export const OUTPUT_FACE_THRESHOLD = 0.6;
+export const OUTPUT_SAMPLE_INTERVAL = 0.5;
+
+export function faceSampleTimes(duration, interval = OUTPUT_SAMPLE_INTERVAL) {
   const times = [];
   for (let time = 0.5; time < duration; time += interval) times.push(Math.min(time, duration - 0.05));
   return [...new Set(times.map((time) => Number(time.toFixed(3))))];
@@ -86,7 +91,7 @@ export async function assertNoFaces(file, duration, options = {}) {
         "-frames:v", "1", "-q:v", "4", frame,
       ], { maxBuffer: 1 << 22 });
       if (!existsSync(frame) || statSync(frame).size === 0) throw new Error("ffmpeg produced no frame");
-      if (await detect(readFileSync(frame), 0.6)) hits.push(`${time.toFixed(1)}s`);
+      if (await detect(readFileSync(frame), OUTPUT_FACE_THRESHOLD)) hits.push(`${time.toFixed(1)}s`);
     } catch (cause) {
       throw new Error(`faceless verification failed at ${time.toFixed(1)}s: ${cause.message}`);
     } finally {

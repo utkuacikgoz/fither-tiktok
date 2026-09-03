@@ -5,16 +5,23 @@
 // no person looks weird"). Without PEXELS_API_KEY every scene falls back
 // to a slow brand gradient.
 import { createHash } from "node:crypto";
-import { writeFileSync, readFileSync, renameSync, rmSync, existsSync } from "node:fs";
+import { writeFileSync, readFileSync, readdirSync, renameSync, rmSync, existsSync, mkdtempSync } from "node:fs";
 import { join } from "node:path";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { cacheDir, ensureDir, ffmpegPath, repoRoot } from "./env.mjs";
 import { personInJpeg, faceInJpeg } from "./persons.mjs";
+import { OUTPUT_FACE_THRESHOLD, OUTPUT_SAMPLE_INTERVAL } from "./verify.mjs";
 import { shotHistoryIds } from "./shots.mjs";
 
 const pexec = promisify(execFile);
 const MAX_CANDIDATES = 8;
+
+// INVARIANT: screening a source clip must be at least as strict and at least
+// as dense as verifying the finished video, so the render never gets as far
+// as burning six minutes on footage the output gate will reject.
+export const SOURCE_FACE_THRESHOLD = Math.min(0.5, OUTPUT_FACE_THRESHOLD);
+export const SOURCE_SAMPLE_FPS = Math.max(2, 1 / OUTPUT_SAMPLE_INTERVAL);
 
 // Two scene modes share one gate shape:
 // environment — people may appear (they make scenes feel human) but a
@@ -22,7 +29,7 @@ const MAX_CANDIDATES = 8;
 // demo        — a person MUST appear (body-only exercise footage) and a
 //               recognizable face must not.
 async function jpegAcceptable(buf, mode, seen) {
-  if (await faceInJpeg(buf, 0.6)) return false;
+  if (await faceInJpeg(buf, SOURCE_FACE_THRESHOLD)) return false;
   if (mode === "demo" && (await personInJpeg(buf))) seen.person = true;
   return true;
 }
@@ -59,26 +66,34 @@ async function thumbnailsClean(video, mode, seen) {
   return true;
 }
 
-// Second gate on the actual file: sample frames across the clip. Frames
-// are brightened before detection — a dark kitchen once hid a person from
-// the detector at native exposure.
-async function framesClean(file, duration, mode, seen) {
+// Second gate on the actual file. This must be at least as dense and at
+// least as strict as the post-render check in verify.mjs, or a face slips
+// into a clip here and is only caught after a six minute render. Frames are
+// brightened before detection — a dark kitchen once hid a person from the
+// detector at native exposure — and extracted in a single ffmpeg pass, so
+// sampling the whole clip costs one process rather than one per frame.
+async function framesClean(file, mode, seen) {
   const ffmpeg = await ffmpegPath();
-  const dur = Math.max(1, duration || 10);
-  for (const frac of [0.08, 0.35, 0.65, 0.92]) {
-    const frame = `${file}.probe.jpg`;
-    try {
-      await pexec(ffmpeg, [
-        "-y", "-ss", String((dur * frac).toFixed(2)), "-i", file,
-        "-vf", "eq=brightness=0.12:contrast=1.15",
-        "-frames:v", "1", "-q:v", "4", frame,
-      ], { maxBuffer: 1 << 22 });
-      if (existsSync(frame) && !(await jpegAcceptable(readFileSync(frame), mode, seen))) return false;
-    } finally {
-      rmSync(`${file}.probe.jpg`, { force: true });
+  const dir = mkdtempSync(join(ensureDir(cacheDir), "probe-"));
+  try {
+    await pexec(ffmpeg, [
+      "-y", "-i", file,
+      "-vf", `fps=${SOURCE_SAMPLE_FPS},eq=brightness=0.12:contrast=1.15`,
+      "-q:v", "4", join(dir, "f-%04d.jpg"),
+    ], { maxBuffer: 1 << 24 });
+    const frames = readdirSync(dir).sort();
+    if (frames.length === 0) return false;
+    for (const name of frames) {
+      const buf = readFileSync(join(dir, name));
+      if (await faceInJpeg(buf, SOURCE_FACE_THRESHOLD)) return false;
+      // Environment scenes do not care whether a person is present, so the
+      // person detector only runs where the answer changes a decision.
+      if (mode === "demo" && !seen.person && (await personInJpeg(buf))) seen.person = true;
     }
+    return true;
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
   }
-  return true;
 }
 
 function pickFile(video) {
@@ -203,7 +218,7 @@ export async function fetchBroll(query, mode = "environment", excludedIds = new 
     if (!dl.ok) continue;
     const tmp = `${file}.tmp`;
     writeFileSync(tmp, Buffer.from(await dl.arrayBuffer()));
-    if (await framesClean(tmp, video.duration, mode, seen)) {
+    if (await framesClean(tmp, mode, seen)) {
       if (mode === "demo" && !seen.person) {
         console.log(`  broll "${query}" [demo]: candidate ${video.id} rejected (no person doing the movement)`);
         rmSync(tmp, { force: true });
