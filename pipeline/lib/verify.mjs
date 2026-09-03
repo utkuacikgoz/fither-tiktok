@@ -77,7 +77,10 @@ export function faceSampleTimes(duration, interval = OUTPUT_SAMPLE_INTERVAL) {
   return [...new Set(times.map((time) => Number(time.toFixed(3))))];
 }
 
-export async function assertNoFaces(file, duration, options = {}) {
+// Returns the timestamps where a face is visible in a finished video.
+// Callers that can act on the answer (re-sourcing the offending scene) use
+// this; assertNoFaces is the fail-closed wrapper for callers that cannot.
+export async function findFaces(file, duration, options = {}) {
   const ffmpeg = options.ffmpeg ?? await ffmpegPath();
   const detect = options.detect ?? faceInJpeg;
   const exec = options.exec ?? pexec;
@@ -94,14 +97,21 @@ export async function assertNoFaces(file, duration, options = {}) {
         "-frames:v", "1", "-q:v", "4", frame,
       ], { maxBuffer: 1 << 22 });
       if (!existsSync(frame) || statSync(frame).size === 0) throw new Error("ffmpeg produced no frame");
-      if (await detect(readFileSync(frame), OUTPUT_FACE_THRESHOLD)) hits.push(`${time.toFixed(1)}s`);
+      if (await detect(readFileSync(frame), OUTPUT_FACE_THRESHOLD)) hits.push(time);
     } catch (cause) {
       throw new Error(`faceless verification failed at ${time.toFixed(1)}s: ${cause.message}`);
     } finally {
       rmSync(frame, { force: true });
     }
   }
-  if (hits.length) throw new Error(`faceless verification detected a face at ${hits.join(", ")}`);
+  return hits;
+}
+
+export async function assertNoFaces(file, duration, options = {}) {
+  const hits = await findFaces(file, duration, options);
+  if (hits.length) {
+    throw new Error(`faceless verification detected a face at ${hits.map((t) => `${t.toFixed(1)}s`).join(", ")}`);
+  }
 }
 
 export async function createQaSheet(file, out, options = {}) {

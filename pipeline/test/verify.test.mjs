@@ -6,6 +6,7 @@ import { tmpdir } from "node:os";
 import {
   assertAudioMaster,
   assertNoFaces,
+  findFaces,
   assertVoiceAudible,
   faceSampleTimes,
   parseAudioMasterMetrics,
@@ -56,4 +57,35 @@ test("face gate fails closed on extraction errors and detections", async () => {
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
+});
+
+test("findFaces reports the timestamps a face appears at", async () => {
+  const times = [1, 2, 3];
+  const hits = await findFaces("clip.mp4", 5, {
+    ffmpeg: "ffmpeg",
+    times,
+    exec: async (_bin, args) => {
+      writeFileSync(args.at(-1), "jpeg-bytes");
+      return { stdout: "", stderr: "" };
+    },
+    detect: async () => true,
+    tmpDir: mkdtempSync(join(tmpdir(), "faces-")),
+  });
+  assert.deepEqual(hits, times);
+});
+
+test("assertNoFaces stays fail-closed for callers that cannot re-source", async () => {
+  await assert.rejects(
+    () => assertNoFaces("clip.mp4", 5, {
+      ffmpeg: "ffmpeg",
+      times: [2.5],
+      exec: async (_bin, args) => {
+        writeFileSync(args.at(-1), "jpeg-bytes");
+        return { stdout: "", stderr: "" };
+      },
+      detect: async () => true,
+      tmpDir: mkdtempSync(join(tmpdir(), "faces-")),
+    }),
+    /detected a face at 2.5s/,
+  );
 });

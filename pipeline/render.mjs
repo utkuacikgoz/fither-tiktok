@@ -14,7 +14,7 @@ import { fetchApprovedAnimation } from "./lib/animations.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
 import { rebuildSchedule } from "./lib/schedule.mjs";
-import { assertAudioMaster, assertNoFaces, assertVoiceAudible, createQaSheet } from "./lib/verify.mjs";
+import { assertAudioMaster, assertVoiceAudible, createQaSheet, findFaces } from "./lib/verify.mjs";
 import { renderSoundBed } from "./lib/sound.mjs";
 
 function writeDeliveryText(outDir, spec, notes) {
@@ -109,9 +109,14 @@ export async function renderOne(scriptPath) {
     }
   }
 
+  // Sourcing is re-runnable so a face found in the finished video can be
+  // fed back as a blocked asset and the offending scene re-sourced, rather
+  // than failing a render that took six minutes to reach the check.
+  const blockedAssetIds = new Set();
+  async function sourceScenes() {
   const sceneFiles = [];
   const selectedAssets = [];
-  const usedAssetIds = new Set();
+  const usedAssetIds = new Set(blockedAssetIds);
   for (const s of spec.scenes) {
     let f = null;
     try {
@@ -144,6 +149,10 @@ export async function renderOne(scriptPath) {
     }
     sceneFiles.push(f);
   }
+  return { sceneFiles, selectedAssets };
+  }
+
+  let { sceneFiles, selectedAssets } = await sourceScenes();
 
   const overlays = [];
   try {
@@ -183,7 +192,32 @@ export async function renderOne(scriptPath) {
   const out = join(outDir, `${spec.slug}.mp4`);
   const soundBedFile = await renderSoundBed(spec.sound.profile);
   notes.push(`embedded original ${spec.sound.profile} sound bed at ${spec.sound.bed_gain_db} dB with voice ducking`);
-  await composeVideo({ spec, sceneFiles, overlays, voFiles, soundBedFile, out });
+
+  // GUARDRAIL: faceless, verified on the OUTPUT. Source screening is a
+  // predictor; the finished frames are the truth. When the truth disagrees,
+  // the clip that produced the offending frame is blocked and its scene
+  // re-sourced, so a miss costs one recomposition instead of the whole
+  // render. Fails closed if re-sourcing cannot clear it.
+  const MAX_RESOURCE_ATTEMPTS = 3;
+  for (let attempt = 1; ; attempt++) {
+    await composeVideo({ spec, sceneFiles, overlays, voFiles, soundBedFile, out });
+    const hits = await findFaces(out, spec.duration);
+    if (hits.length === 0) break;
+
+    const offenders = new Set();
+    for (const time of hits) {
+      const scene = spec.scenes.find((s) => time >= s.start && time < s.end) ?? spec.scenes.at(-1);
+      const asset = selectedAssets.find((a) => a.scene_start === scene.start);
+      if (asset?.asset_id) offenders.add(asset.asset_id);
+    }
+    const stamps = hits.map((t) => `${t.toFixed(1)}s`).join(", ");
+    if (attempt >= MAX_RESOURCE_ATTEMPTS || offenders.size === 0) {
+      throw new Error(`faceless verification detected a face at ${stamps}`);
+    }
+    for (const id of offenders) blockedAssetIds.add(id);
+    notes.push(`re-sourced ${offenders.size} clip(s) after a face appeared at ${stamps}`);
+    ({ sceneFiles, selectedAssets } = await sourceScenes());
+  }
 
   // GUARDRAIL: the complete mix must meet the delivery loudness contract.
   await assertAudioMaster(out);
@@ -192,11 +226,6 @@ export async function renderOne(scriptPath) {
   // The retimed schedule is ground truth; a silent line window means the
   // mix dropped audio, and the render fails loudly instead of shipping.
   if (voFiles && voFiles.length > 0) await assertVoiceAudible(out, voFiles);
-
-  // GUARDRAIL: faceless, verified on the OUTPUT. Source clips are gated,
-  // but the finished frames are what ships — scan them and fail loudly on
-  // any detected face.
-  await assertNoFaces(out, spec.duration);
 
   // QA contact sheet: one frame every ~5s, tiled. The faceless rule is
   // verified by looking at this before anything is posted.
