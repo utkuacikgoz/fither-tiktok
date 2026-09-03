@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync, writeFileSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, rmSync, existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { characterUri, generateClip, providersAvailable } from "../lib/generate.mjs";
@@ -77,4 +78,20 @@ test("the character reference is sent inline when it is a repo file", () => {
     rmSync(png, { force: true });
   }
   assert.throws(() => characterUri("/tmp/her.gif"), /expected a \.jpg, \.png or \.webp/);
+});
+
+// assets/character.json pointing at a file git does not carry is a silent
+// failure: generation refuses to run and the reason is invisible until CI
+// says so. An unanchored "character/" in .gitignore caused exactly that.
+test("the approved character portrait is present and tracked", () => {
+  const character = JSON.parse(readFileSync(join(repoRoot, "assets/character.json"), "utf8"));
+  if (!character.approved_file) return;
+  const file = join(repoRoot, character.approved_file);
+  assert.ok(existsSync(file), `${character.approved_file} is missing from the repo`);
+  const tracked = execFileSync("git", ["ls-files", "--error-unmatch", character.approved_file], {
+    cwd: repoRoot,
+    encoding: "utf8",
+  });
+  assert.match(tracked, /portrait/);
+  assert.equal(characterUri(file).startsWith("data:image/jpeg;base64,"), true);
 });

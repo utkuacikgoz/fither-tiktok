@@ -1,6 +1,9 @@
 node_modules/
 pipeline/cache/
-renders/
-curation/
-generation/
-character/
+/renders/
+/curation/
+/generation/
+# Fetched review artefacts, root level only. An unanchored "character/"
+# also matches assets/character/, which silently swallowed the approved
+# portrait the first time it was committed.
+/character/
