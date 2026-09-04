@@ -1,0 +1,29 @@
+[
+  {
+    "movement": "Wall Push-Up",
+    "kind": "demo",
+    "source": "generated",
+    "character": "assets/character/portrait.jpg",
+    "provider": "runway",
+    "model": "gen4_turbo",
+    "prompt": "Side-on medium shot of a woman standing at arm's length from a bone-white wall, palms planted flat at chest height, elbows softly bent, weight forward onto the balls of her feet, body in one straight line from heel to shoulder. Full body in frame from head to feet, camera at chest height, generous margin so no limb is cropped. A forty-year-old white European woman with blonde hair tied back, fair freckled skin, a soft average build, bare-faced, wearing a loose oatmeal cotton t-shirt that hangs to her hips, charcoal leggings, barefoot. Plain modern apartment, bone-white walls, warm oak floor, charcoal mat, minimal furniture, empty of equipment. Soft daylight from one large window at frame left, deep natural shadow falloff. Locked-off tripod, 50mm, shallow depth of field, defocused background. Cinematic 35mm film look, fine grain, warm neutral grade, true skin texture with visible pores, plain unmarked surfaces.",
+    "motion": "She bends her elbows to bring her chest toward the wall, holds for a beat, then presses smoothly back to straight arms. One controlled repetition, camera locked off. Full body in frame from head to feet, camera at chest height, generous margin so no limb is cropped.",
+    "seed": 3374743713,
+    "duration": 5,
+    "sha256": "4848b28681519dd6b4a8a55b4ab31edc01bb893aafe32407ecd32d2c92cd620f",
+    "file": "clips/Wall_Push-Up--runway--0.mp4",
+    "url": "https://raw.githubusercontent.com/utkuacikgoz/fither-tiktok/generated-demos/generation/clips/Wall_Push-Up--runway--0.mp4",
+    "frames": [
+      "frames/Wall_Push-Up--runway--0--0.jpg",
+      "frames/Wall_Push-Up--runway--0--1.jpg",
+      "frames/Wall_Push-Up--runway--0--2.jpg",
+      "frames/Wall_Push-Up--runway--0--3.jpg",
+      "frames/Wall_Push-Up--runway--0--4.jpg",
+      "frames/Wall_Push-Up--runway--0--5.jpg",
+      "frames/Wall_Push-Up--runway--0--6.jpg",
+      "frames/Wall_Push-Up--runway--0--7.jpg",
+      "frames/Wall_Push-Up--runway--0--8.jpg"
+    ],
+    "movement_verified": false
+  }
+]
