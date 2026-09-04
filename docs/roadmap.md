@@ -107,6 +107,15 @@ the owner capture brief, not further query tuning.
 - [x] Authored-animation ingestion: approval manifest, checksum/media probes,
       explicit sidecar schema and shot-history identity
 
+- [x] Motion typography video format: 45-60s of moving typographic cards with
+      voiceover and sound bed, no footage and no Runway spend. Generated
+      footage costs roughly $0.33 a clip and never amortises, because the
+      shot-history gate retires every asset once a post publishes, so a week
+      of footage video is a recurring $75-150 a month for a format the
+      channel has no data on yet. `2026-09-07-train-to-carry` is the first,
+      converted from environment POV because a reframe has no movement to
+      show and the footage was never earning its cost there.
+
 ### P1 — next two weeks (channel becomes an operation)
 
 - [ ] Profile kit: avatar (wordmark on sage), bio, pinned-video plan;

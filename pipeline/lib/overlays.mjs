@@ -32,9 +32,11 @@ export async function closeBrowser() {
   browserPromise = null;
 }
 
-async function renderHtmlToPng(html, file, { transparent }) {
+async function renderHtmlToPng(html, file, { transparent, scale = 1 }) {
   const browser = await getBrowser();
-  const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
+  // A card destined for a slow zoom is rendered oversized so the zoom crops
+  // into real pixels instead of upscaling a 1080-wide image into mush.
+  const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: scale });
   // A setContent page is about:blank and may not fetch file:// fonts;
   // navigate to a real temp file so @font-face resolves.
   const tmp = join(ensureDir(join(cacheDir, "tmp")), `page-${process.pid}-${Math.random().toString(36).slice(2)}.html`);
@@ -67,10 +69,14 @@ export async function renderOverlay({ text, style = "step" }) {
 // solo: a single-image post rather than a carousel slide. The page counter
 // and the progress bar both describe a sequence, so they are hidden, and the
 // footer cue asks for a save instead of a swipe.
-export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false }, file) {
+export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false, scale = 1, cue = null }, file) {
   const textClass = text.length <= 42 ? "short" : text.length >= 82 ? "long" : "";
   const progress = Array.from({ length: total }, () => "<span></span>").join("");
-  const cue = !solo && index < total ? "SWIPE →" : "SAVE THIS";
+  // A carousel slide asks to be swiped and its last slide asks to be saved.
+  // A video card is neither: nobody swipes a video, and repeating "save this"
+  // on every card of a thirteen-card piece reads as nagging. Callers that
+  // want no cue pass an empty string.
+  const cueText = cue ?? (!solo && index < total ? "SWIPE →" : "SAVE THIS");
   const html = readFileSync(join(templatesDir, "slide.html"), "utf8")
     .replace("__FONT_400__", font400)
     .replace("__FONT_600__", font600)
@@ -84,7 +90,7 @@ export async function renderSlide({ kicker = "", text, footer = "", index = 1, t
     .replace("__KICKER__", esc(kicker))
     .replace("__TEXT__", esc(text))
     .replace("__FOOTER__", esc(footer))
-    .replace("__CUE__", cue);
-  await renderHtmlToPng(html, file, { transparent: false });
+    .replace("__CUE__", esc(cueText));
+  await renderHtmlToPng(html, file, { transparent: false, scale });
   return file;
 }

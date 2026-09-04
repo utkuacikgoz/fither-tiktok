@@ -5,9 +5,10 @@ import { fileURLToPath } from "node:url";
 import { policyViolations } from "./policy.mjs";
 import { SOUND_PROFILES } from "./sound.mjs";
 import { loadAnimationLibrary } from "./animations.mjs";
+import { CARD_MAX_SECONDS, CARD_MIN_SECONDS, MAX_CARDS, MIN_CARDS } from "./typography.mjs";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FORMATS = new Set(["environment-pov", "text-on-screen", "animated-demo", "slideshow", "single"]);
+const FORMATS = new Set(["environment-pov", "text-on-screen", "animated-demo", "motion-type", "slideshow", "single"]);
 // Formats rendered as still images rather than video: no voiceover, no sound
 // bed, no 45-60s contract. A carousel is many slides, a single is one.
 const STILL_FORMATS = new Set(["slideshow", "single"]);
@@ -153,10 +154,20 @@ export function validateSpec(spec, options = {}) {
         error(`scene ${i}: broll_query must be a non-empty string`);
       }
       if (!Array.isArray(scene.overlays) || scene.overlays.length === 0) warn(`scene ${i}: no overlays`);
-      if (STILL_FORMATS.has(spec.format)) {
-        if (scene.overlays?.length !== 1) error(`slide ${i + 1}: requires exactly one overlay`);
-        if (typeof scene.kicker !== "string" || !scene.kicker.trim()) error(`slide ${i + 1}: requires a kicker`);
-        if (typeof scene.footer !== "string" || !scene.footer.trim()) error(`slide ${i + 1}: requires a footer`);
+      if (STILL_FORMATS.has(spec.format) || spec.format === "motion-type") {
+        if (scene.overlays?.length !== 1) error(`card ${i + 1}: requires exactly one overlay`);
+        if (typeof scene.kicker !== "string" || !scene.kicker.trim()) error(`card ${i + 1}: requires a kicker`);
+        if (typeof scene.footer !== "string" || !scene.footer.trim()) error(`card ${i + 1}: requires a footer`);
+      }
+      if (spec.format === "motion-type") {
+        // The card is the whole frame, so anything that would put footage
+        // behind it is a contradiction rather than an extra.
+        if (scene.broll_query != null) error(`card ${i + 1}: motion-type carries no footage`);
+        if (scene.demo === true || scene.animation === true) error(`card ${i + 1}: motion-type carries no demo or animation`);
+        const dur = isFiniteNumber(scene.start) && isFiniteNumber(scene.end) ? scene.end - scene.start : null;
+        if (dur !== null && (dur < CARD_MIN_SECONDS || dur > CARD_MAX_SECONDS)) {
+          error(`card ${i + 1}: ${dur.toFixed(1)}s is outside the ${CARD_MIN_SECONDS}-${CARD_MAX_SECONDS}s card window`);
+        }
       }
       for (const [j, overlay] of (scene.overlays ?? []).entries()) {
         if (!isFiniteNumber(overlay.t) || typeof overlay.text !== "string" || !overlay.text.trim()) {
@@ -172,6 +183,9 @@ export function validateSpec(spec, options = {}) {
     spec.duration = prevEnd;
     if (spec.format === "animated-demo" && animationScenes === 0) {
       error('format "animated-demo" requires at least one animation scene');
+    }
+    if (spec.format === "motion-type" && (spec.scenes.length < MIN_CARDS || spec.scenes.length > MAX_CARDS)) {
+      error(`motion-type requires ${MIN_CARDS}-${MAX_CARDS} cards, found ${spec.scenes.length}`);
     }
     if (STILL_FORMATS.has(spec.format)) {
       const [min, max] = SLIDE_COUNTS[spec.format];

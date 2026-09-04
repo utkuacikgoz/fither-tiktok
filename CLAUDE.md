@@ -132,6 +132,15 @@ frame on the hook and keeps its CTA question in the caption.
 Carousels and singles are typography only, so they ship while video renders
 are held on footage. That is the point of the split, not a side effect.
 
+**Motion typography** (`format: "motion-type"`) is the same idea for video: a
+45-60s piece of moving typography over the brand ground, with the voiceover
+and the sound bed, and no footage at all. It costs nothing per render because
+generated footage is billed per clip and never amortises, so it exists to let
+video ship while the footage question stays open. One card per spoken beat,
+which means the card **is** the caption: the words on screen are the words
+being said, so a muted viewer loses nothing and no burned-caption layer
+fights the typography.
+
 - **Sunday, run by hand**: dispatch `Render week` in Actions. It plans the
   week, writes the scripts and sidecars, renders all 7 videos and delivers
   them with a posting sheet.

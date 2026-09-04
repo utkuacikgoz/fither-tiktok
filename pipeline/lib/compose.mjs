@@ -56,7 +56,11 @@ export async function composeVideo({ spec, sceneFiles, overlays, voFiles, soundB
   spec.scenes.forEach((s, i) => {
     const dur = s.end - s.start;
     if (sceneFiles[i]) {
-      const nSeg = !s.demo && !s.animation && dur > 4.2 ? Math.min(4, Math.ceil(dur / 3)) : 1;
+      // A typographic card is one continuous slow zoom. Segmenting it would
+      // cut the card into itself and read as a stutter, so motion-type scenes
+      // are never staggered.
+      const segmentable = !s.demo && !s.animation && spec.format !== "motion-type";
+      const nSeg = segmentable && dur > 4.2 ? Math.min(4, Math.ceil(dur / 3)) : 1;
       const segDur = dur / nSeg;
       // Loop the source long enough that any offset+segment stays in range.
       const loopLen = dur + segDur * nSeg + 2;

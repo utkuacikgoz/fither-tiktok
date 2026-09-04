@@ -2,7 +2,7 @@
   "slug": "2026-09-07-train-to-carry",
   "week": "01",
   "post_date": "2026-09-07",
-  "format": "text-on-screen",
+  "format": "motion-type",
   "pillar": "Reframe",
   "hook_mechanism": "contradiction",
   "sound": {
@@ -74,63 +74,166 @@
   "scenes": [
     {
       "start": 0,
-      "end": 10.1,
-      "demo": true,
-      "movement": "Full Plank",
+      "end": 5.6,
+      "kicker": "THE MESSAGE",
+      "footer": "Strength that fits your life.",
       "overlays": [
         {
           "t": 0,
-          "text": "You were told to take up less space.",
+          "text": "Every ad tells you to take up less space.",
           "style": "hook"
         }
       ]
     },
     {
+      "start": 5.6,
+      "end": 10.1,
+      "kicker": "THE TRUTH",
+      "footer": "Life asks for strength.",
+      "overlays": [
+        {
+          "t": 5.6,
+          "text": "Your life keeps asking for more strength.",
+          "style": "step"
+        }
+      ]
+    },
+    {
       "start": 10.1,
-      "end": 23.5,
-      "broll_query": "hands carrying grocery bags",
+      "end": 15.1,
+      "kicker": "YOUR WEEK",
+      "footer": "Stairs. Bags. Car seats.",
       "overlays": [
         {
           "t": 10.1,
-          "text": "Life keeps asking you to carry more.",
+          "text": "Stairs with a sleeping child. The airport bag.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 15.1,
+      "end": 19.6,
+      "kicker": "YOUR WEEK",
+      "footer": "Stairs. Bags. Car seats.",
+      "overlays": [
+        {
+          "t": 15.1,
+          "text": "Groceries, the car seat, the fourth floor.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 19.6,
+      "end": 23.5,
+      "kicker": "THE POINT",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 19.6,
+          "text": "Nobody carries that by being smaller.",
           "style": "step"
         }
       ]
     },
     {
       "start": 23.5,
-      "end": 32.4,
-      "broll_query": "carrying bags up stairs",
+      "end": 27.9,
+      "kicker": "THE SHIFT",
+      "footer": "Train to carry.",
       "overlays": [
         {
           "t": 23.5,
-          "text": "Train to carry, not to shrink.",
+          "text": "Stop training to shrink. Train to carry.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 27.9,
+      "end": 32.4,
+      "kicker": "THE WORK",
+      "footer": "Push, pull, squat, hinge, brace.",
+      "overlays": [
+        {
+          "t": 27.9,
+          "text": "Push, pull, squat, hinge, brace. Five patterns.",
           "style": "step"
         }
       ]
     },
     {
       "start": 32.4,
-      "end": 43,
-      "broll_query": "hands lifting heavy bag",
+      "end": 38,
+      "kicker": "THE DOSE",
+      "footer": "Ten minutes is complete.",
       "overlays": [
         {
           "t": 32.4,
-          "text": "Ten minutes a day. Five patterns.",
+          "text": "Ten minutes a day builds a body that lifts.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 38,
+      "end": 43,
+      "kicker": "THE DEFINITION",
+      "footer": "Strong is a capacity.",
+      "overlays": [
+        {
+          "t": 38,
+          "text": "Strong is not a look. It's a capacity.",
           "style": "step"
         }
       ]
     },
     {
       "start": 43,
-      "end": 59.8,
-      "broll_query": "hand pulling suitcase handle",
+      "end": 46.9,
+      "kicker": "THE PROOF",
+      "footer": "You built this.",
       "overlays": [
         {
           "t": 43,
-          "text": "Strong is a capacity, not a look.",
+          "text": "Your shoulders carry your actual week.",
           "style": "step"
-        },
+        }
+      ]
+    },
+    {
+      "start": 46.9,
+      "end": 50.8,
+      "kicker": "THE PROMISE",
+      "footer": "Your strength travels with you.",
+      "overlays": [
+        {
+          "t": 46.9,
+          "text": "Your strength goes everywhere you do.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 50.8,
+      "end": 55.3,
+      "kicker": "TOMORROW",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 50.8,
+          "text": "Tomorrow: your doorframe becomes a back machine.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 55.3,
+      "end": 60.0,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next hard week.",
+      "overlays": [
         {
           "t": 55.3,
           "text": "What did you carry this week?",

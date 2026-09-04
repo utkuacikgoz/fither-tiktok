@@ -12,6 +12,7 @@ import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
 import { fetchApprovedEnvironment, fetchBroll, fetchApprovedDemo, brollAvailable, readAssetMetadata } from "./lib/broll.mjs";
 import { fetchApprovedAnimation } from "./lib/animations.mjs";
 import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
+import { renderCardClip } from "./lib/typography.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
 import { rebuildSchedule } from "./lib/schedule.mjs";
 import { assertAudioMaster, assertVoiceAudible, createQaSheet, faceSampleTimes, findFaces } from "./lib/verify.mjs";
@@ -162,18 +163,44 @@ export async function renderOne(scriptPath) {
   return { sceneFiles, selectedAssets };
   }
 
-  let { sceneFiles, selectedAssets } = await sourceScenes();
+  // Motion typography carries no footage: each scene is a typographic card
+  // rendered here and handed to the compositor as its own background. The
+  // card also carries the words, so there is no overlay layer and no burned
+  // captions; a muted viewer is reading the card itself.
+  const typographic = spec.format === "motion-type";
+  let { sceneFiles, selectedAssets } = typographic
+    ? { sceneFiles: [], selectedAssets: [] }
+    : await sourceScenes();
+  if (typographic) {
+    const cardDir = ensureDir(join(outDir, `${spec.slug}-cards`));
+    try {
+      for (const [i, scene] of spec.scenes.entries()) {
+        sceneFiles.push(await renderCardClip({
+          kicker: scene.kicker ?? "",
+          text: scene.overlays[0].text,
+          footer: scene.footer ?? "",
+          kind: scene.overlays[0].style,
+          index: i + 1,
+          total: spec.scenes.length,
+          duration: scene.end - scene.start,
+        }, join(cardDir, `card-${String(i + 1).padStart(2, "0")}.mp4`)));
+      }
+    } finally {
+      await closeBrowser();
+    }
+    notes.push(`motion typography: ${spec.scenes.length} cards, no footage`);
+  }
 
   const overlays = [];
   try {
-    for (const w of overlayWindows(spec)) {
+    for (const w of typographic ? [] : overlayWindows(spec)) {
       overlays.push({ ...w, file: await renderOverlay(w) });
     }
 
     // Burned captions for muted viewers: one per spoken line at its
     // measured window. Lines under the end card are skipped — the card
     // already carries the question at full size.
-    if (voFiles) {
+    if (voFiles && !typographic) {
       const ctas = overlays.filter((o) => o.style === "cta");
       for (const v of voFiles) {
         const end = Math.min(v.t + (v.dur ?? 3.5) + 0.2, spec.duration - 0.05);
@@ -219,9 +246,12 @@ export async function renderOne(scriptPath) {
     const generatedWindows = spec.scenes
       .filter((scene) => selectedAssets.some((a) => a.scene_start === scene.start && a.source === "generated"))
       .map((scene) => [scene.start, scene.end]);
-    const times = faceSampleTimes(spec.duration)
-      .filter((t) => !generatedWindows.some(([from, to]) => t >= from && t < to));
-    const hits = await findFaces(out, spec.duration, { times });
+    // Typography has no footage and therefore no face to find. Scanning it
+    // would burn a detector pass per render to prove a tautology.
+    const times = typographic
+      ? []
+      : faceSampleTimes(spec.duration).filter((t) => !generatedWindows.some(([from, to]) => t >= from && t < to));
+    const hits = times.length === 0 ? [] : await findFaces(out, spec.duration, { times });
     if (hits.length === 0) break;
 
     const offenders = new Set();
