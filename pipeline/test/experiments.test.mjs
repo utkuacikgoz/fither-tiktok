@@ -38,3 +38,32 @@ test("decided experiments require evidence and a decision", () => {
   assert.ok(errors.some((error) => error.includes("need a decision")));
 });
 
+
+// A voided experiment is a record of a test that never ran. Counting it
+// against the week's 1-3 budget would block the week from registering the
+// tests it can actually run, which is what happened when week 01's three
+// video experiments were stranded by the footage hold.
+test("void experiments do not consume the week's budget", () => {
+  const record = (id, status) => `## ${id} — Q?\n\n- **Week opened**: 01\n- **Status**: ${status}\n` +
+    `- **Hypothesis**: h\n- **Variants**: v\n- **Metric**: saves per 1000\n` +
+    `- **Decision rule**: over 15 saves/1k wins\n` +
+    (status === "running" ? `- **Result**: —\n- **Decision**: —\n` : `- **Result**: none arrived\n- **Decision**: void\n`);
+
+  const fiveWithThreeVoid = [
+    record("EXP-001", "void"), record("EXP-002", "void"), record("EXP-003", "void"),
+    record("EXP-004", "running"), record("EXP-005", "running"),
+  ].join("\n");
+  assert.deepEqual(validateExperiments(fiveWithThreeVoid, []).errors, []);
+
+  const fourLive = [
+    record("EXP-001", "running"), record("EXP-002", "running"),
+    record("EXP-003", "running"), record("EXP-004", "running"),
+  ].join("\n");
+  assert.ok(validateExperiments(fourLive, []).errors.some((e) => /1-3 live experiments, found 4/.test(e)));
+
+  // A week whose records are all void registers no live test at all, so the
+  // week simply does not appear in the budget. That is correct: there is no
+  // week to judge, rather than a week with zero tests.
+  const allVoid = [record("EXP-001", "void"), record("EXP-002", "void")].join("\n");
+  assert.deepEqual(validateExperiments(allVoid, []).errors, []);
+});

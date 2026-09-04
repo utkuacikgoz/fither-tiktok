@@ -4,6 +4,7 @@
 // workflow after per-video render jobs are collected; produce.mjs builds
 // the same sheet inline for local runs.
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
+import { postSlot } from "./lib/spec.mjs";
 import { join } from "node:path";
 import { repoRoot, rendersDir } from "./lib/env.mjs";
 
@@ -42,6 +43,11 @@ function needsAiLabel(spec) {
   }
 }
 
+// A starting rotation, not a finding. Three posts on one date have to be
+// spaced or they compete with each other for the same hour of attention;
+// which hours actually work is what the first week's numbers are for.
+const SLOT_TIME = { video: "07:30", carousel: "12:30", single: "18:30" };
+
 let previousDate = null;
 for (const spec of specs) {
   const mp4 = join(outDir, `${spec.slug}.mp4`);
@@ -57,7 +63,9 @@ for (const spec of specs) {
     sheet += `\n# ${spec.post_date}\n`;
     previousDate = spec.post_date;
   }
-  sheet += `\n## ${spec.post_date} — ${spec.slug}${rendered ? "" : " (MISSING RENDER)"}\n\n`;
+  const slot = postSlot(spec.format);
+  sheet += `\n## ${SLOT_TIME[slot] ?? "--:--"} ${spec.post_date} — ${spec.slug}${rendered ? "" : " (MISSING RENDER)"}\n\n`;
+  sheet += `Slot: ${slot}\n\n`;
   sheet += solo
     ? `Image: \`renders/week-${week}/${spec.slug}.png\` (one photo post)\n\n`
     : spec.format === "slideshow"

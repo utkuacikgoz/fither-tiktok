@@ -56,11 +56,16 @@ export function validateExperiments(markdown, performanceRows = []) {
       if (PLACEHOLDER.test(experiment.fields.Result ?? "")) errors.push(`${experiment.id}: decided experiments need a result`);
       if (PLACEHOLDER.test(experiment.fields.Decision ?? "")) errors.push(`${experiment.id}: decided experiments need a decision`);
     }
-    if (!perWeek.has(week)) perWeek.set(week, 0);
-    perWeek.set(week, perWeek.get(week) + 1);
+    // A void experiment is a record of a test that never ran, so it is not
+    // one of the week's tests. The 1-3 guard exists to catch a week that is
+    // coasting or making noise, and a voided record is neither.
+    if (status !== "void") {
+      if (!perWeek.has(week)) perWeek.set(week, 0);
+      perWeek.set(week, perWeek.get(week) + 1);
+    }
   }
   for (const [week, count] of perWeek) {
-    if (count < 1 || count > 3) errors.push(`Week ${week}: expected 1-3 experiments, found ${count}`);
+    if (count < 1 || count > 3) errors.push(`Week ${week}: expected 1-3 live experiments, found ${count}`);
   }
   return { experiments, errors };
 }
