@@ -14,7 +14,7 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { repoRoot, ensureDir, ffmpegPath } from "./lib/env.mjs";
 import { personInJpeg } from "./lib/persons.mjs";
-import { generateClip, providersAvailable } from "./lib/generate.mjs";
+import { generateClip, isFatalGenerationError, providersAvailable } from "./lib/generate.mjs";
 import { buildEnvironmentPrompt, validateEnvironmentLibrary } from "./lib/environments.mjs";
 import { readdirSync } from "node:fs";
 
@@ -68,7 +68,12 @@ function buildMovementPrompt(movement) {
   const entry = book.movements[movement];
   const framing = entry.framing ?? book.framing;
   const prompt = [entry.prompt, framing, book.wardrobe, book.room, book.light, book.camera, book.look].join(" ");
-  const motion = [entry.motion, framing].join(" ");
+  // Motion only. The framing line used to be appended here, and it is a
+  // composition instruction: telling an image-to-video model about a
+  // locked-off camera and generous margins while asking for a repetition
+  // damps the movement it is meant to produce. The still already fixed the
+  // frame; this prompt exists to make her move inside it.
+  const motion = entry.motion;
   for (const [field, text] of [["prompt", prompt], ["motion", motion]]) {
     if (text.length > PROMPT_LIMIT) {
       throw new Error(`${movement}: ${field} is ${text.length} chars, over Runway's ${PROMPT_LIMIT} limit`);
@@ -185,6 +190,7 @@ const results = [];
 for (const job of jobs) {
   const { prompt, motion } = job;
   for (const provider of providers) {
+    if (fatal) break;
     for (let take = 0; take < PER_MOVEMENT; take++) {
       const slug = job.key.replaceAll(/[^A-Za-z0-9-]+/g, "_").replace(/^_|_$/g, "");
       const label = `${slug}--${provider}--${take}`;
@@ -196,6 +202,10 @@ for (const job of jobs) {
         clip = await generateClip(provider, { prompt, motion, duration: CLIP_SECONDS, seed, character: characterReference });
       } catch (e) {
         console.log(`  ${label}: generation failed (${e.message.slice(0, 200)})`);
+        if (isFatalGenerationError(e)) {
+          fatal = `${label}: ${e.message.slice(0, 200)}`;
+          break;
+        }
         continue;
       }
       const file = join(clipsDir, `${label}.mp4`);
@@ -259,6 +269,11 @@ ${rows}\n`,
 );
 
 console.log(`\nWrote generation/candidates.json (${results.length} candidate(s) from ${providers.join(", ")})`);
+if (fatal) {
+  console.error(`\nStopped early, the provider will not serve the rest of this run: ${fatal}`);
+  console.error("Every remaining movement would have paid for a still and thrown it away.");
+  process.exit(1);
+}
 if (results.length === 0) {
   console.error("No candidate survived generation and gating; see the failures above.");
   process.exit(1);

@@ -150,6 +150,36 @@ Approved clips live in `assets/environment-library.json`, keyed by query, and
 approved clip wins; Pexels search is the fallback, which is the inverse of
 week 01.
 
+## What the first character run showed
+
+Four clips, one take each, 2026-09-04. Three died on an empty Runway
+balance; one came back.
+
+**Character pinning works.** The Wall Push-Up clip is unmistakably the
+approved portrait: same face, same hair, same wardrobe, same apartment. That
+was the main technical risk of a recurring character and it is retired.
+
+**Movement fidelity does not.** She stands at the wall in a correct starting
+position and never performs the repetition. The first and middle frames are
+near identical, and the clip ends with her stepping back and her hands
+smearing. A person at a wall, not a wall push-up.
+
+Two causes, both now fixed and both untested until the balance is topped up:
+
+1. The motion prompt carried the framing line, which is a composition
+   instruction. Telling an image-to-video model about a locked-off camera and
+   generous margins while asking it for a repetition damps the movement it is
+   meant to produce. Motion prompts now describe motion and nothing else; the
+   still already fixed the frame.
+2. The prompts asked for "one controlled repetition", and gen4_turbo
+   under-moves. They now ask for three, so a clip that only partly executes
+   still contains one complete rep.
+
+A run also stops on the first failure the provider will repeat. Generation
+pays for a still before it pays for the video, so continuing after an empty
+balance buys a still for every remaining movement and throws them all away.
+That is what the first run did three times.
+
 ## The machine gate (before you review)
 
 Each clip is sampled at nine points across its length and checked for a

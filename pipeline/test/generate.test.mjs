@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync, rmSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
-import { characterUri, generateClip, providersAvailable } from "../lib/generate.mjs";
+import { characterUri, generateClip, isFatalGenerationError, providersAvailable } from "../lib/generate.mjs";
 import { repoRoot } from "../lib/env.mjs";
 
 const withEnv = async (vars, fn) => {
@@ -94,4 +94,30 @@ test("the approved character portrait is present and tracked", () => {
   });
   assert.match(tracked, /portrait/);
   assert.equal(characterUri(file).startsWith("data:image/jpeg;base64,"), true);
+});
+
+// A run pays for a still before it pays for the video, so a failure that
+// will repeat for every remaining movement has to stop the run, not be
+// skipped past. Three of four clips in the first character run died on an
+// empty balance and each one still bought a still first.
+test("failures the provider will repeat are marked fatal", () => {
+  const fatal = [
+    'Runway /image_to_video: 400 {"error":"You do not have enough credits to run this task."}',
+    "Runway /text_to_image: 403 forbidden",
+    "Runway /text_to_image: 401 unauthorized",
+    "Runway /tasks/x: 429 rate limit exceeded",
+    "Runway: monthly quota reached",
+  ];
+  for (const message of fatal) {
+    assert.equal(isFatalGenerationError(new Error(message)), true, message);
+  }
+  const retryable = [
+    "Runway task abc failed: SAFETY content moderated",
+    "Runway /image_to_video: 400 promptText too_big",
+    "Runway task abc timed out",
+    "download 502",
+  ];
+  for (const message of retryable) {
+    assert.equal(isFatalGenerationError(new Error(message)), false, message);
+  }
 });

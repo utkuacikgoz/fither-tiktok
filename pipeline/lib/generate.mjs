@@ -44,6 +44,16 @@ async function readError(res) {
   return `${res.status} ${(await res.text().catch(() => "")).slice(0, 400)}`;
 }
 
+// Some failures will not get better by trying the next movement: an empty
+// balance, a revoked key, a rate limit. Generation runs two calls per clip
+// and pays for the first even when the second fails, so a run that keeps
+// going after one of these buys a still for every remaining movement and
+// throws them all away. They are marked fatal so the caller can stop.
+const FATAL = [/enough credits/i, /quota/i, /\b401\b/, /\b403\b/, /unauthori[sz]ed/i, /rate limit/i];
+export function isFatalGenerationError(error) {
+  return FATAL.some((pattern) => pattern.test(String(error?.message ?? error)));
+}
+
 export function runwayAvailable() {
   return Boolean(process.env.RUNWAY_API_SECRET);
 }

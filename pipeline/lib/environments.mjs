@@ -43,7 +43,7 @@ export function buildEnvironmentPrompt(query, book, { limit = 1000 } = {}) {
     book.camera,
     book.look,
   ].join(" ");
-  const motion = [`${query.trim()}, one slow deliberate movement.`, env.framing].join(" ");
+  const motion = `${query.trim()}, moving slowly and continuously through the whole shot.`;
   for (const [field, text] of [["prompt", prompt], ["motion", motion]]) {
     if (text.length > limit) throw new Error(`${query}: ${field} is ${text.length} chars, over Runway's ${limit} limit`);
   }

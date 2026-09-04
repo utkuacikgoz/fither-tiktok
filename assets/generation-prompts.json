@@ -1,5 +1,5 @@
 {
-  "_readme": "Shot prompts for generated demo footage (pipeline/generate.mjs, Runway). Runway animates a generated still, so the prompt field composes the frame and the motion field describes what moves: framing is won or lost in the still. Framing now asks for the whole body head to feet; the earlier head-cropping instructions existed only to satisfy the faceless rule and cost every shot its natural composition. Runway caps promptText at 1000 characters, so every line here is written tight and the builder verifies the composed length before spending a call. Faces are allowed here (owner override, 2026-09-03) because the person is synthetic, and she is one recurring character pinned by assets/character.json. The t-shirt in the wardrobe line is a production choice, not a brand rule: a cropped top rides up through a glute bridge or a plank, and generated video mangles an exposed midriff. Every line is written positively, with no negations: two casting rounds established that Runway drops them, so \"no crop top\" reliably produced a crop top. State what is in the frame, never what is not. Generation produces candidates only; full-motion editorial review is the only way into assets/demo-library.json.",
+  "_readme": "Shot prompts for generated demo footage (pipeline/generate.mjs, Runway). Runway animates a generated still, so the prompt field composes the frame and the motion field describes what moves: framing is won or lost in the still. Framing now asks for the whole body head to feet; the earlier head-cropping instructions existed only to satisfy the faceless rule and cost every shot its natural composition. Motion prompts ask for three repetitions and describe only movement: the first character run asked for one repetition with the framing line appended and produced a held pose, no rep at all. Runway caps promptText at 1000 characters, so every line here is written tight and the builder verifies the composed length before spending a call. Faces are allowed here (owner override, 2026-09-03) because the person is synthetic, and she is one recurring character pinned by assets/character.json. The t-shirt in the wardrobe line is a production choice, not a brand rule: a cropped top rides up through a glute bridge or a plank, and generated video mangles an exposed midriff. Every line is written positively, with no negations: two casting rounds established that Runway drops them, so \"no crop top\" reliably produced a crop top. State what is in the frame, never what is not. Generation produces candidates only; full-motion editorial review is the only way into assets/demo-library.json.",
   "look": "Cinematic 35mm film look, fine grain, warm neutral grade, true skin texture with visible pores, plain unmarked surfaces.",
   "camera": "Locked-off tripod, 50mm, shallow depth of field, defocused background.",
   "light": "Soft daylight from one large window at frame left, deep natural shadow falloff.",
@@ -9,79 +9,79 @@
   "movements": {
     "Wall Push-Up": {
       "prompt": "Side-on medium shot of a woman standing at arm's length from a bone-white wall, palms planted flat at chest height, elbows softly bent, weight forward onto the balls of her feet, body in one straight line from heel to shoulder.",
-      "motion": "She bends her elbows to bring her chest toward the wall, holds for a beat, then presses smoothly back to straight arms. One controlled repetition, camera locked off."
+      "motion": "She bends her elbows and lowers her chest all the way to the wall, then presses back until her arms are straight. Three full repetitions, continuous and unhurried."
     },
     "Incline Push-Up": {
       "prompt": "Side-on medium shot of a woman with both palms on the front edge of a low oak sofa, arms straight, feet walked back, body angled in one clean line from heel to shoulder.",
-      "motion": "She lowers her chest toward the sofa edge under control and presses back up to straight arms. One repetition, camera locked off."
+      "motion": "She lowers her chest all the way to the sofa edge, then presses back to straight arms. Three full repetitions, continuous and unhurried."
     },
     "Kneeling Push-Up": {
       "prompt": "Low side-on shot from floor level of a woman on a charcoal mat, knees down and ankles crossed, palms under her shoulders, hips in line with her spine.",
       "framing": "Camera low beside the mat at floor level, her whole body in frame from head to feet.",
-      "motion": "She lowers her chest toward the mat and presses back up. One slow repetition, camera stays low and static."
+      "motion": "She lowers her chest to the mat and presses back up. Three full repetitions, continuous and unhurried."
     },
     "Full Push-Up": {
       "prompt": "Low side-on shot from floor level of a woman holding a full push-up position on a charcoal mat, hands under her shoulders, body in one straight line from heel to shoulder.",
       "framing": "Camera low beside the mat at floor level, her whole body in frame from head to feet.",
-      "motion": "She lowers her chest to a hand's width above the mat and presses back to straight arms. One controlled repetition, camera stays low and static."
+      "motion": "She lowers her chest to a hand's width above the mat and presses back to straight arms. Three full repetitions, continuous and unhurried."
     },
     "Air Squat": {
       "prompt": "Side-on medium shot of a woman standing on a warm oak floor, feet hip-width apart, arms reaching forward at shoulder height, weight settled through the mid-foot.",
-      "motion": "She sits her hips back and down until her thighs are parallel to the floor, then drives through the floor to stand tall. One smooth repetition, camera locked off."
+      "motion": "She sits her hips back and down until her thighs are parallel to the floor, then drives up to standing. Three full repetitions, continuous and unhurried."
     },
     "Wall Sit": {
       "prompt": "Side-on medium shot of a woman with her back flat against a bone-white wall, knees bent to ninety degrees, shins vertical, hands resting lightly on her thighs.",
-      "motion": "She holds the position. Only the small rise and fall of breathing and a faint tremble in the thighs. Camera locked off."
+      "motion": "She holds the position while her thighs tremble and her chest rises and falls with each breath."
     },
     "Sit-to-Stand": {
       "prompt": "Side-on medium shot of a woman seated on the front edge of a plain oak dining chair, arms folded across her chest, feet flat and set back beneath her knees.",
-      "motion": "She leans forward, stands tall without using her hands, then lowers under control back to the seat. One repetition, camera locked off."
+      "motion": "She leans forward, stands up tall without her hands, then lowers back to the seat. Three full repetitions, continuous and unhurried."
     },
     "Reverse Lunge": {
       "prompt": "Side-on medium shot of a woman standing tall on a warm oak floor, hands clasped at her chest, weight settled on the front foot.",
-      "motion": "She steps one foot back and lowers the back knee toward the floor, then drives through the front heel to stand tall again. One repetition, camera locked off."
+      "motion": "She steps one foot back and lowers the back knee towards the floor, then drives up to standing. Three full repetitions, alternating legs."
     },
     "Split Squat": {
       "prompt": "Side-on medium shot of a woman in a split stance on a warm oak floor, front foot flat, back heel lifted, torso upright and tall.",
-      "motion": "She lowers straight down until her back knee nearly touches the floor, then presses back up. One repetition, camera locked off."
+      "motion": "She lowers straight down until her back knee nearly touches the floor, then presses back up. Three full repetitions, continuous and unhurried."
     },
     "Glute Bridge": {
       "prompt": "Low side-on shot from floor level of a woman lying on a charcoal mat, knees bent, feet flat and hip-width, arms resting palms-down by her sides.",
       "framing": "Camera low at hip level, her whole body in frame from head to feet.",
-      "motion": "She drives her hips upward until knees, hips and shoulders form one line, holds a beat, then lowers with control. One slow repetition."
+      "motion": "She drives her hips up until knees, hips and shoulders line up, holds a beat, then lowers to the mat. Three full repetitions, continuous and unhurried."
     },
     "Hip Thrust": {
       "prompt": "Low side-on shot of a woman with her upper back resting against the front edge of a low oak sofa, knees bent, feet flat on the floor, hips lowered toward the ground.",
       "framing": "Camera low at hip level, her whole body in frame from head to feet.",
-      "motion": "She drives her hips up until they are level with her knees and shoulders, pauses, then lowers under control. One repetition."
+      "motion": "She drives her hips up until they are level with her knees and shoulders, then lowers under control. Three full repetitions, continuous and unhurried."
     },
     "Standing Hip Hinge": {
       "prompt": "Side-on medium shot of a woman standing tall on a warm oak floor, hands flat on the front of her thighs, knees softly bent, spine long and neutral.",
-      "motion": "She pushes her hips back, sliding her hands down her thighs while her back stays flat, then returns to standing tall. One slow repetition, camera locked off."
+      "motion": "She pushes her hips back and slides her hands down her thighs with a flat back, then stands tall. Three full repetitions, continuous and unhurried."
     },
     "Full Plank": {
       "prompt": "Low side-on shot from floor level of a woman on a charcoal mat in a forearm plank, elbows stacked under her shoulders, body in one straight line from heel to shoulder.",
       "framing": "Camera low beside the mat at floor level, her whole body in frame from head to feet.",
-      "motion": "She holds the plank. Only breathing moves. Camera stays low and static."
+      "motion": "She holds the plank while her chest rises and falls with each breath and her shoulders shift a little under the effort."
     },
     "Knee Plank": {
       "prompt": "Low side-on shot from floor level of a woman in a forearm plank from her knees on a charcoal mat, elbows under her shoulders, hips level with her spine.",
       "framing": "Camera low beside the mat at floor level, her whole body in frame from head to feet.",
-      "motion": "She holds the position steadily. Only breathing moves. Camera stays low and static."
+      "motion": "She holds the position while her chest rises and falls with each breath."
     },
     "Side Plank": {
       "prompt": "Low shot of a woman on a charcoal mat in a side plank on one forearm, hips lifted and stacked, top arm resting along her side, feet stacked.",
       "framing": "Camera low at hip level, her whole body in frame from head to feet.",
-      "motion": "She holds the side plank, hips steady and lifted. Only breathing moves."
+      "motion": "She holds the side plank, hips lifted and steady, breathing evenly."
     },
     "Doorframe Row": {
       "prompt": "Medium shot from behind and slightly to one side of a woman gripping both edges of an open white doorframe, arms straight, leaning her weight back with heels planted.",
       "framing": "Shot from behind at shoulder height, her whole body in frame from head to feet.",
-      "motion": "She pulls her chest toward the doorframe, drawing her shoulder blades together, then lowers back out under control. One repetition, camera locked off."
+      "motion": "She pulls her chest towards the doorframe until her shoulder blades draw together, then lowers back out with straight arms. Three full repetitions."
     },
     "Seated Knee Lift": {
       "prompt": "Side-on medium shot of a woman sitting tall on the front edge of an oak dining chair, hands resting on the seat beside her hips, spine long, feet flat.",
-      "motion": "She lifts one knee toward her chest, lowers it under control, then lifts the other. Two slow repetitions, camera locked off."
+      "motion": "She lifts one knee towards her chest and lowers it, then lifts the other. Four repetitions, alternating, continuous and unhurried."
     }
   },
   "environments": {
