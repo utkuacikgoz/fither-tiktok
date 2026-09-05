@@ -1,0 +1,34 @@
+{
+  "slug": "2026-09-06-hotel-room-silent-session-single",
+  "week": "01",
+  "post_date": "2026-09-06",
+  "format": "single",
+  "pillar": "Constraint",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "One wall, one doorframe, ten minutes. A complete strength session in a hotel room, and the room next door hears nothing. Which city are you in tonight?",
+  "hashtags": [
+    "#hotelworkout",
+    "#travelstrength",
+    "#strengthtraining",
+    "#homeworkout",
+    "#tenminutes"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "TONIGHT",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "This wall is your whole gym tonight.",
+          "style": "hook"
+        }
+      ]
+    }
+  ]
+}

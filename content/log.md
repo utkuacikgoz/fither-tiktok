@@ -13,4 +13,4 @@ once numbers are in (watch % is the number that matters).
 | 2026-09-01 | 01 | Doorframe row ladder, the pull strength home workouts skip | Skill ladder | |
 | 2026-09-01 | 01 | Five zero noise strength moves for a sleeping child next door | Fast tips | |
 | 2026-09-01 | 01 | Desk clothes friendly 10 min session between meetings, no floor | Constraint | |
-| 2026-09-03 | 01 | Sore wrists, the six moves that skip them (slideshow) | Constraint | |
+| 2026-09-05 | 01 | Sore wrists, the six moves that skip them (slideshow) | Constraint | |

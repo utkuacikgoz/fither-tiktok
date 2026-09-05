@@ -1,0 +1,99 @@
+{
+  "slug": "2026-09-11-zero-noise-five-moves-carousel",
+  "week": "01",
+  "post_date": "2026-09-11",
+  "format": "slideshow",
+  "pillar": "Fast tips",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Five strength moves that make no sound: Glute Bridge, Wall Sit, Wall Push-Up, Lying Heel Tap, Knee Plank. Two rounds, ten minutes, nothing hits the floor and the door never opens. Save this for tonight.",
+  "hashtags": [
+    "#quietworkout",
+    "#apartmentworkout",
+    "#strengthtraining",
+    "#mumstrength",
+    "#noequipmentworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "ZERO NOISE",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "These five moves make zero noise.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Glute Bridge, ten slow reps on the floor.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Nothing hits the floor.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Sit, thirty silent seconds.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Push-Up, ten reps, quiet as breathing.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR AND FIVE",
+      "footer": "Two rounds. Ten minutes.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Lying Heel Tap, then Knee Plank for twenty seconds.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for tonight.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Who sleeps behind your wall?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

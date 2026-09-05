@@ -1,0 +1,146 @@
+{
+  "slug": "2026-09-07-wall-to-floor-push-up-ladder",
+  "week": "01",
+  "post_date": "2026-09-07",
+  "format": "text-on-screen",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
+  "caption": "Push up progression for beginners: the four step staircase from wall to floor. Nobody fails at push-ups, they start on the wrong rung. Save the ladder and climb it.",
+  "hashtags": [
+    "#strengthtraining",
+    "#pushupprogression",
+    "#beginnerworkout",
+    "#homeworkout",
+    "#wallpushup"
+  ],
+  "voiceover": [
+    {
+      "t": 0,
+      "text": "You have not failed at push-ups. Not once."
+    },
+    {
+      "t": 5.3,
+      "text": "You just started on the wrong rung."
+    },
+    {
+      "t": 9.9,
+      "text": "A staircase. Four steps. Wall to floor."
+    },
+    {
+      "t": 14.6,
+      "text": "Step one. Wall push-ups. Ten reps, hands flat."
+    },
+    {
+      "t": 19.8,
+      "text": "Own ten before you move up."
+    },
+    {
+      "t": 23.9,
+      "text": "Step two. Hands on a chair. Eight reps."
+    },
+    {
+      "t": 29.1,
+      "text": "Step three. Kneeling push-ups. Eight."
+    },
+    {
+      "t": 32.6,
+      "text": "Step four. Full push-ups. Even one counts."
+    },
+    {
+      "t": 37.2,
+      "text": "Then you press the floor away."
+    },
+    {
+      "t": 41.3,
+      "text": "You built that rep. It is yours."
+    },
+    {
+      "t": 45.9,
+      "text": "The staircase belongs to you."
+    },
+    {
+      "t": 49.4,
+      "text": "Tomorrow: strength inside the oven timer."
+    },
+    {
+      "t": 53.4,
+      "text": "Which step are you on today?"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 14.6,
+      "broll_query": "palms flat on white wall",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Nobody fails push-ups. They skip steps.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 14.6,
+      "end": 23.9,
+      "broll_query": "forearm braced against wall",
+      "overlays": [
+        {
+          "t": 14.6,
+          "text": "Step one. Ten wall push-ups.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 23.9,
+      "end": 29.1,
+      "broll_query": "hands gripping chair seat",
+      "overlays": [
+        {
+          "t": 23.9,
+          "text": "Step two. Eight incline push-ups.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 29.1,
+      "end": 37.2,
+      "broll_query": "knees on exercise mat closeup",
+      "overlays": [
+        {
+          "t": 29.1,
+          "text": "Step three. Kneeling push-ups, eight.",
+          "style": "step"
+        },
+        {
+          "t": 32.6,
+          "text": "Step four. The full push-up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 37.2,
+      "end": 59.8,
+      "broll_query": "feet climbing home staircase",
+      "overlays": [
+        {
+          "t": 37.2,
+          "text": "Earn each step for a full week.",
+          "style": "step"
+        },
+        {
+          "t": 53.4,
+          "text": "Which step are you on today?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

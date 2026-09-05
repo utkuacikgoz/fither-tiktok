@@ -1,0 +1,112 @@
+{
+  "slug": "2026-09-05-sore-wrists-train-everything-else",
+  "week": "01",
+  "post_date": "2026-09-05",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Sore wrists are not a rest day. Every push loads the wrist. Pull, squat, hinge and core do not. Six moves, ten minutes, nothing to hold and nothing to push. Save this for the next sore day.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#noequipment",
+    "#pullstrength",
+    "#tenminutes"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "SORE WRISTS",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Sore wrists are not a rest day. They are a different session.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "WHY",
+      "footer": "Six moves. Ten minutes.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Every push loads your wrists. Pull, squat, hinge and core do not.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "PULL",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row, eight reps. Your back does the work. Your wrists stay out.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "LEGS",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Sit-to-Stand, eight reps. Wall Sit, thirty seconds. Air Squat, ten reps.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "HIPS AND CORE",
+      "footer": "Your strength travels with you.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Glute Bridge, ten reps. Standing Hip Hinge, ten reps. Knee Plank, twenty seconds.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "THE HONEST BIT",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "No push-up leaves your wrists out. When they ache, you skip pushing.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next sore day.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Which move starts your session?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

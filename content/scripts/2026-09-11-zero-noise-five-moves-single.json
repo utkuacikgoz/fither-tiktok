@@ -1,0 +1,34 @@
+{
+  "slug": "2026-09-11-zero-noise-five-moves-single",
+  "week": "01",
+  "post_date": "2026-09-11",
+  "format": "single",
+  "pillar": "Fast tips",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Five strength moves that make no sound at all, for training while a child sleeps on the other side of the wall. Two rounds, ten minutes, nothing hits the floor. Who sleeps behind your wall?",
+  "hashtags": [
+    "#quietworkout",
+    "#apartmentworkout",
+    "#mumstrength",
+    "#strengthtraining",
+    "#tenminutes"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "ZERO NOISE",
+      "footer": "For the wall with someone asleep behind it.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "These five moves make zero noise.",
+          "style": "hook"
+        }
+      ]
+    }
+  ]
+}

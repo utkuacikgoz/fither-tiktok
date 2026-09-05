@@ -1,0 +1,99 @@
+{
+  "slug": "2026-09-12-between-meetings-desk-session-carousel",
+  "week": "01",
+  "post_date": "2026-09-12",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "A complete session between two meetings: Seated Knee Lift, Sit-to-Stand, Wall Push-Up, Wall Slide, Standing Hip Hinge. Standing and chair moves only, no floor work and no changing. Save this for Monday.",
+  "hashtags": [
+    "#officeworkout",
+    "#deskworkout",
+    "#strengthtraining",
+    "#workdaystrength",
+    "#noequipmentworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE GAP",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Twelve minutes is enough to train.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "CORE",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Seated Knee Lift, ten each side, sitting tall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "LEGS",
+      "footer": "No changing. No sweat.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Sit-to-Stand, ten reps, no hands on the chair.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "PRESS",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Push-Up, ten reps. Press the wall away.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "SHOULDERS AND HIPS",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Wall Slide, then Standing Hip Hinge, ten reps.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for Monday.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "How long is your gap?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}
