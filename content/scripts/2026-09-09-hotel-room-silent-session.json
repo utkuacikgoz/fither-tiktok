@@ -1,0 +1,158 @@
+{
+  "slug": "2026-09-09-hotel-room-silent-session",
+  "week": "01",
+  "post_date": "2026-09-09",
+  "format": "environment-pov",
+  "pillar": "Constraint",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
+  "caption": "Quiet hotel room workout: ten minutes, one wall, one doorframe, and a complete strength session before dinner. The room next door hears nothing. Save it for your next trip.",
+  "hashtags": [
+    "#strengthtraining",
+    "#hotelworkout",
+    "#noequipmentworkout",
+    "#quietworkout",
+    "#travelstrength"
+  ],
+  "voiceover": [
+    {
+      "t": 0,
+      "text": "You landed with no gym. This wall disagrees."
+    },
+    {
+      "t": 4.4,
+      "text": "Ten minutes before dinner. Enough."
+    },
+    {
+      "t": 8.8,
+      "text": "Wall push-ups first. Ten reps. Press the wall away."
+    },
+    {
+      "t": 13.7,
+      "text": "Doorframe next. Lean back. Pull in. Ten rows."
+    },
+    {
+      "t": 19.1,
+      "text": "Your back just trained without a single machine."
+    },
+    {
+      "t": 23.5,
+      "text": "Wall sit. Thirty seconds. Legs argue. Hold anyway."
+    },
+    {
+      "t": 28.9,
+      "text": "Floor now. Glute bridges. Ten slow ones."
+    },
+    {
+      "t": 32.8,
+      "text": "Wall plank. Twenty seconds. Breathe."
+    },
+    {
+      "t": 37.2,
+      "text": "Repeat the round once. That's the session."
+    },
+    {
+      "t": 42.1,
+      "text": "Your strength travels to every city."
+    },
+    {
+      "t": 46,
+      "text": "You built it before dinner."
+    },
+    {
+      "t": 49.5,
+      "text": "Tomorrow: the push-up staircase."
+    },
+    {
+      "t": 53,
+      "text": "Which city are you training in tonight?"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 13.7,
+      "broll_query": "hands pressing hotel wall",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "This wall is your whole gym tonight.",
+          "style": "hook"
+        },
+        {
+          "t": 8.8,
+          "text": "Ten wall push-ups. Press it away.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 13.7,
+      "end": 23.5,
+      "broll_query": "fingers on hotel door latch",
+      "overlays": [
+        {
+          "t": 13.7,
+          "text": "Doorframe rows. Lean back, pull in.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 23.5,
+      "end": 28.9,
+      "broll_query": "back against hotel wall",
+      "overlays": [
+        {
+          "t": 23.5,
+          "text": "Hold a wall sit for thirty seconds.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 28.9,
+      "end": 32.8,
+      "broll_query": "feet on hotel room floor",
+      "overlays": [
+        {
+          "t": 28.9,
+          "text": "Do ten slow glute bridges.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 32.8,
+      "end": 42.1,
+      "broll_query": "hand on hotel window",
+      "overlays": [
+        {
+          "t": 32.8,
+          "text": "Wall plank, twenty seconds. Repeat once.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 42.1,
+      "end": 59.8,
+      "broll_query": "silhouette hotel window city",
+      "overlays": [
+        {
+          "t": 42.1,
+          "text": "A complete session. Zero noise.",
+          "style": "step"
+        },
+        {
+          "t": 53,
+          "text": "Which city are you in tonight?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

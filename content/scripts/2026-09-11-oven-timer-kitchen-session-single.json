@@ -1,0 +1,34 @@
+{
+  "slug": "2026-09-11-oven-timer-kitchen-session-single",
+  "week": "01",
+  "post_date": "2026-09-11",
+  "format": "single",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "You do not find time. You use the gap that is already there. Four moves at the kitchen counter while dinner cooks, ten minutes, nothing to hold. What is in your oven tonight?",
+  "hashtags": [
+    "#kitchenworkout",
+    "#strengthtraining",
+    "#busymum",
+    "#homeworkout",
+    "#10minuteworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "TONIGHT",
+      "footer": "Ten minutes while dinner cooks.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "The oven timer is your coach tonight.",
+          "style": "hook"
+        }
+      ]
+    }
+  ]
+}

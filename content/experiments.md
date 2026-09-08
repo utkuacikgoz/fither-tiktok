@@ -23,7 +23,7 @@ already rendered.
 - **Status**: void
 - **Hypothesis**: hotel, kitchen and office constraint videos will not
   perform equally; one environment is the audience's real life.
-- **Variants**: 2026-09-06 hotel / 2026-09-08 kitchen / 2026-09-12 office
+- **Variants**: 2026-09-09 hotel / 2026-09-11 kitchen / 2026-09-15 office
 - **Metric**: watch %
 - **Decision rule**: highest watch % takes week 02's free slot and leads
   the App Store screenshot candidates. A gap under 5 points = no winner,
@@ -53,7 +53,7 @@ already rendered.
 - **Hypothesis**: footage-free video (09-09 text-on-screen, 09-07 motion
   typography) will lag environment POV on watch % while the animation
   library is empty. 09-07 was converted from environment POV to motion
-  typography on 2026-09-06, which sharpens this test rather than spoiling
+  typography on 2026-09-09, which sharpens this test rather than spoiling
   it: it is now footage-free against footage-carrying, which is the
   question worth answering before funding footage.
 - **Metric**: watch % gap between the two formats

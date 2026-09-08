@@ -1,0 +1,99 @@
+{
+  "slug": "2026-09-13-doorframe-row-ladder-carousel",
+  "week": "01",
+  "post_date": "2026-09-13",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Push-ups everywhere and nothing for your back. Four rungs on one doorframe: Lean Row, Doorframe Row, Deep Doorframe Row, Single-Arm Doorframe Row. The missing half of home strength. Save the ladder.",
+  "hashtags": [
+    "#backworkout",
+    "#doorframerow",
+    "#strengthtraining",
+    "#noequipmentworkout",
+    "#homeworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE MISSING HALF",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Home training skips your back. Not today.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "RUNG ONE",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Doorframe Lean Row. Grip the frame and lean back.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "RUNG TWO",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row, eight reps, feet a step closer.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "RUNG THREE",
+      "footer": "Squeeze at the top of every rep.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Deep Doorframe Row. Arms long, pull to the frame.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "RUNG FOUR",
+      "footer": "Every doorway is equipment now.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Single-Arm Doorframe Row, six each side.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save the ladder.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Which rung will you start on?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "slug": "2026-09-13-doorframe-row-ladder",
+  "week": "01",
+  "post_date": "2026-09-13",
+  "format": "environment-pov",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
+  "caption": "Back exercises at home no equipment: the doorframe row ladder, four rungs from a lean to a single arm row. The missing half of home strength. Save the ladder.",
+  "hashtags": [
+    "#strengthtraining",
+    "#backworkout",
+    "#noequipmentworkout",
+    "#homeworkout",
+    "#doorframerow"
+  ],
+  "voiceover": [
+    {
+      "t": 0,
+      "text": "Home workouts train half your body. The front half."
+    },
+    {
+      "t": 5.9,
+      "text": "Nothing to pull. Except you have doorframes."
+    },
+    {
+      "t": 10.5,
+      "text": "Here's the ladder nobody does at home."
+    },
+    {
+      "t": 15.2,
+      "text": "Rung one. Hold the frame. Lean back. Ten."
+    },
+    {
+      "t": 20.4,
+      "text": "Rung two. Feet closer, deeper lean. Eight rows."
+    },
+    {
+      "t": 25.7,
+      "text": "Rung three. Sit into it. Full range. Eight."
+    },
+    {
+      "t": 30.9,
+      "text": "Rung four. One arm. Six rows a side."
+    },
+    {
+      "t": 36.2,
+      "text": "When a rung feels easy, climb."
+    },
+    {
+      "t": 40.2,
+      "text": "You turned a doorway into a back machine."
+    },
+    {
+      "t": 45.4,
+      "text": "Every door is equipment now. Yours."
+    },
+    {
+      "t": 49.5,
+      "text": "Tomorrow: five moves, zero noise."
+    },
+    {
+      "t": 53,
+      "text": "Which rung will you start on?"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 15.2,
+      "broll_query": "hand gripping door frame closeup",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Home training skips your back. Not today.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 15.2,
+      "end": 25.7,
+      "broll_query": "hand on door handle opening",
+      "overlays": [
+        {
+          "t": 15.2,
+          "text": "Rung one. Grip the frame, lean back, row in.",
+          "style": "step"
+        },
+        {
+          "t": 20.4,
+          "text": "Rung two. Feet closer, deeper lean. Eight.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 25.7,
+      "end": 36.2,
+      "broll_query": "back leaning in doorway",
+      "overlays": [
+        {
+          "t": 25.7,
+          "text": "Rung three. Arms long, pull to the frame.",
+          "style": "step"
+        },
+        {
+          "t": 30.9,
+          "text": "Rung four. One arm. Six each side.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 36.2,
+      "end": 40.2,
+      "broll_query": "knuckles on white doorframe",
+      "overlays": [
+        {
+          "t": 36.2,
+          "text": "Squeeze your shoulder blades on every rep.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 40.2,
+      "end": 59.8,
+      "broll_query": "hand closing apartment door",
+      "overlays": [
+        {
+          "t": 40.2,
+          "text": "Every doorway is equipment now.",
+          "style": "step"
+        },
+        {
+          "t": 53,
+          "text": "Which rung will you start on?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

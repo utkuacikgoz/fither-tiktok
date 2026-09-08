@@ -1,0 +1,34 @@
+{
+  "slug": "2026-09-15-between-meetings-desk-session-single",
+  "week": "01",
+  "post_date": "2026-09-15",
+  "format": "single",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "A complete strength session between two meetings: standing and chair moves only, no floor work and no changing at all. Ten minutes in the gap you already have. How long is your gap?",
+  "hashtags": [
+    "#officeworkout",
+    "#deskworkout",
+    "#workdaystrength",
+    "#strengthtraining",
+    "#tenminutes"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE GAP",
+      "footer": "Work clothes. No floor. No sweat.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Twelve minutes is enough to train.",
+          "style": "hook"
+        }
+      ]
+    }
+  ]
+}

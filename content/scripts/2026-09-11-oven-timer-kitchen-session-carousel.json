@@ -1,0 +1,99 @@
+{
+  "slug": "2026-09-11-oven-timer-kitchen-session-carousel",
+  "week": "01",
+  "post_date": "2026-09-11",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Four moves at the kitchen counter while dinner cooks: Sit-to-Stand, Incline Push-Up, Hinge and Reach, Seated Knee Lift. You do not find time, you use the gap already there. Save this for tomorrow night.",
+  "hashtags": [
+    "#kitchenworkout",
+    "#noequipmentworkout",
+    "#strengthtraining",
+    "#busymum",
+    "#tenminutes"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "TWENTY MINUTES",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "The oven timer is your coach tonight.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "LEGS",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Sit-to-Stand, ten reps, no hands on the chair.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "PRESS",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Incline Push-Up, eight reps on the counter edge.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "HINGE",
+      "footer": "Quiet enough for a sleeping house.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Hinge and Reach, ten reps, back long and flat.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "CORE",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Seated Knee Lift, ten each side.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for tomorrow night.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "What is in your oven tonight?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}
