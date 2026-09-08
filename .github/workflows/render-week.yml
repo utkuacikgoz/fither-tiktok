@@ -194,6 +194,10 @@ jobs:
           git add -f "renders/week-$week"
           git commit -m "Renders for week $week (run ${{ github.run_id }})"
           git push -f origin "renders-week-$week"
+          # The orphan switch leaves a tree containing only renders/, so the
+          # gate that runs next cannot find pipeline/. Restore the source
+          # without touching the renders already committed here.
+          git checkout "${{ github.sha }}" -- pipeline content assets .claude
 
       - name: Check footage variety across the week
         run: node pipeline/shots.mjs "${{ needs.plan.outputs.week }}"
