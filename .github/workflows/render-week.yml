@@ -7,6 +7,9 @@ on:
         description: "Week number to render (e.g. 01)"
         required: true
         default: "01"
+      only:
+        description: "Optional: a post date (2026-09-12) or comma-separated slugs. Defaults to the whole week."
+        required: false
   push:
     branches: [main]
     paths: [".github/render-request"]
@@ -74,18 +77,27 @@ jobs:
         id: slugs
         run: |
           week="${{ steps.week.outputs.week }}"
+          only="${{ inputs.only }}"
           slugs=$(node -e '
             const { readdirSync, readFileSync } = require("fs");
-            const week = process.argv[1];
-            const slugs = readdirSync("content/scripts")
+            const [week, only] = process.argv.slice(1);
+            // "only" narrows the matrix to one day or a named set, so a
+            // single re-render does not spend the whole week of TTS and
+            // Pexels calls to fix one video.
+            const wanted = (only ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+            let slugs = readdirSync("content/scripts")
               .filter((f) => f.endsWith(".json"))
               .map((f) => JSON.parse(readFileSync("content/scripts/" + f, "utf8")))
               .filter((s) => String(s.week).padStart(2, "0") === week)
+              .filter((s) => wanted.length === 0 || wanted.some((w) => s.slug === w || s.post_date === w))
               .map((s) => s.slug)
               .sort();
-            if (slugs.length === 0) { console.error("no sidecars for week " + week); process.exit(1); }
+            if (slugs.length === 0) {
+              console.error(wanted.length ? "nothing in week " + week + " matches " + wanted.join(", ") : "no sidecars for week " + week);
+              process.exit(1);
+            }
             console.log(JSON.stringify(slugs));
-          ' "$week")
+          ' "$week" "$only")
           echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
 
   render:
