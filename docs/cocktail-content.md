@@ -62,11 +62,22 @@ Three options, none of them free:
 3. **A hired body double.** The roadmap already contemplates this at the
    week 6 checkpoint. Costs money and scheduling.
 
-Option 1 is the only one that is both free and honest to the format. It
-needs an owner decision before the format can be built, because it decides
-whether the pipeline is capturing footage or generating it.
+**Decided, 2026-09-08: option 1.** The owner films, face covered, under the
+existing `docs/footage-capture.md` contract. So the cocktail pipeline
+captures footage rather than generating it, no Runway spend, no AI label, and
+the person on slide one is genuinely real, which is what the format trades
+on.
+
+## Hooks
+
+`content/cocktail-hooks.md` holds the cover-hook bank, five lanes with the
+shot each line sits on. Every line passes the policy checker. None of it is
+proven: it is a hypothesis bank, and winners graduate to
+`references/hooks.md` with their numbers once posted.
 
 ## Status
 
-Not built. This document is the brief. The format is not in `spec.mjs`, there
-is no renderer path, and no cocktail post exists.
+Not built. This document is the brief and the hooks are written. The format
+is not in `spec.mjs`, there is no renderer path, and no cocktail post
+exists. What it needs next is the capture list: which openers get filmed
+first, so slide one has real pictures to sit on.
