@@ -169,7 +169,7 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Build posting sheet
-        run: node pipeline/sheet.mjs "${{ needs.plan.outputs.week }}"
+        run: node pipeline/sheet.mjs "${{ needs.plan.outputs.week }}" ${{ inputs.only && format('--only "{0}"', inputs.only) || '' }}
 
       - name: Show posting sheet
         run: cat "renders/week-${{ needs.plan.outputs.week }}/posting-sheet.md"

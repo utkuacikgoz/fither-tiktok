@@ -10,9 +10,15 @@ import { repoRoot, rendersDir } from "./lib/env.mjs";
 
 const week = String(process.argv[2] ?? "").replace(/^week-/, "").padStart(2, "0");
 if (!/^\d{2}$/.test(week)) {
-  console.error("Usage: node pipeline/sheet.mjs <week number, e.g. 01>");
+  console.error("Usage: node pipeline/sheet.mjs <week number, e.g. 01> [--only <date|slug,...>]");
   process.exit(1);
 }
+// A partial render is a deliberate mode, not a broken week: rendering one
+// day must not fail the sheet for the twenty-one videos nobody asked for.
+const onlyIndex = process.argv.indexOf("--only");
+const only = onlyIndex === -1
+  ? []
+  : String(process.argv[onlyIndex + 1] ?? "").split(",").map((v) => v.trim()).filter(Boolean);
 
 const scriptsDir = join(repoRoot, "content", "scripts");
 const outDir = join(rendersDir, `week-${week}`);
@@ -20,7 +26,12 @@ const specs = readdirSync(scriptsDir)
   .filter((f) => f.endsWith(".json"))
   .map((f) => JSON.parse(readFileSync(join(scriptsDir, f), "utf8")))
   .filter((s) => String(s.week).padStart(2, "0") === week)
+  .filter((s) => only.length === 0 || only.some((v) => s.slug === v || s.post_date === v))
   .sort((a, b) => a.post_date.localeCompare(b.post_date));
+if (specs.length === 0) {
+  console.error(only.length ? `nothing in week ${week} matches ${only.join(", ")}` : `no sidecars for week ${week}`);
+  process.exit(1);
+}
 
 let sheet = `# Week ${week} — posting sheet\n\nThree posts a day: the video, the carousel, the single. Space them across the\nday rather than back to back. The caption goes in as the first text.\nVideo masters already contain the original FITHER bed with voice ducking; do not\nstack another sound unless the post is a named native-sound experiment (0-5%).\nFor carousels and singles, choose a calm native sound that carries no\ninstructional meaning.\n`;
 const allNotes = [];
