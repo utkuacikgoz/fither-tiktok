@@ -1,0 +1,3 @@
+- rebuilt the schedule from measured audio (largest move 2.9s)
+- motion typography: 13 cards, no footage
+- embedded original quiet-drive sound bed at -16 dB with voice ducking
