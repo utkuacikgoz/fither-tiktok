@@ -2,7 +2,7 @@
   "slug": "2026-09-09-hotel-room-silent-session",
   "week": "01",
   "post_date": "2026-09-09",
-  "format": "environment-pov",
+  "format": "motion-type",
   "pillar": "Constraint",
   "hook_mechanism": "contradiction",
   "sound": {
@@ -17,9 +17,180 @@
     "#quietworkout",
     "#travelstrength"
   ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4.4,
+      "kicker": "ONE WALL",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "You landed with no gym. This wall disagrees.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 4.4,
+      "end": 8.8,
+      "kicker": "THE PLAN",
+      "footer": "Ten minutes before dinner.",
+      "overlays": [
+        {
+          "t": 4.4,
+          "text": "Ten minutes before dinner. Enough.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 8.8,
+      "end": 13.7,
+      "kicker": "WALL PUSH-UP",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 8.8,
+          "text": "Wall push-ups first. Ten reps. Press the wall away.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 13.7,
+      "end": 19.1,
+      "kicker": "DOORFRAME ROW",
+      "footer": "Your back does the work.",
+      "overlays": [
+        {
+          "t": 13.7,
+          "text": "Doorframe next. Lean back. Pull in. Ten rows.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 19.1,
+      "end": 23.5,
+      "kicker": "THE BACK",
+      "footer": "No machine needed.",
+      "overlays": [
+        {
+          "t": 19.1,
+          "text": "Your back just trained without a single machine.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 23.5,
+      "end": 28.9,
+      "kicker": "WALL SIT",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 23.5,
+          "text": "Wall sit. Thirty seconds. Legs argue. Hold anyway.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 28.9,
+      "end": 32.8,
+      "kicker": "GLUTE BRIDGE",
+      "footer": "Slow, on purpose.",
+      "overlays": [
+        {
+          "t": 28.9,
+          "text": "Floor now. Glute bridges. Ten slow ones.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 32.8,
+      "end": 37.2,
+      "kicker": "WALL PLANK",
+      "footer": "Only breathing moves.",
+      "overlays": [
+        {
+          "t": 32.8,
+          "text": "Wall plank. Twenty seconds. Breathe.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 37.2,
+      "end": 42.1,
+      "kicker": "ROUND TWO",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 37.2,
+          "text": "Repeat the round once. That's the session.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 42.1,
+      "end": 46,
+      "kicker": "EVERYWHERE",
+      "footer": "Your strength travels with you.",
+      "overlays": [
+        {
+          "t": 42.1,
+          "text": "Your strength travels to every city.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 46,
+      "end": 49.5,
+      "kicker": "TONIGHT",
+      "footer": "You built this before dinner.",
+      "overlays": [
+        {
+          "t": 46,
+          "text": "You built it before dinner.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 49.5,
+      "end": 53,
+      "kicker": "TOMORROW",
+      "footer": "The staircase starts tomorrow.",
+      "overlays": [
+        {
+          "t": 49.5,
+          "text": "Tomorrow: the push-up staircase.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 53,
+      "end": 58.0,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next trip.",
+      "overlays": [
+        {
+          "t": 53,
+          "text": "Which city are you training in tonight?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
   "voiceover": [
     {
-      "t": 0,
+      "t": 0.0,
       "text": "You landed with no gym. This wall disagrees."
     },
     {
@@ -59,7 +230,7 @@
       "text": "Your strength travels to every city."
     },
     {
-      "t": 46,
+      "t": 46.0,
       "text": "You built it before dinner."
     },
     {
@@ -67,92 +238,8 @@
       "text": "Tomorrow: the push-up staircase."
     },
     {
-      "t": 53,
+      "t": 53.0,
       "text": "Which city are you training in tonight?"
-    }
-  ],
-  "scenes": [
-    {
-      "start": 0,
-      "end": 13.7,
-      "broll_query": "hands pressing hotel wall",
-      "overlays": [
-        {
-          "t": 0,
-          "text": "This wall is your whole gym tonight.",
-          "style": "hook"
-        },
-        {
-          "t": 8.8,
-          "text": "Ten wall push-ups. Press it away.",
-          "style": "step"
-        }
-      ]
-    },
-    {
-      "start": 13.7,
-      "end": 23.5,
-      "broll_query": "fingers on hotel door latch",
-      "overlays": [
-        {
-          "t": 13.7,
-          "text": "Doorframe rows. Lean back, pull in.",
-          "style": "step"
-        }
-      ]
-    },
-    {
-      "start": 23.5,
-      "end": 28.9,
-      "broll_query": "back against hotel wall",
-      "overlays": [
-        {
-          "t": 23.5,
-          "text": "Hold a wall sit for thirty seconds.",
-          "style": "step"
-        }
-      ]
-    },
-    {
-      "start": 28.9,
-      "end": 32.8,
-      "broll_query": "feet on hotel room floor",
-      "overlays": [
-        {
-          "t": 28.9,
-          "text": "Do ten slow glute bridges.",
-          "style": "step"
-        }
-      ]
-    },
-    {
-      "start": 32.8,
-      "end": 42.1,
-      "broll_query": "hand on hotel window",
-      "overlays": [
-        {
-          "t": 32.8,
-          "text": "Wall plank, twenty seconds. Repeat once.",
-          "style": "step"
-        }
-      ]
-    },
-    {
-      "start": 42.1,
-      "end": 59.8,
-      "broll_query": "silhouette hotel window city",
-      "overlays": [
-        {
-          "t": 42.1,
-          "text": "A complete session. Zero noise.",
-          "style": "step"
-        },
-        {
-          "t": 53,
-          "text": "Which city are you in tonight?",
-          "style": "cta"
-        }
-      ]
     }
   ]
 }
