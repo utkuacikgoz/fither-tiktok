@@ -51,8 +51,8 @@ already rendered.
 - **Week opened**: 01
 - **Status**: void
 - **Hypothesis**: footage-free video (09-09 text-on-screen, 09-07 motion
-  typography) will lag environment POV on watch % while the animation
-  library is empty. 09-07 was converted from environment POV to motion
+  typography) will lag environment POV on watch % while the approved
+  animation library is empty. 09-07 was converted from environment POV to motion
   typography on 2026-09-09, which sharpens this test rather than spoiling
   it: it is now footage-free against footage-carrying, which is the
   question worth answering before funding footage.

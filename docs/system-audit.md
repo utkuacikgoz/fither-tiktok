@@ -14,8 +14,8 @@ cached voice generation, approved-demo library and explicit learning criteria.
 
 The limiting layer remains footage. Full-motion review found that the original
 stock gate proved only that a person was present and a frontal face detector
-did not fire; it did not prove the named movement or catch every profile. Five
-legacy approvals are now quarantined. The engine is trustworthy, but the visual
+did not fire; it did not prove the named movement or catch every profile. Six
+legacy/candidate clips are now quarantined. The engine is trustworthy, but the visual
 library is not deep until the replacement capture brief is completed.
 
 ## Gap register
@@ -30,7 +30,7 @@ library is not deep until the replacement capture brief is completed.
 | P1 | Duration | Six of seven Week 01 sidecars exceeded the writer's 45–60 second brief | Fixed in Wave 2; all seven pass strict preflight |
 | P0 | Footage truth | Six legacy/candidate clips failed movement/faceless review; only Full Plank remains approved and pull has none | Wave 2; quarantined, 18-clip capture open |
 | P1 | Asset visibility | Planning had no generated inventory showing thin movement pools and reuse pressure | Fixed in Wave 2 via `data/assets.md` |
-| P1 | Animation contract | Renderer now ingests only approved, checksum-pinned, media-probed authored exports and tracks their identities | Fixed in Wave 4; asset supply remains empty |
+| P1 | Animation contract | Renderer ingests only approved exports; seven owned body-only candidates now pass media and faceless gates | Software fixed; qualified movement review open |
 | P1 | Regression safety | No five-second golden render exercises browser, fonts, ffmpeg, caption mix and output probes in CI | Fixed in Wave 2 |
 | P1 | Metrics | No retention drop-off field; rates were averaged per video; missing weeks counted as consecutive kill weeks | Fixed in Wave 3 |
 | P1 | Experiment loop | Experiments and learnings were prose, so closure/decision rules could not be verified automatically | Fixed in Wave 3 |
@@ -86,8 +86,8 @@ environment clip per video; every accepted asset is cached and approved.
 Exit metric: all seven videos pass strict preflight, both golden fixtures pass
 in CI, every named movement is visually demonstrated or explicitly designed as
 an environment-only beat, and no clip repeats inside a week unless editorially
-intentional. The software portion is met; approved footage and animation depth
-remain supply blockers.
+intentional. The software portion is met; footage depth and qualified approval
+of the seven authored animation candidates remain supply blockers.
 
 ### Wave 3 — Close the learning loop
 

@@ -6,6 +6,7 @@
 - Distinct environment queries: **31**, of which **0** have an approved clip
 - Approved environment clips: **0** across **0** queries
 - Ready authored animation exports: **0** across **0** movements
+- Authored animation candidates awaiting coach review: **7** across **7** movements
 - Priority movements below target (<3 approved clips): **5**
 
 ## Movement footage
@@ -21,9 +22,15 @@
 
 ## Authored animations
 
-| Movement | Approved exports | Current scenes | Videos | Readiness |
-|---|---:|---:|---:|---|
-| — | 0 | 0 | 0 | Awaiting authored exports |
+| Movement | Approved exports | Review candidates | Current scenes | Videos | Readiness |
+|---|---:|---:|---:|---:|---|
+| Air Squat | 0 | 1 | 0 | 0 | Coach review |
+| Doorframe Row | 0 | 1 | 0 | 0 | Coach review |
+| Full Plank | 0 | 1 | 0 | 0 | Coach review |
+| Glute Bridge | 0 | 1 | 0 | 0 | Coach review |
+| Reverse Lunge | 0 | 1 | 0 | 0 | Coach review |
+| Seated Knee Lift | 0 | 1 | 0 | 0 | Coach review |
+| Wall Push-Up | 0 | 1 | 0 | 0 | Coach review |
 
 ## Environment coverage
 

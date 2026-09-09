@@ -90,6 +90,7 @@ Rendering needs `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` and
 - `.claude/agents/` — content-planner, video-writer
 - `.claude/skills/fither-voice/` — brand voice; shared filter with the app repo
 - `assets/animation-library.json` — machine-readable animated-demo approval gate
+- `assets/animation-candidates.json` — authored exports awaiting movement review
 - `assets/animations.md` — human-readable animation production status
 - `content/log.md` — every topic ever used, with results
 - `content/experiments.md` — the experiment registry (hypothesis → decision)

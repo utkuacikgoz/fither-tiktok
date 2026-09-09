@@ -1,7 +1,18 @@
-import { validateAnimationLibrary } from "./animations.mjs";
+import { animationIdentity, validateAnimationCandidates, validateAnimationLibrary } from "./animations.mjs";
 import { resolveSetting, validateEnvironmentLibrary } from "./environments.mjs";
 
-export function buildAssetReport(specs, library, animationLibrary, environmentLibrary = { queries: {} }, book = null) {
+export function buildAssetReport(
+  specs,
+  library,
+  animationLibrary,
+  environmentLibrary = { queries: {} },
+  book = null,
+  animationCandidates = {
+    version: 1,
+    status: "awaiting-qualified-coach-review",
+    movements: {},
+  },
+) {
   const errors = [];
   const warnings = [];
   const entries = library.movements ?? {};
@@ -114,6 +125,18 @@ export function buildAssetReport(specs, library, animationLibrary, environmentLi
       `${uncovered.length} of ${environmentQueries.size} environment queries have no approved clip and fall back to Pexels search`,
     );
   }
+  const candidateState = validateAnimationCandidates(animationCandidates);
+  errors.push(...candidateState.errors.map((message) => `animation candidate: ${message}`));
+  const approvedAnimationIds = new Set(
+    Object.values(animationLibrary?.movements ?? {}).flat().map(animationIdentity),
+  );
+  for (const [movement, candidates] of Object.entries(animationCandidates?.movements ?? {})) {
+    for (const [index, candidate] of (candidates ?? []).entries()) {
+      if (approvedAnimationIds.has(animationIdentity(candidate))) {
+        errors.push(`animation candidate: ${movement}[${index}] duplicates an approved export`);
+      }
+    }
+  }
   let report = `# Asset readiness (generated — run \`node pipeline/assets.mjs\`)\n\n`;
   const approvedMovementCount = Object.keys(entries).length;
   report += `- Approved body-only clips: **${ids.size}** across **${approvedMovementCount}** ${approvedMovementCount === 1 ? "movement" : "movements"}\n`;
@@ -122,6 +145,7 @@ export function buildAssetReport(specs, library, animationLibrary, environmentLi
   report += `- Distinct environment queries: **${environmentQueries.size}**, of which **${environmentQueries.size - uncovered.length}** have an approved clip\n`;
   report += `- Approved environment clips: **${environmentState.count}** across **${environmentState.queries}** ${environmentState.queries === 1 ? "query" : "queries"}\n`;
   report += `- Ready authored animation exports: **${animationState.count}** across **${animationState.readyMovements.size}** movements\n`;
+  report += `- Authored animation candidates awaiting coach review: **${candidateState.count}** across **${candidateState.movements.size}** movements\n`;
   report += `- Priority movements below target (<3 approved clips): **${movements.filter((movement) => priorityMovements.has(movement) && (entries[movement]?.length ?? 0) < 3).length}**\n`;
   report += `\n## Movement footage\n\n| Movement | Approved clips | Demo scenes | Videos | Readiness |\n|---|---:|---:|---:|---|\n`;
   for (const movement of movements) {
@@ -132,18 +156,21 @@ export function buildAssetReport(specs, library, animationLibrary, environmentLi
       : "Library only";
     report += `| ${movement} | ${clips} | ${used?.scenes ?? 0} | ${used?.videos.size ?? 0} | ${state} |\n`;
   }
-  report += `\n## Authored animations\n\n| Movement | Approved exports | Current scenes | Videos | Readiness |\n|---|---:|---:|---:|---|\n`;
+  report += `\n## Authored animations\n\n| Movement | Approved exports | Review candidates | Current scenes | Videos | Readiness |\n|---|---:|---:|---:|---:|---|\n`;
   const animationMovements = [...new Set([
     ...Object.keys(animationLibrary?.movements ?? {}),
+    ...Object.keys(animationCandidates?.movements ?? {}),
     ...animationUsage.keys(),
   ])].sort();
   if (animationMovements.length === 0) {
-    report += `| — | 0 | 0 | 0 | Awaiting authored exports |\n`;
+    report += `| — | 0 | 0 | 0 | 0 | Awaiting authored exports |\n`;
   } else {
     for (const movement of animationMovements) {
       const exports = animationLibrary?.movements?.[movement]?.length ?? 0;
+      const candidates = animationCandidates?.movements?.[movement]?.length ?? 0;
       const used = animationUsage.get(movement);
-      report += `| ${movement} | ${exports} | ${used?.scenes ?? 0} | ${used?.videos.size ?? 0} | ${exports > 0 ? "Ready" : "Blocked"} |\n`;
+      const readiness = exports > 0 ? "Ready" : candidates > 0 ? "Coach review" : "Blocked";
+      report += `| ${movement} | ${exports} | ${candidates} | ${used?.scenes ?? 0} | ${used?.videos.size ?? 0} | ${readiness} |\n`;
     }
   }
   report += `\n## Environment coverage\n\n`;

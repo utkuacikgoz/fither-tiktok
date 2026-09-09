@@ -36,9 +36,9 @@ standing work orders.
    workflow (brand promise: answer every comment for 90 days), no
    Shorts/Reels cross-post from the same MP4s, handle reservations
    unconfirmed.
-5. **Animation supply.** The fail-closed ingestion path is implemented: exact
-   authored exports are checksum-pinned, media-probed, identity-tracked and
-   required by schema. The remaining blocker is delivery of reviewed exports.
+5. **Animation approval.** The fail-closed ingestion path is implemented and
+   seven owned body-only exports are authored, checksum-pinned, media-probed
+   and faceless-gated. Qualified movement review is the remaining blocker.
 6. **Learning data.** The analytics and experiment engine is built but has
    zero posted-video rows, so no editorial decision is evidence-backed yet.
 7. **Operations hardening.** Action versions still use moving major tags;
@@ -131,8 +131,8 @@ the owner capture brief, not further query tuning.
 
 - [ ] Owner-shot b-roll bank (30 clips), including real hands-on-frame
       pull shots that fix the rows video permanently
-- [ ] App Rive animations land → approve their exports in
-      assets/animation-library.json and schedule animated-demo scenes
+- [ ] Qualified movement review promotes the seven authored candidates into
+      assets/animation-library.json; then schedule animated-demo scenes
 - [ ] Voice delivery tuning: test stability/style variants on one video
 - [ ] Compare the original bed against a low-volume native sound only after
       enough posts exist for a named experiment

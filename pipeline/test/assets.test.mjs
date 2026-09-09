@@ -103,7 +103,40 @@ test("reports approved authored animation depth and current use", () => {
   const result = buildAssetReport(specs, { movements: {} }, animationLibrary);
   assert.deepEqual(result.errors, []);
   assert.match(result.report, /Ready authored animation exports: \*\*1\*\*/);
-  assert.match(result.report, /\| Air Squat \| 1 \| 1 \| 1 \| Ready \|/);
+  assert.match(result.report, /\| Air Squat \| 1 \| 0 \| 1 \| 1 \| Ready \|/);
+});
+
+test("reports authored candidates without treating them as approved", () => {
+  const candidate = {
+    source: "authored",
+    rights: "FITHER-owned",
+    path: "assets/animation-exports/air-squat-v1.mp4",
+    sha256: "c".repeat(64),
+    duration: 4,
+    width: 1080,
+    height: 1920,
+    fps: 30,
+    loop_safe: true,
+    movement_verified: false,
+    faceless_verified: true,
+    app_movement_id: "air-squat",
+    review_status: "awaiting-qualified-coach-review",
+  };
+  const result = buildAssetReport(
+    [],
+    { movements: {} },
+    animations,
+    { queries: {} },
+    null,
+    {
+      version: 1,
+      status: "awaiting-qualified-coach-review",
+      movements: { "Air Squat": [candidate] },
+    },
+  );
+  assert.deepEqual(result.errors, []);
+  assert.match(result.report, /Authored animation candidates awaiting coach review: \*\*1\*\*/);
+  assert.match(result.report, /\| Air Squat \| 0 \| 1 \| 0 \| 0 \| Coach review \|/);
 });
 
 test("accepts generated footage carrying its provenance", () => {

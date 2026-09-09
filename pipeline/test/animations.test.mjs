@@ -7,6 +7,7 @@ import { tmpdir } from "node:os";
 import {
   animationIdentity,
   fetchApprovedAnimation,
+  validateAnimationCandidates,
   validateAnimationLibrary,
 } from "../lib/animations.mjs";
 
@@ -39,6 +40,20 @@ test("validates the authored export approval contract", () => {
   assert.ok(errors.some((message) => message.includes("rights must be FITHER-owned")));
   assert.ok(errors.some((message) => message.includes("1080x1920")));
   assert.ok(errors.some((message) => message.includes("loop_safe")));
+});
+
+test("keeps unreviewed authored exports outside the approved library", () => {
+  const candidate = entry();
+  candidate.movement_verified = false;
+  candidate.review_status = "awaiting-qualified-coach-review";
+  candidate.app_movement_id = "air-squat";
+  const state = validateAnimationCandidates({
+    version: 1,
+    status: "awaiting-qualified-coach-review",
+    movements: { "Air Squat": [candidate] },
+  });
+  assert.deepEqual(state.errors, []);
+  assert.equal(state.count, 1);
 });
 
 test("ingests a checksum-pinned local export and writes shot metadata", async () => {

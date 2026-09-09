@@ -138,4 +138,4 @@ The reframe (4) is the positioning bet: strong shares or comment agreement
 would promote its language toward the paywall headline. If watch percentage
 on the two text-on-screen videos (4 and 6) lags environment POV by more
 than 10 points, week 02 shifts the mix toward environment POV while the
-animation library is still empty.
+approved animation library is still empty.

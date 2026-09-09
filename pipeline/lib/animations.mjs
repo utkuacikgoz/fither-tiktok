@@ -75,6 +75,30 @@ export function validateAnimationLibrary(library) {
   return { errors, count, readyMovements };
 }
 
+export function validateAnimationCandidates(library) {
+  const errors = [];
+  if (library?.status !== "awaiting-qualified-coach-review") {
+    errors.push("animation candidates must have awaiting-qualified-coach-review status");
+  }
+  const staged = structuredClone(library ?? {});
+  delete staged.status;
+  for (const [movement, entries] of Object.entries(staged.movements ?? {})) {
+    for (const [index, entry] of (entries ?? []).entries()) {
+      if (entry.movement_verified !== false) errors.push(`${movement}[${index}]: candidate movement_verified must be false`);
+      if (entry.review_status !== "awaiting-qualified-coach-review") {
+        errors.push(`${movement}[${index}]: invalid review_status`);
+      }
+      entry.movement_verified = true;
+      entry.reviewed_at = "2000-01-01";
+      delete entry.review_status;
+      delete entry.app_movement_id;
+    }
+  }
+  const state = validateAnimationLibrary(staged);
+  errors.push(...state.errors);
+  return { errors, count: state.count, movements: state.readyMovements };
+}
+
 export function loadAnimationLibrary(file = join(repoRoot, "assets", "animation-library.json")) {
   const library = JSON.parse(readFileSync(file, "utf8"));
   const { errors } = validateAnimationLibrary(library);

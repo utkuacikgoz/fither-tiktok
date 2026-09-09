@@ -6,6 +6,11 @@ an `animated-demo` sidecar cannot validate until its exact movement has an
 approved export. Runway and stock sources are never eligible to
 demonstrate exercise form.
 
+Authored but unapproved work lives in `assets/animation-candidates.json`, with
+contact sheets under `assets/animation-review/`. Candidate creation does not
+make a coaching claim: `movement_verified` remains false until a qualified
+reviewer watches the complete loop.
+
 ## Export contract
 
 Export the authored app animation as a loop-safe MP4 or WebM with:
@@ -59,6 +64,12 @@ The first render downloads or copies the export into the cache, verifies its
 SHA-256, probes the real dimensions, frame rate and duration, and writes an
 `animation:<sha256>` asset identity. The weekly shot audit prevents the same
 export from reappearing in another post after it has been recorded.
+
+The first owned candidates can be regenerated with
+`npm --prefix pipeline run animations:author`. That command renders the
+canonical pose keyframes, probes every video, runs the unchanged output face
+gate, produces review sheets and refreshes the candidate hashes. It never edits
+the approved library.
 
 ## Sidecar contract
 
