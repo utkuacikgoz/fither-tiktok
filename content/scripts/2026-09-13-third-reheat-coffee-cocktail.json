@@ -1,0 +1,112 @@
+{
+  "slug": "2026-09-13-third-reheat-coffee-cocktail",
+  "week": "01",
+  "post_date": "2026-09-13",
+  "format": "cocktail",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "My coffee is on its third reheat and so am I. Four moves in the kitchen, none of them needing anything you do not already own. Air Squat, Standing Hip Hinge, Sit-to-Stand, Wall Push-Up. Ten minutes while it goes round. How cold is your coffee?",
+  "hashtags": [
+    "#kitchenworkout",
+    "#strengthtraining",
+    "#homeworkout",
+    "#tenminutes",
+    "#noequipmentworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "shot": "Kitchen. Standing at the microwave, face hidden behind the open door, mug in hand, dressing gown over an office shirt.",
+      "photo": null,
+      "overlays": [
+        {
+          "t": 0,
+          "text": "My coffee is on its third reheat and so am I.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "THE TURN",
+      "footer": "Nothing to hold.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Ninety seconds on the microwave. Ninety seconds of squats.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "ONE",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Air Squat. Ten reps while it turns.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "TWO",
+      "footer": "The mug can wait.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Standing Hip Hinge. Ten reps, back long.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THREE",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Sit-to-Stand. Eight reps on the kitchen chair.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FOUR",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Wall Push-Up. Ten reps, then drink it.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for tomorrow morning.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "How cold is your coffee?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

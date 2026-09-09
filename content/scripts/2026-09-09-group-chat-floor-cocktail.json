@@ -1,0 +1,112 @@
+{
+  "slug": "2026-09-09-group-chat-floor-cocktail",
+  "week": "01",
+  "post_date": "2026-09-09",
+  "format": "cocktail",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Told the group chat I am thriving. I was flat on the bedroom carpet with my work shoes on. Four moves, all of them done lying down, ten minutes. Glute Bridge, Glute Bridge March, Lying Heel Tap, Knee Plank. Save this for the next one. What does your floor know?",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#tenminutes",
+    "#floorworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "shot": "Bedroom. Lying flat on the carpet beside the bed, phone held straight up above her face blocking it, feet propped on the mattress edge, work shoes still on.",
+      "photo": null,
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Told the group chat I am thriving. From the floor.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "THE TURN",
+      "footer": "Ten minutes. Then reply.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Already on the floor. You may as well use it.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "ONE",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Glute Bridge. Ten reps, slow at the top.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "TWO",
+      "footer": "Still lying down.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Glute Bridge March. Ten reps, hips level.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THREE",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Lying Heel Tap. Ten reps, ribs down.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FOUR",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Knee Plank. Twenty five seconds. That is the whole thing.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next flat day.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "What does your floor know?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

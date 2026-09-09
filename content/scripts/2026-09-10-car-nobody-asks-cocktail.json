@@ -1,0 +1,112 @@
+{
+  "slug": "2026-09-10-car-nobody-asks-cocktail",
+  "week": "01",
+  "post_date": "2026-09-10",
+  "format": "cocktail",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Sat in the car so nobody could ask me for anything. Two moves you can do in the driver seat and two more inside the door. Seated Knee Lift, Shoulder Blade Squeeze, Sit-to-Stand, Wall Sit. Ten minutes, nothing to hold. How long do you sit out there?",
+  "hashtags": [
+    "#strengthtraining",
+    "#busymum",
+    "#noequipmentworkout",
+    "#tenminutes",
+    "#homeworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "shot": "Car on the driveway. Driver seat, engine off, sun visor down hiding her face, both hands resting on the wheel, a child seat visible behind.",
+      "photo": null,
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Sat in the car so nobody asks me for anything.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "THE TURN",
+      "footer": "Seated. Nothing to hold.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Nobody can see you in here. Use the four minutes.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "ONE",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Seated Knee Lift. Ten each side, sitting tall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "TWO",
+      "footer": "Nobody looks in.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Shoulder Blade Squeeze. Twelve reps against the seat.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THREE",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Sit-to-Stand. Eight reps once you are inside.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FOUR",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Wall Sit. Thirty seconds in the hallway.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the driveway.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "How long do you sit out there?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

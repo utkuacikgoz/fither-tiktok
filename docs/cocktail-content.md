@@ -75,9 +75,34 @@ shot each line sits on. Every line passes the policy checker. None of it is
 proven: it is a hypothesis bank, and winners graduate to
 `references/hooks.md` with their numbers once posted.
 
+## The format
+
+`format: "cocktail"`, five to nine slides, its own posting slot so it never
+collides with the day's carousel.
+
+- **Slide one is a photograph**, not a card: the owner, face hidden, with one
+  loud uppercase line over it in Inter 900, outlined, bottom-weighted over a
+  scrim. Deliberately not the editorial serif. This lane has to read at
+  thumbnail size in a grid; the calm carousels do not.
+- **Slide two is the turn**, the first typographic card, reusing the cover's
+  own image so the pivot is earned.
+- **Slides three onward are the movements**, at their library doses.
+- **The last slide is the question.**
+
+The cover sidecar scene carries `shot` (the brief) and `photo` (the file,
+once captured). Until the photo exists the render draws a striped placeholder
+with the shot brief printed on it, so a deck can be reviewed before the
+camera comes out. A `photo` path that does not resolve, or sits outside
+`assets/cocktail/`, is an error rather than a warning: the failure that
+matters is a placeholder reaching TikTok.
+
+A test asserts every shipped cover line is free of fitness vocabulary. That
+is the regression worth guarding, because the first draft of this lane put
+the workout on slide one and the whole idea died there.
+
 ## Status
 
-Not built. This document is the brief and the hooks are written. The format
-is not in `spec.mjs`, there is no renderer path, and no cocktail post
-exists. What it needs next is the capture list: which openers get filmed
-first, so slide one has real pictures to sit on.
+Five written and rendering, all five waiting on their photograph:
+09-09 the group chat floor, 09-10 the car, 09-11 the printer, 09-12 the hotel
+kettle, 09-13 the third reheat. `assets/cocktail/README.md` carries the
+naming and the capture contract.

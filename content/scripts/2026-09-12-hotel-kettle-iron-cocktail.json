@@ -1,0 +1,112 @@
+{
+  "slug": "2026-09-12-hotel-kettle-iron-cocktail",
+  "week": "01",
+  "post_date": "2026-09-12",
+  "format": "cocktail",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Ironed a shirt with the hotel kettle. Twice this year. While it boils: one wall, one doorframe and ten minutes. Wall Push-Up, Doorframe Row, Wall Sit, Glute Bridge. The room next door hears nothing. Which city are you in tonight?",
+  "hashtags": [
+    "#hotelworkout",
+    "#travelstrength",
+    "#quietworkout",
+    "#strengthtraining",
+    "#noequipmentworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "shot": "Hotel room, back to camera, holding a steaming kettle up to a creased shirt on a hanger hooked over the wardrobe door, suitcase open on the bed behind.",
+      "photo": null,
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Ironed a shirt with the hotel kettle. Twice this year.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "THE TURN",
+      "footer": "One wall. One doorframe.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Three minutes to boil. Train until it clicks.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "ONE",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Push-Up. Ten reps while it heats.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "TWO",
+      "footer": "Your strength travels with you.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Doorframe Row. Eight reps, shoulder blades together.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THREE",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Wall Sit. Thirty seconds, back flat.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FOUR",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Glute Bridge. Ten reps on the carpet.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next trip.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Which city are you in tonight?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}
