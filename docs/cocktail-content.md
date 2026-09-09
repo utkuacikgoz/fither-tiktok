@@ -100,9 +100,25 @@ A test asserts every shipped cover line is free of fitness vocabulary. That
 is the regression worth guarding, because the first draft of this lane put
 the workout on slide one and the whole idea died there.
 
+## The no-photo fallback
+
+A cocktail's slide one only enters photo-cover mode when it declares a
+`shot`. Drop that key and it renders as a plain typographic card, same
+kicker/footer contract as every other carousel slide (owner decision,
+2026-09-09, after a first attempt to substitute a stock photo of a stranger
+was correctly refused: it breaks the format's premise that the person is
+real, and using an identifiable stranger's likeness in commercial content
+without consent is its own problem regardless of the format).
+
+This is the honest way to ship a cocktail's writing on a day the photo will
+not be shot in time: reuse the hook, the turn and the movements, drop the
+cover photo requirement, post it as a second carousel instead of a
+placeholder. `2026-09-09-group-chat-floor-cocktail.json` is the first one
+built this way.
+
 ## Status
 
-Five written and rendering, all five waiting on their photograph:
-09-09 the group chat floor, 09-10 the car, 09-11 the printer, 09-12 the hotel
-kettle, 09-13 the third reheat. `assets/cocktail/README.md` carries the
-naming and the capture contract.
+09-09 shipped as the no-photo fallback. Four still waiting on their
+photograph: 09-10 the car, 09-11 the printer, 09-12 the hotel kettle, 09-13
+the third reheat. `assets/cocktail/README.md` carries the naming and the
+capture contract.

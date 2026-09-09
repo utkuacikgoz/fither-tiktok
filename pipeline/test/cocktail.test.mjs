@@ -29,6 +29,22 @@ function spec(over = {}) {
   };
 }
 
+// The documented fallback for a photo that will not be shot in time: strip
+// "shot" from slide one and it renders as a plain typographic card instead
+// of a placeholder, which is what "ship a second carousel" actually means
+// when the cocktail's own content is reused for it (owner decision,
+// 2026-09-09).
+test("a cocktail cover with no shot declared is a plain card, not a placeholder", () => {
+  const fallback = spec();
+  fallback.scenes[0] = {
+    start: 0, end: 1, kicker: "THE MESSAGE", footer: "Strength that fits your life.",
+    overlays: [{ t: 0, text: "Told the group chat I am thriving. From the floor.", style: "hook" }],
+  };
+  const { errors, warnings } = validateSpec(fallback);
+  assert.deepEqual(errors, []);
+  assert.ok(!warnings.some((w) => /photo not captured/.test(w)));
+});
+
 test("a valid cocktail passes and only warns about the uncaptured photo", () => {
   const { errors, warnings } = validateSpec(spec());
   assert.deepEqual(errors, []);
@@ -85,7 +101,16 @@ test("every shipped cocktail cover stays off fitness", () => {
     const line = s.scenes[0].overlays[0].text;
     assert.equal(banned.test(line), false, `${file}: cover mentions fitness: "${line}"`);
     assert.ok(line.length <= 60, `${file}: cover is ${line.length} chars`);
-    assert.ok(s.scenes[0].shot?.trim(), `${file}: cover has no shot brief`);
+    // A cover only needs a shot brief when it is actually in photo-cover
+    // mode. The documented fallback for a photo that will not be shot in
+    // time is a plain typographic card here instead, which carries a
+    // kicker and footer rather than a shot.
+    if (s.scenes[0].shot !== undefined) {
+      assert.ok(s.scenes[0].shot.trim(), `${file}: cover declares a shot but it is empty`);
+    } else {
+      assert.ok(s.scenes[0].kicker?.trim(), `${file}: fallback cover needs a kicker`);
+      assert.ok(s.scenes[0].footer?.trim(), `${file}: fallback cover needs a footer`);
+    }
     seen++;
   }
   assert.ok(seen > 0, "expected at least one cocktail sidecar");

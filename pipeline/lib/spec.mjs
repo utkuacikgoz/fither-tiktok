@@ -162,7 +162,13 @@ export function validateSpec(spec, options = {}) {
       // The cocktail cover is a photo with one line on it and nothing else:
       // no kicker, no footer. It must carry the shot brief so the picture
       // can be captured, and it carries the photo once it has been.
-      const cocktailCover = spec.format === "cocktail" && i === 0;
+      //
+      // A cocktail slide one only enters cover mode when it declares a
+      // shot. Without one it is a normal typographic card, which is the
+      // documented fallback for a cover whose photo will not be shot in
+      // time: ship the same content as a plain carousel instead of a
+      // placeholder (owner decision, 2026-09-09).
+      const cocktailCover = spec.format === "cocktail" && i === 0 && scene.shot !== undefined;
       if (cocktailCover) {
         if (scene.overlays?.length !== 1) error("cover: requires exactly one overlay");
         if (typeof scene.shot !== "string" || !scene.shot.trim()) error("cover: requires a shot brief");

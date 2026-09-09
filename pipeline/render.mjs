@@ -54,7 +54,12 @@ export async function renderOne(scriptPath) {
       for (const [i, s] of spec.scenes.entries()) {
         const f = solo ? join(slideDir, `${spec.slug}.png`) : join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
         const overlay = s.overlays[0];
-        if (cocktail && i === 0) {
+        // Cover mode is opt-in per scene, matching the validator: only a
+        // slide one that declares a shot gets the photo treatment. A
+        // cocktail with no shot on slide one is the documented fallback
+        // when the photo will not be shot in time, and renders as a plain
+        // typographic carousel below.
+        if (cocktail && i === 0 && s.shot !== undefined) {
           const photo = s.photo ? join(repoRoot, s.photo) : null;
           if (!photo) notes.push(`cocktail: cover photo not captured, placeholder rendered (${s.shot})`);
           await renderCover({ text: overlay.text, photo, shot: s.shot ?? "" }, f);
@@ -78,11 +83,14 @@ export async function renderOne(scriptPath) {
     } finally {
       await closeBrowser();
     }
+    const coverHasShot = cocktail && spec.scenes[0]?.shot !== undefined;
     notes.push(solo
       ? "single: post as a TikTok photo post, one image; the CTA question is in the caption"
-      : cocktail
+      : coverHasShot
         ? "cocktail: post as a TikTok photo post; slide one is the owner's photo, no AI label"
-        : "slideshow: post as a TikTok photo post");
+        : cocktail
+          ? "cocktail (fallback, no cover photo): a plain typographic carousel, post as a TikTok photo post"
+          : "slideshow: post as a TikTok photo post");
     files.push(writeAssetRecord(outDir, spec, []));
     files.push(writeDeliveryText(outDir, spec, notes));
     return { spec, files, notes };
