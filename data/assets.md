@@ -3,7 +3,7 @@
 - Approved body-only clips: **1** across **1** movement
 - Quarantined legacy clips: **6**
 - Demo scenes in current sidecars: **0**
-- Distinct environment queries: **31**, of which **0** have an approved clip
+- Distinct environment queries: **25**, of which **0** have an approved clip
 - Approved environment clips: **0** across **0** queries
 - Ready authored animation exports: **0** across **0** movements
 - Authored animation candidates awaiting coach review: **7** across **7** movements
@@ -36,26 +36,21 @@
 
 | Query | Setting | Approved clips |
 |---|---|---:|
-| back against hotel wall | hotel_room | 0 |
 | back leaning in doorway | apartment (default) | 0 |
 | bare feet on yoga mat | bedroom | 0 |
 | curtain shadow dark room | bedroom | 0 |
 | feet climbing home staircase | stairwell | 0 |
-| feet on hotel room floor | hotel_room | 0 |
 | feet under kitchen chair | kitchen | 0 |
-| fingers on hotel door latch | hotel_room | 0 |
 | fingertips on dark wall | bedroom | 0 |
 | forearm braced against wall | apartment (default) | 0 |
 | hand closing apartment door | apartment (default) | 0 |
 | hand gripping door frame closeup | apartment (default) | 0 |
 | hand on door handle opening | apartment (default) | 0 |
-| hand on hotel window | hotel_room | 0 |
 | hand setting oven timer | kitchen | 0 |
 | hands closing laptop desk | office | 0 |
 | hands gripping chair seat | apartment (default) | 0 |
 | hands on kitchen counter closeup | kitchen | 0 |
 | hands opening oven door | kitchen | 0 |
-| hands pressing hotel wall | hotel_room | 0 |
 | hands stirring pot steam | kitchen | 0 |
 | hands typing at desk | office | 0 |
 | knees on exercise mat closeup | apartment (default) | 0 |
@@ -63,7 +58,6 @@
 | palm on glass partition | office | 0 |
 | palms flat on white wall | apartment (default) | 0 |
 | shoulder on yoga mat evening | bedroom | 0 |
-| silhouette hotel window city | hotel_room | 0 |
 | standing up from office chair | office | 0 |
 | stretching arms office corner | office | 0 |
 | torso lit by warm lamp | bedroom | 0 |
@@ -79,4 +73,4 @@ Runway may generate candidate footage. Nothing it produces is approved by the ma
 - Reverse Lunge: 0 approved clip(s); quarantined legacy footage awaiting replacement; AAA target is 3+
 - Seated Knee Lift: 0 approved clip(s); quarantined legacy footage awaiting replacement; AAA target is 3+
 - Wall Push-Up: 0 approved clip(s); quarantined legacy footage awaiting replacement; AAA target is 3+
-- 31 of 31 environment queries have no approved clip and fall back to Pexels search
+- 25 of 25 environment queries have no approved clip and fall back to Pexels search
