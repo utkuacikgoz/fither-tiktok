@@ -1,0 +1,112 @@
+{
+  "slug": "2026-09-11-printer-feeling-cocktail",
+  "week": "01",
+  "post_date": "2026-09-11",
+  "format": "cocktail",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Walked to the printer to have a feeling. Four moves you can do in work clothes without touching the floor or breaking a sweat. Reverse Lunge, Wall Push-Up, Wall Slide, Sit-to-Stand. Ten minutes between two meetings. Which corridor is yours?",
+  "hashtags": [
+    "#officeworkout",
+    "#deskworkout",
+    "#strengthtraining",
+    "#workdaystrength",
+    "#noequipmentworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "shot": "Office corridor. Standing still with a stack of printouts held up against her chest and chin, face behind the top sheet, one shoe half off, lanyard on.",
+      "photo": null,
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Walked to the printer to have a feeling.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "THE TURN",
+      "footer": "Work clothes. No floor.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Ten Reverse Lunges on the way back. Nobody looks up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "ONE",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Reverse Lunge. Six each side, quiet heels.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "TWO",
+      "footer": "Nobody looks up.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Push-Up. Ten reps on the corridor wall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THREE",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Wall Slide. Ten reps, arms flat.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FOUR",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Sit-to-Stand. Eight reps at your desk.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for Monday.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Which corridor is yours?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

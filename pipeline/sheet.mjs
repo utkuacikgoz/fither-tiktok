@@ -43,7 +43,7 @@ let missing = 0;
 // the upload: this line is the only thing that applies it. Whether a render
 // used generated footage is recorded per render in <slug>.assets.json.
 function needsAiLabel(spec) {
-  if (spec.format === "slideshow" || spec.format === "single") return false;
+  if (spec.format === "slideshow" || spec.format === "single" || spec.format === "cocktail") return false;
   const record = join(outDir, `${spec.slug}.assets.json`);
   if (!existsSync(record)) return null;
   try {
@@ -57,7 +57,7 @@ function needsAiLabel(spec) {
 // A starting rotation, not a finding. Three posts on one date have to be
 // spaced or they compete with each other for the same hour of attention;
 // which hours actually work is what the first week's numbers are for.
-const SLOT_TIME = { video: "07:30", carousel: "12:30", single: "18:30" };
+const SLOT_TIME = { video: "07:30", carousel: "12:30", single: "18:30", cocktail: "20:30" };
 
 let previousDate = null;
 for (const spec of specs) {
@@ -67,7 +67,7 @@ for (const spec of specs) {
   const expectedSlides = solo
     ? [join(outDir, `${spec.slug}.png`)]
     : spec.scenes.map((_, i) => join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`));
-  const still = solo || spec.format === "slideshow";
+  const still = solo || spec.format === "slideshow" || spec.format === "cocktail";
   const rendered = still ? expectedSlides.every(existsSync) : existsSync(mp4);
   if (!rendered) missing++;
   if (spec.post_date !== previousDate) {

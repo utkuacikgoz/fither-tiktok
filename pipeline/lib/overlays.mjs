@@ -14,6 +14,7 @@ const nm = join(dirname(fileURLToPath(import.meta.url)), "..", "node_modules");
 const font400 = `file://${join(nm, "@fontsource/inter/files/inter-latin-400-normal.woff2")}`;
 const font600 = `file://${join(nm, "@fontsource/inter/files/inter-latin-600-normal.woff2")}`;
 const fontDisplay = `file://${join(nm, "@fontsource/fraunces/files/fraunces-latin-600-normal.woff2")}`;
+const font900 = `file://${join(nm, "@fontsource/inter/files/inter-latin-900-normal.woff2")}`;
 
 const esc = (s) =>
   s.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
@@ -92,5 +93,25 @@ export async function renderSlide({ kicker = "", text, footer = "", index = 1, t
     .replace("__FOOTER__", esc(footer))
     .replace("__CUE__", esc(cueText));
   await renderHtmlToPng(html, file, { transparent: false, scale });
+  return file;
+}
+
+// The cocktail cover: a real photo of the owner, face hidden, doing something
+// ordinary, with one loud line over it. Heavy, outlined, uppercase, the
+// opposite of the editorial serif on purpose: this is a different lane and
+// the cover has to read at thumbnail size in a grid. Until the photo is
+// captured a striped placeholder carries the shot brief, so the rest of the
+// deck can be reviewed with the line in place.
+export async function renderCover({ text, photo = null, shot = "" }, file) {
+  const lineClass = text.length <= 30 ? "" : text.length <= 44 ? "long" : "xlong";
+  const html = readFileSync(join(templatesDir, "cocktail-cover.html"), "utf8")
+    .replace("__FONT_900__", font900)
+    .replace("__FONT_400__", font400)
+    .replace("__PHOTO__", photo ? `file://${photo}` : "")
+    .replace("__PLACEHOLDER__", photo ? "" : "placeholder")
+    .replace("__SHOT__", esc(shot))
+    .replace("__LINE_CLASS__", lineClass)
+    .replace("__TEXT__", esc(text));
+  await renderHtmlToPng(html, file, { transparent: false });
   return file;
 }

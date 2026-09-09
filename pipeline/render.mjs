@@ -6,12 +6,12 @@
 // brand-gradient backgrounds. Both states are printed, never hidden.
 import { join } from "node:path";
 import { writeFileSync } from "node:fs";
-import { ensureDir, rendersDir } from "./lib/env.mjs";
+import { ensureDir, rendersDir, repoRoot } from "./lib/env.mjs";
 import { loadSpec, overlayWindows } from "./lib/spec.mjs";
 import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
 import { fetchApprovedEnvironment, fetchBroll, fetchApprovedDemo, brollAvailable, readAssetMetadata } from "./lib/broll.mjs";
 import { fetchApprovedAnimation } from "./lib/animations.mjs";
-import { renderOverlay, renderSlide, closeBrowser } from "./lib/overlays.mjs";
+import { renderOverlay, renderSlide, renderCover, closeBrowser } from "./lib/overlays.mjs";
 import { renderCardClip } from "./lib/typography.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
 import { rebuildSchedule } from "./lib/schedule.mjs";
@@ -43,16 +43,24 @@ export async function renderOne(scriptPath) {
   const outDir = ensureDir(join(rendersDir, `week-${spec.week}`));
   const notes = [];
 
-  if (spec.format === "slideshow" || spec.format === "single") {
+  if (spec.format === "slideshow" || spec.format === "single" || spec.format === "cocktail") {
     // A carousel gets a directory of numbered slides; a single post is one
     // image and gets one file, so the thing you upload is the thing you see.
     const solo = spec.format === "single";
+    const cocktail = spec.format === "cocktail";
     const slideDir = solo ? outDir : ensureDir(join(outDir, spec.slug));
     const files = [];
     try {
       for (const [i, s] of spec.scenes.entries()) {
         const f = solo ? join(slideDir, `${spec.slug}.png`) : join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
         const overlay = s.overlays[0];
+        if (cocktail && i === 0) {
+          const photo = s.photo ? join(repoRoot, s.photo) : null;
+          if (!photo) notes.push(`cocktail: cover photo not captured, placeholder rendered (${s.shot})`);
+          await renderCover({ text: overlay.text, photo, shot: s.shot ?? "" }, f);
+          files.push(f);
+          continue;
+        }
         await renderSlide(
           {
             kicker: s.kicker ?? "",
@@ -72,7 +80,9 @@ export async function renderOne(scriptPath) {
     }
     notes.push(solo
       ? "single: post as a TikTok photo post, one image; the CTA question is in the caption"
-      : "slideshow: post as a TikTok photo post");
+      : cocktail
+        ? "cocktail: post as a TikTok photo post; slide one is the owner's photo, no AI label"
+        : "slideshow: post as a TikTok photo post");
     files.push(writeAssetRecord(outDir, spec, []));
     files.push(writeDeliveryText(outDir, spec, notes));
     return { spec, files, notes };

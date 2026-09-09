@@ -8,11 +8,12 @@ import { loadAnimationLibrary } from "./animations.mjs";
 import { CARD_MAX_SECONDS, CARD_MIN_SECONDS, MAX_CARDS, MIN_CARDS } from "./typography.mjs";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FORMATS = new Set(["environment-pov", "text-on-screen", "animated-demo", "motion-type", "slideshow", "single"]);
+const FORMATS = new Set(["environment-pov", "text-on-screen", "animated-demo", "motion-type", "slideshow", "single", "cocktail"]);
 // Formats rendered as still images rather than video: no voiceover, no sound
 // bed, no 45-60s contract. A carousel is many slides, a single is one.
-const STILL_FORMATS = new Set(["slideshow", "single"]);
-export const SLIDE_COUNTS = { slideshow: [4, 8], single: [1, 1] };
+const STILL_FORMATS = new Set(["slideshow", "single", "cocktail"]);
+// A cocktail is a cover photo, a turn, four to six movements and a question.
+export const SLIDE_COUNTS = { slideshow: [4, 8], single: [1, 1], cocktail: [5, 9] };
 
 // The week ships each topic three ways (owner decision, 2026-09-03): the
 // video, a carousel of the same idea, and a single-image hook from it. These
@@ -21,6 +22,10 @@ export const POST_SLOTS = ["video", "carousel", "single"];
 export function postSlot(format) {
   if (format === "slideshow") return "carousel";
   if (format === "single") return "single";
+  // The cocktail is a trial lane (owner direction, 2026-09-08): it has its
+  // own slot so it never collides with the carousel, but it is not yet one
+  // of the slots a date owes, so its absence is not reported.
+  if (format === "cocktail") return "cocktail";
   return FORMATS.has(format) ? "video" : null;
 }
 const PILLARS = new Set(["Constraint", "Skill ladder", "Reframe", "Fast tips", "Behind the build"]);
@@ -154,7 +159,23 @@ export function validateSpec(spec, options = {}) {
         error(`scene ${i}: broll_query must be a non-empty string`);
       }
       if (!Array.isArray(scene.overlays) || scene.overlays.length === 0) warn(`scene ${i}: no overlays`);
-      if (STILL_FORMATS.has(spec.format) || spec.format === "motion-type") {
+      // The cocktail cover is a photo with one line on it and nothing else:
+      // no kicker, no footer. It must carry the shot brief so the picture
+      // can be captured, and it carries the photo once it has been.
+      const cocktailCover = spec.format === "cocktail" && i === 0;
+      if (cocktailCover) {
+        if (scene.overlays?.length !== 1) error("cover: requires exactly one overlay");
+        if (typeof scene.shot !== "string" || !scene.shot.trim()) error("cover: requires a shot brief");
+        if (scene.photo != null) {
+          if (typeof scene.photo !== "string" || !/^assets\/cocktail\/[^/]+\.(jpe?g|png)$/i.test(scene.photo)) {
+            error("cover: photo must be a jpg or png under assets/cocktail/");
+          } else if (!existsSync(join(repoRoot, scene.photo))) {
+            error(`cover: photo ${scene.photo} is not in the repo`);
+          }
+        } else {
+          warn("cover: photo not captured yet, the render will use a placeholder");
+        }
+      } else if (STILL_FORMATS.has(spec.format) || spec.format === "motion-type") {
         if (scene.overlays?.length !== 1) error(`card ${i + 1}: requires exactly one overlay`);
         if (typeof scene.kicker !== "string" || !scene.kicker.trim()) error(`card ${i + 1}: requires a kicker`);
         if (typeof scene.footer !== "string" || !scene.footer.trim()) error(`card ${i + 1}: requires a footer`);

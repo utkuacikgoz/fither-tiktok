@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: "InterBlack";
+    src: url("__FONT_900__") format("woff2");
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("__FONT_400__") format("woff2");
+    font-weight: 400;
+  }
+  :root {
+    --bone: #FAF7F2;
+    --ink: #1F1D1A;
+    --gold: #B98A2F;
+  }
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; }
+  body {
+    position: relative;
+    background: #2a2723;
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--bone);
+  }
+  /* The photo is the whole frame. Cropped to cover, never letterboxed. */
+  .photo {
+    position: absolute; inset: 0;
+    background-image: url("__PHOTO__");
+    background-size: cover;
+    background-position: center;
+  }
+  /* A placeholder stands in until the shot is captured, so the rest of the
+     deck can be reviewed with the cover line in place. */
+  body.placeholder .photo {
+    background-image: none;
+    background: repeating-linear-gradient(135deg, #3a3631 0 40px, #322e29 40px 80px);
+  }
+  .placeholder-note {
+    display: none;
+    position: absolute; left: 80px; right: 80px; top: 160px;
+    font-size: 30px; line-height: 1.35; color: rgba(250,247,242,0.8);
+  }
+  body.placeholder .placeholder-note { display: block; }
+  .placeholder-note b { display: block; letter-spacing: 0.14em; font-size: 24px; margin-bottom: 14px; color: var(--gold); }
+  /* Scrim keeps the line legible over any photo. Bottom-weighted so the
+     face-hidden person stays visible in the upper two thirds. */
+  .scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 78%, rgba(0,0,0,0.7) 100%);
+  }
+  .line {
+    position: absolute; left: 72px; right: 72px; bottom: 300px;
+    font-family: "InterBlack", "Inter", system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 108px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--bone);
+    -webkit-text-stroke: 3px var(--ink);
+    paint-order: stroke fill;
+    text-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 18px 40px rgba(0,0,0,0.45);
+    word-break: normal;
+  }
+  .line.long { font-size: 88px; }
+  .line.xlong { font-size: 74px; }
+  .brand {
+    position: absolute; left: 72px; bottom: 140px;
+    font-size: 30px; letter-spacing: 0.22em; color: var(--bone); opacity: 0.9;
+  }
+  .swipe {
+    position: absolute; right: 72px; bottom: 140px;
+    font-size: 30px; letter-spacing: 0.12em; color: var(--gold); font-weight: 600;
+  }
+</style>
+</head>
+<body class="__PLACEHOLDER__">
+  <div class="photo"></div>
+  <div class="scrim"></div>
+  <div class="placeholder-note"><b>COVER TO SHOOT</b>__SHOT__</div>
+  <div class="line __LINE_CLASS__">__TEXT__</div>
+  <div class="brand">FITHER</div>
+  <div class="swipe">SWIPE →</div>
+</body>
+</html>
