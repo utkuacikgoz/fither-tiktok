@@ -1,0 +1,112 @@
+{
+  "slug": "2026-09-16-desk-body-reset-carousel",
+  "week": "01",
+  "post_date": "2026-09-16",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Your body is not built to sit for eight hours straight. Five moves at your desk: Shoulder Blade Squeeze, Wall Slide, Standing Hip Hinge, Sit-to-Stand, Seated Knee Lift. No floor, no changing, no equipment. Save this for your next meeting.",
+  "hashtags": [
+    "#deskworkout",
+    "#officeworkout",
+    "#strengthtraining",
+    "#workdaystrength",
+    "#noequipmentworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "SIT ALL DAY",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Your body is not built to sit for eight hours straight.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "SHOULDERS",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Shoulder Blade Squeeze. Twelve reps, sitting tall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "UPPER BACK",
+      "footer": "Undoes the hunch.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Slide. Ten reps against the nearest wall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "HIPS",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Standing Hip Hinge. Ten reps, stand up first.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "LEGS",
+      "footer": "Your legs forgot they can do this.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Sit-to-Stand. Eight reps, no hands on the desk.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "CORE",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Seated Knee Lift. Ten each side, right where you are.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for your next meeting.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Which one are you doing right now?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}
