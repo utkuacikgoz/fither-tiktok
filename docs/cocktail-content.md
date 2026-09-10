@@ -68,6 +68,9 @@ captures footage rather than generating it, no Runway spend, no AI label, and
 the person on slide one is genuinely real, which is what the format trades
 on.
 
+**Superseded, 2026-09-10**: see "Stock photo covers" below. The owner-shot
+path is still available; it is no longer the default one.
+
 ## Hooks
 
 `content/cocktail-hooks.md` holds the cover-hook bank, five lanes with the
@@ -116,9 +119,28 @@ cover photo requirement, post it as a second carousel instead of a
 placeholder. `2026-09-09-group-chat-floor-cocktail.json` is the first one
 built this way.
 
+## Stock photo covers
+
+Sourcing the cover was changed to Pexels stock search (owner decision,
+2026-09-10), the same way environment b-roll is sourced: a `stock_query` on
+the cover scene, resolved at render time by `fetchCoverPhoto()` in
+`pipeline/lib/broll.mjs`, screened through the same face detector as every
+other faceless gate in the pipeline, cached, and identity-tracked in
+`data/shot-history.json` so one stock photo cannot cover two posts. A
+candidate with a visible face is rejected automatically; there is no visual
+review step before render the way owner-shot photos get one.
+
+This is a deliberate trade against the earlier position in this document: a
+stock photo is a stranger, not the owner, so the format's "this actually
+happened to her" premise is now fictional rather than literal. The decision
+stands as made; this file records the trade rather than re-litigating it.
+`scene.photo` (an owner-shot file under `assets/cocktail/`) still takes
+priority when both are present, so filming the owner's own photo is not
+precluded, only no longer the default path.
+
 ## Status
 
-09-09 shipped as the no-photo fallback. Four still waiting on their
-photograph: 09-10 the car, 09-11 the printer, 09-12 the hotel kettle, 09-13
-the third reheat. `assets/cocktail/README.md` carries the naming and the
-capture contract.
+09-09 shipped as the no-photo fallback. 09-10 through 09-13 carry a
+`stock_query` and source their cover from Pexels at render time.
+`assets/cocktail/README.md` carries the naming and capture contract for the
+owner-shot path, which is still available.

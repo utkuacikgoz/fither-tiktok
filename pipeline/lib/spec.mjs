@@ -178,8 +178,16 @@ export function validateSpec(spec, options = {}) {
           } else if (!existsSync(join(repoRoot, scene.photo))) {
             error(`cover: photo ${scene.photo} is not in the repo`);
           }
+        } else if (scene.stock_query != null) {
+          // A Pexels stock photo stands in for a photo the owner has not
+          // shot. It is sourced and face-screened at render time, the same
+          // way environment b-roll is, so there is nothing to validate here
+          // beyond the query itself.
+          if (typeof scene.stock_query !== "string" || !scene.stock_query.trim()) {
+            error("cover: stock_query must be a non-empty string");
+          }
         } else {
-          warn("cover: photo not captured yet, the render will use a placeholder");
+          warn("cover: photo not captured yet and no stock_query set, the render will use a placeholder");
         }
       } else if (STILL_FORMATS.has(spec.format) || spec.format === "motion-type") {
         if (scene.overlays?.length !== 1) error(`card ${i + 1}: requires exactly one overlay`);

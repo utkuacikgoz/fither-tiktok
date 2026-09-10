@@ -51,6 +51,23 @@ test("a valid cocktail passes and only warns about the uncaptured photo", () => 
   assert.ok(warnings.some((w) => /photo not captured yet/.test(w)));
 });
 
+// A stock_query stands in for a photo the owner has not shot: the render
+// sources and face-screens it at build time, so validation only checks that
+// a query was actually given, and does not warn about a missing photo.
+test("a cover with a stock_query but no photo passes without the placeholder warning", () => {
+  const s = spec();
+  s.scenes[0] = cover({ photo: null, stock_query: "woman driving car sun visor" });
+  const { errors, warnings } = validateSpec(s);
+  assert.deepEqual(errors, []);
+  assert.ok(!warnings.some((w) => /photo not captured/.test(w)));
+});
+
+test("an empty stock_query is an error", () => {
+  const s = spec();
+  s.scenes[0] = cover({ photo: null, stock_query: "   " });
+  assert.ok(validateSpec(s).errors.some((e) => /stock_query must be a non-empty string/.test(e)));
+});
+
 // The cover is a photograph with one line on it. Requiring a kicker and
 // footer there would be the typographic card's contract, not this one.
 test("the cover needs a shot brief but no kicker or footer", () => {

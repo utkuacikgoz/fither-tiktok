@@ -9,7 +9,7 @@ import { writeFileSync } from "node:fs";
 import { ensureDir, rendersDir, repoRoot } from "./lib/env.mjs";
 import { loadSpec, overlayWindows } from "./lib/spec.mjs";
 import { synthesizeLines, ttsAvailable } from "./lib/tts.mjs";
-import { fetchApprovedEnvironment, fetchBroll, fetchApprovedDemo, brollAvailable, readAssetMetadata } from "./lib/broll.mjs";
+import { fetchApprovedEnvironment, fetchBroll, fetchApprovedDemo, fetchCoverPhoto, brollAvailable, readAssetMetadata } from "./lib/broll.mjs";
 import { fetchApprovedAnimation } from "./lib/animations.mjs";
 import { renderOverlay, renderSlide, renderCover, closeBrowser } from "./lib/overlays.mjs";
 import { renderCardClip } from "./lib/typography.mjs";
@@ -50,6 +50,8 @@ export async function renderOne(scriptPath) {
     const cocktail = spec.format === "cocktail";
     const slideDir = solo ? outDir : ensureDir(join(outDir, spec.slug));
     const files = [];
+    const coverAssets = [];
+    let coverSource = null;
     try {
       for (const [i, s] of spec.scenes.entries()) {
         const f = solo ? join(slideDir, `${spec.slug}.png`) : join(slideDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
@@ -60,8 +62,31 @@ export async function renderOne(scriptPath) {
         // when the photo will not be shot in time, and renders as a plain
         // typographic carousel below.
         if (cocktail && i === 0 && s.shot !== undefined) {
-          const photo = s.photo ? join(repoRoot, s.photo) : null;
-          if (!photo) notes.push(`cocktail: cover photo not captured, placeholder rendered (${s.shot})`);
+          let photo = s.photo ? join(repoRoot, s.photo) : null;
+          if (photo) {
+            coverSource = "owner";
+          } else if (s.stock_query) {
+            const stockFile = await fetchCoverPhoto(s.stock_query, spec.slug);
+            if (stockFile) {
+              photo = stockFile;
+              coverSource = "stock";
+              const metadata = readAssetMetadata(stockFile);
+              coverAssets.push({
+                scene_start: s.start,
+                kind: "cover-photo",
+                movement: null,
+                query: s.stock_query,
+                asset_id: metadata?.asset_id ?? null,
+                source: metadata?.source ?? null,
+              });
+            } else {
+              notes.push(`cocktail: no stock photo found for "${s.stock_query}", placeholder rendered (${s.shot})`);
+              coverSource = "placeholder";
+            }
+          } else {
+            notes.push(`cocktail: cover photo not captured, placeholder rendered (${s.shot})`);
+            coverSource = "placeholder";
+          }
           await renderCover({ text: overlay.text, photo, shot: s.shot ?? "" }, f);
           files.push(f);
           continue;
@@ -86,12 +111,16 @@ export async function renderOne(scriptPath) {
     const coverHasShot = cocktail && spec.scenes[0]?.shot !== undefined;
     notes.push(solo
       ? "single: post as a TikTok photo post, one image; the CTA question is in the caption"
-      : coverHasShot
+      : coverSource === "owner"
         ? "cocktail: post as a TikTok photo post; slide one is the owner's photo, no AI label"
-        : cocktail
-          ? "cocktail (fallback, no cover photo): a plain typographic carousel, post as a TikTok photo post"
-          : "slideshow: post as a TikTok photo post");
-    files.push(writeAssetRecord(outDir, spec, []));
+        : coverSource === "stock"
+          ? "cocktail: post as a TikTok photo post; slide one is a Pexels stock photo (face-hidden verified), no AI label"
+          : coverHasShot
+            ? "cocktail: post as a TikTok photo post; cover photo missing, placeholder rendered"
+            : cocktail
+              ? "cocktail (fallback, no cover photo): a plain typographic carousel, post as a TikTok photo post"
+              : "slideshow: post as a TikTok photo post");
+    files.push(writeAssetRecord(outDir, spec, coverAssets));
     files.push(writeDeliveryText(outDir, spec, notes));
     return { spec, files, notes };
   }

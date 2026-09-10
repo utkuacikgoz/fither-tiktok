@@ -66,6 +66,16 @@ async function search(query) {
   return (await res.json()).videos ?? [];
 }
 
+async function searchPhotos(query) {
+  const url = new URL("https://api.pexels.com/v1/search");
+  url.searchParams.set("query", query);
+  url.searchParams.set("orientation", "portrait");
+  url.searchParams.set("per_page", String(MAX_CANDIDATES));
+  const res = await fetch(url, { headers: { Authorization: process.env.PEXELS_API_KEY } });
+  if (!res.ok) throw new Error(`Pexels ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  return (await res.json()).photos ?? [];
+}
+
 async function fetchJpeg(url) {
   const res = await fetch(url);
   if (!res.ok) return null;
@@ -303,5 +313,59 @@ export async function fetchBroll(query, mode = "environment", excludedIds = new 
     rmSync(tmp, { force: true });
   }
   console.log(`  broll "${query}" [${mode}]: no acceptable candidate, using gradient`);
+  return null;
+}
+
+// A cocktail cover photo, sourced the same way as environment b-roll: a
+// search, screened, cached, and identity-tracked so shot-history stops the
+// same stock image from covering two posts. The face-hidden requirement is
+// the format's own rule (a real person's face is never the point), not the
+// channel's separate faceless-footage rule, so it reuses the same detector
+// at the same bar rather than inventing a second gate.
+export async function fetchCoverPhoto(query, seed = "", excludedIds = new Set()) {
+  if (!brollAvailable() || !query) return null;
+  const dir = ensureDir(join(cacheDir, "cover-photos"));
+  const blocked = new Set([...shotHistoryIds(), ...excludedIds]);
+
+  const found = await searchPhotos(query);
+  const start = found.length
+    ? parseInt(createHash("sha1").update(`${seed}|${query}`).digest("hex").slice(0, 6), 16) % found.length
+    : 0;
+  const candidates = [...found.slice(start), ...found.slice(0, start)];
+
+  for (const photo of candidates) {
+    const identity = `pexels-photo:${photo.id}`;
+    if (blocked.has(identity)) {
+      console.log(`  cover photo "${query}": candidate ${photo.id} skipped (shot history)`);
+      continue;
+    }
+    const src = photo.src?.large2x ?? photo.src?.original ?? photo.src?.large;
+    if (!src) continue;
+    const buf = await fetchJpeg(src);
+    if (!buf) continue;
+    if (await faceInJpeg(buf, SOURCE_FACE_THRESHOLD)) {
+      console.log(`  cover photo "${query}": candidate ${photo.id} rejected (face visible)`);
+      continue;
+    }
+    const raw = join(dir, `raw-${photo.id}.jpg`);
+    const file = join(dir, `cover-${photo.id}.jpg`);
+    writeFileSync(raw, buf);
+    try {
+      const ffmpeg = await ffmpegPath();
+      await pexec(ffmpeg, ["-y", "-loglevel", "error", "-i", raw, "-vf", PORTRAIT_GEOMETRY, file], { maxBuffer: 1 << 24 });
+    } finally {
+      rmSync(raw, { force: true });
+    }
+    writeAssetMetadata(file, {
+      asset_id: identity,
+      source: "pexels",
+      kind: "cover-photo",
+      query,
+      pexels_url: photo.url,
+      photographer: photo.photographer ?? null,
+    });
+    return file;
+  }
+  console.log(`  cover photo "${query}": no acceptable candidate`);
   return null;
 }
