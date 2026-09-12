@@ -52,8 +52,9 @@ lines close before tomorrow's desk session is seeded.
 ## 3. VISUALS / SCENE BREAKDOWN
 
 Scene 1 (0:00 to 0:19). Environment: a close moving shot across an exercise
-mat in a dim living room, body in frame, face out of it. Overlays: "These five moves make zero
-noise." (hook), then "Start with ten slow glute bridges." (step).
+mat in a dim living room, body in frame, face out of it. Overlays: "The
+floor creaks. She trains anyway." (hook), then "Start with ten slow glute
+bridges." (step).
 
 Scene 2 (0:19 to 0:23). Environment: a dim living room lit by one lamp, body in frame, face out of it. Overlay: "Wall sit for thirty silent seconds." (step).
 

@@ -20,7 +20,7 @@
   "voiceover": [
     {
       "t": 0,
-      "text": "Your next meeting is in twelve minutes."
+      "text": "Your calendar just gave you a workout."
     },
     {
       "t": 4.5,
@@ -83,7 +83,7 @@
       "overlays": [
         {
           "t": 0,
-          "text": "Twelve minutes is enough to train.",
+          "text": "Your calendar just gave you a workout.",
           "style": "hook"
         },
         {

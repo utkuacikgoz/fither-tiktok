@@ -8,12 +8,13 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"Home training skips your back. Not today." (the video's hook, held as slide one so a viewer who
-scrolls past the video still meets the same promise.)
+"Every home workout faces a mirror. Your back never shows up." (the video's
+hook, held as slide one so a viewer who scrolls past the video still meets
+the same promise.)
 
 ## 2. SCRIPT (6 slides)
 
-1. THE MISSING HALF. "Home training skips your back. Not today."
+1. NEVER SHOWS UP. "Every home workout faces a mirror. Your back never shows up."
 2. RUNG ONE. "Doorframe Lean Row. Grip the frame and lean back."
 3. RUNG TWO. "Doorframe Row, eight reps, feet a step closer."
 4. RUNG THREE. "Deep Doorframe Row. Arms long, pull to the frame."
@@ -28,7 +29,7 @@ to compress them, which is what makes it the saveable version of the day.
 
 ## 4. CAPTION AND HASHTAGS
 
-Push-ups everywhere and nothing for your back. Four rungs on one doorframe: Lean Row, Doorframe Row, Deep Doorframe Row, Single-Arm Doorframe Row. The missing half of home strength. Save the ladder.
+Push-ups everywhere and nothing for your back. Four rungs on one doorframe: Lean Row, Doorframe Row, Deep Doorframe Row, Single-Arm Doorframe Row. The muscle your mirror never shows you. Save the ladder.
 
 #backworkout #doorframerow #strengthtraining #noequipmentworkout #homeworkout
 

@@ -8,11 +8,11 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"These five moves make zero noise." (the whole post. A single image has one frame and it is the hook.)
+"The floor creaks. She trains anyway." (the whole post. A single image has one frame and it is the hook.)
 
 ## 2. SCRIPT (one slide)
 
-1. ZERO NOISE. "These five moves make zero noise." Footer: "For the wall with someone asleep behind it."
+1. ZERO NOISE. "The floor creaks. She trains anyway." Footer: "For the wall with someone asleep behind it."
 
 ## 3. VISUALS / SCENE BREAKDOWN
 

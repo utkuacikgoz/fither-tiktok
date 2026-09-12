@@ -8,11 +8,11 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"Home training skips your back. Not today." (the whole post. A single image has one frame and it is the hook.)
+"Every home workout faces a mirror. Your back never shows up." (the whole post. A single image has one frame and it is the hook.)
 
 ## 2. SCRIPT (one slide)
 
-1. THE MISSING HALF. "Home training skips your back. Not today." Footer: "Four rungs on one doorframe."
+1. NEVER SHOWS UP. "Every home workout faces a mirror. Your back never shows up." Footer: "Four rungs on one doorframe."
 
 ## 3. VISUALS / SCENE BREAKDOWN
 

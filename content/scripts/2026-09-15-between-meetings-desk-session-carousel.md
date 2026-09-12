@@ -8,12 +8,12 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"Twelve minutes is enough to train." (the video's hook, held as slide one so a viewer who
+"Your calendar just gave you a workout." (the video's hook, held as slide one so a viewer who
 scrolls past the video still meets the same promise.)
 
 ## 2. SCRIPT (6 slides)
 
-1. THE GAP. "Twelve minutes is enough to train."
+1. THE GAP. "Your calendar just gave you a workout."
 2. CORE. "Seated Knee Lift, ten each side, sitting tall."
 3. LEGS. "Sit-to-Stand, ten reps, no hands on the chair."
 4. PRESS. "Wall Push-Up, ten reps. Press the wall away."

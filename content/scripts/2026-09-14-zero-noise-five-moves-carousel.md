@@ -8,12 +8,12 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"These five moves make zero noise." (the video's hook, held as slide one so a viewer who
+"The floor creaks. She trains anyway." (the video's hook, held as slide one so a viewer who
 scrolls past the video still meets the same promise.)
 
 ## 2. SCRIPT (6 slides)
 
-1. ZERO NOISE. "These five moves make zero noise."
+1. ZERO NOISE. "The floor creaks. She trains anyway."
 2. ONE. "Glute Bridge, ten slow reps on the floor."
 3. TWO. "Wall Sit, thirty silent seconds."
 4. THREE. "Wall Push-Up, ten reps, quiet as breathing."

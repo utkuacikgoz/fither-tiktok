@@ -8,11 +8,11 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"Twelve minutes is enough to train." (the whole post. A single image has one frame and it is the hook.)
+"Your calendar just gave you a workout." (the whole post. A single image has one frame and it is the hook.)
 
 ## 2. SCRIPT (one slide)
 
-1. THE GAP. "Twelve minutes is enough to train." Footer: "Work clothes. No floor. No sweat."
+1. THE GAP. "Your calendar just gave you a workout." Footer: "Work clothes. No floor. No sweat."
 
 ## 3. VISUALS / SCENE BREAKDOWN
 

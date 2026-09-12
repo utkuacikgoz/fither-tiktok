@@ -11,15 +11,16 @@
 First frame: an office chair pulled away from the desk, ready to use. The
 gap is visible immediately without relying on an unverified demo.
 
-1. "Your next meeting is in twelve minutes." (specific situation: the
-   calendar gap. CHOSEN; the CTA asks how long her gap is)
+1. "Your calendar just gave you a workout." (contradiction, made specific:
+   not the gap itself but what it actually is. CHOSEN; the CTA asks how
+   long her gap is)
 2. "You can train at your desk without anyone noticing." (contradiction:
    the office as a gym, invisibly)
 3. "Five moves, no floor, no changing, no sweat." (number/promise)
 
 ## 2. SCRIPT (about 60 seconds)
 
-0:00 Hook: "Your next meeting is in twelve minutes."
+0:00 Hook: "Your calendar just gave you a workout."
 
 0:04 "You won't change clothes. You won't sweat."
 
@@ -54,8 +55,9 @@ land before tomorrow's next hidden gap is seeded.
 ## 3. VISUALS / SCENE BREAKDOWN
 
 Scene 1 (0:00 to 0:17). Environment: an office chair pulled away from the
-desk in window light, body in frame, face out of it. Overlays: "Twelve minutes is enough to
-train." (hook), then "Seated knee lifts, ten each side." (step).
+desk in window light, body in frame, face out of it. Overlays: "Your
+calendar just gave you a workout." (hook), then "Seated knee lifts, ten
+each side." (step).
 
 Scene 2 (0:17 to 0:21). Environment: an office chair by a desk in window
 light, body in frame, face out of it. Overlay: "Ten sit-to-stands. No hands." (step).

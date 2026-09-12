@@ -12,15 +12,17 @@ No approved pull demo exists yet, so this video opens on its strongest
 environment shot (a doorframe filling the frame) and the hook line carries
 the tension alone.
 
-1. "Home workouts train half your body. The front half." (contradiction:
-   the workout she already does is incomplete. CHOSEN)
+1. "Every home workout faces a mirror. Your back never shows up."
+   (contradiction, made specific: not "half your body" as a stat, but the
+   actual reason home training skips it. She trains facing a mirror, so
+   she trains what she can see. CHOSEN)
 2. "Your push-ups are ahead of your rows. Way ahead." (specific situation:
    the imbalance she can feel)
 3. "Four rungs from a lean to a one arm row." (number/promise)
 
 ## 2. SCRIPT (about 60 seconds)
 
-0:00 Hook: "Home workouts train half your body. The front half."
+0:00 Hook: "Every home workout faces a mirror. Your back never shows up."
 
 0:05 "Nothing to pull. Except you have doorframes."
 
@@ -51,8 +53,8 @@ land before tomorrow's silent session is seeded.
 ## 3. VISUALS / SCENE BREAKDOWN
 
 Scene 1 (0:00 to 0:15). Environment: a white doorframe filling the frame,
-shot from inside the room, body in frame, face out of it. Overlay: "Home training skips your
-back. Not today." (hook).
+shot from inside the room, body in frame, face out of it. Overlay: "Every
+home workout faces a mirror. Your back never shows up." (hook).
 
 Scene 2 (0:15 to 0:25). Environment: an open door frame in sunlight,
 second angle. Overlays: "Rung one. Lean back and row in." (step), then
@@ -79,8 +81,8 @@ four movements if this video clears the save threshold.
 ## 4. CAPTION AND HASHTAGS
 
 Back exercises at home no equipment: the doorframe row ladder, four rungs
-from a lean to a single arm row. The missing half of home strength. Save
-the ladder.
+from a lean to a single arm row. The muscle your mirror never shows you.
+Save the ladder.
 
 #strengthtraining #backworkout #noequipmentworkout #homeworkout #doorframerow
 

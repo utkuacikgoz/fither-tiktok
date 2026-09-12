@@ -20,7 +20,7 @@
   "voiceover": [
     {
       "t": 0,
-      "text": "Home workouts train half your body. The front half."
+      "text": "Every home workout faces a mirror. Your back never shows up."
     },
     {
       "t": 5.9,
@@ -75,7 +75,7 @@
       "overlays": [
         {
           "t": 0,
-          "text": "Home training skips your back. Not today.",
+          "text": "Every home workout faces a mirror. Your back never shows up.",
           "style": "hook"
         }
       ]

@@ -20,12 +20,12 @@
     {
       "start": 0,
       "end": 1,
-      "kicker": "THE MISSING HALF",
+      "kicker": "NEVER SHOWS UP",
       "footer": "Strength that fits your life.",
       "overlays": [
         {
           "t": 0,
-          "text": "Home training skips your back. Not today.",
+          "text": "Every home workout faces a mirror. Your back never shows up.",
           "style": "hook"
         }
       ]
