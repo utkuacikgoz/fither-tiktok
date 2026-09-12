@@ -1,0 +1,245 @@
+{
+  "slug": "2026-09-23-quarter-end-three-moves",
+  "week": "02",
+  "post_date": "2026-09-23",
+  "format": "motion-type",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
+  "caption": "Minimum workout for a busy work week: Sit-to-Stand, Doorframe Lean Row, Glute Bridge. Three rounds, seven minutes, the same three every day so the plan never asks you anything.",
+  "hashtags": [
+    "#strengthtraining",
+    "#busywomen",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#minimumeffectivedose"
+  ],
+  "voiceover": [
+    {
+      "t": 0,
+      "text": "It's quarter end. You have no decisions left."
+    },
+    {
+      "t": 4.8,
+      "text": "The plan breaks before the week does."
+    },
+    {
+      "t": 9.1,
+      "text": "Not time. Choosing costs more than training."
+    },
+    {
+      "t": 13.4,
+      "text": "So the plan shrinks to three movements."
+    },
+    {
+      "t": 17.7,
+      "text": "Sit-to-Stand. Eight reps. Out of your desk chair."
+    },
+    {
+      "t": 23.1,
+      "text": "Doorframe Lean Row. Ten reps. Your back wakes up."
+    },
+    {
+      "t": 28.5,
+      "text": "Glute Bridge. Ten reps. On the floor beside it."
+    },
+    {
+      "t": 33.9,
+      "text": "Three rounds. Seven minutes. The same three every day."
+    },
+    {
+      "t": 39.3,
+      "text": "Seven minutes is a complete session."
+    },
+    {
+      "t": 43,
+      "text": "You kept the standard and cut the choosing."
+    },
+    {
+      "t": 47.8,
+      "text": "You built this in the hardest week."
+    },
+    {
+      "t": 52.1,
+      "text": "Push and core come back next week."
+    },
+    {
+      "t": 56.4,
+      "text": "Which three would you pick?"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4.8,
+      "kicker": "QUARTER END",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "It's quarter end. You have no decisions left.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 4.8,
+      "end": 9.1,
+      "kicker": "WHAT BREAKS",
+      "footer": "The plan, not you.",
+      "overlays": [
+        {
+          "t": 4.8,
+          "text": "The plan breaks before the week does.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 9.1,
+      "end": 13.4,
+      "kicker": "THE REAL COST",
+      "footer": "Deciding is the expensive part.",
+      "overlays": [
+        {
+          "t": 9.1,
+          "text": "Not time. Choosing costs more than training.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 13.4,
+      "end": 17.7,
+      "kicker": "THE SHRINK",
+      "footer": "Shrink the plan, never the standard.",
+      "overlays": [
+        {
+          "t": 13.4,
+          "text": "So the plan shrinks to three movements.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 17.7,
+      "end": 23.1,
+      "kicker": "ONE",
+      "footer": "Squat pattern. Chair only.",
+      "overlays": [
+        {
+          "t": 17.7,
+          "text": "Sit-to-Stand. Eight reps. Out of your desk chair.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 23.1,
+      "end": 28.5,
+      "kicker": "TWO",
+      "footer": "Pull pattern. Any doorframe.",
+      "overlays": [
+        {
+          "t": 23.1,
+          "text": "Doorframe Lean Row. Ten reps. Your back wakes up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 28.5,
+      "end": 33.9,
+      "kicker": "THREE",
+      "footer": "Hinge pattern. Floor only.",
+      "overlays": [
+        {
+          "t": 28.5,
+          "text": "Glute Bridge. Ten reps. On the floor beside it.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 33.9,
+      "end": 39.3,
+      "kicker": "THE STRUCTURE",
+      "footer": "Three rounds. Seven minutes.",
+      "overlays": [
+        {
+          "t": 33.9,
+          "text": "Three rounds. Seven minutes. The same three every day.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 39.3,
+      "end": 43,
+      "kicker": "THE STANDARD",
+      "footer": "Seven minutes is complete.",
+      "overlays": [
+        {
+          "t": 39.3,
+          "text": "Seven minutes is a complete session.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 43,
+      "end": 47.8,
+      "kicker": "THE PROOF",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 43,
+          "text": "You kept the standard and cut the choosing.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 47.8,
+      "end": 52.1,
+      "kicker": "YOURS",
+      "footer": "You built this.",
+      "overlays": [
+        {
+          "t": 47.8,
+          "text": "You built this in the hardest week.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 52.1,
+      "end": 56.4,
+      "kicker": "NEXT WEEK",
+      "footer": "Three patterns today. Five soon.",
+      "overlays": [
+        {
+          "t": 52.1,
+          "text": "Push and core come back next week.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 56.4,
+      "end": 59.6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the busiest week.",
+      "overlays": [
+        {
+          "t": 56.4,
+          "text": "Which three would you pick?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}
