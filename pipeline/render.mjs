@@ -66,7 +66,12 @@ export async function renderOne(scriptPath) {
           if (photo) {
             coverSource = "owner";
           } else if (s.stock_query) {
-            const stockFile = await fetchCoverPhoto(s.stock_query, spec.slug);
+            let stockFile = null;
+            try {
+              stockFile = await fetchCoverPhoto(s.stock_query, spec.slug);
+            } catch (e) {
+              notes.push(`cocktail: stock photo lookup for "${s.stock_query}" failed (${e.message.slice(0, 80)}), placeholder rendered`);
+            }
             if (stockFile) {
               photo = stockFile;
               coverSource = "stock";
