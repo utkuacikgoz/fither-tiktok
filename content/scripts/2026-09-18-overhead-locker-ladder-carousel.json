@@ -1,0 +1,125 @@
+{
+  "slug": "2026-09-18-overhead-locker-ladder-carousel",
+  "week": "02",
+  "post_date": "2026-09-18",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "number",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Exercises to lift a suitcase overhead: the five rung hinge ladder, every rung named with its tier and reps, from Standing Hip Hinge to Single-Leg Hip Thrust, plus Prone Y Raise for the upper back. A chair is the only equipment. Who lifts your bag?",
+  "hashtags": [
+    "#strengthtraining",
+    "#travelworkout",
+    "#noequipmentworkout",
+    "#hipstrength",
+    "#overheadlocker"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "FIVE RUNGS",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Five rungs between you and that overhead locker.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "RUNG ONE",
+      "footer": "Ready when your back stays long throughout.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Rung 1. Standing Hip Hinge, ten reps, tier 1.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "RUNG TWO",
+      "footer": "Ready when the reach adds range, not rounding.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Rung 2. Hinge and Reach, ten reps, tier 2.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "RUNG THREE",
+      "footer": "Ready when six a side stop wobbling.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Rung 3. Single-Leg Hip Hinge, six a side, tier 4.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "RUNG FOUR",
+      "footer": "Shoulders on a chair. Ready when ten feel smooth.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Rung 4. Hip Thrust, ten reps, tier 4.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "RUNG FIVE",
+      "footer": "The top rung. Months, not a week.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Rung 5. Single-Leg Hip Thrust, six a side, tier 6.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE COMPANION",
+      "footer": "Hips start the lift. The back finishes it.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Prone Y Raise, ten reps, tier 3. The upper back finishes the lift.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "THE TOP",
+      "footer": "Save the ladder.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "You put your own bag in the locker. Who lifts yours?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

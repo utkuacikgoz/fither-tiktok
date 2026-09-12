@@ -1,0 +1,125 @@
+{
+  "slug": "2026-09-19-shoulders-done-five-moves-carousel",
+  "week": "02",
+  "post_date": "2026-09-19",
+  "format": "slideshow",
+  "pillar": "Fast tips",
+  "hook_mechanism": "number",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "What to train when your shoulders are sore: Wall Sit, Reverse Lunge, Glute Bridge March, Lying Heel Tap, Sit-to-Stand. Squat, hinge and core only, ten minutes, nothing overhead and nothing to hold. No push and no pull today, because both load the shoulder girdle. Save this for the next heavy carrying day.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#soreshoulders",
+    "#mumstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "FIVE MOVES",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Five moves today. None of them touch your shoulders.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE, SQUAT",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Wall Sit, thirty seconds. Knees and hips hold you, shoulders stay out.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO, SQUAT",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Reverse Lunge, six reps. Slow, quiet, one leg back at a time.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE, HINGE",
+      "footer": "Hips do the work.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Glute Bridge March, ten reps. Hips lift, core holds the line.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR, CORE",
+      "footer": "Nothing above the ribs.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Lying Heel Tap, ten reps. Ribs down, arms doing nothing.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE, SQUAT",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Sit-to-Stand, eight reps. Off the chair, no hands, no push.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE HONEST BIT",
+      "footer": "It trains what is fresh.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "No push, no pull today. Both load the shoulder girdle.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next heavy day.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "What is tired on you today?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

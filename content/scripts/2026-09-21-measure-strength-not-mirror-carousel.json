@@ -1,0 +1,125 @@
+{
+  "slug": "2026-09-21-measure-strength-not-mirror-carousel",
+  "week": "02",
+  "post_date": "2026-09-21",
+  "format": "slideshow",
+  "pillar": "Reframe",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "How to know your strength training is working: six tests from your own week, not one from a mirror. The buggy up two flights, the case into the boot, the door, the sofa, the last street home, the floor. Save it and run it on your week.",
+  "hashtags": [
+    "#strengthtraining",
+    "#strengthforwomen",
+    "#everydaystrength",
+    "#mumstrength",
+    "#trainforlife"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "8:40 THIS MORNING",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "The buggy, two flights, and nobody counted it.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "TEST ONE",
+      "footer": "Legs and grip, before nine.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Buggy up two flights: that is a squat and a carry.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TEST TWO",
+      "footer": "The hips start that lift.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Case into the boot: that is a hinge.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "TEST THREE",
+      "footer": "Your back works all week.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "A heavy door hauled open: that is a pull.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "TEST FOUR",
+      "footer": "Arms and chest, no equipment.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "The sofa shoved aside on a Sunday: that is a push.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "TEST FIVE",
+      "footer": "Your middle holds the whole load.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Carrying her the last street home: that is core.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "TEST SIX",
+      "footer": "The test most people stop taking.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Up off the floor without hands: that is a squat.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and run it on your own week.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which of these did you pass this week?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}
