@@ -65,7 +65,7 @@ already rendered.
 ## EXP-004 — Carousel or single: which earns the save?
 
 - **Week opened**: 01
-- **Status**: running
+- **Status**: void
 - **Hypothesis**: the carousel out-saves the single on the same topic,
   because a list of named movements is a thing to come back to and a hook
   on one frame is a thing to agree with and scroll past.
@@ -78,13 +78,17 @@ already rendered.
   second carousel. If the single wins by any margin, singles get the hook
   budget and carousels get shorter. A gap under 5 either way means both
   stay and the mix is not the lever.
-- **Result**: —
-- **Decision**: —
+- **Result**: No data. 2026-09-12's first real TikTok Studio pull gave
+  views for 4 posts, none of them a single, and only one account-wide
+  save total. Views alone cannot decide a saves-per-1k question.
+- **Decision**: Void for week 01, same as EXP-001 to EXP-003: the
+  question was never actually tested with visible data. Re-register for
+  week 02 once a single's own saves/1k is visible in a data pull.
 
 ## EXP-005 — Does typography alone earn the right to fund video?
 
 - **Week opened**: 01
-- **Status**: running
+- **Status**: decided
 - **Hypothesis**: the writing and the brand carry the channel without any
   footage, so the typography posts clear the save bar on their own.
 - **Variants**: all 15 typography posts of week 01 (7 carousels, 7 singles,
@@ -97,5 +101,15 @@ already rendered.
   15 means keep shipping typography and hold footage spend for another
   week. Under 8 means the writing is the problem and no format spend is
   justified until the hooks improve.
-- **Result**: —
-- **Decision**: —
+- **Result**: Account-wide (not yet per-post): roughly 0.4 saves/1000 views
+  this week (1 save, 2.3K views), well under 8. Small sample and not the
+  exact median-of-15 the experiment specifies, but every post that shipped
+  this week was typography, so it is the best reading available.
+- **Decision**: Under 8. No footage spend this cycle regardless of the
+  Runway credit question; the writing is the limiting factor, not the
+  format. This is why the 09-13/09-14/09-15 on-screen hooks were rewritten
+  on 2026-09-12 (they were the generic half of the problem: audience skews
+  55% male on a channel for women, and the only tracked search term was
+  the generic "incline push ups", not anything specific to her). Week 02
+  keeps funding zero-cost typography and keeps pushing hook specificity
+  before revisiting footage spend.
