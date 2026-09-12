@@ -140,6 +140,23 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: node pipeline/render.mjs "content/scripts/${{ matrix.slug }}.md"
 
+      # Delivered independently of Actions artifact storage: that quota is
+      # billing-cycle cached (GitHub's own error names a 6-12h recalculation
+      # window), so freeing space does not unblock a new upload until that
+      # window turns over. A direct branch push has no such lag, so a single
+      # render is retrievable the moment this job finishes rather than
+      # waiting on account storage math outside this repo's control.
+      - name: Push this render directly to git
+        run: |
+          week="${{ needs.plan.outputs.week }}"
+          slug="${{ matrix.slug }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch --orphan "render-preview/$slug"
+          git add -f "renders/week-$week"
+          git commit -m "Preview render: $slug (run ${{ github.run_id }})"
+          git push -f origin "render-preview/$slug"
+
       - uses: actions/upload-artifact@v7
         with:
           name: shard-${{ matrix.slug }}
