@@ -1,0 +1,245 @@
+{
+  "slug": "2026-09-22-off-the-floor-ladder",
+  "week": "02",
+  "post_date": "2026-09-22",
+  "format": "motion-type",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "number",
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
+  "caption": "How to get off the floor without using your hands, in four rungs: Supported Sit-to-Stand, Sit-to-Stand, Paused Squat, Elevated Split Squat, then Single-Leg Sit-to-Stand at the top. Getting down on the floor with her is free. Getting up is the training. Save the ladder.",
+  "hashtags": [
+    "#strengthtraining",
+    "#noequipmentworkout",
+    "#strengthforwomen",
+    "#sittostand",
+    "#floortostanding"
+  ],
+  "voiceover": [
+    {
+      "t": 0,
+      "text": "Four rungs to standing off the floor without hands."
+    },
+    {
+      "t": 5.4,
+      "text": "Getting down is free. Getting up is training."
+    },
+    {
+      "t": 10.2,
+      "text": "Rung one. Supported Sit-to-Stand. Eight reps, hands on the chair."
+    },
+    {
+      "t": 16.1,
+      "text": "Rung two. Sit-to-Stand. Eight reps, arms folded."
+    },
+    {
+      "t": 20.4,
+      "text": "Rung three. Paused Squat. Eight reps, two seconds down."
+    },
+    {
+      "t": 25.8,
+      "text": "Rung four. Elevated Split Squat. Six reps each side."
+    },
+    {
+      "t": 31.2,
+      "text": "The top. Single-Leg Sit-to-Stand. Four reps, one leg."
+    },
+    {
+      "t": 36,
+      "text": "Climb when the rung below feels easy."
+    },
+    {
+      "t": 40.3,
+      "text": "Rung four takes months, not a week."
+    },
+    {
+      "t": 44.6,
+      "text": "Every rung is yours. You climbed it."
+    },
+    {
+      "t": 48.9,
+      "text": "You get yourself up. No hands, no sofa."
+    },
+    {
+      "t": 53.7,
+      "text": "Tomorrow: three moves, seven minutes."
+    },
+    {
+      "t": 56.9,
+      "text": "Which rung are you on?"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 5.4,
+      "kicker": "FOUR RUNGS",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Four rungs to standing off the floor without hands.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 5.4,
+      "end": 10.2,
+      "kicker": "THE REAL SKILL",
+      "footer": "Nobody names this one.",
+      "overlays": [
+        {
+          "t": 5.4,
+          "text": "Getting down is free. Getting up is training.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 10.2,
+      "end": 16.1,
+      "kicker": "RUNG ONE",
+      "footer": "Tier 1. The chair takes some of it.",
+      "overlays": [
+        {
+          "t": 10.2,
+          "text": "Rung one. Supported Sit-to-Stand. Eight reps, hands on the chair.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 16.1,
+      "end": 20.4,
+      "kicker": "RUNG TWO",
+      "footer": "Tier 2. Same chair, no hands.",
+      "overlays": [
+        {
+          "t": 16.1,
+          "text": "Rung two. Sit-to-Stand. Eight reps, arms folded.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 20.4,
+      "end": 25.8,
+      "kicker": "RUNG THREE",
+      "footer": "Tier 3. No chair behind you now.",
+      "overlays": [
+        {
+          "t": 20.4,
+          "text": "Rung three. Paused Squat. Eight reps, two seconds down.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 25.8,
+      "end": 31.2,
+      "kicker": "RUNG FOUR",
+      "footer": "Tier 5. Back foot on the chair.",
+      "overlays": [
+        {
+          "t": 25.8,
+          "text": "Rung four. Elevated Split Squat. Six reps each side.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 31.2,
+      "end": 36,
+      "kicker": "THE TOP",
+      "footer": "Tier 6. One leg, no hands.",
+      "overlays": [
+        {
+          "t": 31.2,
+          "text": "The top. Single-Leg Sit-to-Stand. Four reps, one leg.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 36,
+      "end": 40.3,
+      "kicker": "WHEN TO MOVE UP",
+      "footer": "Slow and steady is the test.",
+      "overlays": [
+        {
+          "t": 36,
+          "text": "Climb when the rung below feels easy.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 40.3,
+      "end": 44.6,
+      "kicker": "HONEST NOTE",
+      "footer": "Months, not a week.",
+      "overlays": [
+        {
+          "t": 40.3,
+          "text": "Rung four takes months, not a week.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 44.6,
+      "end": 48.9,
+      "kicker": "YOURS",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 44.6,
+          "text": "Every rung is yours. You climbed it.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 48.9,
+      "end": 53.7,
+      "kicker": "THE CAPABILITY",
+      "footer": "No hands. No furniture.",
+      "overlays": [
+        {
+          "t": 48.9,
+          "text": "You get yourself up. No hands, no sofa.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 53.7,
+      "end": 56.9,
+      "kicker": "TOMORROW",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 53.7,
+          "text": "Tomorrow: three moves, seven minutes.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 56.9,
+      "end": 59.8,
+      "kicker": "YOUR TURN",
+      "footer": "Save the ladder.",
+      "overlays": [
+        {
+          "t": 56.9,
+          "text": "Which rung are you on?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

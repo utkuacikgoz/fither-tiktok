@@ -1,0 +1,262 @@
+{
+  "slug": "2026-09-21-measure-strength-not-mirror",
+  "week": "02",
+  "post_date": "2026-09-21",
+  "format": "motion-type",
+  "pillar": "Reframe",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
+  "caption": "How to know your strength training is working: the buggy up two flights, the case into the boot, the last street home carrying her. Your week is the test and it already gave you the answer. The mirror never did.",
+  "hashtags": [
+    "#strengthtraining",
+    "#strengthforwomen",
+    "#trainforlife",
+    "#mumstrength",
+    "#everydaystrength"
+  ],
+  "voiceover": [
+    {
+      "t": 0,
+      "text": "Eight forty this morning. The buggy. Two flights."
+    },
+    {
+      "t": 4.8,
+      "text": "You did not stop on the landing."
+    },
+    {
+      "t": 9.1,
+      "text": "That was a squat and a carry."
+    },
+    {
+      "t": 13.4,
+      "text": "Nobody counted it. No mirror could."
+    },
+    {
+      "t": 17.1,
+      "text": "A mirror cannot tell you that. Your week can."
+    },
+    {
+      "t": 22.5,
+      "text": "The case into the boot is a hinge."
+    },
+    {
+      "t": 27.3,
+      "text": "The door you haul open is a pull."
+    },
+    {
+      "t": 32.1,
+      "text": "Shoving the sofa aside is a push."
+    },
+    {
+      "t": 36.4,
+      "text": "Carrying her that last street is core."
+    },
+    {
+      "t": 40.7,
+      "text": "You passed the test before nine."
+    },
+    {
+      "t": 44.5,
+      "text": "You built that on the stairs."
+    },
+    {
+      "t": 48.3,
+      "text": "Your strength shows up where your life does."
+    },
+    {
+      "t": 53.1,
+      "text": "Tomorrow: standing up without hands."
+    },
+    {
+      "t": 56.3,
+      "text": "Which test did you pass today?"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4.8,
+      "kicker": "8:40 THIS MORNING",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Eight forty this morning. The buggy. Two flights.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 4.8,
+      "end": 9.1,
+      "kicker": "THE STAIRS",
+      "footer": "No stop on the landing.",
+      "overlays": [
+        {
+          "t": 4.8,
+          "text": "You did not stop on the landing.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 9.1,
+      "end": 13.4,
+      "kicker": "THE PATTERN",
+      "footer": "Two patterns, one flight of stairs.",
+      "overlays": [
+        {
+          "t": 9.1,
+          "text": "That was a squat and a carry.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 13.4,
+      "end": 17.1,
+      "kicker": "UNCOUNTED",
+      "footer": "The mirror was not there.",
+      "overlays": [
+        {
+          "t": 13.4,
+          "text": "Nobody counted it. No mirror could.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 17.1,
+      "end": 22.5,
+      "kicker": "THE INSTRUMENT",
+      "footer": "Your week is the better test.",
+      "overlays": [
+        {
+          "t": 17.1,
+          "text": "A mirror cannot tell you that. Your week can.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 22.5,
+      "end": 27.3,
+      "kicker": "TEST ONE",
+      "footer": "The boot of the car. A hinge.",
+      "overlays": [
+        {
+          "t": 22.5,
+          "text": "The case into the boot is a hinge.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 27.3,
+      "end": 32.1,
+      "kicker": "TEST TWO",
+      "footer": "A heavy door. A pull.",
+      "overlays": [
+        {
+          "t": 27.3,
+          "text": "The door you haul open is a pull.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 32.1,
+      "end": 36.4,
+      "kicker": "TEST THREE",
+      "footer": "Furniture out of the way. A push.",
+      "overlays": [
+        {
+          "t": 32.1,
+          "text": "Shoving the sofa aside is a push.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 36.4,
+      "end": 40.7,
+      "kicker": "TEST FOUR",
+      "footer": "The last street home. Core.",
+      "overlays": [
+        {
+          "t": 36.4,
+          "text": "Carrying her that last street is core.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 40.7,
+      "end": 44.5,
+      "kicker": "THE RESULT",
+      "footer": "Your week already graded you.",
+      "overlays": [
+        {
+          "t": 40.7,
+          "text": "You passed the test before nine.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 44.5,
+      "end": 48.3,
+      "kicker": "YOU BUILT THIS",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 44.5,
+          "text": "You built that on the stairs.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 48.3,
+      "end": 53.1,
+      "kicker": "THE MEASURE",
+      "footer": "Measure it where you use it.",
+      "overlays": [
+        {
+          "t": 48.3,
+          "text": "Your strength shows up where your life does.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 53.1,
+      "end": 56.3,
+      "kicker": "TOMORROW",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 53.1,
+          "text": "Tomorrow: standing up without hands.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 56.3,
+      "end": 60.0,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for your next flight of stairs.",
+      "overlays": [
+        {
+          "t": 56.3,
+          "text": "Which test did you pass today?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

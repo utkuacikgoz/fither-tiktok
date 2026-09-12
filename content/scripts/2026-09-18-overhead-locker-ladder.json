@@ -1,0 +1,262 @@
+{
+  "slug": "2026-09-18-overhead-locker-ladder",
+  "week": "02",
+  "post_date": "2026-09-18",
+  "format": "motion-type",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "number",
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
+  "caption": "Exercises to lift a suitcase overhead: five hinge rungs from Standing Hip Hinge to Single-Leg Hip Thrust, plus Prone Y Raise for the upper back that finishes the lift. A chair is the only equipment. Save the ladder.",
+  "hashtags": [
+    "#strengthtraining",
+    "#travelworkout",
+    "#noequipmentworkout",
+    "#hipstrength",
+    "#overheadlocker"
+  ],
+  "voiceover": [
+    {
+      "t": 0,
+      "text": "Five rungs between you and that overhead locker."
+    },
+    {
+      "t": 4.8,
+      "text": "The bag is yours. Nobody is offering."
+    },
+    {
+      "t": 9.1,
+      "text": "Hips start it. The upper back finishes."
+    },
+    {
+      "t": 13.4,
+      "text": "Rung one. Standing Hip Hinge. Ten reps."
+    },
+    {
+      "t": 17.7,
+      "text": "Rung two. Hinge and Reach. Ten reps."
+    },
+    {
+      "t": 22,
+      "text": "Rung three. Single-Leg Hip Hinge. Six a side."
+    },
+    {
+      "t": 26.8,
+      "text": "Rung four. Hip Thrust. Ten reps."
+    },
+    {
+      "t": 30.6,
+      "text": "Rung five. Single-Leg Hip Thrust. Six a side."
+    },
+    {
+      "t": 35.4,
+      "text": "Add Prone Y Raise. Ten reps."
+    },
+    {
+      "t": 39.2,
+      "text": "Climb when a rung stops feeling heavy."
+    },
+    {
+      "t": 43.5,
+      "text": "Nobody offered. You lifted it anyway."
+    },
+    {
+      "t": 47.8,
+      "text": "You put your own bag in the locker."
+    },
+    {
+      "t": 52.6,
+      "text": "Tomorrow: training when your shoulders are done."
+    },
+    {
+      "t": 57,
+      "text": "Who lifts your bag?"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4.8,
+      "kicker": "FIVE RUNGS",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Five rungs between you and that overhead locker.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 4.8,
+      "end": 9.1,
+      "kicker": "THE MOMENT",
+      "footer": "Two seconds of hesitation.",
+      "overlays": [
+        {
+          "t": 4.8,
+          "text": "The bag is yours. Nobody is offering.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 9.1,
+      "end": 13.4,
+      "kicker": "HOW IT WORKS",
+      "footer": "Hinge first. Pull second.",
+      "overlays": [
+        {
+          "t": 9.1,
+          "text": "Hips start it. The upper back finishes.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 13.4,
+      "end": 17.7,
+      "kicker": "RUNG ONE",
+      "footer": "Tier 1. Hands sliding down your thighs.",
+      "overlays": [
+        {
+          "t": 13.4,
+          "text": "Rung one. Standing Hip Hinge. Ten reps.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 17.7,
+      "end": 22,
+      "kicker": "RUNG TWO",
+      "footer": "Tier 2. The reach adds range.",
+      "overlays": [
+        {
+          "t": 17.7,
+          "text": "Rung two. Hinge and Reach. Ten reps.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 22,
+      "end": 26.8,
+      "kicker": "RUNG THREE",
+      "footer": "Tier 4. One leg, one long spine.",
+      "overlays": [
+        {
+          "t": 22,
+          "text": "Rung three. Single-Leg Hip Hinge. Six a side.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 26.8,
+      "end": 30.6,
+      "kicker": "RUNG FOUR",
+      "footer": "Tier 4. Shoulders on a chair.",
+      "overlays": [
+        {
+          "t": 26.8,
+          "text": "Rung four. Hip Thrust. Ten reps.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 30.6,
+      "end": 35.4,
+      "kicker": "RUNG FIVE",
+      "footer": "Tier 6. The top rung.",
+      "overlays": [
+        {
+          "t": 30.6,
+          "text": "Rung five. Single-Leg Hip Thrust. Six a side.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 35.4,
+      "end": 39.2,
+      "kicker": "THE COMPANION",
+      "footer": "Tier 3. The upper back finish.",
+      "overlays": [
+        {
+          "t": 35.4,
+          "text": "Add Prone Y Raise. Ten reps.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 39.2,
+      "end": 43.5,
+      "kicker": "THE RULE",
+      "footer": "Months, not a week.",
+      "overlays": [
+        {
+          "t": 39.2,
+          "text": "Climb when a rung stops feeling heavy.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 43.5,
+      "end": 47.8,
+      "kicker": "THE PAYOFF",
+      "footer": "Quiet. No equipment but a chair.",
+      "overlays": [
+        {
+          "t": 43.5,
+          "text": "Nobody offered. You lifted it anyway.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 47.8,
+      "end": 52.6,
+      "kicker": "WHAT YOU OWN",
+      "footer": "You built this.",
+      "overlays": [
+        {
+          "t": 47.8,
+          "text": "You put your own bag in the locker.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 52.6,
+      "end": 57,
+      "kicker": "TOMORROW",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 52.6,
+          "text": "Tomorrow: training when your shoulders are done.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "kicker": "YOUR TURN",
+      "footer": "Save the ladder.",
+      "overlays": [
+        {
+          "t": 57,
+          "text": "Who lifts your bag?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

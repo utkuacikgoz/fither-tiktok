@@ -1,0 +1,245 @@
+{
+  "slug": "2026-09-20-toddler-proof-floor-session",
+  "week": "02",
+  "post_date": "2026-09-20",
+  "format": "motion-type",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
+  "caption": "Workout with toddler climbing on you: a ten minute floor session built to absorb her. Glute Bridge, Glute Bridge March, Lying Heel Slide, Kneeling Balance Reach, Knee Plank. Floor level, nothing tips over, door open.",
+  "hashtags": [
+    "#strengthtraining",
+    "#mumstrength",
+    "#homeworkout",
+    "#toddlermom",
+    "#floorworkout"
+  ],
+  "voiceover": [
+    {
+      "t": 0,
+      "text": "She climbs on your back at rep four."
+    },
+    {
+      "t": 4.8,
+      "text": "Keep going. The set still counts."
+    },
+    {
+      "t": 8.5,
+      "text": "The quiet half hour is not coming."
+    },
+    {
+      "t": 12.8,
+      "text": "So the whole session lives on the floor."
+    },
+    {
+      "t": 17.6,
+      "text": "Glute Bridge, ten reps. It holds her."
+    },
+    {
+      "t": 21.9,
+      "text": "Glute Bridge March, ten reps. One knee lifts."
+    },
+    {
+      "t": 26.7,
+      "text": "Lying Heel Slide, ten reps. Slow and quiet."
+    },
+    {
+      "t": 31.5,
+      "text": "Kneeling Balance Reach, eight reps. She copies you."
+    },
+    {
+      "t": 36.3,
+      "text": "Knee Plank, twenty five seconds. She crawls under."
+    },
+    {
+      "t": 41.1,
+      "text": "Ten minutes, complete. The door never closed."
+    },
+    {
+      "t": 45.4,
+      "text": "You trained with a toddler on your back."
+    },
+    {
+      "t": 50.2,
+      "text": "Tomorrow your strength carries her up the stairs."
+    },
+    {
+      "t": 55.0,
+      "text": "Who is climbing on you?"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4.8,
+      "kicker": "REP FOUR",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "She climbs on your back at rep four.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 4.8,
+      "end": 8.5,
+      "kicker": "KEEP GOING",
+      "footer": "The interruption is part of the plan.",
+      "overlays": [
+        {
+          "t": 4.8,
+          "text": "Keep going. The set still counts.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 8.5,
+      "end": 12.8,
+      "kicker": "THE HALF HOUR",
+      "footer": "No closed door needed.",
+      "overlays": [
+        {
+          "t": 8.5,
+          "text": "The quiet half hour is not coming.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 12.8,
+      "end": 17.6,
+      "kicker": "THE BUILD",
+      "footer": "Floor level. Nothing tips over.",
+      "overlays": [
+        {
+          "t": 12.8,
+          "text": "So the whole session lives on the floor.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 17.6,
+      "end": 21.9,
+      "kicker": "ONE",
+      "footer": "Hinge. Ten reps on your back.",
+      "overlays": [
+        {
+          "t": 17.6,
+          "text": "Glute Bridge, ten reps. It holds her.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 21.9,
+      "end": 26.7,
+      "kicker": "TWO",
+      "footer": "Hinge and core. Ten reps.",
+      "overlays": [
+        {
+          "t": 21.9,
+          "text": "Glute Bridge March, ten reps. One knee lifts.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 26.7,
+      "end": 31.5,
+      "kicker": "THREE",
+      "footer": "Core. Ten slow reps.",
+      "overlays": [
+        {
+          "t": 26.7,
+          "text": "Lying Heel Slide, ten reps. Slow and quiet.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 31.5,
+      "end": 36.3,
+      "kicker": "FOUR",
+      "footer": "Core and back. Eight reps.",
+      "overlays": [
+        {
+          "t": 31.5,
+          "text": "Kneeling Balance Reach, eight reps. She copies you.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 36.3,
+      "end": 41.1,
+      "kicker": "FIVE",
+      "footer": "Core. A twenty five second hold.",
+      "overlays": [
+        {
+          "t": 36.3,
+          "text": "Knee Plank, twenty five seconds. She crawls under.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 41.1,
+      "end": 45.4,
+      "kicker": "THE PAYOFF",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 41.1,
+          "text": "Ten minutes, complete. The door never closed.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 45.4,
+      "end": 50.2,
+      "kicker": "YOU BUILT THIS",
+      "footer": "Strength you own.",
+      "overlays": [
+        {
+          "t": 45.4,
+          "text": "You trained with a toddler on your back.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 50.2,
+      "end": 55.0,
+      "kicker": "TOMORROW",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 50.2,
+          "text": "Tomorrow your strength carries her up the stairs.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 55.0,
+      "end": 60.0,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the morning.",
+      "overlays": [
+        {
+          "t": 55.0,
+          "text": "Who is climbing on you?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

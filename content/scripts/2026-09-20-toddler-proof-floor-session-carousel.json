@@ -1,0 +1,112 @@
+{
+  "slug": "2026-09-20-toddler-proof-floor-session-carousel",
+  "week": "02",
+  "post_date": "2026-09-20",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Workout with toddler climbing on you: five floor moves built to absorb her. Glute Bridge, Glute Bridge March, Lying Heel Slide, Kneeling Balance Reach, Knee Plank. Ten minutes, floor level, nothing tips over. Save this for the morning.",
+  "hashtags": [
+    "#strengthtraining",
+    "#mumstrength",
+    "#homeworkout",
+    "#toddlermom",
+    "#floorworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "REP FOUR",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "She climbs on your back at rep four. The set still counts.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Hinge. Floor level.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Glute Bridge, ten reps. She sits on your hips and the bridge holds.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Hinge and core. Nothing tips over.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Glute Bridge March, ten reps. One knee lifts while she holds on.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. Ten slow reps.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Lying Heel Slide, ten reps. Slow and quiet, with her lying beside you.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Core and back. Eight reps.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Kneeling Balance Reach, eight reps. She copies the reach. Keep counting.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE",
+      "footer": "Core. A twenty five second hold.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Knee Plank, twenty five seconds. The plank becomes a tunnel she crawls under.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Ten minutes. Door open.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Who is climbing on you?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}

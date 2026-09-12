@@ -1,0 +1,34 @@
+{
+  "slug": "2026-09-20-toddler-proof-floor-session-single",
+  "week": "02",
+  "post_date": "2026-09-20",
+  "format": "single",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Workout with toddler climbing on you: a ten minute floor session built to absorb her, all of it at floor level so nothing tips over when she lands. Who is climbing on you?",
+  "hashtags": [
+    "#strengthtraining",
+    "#mumstrength",
+    "#toddlermom",
+    "#homeworkout",
+    "#tenminutes"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "REP FOUR",
+      "footer": "For the mother whose door does not close.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "She climbs on your back at rep four. The set still counts.",
+          "style": "hook"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "slug": "2026-09-19-shoulders-done-five-moves",
+  "week": "02",
+  "post_date": "2026-09-19",
+  "format": "motion-type",
+  "pillar": "Fast tips",
+  "hook_mechanism": "number",
+  "sound": {
+    "profile": "quiet-drive",
+    "bed_gain_db": -16
+  },
+  "caption": "What to train when your shoulders are sore: five strength moves that use legs, hips and core only. Wall Sit, Reverse Lunge, Glute Bridge March, Lying Heel Tap, Sit-to-Stand. No push, no pull, ten minutes.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#soreshoulders",
+    "#mumstrength"
+  ],
+  "voiceover": [
+    {
+      "t": 0,
+      "text": "Five moves today. None of them touch your shoulders."
+    },
+    {
+      "t": 4.8,
+      "text": "Two flights of stairs with the car seat."
+    },
+    {
+      "t": 9.6,
+      "text": "Shoulders done. Four fifths of you is not."
+    },
+    {
+      "t": 14.4,
+      "text": "Wall Sit, thirty seconds. Your legs hold you there."
+    },
+    {
+      "t": 19.8,
+      "text": "Reverse Lunge, six reps. Slow and silent."
+    },
+    {
+      "t": 24.1,
+      "text": "Glute Bridge March, ten reps. Hips and core."
+    },
+    {
+      "t": 28.9,
+      "text": "Lying Heel Tap, ten reps. Ribs down."
+    },
+    {
+      "t": 33.2,
+      "text": "Sit-to-Stand, eight reps. No hands."
+    },
+    {
+      "t": 36.9,
+      "text": "No push. No pull. Nothing loads the shoulder."
+    },
+    {
+      "t": 41.7,
+      "text": "A complete session, and you never loaded a shoulder."
+    },
+    {
+      "t": 47.1,
+      "text": "You built this from what was fresh."
+    },
+    {
+      "t": 51.4,
+      "text": "Tomorrow, the floor, with a toddler on it."
+    },
+    {
+      "t": 56.2,
+      "text": "What is tired on you today?"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4.8,
+      "kicker": "FIVE MOVES",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Five moves today. None of them touch your shoulders.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 4.8,
+      "end": 9.6,
+      "kicker": "TODAY",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 4.8,
+          "text": "Two flights of stairs with the car seat.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 9.6,
+      "end": 14.4,
+      "kicker": "THE SPLIT",
+      "footer": "Squat, hinge and core only.",
+      "overlays": [
+        {
+          "t": 9.6,
+          "text": "Shoulders done. Four fifths of you is not.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 14.4,
+      "end": 19.8,
+      "kicker": "ONE",
+      "footer": "Knees and hips do this one.",
+      "overlays": [
+        {
+          "t": 14.4,
+          "text": "Wall Sit, thirty seconds. Your legs hold you there.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 19.8,
+      "end": 24.1,
+      "kicker": "TWO",
+      "footer": "Nothing to hold. Nothing to push.",
+      "overlays": [
+        {
+          "t": 19.8,
+          "text": "Reverse Lunge, six reps. Slow and silent.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 24.1,
+      "end": 28.9,
+      "kicker": "THREE",
+      "footer": "Floor level, start to finish.",
+      "overlays": [
+        {
+          "t": 24.1,
+          "text": "Glute Bridge March, ten reps. Hips and core.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 28.9,
+      "end": 33.2,
+      "kicker": "FOUR",
+      "footer": "Slow is the whole point.",
+      "overlays": [
+        {
+          "t": 28.9,
+          "text": "Lying Heel Tap, ten reps. Ribs down.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 33.2,
+      "end": 36.9,
+      "kicker": "FIVE",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 33.2,
+          "text": "Sit-to-Stand, eight reps. No hands.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 36.9,
+      "end": 41.7,
+      "kicker": "THE HONEST BIT",
+      "footer": "It trains what is fresh.",
+      "overlays": [
+        {
+          "t": 36.9,
+          "text": "No push. No pull. Nothing loads the shoulder.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 41.7,
+      "end": 47.1,
+      "kicker": "THE PAYOFF",
+      "footer": "You did the whole thing.",
+      "overlays": [
+        {
+          "t": 41.7,
+          "text": "A complete session, and you never loaded a shoulder.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 47.1,
+      "end": 51.4,
+      "kicker": "YOURS",
+      "footer": "You build this.",
+      "overlays": [
+        {
+          "t": 47.1,
+          "text": "You built this from what was fresh.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 51.4,
+      "end": 56.2,
+      "kicker": "TOMORROW",
+      "footer": "A workout that fits today.",
+      "overlays": [
+        {
+          "t": 51.4,
+          "text": "Tomorrow, the floor, with a toddler on it.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 56.2,
+      "end": 59.8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next heavy day.",
+      "overlays": [
+        {
+          "t": 56.2,
+          "text": "What is tired on you today?",
+          "style": "cta"
+        }
+      ]
+    }
+  ]
+}
