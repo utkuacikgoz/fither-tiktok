@@ -113,3 +113,82 @@ already rendered.
   the generic "incline push ups", not anything specific to her). Week 02
   keeps funding zero-cost typography and keeps pushing hook specificity
   before revisiting footage spend.
+
+## EXP-006 — Carousel or single: which earns the save?
+
+- **Week opened**: 02
+- **Status**: running
+- **Hypothesis**: the carousel out-saves the single on the same topic, because
+  a list of named movements is a thing to come back to and a hook on one frame
+  is a thing to agree with and scroll past. Re-registered from the voided
+  EXP-004, which never got data; week 02 ships a clean matched pair on all
+  seven dates.
+- **Variants**: seven matched pairs, one slideshow carousel and one single per
+  topic on the same date, 2026-09-17 to 2026-09-23. The motion-type video on
+  each date is excluded from the comparison, so format is the only variable
+  inside a pair.
+- **Metric**: saves per 1000 views by format, median across the 7 pairs. If
+  TikTok Studio still hides per-post saves, likes per 1000 views is the
+  declared substitute and the substitution is recorded in the result.
+- **Decision rule**: carousel median beats single by 5 saves/1k or more → the
+  next plan written after this data arrives drops singles to 2 a week and
+  spends the freed slots on second carousels. Single wins by any margin →
+  singles take the hook budget and carousels shorten to 4 slides. Gap under 5
+  either way → both stay and the mix is not the lever. If fewer than 5 of the 7
+  pairs report per-post saves and fewer than 5 report per-post likes, void and
+  stop re-registering this question until TikTok Studio exposes per-post
+  engagement.
+- **Result**: —
+- **Decision**: —
+
+## EXP-007 — Does a named-constraint hook out-save a number-led hook?
+
+- **Week opened**: 02
+- **Status**: running
+- **Hypothesis**: EXP-005 decided the writing is the limiting factor. A hook
+  that names a scene she is standing in ("She climbs on your back at rep four")
+  earns the save, while a hook that states a number and a claim ("Five moves,
+  no floor") reads as any fitness account and pulls a general audience. This
+  tests whether cinematic specificity is what earns the save or only what reads
+  well to us.
+- **Variants**: the 7 week-02 carousels, same format and same slot, split 4/3
+  on the shape of the opening card only. Named-constraint: 09-17 (Gate 42),
+  09-20 (toddler at rep four), 09-21 (the stairs at 8:40), 09-23 (quarter end).
+  Number-led control: 09-18, 09-19, 09-22. Both groups keep female-addressed
+  body copy and constraint-shaped captions, so the variable is scene
+  specificity in the hook, not who the post is written for.
+- **Metric**: saves per 1000 views (same likes/1k fallback as EXP-006), median
+  per variant group. Secondary, acknowledged as confounded by all 21 posts:
+  account-wide female viewer share at the next pull, baseline 42%.
+- **Decision rule**: named-constraint median at least 3 saves/1k above
+  number-led, or account-wide female share up 5 points to 47% or higher →
+  named-constraint hooks become mandatory on every slot from the next plan and
+  number-led openings retire. Number-led wins by 3 saves/1k or more, or female
+  share falls below 42% → hook shape is not the lever and the next test moves
+  to caption and search phrasing. Gap under 3 with female share between 42 and
+  47 → hold the mix and re-run once per-post watch % exists.
+- **Result**: —
+- **Decision**: —
+
+## EXP-008 — Do constraint-shaped search phrases change which searches deliver traffic?
+
+- **Week opened**: 02
+- **Status**: running
+- **Hypothesis**: week 01's only tracked search term was "incline push ups", a
+  bare movement name that belongs to any fitness account. Target phrases shaped
+  like her situation ("layover workout without changing clothes", "workout with
+  toddler climbing on you", "what to train when your shoulders are sore") will
+  pull constraint-shaped queries instead of movement-name queries.
+- **Variants**: all 21 week-02 posts carry a constraint-shaped target phrase in
+  the caption and no bare-movement-name title, measured against the week 01
+  baseline of exactly 1 tracked term, generic.
+- **Metric**: the search terms TikTok Studio lists as driving traffic, counted
+  by shape: constraint-shaped (names a place, a person or a situation) versus
+  bare movement name.
+- **Decision rule**: 2 or more constraint-shaped tracked terms → constraint
+  captions stay mandatory and go into the writer's brief. 0 or 1
+  constraint-shaped terms while at least 2 terms are tracked → the caption is
+  not the lever and the next test moves to hashtags. Fewer than 2 tracked terms
+  in total → not enough data, re-register unchanged.
+- **Result**: —
+- **Decision**: —
