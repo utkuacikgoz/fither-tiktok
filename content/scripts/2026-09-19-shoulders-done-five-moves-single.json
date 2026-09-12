@@ -1,0 +1,34 @@
+{
+  "slug": "2026-09-19-shoulders-done-five-moves-single",
+  "week": "02",
+  "post_date": "2026-09-19",
+  "format": "single",
+  "pillar": "Fast tips",
+  "hook_mechanism": "number",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "What to train when your shoulders are sore: two flights of stairs with the car seat and your shoulders are done. Your hips are not. Five moves, squat, hinge and core only, ten minutes. No push, no pull, nothing loading the shoulder girdle. What is tired on you today?",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#soreshoulders",
+    "#mumstrength",
+    "#tenminutes"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "FIVE MOVES",
+      "footer": "Squat, hinge and core only.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Five moves today. None of them touch your shoulders.",
+          "style": "hook"
+        }
+      ]
+    }
+  ]
+}

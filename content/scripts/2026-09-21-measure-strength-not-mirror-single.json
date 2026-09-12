@@ -1,0 +1,34 @@
+{
+  "slug": "2026-09-21-measure-strength-not-mirror-single",
+  "week": "02",
+  "post_date": "2026-09-21",
+  "format": "single",
+  "pillar": "Reframe",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "How to know your strength training is working: not the mirror, the stairs. The buggy up two flights, the case into the boot, the last street home. Your week already gave you the answer. What did you carry today?",
+  "hashtags": [
+    "#strengthtraining",
+    "#strengthforwomen",
+    "#everydaystrength",
+    "#mumstrength",
+    "#trainforlife"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "8:40 THIS MORNING",
+      "footer": "The mirror was never the test.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Nobody counted the stairs you carried her up this morning.",
+          "style": "hook"
+        }
+      ]
+    }
+  ]
+}

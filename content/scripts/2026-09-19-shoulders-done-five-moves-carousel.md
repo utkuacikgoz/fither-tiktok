@@ -23,7 +23,7 @@ as slide one so a viewer who scrolls past the video meets the same promise.)
 4. THREE, HINGE. "Glute Bridge March, ten reps. Hips lift, core holds the line."
 5. FOUR, CORE. "Lying Heel Tap, ten reps. Ribs down, arms doing nothing."
 6. FIVE, SQUAT. "Sit-to-Stand, eight reps. Off the chair, no hands, no push."
-7. THE HONEST BIT. "No push, no pull today. Both load the shoulder girdle. Squat, hinge and core do not."
+7. THE HONEST BIT. "No push, no pull today. Both load the shoulder girdle." Footer: "It trains what is fresh."
 8. YOUR TURN. "What is tired on you today?"
 
 ## 3. VISUALS / SCENE BREAKDOWN
