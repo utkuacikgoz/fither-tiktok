@@ -38,8 +38,12 @@ jobs:
       - name: Run golden render
         working-directory: pipeline
         run: npm run golden
+      # Convenience only, never the gate: the render already passed or
+      # failed above. Actions artifact storage quota errors here should
+      # never fail a check that has nothing to do with storage quota.
       - uses: actions/upload-artifact@v7
         if: always()
+        continue-on-error: true
         with:
           name: golden-render
           path: renders/golden/
