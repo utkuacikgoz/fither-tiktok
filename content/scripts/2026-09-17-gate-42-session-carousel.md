@@ -8,13 +8,13 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"Gate 42. Ninety minutes. A row of strangers opposite." (the video's hook,
+"Gate 42. Ninety minutes. Nobody here knows you're training." (the video's hook,
 held as slide one so a viewer who scrolls past the video still meets the same
 named constraint. Registered under EXP-007 as a named-constraint opening.)
 
 ## 2. SCRIPT (7 slides)
 
-1. GATE 42. "Gate 42. Ninety minutes. A row of strangers opposite."
+1. GATE 42. "Gate 42. Ninety minutes. Nobody here knows you're training."
 2. ONE. "Sit-to-Stand, eight reps, from the gate seat, no hands on the armrests."
 3. TWO. "Seated Knee Lift, ten reps, in the seat, bag still between your feet."
 4. THREE. "Standing Hip Hinge, ten slow reps, facing the window, nothing to hold."

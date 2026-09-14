@@ -13,16 +13,17 @@ footage in this piece by decision, so the first frame is the strongest line
 set in the largest type. The card is the caption: the words on screen are the
 words being spoken.
 
-1. "Gate 42. Ninety minutes. A row of strangers opposite." (specific
-   situation: the named gate, the named span of time, the named audience.
-   CHOSEN, and registered as one of EXP-007's named-constraint hooks)
+1. "Gate 42. Ninety minutes. Nobody here knows you're training." (specific
+   situation: the named gate and span of time carry the scene, and the
+   reveal is the turn rather than a third named fact. CHOSEN, and
+   registered as one of EXP-007's named-constraint hooks)
 2. "You are not short of time here. You are short of privacy." (contradiction:
    the constraint everyone assumes against the one that actually stops her)
 3. "Five moves at the gate, and nobody opposite looks up." (number/promise)
 
 ## 2. SCRIPT (about 60 seconds)
 
-0:00 Hook: "Gate 42. Ninety minutes. A row of strangers opposite."
+0:00 Hook: "Gate 42. Ninety minutes. Nobody here knows you're training."
 
 0:05 "You are not short of time. You are short of privacy."
 
