@@ -49,10 +49,10 @@ export function cardZoomFilter(duration, fps = 30) {
 
 // Renders one card to a silent MP4 the compositor can treat as any other
 // scene background.
-export async function renderCardClip({ kicker, text, footer, kind, index, total, duration, theme }, file) {
+export async function renderCardClip({ kicker, text, footer, kind, index, total, duration, theme, background }, file) {
   const ffmpeg = await ffmpegPath();
   const png = join(ensureDir(join(cacheDir, "cards")), `${index}-${Math.random().toString(36).slice(2)}.png`);
-  await renderSlide({ kicker, text, footer, kind, index, total, solo: true, scale: CARD_SCALE, cue: "", theme }, png);
+  await renderSlide({ kicker, text, footer, kind, index, total, solo: true, scale: CARD_SCALE, cue: "", theme, background }, png);
   await pexec(ffmpeg, [
     "-y", "-loglevel", "error",
     "-loop", "1", "-framerate", "30", "-t", duration.toFixed(3), "-i", png,

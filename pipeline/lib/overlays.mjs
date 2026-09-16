@@ -74,8 +74,10 @@ export async function renderOverlay({ text, style = "step" }) {
 // ground; "bold" is Inter 900 uppercase on dark ink, built to read at
 // thumbnail size in a feed (owner direction, 2026-09-16: stronger visuals).
 export const SLIDE_THEMES = new Set(["editorial", "bold"]);
+// Bold-theme grounds. "poster" rotates a saturated colour per slide.
+export const SLIDE_BACKGROUNDS = new Set(["ink", "poster", "halftone", "mesh"]);
 
-export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false, scale = 1, cue = null, theme = "editorial" }, file) {
+export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false, scale = 1, cue = null, theme = "editorial", background = "ink" }, file) {
   const textClass = text.length <= 42 ? "short" : text.length >= 82 ? "long" : "";
   const progress = Array.from({ length: total }, () => "<span></span>").join("");
   // A carousel slide asks to be swiped and its last slide asks to be saved.
@@ -94,6 +96,7 @@ export async function renderSlide({ kicker = "", text, footer = "", index = 1, t
     .replace("__PROGRESS__", progress)
     .replace("__KIND__", esc(kind))
     .replace("__SOLO__", solo ? "solo" : "")
+    .replace("__BACKGROUND__", background === "ink" ? "" : `bg-${background} p${(index - 1) % 5}`)
     .replace("__TEXT_CLASS__", textClass)
     .replace("__KICKER__", esc(kicker))
     .replace("__TEXT__", esc(text))

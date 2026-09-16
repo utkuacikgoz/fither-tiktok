@@ -106,6 +106,7 @@ export async function renderOne(scriptPath) {
             kind: overlay.style,
             solo,
             theme: spec.theme,
+            background: spec.background,
           },
           f,
         );
@@ -237,6 +238,7 @@ export async function renderOne(scriptPath) {
           total: spec.scenes.length,
           duration: scene.end - scene.start,
           theme: spec.theme,
+          background: spec.background,
         }, join(cardDir, `card-${String(i + 1).padStart(2, "0")}.mp4`)));
       }
     } finally {

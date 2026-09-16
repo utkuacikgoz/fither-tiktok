@@ -42,6 +42,61 @@
       linear-gradient(172deg, #EFC26A 0%, #E2B455 100%);
     color: var(--bone);
   }
+  /* Film grain over everything, so flat colour reads as print, not a slide deck. */
+  body::after {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.35 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");
+    background-size: 300px 300px;
+    mix-blend-mode: soft-light;
+    opacity: 0.9;
+  }
+  /* Poster: one saturated colour per slide, rotating, so a swipe changes the wall. */
+  body.bg-poster { background: var(--poster); }
+  body.bg-poster.p0 { --poster: #E2B455; --bone: #151412; --soft: rgba(21,20,18,0.66); --gold: #151412; color: var(--bone); }
+  /* Brand palette only: gold, sage, ink, deep sage, bone. Nothing new. */
+  body.bg-poster.p1 { --poster: #5C6F5E; }
+  body.bg-poster.p2 { --poster: #151412; }
+  body.bg-poster.p3 { --poster: #2F4A3A; }
+  body.bg-poster.p4 { --poster: #FAF7F2; --bone: #151412; --soft: rgba(21,20,18,0.66); --gold: #5C6F5E; color: var(--bone); }
+  body.bg-poster.p0 .kicker { background: #151412; color: #E2B455; }
+  body.bg-poster.p0 .ghost { color: rgba(21,20,18,0.08); }
+  body.bg-poster.p4 .kicker { background: #5C6F5E; color: #FAF7F2; }
+  body.bg-poster.p4 .ghost { color: rgba(21,20,18,0.06); }
+  body.bg-poster.cta { --poster: #E2B455; --bone: #151412; --soft: rgba(21,20,18,0.66); --gold: #151412; background: var(--poster); }
+  body.bg-poster.cta .kicker { background: #151412; color: #E2B455; }
+  body.bg-poster.cta .ghost { color: rgba(21,20,18,0.07); }
+  /* Halftone: a huge dot screen behind the type. */
+  body.bg-halftone {
+    background:
+      radial-gradient(circle at 78% 62%, rgba(226,180,85,0.55) 0 8px, transparent 9px) 0 0 / 34px 34px,
+      radial-gradient(circle at 78% 62%, rgba(226,180,85,0.18) 0 460px, transparent 462px),
+      linear-gradient(172deg, #1E1C19 0%, #151412 60%, #0F0E0D 100%);
+    background-blend-mode: normal, normal, normal;
+  }
+  body.bg-halftone:not(.cta) {
+    background:
+      radial-gradient(circle at 76% 64%, rgba(226,180,85,0.28) 0 520px, transparent 522px),
+      repeating-radial-gradient(circle at 76% 64%, rgba(250,247,242,0.10) 0 2px, transparent 2px 26px),
+      linear-gradient(172deg, #1E1C19 0%, #151412 60%, #0F0E0D 100%);
+  }
+  /* Mesh: loud multi-colour gradient, the most feed-native of the three. */
+  body.bg-mesh:not(.cta) {
+    background:
+      radial-gradient(circle at 8% 88%, #E2B455 0 200px, transparent 560px),
+      radial-gradient(circle at 96% 58%, #5C6F5E 0 240px, transparent 600px),
+      radial-gradient(circle at 60% 6%, #2F4A3A 0 200px, transparent 560px),
+      linear-gradient(160deg, #1E1C19 0%, #0F0E0D 100%);
+  }
+  body.bg-mesh.cta {
+    --bone: #151412; --soft: rgba(21,20,18,0.66); --gold: #151412;
+    background:
+      radial-gradient(circle at 18% 22%, #FAF7F2 0 260px, transparent 620px),
+      radial-gradient(circle at 88% 84%, #5C6F5E 0 220px, transparent 600px),
+      #E2B455;
+  }
+  body.bg-mesh.cta .kicker { background: #151412; color: #E2B455; }
   /* Giant faint numeral: the slide number as the background texture. */
   .ghost {
     position: absolute;
@@ -150,7 +205,7 @@
   }
 </style>
 </head>
-<body class="__KIND__ __SOLO__">
+<body class="__KIND__ __SOLO__ __BACKGROUND__">
   <div class="ghost">__INDEX__</div>
   <header class="top">
     <div class="mark">FITHER</div>
