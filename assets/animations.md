@@ -30,9 +30,20 @@ Do not add a name here by itself. Add and validate its export in
 
 ## In production
 
-(none; next to author, in order of how many week 02 slides they unlock:
-Sit-to-Stand, Wall Sit, Standing Hip Hinge, Wall Slide, Knee Plank,
-Doorframe Lean Row)
+Keyframes authored in `pipeline/lib/animation-poses.mjs` on 2026-09-16, in
+the order of how many week 02 cards each unlocks. Not yet rendered: the
+exports, review sheets and candidate hashes appear when
+`node pipeline/author-animations.mjs` runs, on the owner's go.
+
+- Sit-to-Stand (chair; seated to standing, the still shows standing by the chair)
+- Wall Sit (wall; hold, breathes)
+- Standing Hip Hinge (floor; hips back, flat torso forward)
+- Wall Slide (wall; forearms on the wall, W to Y)
+- Knee Plank (floor; hold, same contact line as Full Plank)
+- Doorframe Lean Row (doorframe; feet close, slight lean, pull in)
+
+After the run, each one still needs owner movement review before it moves to
+Ready, and only then can a card carry it with `figure: true`.
 
 Exact candidate hashes and export paths live in
 `assets/animation-candidates.json`. Do not copy them into the Ready library

@@ -11,6 +11,13 @@ export const AUTHORING_MOVEMENTS = [
   { id: "seated-knee-lift", name: "Seated Knee Lift", appId: "seated-knee-lift" },
   { id: "full-plank", name: "Full Plank", appId: "full-plank" },
   { id: "doorframe-row", name: "Doorframe Row", appId: "doorframe-row" },
+  // Second batch, in the order of how many week 02 cards each one unlocks.
+  { id: "sit-to-stand", name: "Sit-to-Stand", appId: "sit-to-stand" },
+  { id: "wall-sit", name: "Wall Sit", appId: "wall-sit" },
+  { id: "standing-hip-hinge", name: "Standing Hip Hinge", appId: "standing-hip-hinge" },
+  { id: "wall-slide", name: "Wall Slide", appId: "wall-slide" },
+  { id: "knee-plank", name: "Knee Plank", appId: "knee-plank" },
+  { id: "doorframe-lean-row", name: "Doorframe Lean Row", appId: "doorframe-lean-row" },
 ];
 
 export function loopProgress(t) {
@@ -115,6 +122,94 @@ const POSES = {
     end: {
       head: point(700, 700), shoulder: point(735, 835), elbow: point(770, 990), hand: point(875, 850),
       hip: point(550, 1130), knee: point(420, 1360), ankle: point(285, 1550), toe: point(410, 1590),
+    },
+  },
+  // Seated on the chair, arms reaching forward for balance, then standing
+  // tall in front of it with the arms down. The peak (standing) is the card
+  // still, with the chair behind it saying where the rep started.
+  "sit-to-stand": {
+    context: "chair",
+    focus: ["hip", "knee"],
+    start: {
+      head: point(525, 660), shoulder: point(525, 800), elbow: point(640, 880), hand: point(770, 860),
+      hip: point(540, 1110), knee: point(780, 1240), ankle: point(750, 1545), toe: point(875, 1590),
+    },
+    end: {
+      head: point(745, 550), shoulder: point(745, 690), elbow: point(760, 850), hand: point(775, 970),
+      hip: point(740, 990), knee: point(760, 1240), ankle: point(750, 1545), toe: point(875, 1590),
+    },
+  },
+  // Back flat on the wall, thighs level, hands resting on the thighs. A hold,
+  // so the loop is a breath: the torso lifts a few pixels and settles.
+  "wall-sit": {
+    context: "wall",
+    focus: ["knee", "hip"],
+    start: {
+      head: point(850, 780), shoulder: point(850, 920), elbow: point(820, 1075), hand: point(700, 1150),
+      hip: point(850, 1230), knee: point(610, 1230), ankle: point(605, 1545), toe: point(485, 1590),
+    },
+    end: {
+      head: point(850, 772), shoulder: point(850, 912), elbow: point(820, 1068), hand: point(700, 1145),
+      hip: point(850, 1230), knee: point(610, 1230), ankle: point(605, 1545), toe: point(485, 1590),
+    },
+  },
+  // Standing tall, then the hips travel back and the flat torso folds forward
+  // over soft knees, arms hanging. Feet never move.
+  "standing-hip-hinge": {
+    context: "floor",
+    focus: ["hip"],
+    start: {
+      head: point(545, 625), shoulder: point(545, 760), elbow: point(560, 915), hand: point(570, 1050),
+      hip: point(550, 1070), knee: point(555, 1320), ankle: point(545, 1540), toe: point(675, 1590),
+    },
+    end: {
+      head: point(775, 790), shoulder: point(675, 890), elbow: point(680, 1040), hand: point(685, 1160),
+      hip: point(455, 1110), knee: point(520, 1335), ankle: point(545, 1540), toe: point(675, 1590),
+    },
+  },
+  // Back on the wall, forearms on the wall in a W, then the hands slide up
+  // into a Y and back. In profile the upper arm foreshortens, so it is drawn
+  // short and angled behind the shoulder rather than out to the side.
+  "wall-slide": {
+    context: "wall",
+    focus: ["shoulder", "elbow"],
+    start: {
+      head: point(850, 630), shoulder: point(850, 770), elbow: point(885, 860), hand: point(885, 700),
+      hip: point(850, 1080), knee: point(835, 1320), ankle: point(830, 1545), toe: point(710, 1590),
+    },
+    end: {
+      head: point(850, 630), shoulder: point(850, 770), elbow: point(880, 640), hand: point(885, 480),
+      hip: point(850, 1080), knee: point(835, 1320), ankle: point(830, 1545), toe: point(710, 1590),
+    },
+  },
+  // Full Plank's sibling: same forearm contact line and shoulder height, the
+  // knees down and the shins resting behind. The hold breathes like Full Plank.
+  "knee-plank": {
+    context: "floor",
+    focus: ["shoulder", "hip"],
+    start: {
+      head: point(830, 1035), shoulder: point(720, 1105), elbow: point(725, 1435), hand: point(895, 1460),
+      hip: point(545, 1280), knee: point(400, 1440), ankle: point(190, 1445), toe: point(135, 1475),
+    },
+    end: {
+      head: point(830, 1027), shoulder: point(720, 1097), elbow: point(725, 1435), hand: point(895, 1460),
+      hip: point(545, 1272), knee: point(400, 1436), ankle: point(190, 1445), toe: point(135, 1475),
+    },
+  },
+  // Doorframe Row's easier sibling: feet close to the frame, a slight lean
+  // back with the arm long, then the body pivots on the ankles toward the
+  // frame as the elbow drives back. Single hip marker for the same reason
+  // as Doorframe Row.
+  "doorframe-lean-row": {
+    context: "doorframe",
+    focus: ["hip"],
+    start: {
+      head: point(604, 667), shoulder: point(615, 800), elbow: point(745, 840), hand: point(875, 860),
+      hip: point(640, 1105), knee: point(660, 1330), ankle: point(670, 1545), toe: point(795, 1590),
+    },
+    end: {
+      head: point(726, 665), shoulder: point(715, 800), elbow: point(735, 955), hand: point(875, 860),
+      hip: point(690, 1100), knee: point(665, 1325), ankle: point(670, 1545), toe: point(795, 1590),
     },
   },
 };
