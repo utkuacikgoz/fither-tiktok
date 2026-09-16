@@ -42,3 +42,26 @@ posted; winners graduate to `references/hooks.md` with their numbers.
 18. Sore wrists are not a rest day. Pull, squat, hinge, core.
 19. Tired is not the end of the session. It is where the plan changes.
 20. Same three moves every day of the worst week. That counts.
+
+## Borrowed formats, translated
+
+Proven TikTok fitness hook shapes (owner list, 2026-09-16), rewritten so the
+mechanism survives and the forbidden list holds. "Get ripped", "abs",
+"nice back" and "fix your posture" are body or claim language and could not
+ship as written; the versions below keep the curiosity, drop the promise.
+
+21. The moment it sinks in: you have carried her up two flights every day for a year. You are already strong. *(the moment it all sinks in)*
+22. The reason to start this week, not January: the case into the boot is not getting lighter. *(the reason you need to start now)*
+23. Beginner bodyweight strength. Wall, chair, floor. Nothing to buy. *(beginner calisthenics)*
+24. A strong back with no dumbbells: four doorframe row variations, easiest to hardest. *(nice back, no dumbbells)*
+25. No gym. A wall, a chair and a doorframe. Full session. *(no gym needed)*
+26. Core at home, door open: five moves, ten minutes, nothing that tips over. *(at home abs routine)*
+27. Ten, twenty or thirty minutes. Same five patterns. Pick the one your day allows. *(10/20/30 min full body)*
+28. Get stronger with me: one session a day, ten minutes, no equipment. *(get ripped with me)*
+29. What ten wall slides a day do for how you sit at your desk by 4pm. *(benefits of posture)*
+30. The ten minute wall session you will not regret at 9pm. *(the x min workout you won't regret)*
+31. The five moves that did more for my core than any plank. *(5 exercises that made the biggest difference)*
+32. Easy to remember, hard to put off: a five move core routine beside the bed. *(easy and effective routine)*
+33. Ten Sit-to-Stands every day and the stairs stop being a thing. *(if you do x every day, y improves)*
+34. The invisible workout: nobody at the gate, the office or the hotel can tell. *(shy girl workout)*
+35. Ten minutes of movement you will not regret. Every day this week, same wall. *(minutes you won't regret)*
