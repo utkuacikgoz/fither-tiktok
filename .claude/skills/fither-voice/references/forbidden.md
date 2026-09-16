@@ -7,10 +7,15 @@ scripts, hooks, captions, hashtags, comment replies, and any store copy.
 ## Body and weight
 
 - weight, weigh-in, weight loss, pounds, kilos, scale, fat, slim, slimming, skinny
-- tone, tone up, sculpt, lean out, shred, torch, melt, snatch(ed)
 - bikini, bikini body, summer body, snapback, problem areas
 - before and after, transformation photos, any before/after framing
 - comparison to other women
+
+Owner decision, 2026-09-16: shape and appearance words are allowed so proven
+hook formats can ship as written. "Tone", "sculpt", "shred", "ripped", "abs",
+"a nice back" and "fix your posture" are all permitted. Posture is not an
+injury or a condition, so the claims rule below does not cover it. This
+diverges from the app repo's list on purpose; do not fold it back upstream.
 
 ## Food and calories
 

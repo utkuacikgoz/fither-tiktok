@@ -3,7 +3,10 @@
 // these patterns stop forbidden copy before it reaches paid APIs or a render.
 
 const RULES = [
-  ["body or weight language", /\b(?:weight(?:\s*loss)?|weigh[ -]?in|pounds?|kilos?|scale|fat|slim(?:ming)?|skinny|tone(?:\s*up)?|sculpt|lean\s*out|shred|torch|melt|snatched?|bikini(?:\s*body)?|summer\s*body|snapback|problem\s*areas?)\b/i],
+  // Shape words (tone, sculpt, shred, ripped, abs) were unbanned by owner
+  // decision on 2026-09-16 so proven hook formats can ship as written; the
+  // weight and diet-culture core stays banned.
+  ["body or weight language", /\b(?:weight(?:\s*loss)?|weigh[ -]?in|pounds?|kilos?|scale|fat|slim(?:ming)?|skinny|bikini(?:\s*body)?|summer\s*body|snapback|problem\s*areas?)\b/i],
   ["food or calorie language", /\b(?:calories?|burn\s*off|earn\s+your\s+food|work\s+it\s+off|guilt[ -]?free|diet|cheat\s+(?:meal|day)|guilt)\b/i],
   ["shame or streak language", /\b(?:streak|don['’]t\s+break|you\s+missed\s+a\s+day|we\s+miss\s+you|don['’]t\s+lose\s+your\s+progress|no\s+excuses|what['’]s\s+stopping\s+you|just\s+a\s+quick\s+one|mini\s+workout)\b/i],
   ["persona-breaking language", /\b(?:crush\s+it|beast\s+mode|queen|girlie|slay|you\s+got\s+this|AMRAP|HIIT|EMOM)\b/i],
