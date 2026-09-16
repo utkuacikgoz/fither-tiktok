@@ -20,12 +20,12 @@
     {
       "start": 0,
       "end": 1,
-      "kicker": "8:40 THIS MORNING",
+      "kicker": "IT SINKS IN",
       "footer": "Strength that fits your life.",
       "overlays": [
         {
           "t": 0,
-          "text": "The buggy, two flights, and nobody counted it.",
+          "text": "The moment it sinks in: you were already training. Nobody counted it.",
           "style": "hook"
         }
       ]

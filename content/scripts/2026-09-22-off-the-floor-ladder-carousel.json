@@ -20,12 +20,12 @@
     {
       "start": 0,
       "end": 1,
-      "kicker": "FOUR RUNGS",
+      "kicker": "IF YOU DO THIS",
       "footer": "Strength that fits your life.",
       "overlays": [
         {
           "t": 0,
-          "text": "Four rungs to standing off the floor without hands.",
+          "text": "Do this every day and getting off the floor stops being a thing.",
           "style": "hook"
         }
       ]

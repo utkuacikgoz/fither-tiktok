@@ -8,13 +8,13 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"The buggy, two flights, and nobody counted it." (situation, and the
+"The moment it sinks in: you were already training. Nobody counted it." (situation, and the
 named-constraint variant registered for EXP-007: the opening card names the
 moment she was standing in rather than stating a claim about measurement.)
 
 ## 2. SCRIPT (8 slides)
 
-1. 8:40 THIS MORNING. "The buggy, two flights, and nobody counted it."
+1. 8:40 THIS MORNING. "The moment it sinks in: you were already training. Nobody counted it."
 2. TEST ONE. "Buggy up two flights: that is a squat and a carry."
 3. TEST TWO. "Case into the boot: that is a hinge."
 4. TEST THREE. "A heavy door hauled open: that is a pull."

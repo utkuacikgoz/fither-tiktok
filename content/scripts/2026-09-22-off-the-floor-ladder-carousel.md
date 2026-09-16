@@ -8,14 +8,14 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"Four rungs to standing off the floor without hands." (the video's hook, held
+"Do this every day and getting off the floor stops being a thing." (the video's hook, held
 as slide one so a viewer who scrolls past the video still meets the same
 promise. This is the number-led control variant in EXP-007: structure and
 capability first, no scene in the opening card.)
 
 ## 2. SCRIPT (8 slides)
 
-1. FOUR RUNGS. "Four rungs to standing off the floor without hands."
+1. FOUR RUNGS. "Do this every day and getting off the floor stops being a thing."
 2. RUNG ONE. "Supported Sit-to-Stand, tier 1, eight reps, hands on the chair."
 3. RUNG TWO. "Sit-to-Stand, tier 2, eight reps, arms folded."
 4. RUNG THREE. "Paused Squat, tier 3, eight reps, two seconds at the bottom."
