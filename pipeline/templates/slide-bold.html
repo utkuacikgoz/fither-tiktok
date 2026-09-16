@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: "InterBlack";
+    src: url("__FONT_900__") format("woff2");
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("__FONT_400__") format("woff2");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("__FONT_600__") format("woff2");
+    font-weight: 600;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  body {
+    --bone: #FAF7F2;
+    --ink: #151412;
+    --soft: rgba(250, 247, 242, 0.62);
+    --gold: #E2B455;
+    position: relative;
+    font-family: "Inter", system-ui, sans-serif;
+    background:
+      radial-gradient(circle at 110% -6%, rgba(226, 180, 85, 0.22) 0 420px, transparent 422px),
+      linear-gradient(172deg, #1E1C19 0%, #151412 60%, #0F0E0D 100%);
+    color: var(--bone);
+  }
+  /* The last slide flips to gold so the question lands on a different ground. */
+  body.cta {
+    --bone: #151412;
+    --soft: rgba(21, 20, 18, 0.66);
+    --gold: #151412;
+    background:
+      radial-gradient(circle at -10% 108%, rgba(250, 247, 242, 0.28) 0 380px, transparent 382px),
+      linear-gradient(172deg, #EFC26A 0%, #E2B455 100%);
+    color: var(--bone);
+  }
+  /* Giant faint numeral: the slide number as the background texture. */
+  .ghost {
+    position: absolute;
+    right: -30px;
+    bottom: 120px;
+    font-family: "InterBlack", "Inter", sans-serif;
+    font-weight: 900;
+    font-size: 900px;
+    line-height: 0.8;
+    letter-spacing: -0.06em;
+    color: rgba(250, 247, 242, 0.05);
+    user-select: none;
+  }
+  body.cta .ghost { color: rgba(21, 20, 18, 0.07); }
+  body.solo .ghost { display: none; }
+  .top {
+    position: absolute;
+    top: 104px;
+    left: 96px;
+    right: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mark {
+    font-family: "InterBlack", "Inter", sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    letter-spacing: 0.26em;
+    color: var(--bone);
+  }
+  .count {
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+  }
+  .progress {
+    position: absolute;
+    top: 184px;
+    left: 96px;
+    right: 96px;
+    height: 10px;
+    display: grid;
+    grid-template-columns: repeat(__TOTAL__, 1fr);
+    gap: 12px;
+  }
+  .progress span { background: rgba(250, 247, 242, 0.14); border-radius: 5px; }
+  body.cta .progress span { background: rgba(21, 20, 18, 0.16); }
+  .progress span:nth-child(-n+__INDEX__) { background: var(--gold); }
+  body.solo .count, body.solo .progress { display: none; }
+  .content {
+    position: absolute;
+    top: 44%;
+    left: 96px;
+    right: 96px;
+    transform: translateY(-50%);
+  }
+  .kicker {
+    display: inline-block;
+    min-height: 44px;
+    padding: 12px 22px;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: "InterBlack", "Inter", sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 44px;
+  }
+  body.cta .kicker { background: var(--ink); color: #E2B455; }
+  .kicker:empty { display: none; }
+  .text {
+    max-width: 900px;
+    font-family: "InterBlack", "Inter", sans-serif;
+    font-weight: 900;
+    font-size: 108px;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: var(--bone);
+    text-wrap: balance;
+  }
+  .text.short { font-size: 138px; line-height: 0.94; }
+  .text.long { font-size: 84px; line-height: 1.02; }
+  .footer {
+    position: absolute;
+    bottom: 262px;
+    left: 96px;
+    right: 330px;
+    min-height: 44px;
+    color: var(--soft);
+    font-size: 31px;
+    line-height: 1.35;
+  }
+  .cue {
+    position: absolute;
+    bottom: 262px;
+    right: 96px;
+    font-family: "InterBlack", "Inter", sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+  }
+</style>
+</head>
+<body class="__KIND__ __SOLO__">
+  <div class="ghost">__INDEX__</div>
+  <header class="top">
+    <div class="mark">FITHER</div>
+    <div class="count">__INDEX__ / __TOTAL__</div>
+  </header>
+  <div class="progress">__PROGRESS__</div>
+  <main class="content">
+    <div class="kicker">__KICKER__</div>
+    <div class="text __TEXT_CLASS__">__TEXT__</div>
+  </main>
+  <div class="footer">__FOOTER__</div>
+  <div class="cue">__CUE__</div>
+</body>
+</html>

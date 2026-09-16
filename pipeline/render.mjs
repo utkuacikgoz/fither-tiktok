@@ -105,6 +105,7 @@ export async function renderOne(scriptPath) {
             total: spec.scenes.length,
             kind: overlay.style,
             solo,
+            theme: spec.theme,
           },
           f,
         );
@@ -235,6 +236,7 @@ export async function renderOne(scriptPath) {
           index: i + 1,
           total: spec.scenes.length,
           duration: scene.end - scene.start,
+          theme: spec.theme,
         }, join(cardDir, `card-${String(i + 1).padStart(2, "0")}.mp4`)));
       }
     } finally {

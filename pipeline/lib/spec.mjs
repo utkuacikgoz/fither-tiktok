@@ -6,6 +6,7 @@ import { policyViolations } from "./policy.mjs";
 import { SOUND_PROFILES } from "./sound.mjs";
 import { loadAnimationLibrary } from "./animations.mjs";
 import { CARD_MAX_SECONDS, CARD_MIN_SECONDS, MAX_CARDS, MIN_CARDS } from "./typography.mjs";
+import { SLIDE_THEMES } from "./overlays.mjs";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FORMATS = new Set(["environment-pov", "text-on-screen", "animated-demo", "motion-type", "slideshow", "single", "cocktail"]);
@@ -98,6 +99,7 @@ export function validateSpec(spec, options = {}) {
     }
   }
   if (typeof spec.format === "string" && !FORMATS.has(spec.format)) error(`format "${spec.format}" is unknown`);
+  if (spec.theme != null && !SLIDE_THEMES.has(spec.theme)) error(`theme "${spec.theme}" is unknown (editorial or bold)`);
   if (typeof spec.pillar === "string" && !PILLARS.has(spec.pillar)) error(`pillar "${spec.pillar}" is unknown`);
   if (typeof spec.hook_mechanism === "string" && !HOOKS.has(spec.hook_mechanism)) {
     error(`hook_mechanism "${spec.hook_mechanism}" is unknown`);

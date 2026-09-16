@@ -70,7 +70,12 @@ export async function renderOverlay({ text, style = "step" }) {
 // solo: a single-image post rather than a carousel slide. The page counter
 // and the progress bar both describe a sequence, so they are hidden, and the
 // footer cue asks for a save instead of a swipe.
-export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false, scale = 1, cue = null }, file) {
+// Two looks share one contract. "editorial" is the calm serif on the brand
+// ground; "bold" is Inter 900 uppercase on dark ink, built to read at
+// thumbnail size in a feed (owner direction, 2026-09-16: stronger visuals).
+export const SLIDE_THEMES = new Set(["editorial", "bold"]);
+
+export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false, scale = 1, cue = null, theme = "editorial" }, file) {
   const textClass = text.length <= 42 ? "short" : text.length >= 82 ? "long" : "";
   const progress = Array.from({ length: total }, () => "<span></span>").join("");
   // A carousel slide asks to be swiped and its last slide asks to be saved.
@@ -78,9 +83,11 @@ export async function renderSlide({ kicker = "", text, footer = "", index = 1, t
   // on every card of a thirteen-card piece reads as nagging. Callers that
   // want no cue pass an empty string.
   const cueText = cue ?? (!solo && index < total ? "SWIPE →" : "SAVE THIS");
-  const html = readFileSync(join(templatesDir, "slide.html"), "utf8")
+  const template = theme === "bold" ? "slide-bold.html" : "slide.html";
+  const html = readFileSync(join(templatesDir, template), "utf8")
     .replace("__FONT_400__", font400)
     .replace("__FONT_600__", font600)
+    .replace("__FONT_900__", font900)
     .replace("__FONT_DISPLAY__", fontDisplay)
     .replaceAll("__INDEX__", String(index))
     .replaceAll("__TOTAL__", String(total))
