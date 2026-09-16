@@ -75,7 +75,7 @@ export async function renderOverlay({ text, style = "step" }) {
 // thumbnail size in a feed (owner direction, 2026-09-16: stronger visuals).
 export const SLIDE_THEMES = new Set(["editorial", "bold"]);
 // Bold-theme grounds. "poster" rotates a saturated colour per slide.
-export const SLIDE_BACKGROUNDS = new Set(["ink", "poster", "halftone", "mesh"]);
+export const SLIDE_BACKGROUNDS = new Set(["ink", "poster", "halftone", "mesh", "cream"]);
 
 export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false, scale = 1, cue = null, theme = "editorial", background = "ink" }, file) {
   const textClass = text.length <= 42 ? "short" : text.length >= 82 ? "long" : "";

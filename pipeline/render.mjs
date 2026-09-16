@@ -105,8 +105,8 @@ export async function renderOne(scriptPath) {
             total: spec.scenes.length,
             kind: overlay.style,
             solo,
-            theme: spec.theme,
-            background: spec.background,
+            theme: i === 0 && spec.cover_background ? "bold" : spec.theme,
+            background: i === 0 && spec.cover_background ? spec.cover_background : spec.background,
           },
           f,
         );

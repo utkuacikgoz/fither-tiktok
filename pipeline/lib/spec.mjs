@@ -102,6 +102,11 @@ export function validateSpec(spec, options = {}) {
   if (spec.theme != null && !SLIDE_THEMES.has(spec.theme)) error(`theme "${spec.theme}" is unknown (editorial or bold)`);
   if (spec.background != null && !SLIDE_BACKGROUNDS.has(spec.background)) error(`background "${spec.background}" is unknown (ink, poster, halftone or mesh)`);
   if (spec.background != null && spec.background !== "ink" && spec.theme !== "bold") error("background requires theme \"bold\"");
+  // A cream deck can open on a bold cover: slide one renders on the bold
+  // theme with this ground, every other slide stays editorial.
+  if (spec.cover_background != null && !SLIDE_BACKGROUNDS.has(spec.cover_background)) {
+    error(`cover_background "${spec.cover_background}" is unknown`);
+  }
   if (typeof spec.pillar === "string" && !PILLARS.has(spec.pillar)) error(`pillar "${spec.pillar}" is unknown`);
   if (typeof spec.hook_mechanism === "string" && !HOOKS.has(spec.hook_mechanism)) {
     error(`hook_mechanism "${spec.hook_mechanism}" is unknown`);
