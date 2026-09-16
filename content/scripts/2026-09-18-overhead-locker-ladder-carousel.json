@@ -20,12 +20,12 @@
     {
       "start": 0,
       "end": 1,
-      "kicker": "FIVE RUNGS",
+      "kicker": "THE LOCKER",
       "footer": "Strength that fits your life.",
       "overlays": [
         {
           "t": 0,
-          "text": "Five rungs between you and that overhead locker.",
+          "text": "The 5 moves that made lifting my own bag overhead easy.",
           "style": "hook"
         }
       ]
@@ -34,11 +34,11 @@
       "start": 1,
       "end": 2,
       "kicker": "RUNG ONE",
-      "footer": "Ready when your back stays long throughout.",
+      "footer": "Ready for rung 2 when 10 feel easy.",
       "overlays": [
         {
           "t": 1,
-          "text": "Rung 1. Standing Hip Hinge, ten reps, tier 1.",
+          "text": "Standing Hip Hinge. 10 reps. Push your hips back, chest forward, stand tall.",
           "style": "step"
         }
       ]
@@ -47,11 +47,11 @@
       "start": 2,
       "end": 3,
       "kicker": "RUNG TWO",
-      "footer": "Ready when the reach adds range, not rounding.",
+      "footer": "Ready when your back stays flat.",
       "overlays": [
         {
           "t": 2,
-          "text": "Rung 2. Hinge and Reach, ten reps, tier 2.",
+          "text": "Hinge and Reach. 10 reps. Same hinge, arms reach forward at the bottom.",
           "style": "step"
         }
       ]
@@ -60,11 +60,11 @@
       "start": 3,
       "end": 4,
       "kicker": "RUNG THREE",
-      "footer": "Ready when six a side stop wobbling.",
+      "footer": "Ready when you stop wobbling.",
       "overlays": [
         {
           "t": 3,
-          "text": "Rung 3. Single-Leg Hip Hinge, six a side, tier 4.",
+          "text": "Single-Leg Hip Hinge. 6 each side. One foot down, hinge, the other leg goes back.",
           "style": "step"
         }
       ]
@@ -73,11 +73,11 @@
       "start": 4,
       "end": 5,
       "kicker": "RUNG FOUR",
-      "footer": "Shoulders on a chair. Ready when ten feel smooth.",
+      "footer": "Ready when you can pause at the top.",
       "overlays": [
         {
           "t": 4,
-          "text": "Rung 4. Hip Thrust, ten reps, tier 4.",
+          "text": "Hip Thrust. 10 reps. Shoulders on a chair, feet flat, drive your hips up.",
           "style": "step"
         }
       ]
@@ -86,11 +86,11 @@
       "start": 5,
       "end": 6,
       "kicker": "RUNG FIVE",
-      "footer": "The top rung. Months, not a week.",
+      "footer": "This is the bag going up.",
       "overlays": [
         {
           "t": 5,
-          "text": "Rung 5. Single-Leg Hip Thrust, six a side, tier 6.",
+          "text": "Single-Leg Hip Thrust. 6 each side. Same thrust, one leg.",
           "style": "step"
         }
       ]
@@ -99,11 +99,11 @@
       "start": 6,
       "end": 7,
       "kicker": "THE COMPANION",
-      "footer": "Hips start the lift. The back finishes it.",
+      "footer": "Upper back. It finishes the lift.",
       "overlays": [
         {
           "t": 6,
-          "text": "Prone Y Raise, ten reps, tier 3. The upper back finishes the lift.",
+          "text": "Prone Y Raise. 10 reps. Lie on your front, arms in a Y, lift them off the floor.",
           "style": "step"
         }
       ]

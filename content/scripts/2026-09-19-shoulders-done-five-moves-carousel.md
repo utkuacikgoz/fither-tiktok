@@ -12,18 +12,18 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"Five moves today. None of them touch your shoulders." (the video's hook, held
+"Easy, effective, and none of it touches your shoulders." (the video's hook, held
 as slide one so a viewer who scrolls past the video meets the same promise.)
 
 ## 2. SCRIPT (8 slides)
 
-1. FIVE MOVES. "Five moves today. None of them touch your shoulders."
-2. ONE, SQUAT. "Wall Sit, thirty seconds. Knees and hips hold you, shoulders stay out."
-3. TWO, SQUAT. "Reverse Lunge, six reps. Slow, quiet, one leg back at a time."
-4. THREE, HINGE. "Glute Bridge March, ten reps. Hips lift, core holds the line."
-5. FOUR, CORE. "Lying Heel Tap, ten reps. Ribs down, arms doing nothing."
-6. FIVE, SQUAT. "Sit-to-Stand, eight reps. Off the chair, no hands, no push."
-7. THE HONEST BIT. "No push, no pull today. Both load the shoulder girdle." Footer: "It trains what is fresh."
+1. FIVE MOVES. "Easy, effective, and none of it touches your shoulders."
+2. ONE, SQUAT. "Wall Sit. 30 seconds. Back on the wall, slide down until your knees bend, hold."
+3. TWO, SQUAT. "Reverse Lunge. 6 each side. Step one foot back, lower the knee, come back up."
+4. THREE, HINGE. "Glute Bridge March. 10 reps. Lie down, hips up, lift one foot, then the other."
+5. FOUR, CORE. "Lying Heel Tap. 10 reps. On your back, knees up, tap one heel down, then the other."
+6. FIVE, SQUAT. "Sit-to-Stand. 8 reps. Off the chair with no hands, back down slowly."
+7. THE HONEST BIT. "No push, no pull today. Both use the shoulders. It trains what is fresh." Footer: "It trains what is fresh."
 8. YOUR TURN. "What is tired on you today?"
 
 ## 3. VISUALS / SCENE BREAKDOWN

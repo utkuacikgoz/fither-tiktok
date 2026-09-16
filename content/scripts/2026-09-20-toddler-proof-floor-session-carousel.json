@@ -25,7 +25,7 @@
       "overlays": [
         {
           "t": 0,
-          "text": "She climbs on your back at rep four. The set still counts.",
+          "text": "The 10 minute floor session you will not regret, even with her on your back.",
           "style": "hook"
         }
       ]
@@ -34,24 +34,26 @@
       "start": 1,
       "end": 2,
       "kicker": "ONE",
-      "footer": "Hinge. Floor level.",
+      "footer": "Hinge. Nothing tips over.",
       "overlays": [
         {
           "t": 1,
-          "text": "Glute Bridge, ten reps. She sits on your hips and the bridge holds.",
+          "text": "Glute Bridge. 10 reps. Lie down, feet flat, push your hips up. If she sits on you, keep going.",
           "style": "step"
         }
-      ]
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
     },
     {
       "start": 2,
       "end": 3,
       "kicker": "TWO",
-      "footer": "Hinge and core. Nothing tips over.",
+      "footer": "Hinge. Slow.",
       "overlays": [
         {
           "t": 2,
-          "text": "Glute Bridge March, ten reps. One knee lifts while she holds on.",
+          "text": "Glute Bridge March. 10 reps. Hips up, lift one foot, then the other. She can hold on.",
           "style": "step"
         }
       ]
@@ -60,11 +62,11 @@
       "start": 3,
       "end": 4,
       "kicker": "THREE",
-      "footer": "Core. Ten slow reps.",
+      "footer": "Core. She lies next to you.",
       "overlays": [
         {
           "t": 3,
-          "text": "Lying Heel Slide, ten reps. Slow and quiet, with her lying beside you.",
+          "text": "Lying Heel Slide. 10 reps. On your back, slide one heel away and back. Quiet.",
           "style": "step"
         }
       ]
@@ -73,11 +75,11 @@
       "start": 4,
       "end": 5,
       "kicker": "FOUR",
-      "footer": "Core and back. Eight reps.",
+      "footer": "Core. She copies you.",
       "overlays": [
         {
           "t": 4,
-          "text": "Kneeling Balance Reach, eight reps. She copies the reach. Keep counting.",
+          "text": "Kneeling Balance Reach. 8 reps. On hands and knees, reach one arm forward, hold, back.",
           "style": "step"
         }
       ]
@@ -86,11 +88,11 @@
       "start": 5,
       "end": 6,
       "kicker": "FIVE",
-      "footer": "Core. A twenty five second hold.",
+      "footer": "Core. The tunnel.",
       "overlays": [
         {
           "t": 5,
-          "text": "Knee Plank, twenty five seconds. The plank becomes a tunnel she crawls under.",
+          "text": "Knee Plank. 25 seconds. Forearms down, knees down, hold still. She crawls under.",
           "style": "step"
         }
       ]
@@ -99,7 +101,7 @@
       "start": 6,
       "end": 7,
       "kicker": "YOUR TURN",
-      "footer": "Ten minutes. Door open.",
+      "footer": "Save this for the morning.",
       "overlays": [
         {
           "t": 6,

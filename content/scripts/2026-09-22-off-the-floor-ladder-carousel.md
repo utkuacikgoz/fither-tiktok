@@ -16,10 +16,10 @@ capability first, no scene in the opening card.)
 ## 2. SCRIPT (8 slides)
 
 1. FOUR RUNGS. "Do this every day and getting off the floor stops being a thing."
-2. RUNG ONE. "Supported Sit-to-Stand, tier 1, eight reps, hands on the chair."
-3. RUNG TWO. "Sit-to-Stand, tier 2, eight reps, arms folded."
-4. RUNG THREE. "Paused Squat, tier 3, eight reps, two seconds at the bottom."
-5. RUNG FOUR. "Elevated Split Squat, tier 5, six reps each side."
+2. RUNG ONE. "Supported Sit-to-Stand. 8 reps. Hands on the chair, stand up, sit down slowly."
+3. RUNG TWO. "Sit-to-Stand. 8 reps. Arms folded, stand up, sit down slowly."
+4. RUNG THREE. "Paused Squat. 8 reps. Squat down, hold for two seconds, stand up."
+5. RUNG FOUR. "Elevated Split Squat. 6 each side. Back foot on the chair, lower, stand up."
 6. THE TOP. "Single-Leg Sit-to-Stand, tier 6, four reps, one leg, no hands."
 7. HONEST NOTE. "Rung four takes months, not a week."
 8. YOUR TURN. "Which rung are you on?"

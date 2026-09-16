@@ -34,11 +34,11 @@
       "start": 1,
       "end": 2,
       "kicker": "TEST ONE",
-      "footer": "Legs and grip, before nine.",
+      "footer": "Legs and grip.",
       "overlays": [
         {
           "t": 1,
-          "text": "Buggy up two flights: that is a squat and a carry.",
+          "text": "The buggy up two flights. That is a squat and a carry.",
           "style": "step"
         }
       ]
@@ -47,11 +47,11 @@
       "start": 2,
       "end": 3,
       "kicker": "TEST TWO",
-      "footer": "The hips start that lift.",
+      "footer": "Hips and back.",
       "overlays": [
         {
           "t": 2,
-          "text": "Case into the boot: that is a hinge.",
+          "text": "The case into the boot. That is a hinge.",
           "style": "step"
         }
       ]
@@ -60,11 +60,11 @@
       "start": 3,
       "end": 4,
       "kicker": "TEST THREE",
-      "footer": "Your back works all week.",
+      "footer": "Back and arms.",
       "overlays": [
         {
           "t": 3,
-          "text": "A heavy door hauled open: that is a pull.",
+          "text": "The heavy door you haul open. That is a pull.",
           "style": "step"
         }
       ]
@@ -73,11 +73,11 @@
       "start": 4,
       "end": 5,
       "kicker": "TEST FOUR",
-      "footer": "Arms and chest, no equipment.",
+      "footer": "Chest and arms.",
       "overlays": [
         {
           "t": 4,
-          "text": "The sofa shoved aside on a Sunday: that is a push.",
+          "text": "The sofa you shove aside on a Sunday. That is a push.",
           "style": "step"
         }
       ]
@@ -86,11 +86,11 @@
       "start": 5,
       "end": 6,
       "kicker": "TEST FIVE",
-      "footer": "Your middle holds the whole load.",
+      "footer": "Everything in the middle.",
       "overlays": [
         {
           "t": 5,
-          "text": "Carrying her the last street home: that is core.",
+          "text": "Carrying her the last street home. That is core.",
           "style": "step"
         }
       ]
@@ -99,11 +99,11 @@
       "start": 6,
       "end": 7,
       "kicker": "TEST SIX",
-      "footer": "The test most people stop taking.",
+      "footer": "Legs.",
       "overlays": [
         {
           "t": 6,
-          "text": "Up off the floor without hands: that is a squat.",
+          "text": "Up off the floor with no hands. That is a squat.",
           "style": "step"
         }
       ]
@@ -112,7 +112,7 @@
       "start": 7,
       "end": 8,
       "kicker": "YOUR TURN",
-      "footer": "Save this and run it on your own week.",
+      "footer": "Save it and run it on your week.",
       "overlays": [
         {
           "t": 7,

@@ -8,18 +8,18 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"Gate 42. Ninety minutes. Nobody here knows you're training." (the video's hook,
+"The invisible workout. Nobody at the gate can tell you are training." (the video's hook,
 held as slide one so a viewer who scrolls past the video still meets the same
 named constraint. Registered under EXP-007 as a named-constraint opening.)
 
 ## 2. SCRIPT (7 slides)
 
-1. GATE 42. "Gate 42. Ninety minutes. Nobody here knows you're training."
-2. ONE. "Sit-to-Stand, eight reps, from the gate seat, no hands on the armrests."
-3. TWO. "Seated Knee Lift, ten reps, in the seat, bag still between your feet."
-4. THREE. "Standing Hip Hinge, ten slow reps, facing the window, nothing to hold."
-5. FOUR. "Wall Slide, ten reps, against the pillar by the window."
-6. FIVE. "Shoulder Blade Squeeze, twelve reps, seated, almost nothing moves."
+1. GATE 42. "The invisible workout. Nobody at the gate can tell you are training."
+2. ONE. "Sit-to-Stand. 8 reps. Stand up from the gate seat with no hands, sit back down slowly."
+3. TWO. "Seated Knee Lift. 10 each side. Sit tall, lift one knee, hold a second, lower it."
+4. THREE. "Standing Hip Hinge. 10 slow reps. Stand, push your hips back, chest forward, stand tall."
+5. FOUR. "Wall Slide. 10 reps. Back on the pillar, arms up the wall and down again."
+6. FIVE. "Shoulder Blade Squeeze. 12 reps. Sit, pull your shoulder blades together, let go."
 7. YOUR TURN. "How long is your layover?"
 
 ## 3. VISUALS / SCENE BREAKDOWN

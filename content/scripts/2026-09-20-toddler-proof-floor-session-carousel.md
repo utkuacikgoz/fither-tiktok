@@ -8,18 +8,18 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"She climbs on your back at rep four. The set still counts." (the video's
+"The 10 minute floor session you will not regret, even with her on your back." (the video's
 hook carried in full, so a viewer who scrolls past the video meets the same
 scene. Registered under EXP-007 as a named-constraint hook.)
 
 ## 2. SCRIPT (7 slides)
 
-1. REP FOUR. "She climbs on your back at rep four. The set still counts."
-2. ONE. "Glute Bridge, ten reps. She sits on your hips and the bridge holds."
-3. TWO. "Glute Bridge March, ten reps. One knee lifts while she holds on."
-4. THREE. "Lying Heel Slide, ten reps. Slow and quiet, with her lying beside you."
-5. FOUR. "Kneeling Balance Reach, eight reps. She copies the reach. Keep counting."
-6. FIVE. "Knee Plank, twenty five seconds. The plank becomes a tunnel she crawls under."
+1. REP FOUR. "The 10 minute floor session you will not regret, even with her on your back."
+2. ONE. "Glute Bridge. 10 reps. Lie down, feet flat, push your hips up. If she sits on you, keep going."
+3. TWO. "Glute Bridge March. 10 reps. Hips up, lift one foot, then the other. She can hold on."
+4. THREE. "Lying Heel Slide. 10 reps. On your back, slide one heel away and back. Quiet."
+5. FOUR. "Kneeling Balance Reach. 8 reps. On hands and knees, reach one arm forward, hold, back."
+6. FIVE. "Knee Plank. 25 seconds. Forearms down, knees down, hold still. She crawls under."
 7. YOUR TURN. "Who is climbing on you?"
 
 ## 3. VISUALS / SCENE BREAKDOWN

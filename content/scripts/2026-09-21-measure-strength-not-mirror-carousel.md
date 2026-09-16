@@ -15,12 +15,12 @@ moment she was standing in rather than stating a claim about measurement.)
 ## 2. SCRIPT (8 slides)
 
 1. 8:40 THIS MORNING. "The moment it sinks in: you were already training. Nobody counted it."
-2. TEST ONE. "Buggy up two flights: that is a squat and a carry."
-3. TEST TWO. "Case into the boot: that is a hinge."
-4. TEST THREE. "A heavy door hauled open: that is a pull."
-5. TEST FOUR. "The sofa shoved aside on a Sunday: that is a push."
-6. TEST FIVE. "Carrying her the last street home: that is core."
-7. TEST SIX. "Up off the floor without hands: that is a squat."
+2. TEST ONE. "The buggy up two flights. That is a squat and a carry."
+3. TEST TWO. "The case into the boot. That is a hinge."
+4. TEST THREE. "The heavy door you haul open. That is a pull."
+5. TEST FOUR. "The sofa you shove aside on a Sunday. That is a push."
+6. TEST FIVE. "Carrying her the last street home. That is core."
+7. TEST SIX. "Up off the floor with no hands. That is a squat."
 8. YOUR TURN. "Which of these did you pass this week?"
 
 ## 3. VISUALS / SCENE BREAKDOWN

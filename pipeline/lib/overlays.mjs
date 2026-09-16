@@ -77,7 +77,9 @@ export const SLIDE_THEMES = new Set(["editorial", "bold"]);
 // Bold-theme grounds. "poster" rotates a saturated colour per slide.
 export const SLIDE_BACKGROUNDS = new Set(["ink", "poster", "halftone", "mesh", "cream"]);
 
-export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false, scale = 1, cue = null, theme = "editorial", background = "ink" }, file) {
+// figure: path to a still of the authored movement figure (the export's
+// peak frame). Editorial theme only; the export is drawn on the brand ground.
+export async function renderSlide({ kicker = "", text, footer = "", index = 1, total = 1, kind = "step", solo = false, scale = 1, cue = null, theme = "editorial", background = "ink", figure = null }, file) {
   const textClass = text.length <= 42 ? "short" : text.length >= 82 ? "long" : "";
   const progress = Array.from({ length: total }, () => "<span></span>").join("");
   // A carousel slide asks to be swiped and its last slide asks to be saved.
@@ -97,6 +99,8 @@ export async function renderSlide({ kicker = "", text, footer = "", index = 1, t
     .replace("__KIND__", esc(kind))
     .replace("__SOLO__", solo ? "solo" : "")
     .replace("__BACKGROUND__", background === "ink" ? "" : `bg-${background} p${(index - 1) % 5}`)
+    .replace("__FIGURE_CLASS__", figure ? "figure" : "")
+    .replace("__FIGURE__", figure ? `file://${figure}` : "")
     .replace("__TEXT_CLASS__", textClass)
     .replace("__KICKER__", esc(kicker))
     .replace("__TEXT__", esc(text))

@@ -14,20 +14,25 @@ content plans need, not by pattern order.
 
 ## Ready (mirrors animation-library.json)
 
-(none yet)
+Owner-approved 2026-09-16 for use as still figures on carousel and single
+cards (`figure: true`) and as animated demos:
+
+- Wall Push-Up
+- Air Squat
+- Reverse Lunge
+- Glute Bridge
+- Seated Knee Lift
+- Full Plank
+- Doorframe Row
 
 Do not add a name here by itself. Add and validate its export in
 `animation-library.json`, then mirror the status here for humans.
 
 ## In production
 
-- Wall Push-Up — `assets/animation-review/wall-push-up-v1.png`
-- Air Squat — `assets/animation-review/air-squat-v1.png`
-- Reverse Lunge — `assets/animation-review/reverse-lunge-v1.png`
-- Glute Bridge — `assets/animation-review/glute-bridge-v1.png`
-- Seated Knee Lift — `assets/animation-review/seated-knee-lift-v1.png`
-- Full Plank — `assets/animation-review/full-plank-v1.png`
-- Doorframe Row — `assets/animation-review/doorframe-row-v1.png`
+(none; next to author, in order of how many week 02 slides they unlock:
+Sit-to-Stand, Wall Sit, Standing Hip Hinge, Wall Slide, Knee Plank,
+Doorframe Lean Row)
 
 Exact candidate hashes and export paths live in
 `assets/animation-candidates.json`. Do not copy them into the Ready library

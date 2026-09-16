@@ -8,18 +8,18 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"It's quarter end. You have no decisions left." (the video's hook, held as
+"Do these 3 every day this week. Decide nothing else." (the video's hook, held as
 slide one so a viewer who scrolls past the video meets the same named
 constraint. EXP-007 named-constraint group.)
 
 ## 2. SCRIPT (7 slides)
 
-1. QUARTER END. "It's quarter end. You have no decisions left."
-2. ONE. "Sit-to-Stand, eight reps, out of your desk chair."
-3. TWO. "Doorframe Lean Row, ten reps, in any doorframe."
-4. THREE. "Glute Bridge, ten reps, on the floor beside the desk."
-5. WHAT THIS SKIPS. "No push and no core this week. They return when the week opens."
-6. THE STRUCTURE. "Three rounds of three. Seven minutes, start to finish."
+1. QUARTER END. "Do these 3 every day this week. Decide nothing else."
+2. ONE. "Sit-to-Stand. 8 reps. Out of your desk chair with no hands, back down slowly."
+3. TWO. "Doorframe Lean Row. 10 reps. Hold the frame, lean back, pull yourself in."
+4. THREE. "Glute Bridge. 10 reps. Lie down by the desk, feet flat, push your hips up."
+5. WHAT THIS SKIPS. "No push and no core this week. They come back when the week opens up."
+6. THE STRUCTURE. "Three rounds of the three. Seven minutes, start to finish."
 7. YOUR TURN. "Which three would you pick?"
 
 ## 3. VISUALS / SCENE BREAKDOWN

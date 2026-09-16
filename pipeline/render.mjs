@@ -13,6 +13,7 @@ import { fetchApprovedEnvironment, fetchBroll, fetchApprovedDemo, fetchCoverPhot
 import { fetchApprovedAnimation } from "./lib/animations.mjs";
 import { renderOverlay, renderSlide, renderCover, closeBrowser } from "./lib/overlays.mjs";
 import { renderCardClip } from "./lib/typography.mjs";
+import { figureFrame } from "./lib/figures.mjs";
 import { composeVideo, mediaDuration } from "./lib/compose.mjs";
 import { rebuildSchedule } from "./lib/schedule.mjs";
 import { assertAudioMaster, assertVoiceAudible, createQaSheet, faceSampleTimes, findFaces } from "./lib/verify.mjs";
@@ -107,6 +108,7 @@ export async function renderOne(scriptPath) {
             solo,
             theme: i === 0 && spec.cover_background ? "bold" : spec.theme,
             background: i === 0 && spec.cover_background ? spec.cover_background : spec.background,
+            figure: s.figure === true && s.movement ? await figureFrame(s.movement) : null,
           },
           f,
         );

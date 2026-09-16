@@ -25,7 +25,7 @@
       "overlays": [
         {
           "t": 0,
-          "text": "Gate 42. Ninety minutes. Nobody here knows you're training.",
+          "text": "The invisible workout. Nobody at the gate can tell you are training.",
           "style": "hook"
         }
       ]
@@ -34,11 +34,11 @@
       "start": 1,
       "end": 2,
       "kicker": "ONE",
-      "footer": "The gate seat is the equipment.",
+      "footer": "Squat. Gate seat.",
       "overlays": [
         {
           "t": 1,
-          "text": "Sit-to-Stand, eight reps, from the gate seat, no hands on the armrests.",
+          "text": "Sit-to-Stand. 8 reps. Stand up from the gate seat with no hands, sit back down slowly.",
           "style": "step"
         }
       ]
@@ -47,24 +47,26 @@
       "start": 2,
       "end": 3,
       "kicker": "TWO",
-      "footer": "Stay seated. Nobody looks up.",
+      "footer": "Core. Bag stays between your feet.",
       "overlays": [
         {
           "t": 2,
-          "text": "Seated Knee Lift, ten reps, in the seat, bag still between your feet.",
+          "text": "Seated Knee Lift. 10 each side. Sit tall, lift one knee, hold a second, lower it.",
           "style": "step"
         }
-      ]
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
     },
     {
       "start": 3,
       "end": 4,
       "kicker": "THREE",
-      "footer": "Stand up. Nothing to hold.",
+      "footer": "Hinge. Face the window.",
       "overlays": [
         {
           "t": 3,
-          "text": "Standing Hip Hinge, ten slow reps, facing the window, nothing to hold.",
+          "text": "Standing Hip Hinge. 10 slow reps. Stand, push your hips back, chest forward, stand tall.",
           "style": "step"
         }
       ]
@@ -73,11 +75,11 @@
       "start": 4,
       "end": 5,
       "kicker": "FOUR",
-      "footer": "Any flat pillar works.",
+      "footer": "Pull. Any pillar.",
       "overlays": [
         {
           "t": 4,
-          "text": "Wall Slide, ten reps, against the pillar by the window.",
+          "text": "Wall Slide. 10 reps. Back on the pillar, arms up the wall and down again.",
           "style": "step"
         }
       ]
@@ -86,11 +88,11 @@
       "start": 5,
       "end": 6,
       "kicker": "FIVE",
-      "footer": "Ten minutes is complete.",
+      "footer": "Pull. Almost nothing moves.",
       "overlays": [
         {
           "t": 5,
-          "text": "Shoulder Blade Squeeze, twelve reps, seated, almost nothing moves.",
+          "text": "Shoulder Blade Squeeze. 12 reps. Sit, pull your shoulder blades together, let go.",
           "style": "step"
         }
       ]
@@ -99,7 +101,7 @@
       "start": 6,
       "end": 7,
       "kicker": "YOUR TURN",
-      "footer": "Save this for your next transit day.",
+      "footer": "Save this for the next transit day.",
       "overlays": [
         {
           "t": 6,

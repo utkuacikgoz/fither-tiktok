@@ -34,11 +34,11 @@
       "start": 1,
       "end": 2,
       "kicker": "RUNG ONE",
-      "footer": "Ready for rung two when your hands stop pushing.",
+      "footer": "Ready for rung 2 when you barely need your hands.",
       "overlays": [
         {
           "t": 1,
-          "text": "Supported Sit-to-Stand, tier 1, eight reps, hands on the chair.",
+          "text": "Supported Sit-to-Stand. 8 reps. Hands on the chair, stand up, sit down slowly.",
           "style": "step"
         }
       ]
@@ -47,11 +47,11 @@
       "start": 2,
       "end": 3,
       "kicker": "RUNG TWO",
-      "footer": "Ready for rung three when you rise with no rock forward.",
+      "footer": "Ready when 8 feel easy.",
       "overlays": [
         {
           "t": 2,
-          "text": "Sit-to-Stand, tier 2, eight reps, arms folded.",
+          "text": "Sit-to-Stand. 8 reps. Arms folded, stand up, sit down slowly.",
           "style": "step"
         }
       ]
@@ -60,11 +60,11 @@
       "start": 3,
       "end": 4,
       "kicker": "RUNG THREE",
-      "footer": "Ready for rung four when the pause never becomes a bounce.",
+      "footer": "Ready when the pause is steady.",
       "overlays": [
         {
           "t": 3,
-          "text": "Paused Squat, tier 3, eight reps, two seconds at the bottom.",
+          "text": "Paused Squat. 8 reps. Squat down, hold for two seconds, stand up.",
           "style": "step"
         }
       ]
@@ -73,11 +73,11 @@
       "start": 4,
       "end": 5,
       "kicker": "RUNG FOUR",
-      "footer": "Ready for the top when both hips stay level for six.",
+      "footer": "Ready when you stop wobbling.",
       "overlays": [
         {
           "t": 4,
-          "text": "Elevated Split Squat, tier 5, six reps each side.",
+          "text": "Elevated Split Squat. 6 each side. Back foot on the chair, lower, stand up.",
           "style": "step"
         }
       ]
@@ -86,11 +86,11 @@
       "start": 5,
       "end": 6,
       "kicker": "THE TOP",
-      "footer": "No hands. No furniture. That is the capability.",
+      "footer": "This is getting up off the floor.",
       "overlays": [
         {
           "t": 5,
-          "text": "Single-Leg Sit-to-Stand, tier 6, four reps, one leg.",
+          "text": "Single-Leg Sit-to-Stand. 4 reps. One leg, no hands, off the chair.",
           "style": "step"
         }
       ]
@@ -99,7 +99,7 @@
       "start": 6,
       "end": 7,
       "kicker": "HONEST NOTE",
-      "footer": "Climb one rung at a time. You build this.",
+      "footer": "Every rung is yours.",
       "overlays": [
         {
           "t": 6,

@@ -150,8 +150,16 @@ export function validateSpec(spec, options = {}) {
       if ((scene.demo === true || scene.animation === true) && scene.broll_query != null) {
         error(`scene ${i}: movement visuals cannot also declare broll_query`);
       }
-      if (scene.movement && scene.demo !== true && scene.animation !== true) {
-        error(`scene ${i}: movement requires demo: true or animation: true`);
+      // A still card may carry the authored figure's peak pose for its
+      // movement (figure: true). It needs an approved export like an
+      // animated demo does; the still is a frame of the same loop.
+      if (scene.figure === true && !STILL_FORMATS.has(spec.format)) error(`scene ${i}: figure is for slideshow, single or cocktail cards`);
+      if (scene.figure === true && !scene.movement) error(`scene ${i}: figure cards require a movement`);
+      if (scene.figure === true && scene.movement && !animations.has(scene.movement)) {
+        error(`scene ${i}: "${scene.movement}" has no approved authored export in assets/animation-library.json`);
+      }
+      if (scene.movement && scene.demo !== true && scene.animation !== true && scene.figure !== true) {
+        error(`scene ${i}: movement requires demo: true, animation: true or figure: true`);
       }
       if (scene.movement && !movements.has(scene.movement)) error(`scene ${i}: movement "${scene.movement}" is not in the movement library`);
       if (scene.demo === true && scene.movement && !demos.has(scene.movement)) {

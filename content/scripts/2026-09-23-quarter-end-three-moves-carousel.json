@@ -21,11 +21,11 @@
       "start": 0,
       "end": 1,
       "kicker": "QUARTER END",
-      "footer": "Shrink the plan, never the standard.",
+      "footer": "Strength that fits your life.",
       "overlays": [
         {
           "t": 0,
-          "text": "It's quarter end. You have no decisions left.",
+          "text": "Do these 3 every day this week. Decide nothing else.",
           "style": "hook"
         }
       ]
@@ -34,11 +34,11 @@
       "start": 1,
       "end": 2,
       "kicker": "ONE",
-      "footer": "Squat pattern. Chair only.",
+      "footer": "Squat.",
       "overlays": [
         {
           "t": 1,
-          "text": "Sit-to-Stand, eight reps, out of your desk chair.",
+          "text": "Sit-to-Stand. 8 reps. Out of your desk chair with no hands, back down slowly.",
           "style": "step"
         }
       ]
@@ -47,11 +47,11 @@
       "start": 2,
       "end": 3,
       "kicker": "TWO",
-      "footer": "Pull pattern. No equipment.",
+      "footer": "Pull. Any doorframe.",
       "overlays": [
         {
           "t": 2,
-          "text": "Doorframe Lean Row, ten reps, in any doorframe.",
+          "text": "Doorframe Lean Row. 10 reps. Hold the frame, lean back, pull yourself in.",
           "style": "step"
         }
       ]
@@ -60,24 +60,26 @@
       "start": 3,
       "end": 4,
       "kicker": "THREE",
-      "footer": "Hinge pattern. Floor only.",
+      "footer": "Hinge.",
       "overlays": [
         {
           "t": 3,
-          "text": "Glute Bridge, ten reps, on the floor beside the desk.",
+          "text": "Glute Bridge. 10 reps. Lie down by the desk, feet flat, push your hips up.",
           "style": "step"
         }
-      ]
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
     },
     {
       "start": 4,
       "end": 5,
       "kicker": "WHAT THIS SKIPS",
-      "footer": "Three patterns today. Five when the week opens.",
+      "footer": "Shrink the plan, never the standard.",
       "overlays": [
         {
           "t": 4,
-          "text": "No push and no core this week. They return when the week opens.",
+          "text": "No push and no core this week. They come back when the week opens up.",
           "style": "step"
         }
       ]
@@ -86,11 +88,11 @@
       "start": 5,
       "end": 6,
       "kicker": "THE STRUCTURE",
-      "footer": "Seven minutes is complete.",
+      "footer": "Ten minutes is complete. So is seven.",
       "overlays": [
         {
           "t": 5,
-          "text": "Three rounds of three. Seven minutes, start to finish.",
+          "text": "Three rounds of the three. Seven minutes, start to finish.",
           "style": "step"
         }
       ]
@@ -99,7 +101,7 @@
       "start": 6,
       "end": 7,
       "kicker": "YOUR TURN",
-      "footer": "Save this for the busiest week.",
+      "footer": "Save this for the week everything lands at once.",
       "overlays": [
         {
           "t": 6,

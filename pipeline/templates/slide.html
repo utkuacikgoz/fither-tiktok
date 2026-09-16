@@ -132,9 +132,27 @@
     font-size: 27px;
     letter-spacing: 0.08em;
   }
+  /* Figure slide: the authored movement export's peak frame is the ground.
+     The export leaves its upper half empty by design, so the text sits
+     there and the figure holds the lower half. Scaled from the top so the
+     export's progress ring falls below the canvas. */
+  body.figure::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: url("__FIGURE__") center bottom / 1080px auto no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 240px, #000 640px);
+    mask-image: linear-gradient(to bottom, transparent 240px, #000 640px);
+  }
+  body.figure .content { top: 19%; transform: none; }
+  body.figure .text { max-width: 740px; font-size: 72px; }
+  body.figure .text.short { font-size: 84px; }
+  body.figure .text.long { font-size: 60px; }
+  body.figure .footer { position: static; margin-top: 34px; right: auto; }
+  body.figure .cue { left: 96px; right: auto; bottom: 96px; }
+  body.figure .top, body.figure .progress, body.figure .content, body.figure .cue { position: absolute; z-index: 1; }
 </style>
 </head>
-<body class="__KIND__ __SOLO__">
+<body class="__KIND__ __SOLO__ __FIGURE_CLASS__">
   <header class="top">
     <div class="mark">FITHER</div>
     <div class="count">__INDEX__ / __TOTAL__</div>
@@ -144,8 +162,8 @@
     <div class="rule"></div>
     <div class="kicker">__KICKER__</div>
     <div class="text __TEXT_CLASS__">__TEXT__</div>
+    <div class="footer">__FOOTER__</div>
   </main>
-  <div class="footer">__FOOTER__</div>
   <div class="cue">__CUE__</div>
 </body>
 </html>

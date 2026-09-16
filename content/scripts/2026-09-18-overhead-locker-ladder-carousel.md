@@ -8,19 +8,19 @@
 
 ## 1. HOOK (first 3 seconds)
 
-"Five rungs between you and that overhead locker." (the video's hook, held as
+"The 5 moves that made lifting my own bag overhead easy." (the video's hook, held as
 slide one so the day's three posts make the same promise. This is the
 number-led control card for EXP-007: the count leads, the scene does not.)
 
 ## 2. SCRIPT (8 slides)
 
-1. FIVE RUNGS. "Five rungs between you and that overhead locker."
-2. RUNG ONE. "Rung 1. Standing Hip Hinge, ten reps, tier 1."
-3. RUNG TWO. "Rung 2. Hinge and Reach, ten reps, tier 2."
-4. RUNG THREE. "Rung 3. Single-Leg Hip Hinge, six a side, tier 4."
-5. RUNG FOUR. "Rung 4. Hip Thrust, ten reps, tier 4."
-6. RUNG FIVE. "Rung 5. Single-Leg Hip Thrust, six a side, tier 6."
-7. THE COMPANION. "Prone Y Raise, ten reps, tier 3. The upper back finishes the lift."
+1. FIVE RUNGS. "The 5 moves that made lifting my own bag overhead easy."
+2. RUNG ONE. "Standing Hip Hinge. 10 reps. Push your hips back, chest forward, stand tall."
+3. RUNG TWO. "Hinge and Reach. 10 reps. Same hinge, arms reach forward at the bottom."
+4. RUNG THREE. "Single-Leg Hip Hinge. 6 each side. One foot down, hinge, the other leg goes back."
+5. RUNG FOUR. "Hip Thrust. 10 reps. Shoulders on a chair, feet flat, drive your hips up."
+6. RUNG FIVE. "Single-Leg Hip Thrust. 6 each side. Same thrust, one leg."
+7. THE COMPANION. "Prone Y Raise. 10 reps. Lie on your front, arms in a Y, lift them off the floor."
 8. THE TOP. "You put your own bag in the locker. Who lifts yours?"
 
 Each footer says what the rung feels like when it is ready for the next one,

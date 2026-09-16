@@ -5,8 +5,8 @@
 - Demo scenes in current sidecars: **0**
 - Distinct environment queries: **25**, of which **0** have an approved clip
 - Approved environment clips: **0** across **0** queries
-- Ready authored animation exports: **0** across **0** movements
-- Authored animation candidates awaiting coach review: **7** across **7** movements
+- Ready authored animation exports: **7** across **7** movements
+- Authored animation candidates awaiting coach review: **0** across **0** movements
 - Priority movements below target (<3 approved clips): **5**
 
 ## Movement footage
@@ -24,13 +24,13 @@
 
 | Movement | Approved exports | Review candidates | Current scenes | Videos | Readiness |
 |---|---:|---:|---:|---:|---|
-| Air Squat | 0 | 1 | 0 | 0 | Coach review |
-| Doorframe Row | 0 | 1 | 0 | 0 | Coach review |
-| Full Plank | 0 | 1 | 0 | 0 | Coach review |
-| Glute Bridge | 0 | 1 | 0 | 0 | Coach review |
-| Reverse Lunge | 0 | 1 | 0 | 0 | Coach review |
-| Seated Knee Lift | 0 | 1 | 0 | 0 | Coach review |
-| Wall Push-Up | 0 | 1 | 0 | 0 | Coach review |
+| Air Squat | 1 | 0 | 0 | 0 | Ready |
+| Doorframe Row | 1 | 0 | 0 | 0 | Ready |
+| Full Plank | 1 | 0 | 0 | 0 | Ready |
+| Glute Bridge | 1 | 0 | 0 | 0 | Ready |
+| Reverse Lunge | 1 | 0 | 0 | 0 | Ready |
+| Seated Knee Lift | 1 | 0 | 0 | 0 | Ready |
+| Wall Push-Up | 1 | 0 | 0 | 0 | Ready |
 
 ## Environment coverage
 
