@@ -107,6 +107,12 @@ export function validateSpec(spec, options = {}) {
   if (spec.cover_background != null && !SLIDE_BACKGROUNDS.has(spec.cover_background)) {
     error(`cover_background "${spec.cover_background}" is unknown`);
   }
+  // The TikTok post title: catchy, plain, at most 90 characters. Still
+  // formats are photo posts, where the title is a visible field, so they
+  // are expected to carry one.
+  if (spec.title != null && (typeof spec.title !== "string" || !spec.title.trim())) error("title must be a non-empty string");
+  if (typeof spec.title === "string" && spec.title.length > 90) error(`title is ${spec.title.length} characters, TikTok allows 90`);
+  if (spec.title == null && STILL_FORMATS.has(spec.format)) warn("no title set; the posting sheet will have no catch title for this photo post");
   if (typeof spec.pillar === "string" && !PILLARS.has(spec.pillar)) error(`pillar "${spec.pillar}" is unknown`);
   if (typeof spec.hook_mechanism === "string" && !HOOKS.has(spec.hook_mechanism)) {
     error(`hook_mechanism "${spec.hook_mechanism}" is unknown`);

@@ -4,7 +4,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { POST_SLOTS, postSlot, validateSpec } from "./lib/spec.mjs";
+import { postSlot, validateSpec } from "./lib/spec.mjs";
 import { policyTextViolations } from "./lib/policy.mjs";
 import { normalizeRows } from "./lib/analytics.mjs";
 import { validateExperiments } from "./lib/experiments.mjs";
@@ -54,11 +54,11 @@ for (const file of files) {
     }
   }
   if (slugs.has(spec.slug)) errors.push(`slug duplicates ${slugs.get(spec.slug)}`);
-  // Three posts share a date now, one per slot, so a date collides only
-  // when two sidecars claim the same slot on the same day.
+  // A date carries several carousels now (three a day since 2026-09-17),
+  // so only the video and single slots collide on a shared date.
   const slot = postSlot(spec.format);
   const dateKey = `${spec.post_date}|${slot}`;
-  if (dates.has(dateKey)) errors.push(`post_date duplicates ${dates.get(dateKey)} in the ${slot} slot`);
+  if (slot !== "carousel" && dates.has(dateKey)) errors.push(`post_date duplicates ${dates.get(dateKey)} in the ${slot} slot`);
   slugs.set(spec.slug, label);
   dates.set(dateKey, label);
   if (!weeks.has(spec.week)) weeks.set(spec.week, []);
@@ -81,12 +81,11 @@ if (!requested.length) {
       console.warn(`WARN  week ${week}: expected 7 post dates, found ${byDate.size}`);
       warningCount++;
     }
-    // Every date owes a video, a carousel and a single. Reporting the gap
-    // per date says what to write next, which a bare count never did.
+    // Every date owes at least one carousel (the week is carousels since
+    // 2026-09-17). Video and single are optional extras, not owed slots.
     for (const [date, slots] of [...byDate].sort()) {
-      const missing = POST_SLOTS.filter((slot) => !slots.has(slot));
-      if (missing.length) {
-        console.warn(`WARN  week ${week} ${date}: missing ${missing.join(", ")}`);
+      if (!slots.has("carousel")) {
+        console.warn(`WARN  week ${week} ${date}: missing carousel`);
         warningCount++;
       }
     }

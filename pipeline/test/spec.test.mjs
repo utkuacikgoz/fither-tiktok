@@ -79,6 +79,7 @@ test("accepts a complete slideshow contract without video timing warnings", () =
   const spec = validSpec();
   spec.slug = "2026-09-01-valid-slideshow";
   spec.format = "slideshow";
+  spec.title = "Five quiet moves for tonight";
   spec.sound = { profile: "platform" };
   delete spec.voiceover;
   spec.scenes = Array.from({ length: 5 }, (_, index) => ({

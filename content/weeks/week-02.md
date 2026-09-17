@@ -39,9 +39,9 @@ slot goes to Constraint. There is no watch % to award it on, which the rule
 resolves as Constraint by default; the only directional signal available (views)
 points the same way, since the top three posts by views are all Constraint.
 The three Constraint slots deliberately share no environment with week 01:
-hotel, kitchen, office and doorframe are all spent, so this week runs a
-departure gate, a floor with a toddler on it, and a week with no spare
-decisions left in it.
+hotel, kitchen, office and doorframe are all spent, so this week runs the
+end of the day beside the bed, a floor with a toddler on it, and a week with
+no spare decisions left in it.
 
 **Behind the build** stays out of rotation: the channel is not past month 2.
 **Body-only demo** stays out: that unlocks at the week 6 checkpoint, and only
@@ -57,68 +57,59 @@ warning until they exist.
 
 ---
 
-## 1 — Thu 2026-09-17 — Gate 42, ninety minutes
+## 1 — Thu 2026-09-17 — 11pm, laptop still open
 
-- **Topic**: A 10 minute standing and gate-seat strength session in the clothes
-  she is flying in, done at the departure gate without changing or using the
-  floor.
+Replaced 2026-09-17 (owner: no gate or travel references). The original slot
+was a departure-gate session; the replacement keeps the pillar and the
+"invisible, no floor, no changing" constraint, moved home.
+
+- **Topic**: The 11pm session: five moves beside the bed when the day gave
+  her nothing else, done in whatever she is already wearing.
 - **Pillar**: Constraint
-- **Why now**: conference season peaks in late September and the frequent
-  traveller is one of three named personas. Week 01 covered the hotel room
-  after she lands. The transit day itself, the six hours that read as a
-  write-off, has never been covered.
-- **Angle**: the tension is social, not physical. She is not short of time at
-  an airport, she has ninety minutes and nothing to do with them. What stops
-  her is the row of strangers opposite. So the session is built to be invisible:
-  no floor, no sweat, nothing that makes anyone look up.
-- **Target search phrase**: layover workout without changing clothes
-- **Format**: motion typography (45 to 60s). No footage. Animated demos of
-  Sit-to-Stand and Wall Slide do not exist (`animation-library.json` empty),
-  so the format stays typography rather than waiting on an export.
-- **Carousel angle**: one slide per movement, each naming the airport surface
-  it uses in full. "Sit-to-Stand, eight reps, from the gate seat, no hands on
-  the armrests." "Wall Slide, ten reps, against the pillar by the window."
-  The voiceover compresses this to "five moves, no floor"; the carousel is the
-  version she can follow standing at Gate 42.
-- **Single line**: "Gate 42. Ninety minutes. You are not sitting for all of them."
-  Caption CTA: "How long is your layover?"
-- **Movements/patterns used**: Sit-to-Stand, Seated Knee Lift, Standing Hip
-  Hinge, Wall Slide, Shoulder Blade Squeeze. Chair and wall only, no floor
-  work, nothing that needs changing clothes.
-- **Assets needed**: voiceover only (ElevenLabs, cached per line). Brand-ground
-  typography cards, one per spoken beat. No b-roll, no animation, no photo.
-- **Reuse**: App Store screenshot "Travel mode: ten minutes at the gate";
-  onboarding copy for the no-floor adaptation.
+- **Why now**: the audience is 96% US women aged 25 to 44 and every viewer so
+  far is a non-follower arriving from the feed. The late-night recognition
+  hook ("if you have ever ... at 11pm, this is for you") is the pattern the
+  owner's reference list rates highest for that viewer, and no post has used
+  the end of the day as its scene yet.
+- **Angle**: the day is over and it gave her nothing. The tension is between
+  "tomorrow" and ten minutes now, beside the bed, with the bed edge as the
+  chair and the wall as the rack. Nothing to set up, nothing to change into.
+- **Target search phrase**: quick workout before bed no equipment
+- **Format**: carousel only (owner decision 2026-09-17: the week ships as
+  carousels; videos wait on footage, singles are paused).
+- **Cover line**: late-night recognition format from `content/product-hooks.md`.
+- **Movements/patterns used**: five from Glute Bridge, Lying Heel Slide,
+  Sit-to-Stand (bed edge), Wall Push-Up, Glute Bridge March, Seated Knee Lift
+  (bed edge). Figure cards on the approved movements.
+- **Assets needed**: typography cards and the authored figure. No footage.
+- **Reuse**: notification copy for the end-of-day session.
 
-## 2 — Fri 2026-09-18 — The locker is at shoulder height
+## 2 — Fri 2026-09-18 — Lift her off the floor
 
-- **Topic**: A five rung hinge ladder toward putting your own cabin bag in the
-  overhead locker, from Standing Hip Hinge to Single-Leg Hip Thrust.
+Replaced 2026-09-17 (owner: no locker or travel references). Same hinge
+ladder, the capability at the top moved from the overhead locker to picking
+a child, a basket or a box up off the floor.
+
+- **Topic**: The hinge ladder to lifting her off the floor without her back
+  going, from Standing Hip Hinge to Single-Leg Hip Thrust.
 - **Pillar**: Skill ladder
-- **Why now**: pairs with Thursday's travel day and answers the one moment
-  every frequent traveller recognises. Every no-equipment account on the
-  platform ladders push-ups and squats; a hinge ladder with a named capability
-  at the top of it is rare, and it is the pattern that actually carries the bag.
-- **Angle**: nobody offers. Or somebody does, and she says yes because she is
-  not sure. The tension is the two seconds of hesitation before she lifts, and
-  the honest claim is narrow: the hips start the lift and the upper back
-  finishes it, so the ladder trains both and promises nothing about injuries.
-- **Target search phrase**: exercises to lift a suitcase overhead
-- **Format**: motion typography. A hinge animation would upgrade this; Glute
-  Bridge sits in coach review with no approved export, so it is not planned.
-  Revisit for a later week if exports clear review.
-- **Carousel angle**: one slide per rung with full name, tier and reps, plus
-  what each rung feels like when it is ready for the next. "Rung 1, Standing
-  Hip Hinge, ten reps. Rung 2, Hinge and Reach, ten reps." Slide 7 names the
-  capability at the top so the list has a destination, not just an order.
-- **Single line**: "The locker is at shoulder height and nobody is offering."
-  Caption CTA: "Who lifts your bag?"
-- **Movements/patterns used**: Standing Hip Hinge (T1), Hinge and Reach (T2),
-  Single-Leg Hip Hinge (T4), Hip Thrust (T4), Single-Leg Hip Thrust (T6), with
-  Prone Y Raise (T3) as the upper-back companion rung.
-- **Assets needed**: voiceover, typography cards. No footage, no animation.
+- **Why now**: the toddler-proof floor session and the off-the-floor ladder
+  are both in this week; this is the lift between them, and the "my back went
+  lifting him" message is the most recognisable line in the owner's reference
+  hook list for a mother of a young child.
+- **Angle**: the lift she does thirty times a day is a hinge, and nobody has
+  ever shown her the ladder for it. Honest claim only: the hips start the
+  lift and the ladder trains them. No promise about pain or injury.
+- **Target search phrase**: exercises to lift a toddler without hurting your back
+- **Format**: carousel only.
+- **Cover line**: one of the owner's formats ("if you do x every day", reveal
+  the missing fact, before / method / after).
+- **Movements/patterns used**: Glute Bridge (T1, figure), Standing Hip Hinge
+  (T1), Hinge and Reach (T2), Single-Leg Hip Hinge (T4), Hip Thrust (T4),
+  Single-Leg Hip Thrust (T6).
+- **Assets needed**: typography cards and the authored figure. No footage.
 - **Reuse**: onboarding progression copy (named capability at the top of a
-  ladder); App Store screenshot "Six rungs. One capability."
+  ladder).
 
 ## 3 — Sat 2026-09-19 — Your shoulders are done. Everything below them is not.
 
@@ -284,7 +275,7 @@ single by 5 saves per 1000 or more, the next plan written after the data
 arrives drops singles to two a week and spends the freed slots on second
 carousels. EXP-007 is the one that matters most, because EXP-005 already
 decided that the writing is the limiting factor: four of the seven carousels
-open on a named constraint (Gate 42, a toddler at rep four, the stairs at 8:40,
+open on a named constraint (11pm beside the bed, a toddler at rep four, the stairs at 8:40,
 quarter end) and three open on a number-led line with no scene in it, which
 tests whether cinematic specificity is what earns the save or just what reads
 well to us. If the named-constraint group wins by 3 saves per 1000, or the

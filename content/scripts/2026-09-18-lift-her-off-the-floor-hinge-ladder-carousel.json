@@ -1,21 +1,21 @@
 {
-  "slug": "2026-09-22-off-the-floor-ladder-carousel",
-  "title": "Off the floor with no hands: the 4 rung ladder",
+  "slug": "2026-09-18-lift-her-off-the-floor-hinge-ladder-carousel",
   "week": "02",
-  "post_date": "2026-09-22",
+  "post_date": "2026-09-18",
   "format": "slideshow",
   "pillar": "Skill ladder",
-  "hook_mechanism": "number",
+  "hook_mechanism": "situation",
+  "title": "The hinge ladder: five rungs to lifting her off the floor",
   "sound": {
     "profile": "platform"
   },
-  "caption": "How to get off the floor without using your hands: four rungs with the full movement name, the tier, the reps and the exact test that says you are ready for the next one. Supported Sit-to-Stand, Sit-to-Stand, Paused Squat, Elevated Split Squat, then Single-Leg Sit-to-Stand at the top. Getting down on the floor with her is free. Getting up is the training. Save the ladder.",
+  "caption": "How to lift a toddler off the floor: five hinge rungs, in tier order, with the reps and the exact test for moving up. Glute Bridge, Standing Hip Hinge, Hinge and Reach, Single-Leg Hip Hinge, then Single-Leg Hip Thrust at the top. The laundry basket, the box and the toddler are the same lift. Save the ladder.",
   "hashtags": [
     "#strengthtraining",
     "#noequipmentworkout",
     "#strengthforwomen",
-    "#sittostand",
-    "#floortostanding"
+    "#hingepattern",
+    "#toddlermom"
   ],
   "scenes": [
     {
@@ -26,7 +26,7 @@
       "overlays": [
         {
           "t": 0,
-          "text": "Do this every day and getting off the floor stops being a thing.",
+          "text": "Ten hip hinges a day and the laundry basket stops being a thing.",
           "style": "hook"
         }
       ]
@@ -35,24 +35,26 @@
       "start": 1,
       "end": 2,
       "kicker": "RUNG ONE",
-      "footer": "Ready for rung 2 when you barely need your hands.",
+      "footer": "Ready when you can hold the top for two seconds.",
       "overlays": [
         {
           "t": 1,
-          "text": "Supported Sit-to-Stand. 8 reps. Hands on the chair, stand up, sit down slowly.",
+          "text": "Glute Bridge. 10 reps. Lie on your back, feet flat, push your hips up.",
           "style": "step"
         }
-      ]
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
     },
     {
       "start": 2,
       "end": 3,
       "kicker": "RUNG TWO",
-      "footer": "Ready when 8 feel easy.",
+      "footer": "Ready when your back stays flat for all 10.",
       "overlays": [
         {
           "t": 2,
-          "text": "Sit-to-Stand. 8 reps. Arms folded, stand up, sit down slowly.",
+          "text": "Standing Hip Hinge. 10 reps. Push your hips back, keep your back flat, stand up.",
           "style": "step"
         }
       ]
@@ -61,11 +63,11 @@
       "start": 3,
       "end": 4,
       "kicker": "RUNG THREE",
-      "footer": "Ready when the pause is steady.",
+      "footer": "Ready when your hands reach your shins without rounding.",
       "overlays": [
         {
           "t": 3,
-          "text": "Paused Squat. 8 reps. Squat down, hold for two seconds, stand up.",
+          "text": "Hinge and Reach. 10 reps. Reach both hands down your shins, then stand tall.",
           "style": "step"
         }
       ]
@@ -74,11 +76,11 @@
       "start": 4,
       "end": 5,
       "kicker": "RUNG FOUR",
-      "footer": "Ready when you stop wobbling.",
+      "footer": "Ready when the back foot stays off the floor.",
       "overlays": [
         {
           "t": 4,
-          "text": "Elevated Split Squat. 6 each side. Back foot on the chair, lower, stand up.",
+          "text": "Single-Leg Hip Hinge. 6 each side. Hinge on one leg, back leg straight behind you.",
           "style": "step"
         }
       ]
@@ -87,11 +89,11 @@
       "start": 5,
       "end": 6,
       "kicker": "THE TOP",
-      "footer": "This is getting up off the floor.",
+      "footer": "This is the strength behind the lift.",
       "overlays": [
         {
           "t": 5,
-          "text": "Single-Leg Sit-to-Stand. 4 reps. One leg, no hands, off the chair.",
+          "text": "Single-Leg Hip Thrust. 6 each side. Shoulders on the chair, one foot down, drive up.",
           "style": "step"
         }
       ]
@@ -104,7 +106,7 @@
       "overlays": [
         {
           "t": 6,
-          "text": "Rung four takes months, not a week.",
+          "text": "The top rung takes months, not a week.",
           "style": "step"
         }
       ]

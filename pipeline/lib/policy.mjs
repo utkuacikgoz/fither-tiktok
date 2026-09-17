@@ -20,6 +20,7 @@ const RULES = [
 function textSurfaces(spec) {
   const out = [];
   const add = (path, value) => typeof value === "string" && out.push({ path, value });
+  add("title", spec.title);
   add("caption", spec.caption);
   for (const [i, tag] of (spec.hashtags ?? []).entries()) add(`hashtags[${i}]`, tag);
   for (const [i, line] of (spec.voiceover ?? []).entries()) add(`voiceover[${i}].text`, line.text);

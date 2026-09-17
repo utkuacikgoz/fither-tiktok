@@ -21,7 +21,12 @@ strength training for time poor women.
 5. Run `node pipeline/assets.mjs` and read `data/assets.md`. Do not reuse a Thin
    movement demo more than once in the same week; keep extra beats environment-only.
 6. If given a week number instead of a topic, read `content/weeks/week-NN.md`
-   and write all 7.
+   and write every topic in it. Since 2026-09-17 a week is 21 carousels and
+   nothing else: write one `-carousel` deck per topic (6 to 8 slides, a
+   `title` of at most 90 characters, plain English, US spelling, the cover on
+   one of the owner's formats, `cover_background: "poster"`, `figure: true`
+   on any slide whose movement has an approved export). Skip the video and
+   single sections below unless the owner asks for a video.
 
 ## For each topic, output exactly this structure
 

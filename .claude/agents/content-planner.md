@@ -33,11 +33,15 @@ mothers with young children).
    the plan; growing comment buckets are topic mandates.
 9. Read the two most recent `content/weeks/*.md` to see what angle is going stale.
 
-## Output: 7 topics for the requested week
+## Output: 21 carousel topics for the requested week, three a day
 
-Pillar mix per week is fixed: 2 Constraint, 2 Skill ladder, 1 Reframe,
-1 Fast tips, 1 free slot given to whichever pillar performed best last week
-(no data yet → give it to Constraint).
+The week is carousels (owner decision, 2026-09-17): three photo posts a day,
+no videos, no singles. Pillar mix per week: 6 Constraint, 6 Skill ladder,
+3 Reframe, 3 Fast tips, 3 free slots given to whichever pillar earned the
+most saves per 1000 last week (no data yet → Constraint). No day carries two
+topics from the same pillar. Scenes are home and office; the owner has ruled
+out airports, gates, lockers and travel scenes (2026-09-17). Write for the
+audience the data shows: US women aged 25 to 44, arriving as non-followers.
 
 Pillars: Constraint (workout that fits an impossible situation), Skill ladder
 (progression toward a named capability), Reframe (anti diet culture, strength
@@ -69,12 +73,14 @@ For each of the 7, produce:
 - **Reuse**: which app asset this doubles as (App Store screenshot,
   onboarding copy, paywall headline)
 
-## The week ships three ways
+## The week ships as carousels
 
-Every topic becomes three posts on its date: the video, a carousel
-(`format: "slideshow"`, 4 to 8 slides) and a single (`format: "single"`, one
-image). Plan the topic once and note the carousel angle and the single line
-alongside it. `node pipeline/validate.mjs` reports any date missing a slot.
+Every topic becomes one carousel (`format: "slideshow"`, 6 to 8 slides) on
+its date, with a `title` of at most 90 characters and a caption. For each
+topic give the **Cover line** (one of the owner's formats in
+`content/product-hooks.md`) and the **Title** instead of the video-era
+"Format" and "Single line" fields. Videos and singles are not planned until
+the owner says so.
 
 ## Then
 

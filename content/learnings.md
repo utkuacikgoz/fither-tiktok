@@ -38,3 +38,20 @@ instead of the specific busy-woman audience the brand is written for. The
 planner and hook-writing pass should bias toward language and search
 phrases that are unmistakably for her, not for a generic fitness search,
 even at the cost of some raw reach.
+
+## 2026-09-17 — The gold poster cover with a plain-English body is the first post to find the audience it is written for
+Evidence: 2026-09-23-quarter-end-three-moves-carousel, posted 2026-09-16
+23:38, owner screenshot at ~3.5h: 836 views, 12 saves (14.4 per 1000, against
+0.4 per 1000 account-wide the week before), 26 likes, 2 shares. Viewers 100%
+non-followers, 96% United States, 88% women, 75% aged 25 to 44. The week 01
+posts took three days to reach ~235 views and drew 55% men. What changed
+between them: the cover moved to a bold gold poster with the hook on one of
+the owner's proven formats, the body went to plain English with one movement
+per slide in "Name. Reps. One instruction." form, and the deck was a photo
+post, not a video. One post, first hours; direction, not proof.
+Consequence: the week is carousels (owner decision the same day): three a
+day, gold poster cover, plain-English movement slides, owner-format hooks,
+catch title on every post. Copy is written for US women 25 to 44: US words
+and spellings, home and office scenes, no travel scenes (owner rule). Saves
+per 1000 replaces watch % as the first number; likes per 1000 is the
+tiebreak. Videos return when footage does.

@@ -124,14 +124,17 @@ times out of seven. Scheduling it would spend API budget producing
 unpostable video faster. Restore the schedule once environment footage is
 solved and a week ships.
 
-A week is **7 topics shipped three ways** (owner decision, 2026-09-03): the
-video, a carousel of the same idea, and a single-image hook from it. Twenty
-one posts, three a day. The carousel spells out what the voiceover had to
-compress, which makes it the saveable version; the single spends its one
-frame on the hook and keeps its CTA question in the caption.
+A week is **21 carousels, three a day** (owner decision, 2026-09-17,
+replacing the 2026-09-03 "7 topics three ways" split). The carousel is the
+format that ships: it renders locally for free, needs no footage and no API
+key, and the first gold-cover carousel drew 836 views and 14 saves per 1000
+in its first hours. Videos wait on footage (they stay on Actions when they
+run); singles are paused, unproven. The planner plans 21 carousel topics, the
+writer writes one carousel per topic, every carousel carries a `title`
+(catch title, 90 characters max) and its caption.
 
-Carousels and singles are typography only, so they ship while video renders
-are held on footage. That is the point of the split, not a side effect.
+Carousels are typography only, so they ship while video renders are held on
+footage. That is the point of the split, not a side effect.
 
 **Motion typography** (`format: "motion-type"`) is the same idea for video: a
 45-60s piece of moving typography over the brand ground, with the voiceover
@@ -142,14 +145,15 @@ which means the card **is** the caption: the words on screen are the words
 being said, so a muted viewer loses nothing and no burned-caption layer
 fights the typography.
 
-- **Sunday, run by hand**: dispatch `Render week` in Actions. It plans the
-  week, writes the scripts and sidecars, renders all 7 videos and delivers
-  them with a posting sheet.
+- **Sunday, run by hand**: `plan week N`, `write the carousels for week N`,
+  then render locally with `node pipeline/render.mjs content/scripts/<slug>.md`
+  per carousel and deliver the week as a zip with each deck's caption file
+  (title, caption, hashtags). `Render week` in Actions is for video only.
 - **Before posting anything with the generated character**: switch on
   TikTok's AI-generated-content label in the posting flow. The posting sheet
   names which videos need it.
-- **Daily, 5 min**: post the day's three from the posting sheet, spaced
-  across the day rather than back to back.
+- **Daily, 5 min**: post the day's three carousels as photo posts with their
+  titles and captions, spaced across the day rather than back to back.
 - **Friday, 10 min**: paste the week's numbers into `data/performance.csv`.
 - **Every 20 videos**: append top-quartile hooks (by watch %) to
   `.claude/skills/fither-voice/references/hooks.md`.
@@ -179,14 +183,20 @@ into `data/comments.md`, reruns analyze, and commits.
 
 ## What to measure, in order
 
-1. **Average watch %** — the only number that matters early. >50% on 60s = good.
-2. **Completion % and first retention drop-off second** — show where the
-   promise loses viewers, not only how many it loses.
-3. **Saves per 1000 views** — primary faceless metric. >15 strong.
-4. **Follows per 1000 views** — >3 is good faceless. Never compare to face-led.
+1. **Saves per 1000 views** — the primary metric now that the week is
+   carousels (a photo post has no watch %). >15 strong; 14.4 was the first
+   gold-cover result.
+2. **Likes per 1000 views** — the secondary carousel signal; use it to rank
+   covers against each other when saves are too few to split.
+3. **Follows per 1000 views** — >3 is good faceless. Never compare to face-led.
+4. **Viewer mix** — follower share, country, gender and age from TikTok
+   Studio; the account is written for US women 25 to 44 and the plan
+   should read as theirs.
 5. **Comment themes** — bucket every comment; buckets become product
    decisions and future topics.
 6. Views last. Views are noise for the first 60 days.
+7. **Average watch %, completion and drop-off** — for videos only, when
+   videos ship again. >50% on 60s = good.
 
 - **Kill criteria**: a pillar under 30% watch for 3 straight weeks gets cut.
 - **Ready-to-launch signal**: 3+ videos with >60% watch and >20 saves/1000.

@@ -22,7 +22,8 @@ import { renderSoundBed } from "./lib/sound.mjs";
 function writeDeliveryText(outDir, spec, notes) {
   const captionFile = join(outDir, `${spec.slug}.caption.txt`);
   const notesFile = join(outDir, `${spec.slug}.notes.txt`);
-  writeFileSync(captionFile, `${spec.caption}\n\n${(spec.hashtags ?? []).join(" ")}\n`);
+  const title = spec.title ? `Title: ${spec.title}\n\n` : "";
+  writeFileSync(captionFile, `${title}${spec.caption}\n\n${(spec.hashtags ?? []).join(" ")}\n`);
   writeFileSync(notesFile, notes.map((note) => `- ${note}`).join("\n") + "\n");
   return captionFile;
 }

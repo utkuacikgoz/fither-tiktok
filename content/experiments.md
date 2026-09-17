@@ -117,7 +117,7 @@ already rendered.
 ## EXP-006 — Carousel or single: which earns the save?
 
 - **Week opened**: 02
-- **Status**: running
+- **Status**: void
 - **Hypothesis**: the carousel out-saves the single on the same topic, because
   a list of named movements is a thing to come back to and a hook on one frame
   is a thing to agree with and scroll past. Re-registered from the voided
@@ -138,8 +138,11 @@ already rendered.
   pairs report per-post saves and fewer than 5 report per-post likes, void and
   stop re-registering this question until TikTok Studio exposes per-post
   engagement.
-- **Result**: —
-- **Decision**: —
+- **Result**: void 2026-09-17. The owner moved the week to carousels only
+  (three a day, singles paused) before any matched pair had data, so the
+  seven pairs will never exist.
+- **Decision**: no format comparison is registered until singles return.
+  The carousel is the format by decision, not by test.
 
 ## EXP-007 — Does a named-constraint hook out-save a number-led hook?
 
