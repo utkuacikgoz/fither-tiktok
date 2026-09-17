@@ -63,7 +63,7 @@ ship as written; the versions below keep the curiosity, drop the promise.
 31. The five moves that did more for my core than any plank. *(5 exercises that made the biggest difference)*
 32. Easy to remember, hard to put off: a five move core routine beside the bed. *(easy and effective routine)*
 33. Ten Sit-to-Stands every day and the stairs stop being a thing. *(if you do x every day, y improves)*
-34. The invisible workout: nobody at the gate, the office or the hotel can tell. *(shy girl workout)*
+34. The invisible workout: nobody at the office, the school run or the hotel can tell. *(shy girl workout)*
 35. Ten minutes of movement you will not regret. Every day this week, same wall. *(minutes you won't regret)*
 
 ## Slideshow hook patterns, translated
@@ -147,7 +147,7 @@ names hidden.
 
 ### When the viewer is in the scene
 
-74. POV: gate 42, delayed, and you are training in the seat. *(POV)*
+74. POV: the meeting ran over, the next one is in twelve minutes, and you are training between them. *(POV)*
 75. How are you doing squats at the school gate? *(overheard question)*
 76. You have scrolled your way to a wall push-up. Enjoy. *(fourth-wall opener)*
 77. If this found you at 11pm with the laptop still open, that is the right time. *(recognition cue)*
@@ -166,5 +166,5 @@ Rules, not lines. They apply to every cover above:
 - Everyday speech: say it like a person, not a textbook.
 - One emphasized word: the bold theme gives one word or phrase the weight; pick it on purpose.
 - Second-line reassurance: a short bracket that answers the objection ("no floor", "no changing").
-- Concrete details: a precise scene, time or number beats vague hype. Gate 42 beats "the airport".
+- Concrete details: a precise scene, time or number beats vague hype. "11pm, laptop still open" beats "when you are busy".
 - Series + payoff: each slide earns the next; the parts are the depth, the cover is the promise.
