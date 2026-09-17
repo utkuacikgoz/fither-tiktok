@@ -65,3 +65,106 @@ ship as written; the versions below keep the curiosity, drop the promise.
 33. Ten Sit-to-Stands every day and the stairs stop being a thing. *(if you do x every day, y improves)*
 34. The invisible workout: nobody at the gate, the office or the hotel can tell. *(shy girl workout)*
 35. Ten minutes of movement you will not regret. Every day this week, same wall. *(minutes you won't regret)*
+
+## Slideshow hook patterns, translated
+
+Sixty slideshow hook patterns (owner reference, 2026-09-17; source study
+credited to @onlinedopamine), grouped as the source groups them. Each one is
+translated into a FITHER cover line where the warm-up rule and the truth
+rules allow. Three groups cannot ship yet and say so: any pattern that needs
+a real customer, a real expert or the product itself waits for the account
+to earn it. Never invent the proof; a pattern marked *true claim* ships only
+with a claim that is actually true.
+
+### When they have the problem
+
+36. If you have ever done ten squats in the kitchen at 11pm because the day gave you nothing else, this is for you. *(late-night recognition)*
+37. "Just get up an hour earlier" is lying to you. Ten minutes at 3pm is a session. *(expose the false promise)*
+38. Stop waiting for the free hour. Seriously. It is not coming. *(stop the default habit)*
+39. Nobody tells you this about strength: it does not care where you are standing. *(reveal the missing fact)*
+40. Why does the case into the boot get harder every trip? Watch the lift. *(show the recurring pain)*
+
+### When you need them curious
+
+41. I was not going to post this. Same three moves every day for a week, and it held. *(reluctant reveal)*
+42. Wait for slide four. *(delayed payoff; the payoff must land on slide four)*
+43. A wall push-up should not do anything. Here is why it does. *(surprising effectiveness)*
+44. Three things I would tell myself before the first hotel trip of the year. *(hindsight gap)*
+45. Ten Sit-to-Stands every day for 30 days. Here is what changed on the stairs. *(time-boxed experiment; true claim)*
+
+### When they don't trust you yet
+
+Held. Customer switch, review-led opener, expert response, customer receipt
+and founder proof all need a real customer, a real expert or the thing we
+built. None exist in public yet. Revisit after launch with real receipts,
+names hidden.
+
+### When you want one specific person
+
+46. New moms, you are going to get this one. *(life-stage callout)*
+47. If you are 35+ and still saving workouts you never do, this is the one you do. *(age + unresolved pain)*
+48. For the woman who has tried every 6am plan and is done. *(exhausted audience)*
+49. Five ten-minute sessions for women who travel every other week. *(identity + useful outcome)*
+50. Mom to mom: what actually got you training again? *(peer-to-peer question)*
+
+### When authority earns attention
+
+51. What coaches notice about how you get off the floor that you never do. *(insider rulebook)*
+52. Hills I will die on: ten minutes is a complete session. *(expert conviction)*
+53. Held: firsthand credentials, borrowed expertise and credibility in one detail need a named person with real years, a real method or a real result. The persona is a voice, not a CV.
+
+### When a story makes them swipe
+
+54. Everything was fine until the buggy and two flights of stairs. *(scene + interruption)*
+55. Last night a friend texted "my back went again lifting him". This morning I sent her this. *(unfinished message; true claim)*
+56. Things I did as a "no time to train" person that felt normal. *(confession + hindsight)*
+57. I used to need a gym. Now I need a doorframe. Can you tell? *(unexpected backstory)*
+58. Everyone thinks working from home means more time to train, until the day has no edges. *(ordinary expectation, strange turn)*
+
+### When the result is the hook
+
+59. Week one: hands on the chair. Week six: no hands. The ladder in between. *(before / method / after)*
+60. How I went from hands on knees to no hands off the floor in six weeks. *(outcome + timeframe; true claim)*
+61. Rules we made after the week everything landed at once. *(recovery rules)*
+62. I tested the 6am plan against ten minutes at 3pm. Here is which one survived a month. *(side-by-side test; true claim)*
+63. Held: visible proof inset needs a real before and after. No body photos, ever; a real session log is the only honest inset and it belongs to what we are building, so it waits.
+
+### When useful beats mysterious
+
+64. Five ways to train a pull without a single dumbbell. *(numbered payoff)*
+65. Four quiet signs your week has no training in it, and the fix for each. *(diagnostic checklist)*
+66. What I say to myself at 9pm instead of "tomorrow". *(useful scripts)*
+67. How to get stronger without a gym, an hour or a changing room. *(outcome without the cost)*
+68. How to become the woman who trains on trips, step by step. *(aspirational how-to)*
+
+### When you need a pattern break
+
+69. Unhinged places I have done ten wall push-ups that actually kept me training. *(contrarian but useful)*
+70. Strong enough to carry a toddler up two flights, yet "not a gym person". *(status contradiction)*
+71. The strange reason a doorframe is the best pull machine in your house. *(unusual rabbit hole)*
+72. The stick figure that trains harder than most gym reels. *(unexpected visual; the authored figure is the visual)*
+73. Held: cultural contrast needs a real rule from a real place. Do not make one up.
+
+### When the viewer is in the scene
+
+74. POV: gate 42, delayed, and you are training in the seat. *(POV)*
+75. How are you doing squats at the school gate? *(overheard question)*
+76. You have scrolled your way to a wall push-up. Enjoy. *(fourth-wall opener)*
+77. If this found you at 11pm with the laptop still open, that is the right time. *(recognition cue)*
+78. You found a doorframe after all that scrolling. Use it. *(playful discovery)*
+
+### When the product enters naturally
+
+Held in full until the warm-up ends: casual name-drop, show the tool in use,
+story / lesson / product, proof matches the sentence, localize the same idea.
+These are the launch-week patterns. Keep the list; do not use it.
+
+### When you polish the first slide
+
+Rules, not lines. They apply to every cover above:
+
+- Everyday speech: say it like a person, not a textbook.
+- One emphasized word: the bold theme gives one word or phrase the weight; pick it on purpose.
+- Second-line reassurance: a short bracket that answers the objection ("no floor", "no changing").
+- Concrete details: a precise scene, time or number beats vague hype. Gate 42 beats "the airport".
+- Series + payoff: each slide earns the next; the parts are the depth, the cover is the promise.

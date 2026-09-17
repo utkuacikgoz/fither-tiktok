@@ -11,6 +11,8 @@ strength training for time poor women.
 
 1. Read `.claude/skills/fither-voice/SKILL.md`.
 2. Read `.claude/skills/fither-voice/references/hooks.md` for hook patterns
+   and `content/product-hooks.md` for the owner's proven hook formats; a
+   cover or hook line uses one of those formats unless a proven hook beats it
    that have worked, and `references/forbidden.md` for what can never be said.
 3. Read `.claude/skills/fither-voice/references/movement-library.md`. Every
    exercise you name must be on that list, with its real tier and equipment.
