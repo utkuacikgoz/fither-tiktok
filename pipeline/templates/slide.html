@@ -114,7 +114,10 @@
   .text.short { font-size: 104px; line-height: 1.06; }
   .text.long { font-size: 72px; line-height: 1.14; }
   .footer {
-    position: absolute;
+    /* Fixed, not absolute: the footer lives inside .content in the DOM so a
+       figure slide can flow it under the text, but on a plain slide it must
+       anchor to the canvas bottom, not to the .content box. */
+    position: fixed;
     bottom: 270px;
     left: 96px;
     right: 310px;
