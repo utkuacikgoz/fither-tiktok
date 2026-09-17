@@ -21,4 +21,4 @@ once numbers are in (watch % is the number that matters).
 | 2026-09-20 | 02 | Ten minute floor session that survives a toddler climbing on you | Constraint | |
 | 2026-09-21 | 02 | Stop measuring strength in a mirror, measure it in your Tuesday morning | Reframe | |
 | 2026-09-22 | 02 | Four rung ladder to standing off the floor with no hands, no furniture | Skill ladder | |
-| 2026-09-23 | 02 | Three move minimum for a quarter-end week, same three every day | Constraint | |
+| 2026-09-23 | 02 | Three move minimum for a quarter-end week, same three every day | Constraint | posted 09-16: n/a (carousel) / 14.4 at 3.5h, 836 views |
