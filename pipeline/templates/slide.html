@@ -77,12 +77,19 @@
   body.solo .count, body.solo .progress { display: none; }
   body.cta .progress span { background: rgba(250, 247, 242, 0.22); }
   .progress span:nth-child(-n+__INDEX__) { background: var(--gold); }
+  /* Centred with flex, not a transform: a transformed ancestor would trap
+     the fixed-position footer below, so the box runs from the top to 18%
+     above the bottom and centres its children (centre line at 41%). */
   .content {
     position: absolute;
-    top: 41%;
+    top: 0;
+    bottom: 18%;
     left: 96px;
     right: 152px;
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
   .rule {
     width: 84px;
@@ -118,6 +125,7 @@
        figure slide can flow it under the text, but on a plain slide it must
        anchor to the canvas bottom, not to the .content box. */
     position: fixed;
+    width: 674px;
     bottom: 270px;
     left: 96px;
     right: 310px;
@@ -146,7 +154,7 @@
     -webkit-mask-image: linear-gradient(to bottom, transparent 240px, #000 640px);
     mask-image: linear-gradient(to bottom, transparent 240px, #000 640px);
   }
-  body.figure .content { top: 19%; transform: none; }
+  body.figure .content { top: 19%; bottom: auto; display: block; }
   body.figure .text { max-width: 740px; font-size: 72px; }
   body.figure .text.short { font-size: 84px; }
   body.figure .text.long { font-size: 60px; }
