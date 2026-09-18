@@ -39,7 +39,12 @@ The week is carousels (owner decision, 2026-09-17): three photo posts a day,
 no videos, no singles. Pillar mix per week: 6 Constraint, 6 Skill ladder,
 3 Reframe, 3 Fast tips, 3 free slots given to whichever pillar earned the
 most saves per 1000 last week (no data yet → Constraint). No day carries two
-topics from the same pillar. Scenes are home and office; the owner has ruled
+topics from the same pillar. One of each day's three is the **"Do these N"
+series** (see CLAUDE.md): plan it as a Constraint topic whose title starts
+"Do these N every day this week", rotate N through 3, 4 and 5, give each day
+a different situation and a different movement set, and never repeat a set
+from the last 30 days of series decks in `content/log.md`. The other two
+topics are one-offs. Scenes are home and office; the owner has ruled
 out airports, gates, lockers and travel scenes (2026-09-17). Write for the
 audience the data shows: US women aged 25 to 44, arriving as non-followers.
 

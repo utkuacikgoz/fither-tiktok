@@ -107,6 +107,11 @@ export function validateSpec(spec, options = {}) {
   if (spec.cover_background != null && !SLIDE_BACKGROUNDS.has(spec.cover_background)) {
     error(`cover_background "${spec.cover_background}" is unknown`);
   }
+  // A recurring series (kebab-case id, e.g. "do-these"): the analytics
+  // report groups by it so a series can be judged against one-offs.
+  if (spec.series != null && (typeof spec.series !== "string" || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(spec.series))) {
+    error(`series "${spec.series}" must be a kebab-case id`);
+  }
   // The TikTok post title: catchy, plain, at most 90 characters. Still
   // formats are photo posts, where the title is a visible field, so they
   // are expected to carry one.

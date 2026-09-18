@@ -1,0 +1,134 @@
+{
+  "slug": "2026-09-19-do-these-4-desk-day-carousel",
+  "title": "Do these 4 every day this week when the desk is your whole day",
+  "series": "do-these",
+  "week": "02",
+  "post_date": "2026-09-19",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Desk day workout with no equipment: four movements, eight minutes, no changing clothes. Sit-to-Stand, Wall Push-Up, Seated Knee Lift and Doorframe Row, all within reach of the chair you are already in. Save this for the week you never leave the desk.",
+  "hashtags": [
+    "#strengthtraining",
+    "#deskjob",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#officeworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 4",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 4 every day this week if the desk is your whole day.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. No floor, no shoes.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Sit-to-Stand. 8 reps. Out of the desk chair with no hands, sit back slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Push. Any clear wall.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, elbows back, chest in and out.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. Same chair, still silent.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Seated Knee Lift. 10 each side. Sit tall, lift one knee, lower it slowly.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Pull. Any doorframe.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Doorframe Row. 8 reps. Hold the frame, lean back, pull your chest to your hands.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "Shrink the plan, never the standard.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "No hinge this week. It comes back on a day with a floor to lie down on.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. So is eight.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Two rounds of the four. About eight minutes, no changing clothes.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the week you never leave the chair.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which one would you do first?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

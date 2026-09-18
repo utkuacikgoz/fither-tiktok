@@ -29,6 +29,7 @@ function optionalNumber(value) {
 export function normalizeRows(csvText) {
   return parseCsv(csvText).map((row) => ({
     ...row,
+    series: row.series?.trim() ? row.series.trim() : "one-off",
     views: numberOrZero(row.views),
     watch_pct: numberOrZero(row.watch_pct),
     saves: numberOrZero(row.saves),
@@ -90,7 +91,7 @@ export function generateInsights(csvText) {
   out += `- View-weighted completion %: **${completion == null ? "not collected" : f1(completion)}**\n`;
   out += `- View-weighted retention drop-off: **${dropoff == null ? "not collected" : `${f1(dropoff)}s`}**\n`;
 
-  for (const [key, label] of [["pillar", "Pillar"], ["format", "Format"], ["hook_mechanism", "Hook mechanism"]]) {
+  for (const [key, label] of [["pillar", "Pillar"], ["format", "Format"], ["hook_mechanism", "Hook mechanism"], ["series", "Series"]]) {
     const groups = Object.entries(groupBy(rows, key)).sort((a, b) => weightedMean(b[1], "watch_pct") - weightedMean(a[1], "watch_pct"));
     out += `\n## By ${label.toLowerCase()}\n\n| ${label} | n | Watch % | Saves/1k | Follows/1k | Completion % | Drop-off |\n|---|---|---|---|---|---|---|\n`;
     for (const [group, groupRows] of groups) {

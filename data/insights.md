@@ -31,6 +31,13 @@ Source: data/performance.csv, 5 posted videos.
 | contradiction | 4 | 0.0 | 0.0 | 0.0 | — | — |
 | situation | 1 | 0.0 | 14.4 | 0.0 | — | — |
 
+## By series
+
+| Series | n | Watch % | Saves/1k | Follows/1k | Completion % | Drop-off |
+|---|---|---|---|---|---|---|
+| one-off | 4 | 0.0 | 0.0 | 0.0 | — | — |
+| do-these | 1 | 0.0 | 14.4 | 0.0 | — | — |
+
 ## Top 3 by watch %
 
 - 2026-09-08-sore-wrists-train-everything-else: 0.0% watch, 0.0 saves/1k (Constraint, slideshow)

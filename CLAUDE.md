@@ -133,6 +133,18 @@ run); singles are paused, unproven. The planner plans 21 carousel topics, the
 writer writes one carousel per topic, every carousel carries a `title`
 (catch title, 90 characters max) and its caption.
 
+**The "Do these N" series** (owner decision, 2026-09-18) is one of the three
+carousels every day, every week. Same shape each time: gold poster cover
+with kicker `DO THESE N` and the line "Do these N every day this week.
+<her situation>."; N is 3, 4 or 5 and rotates; one movement per slide in
+"Name. Reps. One instruction." form with the figure where approved; a
+`WHAT THIS SKIPS` slide that says which patterns are missing and when they
+come back; a `THE STRUCTURE` slide (rounds and minutes); `YOUR TURN`.
+Sidecar `series: "do-these"`, so `data/insights.md` reports the series on
+its own line. The 2026-09-23 quarter-end deck is the prototype (14.4 saves
+per 1000 in its first hours). The other two daily carousels stay one-offs
+from the week plan.
+
 Carousels are typography only, so they ship while video renders are held on
 footage. That is the point of the split, not a side effect.
 

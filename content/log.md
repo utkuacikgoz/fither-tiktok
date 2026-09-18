@@ -22,3 +22,10 @@ once numbers are in (watch % is the number that matters).
 | 2026-09-21 | 02 | Stop measuring strength in a mirror, measure it in your Tuesday morning | Reframe | |
 | 2026-09-22 | 02 | Four rung ladder to standing off the floor with no hands, no furniture | Skill ladder | |
 | 2026-09-23 | 02 | Three move minimum for a quarter-end week, same three every day | Constraint | posted 09-16: n/a (carousel) / 14.4 at 3.5h, 836 views |
+| 2026-09-19 | 02 | Do these 4: the desk day (Sit-to-Stand, Wall Push-Up, Seated Knee Lift, Doorframe Row) | Constraint (series: do-these) | |
+| 2026-09-20 | 02 | Do these 5: before the house wakes up (Glute Bridge, Air Squat, Knee Plank, Wall Slide, Shoulder Blade Squeeze) | Constraint (series: do-these) | |
+| 2026-09-21 | 02 | Do these 3: the Monday with no room (Air Squat, Doorframe Row, Glute Bridge March) | Constraint (series: do-these) | |
+| 2026-09-22 | 02 | Do these 4: while dinner cooks (Wall Push-Up, Wall Sit, Standing Hip Hinge, Reverse Lunge) | Constraint (series: do-these) | |
+| 2026-09-23 | 02 | Do these 5: with her in the room (Glute Bridge, Glute Bridge March, Kneeling Balance Reach, Reverse Lunge, Knee Plank) | Constraint (series: do-these) | |
+| 2026-09-24 | 03 | Do these 4: when your knees are complaining (Doorframe Row, Wall Push-Up, Glute Bridge, Lying Heel Tap) | Constraint (series: do-these) | |
+| 2026-09-25 | 03 | Do these 3: the 6pm reset (Standing Hip Hinge, Wall Slide, Air Squat) | Constraint (series: do-these) | |

@@ -26,7 +26,11 @@ strength training for time poor women.
    `title` of at most 90 characters, plain English, US spelling, the cover on
    one of the owner's formats, `cover_background: "poster"`, `figure: true`
    on any slide whose movement has an approved export). Skip the video and
-   single sections below unless the owner asks for a video.
+   single sections below unless the owner asks for a video. A "Do these N"
+   series topic mirrors `content/scripts/2026-09-23-quarter-end-three-moves-carousel.json`
+   exactly: kicker `DO THESE N`, cover "Do these N every day this week.
+   <situation>.", movement slides, `WHAT THIS SKIPS`, `THE STRUCTURE`,
+   `YOUR TURN`, and `"series": "do-these"` in the sidecar.
 
 ## For each topic, output exactly this structure
 
