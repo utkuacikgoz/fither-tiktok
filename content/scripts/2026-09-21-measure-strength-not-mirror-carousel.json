@@ -9,12 +9,12 @@
   "sound": {
     "profile": "platform"
   },
-  "caption": "How to know your strength training is working: six tests from your own week, not one from a mirror. The buggy up two flights, the case into the boot, the door, the sofa, the last street home, the floor. Save it and run it on your week.",
+  "caption": "How to know your strength training is working: six tests from your own week, not one from a mirror. The stroller up two flights, the suitcase into the trunk, the door, the couch, the last block home, the floor. Save it and run it on your week.",
   "hashtags": [
     "#strengthtraining",
     "#strengthforwomen",
     "#everydaystrength",
-    "#mumstrength",
+    "#momstrength",
     "#trainforlife"
   ],
   "scenes": [
@@ -39,7 +39,7 @@
       "overlays": [
         {
           "t": 1,
-          "text": "The buggy up two flights. That is a squat and a carry.",
+          "text": "The stroller up two flights. That is a squat and a carry.",
           "style": "step"
         }
       ]
@@ -52,7 +52,7 @@
       "overlays": [
         {
           "t": 2,
-          "text": "The case into the boot. That is a hinge.",
+          "text": "The suitcase into the trunk. That is a hinge.",
           "style": "step"
         }
       ]
@@ -78,7 +78,7 @@
       "overlays": [
         {
           "t": 4,
-          "text": "The sofa you shove aside on a Sunday. That is a push.",
+          "text": "The couch you shove aside on a Sunday. That is a push.",
           "style": "step"
         }
       ]
@@ -91,7 +91,7 @@
       "overlays": [
         {
           "t": 5,
-          "text": "Carrying her the last street home. That is core.",
+          "text": "Carrying her the last block home. That is core.",
           "style": "step"
         }
       ]
