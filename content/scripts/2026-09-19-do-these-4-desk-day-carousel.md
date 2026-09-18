@@ -50,6 +50,6 @@ Desk day workout with no equipment: four movements, eight minutes, no changing c
 
 ## 5. REUSE NOTE
 
-The four slides become the app's desk-day session card: one screen per
-pattern, same doses, same order, with hinge flagged as the pattern the next
+The four slides map one to one onto a desk-day session card: one screen per
+pattern, same doses, same order, with hinge marked as the pattern the next
 day owes her.
