@@ -1,0 +1,117 @@
+{
+  "slug": "2026-09-25-do-these-3-six-pm-reset-carousel",
+  "title": "Do these 3 every day this week at 6pm after sitting all day",
+  "series": "do-these",
+  "week": "03",
+  "post_date": "2026-09-25",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "After work workout at home: three movements at 6pm, after a day in a chair. Standing Hip Hinge, Wall Slide, Air Squat. Ten reps each, three rounds, seven minutes. Save this for 6pm.",
+  "hashtags": [
+    "#strengthtraining",
+    "#afterworkworkout",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#busymom"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 3",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 3 every day this week at 6pm, after sitting all day.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Hinge. Hips back, chest forward.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Standing Hip Hinge. 10 reps. Stand tall, push your hips back, then stand up again.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. Back on the wall.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Slide. 10 reps. Back against the wall, slide your arms up and down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Squat. Slow down, stand tall.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Air Squat. 10 reps. Feet under your shoulders, down slowly, up all the way.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "Fewer movements, same standard.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "No push and no core this week. They come back when your evenings open up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. So is seven.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Three rounds of the three. Seven minutes, laptop closed first.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for 6pm.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Which one would you start with at 6pm?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

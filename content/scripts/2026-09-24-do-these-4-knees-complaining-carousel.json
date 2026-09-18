@@ -1,0 +1,134 @@
+{
+  "slug": "2026-09-24-do-these-4-knees-complaining-carousel",
+  "title": "Do these 4 every day this week when your knees are complaining",
+  "series": "do-these",
+  "week": "03",
+  "post_date": "2026-09-24",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "No squat workout for the days your knees are complaining: Doorframe Row, Wall Push-Up, Glute Bridge, Lying Heel Tap. Two rounds of the four, eight minutes, and nothing that bends a knee under load. Save this for the day the stairs are talking to you.",
+  "hashtags": [
+    "#strengthtraining",
+    "#busywomen",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#nosquatworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 4",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 4 every day this week when your knees are complaining.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Pull. Knees do nothing.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Doorframe Row. 8 reps. Grip the frame, lean back, pull your chest to your hands.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Push. Standing still.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower your chest, press yourself back out.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Hinge. Hips, not knees.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Glute Bridge. 10 reps. Lie on your back, feet flat, push your hips up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Core. Flat on your back.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Lying Heel Tap. 10 reps. Knees bent above your hips, tap one heel down and back.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "The squat comes back when your knees stop complaining.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "No squat pattern this week. This is training what is fresh, not treatment.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. So is eight.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Two rounds of the four. Eight minutes, and nothing bends a knee under load.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the day the stairs are talking to you.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which one are you starting with?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

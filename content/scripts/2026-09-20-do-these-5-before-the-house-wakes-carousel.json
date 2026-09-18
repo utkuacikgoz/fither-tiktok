@@ -1,0 +1,132 @@
+{
+  "slug": "2026-09-20-do-these-5-before-the-house-wakes-carousel",
+  "title": "Do these 5 every day this week before the house wakes up",
+  "series": "do-these",
+  "week": "02",
+  "post_date": "2026-09-20",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Quiet morning workout before the house wakes up: Glute Bridge, Air Squat, Knee Plank, Wall Slide, Shoulder Blade Squeeze. Two rounds on the floor at 6am, ten minutes, and nothing that makes a sound. Save this for tomorrow morning.",
+  "hashtags": [
+    "#strengthtraining",
+    "#morningworkout",
+    "#busymoms",
+    "#noequipmentworkout",
+    "#quietworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 5",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 5 every day this week, before the house wakes up.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Hinge. You never leave the floor.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Glute Bridge. 10 reps. Lie on your back, feet flat, push your hips up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Squat. Slow and silent, no jumping.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Air Squat. 10 reps. Feet hip width, sit down slowly, stand back up tall.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. Held still, so nothing creaks.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Knee Plank. 25 seconds. Forearms down, knees down, hold one straight line.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Pull. One wall, no sound.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Wall Slide. 10 reps. Back on the wall, slide your arms up and down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE",
+      "footer": "Pull. Standing, silent, no equipment.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Shoulder Blade Squeeze. 12 reps. Pull your shoulder blades together, then let go.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "No push this week. At 6am it is the loud one. Back next week.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Two rounds of the five. Ten minutes, and nothing that makes a sound.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for tomorrow at 6am.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which one will you start with?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
