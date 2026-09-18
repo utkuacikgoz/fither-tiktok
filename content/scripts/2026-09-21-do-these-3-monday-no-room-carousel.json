@@ -1,0 +1,119 @@
+{
+  "slug": "2026-09-21-do-these-3-monday-no-room-carousel",
+  "title": "Do these 3 every day this week on the Monday with no room in it",
+  "series": "do-these",
+  "week": "02",
+  "post_date": "2026-09-21",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Three exercises to do every day at home: Air Squat for squat, Doorframe Row for pull, Glute Bridge March for hinge. Monday has no room in it and the rest of the week is the same, so the same three run every day and the plan asks you nothing. Save this for the week that has no room.",
+  "hashtags": [
+    "#strengthtraining",
+    "#busymoms",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#quietworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 3",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 3 every day this week. Monday has no room in it.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. No jumping, no noise.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Air Squat. 10 reps. Feet hip width, sit down between your heels, stand tall.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. Any doorframe.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row. 8 reps. Hold the frame, lean back, pull your chest to your hands.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Hinge. Done lying on the floor.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Glute Bridge March. 10 reps. Hips up, then lift one knee at a time, hips still.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "A short plan, not a lower standard.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "No push and no core this week. Both come back on the first week with room.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. So is seven.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Three rounds of the three. Seven minutes, and nothing left to decide.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the week that has no room.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Which three get you through Monday?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
