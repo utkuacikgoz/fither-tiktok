@@ -1,0 +1,145 @@
+{
+  "slug": "2026-09-23-do-these-5-with-her-in-the-room-carousel",
+  "title": "Do these 5 every day this week with her in the room",
+  "series": "do-these",
+  "week": "02",
+  "post_date": "2026-09-23",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Toddler in the room workout: five moves you can do with her climbing on you. Glute Bridge, Glute Bridge March, Kneeling Balance Reach, Reverse Lunge, Knee Plank, two rounds, ten minutes at floor level. Save this for the morning she will not let go.",
+  "hashtags": [
+    "#strengthtraining",
+    "#momstrength",
+    "#homeworkout",
+    "#toddlermom",
+    "#floorworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 5",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 5 every day this week, with her in the room.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Hinge. She can sit on you.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Glute Bridge. 10 reps. On your back, knees bent, press through your heels and lift your hips.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Hinge. Slow.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Glute Bridge March. 10 reps. Stay up at the top and raise one knee at a time.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. She copies you.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Kneeling Balance Reach. 8 reps. From all fours, stretch one arm out level with your shoulder.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Squat. Quiet feet.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Reverse Lunge. 6 reps each side. Step one foot straight back, lower your back knee, stand up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Reverse Lunge"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE",
+      "footer": "Core. The tunnel.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Knee Plank. 25 seconds. Elbows under your shoulders, knees down, hold your body in one line.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "Shrink the plan, never the standard.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "No push and no pull this week. Both come back the week you get a closed door.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Two rounds of the five. Ten minutes, floor level, nothing tips over.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 8,
+      "end": 9,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the morning she will not let go.",
+      "overlays": [
+        {
+          "t": 8,
+          "text": "Where does she sit while you train?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
