@@ -1,0 +1,132 @@
+{
+  "slug": "2026-09-22-do-these-4-while-dinner-cooks-carousel",
+  "title": "Do these 4 every day this week while dinner cooks",
+  "series": "do-these",
+  "week": "02",
+  "post_date": "2026-09-22",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Kitchen workout while dinner cooks: four moves, eight minutes, one wall. Wall Push-Up, Wall Sit, Standing Hip Hinge and Reverse Lunge, all quiet enough for a sleeping kid in the next room. Save this for the next twenty minutes at the stove.",
+  "hashtags": [
+    "#strengthtraining",
+    "#busymoms",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#kitchenworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 4",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 4 every day this week while dinner cooks.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Push. The kitchen wall.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower slow, press yourself away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Squat. Same wall.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Sit. 30 seconds. Back flat on the wall, knees bent, hold while it simmers.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Hinge. Face the stove.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Standing Hip Hinge. 10 reps. Push your hips back, flat back, stand tall again.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Squat. Slow, nothing spills.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Reverse Lunge. 6 each side. Step one foot back, drop the knee, stand back up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Reverse Lunge"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "Three patterns, four moves.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "No pull and no core this week. Both come back next week, away from the stove.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. So is eight.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Two rounds of the four. Eight minutes, and the oven is your timer.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next twenty minutes at the stove.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which four would you do tonight?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
