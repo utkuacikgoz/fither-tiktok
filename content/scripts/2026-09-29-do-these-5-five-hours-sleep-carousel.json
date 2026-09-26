@@ -1,0 +1,134 @@
+{
+  "slug": "2026-09-29-do-these-5-five-hours-sleep-carousel",
+  "title": "Do these 5 every day this week, even on five hours of sleep",
+  "series": "do-these",
+  "week": "03",
+  "post_date": "2026-09-29",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Easy workout when you are tired: Glute Bridge, Lying Heel Slide, Wall Push-Up, Supported Sit-to-Stand, Seated Knee Lift. Easy on purpose, one or two slow rounds, about eight minutes on five hours of sleep. Save this for the next short night.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#busymoms",
+    "#noequipmentworkout",
+    "#tiredmom"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 5",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 5 every day this week, even on five hours of sleep.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Hinge. Easy on purpose. You stay lying down.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Glute Bridge. 10 reps. Lie on your back, feet flat, push your hips up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Core. Easy on purpose. Still on the floor.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Lying Heel Slide. 10 reps. On your back, knees bent, slide one heel out and back.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Push. Easy on purpose. The wall takes most of it.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower your chest, press back.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Squat. Easy on purpose. Your hands do some of it.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Supported Sit-to-Stand. 8 reps. Use your hands to help you up. Sit back down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE",
+      "footer": "Core. Easy on purpose. You stay sitting down.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Seated Knee Lift. 10 reps. Sit tall on the chair, lift one knee, then the other.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "No pull this week. It comes back when you have slept.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "One or two rounds, slow. About eight minutes. On five hours, that counts.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next short night.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How many hours did you get last night?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

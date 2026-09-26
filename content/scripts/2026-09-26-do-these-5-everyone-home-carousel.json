@@ -1,0 +1,138 @@
+{
+  "slug": "2026-09-26-do-these-5-everyone-home-carousel",
+  "title": "Do these 5 every day this week, even with everyone home",
+  "series": "do-these",
+  "week": "03",
+  "post_date": "2026-09-26",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Weekend workout at home with no equipment, even with everyone home: Air Squat, Doorframe Row, Glute Bridge, Wall Push-Up, Full Plank. Two rounds, about ten minutes, one patch of floor and one doorframe. Save this for the weekend.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#busymoms",
+    "#noequipmentworkout",
+    "#weekendworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 5",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 5 every day this week, even with everyone home.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. The living room is enough.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Air Squat. 10 reps. Feet hip width, sit down slowly, stand back up tall.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. Any doorframe in the house.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row. 8 reps. Hold the doorframe, lean back, pull your chest to it.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Hinge. One patch of floor, even beside the couch.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Glute Bridge. 10 reps. Lie on your back, feet flat, push your hips up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Push. One wall, and nobody has to move.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower your chest, push away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE",
+      "footer": "Core. Held still, while the house stays loud.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Full Plank. 30 seconds. Forearms down, legs long, hold one straight line.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Full Plank"
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "Nothing skipped. All five patterns: the weekend has a floor and a doorframe.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Two rounds of the five. About ten minutes, with everyone still home.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the weekend.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which room will you train in?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

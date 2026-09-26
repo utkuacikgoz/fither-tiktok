@@ -1,0 +1,131 @@
+{
+  "slug": "2026-09-27-five-moves-before-you-scroll-carousel",
+  "title": "Five moves you can do from the couch before you keep scrolling",
+  "week": "03",
+  "post_date": "2026-09-27",
+  "format": "slideshow",
+  "pillar": "Fast tips",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Exercises you can do while sitting, or right beside where you sit: Seated Knee Lift, Shoulder Blade Squeeze, Sit-to-Stand, Air Squat and Wall Slide. Do all five once, then keep scrolling. Save this for the next scroll.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#couchworkout",
+    "#deskexercises"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "BEFORE YOU SCROLL",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "You scrolled your way to five moves you can do right where you sit.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Core. Stay seated.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Seated Knee Lift. 10 reps. Sit tall on the edge, lift one knee, then the other.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. Still seated.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Shoulder Blade Squeeze. 12 reps. Phone down, squeeze your shoulder blades, let go.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Squat. The seat is your guide.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Sit-to-Stand. 8 reps. Stand up from the seat with no hands, sit back down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Squat. The seat stays behind you.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Air Squat. 10 reps. Stand in front of the seat, sit your hips back, stand tall.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE",
+      "footer": "Pull. The nearest wall.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Wall Slide. 10 reps. Back to the wall beside you, slide your arms up, then down.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE DEAL",
+      "footer": "About four minutes. Then the phone is yours.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Do all five once. Then scroll.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next scroll.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Where are you scrolling from right now?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

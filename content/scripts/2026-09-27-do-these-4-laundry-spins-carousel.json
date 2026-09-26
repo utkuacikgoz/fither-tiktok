@@ -1,0 +1,130 @@
+{
+  "slug": "2026-09-27-do-these-4-laundry-spins-carousel",
+  "title": "Do these 4 every day this week while the laundry spins",
+  "series": "do-these",
+  "week": "03",
+  "post_date": "2026-09-27",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Workout while the laundry spins: four moves, about eight minutes, one wall and one doorframe. Standing Hip Hinge, Wall Push-Up, Wall Sit and Doorframe Lean Row, all quiet enough for a sleeping kid down the hall. Save this for laundry day.",
+  "hashtags": [
+    "#strengthtraining",
+    "#busymoms",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#laundryday"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 4",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 4 every day this week while the laundry spins.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Hinge. Face the washer.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Standing Hip Hinge. 10 reps. Push your hips back, flat back, stand tall again.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Push. The laundry room wall.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower slow, press yourself away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Squat. Same wall.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Sit. 30 seconds. Back flat on the wall, knees bent, hold through the rinse.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Pull. The nearest doorway.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Doorframe Lean Row. 10 reps. Hold the doorframe, lean back, pull yourself in.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "Four patterns, four moves.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "No core this week. It comes back next week, right beside the couch.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. So is eight.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Two rounds of the four. About eight minutes, done inside one wash cycle.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for laundry day.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which of the four would you start with?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

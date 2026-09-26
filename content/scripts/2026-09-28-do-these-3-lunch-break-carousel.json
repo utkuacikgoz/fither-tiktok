@@ -1,0 +1,121 @@
+{
+  "slug": "2026-09-28-do-these-3-lunch-break-carousel",
+  "title": "Do these 3 every day this week on your lunch break, in work clothes",
+  "series": "do-these",
+  "week": "03",
+  "post_date": "2026-09-28",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Exercises to do on your lunch break at work: Wall Push-Up, Doorframe Row and Seated Knee Lift, three rounds in about seven minutes. A wall, a doorframe and your desk chair, and you never change your clothes. Save this for lunch.",
+  "hashtags": [
+    "#strengthtraining",
+    "#lunchbreakworkout",
+    "#officeworkout",
+    "#noequipmentworkout",
+    "#workingmoms"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 3",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 3 every day this week on your lunch break, in work clothes.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Push. Any wall at work.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, chest toward it, push away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. The office door works.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row. 8 reps. Hold the frame, lean back, pull your chest to your hands.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. Your desk chair works.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Seated Knee Lift. 10 reps. Sit tall on the chair, lift one knee at a time.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "Nothing here needs the floor.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "No squat and no hinge this week. Both come back next week.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. So is seven.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Three rounds of the three. About seven minutes, and no changing.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for lunch.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Where will you do these at lunch?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

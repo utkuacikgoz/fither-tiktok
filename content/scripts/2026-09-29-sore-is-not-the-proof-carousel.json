@@ -1,0 +1,127 @@
+{
+  "slug": "2026-09-29-sore-is-not-the-proof-carousel",
+  "title": "Sore the next day is not proof it worked. Here is what is",
+  "week": "03",
+  "post_date": "2026-09-29",
+  "format": "slideshow",
+  "pillar": "Reframe",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Do you have to be sore for a workout to work? No: sore mostly means new, and the real proof is your reps going up and the stairs getting easier. Save this and count again in two weeks.",
+  "hashtags": [
+    "#strengthtraining",
+    "#strengthforwomen",
+    "#beginnerworkout",
+    "#homeworkout",
+    "#momstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "NOBODY TELLS YOU",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Nobody tells you this: sore the next day is not proof it worked.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "THE MYTH",
+      "footer": "You have heard it. It is not true.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "If you are not sore tomorrow, it did not count. That is the myth.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "WHAT SORE MEANS",
+      "footer": "A new move, a new angle, a first week.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Sore mostly means new. Not better, not harder. Just new to you.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "WHAT KEEPS WORKING",
+      "footer": "Less sore is not less work.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Do the same ten minutes every day. It stops feeling sore. It keeps working.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THE REAL PROOF",
+      "footer": "You count it. Nobody else has to.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "The proof is your reps going up and the stairs getting easier.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "TRY THIS",
+      "footer": "Off the chair, no hands. Write the number down.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Sit-to-Stand. Count your reps in one minute today. Count again in two weeks.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "REMEMBER THIS",
+      "footer": "The number is yours. So is the strength.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Sore tomorrow or not, today's ten minutes counted. You built that.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and count again in two weeks.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How many did you get today?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

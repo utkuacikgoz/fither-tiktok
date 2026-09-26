@@ -1,0 +1,129 @@
+{
+  "slug": "2026-09-29-five-pulls-no-dumbbell-carousel",
+  "title": "No dumbbell? 5 ways to train your back, easiest to hardest",
+  "week": "03",
+  "post_date": "2026-09-29",
+  "format": "slideshow",
+  "pillar": "Fast tips",
+  "hook_mechanism": "number",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Back workout without weights: Shoulder Blade Squeeze, Wall Slide, Doorframe Lean Row, Doorframe Row, Prone Y Raise, easiest to hardest. Start with the first one that feels hard by the last rep, and move down the list when it feels easy. Save this for your next pull day.",
+  "hashtags": [
+    "#strengthtraining",
+    "#backworkout",
+    "#noequipmentworkout",
+    "#homeworkout",
+    "#strengthforwomen"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "NO DUMBBELL",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Five ways to train a pull without a single dumbbell.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Easiest. Nothing to hold, nothing to lean on.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Shoulder Blade Squeeze. 12 reps. Pull your shoulder blades together, then let go.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "One wall. Arms slow the whole way.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Slide. 10 reps. Back on the wall, slide your arms up and down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Grip a solid frame. A small lean is plenty.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Doorframe Lean Row. 10 reps. Hold the frame, lean back a little, pull yourself in.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Same doorframe, more of you to pull.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Doorframe Row. 8 reps. Walk your feet closer, lean back more, pull your chest in.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE",
+      "footer": "Hardest. Just the floor and your own arms.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Prone Y Raise. 10 reps. Lie face down, arms in a Y, lift them off the floor.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "PICK ONE",
+      "footer": "When it feels easy, move one down. You set the pace.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Start with the first one that feels hard by the last rep. That is your level.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for your next pull day.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which one felt hard first?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
