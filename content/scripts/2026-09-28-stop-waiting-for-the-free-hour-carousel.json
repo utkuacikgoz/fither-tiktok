@@ -1,0 +1,114 @@
+{
+  "slug": "2026-09-28-stop-waiting-for-the-free-hour-carousel",
+  "title": "Stop waiting for the free hour. Your ten minutes already came",
+  "week": "03",
+  "post_date": "2026-09-28",
+  "format": "slideshow",
+  "pillar": "Reframe",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "How to work out when you have no time: stop waiting for the free hour and use the ten minutes already in your day. Sit-to-Stand, Wall Push-Up and Glute Bridge, three rounds, done. Save this for your ten minutes.",
+  "hashtags": [
+    "#strengthtraining",
+    "#busymoms",
+    "#10minuteworkout",
+    "#noequipmentworkout",
+    "#homeworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "SERIOUSLY",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Stop waiting for the free hour. Seriously. It is not coming.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "THE WAIT",
+      "footer": "That is the calendar, not you.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "The free hour has not come since you started waiting for it.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "THE CALENDAR",
+      "footer": "Or while the coffee brews.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Your calendar already has ten minutes in it. Between calls. Before pickup.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THE SWAP",
+      "footer": "Not a warm-up for a real one.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Ten minutes. Three moves. Done. That is a complete session.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "TRY IT",
+      "footer": "A chair, a wall, the floor. Rest as you need.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Sit-to-Stand, 8 reps. Wall Push-Up, 10 reps. Glute Bridge, 10 reps. Three rounds.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "WHAT YOU KEEP",
+      "footer": "Built between everything else.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Ten minutes today, ten tomorrow. The strength you build is yours.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for your ten minutes.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Where are your ten minutes today?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

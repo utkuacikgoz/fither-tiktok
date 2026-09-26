@@ -1,0 +1,114 @@
+{
+  "slug": "2026-09-26-ten-minutes-is-complete-carousel",
+  "title": "Ten minutes is a complete session. Nobody told you that.",
+  "week": "03",
+  "post_date": "2026-09-26",
+  "format": "slideshow",
+  "pillar": "Reframe",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Is a 10 minute workout enough? Ten minutes is a complete session, not a warm-up for one that never comes: Half Squat, Wall Slide, Standing Hip Hinge, Incline Push-Up, Knee Plank, two rounds. Save this for your next ten minutes.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#10minuteworkout",
+    "#busymoms",
+    "#noequipmentworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "NOBODY TOLD YOU",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Ten minutes is a complete session. Nobody told you that.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "THE MYTH",
+      "footer": "The ten minutes is the workout.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Ten minutes is not a warm-up for a real workout that never comes.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "THE MATH",
+      "footer": "Two rounds, with room to breathe between them.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Squat, pull, hinge, push, core. All five patterns fit in ten minutes.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THE TRUTH",
+      "footer": "The hour keeps moving. The ten minutes are already here.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "The ten minutes you do beats the hour you plan.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "WHAT YOU BUILD",
+      "footer": "Short is not lesser. Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Ten minutes today and ten tomorrow is strength you build and keep.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "TRY IT",
+      "footer": "Two rounds. About ten minutes. One chair, one wall.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Half Squat 10, Wall Slide 10, Standing Hip Hinge 10, Incline Push-Up 8, Knee Plank 25s.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for your next ten minutes.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "When will your ten minutes be?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

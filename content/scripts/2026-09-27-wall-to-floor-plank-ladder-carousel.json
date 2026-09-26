@@ -1,0 +1,129 @@
+{
+  "slug": "2026-09-27-wall-to-floor-plank-ladder-carousel",
+  "title": "Plank progression for beginners: from the wall to the floor in 5 rungs",
+  "week": "03",
+  "post_date": "2026-09-27",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Plank progression for beginners: five rungs from a plank on the wall to shoulder taps on the floor, each with the test that says you are ready for the next. Wall Plank, Incline Plank, Knee Plank, Full Plank, then Plank Shoulder Tap at the top. Save the ladder.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#strengthforwomen",
+    "#plankprogression",
+    "#beginnerworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE PLANK LADDER",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Week one: a plank on the wall. Week eight: a plank on the floor.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "RUNG ONE",
+      "footer": "Ready when 20 seconds feels easy.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Wall Plank. 20 seconds. Hands on the wall, walk your feet back, body in one line.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "RUNG TWO",
+      "footer": "Ready when your hips stay level the whole 20 seconds.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Incline Plank. 20 seconds. Hands on a chair against the wall, body straight, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "RUNG THREE",
+      "footer": "Ready when 25 seconds feels steady.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Knee Plank. 25 seconds. Forearms and knees down, hips in line, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "RUNG FOUR",
+      "footer": "Ready when 30 seconds feels steady.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Full Plank. 30 seconds. On your forearms and toes, body long, keep breathing.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Full Plank"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "THE TOP",
+      "footer": "Ready when your hips stay still on every tap.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Plank Shoulder Tap. 10 reps. Up on your hands, tap one shoulder, then the other.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "HONEST NOTE",
+      "footer": "Wrists tired? Stay on the forearm rungs.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "The wall, chair and shoulder-tap rungs load your wrists. The forearm rungs do not.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save the ladder.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which rung are you on?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
