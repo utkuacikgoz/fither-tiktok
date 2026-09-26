@@ -1,0 +1,134 @@
+{
+  "slug": "2026-09-30-do-these-4-before-pickup-carousel",
+  "title": "Do these 4 every day this week in the ten minutes before pickup",
+  "series": "do-these",
+  "week": "03",
+  "post_date": "2026-09-30",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Workout before school pickup: four moves, about eight minutes, a doorway and a chair. Reverse Lunge, Doorframe Row, Seated Knee Lift and Standing Hip Hinge, all quiet enough for a nap down the hall. Save this for pickup.",
+  "hashtags": [
+    "#strengthtraining",
+    "#busymoms",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#schoolpickup"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 4",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 4 every day this week in the ten minutes before pickup.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. The hallway.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Reverse Lunge. 6 reps each side. Step one foot back, lower the knee, stand up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Reverse Lunge"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. The nearest doorway.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row. 8 reps. Hold the frame, lean back, pull your chest to it.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. The kitchen chair.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Seated Knee Lift. 10 reps. Sit tall, lift one knee, lower slow, switch.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Hinge. Shoes already on.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Standing Hip Hinge. 10 reps. Push your hips back, flat back, stand tall again.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "Four patterns, four moves.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "No push this week. It comes back next week, at the wall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. So is eight.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Two rounds of the four. About eight minutes, keys by the door.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for pickup.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which move do you start with?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

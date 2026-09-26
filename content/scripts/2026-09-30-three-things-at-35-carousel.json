@@ -1,0 +1,103 @@
+{
+  "slug": "2026-09-30-three-things-at-35-carousel",
+  "title": "Three things I would tell myself before strength training at 35",
+  "week": "03",
+  "post_date": "2026-09-30",
+  "format": "slideshow",
+  "pillar": "Fast tips",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Strength training for beginners over 35: three things I would tell myself on day one. Ten minutes counts, start at the wall, and keep the same few moves. Save this and start at the wall.",
+  "hashtags": [
+    "#strengthtraining",
+    "#strengthforwomen",
+    "#homeworkout",
+    "#beginnerworkout",
+    "#over35fitness"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "AT 35",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Three things I would tell myself before I started strength training at 35.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "The free hour was never coming.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Ten minutes counts as a full session. It is not a warm-up for later.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "The floor comes later. You will get there.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Start at the wall, not the floor. Wall Push-Up. 10 reps. Lower slow, press away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Repeating them is how you get stronger.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "The same few moves every day beat a new plan every Monday.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "START HERE",
+      "footer": "Push, squat, hinge. Two rounds, about ten minutes.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Wall Push-Up, 10 reps. Sit-to-Stand, 8 reps. Glute Bridge, 10 reps.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and start at the wall.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "What would you tell yourself?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
