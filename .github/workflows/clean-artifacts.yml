@@ -32,7 +32,9 @@ jobs:
         with:
           script: |
             // 0 is a real value (delete everything), so parse rather than ||.
-            const parsed = Number(process.env.OLDER_THAN_HOURS);
+            // An empty input (the weekly schedule) keeps the 6h default.
+            const raw = (process.env.OLDER_THAN_HOURS || "").trim();
+            const parsed = raw === "" ? NaN : Number(raw);
             const cutoffHours = Number.isFinite(parsed) && parsed >= 0 ? parsed : 6;
             const cutoff = Date.now() - cutoffHours * 60 * 60 * 1000;
             // List everything first, then delete: deleting while paging
