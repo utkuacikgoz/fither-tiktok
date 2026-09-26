@@ -29,3 +29,18 @@ once numbers are in (watch % is the number that matters).
 | 2026-09-23 | 02 | Do these 5: with her in the room (Glute Bridge, Glute Bridge March, Kneeling Balance Reach, Reverse Lunge, Knee Plank) | Constraint (series: do-these) | |
 | 2026-09-24 | 03 | Do these 4: when your knees are complaining (Doorframe Row, Wall Push-Up, Glute Bridge, Lying Heel Tap) | Constraint (series: do-these) | |
 | 2026-09-25 | 03 | Do these 3: the 6pm reset (Standing Hip Hinge, Wall Slide, Air Squat) | Constraint (series: do-these) | |
+| 2026-09-26 | 03 | Do these 5: even with everyone home (Air Squat, Doorframe Row, Glute Bridge, Wall Push-Up, Full Plank) | Constraint (series: do-these) | |
+| 2026-09-26 | 03 | Strong back with no dumbbells, four floor raises easiest to hardest | Skill ladder | |
+| 2026-09-26 | 03 | Ten minutes is a complete session | Reframe | |
+| 2026-09-27 | 03 | Do these 4: while the laundry spins (Standing Hip Hinge, Wall Push-Up, Wall Sit, Doorframe Lean Row) | Constraint (series: do-these) | |
+| 2026-09-27 | 03 | Plank ladder, wall to floor to shoulder taps | Skill ladder | |
+| 2026-09-27 | 03 | Five moves you can do where you sit, before you scroll again | Fast tips | |
+| 2026-09-28 | 03 | Do these 3: lunch break in work clothes (Wall Push-Up, Doorframe Row, Seated Knee Lift) | Constraint (series: do-these) | |
+| 2026-09-28 | 03 | Squat ladder to the stairs with a full basket, no hand on the rail | Skill ladder | |
+| 2026-09-28 | 03 | Stop waiting for the free hour | Reframe | |
+| 2026-09-29 | 03 | Do these 5: even on five hours of sleep (Glute Bridge, Lying Heel Slide, Wall Push-Up, Supported Sit-to-Stand, Seated Knee Lift) | Constraint (series: do-these) | |
+| 2026-09-29 | 03 | Five ways to train a pull without a dumbbell | Fast tips | |
+| 2026-09-29 | 03 | Sore the next day is not proof it worked | Reframe | |
+| 2026-09-30 | 03 | Do these 4: ten minutes before pickup (Reverse Lunge, Doorframe Row, Seated Knee Lift, Standing Hip Hinge) | Constraint (series: do-these) | |
+| 2026-09-30 | 03 | Bridge ladder from two legs to one | Skill ladder | |
+| 2026-09-30 | 03 | Three things I would tell myself before starting strength training at 35 | Fast tips | |
