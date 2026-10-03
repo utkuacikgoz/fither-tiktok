@@ -1,0 +1,130 @@
+{
+  "slug": "2026-10-09-one-leg-balance-test-carousel",
+  "title": "The balance test: can you stand on one leg for 30 seconds?",
+  "series": "the-test",
+  "week": "05",
+  "post_date": "2026-10-09",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Can you stand on one leg for 30 seconds? Take the balance test, then do your level every day for two weeks: Kneeling Balance Reach, Reverse Lunge, Single-Leg Hip Hinge or Split Squat. Save this and retest.",
+  "hashtags": [
+    "#strengthtraining",
+    "#balancetest",
+    "#strengthforwomen",
+    "#singlelegstrength",
+    "#homeworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE BALANCE TEST",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Can you stand on one leg for 30 seconds? Try it, then swipe.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "HOW TO TEST",
+      "footer": "Touch the wall if you need to. That ends the count. Use your lower side.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Stand near a wall, eyes open. Lift one foot and count the seconds. Then switch sides.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "UNDER 10 SECONDS",
+      "footer": "Do this every day. Move on when all 8 feel steady.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Start here. Kneeling Balance Reach. 8 reps. On all fours, reach opposite arm and leg.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "10 TO 29",
+      "footer": "Move on when all 6 feel steady on both sides.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Reverse Lunge. 6 each side. Step one foot back, lower the knee, stand up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Reverse Lunge"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "30 BOTH SIDES",
+      "footer": "Move on when all 6 happen without touching down.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Single-Leg Hip Hinge. 6 each side. Stand on one leg, hinge forward, stand tall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "EASY",
+      "footer": "Move on when all 8 feel easy. Then put your back foot on a chair.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "30 felt easy? Split Squat. 8 each side. Feet staggered, lower down, push back up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "RETEST",
+      "footer": "Same wall, same count. Write down both sides.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Do your level every day. Take the balance test again in two weeks.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and retest in two weeks.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How many seconds, left and right?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

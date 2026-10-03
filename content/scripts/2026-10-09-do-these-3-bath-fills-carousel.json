@@ -1,0 +1,115 @@
+{
+  "slug": "2026-10-09-do-these-3-bath-fills-carousel",
+  "title": "Do these 3 every day this week while the bath fills",
+  "series": "do-these",
+  "week": "05",
+  "post_date": "2026-10-09",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Exercises to do while the bath fills: Wall Sit, Wall Slide and Standing Hip Hinge, three rounds in about seven minutes. One wall, no floor and no noise, so nobody down the hall hears a thing. Save this for bath time.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#wallworkout",
+    "#noequipmentworkout",
+    "#momstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 3",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 3 every day this week while the bath fills.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. Any wall near the tub works.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Wall Sit. 30 second hold. Back flat on the wall, knees bent, hold still.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. Same wall, arms only.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Slide. 10 reps. Back on the wall, slide your arms up and down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Hinge. The bath mat is all the room you need.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Standing Hip Hinge. 10 reps. Push your hips back, keep your back flat, stand tall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "All three keep you on your feet and off the wet floor.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "No push and no core this week. Both come back next week.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "THE STRUCTURE",
+      "footer": "You built that while the water ran.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Three rounds of the three. About seven minutes, done before the bath is full.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for bath time.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Which of the three felt hardest?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
