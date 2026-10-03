@@ -1,0 +1,118 @@
+{
+  "slug": "2026-10-04-pov-toddler-on-your-leg-carousel",
+  "title": "POV: you have 10 minutes and a toddler attached to your leg",
+  "week": "04",
+  "post_date": "2026-10-04",
+  "format": "slideshow",
+  "pillar": "Fast tips",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Workout with a toddler at home: four quiet moves, two rounds, about ten minutes. Glute Bridge, Reverse Lunge, Kneeling Balance Reach and Lying Heel Slide, all done right where she is. Save this for the next clingy morning.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#toddlermom",
+    "#momstrength",
+    "#noequipmentworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "POV",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "POV: you have 10 minutes and a toddler attached to your leg.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Hinge. Floor level is her level.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Glute Bridge. 10 reps. Lie down where she is, feet flat, push your hips up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Squat. Step back with whichever leg is free.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Reverse Lunge. 6 each side. Step one foot back, lower the knee, stand back up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Reverse Lunge"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. She will try to copy you.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Kneeling Balance Reach. 8 reps. On all fours, reach out one arm and the other leg.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Core. Right where she wants you.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Lying Heel Slide. 10 reps. On your back, knees bent, slide one heel out and back.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Two rounds of the four. About ten minutes, and she can stay on your leg.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the next clingy morning.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "How old is your leg passenger?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

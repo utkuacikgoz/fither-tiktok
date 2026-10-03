@@ -1,0 +1,128 @@
+{
+  "slug": "2026-10-05-wall-sit-test-carousel",
+  "title": "The wall sit test: how long can you hold it?",
+  "series": "the-test",
+  "week": "04",
+  "post_date": "2026-10-05",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Wall sit test: how long can you hold one? Take the test, then do your level every day: High Wall Sit, Wall Sit, Paused Squat or Split Squat. Save this and retest in two weeks.",
+  "hashtags": [
+    "#strengthtraining",
+    "#wallsit",
+    "#strengthforwomen",
+    "#legworkout",
+    "#homeworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE WALL SIT TEST",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "How long can you hold a wall sit? Try it, then swipe.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "HOW TO TEST",
+      "footer": "Stop when your thighs start to rise. The last second you held is your number.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Back flat on the wall. Slide down until your thighs are level. Count the seconds.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "UNDER 15 SECONDS",
+      "footer": "Do this every day. Move on when 20 seconds feels easy.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Start here. High Wall Sit. 20 seconds. Back on the wall, slide down only a little.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "15 TO 29",
+      "footer": "Move on when 30 seconds feels easy.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Sit. 30 seconds. Back flat on the wall, thighs level, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "30 TO 59",
+      "footer": "Off the wall now. Move on when all 8 feel easy.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Paused Squat. 8 reps. Squat down, hold two seconds at the bottom, stand up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "60 OR MORE",
+      "footer": "Your legs are strong. Now train them one at a time.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Split Squat. 8 each side. One foot forward, one back, lower straight down, stand up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "RETEST",
+      "footer": "Same wall, same count. Write down your seconds.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Do your level every day. Take the wall sit test again in two weeks.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and retest in two weeks.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How many seconds did you get?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

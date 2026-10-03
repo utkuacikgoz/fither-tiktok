@@ -1,0 +1,120 @@
+{
+  "slug": "2026-10-05-before-you-buy-dumbbells-carousel",
+  "title": "Before you buy dumbbells, do these 4 for two weeks",
+  "week": "04",
+  "post_date": "2026-10-05",
+  "format": "slideshow",
+  "pillar": "Fast tips",
+  "hook_mechanism": "contradiction",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Home workout without dumbbells: Reverse Lunge, Doorframe Row, Glute Bridge and Prone Y Raise, every day for two weeks. When all four feel easy, buying dumbbells makes sense. Save this before you buy anything.",
+  "hashtags": [
+    "#strengthtraining",
+    "#nodumbbells",
+    "#noequipmentworkout",
+    "#homeworkout",
+    "#strengthforwomen"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "BEFORE YOU BUY",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Before you buy dumbbells, do these 4 for two weeks.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Legs. You lift your whole body on every rep.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Reverse Lunge. 6 each side. Step one foot back, lower the knee, stand up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Reverse Lunge"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Back. Grip a solid frame. The lean sets how hard it is.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row. 8 reps. Hold the frame, lean back, pull your chest in.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Hips. The floor is all you need.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Glute Bridge. 10 reps. Lie on your back, feet flat, push your hips up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Upper back. Just the floor and your own arms.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Prone Y Raise. 10 reps. Lie face down, arms in a Y, lift them off the floor.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "WHEN TO BUY",
+      "footer": "Easy means the last rep feels like the first. Then you know what you need.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "When all four feel easy every day for two weeks, buying dumbbells makes sense.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this before you buy anything.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Which one felt hardest today?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

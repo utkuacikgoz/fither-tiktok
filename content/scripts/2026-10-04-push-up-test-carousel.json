@@ -1,0 +1,130 @@
+{
+  "slug": "2026-10-04-push-up-test-carousel",
+  "title": "The push-up test: how many wall push-ups can you do in a row?",
+  "series": "the-test",
+  "week": "04",
+  "post_date": "2026-10-04",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "How many wall push-ups can you do in a row? Take the push-up test, then find your level: Wall Push-Up Hold, Wall Push-Up, Incline Push-Up or Kneeling Push-Up. Save this and retest in two weeks.",
+  "hashtags": [
+    "#strengthtraining",
+    "#pushuptest",
+    "#strengthforwomen",
+    "#wallpushups",
+    "#momstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE PUSH-UP TEST",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "How many wall push-ups can you do in a row? Try it, then swipe.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "HOW TO TEST",
+      "footer": "Every push-up loads the wrists. Count only clean reps.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Hands on the wall at chest height. Count clean reps until you stop.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "UNDER 5",
+      "footer": "Do this every day. Move on when the hold feels steady.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Start here. Wall Push-Up Hold. 20 seconds. Lower halfway to the wall and hold still.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "5 TO 9",
+      "footer": "Move on when all 10 feel easy.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower slow, press yourself away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "10 TO 19",
+      "footer": "Chair against the wall. Move on when all 8 feel easy.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Incline Push-Up. 8 reps. Hands on a sturdy chair, lower your chest, press up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "20 OR MORE",
+      "footer": "You outgrew the wall. Move on when all 8 feel easy.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Kneeling Push-Up. 8 reps. Knees down, body straight, lower your chest, press up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "RETEST",
+      "footer": "Same wall, same count. Write down your number.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Do your level every day. Take the wall test again in two weeks.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and retest in two weeks.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How many did you get?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

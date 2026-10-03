@@ -1,0 +1,132 @@
+{
+  "slug": "2026-10-05-do-these-5-video-calls-carousel",
+  "title": "Do these 5 every day this week, between video calls",
+  "series": "do-these",
+  "week": "04",
+  "post_date": "2026-10-05",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Workout between meetings at home: Sit-to-Stand, Wall Push-Up, Seated Knee Lift, Shoulder Blade Squeeze, Standing Hip Hinge. One quiet round in each gap between video calls, about three minutes, all five patterns covered. Save this for your next gap between calls.",
+  "hashtags": [
+    "#strengthtraining",
+    "#workfromhome",
+    "#deskworkout",
+    "#noequipmentworkout",
+    "#workingmom"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 5",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 5 every day this week, between video calls.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. Use a chair that does not roll.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Sit-to-Stand. 8 reps. Arms folded, stand up from your chair, sit down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Push. The wall beside your desk is enough.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower your chest, press back.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. You never leave your seat.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Seated Knee Lift. 10 reps. Sit tall on the chair, lift one knee, then the other.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Pull. Nothing to hold. Sitting or standing.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Shoulder Blade Squeeze. 12 reps. Pull your shoulder blades together, then let go.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE",
+      "footer": "Hinge. Done before the next call starts.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Standing Hip Hinge. 10 reps. Push your hips back, keep your back flat, stand tall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "All five patterns are here. Nothing is skipped this week.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "One round in each gap, about three minutes. Three gaps make a full session.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for your next gap between calls.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How many calls do you have today?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

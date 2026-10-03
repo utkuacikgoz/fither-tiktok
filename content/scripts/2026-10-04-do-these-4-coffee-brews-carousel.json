@@ -1,0 +1,132 @@
+{
+  "slug": "2026-10-04-do-these-4-coffee-brews-carousel",
+  "title": "Do these 4 every day this week while the coffee brews",
+  "series": "do-these",
+  "week": "04",
+  "post_date": "2026-10-04",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Morning workout while the coffee brews: four moves, about six minutes, no equipment. Air Squat, Standing Hip Hinge, Doorframe Lean Row and Seated Knee Lift, all quiet enough for a house that is still asleep. Save this for tomorrow's coffee.",
+  "hashtags": [
+    "#strengthtraining",
+    "#busymoms",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#morningworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 4",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 4 every day this week while the coffee brews.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. Right by the counter.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Air Squat. 10 reps. Feet hip width, sit back and down, stand up tall.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Hinge. Hands on your hips.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Standing Hip Hinge. 10 reps. Push your hips back, flat back, stand tall again.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Pull. The kitchen doorframe.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Doorframe Lean Row. 10 reps. Hold the frame, lean back, pull yourself in.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Core. Any kitchen chair.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Seated Knee Lift. 10 reps. Sit tall on a chair, lift one knee, lower it slowly.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "Four patterns, four moves.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "No push this week. It comes back next week, at the kitchen wall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. So is six.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Two rounds of the four. About six minutes, done before the last drip.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for tomorrow's coffee.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How long does your coffee take?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
