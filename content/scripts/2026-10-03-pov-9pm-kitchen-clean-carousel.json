@@ -1,0 +1,116 @@
+{
+  "slug": "2026-10-03-pov-9pm-kitchen-clean-carousel",
+  "title": "9pm kitchen workout: 4 quiet moves for the last 10 minutes of your day",
+  "week": "04",
+  "post_date": "2026-10-03",
+  "format": "slideshow",
+  "pillar": "Fast tips",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Night workout at home, right after the kitchen is clean: four quiet moves, about ten minutes. Seated Knee Lift, Wall Sit, Standing Hip Hinge and Shoulder Blade Squeeze, with nothing to buy and nothing loud. Save this for 9pm.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#busymoms",
+    "#nightworkout",
+    "#quietworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "POV",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "POV: it is 9pm, the kitchen is clean, and you have 10 minutes left.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Core. The chair you just pushed in.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Seated Knee Lift. 10 reps. Sit tall on a kitchen chair, lift one knee, lower slow.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Squat. The wall by the fridge.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Sit. 30 seconds. Back flat on the kitchen wall, knees bent, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Hinge. Face the clean counter.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Standing Hip Hinge. 10 reps. Push your hips back, flat back, stand tall again.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Pull. Shoulders back from the sink.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Shoulder Blade Squeeze. 12 reps. Arms down, squeeze your shoulder blades together.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "THE STRUCTURE",
+      "footer": "No push tonight. Ten minutes is still complete.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Two rounds of the four, slow, with a minute of rest between. About ten minutes.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for 9pm.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "What time do your 10 minutes start?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
