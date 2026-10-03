@@ -1,0 +1,130 @@
+{
+  "slug": "2026-10-06-plank-test-carousel",
+  "title": "The plank test: how long can you hold a plank on your knees?",
+  "series": "the-test",
+  "week": "04",
+  "post_date": "2026-10-06",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "How long can you hold a plank on your knees? Count the seconds, then find your level: Wall Plank, Knee Plank, Full Plank or Plank Shoulder Tap. Save this and retest in two weeks.",
+  "hashtags": [
+    "#strengthtraining",
+    "#planktest",
+    "#corestrength",
+    "#strengthforwomen",
+    "#momstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE PLANK TEST",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "How long can you hold a plank on your knees? Try it, then swipe.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "HOW TO TEST",
+      "footer": "Stop when your hips sag or lift. That number is your result.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Forearms down, knees down, body in one line. Count the seconds you can hold it.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "UNDER 10 SECONDS",
+      "footer": "Do this every day. Move on when 20 seconds feels steady.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Start here. Wall Plank. 20 seconds. Hands on the wall, walk your feet back, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "10 TO 24",
+      "footer": "Move on when 25 seconds feels steady.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Knee Plank. 25 seconds. Forearms and knees down, body in one line, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "25 OR MORE",
+      "footer": "Move on when you hold all 30 seconds and your hips stay level.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Full Plank. 30 seconds. Forearms down, knees off the floor, body in one line.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Full Plank"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FULL PLANK FOR 30",
+      "footer": "You passed. Move on when your hips stay still for all 10.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Plank Shoulder Tap. 10 reps. High plank on your hands, tap one shoulder at a time.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "RETEST",
+      "footer": "The wall and shoulder tap versions load the wrists. The forearm ones do not.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Do your level every day. Take the plank test again in two weeks.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and retest in two weeks.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How many seconds did you hold?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

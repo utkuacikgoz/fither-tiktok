@@ -1,0 +1,120 @@
+{
+  "slug": "2026-10-08-strong-enough-move-the-couch-carousel",
+  "title": "Strong enough to move the couch yourself: the 4 moves that build it",
+  "week": "05",
+  "post_date": "2026-10-08",
+  "format": "slideshow",
+  "pillar": "Reframe",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Strong enough to move furniture on your own, with four moves and no equipment: Wall Sit, Reverse Lunge, Wall Push-Up and Full Plank. Two rounds a day, about ten minutes, and it takes weeks, not days. Save this for the day you rearrange the room.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#functionalstrength",
+    "#noequipmentworkout",
+    "#strengthforwomen"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "STRONG ENOUGH TO",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Strong enough to move the couch yourself. Start here.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "The legs that drive the couch across the room.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Wall Sit. 30 second hold. Back flat on the wall, slide down, hold and breathe.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "The step behind the push. One foot back, then drive.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Reverse Lunge. 6 each side. Step one foot back, lower the knee, stand up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Reverse Lunge"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "The push itself. Arms that press and keep pressing.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower your chest, press back.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Holding it all in line while your legs and arms work.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Full Plank. 30 second hold. On your forearms and toes, body in one straight line.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Full Plank"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "HONEST NOTE",
+      "footer": "Two rounds of the four, about ten minutes a day.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "This takes weeks, not days. Then one Saturday you push it across the room yourself.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the day you rearrange the room.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "What would you move first?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

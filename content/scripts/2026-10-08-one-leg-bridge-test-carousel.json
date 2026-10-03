@@ -1,0 +1,130 @@
+{
+  "slug": "2026-10-08-one-leg-bridge-test-carousel",
+  "title": "The bridge test: can you hold a one-leg bridge for 20 seconds?",
+  "series": "the-test",
+  "week": "05",
+  "post_date": "2026-10-08",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Single leg glute bridge test: lift one foot, lift your hips and count how long you hold each side. Then do your level every day, from Glute Bridge up to Single-Leg Elevated Bridge, and test again in two weeks. Save this and retest.",
+  "hashtags": [
+    "#strengthtraining",
+    "#glutebridge",
+    "#strengthforwomen",
+    "#homeworkout",
+    "#momstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE BRIDGE TEST",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Can you hold a one-leg bridge for 20 seconds? Try it, then swipe.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "HOW TO TEST",
+      "footer": "Stop the count when your hips dip. Write down both sides.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "On your back, one foot down, other knee up. Lift your hips. Count the seconds each side.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "COULD NOT LIFT",
+      "footer": "Do this every day. Move on when all 10 feel easy.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Start here. Glute Bridge. 10 reps. Both feet down, push your hips up, lower slowly.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "UNDER 10 SECONDS",
+      "footer": "Move on when every pause feels steady.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Paused Glute Bridge. 8 reps. Hips up, hold for three seconds, lower slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "10 TO 19",
+      "footer": "Move on when both sides stay level for all 8.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Single-Leg Glute Bridge. 8 each side. One foot down, other knee up, lift and lower.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "20 BOTH SIDES",
+      "footer": "You passed. Brace the chair against a wall first.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Single-Leg Elevated Bridge. 6 each side. One heel on a chair, lift your hips.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "RETEST",
+      "footer": "Same floor, same count. Write down both sides.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Do your level every day. Take the bridge test again in two weeks.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and retest in two weeks.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How many seconds, left and right?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

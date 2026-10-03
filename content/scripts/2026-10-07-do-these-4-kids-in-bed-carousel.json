@@ -1,0 +1,132 @@
+{
+  "slug": "2026-10-07-do-these-4-kids-in-bed-carousel",
+  "title": "Do these 4 every day this week, after the kids are in bed",
+  "series": "do-these",
+  "week": "04",
+  "post_date": "2026-10-07",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Quiet workout after the kids are in bed: four moves, ten minutes, no jumping. Glute Bridge March, Wall Push-Up, Air Squat and Lying Heel Tap, three rounds, nothing anyone down the hall will hear. Save this for tonight.",
+  "hashtags": [
+    "#strengthtraining",
+    "#busymoms",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#quietworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 4",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 4 every day this week, after the kids are in bed.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Hinge. On the rug, not a sound.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Glute Bridge March. 10 reps. Push your hips up, then lift one foot at a time.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Push. Any wall away from the bedroom door.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower slowly, press yourself away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Squat. Bare feet, slow on the way down.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Air Squat. 10 reps. Feet hip width, sit back and down, stand up slowly.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Core. Back on the floor, lights low.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Lying Heel Tap. 10 reps. On your back, knees up, tap one heel down at a time.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "WHAT THIS SKIPS",
+      "footer": "Push, squat, hinge and core. Pull waits a week.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "No pull this week. It comes back next week, with a doorframe.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "Ten minutes is complete. You built it after bedtime.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Three rounds of the four. Ten minutes, and the house stays quiet.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for tonight.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "Which one are you starting with tonight?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

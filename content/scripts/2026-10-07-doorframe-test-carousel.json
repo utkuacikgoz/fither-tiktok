@@ -1,0 +1,130 @@
+{
+  "slug": "2026-10-07-doorframe-test-carousel",
+  "title": "The doorframe test: can you pull yourself in 8 times?",
+  "series": "the-test",
+  "week": "04",
+  "post_date": "2026-10-07",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Back workout with a doorframe: lean back, pull yourself in, and count to 8. Take the doorframe test, then find your level: Shoulder Blade Squeeze, Doorframe Lean Row, Doorframe Row or Deep Doorframe Row. Save this and retest in two weeks.",
+  "hashtags": [
+    "#strengthtraining",
+    "#doorframerow",
+    "#backworkout",
+    "#strengthforwomen",
+    "#homeworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE DOORFRAME TEST",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Can you lean back from a doorframe and pull yourself in 8 times? Try it, then swipe.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "HOW TO TEST",
+      "footer": "Notice two things: how far you could lean, and how many you did.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Hold both sides of a solid frame, feet close. Lean back, pull your chest in, count.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "COULD NOT LEAN BACK",
+      "footer": "Do this every day. Move on when all 12 feel easy.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Start here. Shoulder Blade Squeeze. 12 reps. Draw your shoulder blades together, let go.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "A SMALL LEAN",
+      "footer": "Move on when you can lean further and still get all 10.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Doorframe Lean Row. 10 reps. Feet near the frame, lean back a little, pull yourself in.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "8 WITH A BIG LEAN",
+      "footer": "Move on when all 8 feel easy at your deepest lean.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Doorframe Row. 8 reps. Walk your feet closer, lean back more, pull your chest in.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "EASY",
+      "footer": "You passed. This is your next rung.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Deep Doorframe Row. 8 reps. Feet closer still, a deeper lean, slow on the way back.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "RETEST",
+      "footer": "Same frame, same lean. Write down your count.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Do your level every day. Take the doorframe test again in two weeks.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and retest in two weeks.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "How far could you lean?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

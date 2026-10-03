@@ -1,0 +1,118 @@
+{
+  "slug": "2026-10-06-strong-enough-groceries-carousel",
+  "title": "Strong enough to carry every grocery bag in one trip: the 4 moves",
+  "week": "04",
+  "post_date": "2026-10-06",
+  "format": "slideshow",
+  "pillar": "Reframe",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Strength exercises for carrying groceries in one trip: Standing Hip Hinge, Doorframe Row, Air Squat and Knee Side Plank. Three rounds most days, about ten minutes, no equipment. Save this for your next grocery run.",
+  "hashtags": [
+    "#strengthtraining",
+    "#functionalstrength",
+    "#strengthforwomen",
+    "#homeworkout",
+    "#momstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "STRONG ENOUGH TO",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Strong enough to carry every grocery bag in one trip. The 4 moves.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Builds the pickup: every bag up off the ground.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Standing Hip Hinge. 10 reps. Soft knees, push your hips back, then stand tall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Builds grip and back: the handles stay in your hands.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row. 8 reps. Hold the frame, lean back, pull your chest to your hands.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Builds the low lift: the bags off the car floor.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Air Squat. 10 reps. Feet hip width apart, sit your hips down, stand up tall.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Builds the one-sided carry: four bags in one hand, and you stay tall.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Knee Side Plank. 20 seconds each side. Forearm and knee down, lift your hips, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "HONEST NOTE",
+      "footer": "You build it at home. You use it at the car.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "This takes weeks, not days. Three rounds of the four, most days. About ten minutes.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for your next grocery run.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "How many trips does it take you now?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

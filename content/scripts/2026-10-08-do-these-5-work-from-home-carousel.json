@@ -1,0 +1,134 @@
+{
+  "slug": "2026-10-08-do-these-5-work-from-home-carousel",
+  "title": "Do these 5 on a work-from-home day. A chair and a doorframe, nothing else.",
+  "series": "do-these",
+  "week": "05",
+  "post_date": "2026-10-08",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Work from home workout with no equipment: Air Squat, Doorframe Row, Incline Push-Up, Seated Knee Lift, Hinge and Reach. All five patterns, three rounds, about ten minutes between calls. Save this for your next day at home.",
+  "hashtags": [
+    "#strengthtraining",
+    "#homeworkout",
+    "#workfromhome",
+    "#noequipmentworkout",
+    "#wfhlife"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "DO THESE 5",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Do these 5 every day this week, on a work-from-home day.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. Before the first call.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Air Squat. 10 reps. Feet shoulder width, sit your hips back and down, stand tall.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. The office door works.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row. 8 reps. Hold the frame, feet close, lean back, pull yourself in.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Push. Use a chair that does not roll.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Incline Push-Up. 8 reps. Chair against the wall, hands on the seat, lower and press.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Core. You stay sitting down.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Seated Knee Lift. 10 reps. Sit tall on the chair, lift one knee, then the other.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "FIVE",
+      "footer": "Hinge. Stand up from the desk and reach.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Hinge and Reach. 10 reps. Soft knees, push your hips back, reach forward, stand tall.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "THE STRUCTURE",
+      "footer": "All five patterns. Nothing is skipped this week.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Three rounds, about ten minutes. You trained between calls.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for your next day at home.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "What time is your first call?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
