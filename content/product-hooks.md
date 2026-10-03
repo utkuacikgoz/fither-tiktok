@@ -168,3 +168,56 @@ Rules, not lines. They apply to every cover above:
 - Second-line reassurance: a short bracket that answers the objection ("no floor", "no changing").
 - Concrete details: a precise scene, time or number beats vague hype. "11pm, laptop still open" beats "when you are busy".
 - Series + payoff: each slide earns the next; the parts are the depth, the cover is the promise.
+
+## New series formats (2026-10-03)
+
+"Do these N" works and stays daily. These are second recurring shapes with a
+different hook mechanic each, so the feed does not read as one template.
+Every line is plain US English and passes the policy checker. None are
+proven yet; the first two to test are marked.
+
+### A. The test (test first) — *test this first*
+
+The cover is a challenge she can try right now. Slide 2 says how to test.
+Then one slide per result ("Could not do it: start here. Did 5: do this.
+Did all 10: next rung."). A test plus a ladder; the CTA asks for her number.
+
+79. Can you stand up from the floor without your hands? Try it, then swipe.
+80. Can you do 10 wall push-ups without stopping? Here is what to do either way.
+81. Can you hold a wall sit for 30 seconds? Count out loud, then swipe.
+
+### B. Before you buy — *test this second*
+
+Anti-purchase and useful. It answers a buying search she is already typing,
+then shows the free version. Never names or knocks a brand.
+
+82. Before you buy dumbbells, do these 4 for two weeks.
+83. Before you pay for a gym, try this in your hallway.
+84. Before you buy resistance bands, your doorframe already does this.
+
+### C. Strong enough to
+
+A named capability from her week on the cover, the moves that build it
+inside. A capability, never a look.
+
+85. Strong enough to carry every grocery bag in one trip. The 4 moves.
+86. Strong enough to get off the floor without a hand on the couch.
+87. Strong enough to move the couch yourself. Start here.
+
+### D. POV: 10 minutes and
+
+The viewer is in the scene. Same deck body as a Do these deck, but the hook
+puts her inside it first.
+
+88. POV: you have 10 minutes and a toddler attached to your leg.
+89. POV: you have 10 minutes, work clothes on, and a door that locks.
+90. POV: it is 9pm, the kitchen is clean, and you have 10 minutes left.
+
+### E. Your ___ is a gym
+
+One household object per deck, four or five moves it supports. The object
+is the hook.
+
+91. Your doorframe is a gym. Four pulls, no equipment.
+92. Your couch is a gym. Five moves before you sit down.
+93. Your hallway wall is a gym. Push, squat, hold.
