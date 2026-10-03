@@ -44,3 +44,4 @@ once numbers are in (watch % is the number that matters).
 | 2026-09-30 | 03 | Do these 4: ten minutes before pickup (Reverse Lunge, Doorframe Row, Seated Knee Lift, Standing Hip Hinge) | Constraint (series: do-these) | |
 | 2026-09-30 | 03 | Bridge ladder from two legs to one | Skill ladder | |
 | 2026-09-30 | 03 | Three things I would tell myself before starting strength training at 35 | Fast tips | |
+| 2026-10-03 | 04 | The floor test: stand up without your hands, then the move for your result (series: the-test) | Skill ladder | |

@@ -1,0 +1,130 @@
+{
+  "slug": "2026-10-03-floor-test-carousel",
+  "title": "The floor test: can you stand up without your hands?",
+  "series": "the-test",
+  "week": "04",
+  "post_date": "2026-10-03",
+  "format": "slideshow",
+  "pillar": "Skill ladder",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Can you get up off the floor without using your hands? Take the floor test, then find your level: Supported Sit-to-Stand, Sit-to-Stand, Reverse Lunge or Single-Leg Sit-to-Stand. Do your level every day and test again in two weeks. Save this and retest.",
+  "hashtags": [
+    "#strengthtraining",
+    "#floortest",
+    "#strengthforwomen",
+    "#sittostand",
+    "#momstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "THE FLOOR TEST",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Can you stand up from the floor without your hands? Try it, then swipe.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "HOW TO TEST",
+      "footer": "Notice what you needed: both hands, one hand, a knee, or nothing.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Sit on the floor, legs crossed. Stand up without your hands, a knee or the couch.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "BOTH HANDS",
+      "footer": "Do this every day. Move on when your hands barely help.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Start here. Supported Sit-to-Stand. 8 reps. Hands on the chair, stand, sit down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "ONE HAND",
+      "footer": "Move on when all 8 feel easy.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Sit-to-Stand. 8 reps. Arms folded, stand up from the chair, sit down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "A KNEE",
+      "footer": "This is the move you used to get up. Now it gets stronger.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Reverse Lunge. 6 each side. Step one foot back, lower the knee, stand up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Reverse Lunge"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "NOTHING",
+      "footer": "You passed. This keeps it.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Single-Leg Sit-to-Stand. 4 reps. One leg, no hands, up from the chair.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "RETEST",
+      "footer": "Same floor, same test. Write down what you needed.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "Do your level every day. Take the floor test again in two weeks.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "kicker": "YOUR TURN",
+      "footer": "Save this and retest in two weeks.",
+      "overlays": [
+        {
+          "t": 7,
+          "text": "What did you need: both hands, one hand, a knee, or nothing?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
