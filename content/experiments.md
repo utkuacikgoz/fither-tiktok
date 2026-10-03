@@ -217,3 +217,23 @@ already rendered.
   Fewer than 4 series and 4 one-off posts with per-post saves or likes → void.
 - **Result**: —
 - **Decision**: —
+
+## EXP-010 — Does "the test" out-save "Do these"?
+
+- **Week opened**: 04
+- **Status**: running
+- **Hypothesis**: a cover that asks her to try something in the next ten
+  seconds, then tells her what her result means, is more saveable than a
+  week-long promise, because it hands her a level and a next step.
+- **Variants**: the seven test-series decks dated 2026-10-03 to 2026-10-09
+  against the seven Do these decks dated 2026-10-03 to 2026-10-09. Same
+  cover style, same body style, same cadence.
+- **Metric**: saves per 1000 views, median per group; likes per 1000 if
+  per-post saves are hidden, recorded in the result. Comments per 1000 as a
+  second read, because the test's CTA asks for her result.
+- **Decision rule**: test median at least 3 saves/1k above Do these → the test
+  takes the second daily slot permanently. Do these at least 3 above the
+  test → the test drops to two decks a week. Gap under 3 → both stay daily.
+  Fewer than 4 posts per group with per-post saves or likes → void.
+- **Result**: —
+- **Decision**: —

@@ -45,3 +45,23 @@ once numbers are in (watch % is the number that matters).
 | 2026-09-30 | 03 | Bridge ladder from two legs to one | Skill ladder | |
 | 2026-09-30 | 03 | Three things I would tell myself before starting strength training at 35 | Fast tips | |
 | 2026-10-03 | 04 | The floor test: stand up without your hands, then the move for your result (series: the-test) | Skill ladder | |
+| 2026-10-03 | 04 | Do these 4: even when it rains (Wall Push-Up, Doorframe Row, Glute Bridge, Knee Plank) | Constraint (series: do-these) | |
+| 2026-10-03 | 04 | POV: 9pm, kitchen clean, 10 minutes left | Fast tips | |
+| 2026-10-04 | 04 | Do these 4: while the coffee brews (Air Squat, Standing Hip Hinge, Doorframe Lean Row, Seated Knee Lift) | Constraint (series: do-these) | |
+| 2026-10-04 | 04 | The push-up test: wall push-ups in a row, then your level | Skill ladder (series: the-test) | |
+| 2026-10-04 | 04 | POV: 10 minutes and a toddler attached to your leg | Fast tips | |
+| 2026-10-05 | 04 | Do these 5: between video calls (Sit-to-Stand, Wall Push-Up, Seated Knee Lift, Shoulder Blade Squeeze, Standing Hip Hinge) | Constraint (series: do-these) | |
+| 2026-10-05 | 04 | The wall sit test: how long, then your level | Skill ladder (series: the-test) | |
+| 2026-10-05 | 04 | Before you buy dumbbells, do these 4 for two weeks | Fast tips | |
+| 2026-10-06 | 04 | Do these 3: during nap time (Glute Bridge, Doorframe Lean Row, Wall Sit) | Constraint (series: do-these) | |
+| 2026-10-06 | 04 | The plank test: how long on your knees, then your level | Skill ladder (series: the-test) | |
+| 2026-10-06 | 04 | Strong enough to carry every grocery bag in one trip | Reframe | |
+| 2026-10-07 | 04 | Do these 4: after the kids are in bed (Glute Bridge March, Wall Push-Up, Air Squat, Lying Heel Tap) | Constraint (series: do-these) | |
+| 2026-10-07 | 04 | The doorframe test: lean back and pull in, then your level | Skill ladder (series: the-test) | |
+| 2026-10-07 | 04 | Before you pay for a gym, try this in your hallway | Fast tips | |
+| 2026-10-08 | 05 | Do these 5: on a work-from-home day (Air Squat, Doorframe Row, Incline Push-Up, Seated Knee Lift, Hinge and Reach) | Constraint (series: do-these) | |
+| 2026-10-08 | 05 | The bridge test: one-leg bridge for 20 seconds, then your level | Skill ladder (series: the-test) | |
+| 2026-10-08 | 05 | Strong enough to move the couch yourself | Reframe | |
+| 2026-10-09 | 05 | Do these 3: while the bath fills (Wall Sit, Wall Slide, Standing Hip Hinge) | Constraint (series: do-these) | |
+| 2026-10-09 | 05 | The balance test: one leg for 30 seconds, then your level | Skill ladder (series: the-test) | |
+| 2026-10-09 | 05 | Before you buy resistance bands, your doorframe already does this | Fast tips | |
