@@ -212,12 +212,3 @@ puts her inside it first.
 88. POV: you have 10 minutes and a toddler attached to your leg.
 89. POV: you have 10 minutes, work clothes on, and a door that locks.
 90. POV: it is 9pm, the kitchen is clean, and you have 10 minutes left.
-
-### E. Your ___ is a gym
-
-One household object per deck, four or five moves it supports. The object
-is the hook.
-
-91. Your doorframe is a gym. Four pulls, no equipment.
-92. Your couch is a gym. Five moves before you sit down.
-93. Your hallway wall is a gym. Push, squat, hold.
