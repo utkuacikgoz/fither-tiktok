@@ -147,7 +147,7 @@ already rendered.
 ## EXP-007 — Does a named-constraint hook out-save a number-led hook?
 
 - **Week opened**: 02
-- **Status**: running
+- **Status**: void
 - **Hypothesis**: EXP-005 decided the writing is the limiting factor. A hook
   that names a scene she is standing in ("She climbs on your back at rep four")
   earns the save, while a hook that states a number and a claim ("Five moves,
@@ -170,13 +170,15 @@ already rendered.
   share falls below 42% → hook shape is not the lever and the next test moves
   to caption and search phrasing. Gap under 3 with female share between 42 and
   47 → hold the mix and re-run once per-post watch % exists.
-- **Result**: —
-- **Decision**: —
+- **Result**: void 2026-10-08. The four named-constraint and three number-led
+  covers it compared were rewritten onto the owner's hook formats before
+  posting, and two were replaced, so the groups never existed as registered.
+- **Decision**: no hook-shape test until a week ships unchanged and gets measured.
 
 ## EXP-008 — Do constraint-shaped search phrases change which searches deliver traffic?
 
 - **Week opened**: 02
-- **Status**: running
+- **Status**: void
 - **Hypothesis**: week 01's only tracked search term was "incline push ups", a
   bare movement name that belongs to any fitness account. Target phrases shaped
   like her situation ("layover workout without changing clothes", "workout with
@@ -193,8 +195,8 @@ already rendered.
   constraint-shaped terms while at least 2 terms are tracked → the caption is
   not the lever and the next test moves to hashtags. Fewer than 2 tracked terms
   in total → not enough data, re-register unchanged.
-- **Result**: —
-- **Decision**: —
+- **Result**: void 2026-10-08. Search-term data was never collected.
+- **Decision**: re-register only when an intake includes the Search tab.
 
 ## EXP-009 — Does the "Do these" series out-save the one-off carousels?
 

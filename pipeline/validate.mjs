@@ -5,6 +5,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { postSlot, validateSpec } from "./lib/spec.mjs";
+import { overdueIntakeWeeks } from "./lib/discipline.mjs";
 import { policyTextViolations } from "./lib/policy.mjs";
 import { normalizeRows } from "./lib/analytics.mjs";
 import { validateExperiments } from "./lib/experiments.mjs";
@@ -98,6 +99,11 @@ if (!requested.length) {
   );
   for (const message of errors) console.error(`ERROR experiments.md: ${message}`);
   errorCount += errors.length;
+  // Thursday intake is the one step the loop cannot skip (owner, 2026-10-08).
+  for (const { week, lastDate, posts } of overdueIntakeWeeks(weeks, normalizeRows(readFileSync(performancePath, "utf8")))) {
+    console.warn(`WARN  week ${week}: intake overdue. ${posts} posts ended ${lastDate} and data/performance.csv has none of them.`);
+    warningCount++;
+  }
   console.log(`Validated ${experiments.length} experiment record(s).`);
 }
 

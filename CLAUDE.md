@@ -157,17 +157,36 @@ which means the card **is** the caption: the words on screen are the words
 being said, so a muted viewer loses nothing and no burned-caption layer
 fights the typography.
 
-- **Sunday, run by hand**: `plan week N`, `write the carousels for week N`,
-  then render locally with `node pipeline/render.mjs content/scripts/<slug>.md`
-  per carousel and deliver the week as a zip with each deck's caption file
-  (title, caption, hashtags). `Render week` in Actions is for video only.
+### The rhythm (owner reset, 2026-10-08)
+
+Discipline over novelty. The loop broke in September: no numbers came in for
+three weeks, weeks started on different days, formats changed mid-week and
+experiments piled up undecided. These rules close those gaps.
+
+- **A week is Saturday to Friday.** Always. Sidecar `week` follows it.
+- **Daily: post three, at fixed times** (US audience): about 8am, 12:30pm and
+  8pm Eastern, in the order of the posting sheet. Photo post, title and
+  caption from the deck's caption file.
+- **Thursday is review day**, in one session, in this order:
+  1. Owner sends TikTok Studio screenshots (Content tab: views, likes, saves
+     per post; plus the Viewers tab once).
+  2. Intake: `data/performance.csv`, comments into `data/comments.md`,
+     `node pipeline/analyze.mjs`.
+  3. Close every experiment whose week now has data; write the learning.
+  4. Plan, write, validate, render and look at every slide of the next
+     Saturday-to-Friday week; deliver the zips by Thursday night.
+- **No numbers by Thursday night → the next week repeats the current mix
+  exactly.** Same series, same formats, new topics. Nothing new is
+  registered and no rule changes until data arrives.
+- **Changes happen only on Thursday, and only from data or an owner call.**
+  No new format, series or rule mid-week.
+- **One new experiment per week, at most,** and only while fewer than two are
+  open.
+- **`validate.mjs` warns "intake overdue"** for any finished week with no
+  performance rows. Clear it before planning the next week.
 - **Before posting anything with the generated character**: switch on
-  TikTok's AI-generated-content label in the posting flow. The posting sheet
-  names which videos need it.
-- **Daily, 5 min**: post the day's three carousels as photo posts with their
-  titles and captions, spaced across the day rather than back to back.
-- **Friday, 10 min**: paste the week's numbers into `data/performance.csv`.
-- **Every 20 videos**: append top-quartile hooks (by watch %) to
+  TikTok's AI-generated-content label in the posting flow.
+- **Every 20 posts**: append top-quartile covers (by saves per 1000) to
   `.claude/skills/fither-voice/references/hooks.md`.
 
 ## The learning loop
@@ -187,7 +206,7 @@ The learning engine is four files plus one script; sessions inherit all of it:
 - `node pipeline/assets.mjs` → `data/assets.md` — the visual inventory and
   curation queue. Thin movement pools are visible before planning repeats them.
 
-**Friday intake**: paste analytics in any form (text, screenshots) into any
+**Thursday intake**: paste analytics in any form (text, screenshots) into any
 session. The session fills `data/performance.csv` (one row per posted
 video, including completion % and first retention drop-off second;
 hook_mechanism comes from the video's sidecar), buckets notable comments

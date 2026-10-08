@@ -1,8 +1,8 @@
 # Week 04 — 2026-10-03 to 2026-10-09
 
 Planned 2026-10-03. 21 carousels, three a day, Saturday 3 to Friday 9. The
-floor test was posted on Saturday 3, so 20 are written here. Dates from
-Oct 8 carry week "05" in their sidecars; the plan lives here as one run.
+floor test was posted on Saturday 3, so 20 are written here. From this week
+on, a week always runs Saturday to Friday.
 
 **What changed.** The owner picked the test hook ("Can you stand up from the
 floor without your hands? Try it, then swipe.") and asked for something

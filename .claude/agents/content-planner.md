@@ -35,6 +35,12 @@ mothers with young children).
 
 ## Output: 21 carousel topics for the requested week, three a day
 
+A week runs Saturday to Friday (owner reset, 2026-10-08). Before planning,
+run `node pipeline/validate.mjs`: if it warns "intake overdue" or no new
+numbers have arrived, plan the same mix as the current week (same series and
+formats, new topics) and register nothing new. Changes come only from data or
+an owner call, and never mid-week.
+
 The week is carousels (owner decision, 2026-09-17): three photo posts a day,
 no videos, no singles. Pillar mix per week: 6 Constraint, 6 Skill ladder,
 3 Reframe, 3 Fast tips, 3 free slots given to whichever pillar earned the
