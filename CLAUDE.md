@@ -164,17 +164,23 @@ three weeks, weeks started on different days, formats changed mid-week and
 experiments piled up undecided. These rules close those gaps.
 
 - **A week is Saturday to Friday.** Always. Sidecar `week` follows it.
-- **Daily: post three, at fixed times** (US audience): about 8am, 12:30pm and
-  8pm Eastern, in the order of the posting sheet. Photo post, title and
-  caption from the deck's caption file.
+- **Daily: two core posts that actually happen, a third only if there is
+  time** (owner review, 2026-10-08: three a day was planned, about one every
+  two days was posted). Core 1 is a Do these deck, core 2 a test. Post in
+  the order of the posting sheet: core 1 around 9pm on the owner's clock,
+  core 2 just before midnight; Studio shows the viewers most active from
+  midnight to 6am on that clock. Photo post, title and caption from the
+  deck's caption file.
 - **Thursday is review day**, in one session, in this order:
   1. Owner sends TikTok Studio screenshots (Content tab: views, likes, saves
      per post; plus the Viewers tab once).
   2. Intake: `data/performance.csv`, comments into `data/comments.md`,
      `node pipeline/analyze.mjs`.
   3. Close every experiment whose week now has data; write the learning.
-  4. Plan, write, validate, render and look at every slide of the next
-     Saturday-to-Friday week; deliver the zips by Thursday night.
+  4. If a week or more of written decks is still unposted, build the next
+     posting sheet from that backlog, best formats first, and write
+     nothing new. Otherwise plan, write, validate, render and look at every
+     slide of the next Saturday-to-Friday week. Deliver by Thursday night.
 - **No numbers by Thursday night → the next week repeats the current mix
   exactly.** Same series, same formats, new topics. Nothing new is
   registered and no rule changes until data arrives.

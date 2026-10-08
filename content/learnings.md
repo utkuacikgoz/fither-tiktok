@@ -55,3 +55,39 @@ catch title on every post. Copy is written for US women 25 to 44: US words
 and spellings, home and office scenes, no travel scenes (owner rule). Saves
 per 1000 replaces watch % as the first number; likes per 1000 is the
 tiebreak. Videos return when footage does.
+
+## 2026-10-08 — The channel's limit is posting, not writing
+Evidence: owner screenshots 2026-10-08. Between Sep 21 and Oct 8 eight posts
+went up (about one every two days) against a plan of three a day; 31 written
+and rendered carousels from Sep 24 onward were never posted. The 7-day view
+count fell 31% in the week posting slowed.
+Consequence: no new week is built while a week or more of unposted decks
+exists. The cadence is two core posts a day that actually happen (one Do
+these, one test), with a third only when there is time. The Thursday review
+builds a posting order from the backlog first.
+
+## 2026-10-08 — Everyday routine moments out-save body complaints in "Do these"
+Evidence: saves per 1000 on measured Do these decks: while the laundry
+spins 24.3, even with everyone home 18.9, while dinner cooks 15.4; against
+at 6pm after sitting all day 8.3 and when your knees are complaining 5.5.
+The two low ones open on her body's complaint; the high ones open on a
+moment in her day.
+Consequence: Do these situations are household or schedule moments
+(laundry, dinner, coffee, bath, pickup, nap time). No pain, soreness or
+"after sitting" framings on the cover.
+
+## 2026-10-08 — The test framing saves; the plain ladder cover does not
+Evidence: the floor test 22.7 saves per 1000 (18 saves on 793 views); the
+"Week one: a plank on the wall. Week eight: a plank on the floor." ladder
+0 saves on 796 views and 3 likes. Same week, same views, same body shape
+(easiest to hardest moves).
+Consequence: progressions ship as tests ("Can you ___? Try it, then swipe.")
+not as week-one/week-eight ladders.
+
+## 2026-10-08 — The audience is now hers, the traffic is the feed
+Evidence: 28-day viewers 65% women (42% in week 01), 25 to 34 is 51.7%,
+18 to 24 22.0%, 35 to 44 16.1%. US 42.8%, UK 12.8%. Traffic 97.8% For You,
+1.0% search. Comments 2 in 28 days despite a question on every last slide.
+Consequence: covers decide reach; search-phrase captions are not the lever
+and need no more effort. Saves, not comments, are the action to design for.
+English-speaking non-US viewers are welcome; keep US spelling.

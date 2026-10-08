@@ -201,7 +201,7 @@ already rendered.
 ## EXP-009 — Does the "Do these" series out-save the one-off carousels?
 
 - **Week opened**: 03
-- **Status**: running
+- **Status**: void
 - **Hypothesis**: the quarter-end "Do these 3" deck drew 14.4 saves per 1000
   in its first hours, the best result on the account. A fixed shape with a
   promise she can repeat all week ("every day this week") is a thing to save;
@@ -217,8 +217,12 @@ already rendered.
   One-off median at least 3 saves/1k above the series → the series drops to
   three decks a week. Gap under 3 either way → the one-a-day cadence stays.
   Fewer than 4 series and 4 one-off posts with per-post saves or likes → void.
-- **Result**: —
-- **Decision**: —
+- **Result**: void 2026-10-08 under its own rule: only 2 of the 10 one-offs
+  were posted (Five moves before you scroll 11.7 saves/1k, the plank ladder
+  0.0), against 4 measured series decks (laundry 24.3, everyone home 18.9,
+  6pm 8.3, knees 5.5). Direction favors the series (median 13.6 vs 5.9),
+  but two one-offs decide nothing.
+- **Decision**: no format change from this test. The series stays daily on the strength of its own numbers, not on this comparison.
 
 ## EXP-010 — Does "the test" out-save "Do these"?
 
