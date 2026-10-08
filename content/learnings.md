@@ -95,7 +95,9 @@ English-speaking non-US viewers are welcome; keep US spelling.
 ## 2026-10-08 — No editorial-cover post has ever earned a save
 Evidence: every week 01 post now has its saves: the sore-wrists carousel
 (editorial cream cover) 1,147 views and 0 saves; the train-to-carry and
-hotel-room motion-type videos 249 and 244 views, 0 saves each. Every gold
-poster carousel measured so far has saves (median about 16 per 1000).
+hotel-room motion-type videos 249 and 244 views, 0 saves each. Gold poster
+carousels: 8 of the 9 measured have saves, median 14.4 per 1000; the one
+with none is the week-one/week-eight plank ladder.
 Consequence: the gold poster cover is not a style choice to revisit; it is
-the only cover that has produced the channel's primary metric.
+the only cover that has produced the channel's primary metric. The cover
+style is necessary, not sufficient: the line on it still decides.
