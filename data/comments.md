@@ -1,13 +1,14 @@
 # Comment themes
 
 Every comment gets a bucket; buckets become product decisions and future
-topics. Update whenever analytics are pasted in (Fridays). The planner
+topics. Update whenever analytics are pasted in (Thursdays). The planner
 reads this — a growing bucket is a topic mandate, and product-shaped
 buckets get flagged for the app repo (like "wrist pain" → the wrist-free
 flag).
 
 | Bucket | Count | Example comment | Signal for |
 |---|---|---|---|
+| Emoji-only reaction | 2 | oceancalm: 🔥🔥🔥 on sore wrists; 🥰×6 on train to carry (both 09-08) | Nothing yet: no question, no topic |
 
 ## Unbucketed / notable
 

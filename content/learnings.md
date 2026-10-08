@@ -91,3 +91,11 @@ Evidence: 28-day viewers 65% women (42% in week 01), 25 to 34 is 51.7%,
 Consequence: covers decide reach; search-phrase captions are not the lever
 and need no more effort. Saves, not comments, are the action to design for.
 English-speaking non-US viewers are welcome; keep US spelling.
+
+## 2026-10-08 — No editorial-cover post has ever earned a save
+Evidence: every week 01 post now has its saves: the sore-wrists carousel
+(editorial cream cover) 1,147 views and 0 saves; the train-to-carry and
+hotel-room motion-type videos 249 and 244 views, 0 saves each. Every gold
+poster carousel measured so far has saves (median about 16 per 1000).
+Consequence: the gold poster cover is not a style choice to revisit; it is
+the only cover that has produced the channel's primary metric.

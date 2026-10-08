@@ -14,7 +14,7 @@ Source: data/performance.csv, 15 posted videos.
 
 | Pillar | n | Watch % | Saves/1k | Follows/1k | Completion % | Drop-off |
 |---|---|---|---|---|---|---|
-| Constraint | 10 | 0.0 | 10.0 | 0.0 | — | — |
+| Constraint | 10 | 0.0 | 9.9 | 0.0 | — | — |
 | Reframe | 1 | 0.0 | 0.0 | 0.0 | — | — |
 | Skill ladder | 3 | 0.0 | 6.2 | 0.0 | — | — |
 | Fast tips | 1 | 0.0 | 11.7 | 0.0 | — | — |
@@ -37,7 +37,7 @@ Source: data/performance.csv, 15 posted videos.
 
 | Series | n | Watch % | Saves/1k | Follows/1k | Completion % | Drop-off |
 |---|---|---|---|---|---|---|
-| one-off | 7 | 0.0 | 2.3 | 0.0 | — | — |
+| one-off | 7 | 0.0 | 2.2 | 0.0 | — | — |
 | do-these | 7 | 0.0 | 11.8 | 0.0 | — | — |
 | the-test | 1 | 0.0 | 22.7 | 0.0 | — | — |
 
