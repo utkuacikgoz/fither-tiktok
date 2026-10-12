@@ -1,0 +1,104 @@
+{
+  "slug": "2026-10-14-instead-of-crunches-carousel",
+  "title": "Instead of crunches, do these 3 core moves",
+  "series": "instead-of",
+  "week": "05",
+  "post_date": "2026-10-14",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Core workout without crunches: three moves, three rounds, about seven minutes. Knee Plank, Seated Knee Lift and Lying Heel Tap. Save this for core day.",
+  "hashtags": [
+    "#coreworkout",
+    "#strengthforwomen",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#momstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "INSTEAD OF",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Instead of crunches, do these 3.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Core. Hold still.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Knee Plank. 25 seconds. Forearms and knees down, body in one line, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Core. From your chair.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Seated Knee Lift. 10 reps. Sit tall on a chair, lift one knee, then the other.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. Slow and quiet.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Lying Heel Tap. 10 reps. On your back, knees up, tap one heel down, then the other.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THE STRUCTURE",
+      "footer": "Core only today. Squat, push, pull and hinge are tomorrow.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Three rounds of the three. About seven minutes.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for core day.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Which one surprised you?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

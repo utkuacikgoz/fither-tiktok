@@ -1,0 +1,106 @@
+{
+  "slug": "2026-10-15-start-here-only-five-minutes-carousel",
+  "title": "Start here if you only have 5 minutes today",
+  "series": "start-here",
+  "week": "05",
+  "post_date": "2026-10-15",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Five minute workout at home: three moves, two rounds. Air Squat, Doorframe Row and Knee Plank, no equipment. Save this for the 5 minute day.",
+  "hashtags": [
+    "#5minuteworkout",
+    "#strengthforwomen",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#busymoms"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "START HERE",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Start here if you only have 5 minutes today.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. One minute.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Air Squat. 10 reps. Feet hip width, sit back and down, stand tall.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. One minute.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Row. 8 reps. Hold the frame, lean back, pull your chest in.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. Under a minute.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Knee Plank. 25 seconds. Forearms and knees down, body in one line, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THE STRUCTURE",
+      "footer": "No hinge or push today. Five minutes is still a session.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Two rounds of the three. Five minutes, start to finish.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for the 5 minute day.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "What are your 5 minutes between?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

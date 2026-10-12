@@ -65,3 +65,12 @@ once numbers are in (watch % is the number that matters).
 | 2026-10-09 | 04 | Do these 3: while the bath fills (Wall Sit, Wall Slide, Standing Hip Hinge) | Constraint (series: do-these) | |
 | 2026-10-09 | 04 | The balance test: one leg for 30 seconds, then your level | Skill ladder (series: the-test) | |
 | 2026-10-09 | 04 | Before you buy resistance bands, your doorframe already does this | Fast tips | |
+| 2026-10-13 | 05 | Instead of a 45-minute class, do these 4. | Constraint (series: instead-of) | |
+| 2026-10-13 | 05 | Save this for the day you have 10 minutes and no plan. | Constraint (series: save-this) | |
+| 2026-10-13 | 05 | Start here if you have not trained in a year. | Constraint (series: start-here) | |
+| 2026-10-14 | 05 | Instead of crunches, do these 3. | Constraint (series: instead-of) | |
+| 2026-10-14 | 05 | Save this for the night you cannot face a workout. | Constraint (series: save-this) | |
+| 2026-10-14 | 05 | Start here if push-ups feel impossible. | Constraint (series: start-here) | |
+| 2026-10-15 | 05 | Instead of waiting for Monday, do these 3 today. | Constraint (series: instead-of) | |
+| 2026-10-15 | 05 | Save this for the morning everyone else sleeps in. | Constraint (series: save-this) | |
+| 2026-10-15 | 05 | Start here if you only have 5 minutes today. | Constraint (series: start-here) | |

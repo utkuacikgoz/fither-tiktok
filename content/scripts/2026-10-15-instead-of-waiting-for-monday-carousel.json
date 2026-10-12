@@ -1,0 +1,104 @@
+{
+  "slug": "2026-10-15-instead-of-waiting-for-monday-carousel",
+  "title": "Instead of waiting for Monday, do these 3 today",
+  "series": "instead-of",
+  "week": "05",
+  "post_date": "2026-10-15",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Workout to start today, not Monday: three moves, two rounds, about six minutes. Reverse Lunge, Doorframe Lean Row and Wall Sit. Save this for any day that is not Monday.",
+  "hashtags": [
+    "#homeworkout",
+    "#strengthforwomen",
+    "#noequipmentworkout",
+    "#startnow",
+    "#busymoms"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "INSTEAD OF",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Instead of waiting for Monday, do these 3 today.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. Today, not Monday.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Reverse Lunge. 6 each side. Step one foot back, lower the knee, stand up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Reverse Lunge"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Pull. The nearest doorway.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Doorframe Lean Row. 10 reps. Hold the frame, lean back a little, pull yourself in.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Squat. Thirty seconds, done.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Wall Sit. 30 seconds. Back flat on the wall, knees bent, hold.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THE STRUCTURE",
+      "footer": "No push or core today. Tomorrow.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Two rounds of the three. About six minutes. Monday is already behind you.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for any day that is not Monday.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "What day is it where you are?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

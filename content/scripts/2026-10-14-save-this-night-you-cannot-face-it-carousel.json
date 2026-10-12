@@ -1,0 +1,106 @@
+{
+  "slug": "2026-10-14-save-this-night-you-cannot-face-it-carousel",
+  "title": "Save this for the night you cannot face a workout",
+  "series": "save-this",
+  "week": "05",
+  "post_date": "2026-10-14",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Easy workout for the night you cannot face one: three moves, one round, five minutes. Glute Bridge, Lying Heel Slide and Seated Knee Lift. Save this for tonight.",
+  "hashtags": [
+    "#easyworkout",
+    "#strengthforwomen",
+    "#nightworkout",
+    "#homeworkout",
+    "#busymoms"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "SAVE THIS",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Save this for the night you cannot face a workout.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Hinge. You are already lying down.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Glute Bridge. 10 reps. Lie on your back, feet flat, push your hips up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Core. Still lying down.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Lying Heel Slide. 10 reps. Stay on your back, slide one heel out and back.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Core. Sitting is fine.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Seated Knee Lift. 10 reps. Sit on the edge of the bed, lift one knee, then the other.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Seated Knee Lift"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THE STRUCTURE",
+      "footer": "No push or pull tonight. Tomorrow has room for them.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "One round. Five minutes. It still counts.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for tonight.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "What time is it where you are right now?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "2026-10-14-start-here-push-ups-feel-impossible-carousel",
+  "title": "Start here if push-ups feel impossible: 3 steps up from the wall",
+  "series": "start-here",
+  "week": "05",
+  "post_date": "2026-10-14",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Push-ups for beginners who cannot do one yet: start at the wall. Wall Push-Up Hold, Wall Push-Up, then Incline Push-Up, one step a week. Save this for push-up day.",
+  "hashtags": [
+    "#pushupsforbeginners",
+    "#strengthforwomen",
+    "#wallpushups",
+    "#homeworkout",
+    "#momstrength"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "START HERE",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Start here if push-ups feel impossible.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Week one. Just hold.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Wall Push-Up Hold. 20 seconds. Hands on the wall, lower halfway, hold still.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Week two. Now move.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower slow, press away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Week three. Lower hands, more work.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Incline Push-Up. 8 reps. Hands on a sturdy chair against the wall, lower, press up.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THE STRUCTURE",
+      "footer": "Every push loads the wrists. Count clean reps only.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "One of the three every day, the one that feels hard by the last rep.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for push-up day.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Which one is your start?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

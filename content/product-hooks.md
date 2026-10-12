@@ -212,3 +212,12 @@ puts her inside it first.
 88. POV: you have 10 minutes and a toddler attached to your leg.
 89. POV: you have 10 minutes, work clothes on, and a door that locks.
 90. POV: it is 9pm, the kitchen is clean, and you have 10 minutes left.
+
+## Families written 2026-10-12 (owner pick)
+
+Three new imperative families built like "Do these": an order, a number, her
+situation. Three decks each, series ids in the sidecars so insights splits them.
+
+- **start-here**: "Start here if you have not trained in a year." Names who she is.
+- **instead-of**: "Instead of a 45-minute class, do these 4." Swaps a habit she has.
+- **save-this**: "Save this for the day you have 10 minutes and no plan." The owner's pick; the cover asks for the save outright.

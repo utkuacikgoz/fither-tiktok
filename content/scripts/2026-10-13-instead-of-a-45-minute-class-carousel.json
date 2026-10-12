@@ -1,0 +1,123 @@
+{
+  "slug": "2026-10-13-instead-of-a-45-minute-class-carousel",
+  "title": "Instead of a 45-minute class, do these 4 at home",
+  "series": "instead-of",
+  "week": "05",
+  "post_date": "2026-10-13",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Home workout instead of a gym class: four moves, three rounds, about twelve minutes. Air Squat, Wall Push-Up, Doorframe Row and Glute Bridge. Save this for class night.",
+  "hashtags": [
+    "#homeworkout",
+    "#strengthforwomen",
+    "#noequipmentworkout",
+    "#busymoms",
+    "#12minuteworkout"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "INSTEAD OF",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Instead of a 45-minute class, do these 4.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Squat. Your legs, no class.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Air Squat. 10 reps. Feet hip width, sit back and down, stand tall.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Air Squat"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Push. Any wall.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower slow, press away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Pull. Any doorframe.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Doorframe Row. 8 reps. Hold the frame, lean back, pull your chest in.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Doorframe Row"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "FOUR",
+      "footer": "Hinge. Any floor.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Glute Bridge. 10 reps. Lie on your back, feet flat, push your hips up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "THE STRUCTURE",
+      "footer": "No core this time. It comes back next week.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "Three rounds of the four. About twelve minutes, no drive, no parking.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for class night.",
+      "overlays": [
+        {
+          "t": 6,
+          "text": "What would you do with the other 33 minutes?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}

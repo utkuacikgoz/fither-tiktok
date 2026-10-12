@@ -1,0 +1,106 @@
+{
+  "slug": "2026-10-13-start-here-no-training-in-a-year-carousel",
+  "title": "Start here if you have not trained in a year: 3 moves",
+  "series": "start-here",
+  "week": "05",
+  "post_date": "2026-10-13",
+  "format": "slideshow",
+  "pillar": "Constraint",
+  "hook_mechanism": "situation",
+  "sound": {
+    "profile": "platform"
+  },
+  "caption": "Workout for beginners who have not trained in a year: three easy moves, two rounds, about six minutes. Wall Push-Up, Supported Sit-to-Stand and Glute Bridge. Save this for day one.",
+  "hashtags": [
+    "#beginnerworkout",
+    "#strengthforwomen",
+    "#homeworkout",
+    "#noequipmentworkout",
+    "#busymoms"
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 1,
+      "kicker": "START HERE",
+      "footer": "Strength that fits your life.",
+      "overlays": [
+        {
+          "t": 0,
+          "text": "Start here if you have not trained in a year.",
+          "style": "hook"
+        }
+      ]
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "kicker": "ONE",
+      "footer": "Push. The easiest push there is.",
+      "overlays": [
+        {
+          "t": 1,
+          "text": "Wall Push-Up. 10 reps. Hands on the wall, lower your chest in, press away.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Wall Push-Up"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "kicker": "TWO",
+      "footer": "Squat. Your hands help, on purpose.",
+      "overlays": [
+        {
+          "t": 2,
+          "text": "Supported Sit-to-Stand. 8 reps. Hands on the chair seat, stand up, sit down slowly.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "kicker": "THREE",
+      "footer": "Hinge. The floor does half the work.",
+      "overlays": [
+        {
+          "t": 3,
+          "text": "Glute Bridge. 10 reps. Lie on your back, feet flat, push your hips up.",
+          "style": "step"
+        }
+      ],
+      "figure": true,
+      "movement": "Glute Bridge"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "kicker": "THE STRUCTURE",
+      "footer": "No pull or core yet. They come in week two.",
+      "overlays": [
+        {
+          "t": 4,
+          "text": "Two rounds of the three. About six minutes. That is day one.",
+          "style": "step"
+        }
+      ]
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "kicker": "YOUR TURN",
+      "footer": "Save this for day one.",
+      "overlays": [
+        {
+          "t": 5,
+          "text": "When did you last train?",
+          "style": "cta"
+        }
+      ]
+    }
+  ],
+  "cover_background": "poster"
+}
